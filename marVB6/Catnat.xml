@@ -1,0 +1,1184 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>0</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C450AC8">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="14" ss:Bold="1"/>
+   <ss:Interior ss:Color="#00FFFF" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C45D8E4">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="14" ss:Bold="1"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C45DD8C">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+   </ss:Borders>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="12" ss:Bold="1"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C45DE88">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="14"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C45DF84">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Font/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc02ED13C4">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+   </ss:Borders>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="12"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc02ED1720">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Font ss:FontName="Times New Roman" ss:Size="12" ss:Bold="1"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc02ED1990">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Left" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Right" ss:LineStyle="Continuous"/>
+    <ss:Border ss:Position="Bottom" ss:LineStyle="Continuous"/>
+   </ss:Borders>
+   <ss:Font ss:FontName="Times New Roman"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc02ED1C44">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Font/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc02ED1D40">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <ss:Font ss:FontName="Times New Roman" ss:Bold="1"/>
+   <ss:Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label>
+   <c:Caption>Microsoft Office-werkblad</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>2</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>11.0.0.6555         </c:OWCVersion>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Worksheet ss:Name="Blad1">
+  <ss:Names>
+   <ss:NamedRange ss:Name="Print_Area" ss:RefersTo="=Blad1!R1C1:R29C2"/>
+  </ss:Names>
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R1:R262144</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="87"
+   ss:DefaultColumnWidth="291.75" ss:DefaultRowHeight="10.5">
+   <ss:Column ss:Width="504.0"/>
+   <ss:Column ss:Width="283.5" ss:AutoFitWidth="0"/>
+   <ss:Row ss:Height="18.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C450AC8">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">CATNAT  NATUURRAMPEN   BRAND EENVOUDIGE RISICO'S</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45D8E4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">NATEUS</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Height="18.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C45DD8C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Uitsluitingen uit art 68 - 5 wet landsverzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DE88">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="48.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">§1 Behalve andersluidende uitdrukkelijke bepalingen van de verzekeringsovereenkomst, zijn in principe van de waarborg bedoeld bij deze onderafdeling uitgesloten de niet-binnengehaalde oogsten, de levende veestapel buiten het gebouw, de bodem, de teelten en de bosaanplantingen.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="28.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">§2  a) de voorwerpen die zich buiten een gebouw bevinden, behalve als ze er voorgoed aan vastgemaakt zijn;                                                                    </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="33.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">b) de constructies die gemakkelijk verplaatsbaar of uiteen te nemen zijn of die bouwvallig zijn of in afbraak zijn, en hun eventuele inhoud, behalve indien deze constructies als hoofdverblijf van de verzekerde dienen;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="51.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String"> c) tuinhuisjes, schuurtjes, berghokken en hun eventuele inhoud, afsluitingen en hagen van om het even welke aard, de tuinen, aanplantingen, toegangen en binnenplaatsen, terrassen, alsook de luxegoederen zoals zwembaden, tennis en golfterreinen;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="38.25" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">d) de gebouwen of gedeelten van gebouwen in opbouw, verbouwing of herstelling en hun eventuele inhoud, behalve indien zij bewoond of normaal bewoonbaar zijn;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="18.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">e) de voertuigen en de lucht-, zee-, meer-, en riviervaartuigen;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String"> f) de vervoerde goederen;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="31.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">g) de goederen waarvan de herstelling van de schade wordt georganiseerd door bijzondere wetten of door internationale overeenkomsten;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="18.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">h) schade veroorzaakt door elke bron van ioniserende stralingen;</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">idem</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="48.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String"> i) diefstal, vandalisme, onroerende en roerende beschadigingen gepleegd bij een diefstal of een poging tot diefstal en daden van kwaadwilligheid die mogelijk gemaakt werden of vergemakkelijkt door een verzekerd schadegeval.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">als de dekking diefstal werd onderschreven is ze ook geldig na natuurramp, zelfs indien de diefstal mogelijk gemaakt werd door een natuurramp</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="47.25" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C45DD8C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">art 68- 6 (…) de schade veroorzaakt aan de inhoud van kelders die op minder dan 10 centimeter van de grond is opgesteld, met uitzondering van de verwarmings, electriciteits en waterinstallaties die er blijvend zijn bevestigd.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">geen uitsluiting indien de schade zich ook zou voorgedaan hebben indien de inhoud wel op 10 cm van de bodem zou opgesteld geweest zijn.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="64.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Waarborguitbreidingen:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">onrechtstreekse verliezen max 7000€; reddingskosten; bewaring en opslag geredde goederen; huisvesting max 6 maand bij natuurramp; medische kosten en begrafenis kosten</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="24.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Expertkosten:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">gedekt maar niet conform de nieuwe versie van art 67 en volgens barema ifv de uitgekeerde vergoeding excl btw</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="28.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Vrijstelling in natuurrampen:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">610 euro geïndexeerd</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="25.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Vrijstelling andere waarborgen:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">geïndexeerde basisvrijstelling</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C45DD8C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Tarief:    Tarief woning</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1990">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Tarief inhoud woning</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">                Tarief huuraansprakelijkheid</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">                Tarief handel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">                Tarief landbouw</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.75" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED13C4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">                Tarief building</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">voorlopig 0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="30.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Segmentatie: kenmerken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">geen want er is nog geen tarief (24 04 06)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1C44">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="36.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1C44">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="40.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1720">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Specials:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1C44">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:Height="18.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc02ED1D40">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">ONE SHOT/ PER MAAND:</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="wc0C45DF84"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+    <ss:Cell ss:StyleID="Default"/>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+</ss:Workbook>
+

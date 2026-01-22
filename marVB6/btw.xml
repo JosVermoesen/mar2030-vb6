@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VATSENDING xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="F:\Intervat\Intervat.xsd">
+  <DECLARER>
+    <VATNUMBER>004405817</VATNUMBER>
+    <NAME>Jos Vermoesen</NAME>
+    <ADDRESS>Grote Baan 141</ADDRESS>
+    <POSTCODE>9310</POSTCODE>
+    <CITY>Herdersem</CITY>
+    <SENDINGREFERENCE>0440581700000</SENDINGREFERENCE>
+  </DECLARER>
+  <VATRECORD>
+    <RECNUM>1</RECNUM>
+    <VATNUMBER>004405817</VATNUMBER>
+    <NAME>Roelandt &amp; Vermoesen bv</NAME>
+    <ADDRESS>Grote Baan 141</ADDRESS>
+    <POSTCODE>9310</POSTCODE>
+    <CITY>Herdersem</CITY>
+    <DPERIODE>
+      <QUARTER>1</QUARTER>
+      <YEAR>2025</YEAR>
+    </DPERIODE>
+    <ASK PAYMENT="NO" RESTITUTION="NO"/>
+    <DATA>
+      <DATA_ELEM>
+        <D0>0</D0>
+        <D1>0</D1>
+        <D2>0</D2>
+        <D3>387196</D3>
+        <D45>0</D45>
+        <D46>0</D46>
+        <D47>0</D47>
+        <D48>0</D48>
+        <D49>0</D49>
+        <D54>81311</D54>
+        <D55>9425</D55>
+        <D56>0</D56>
+        <D57>799</D57>
+        <D59>99519</D59>
+        <D61>0</D61>
+        <D62>0</D62>
+        <D63>0</D63>
+        <D64>0</D64>
+        <D72>7984</D72>
+        <D81>6440</D81>
+        <D82>946790</D82>
+        <D83>0</D83>
+        <D84>0</D84>
+        <D85>0</D85>
+        <D86>44885</D86>
+        <D87>0</D87>
+      </DATA_ELEM>
+    </DATA>
+  </VATRECORD>
+</VATSENDING>

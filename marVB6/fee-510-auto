@@ -1,0 +1,307 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1240030000000000
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442A40000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442A50000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:"\0022€\0022\\ \#\,\#\#0\.00";
+	font-size:11pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442A60000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:Standard;
+	font-size:11pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442A70000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:bold;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442AA0000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:"\0022€\0022\\ \#\,\#\#0\.00";
+	font-size:11pt;
+	font-weight:bold;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc1442AB0000000000
+	{white-space:nowrap;
+	font-family:Calibri;
+	mso-number-format:Standard;
+	font-size:11pt;
+	font-weight:bold;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>12.0.0.6502         </x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>Microsoft Office Spreadsheet</x:Caption>
+    </x:Label>
+    <x:Name>Sheet</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>17251</x:Height>
+     <x:Width>30215</x:Width>
+     <x:DisableUndo/>
+     <x:DoNotDisplayTitleBar/>
+     <x:ViewableRange>$1:$262144</x:ViewableRange>
+     <x:Selection>E33</x:Selection>
+     <x:TopRowVisible>0</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wc1240030000000000 cellpadding=0 cellspacing=0 x:str>
+ <col width="138">
+ <col width="86">
+ <col width="66">
+ <col width="64">
+ <col width="54">
+ <col width="47">
+ <col width="50">
+ <col width="97">
+ <col width="92">
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A70000000000 x:str="Waarborg">Waarborg</td>
+  <td class=wc1442AA0000000000 x:str="Nettopremie">Nettopremie</td>
+  <td class=wc1442AA0000000000 x:str="Fee/Com.">Fee/Com.</td>
+  <td class=wc1442A70000000000 x:str="F/C %">F/C %</td>
+  <td class=wc1442AA0000000000 x:str="Taks">Taks</td>
+  <td class=wc1442A70000000000 x:str="Taks%">Taks%</td>
+  <td class=wc1442AA0000000000 x:str="Beheer">Beheer</td>
+  <td class=wc1442AB0000000000 x:str="Totaal Kwijting">Totaal Kwijting</td>
+  <td class=wc1442AB0000000000 x:str="Totaal Factuur">Totaal Factuur</td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000 x:str="Omnium (commissie)">Omnium (commissie)</td>
+  <td class=wc1442A50000000000 x:num="632.20000000000005" align=Right>€ 632,20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B2*D2)/100" x:num="126.44"
+  align=Right>€ 126,44</td>
+  <td class=wc1442A40000000000 x:num="20" align=Right>20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B2+C2)*F2/100"
+  x:num="202.96654560000002" align=Right>€ 202,97</td>
+  <td class=wc1442A40000000000 x:num="26.754000000000001" align=Right>26,754</td>
+  <td class=wc1442A50000000000 x:num="5" align=Right>€ 5,00</td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(B2+C2+E2+G2)"
+  x:num="966.60654560000012" align=Right>966,61</td>
+  <td class=wc1442A60000000000></td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000 x:str="Omnium (fee)">Omnium (fee)</td>
+  <td class=wc1442A50000000000 x:num="632.20000000000005" align=Right>€ 632,20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B3*D3)/100" x:num="126.44"
+  align=Right>€ 126,44</td>
+  <td class=wc1442A40000000000 x:num="20" align=Right>20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B3)*F3/100"
+  x:num="169.13878800000003" align=Right>€ 169,14</td>
+  <td class=wc1442A40000000000 x:num="26.754000000000001" align=Right>26,754</td>
+  <td class=wc1442A50000000000 x:num="5" align=Right>€ 5,00</td>
+  <td class=wc1442A60000000000></td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(B3+C3+E3+G3)"
+  x:num="932.77878800000008" align=Right>932,78</td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A60000000000></td>
+  <td class=wc1442A60000000000></td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000 x:str="B.A. Auto (fee)">B.A. Auto (fee)</td>
+  <td class=wc1442A50000000000 x:num="212.28999999999999" align=Right>€ 212,29</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B5*D5)/100"
+  x:num="42.457999999999998" align=Right>€ 42,46</td>
+  <td class=wc1442A40000000000 x:num="20" align=Right>20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B5+C5)*F5/100"
+  x:num="69.036708000000004" align=Right>€ 69,04</td>
+  <td class=wc1442A40000000000 x:num="27.100000000000001" align=Right>27,1</td>
+  <td class=wc1442A50000000000 x:num="5" align=Right>€ 5,00</td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(B5+C5+E5+G5)"
+  x:num="328.78470800000002" align=Right>328,78</td>
+  <td class=wc1442A60000000000></td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000 x:str="B.A. Auto (commisse)">B.A. Auto
+  (commisse)</td>
+  <td class=wc1442A50000000000 x:num="212.28999999999999" align=Right>€ 212,29</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B6*D6)/100"
+  x:num="42.457999999999998" align=Right>€ 42,46</td>
+  <td class=wc1442A40000000000 x:num="20" align=Right>20</td>
+  <td class=wc1442A50000000000 x:fmla="=SUM(B6)*F6/100"
+  x:num="57.530590000000004" align=Right>€ 57,53</td>
+  <td class=wc1442A40000000000 x:num="27.100000000000001" align=Right>27,1</td>
+  <td class=wc1442A50000000000 x:num="5" align=Right>€ 5,00</td>
+  <td class=wc1442A60000000000></td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(B6+C6+E6+G6)"
+  x:num="317.27859000000001" align=Right>317,28</td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A60000000000></td>
+  <td class=wc1442A60000000000></td>
+ </tr>
+ <tr height="20" style='mso-height-alt:300'>
+  <td class=wc1442A40000000000 x:str="TOTAAL">TOTAAL</td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A40000000000></td>
+  <td class=wc1442A50000000000></td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(H2:H6)" x:num="1295.3912536000003"
+  align=Right>1.295,39</td>
+  <td class=wc1442A60000000000 x:fmla="=SUM(I2:I7)" x:num="1250.057378"
+  align=Right>1.250,06</td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

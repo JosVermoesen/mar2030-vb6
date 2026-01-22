@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>0</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+  <ss:Style ss:ID="VisitedLink">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#800080" ss:Bold="0"
+    ss:Italic="0" ss:Underline="Single"/>
+   <ss:Interior ss:Color="#FFFFFF" ss:Pattern="Solid" ss:PatternColor="#000000"/>
+  </ss:Style>
+  <ss:Style ss:ID="UnvisitedLink">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#0000FF" ss:Bold="0"
+    ss:Italic="0" ss:Underline="Single"/>
+   <ss:Interior ss:Color="#FFFFFF" ss:Pattern="Solid" ss:PatternColor="#000000"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BECCB8C">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BEC1F90" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BEC8824" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BEC7900" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BEC7B34" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BEC7E78" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BDC3744" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BDC3A40" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BDC3D30" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:FontName="Verdana" ss:Size="8" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label>
+   <c:Caption>Microsoft Office-werkblad</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>2</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>11.0.0.6255         </c:OWCVersion>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Worksheet ss:Name="Algemeen">
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R15C2</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="15"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="10.5" ss:StyleID="wc0BECCB8C">
+   <ss:Column ss:Width="312.75"/>
+   <ss:Column ss:Width="170.25"/>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">OVERHEID </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="3" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BEC1F90" ss:HRef="http://www.vlaanderen.be/">
+     <ss:Data ss:Type="String">http://www.vlaanderen.be/</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Vlaamse Overheid</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BEC8824" ss:HRef="http://www.kafka.be/">
+     <ss:Data ss:Type="String">http://www.kafka.be/</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Meldpunt voor administratieve lasten</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BEC7900" ss:HRef="http://www.docufin.fgov.be">
+     <ss:Data ss:Type="String">http://www.docufin.fgov.be</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Documentatiedienst Federale Overheid</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BEC7B34" ss:HRef="http://www.mobilit.fgov.be">
+     <ss:Data ss:Type="String">http://www.mobilit.fgov.be</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Federale Overheid Verkeer</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="8" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">AUTO</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BEC7E78" ss:HRef="http://www.rv.be/rv2424.htm">
+     <ss:Data ss:Type="String">http://www.rv.be/rv2424.htm</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Lijst telefoonnummers Assistance</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="11" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BDC3744" ss:HRef="http://www.wegcode.be">
+     <ss:Data ss:Type="String">http://www.wegcode.be</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Wegcode </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="13" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">BEDRIJF &amp; ZELFSTANDIGEN</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BDC3A40" ss:HRef="http://www.aib-vincotte.be">
+     <ss:Data ss:Type="String">http://www.aib-vincotte.be</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BECCB8C">
+     <ss:Data ss:Type="String">Technische controles in België (AIB-VINCOTTE) </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0BDC3D30"
+     ss:HRef="http://www.rsvz-inasti.fgov.be/nl/contact/list_insurance_companies.htm">
+     <ss:Data ss:Type="String">http://www.rsvz-inasti.fgov.be/nl/contact/list_insurance_companies.htm</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+</ss:Workbook>
+

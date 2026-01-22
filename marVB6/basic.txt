@@ -1,0 +1,137 @@
+Here's another useful Visual Basic tip from Element K Journals,
+your number one source for software tips and techniques.
+
+********** SPONSOR **********
+
+FREE Windows 2000 classes, tips, articles and a chance to WIN
+Win2K software!  Your destination for Windows 2000 education and
+training is WINDOWS 2000 U: http://www.2000training.com/  Whether
+you're a first-time business user or an IT Professional preparing for the
+MCSE certification, WINDOWS 2000 U has the tools you need to get the
+most out of your Windows 2000 investment.  WIN one of 100 Windows
+2000 Pro Software packages ($319 Value).  Register FREE now.
+
+http://www.2000training.com/
+
+********** THE TIP **********
+
+Move files to the Recycle Bin with VB and Windows API
+
+Want to delete a file and have it go into the recycle bin? The Kill statement 
+permanently deletes the file. Instead, try the following:
+
+Private Declare Function SHFileOperation Lib _
+"shell32.dll" (ByRef lpFileOp As _
+SHFILEOPSTRUCT) As Long
+
+Private Const ERROR_SUCCESS = 0&
+Private Const FO_COPY = &H2
+Private Const FO_DELETE = &H3
+Private Const FO_MOVE = &H1
+Private Const FO_RENAME = &H4
+Private Const FOF_ALLOWUNDO = &H40
+Private Const FOF_CONFIRMMOUSE = &H2
+Private Const FOF_FILESONLY = &H80
+Private Const FOF_MULTIDESTFILES = &H1
+Private Const FOF_NOCONFIRMATION = &H10
+Private Const FOF_NOCONFIRMMKDIR = &H200
+Private Const FOF_RENAMEONCOLLISION = &H8
+Private Const FOF_SILENT = &H4
+Private Const FOF_SIMPLEPROGRESS = &H100
+Private Const FOF_WANTMAPPINGHANDLE = &H20
+
+Private Type SHFILEOPSTRUCT
+        hwnd As Long
+        wFunc As Long
+        pFrom As String
+        pTo As String
+        fFlags As Integer
+        fAnyOperationsAborted As Long
+        hNameMappings As Long
+        lpszProgressTitle As String '  only used if FOF_SIMPLEPROGRESS
+End Type
+
+Next create a function called Recycle, like so
+
+Public Sub Recycle(ByVal FileName As String)
+    Dim CFileStruct As SHFILEOPSTRUCT
+
+    With CFileStruct
+        .hwnd = Me.hwnd
+        .fFlags = FOF_ALLOWUNDO
+        .pFrom = FileName
+        .wFunc = FO_DELETE
+    End With
+
+    If SHFileOperation(CFileStruct) <> ERROR_SUCCESS Then
+        'An error occurred.
+    End If
+
+End Sub
+
+To test the procedure, create a dummy text file, drop a command button onto a 
+Visual Basic form, and then attach the following code
+
+Private Sub Command1_Click()
+Recycle "c:\test.txt"
+End Sub
+
+When you click the button, Windows asks if you want to move the file to the Recycle Bin.
+
+This tip was contributed by Mike Coleman, mikec@nightingale.com.
+
+********** TRY US FREE! ***********
+
+If you like this tip, you'll love Element K Journals' Inside Visual Basic.
+
+For a FREE issue of Inside Visual Basic go to
+https://secure.elementkjournals.com/ivb/cb2001.htm
+
+Each issue of Inside Visual Basic offers a constant flow of fresh
+ideas, shortcuts, and advice from software experts who explore
+every aspect of Visual Basic for Windows. Discover timesaving
+strategies and practical solutions to all of your computing
+questions through in-depth articles covering complex techniques
+and valuable quick tips. Free issue offer valid in United States
+only.
+
+********** NEED TO KNOW MORE? **********
+
+Visit http://www.elementkjournals.com/ivb to see what's new in this
+month's issue of Inside Visual Basic.
+
+********** SPECIAL OFFER **********
+
+The fastest and easiest reference tool -For only $19.95
+
+Just In - The Best of ZD Journals' Web and Programming
+Department's Tips, Techniques and FAQ links. This CD is packed
+with the best from Active Server Developers Journal, Automating
+Office with VBA, Inside Microsoft FrontPage, Inside the Internet,
+Inside Visual Basic and Microsoft Web Builder.
+
+Order Now!
+
+https://secure.elementkjournals.com/4061/cdb2001.htm
+
+********** SUBMIT A TIP! **********
+
+Do you have a shortcut or technique that's tip worthy? If so, send
+it to visual_basic@elementkjournals.com.
+
+If we use your submission, we'll include your name and email or Web
+address, along with the tip.
+
+********** SERVICES **********
+
+You can unsubscribe from a particular tip (or tips) list at
+http://www.elementkjournals.com/zdtips/unsub
+
+This weekly tip is delivered to you as a free service from
+Element K Journals. http://www.elementktips.com 
+
+*******************************************************************
+Copyright (C) 2000 Element K Content LLC. All rights reserved.
+Reproduction in whole or in part in any form or medium without
+express written permission of Element K Content LLC is prohibited.
+Element K is a service mark of Element K LLC.

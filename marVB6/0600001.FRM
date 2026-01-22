@@ -1,0 +1,569 @@
+VERSION 5.00
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Begin VB.Form Historiek 
+   BorderStyle     =   1  'Fixed Single
+   ClientHeight    =   4035
+   ClientLeft      =   555
+   ClientTop       =   2160
+   ClientWidth     =   9015
+   ForeColor       =   &H00000000&
+   MaxButton       =   0   'False
+   MDIChild        =   -1  'True
+   PaletteMode     =   1  'UseZOrder
+   ScaleHeight     =   4035
+   ScaleWidth      =   9015
+   Begin VB.CheckBox GansePeriode 
+      Alignment       =   1  'Right Justify
+      Caption         =   "&Boekjaar"
+      Enabled         =   0   'False
+      Height          =   255
+      Left            =   7860
+      TabIndex        =   15
+      Top             =   3690
+      Value           =   1  'Checked
+      Width           =   1110
+   End
+   Begin MSFlexGridLib.MSFlexGrid grdJournaalDetail 
+      Height          =   3705
+      Left            =   0
+      TabIndex        =   14
+      Top             =   -30
+      Width           =   7515
+      _ExtentX        =   13256
+      _ExtentY        =   6535
+      _Version        =   393216
+      FixedCols       =   0
+      BackColor       =   16777088
+      AllowUserResizing=   1
+   End
+   Begin VB.TextBox TxtLijnen 
+      BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   315
+      Left            =   7560
+      MaxLength       =   4
+      TabIndex        =   9
+      Top             =   3000
+      Width           =   735
+   End
+   Begin VB.TextBox TekstLijn 
+      BackColor       =   &H00FFFFFF&
+      ForeColor       =   &H00000000&
+      Height          =   285
+      Left            =   1680
+      TabIndex        =   3
+      Top             =   3720
+      Width           =   2535
+   End
+   Begin VB.CommandButton CmdLager 
+      Caption         =   "&Lager"
+      Height          =   255
+      Left            =   7560
+      TabIndex        =   7
+      TabStop         =   0   'False
+      Top             =   840
+      Width           =   1275
+   End
+   Begin VB.CommandButton CmdHoger 
+      Caption         =   "&Hoger"
+      Height          =   315
+      Left            =   7560
+      TabIndex        =   6
+      TabStop         =   0   'False
+      Top             =   480
+      Width           =   1275
+   End
+   Begin VB.TextBox Rekening 
+      BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   285
+      Left            =   5280
+      TabIndex        =   1
+      ToolTipText     =   "Nummer algemene rekening.  Geef één of meer cijfers en druk CTRL om geïndexeerd te zoeken"
+      Top             =   3720
+      Width           =   1275
+   End
+   Begin VB.CommandButton Zoeken 
+      Caption         =   "&Zoek"
+      Default         =   -1  'True
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Left            =   6600
+      TabIndex        =   4
+      TabStop         =   0   'False
+      Top             =   3720
+      Width           =   795
+   End
+   Begin VB.CommandButton Sluiten 
+      Cancel          =   -1  'True
+      Caption         =   "Sluiten"
+      Height          =   315
+      Left            =   7560
+      TabIndex        =   5
+      TabStop         =   0   'False
+      Top             =   120
+      Width           =   1275
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Creditsaldo = bedrag in min !"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   450
+      Index           =   5
+      Left            =   7560
+      TabIndex        =   13
+      Top             =   1920
+      Width           =   1395
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label LblSaldo 
+      Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
+      BackColor       =   &H00C0FFFF&
+      BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   7560
+      TabIndex        =   12
+      Top             =   1680
+      Width           =   1395
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Saldo huidige selektie"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   450
+      Index           =   4
+      Left            =   7560
+      TabIndex        =   11
+      Top             =   1200
+      Width           =   1395
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Lijnen"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Index           =   3
+      Left            =   8340
+      TabIndex        =   10
+      Top             =   3000
+      Width           =   615
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "Tussenstop &Melden na:"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   450
+      Index           =   2
+      Left            =   7560
+      TabIndex        =   8
+      Top             =   2520
+      Width           =   1365
+      WordWrap        =   -1  'True
+   End
+   Begin VB.Label Label1 
+      Caption         =   "&Periode Van - Tot"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   240
+      Index           =   1
+      Left            =   60
+      TabIndex        =   2
+      Top             =   3720
+      Width           =   1590
+   End
+   Begin VB.Label Label1 
+      Caption         =   "&Rekening"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   225
+      Index           =   0
+      Left            =   4320
+      TabIndex        =   0
+      Top             =   3720
+      Width           =   855
+   End
+End
+Attribute VB_Name = "Historiek"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+DefInt A-Z
+Option Explicit
+
+Dim RekeningNummer          As String * 7
+Dim PositieStelsel          As Integer
+
+Dim Van                     As String
+Dim Tot                     As String
+
+Dim dTotaalSaldo            As Currency
+
+Private Sub CmdHoger_Click()
+
+bNext FlRekening
+If Ktrl Then
+Else
+    Rekening.Text = KeyBuf(FlRekening)
+    Zoeken_Click
+End If
+
+End Sub
+
+
+Private Sub CmdLager_Click()
+
+bPrev FlRekening
+If Ktrl Then
+Else
+    Rekening.Text = KeyBuf(FlRekening)
+    Zoeken_Click
+End If
+
+End Sub
+
+
+Private Sub Form_Load()
+
+If Not Toegankelijk(Me) Then
+    Unload Me
+    Exit Sub
+End If
+
+Dim T As Integer
+
+Top = 0
+Left = 0
+
+TxtLijnen = LaadTekst("HistoriekInScherm", "MaxLijnen")
+TekstLijn = fDatumText(Left(BoekjaarVanTot, 8)) + " - " + fDatumText(Right(BoekjaarVanTot, 8))
+
+Rekening.Text = BasisB(FlRekening).TekstInfo(0)
+Historiek.Caption = "Historiek (" + RTrim$(vBibTekst(FlRekening, "#v020 #")) + ")"
+
+With grdJournaalDetail
+    .Cols = 7
+    .Row = 0
+    
+    .Col = 0
+    .Text = "dokument"
+    .Col = 1
+    .Text = "Datum Doc."
+    .Col = 2
+    .Text = "Fin.stuk"
+    .Col = 3
+    .Text = "Omschrijving"
+    .Col = 4
+    If bhEuro Then
+        .Text = "EUR"
+    Else
+        .Text = "BEF"
+    End If
+    .Col = 5
+    If bhEuro Then
+        .Text = "BEF"
+    Else
+        .Text = "EUR"
+    End If
+    .Col = 6
+    .Text = "T.Rek."
+End With
+
+grdJournaalDetail.ColWidth(0) = 1140
+grdJournaalDetail.ColWidth(1) = 1020
+grdJournaalDetail.ColWidth(2) = 930
+grdJournaalDetail.ColWidth(3) = 1755
+grdJournaalDetail.ColWidth(4) = 870
+grdJournaalDetail.ColWidth(5) = 975
+grdJournaalDetail.ColWidth(6) = 735
+For TelTot = 0 To grdJournaalDetail.Cols - 1
+    grdJournaalDetail.ColAlignment(TelTot) = flexAlignLeftCenter
+Next
+grdJournaalDetail.ColAlignment(4) = flexAlignRightCenter
+grdJournaalDetail.ColAlignment(5) = flexAlignRightCenter
+Zoeken_Click
+
+End Sub
+
+
+
+Private Sub Form_Unload(Cancel As Integer)
+
+BeWaarTekst "HistoriekInScherm", "MaxLijnen", TxtLijnen
+
+End Sub
+
+
+Private Sub GansePeriode_Click()
+
+If GansePeriode Then
+    TekstLijn = fDatumText(Left(BoekjaarVanTot, 8)) + " - " + fDatumText(Right(BoekjaarVanTot, 8))
+Else
+    TekstLijn = fDatumText(Left(PeriodeVanTot, 8)) + " - " + fDatumText(Right(PeriodeVanTot, 8))
+End If
+Zoeken_Click
+
+End Sub
+
+Private Sub Rekening_GotFocus()
+
+Rekening.SelLength = Len(Rekening.Text)
+SnelHelpPrint "Dubbelklikken of [Ctrl] voor geïndexeerd zoeken"
+
+End Sub
+
+Private Sub Rekening_KeyDown(KeyCode As Integer, Shift As Integer)
+
+Select Case KeyCode
+    Case 17
+        aIndex = 0
+        SharedFl = FlRekening
+        GridText = Rekening.Text
+        SqlSearch.Show 1
+        If Ktrl = 0 Then
+            Rekening.Text = vBibTekst(FlRekening, "#v019 #")
+            Zoeken_Click
+        End If
+End Select
+
+End Sub
+
+Private Sub Rekening_LostFocus()
+
+RekeningNummer = Rekening.Text
+bGet FlRekening, 0, RekeningNummer
+If Ktrl Then
+    Historiek.Caption = "Historiek"
+Else
+    RecordToVeld FlRekening
+    Historiek.Caption = "Historiek (" + RTrim$(vBibTekst(FlRekening, "#v020 #")) + ")"
+End If
+
+End Sub
+
+Private Sub sluiten_Click()
+
+Unload Me
+
+End Sub
+
+Private Sub TekstLijn_LostFocus()
+
+If DatumFout(Right$(TekstLijn, 10)) Then
+    MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
+    If GansePeriode Then
+        TekstLijn = fDatumText(Left(BoekjaarVanTot, 8)) + " - " + fDatumText(Right(BoekjaarVanTot, 8))
+    Else
+        TekstLijn = fDatumText(Left(PeriodeVanTot, 8)) + " - " + fDatumText(Right(PeriodeVanTot, 8))
+    End If
+    TekstLijn.SetFocus
+    Exit Sub
+ElseIf Len(TekstLijn) <> 23 Then
+    MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
+    If GansePeriode Then
+        TekstLijn = fDatumText(Left(BoekjaarVanTot, 8)) + " - " + fDatumText(Right(BoekjaarVanTot, 8))
+    Else
+        TekstLijn = fDatumText(Left(PeriodeVanTot, 8)) + " - " + fDatumText(Right(PeriodeVanTot, 8))
+    End If
+    TekstLijn.SetFocus
+Else
+    Zoeken_Click
+End If
+
+End Sub
+
+
+Private Sub Zoeken_Click()
+Dim aa          As String
+Dim T           As Integer
+Dim maxLijn     As Integer
+Dim Zoekverder As Boolean
+
+SnelHelpPrint "Bezig..."
+Zoekverder = False
+GridSchoon grdJournaalDetail
+LblSaldo = ""
+
+T = 0
+dTotaalSaldo = 0
+
+On Local Error Resume Next
+Err = 0
+maxLijn = TxtLijnen + 2
+If Err Then
+    TxtLijnen = 300
+    maxLijn = TxtLijnen + 2
+End If
+RekeningNummer = Rekening.Text
+Van = RekeningNummer + Mid$(TekstLijn, 7, 4) + Mid$(TekstLijn, 4, 2) + Mid$(TekstLijn, 1, 2)
+Tot = RekeningNummer + Mid$(TekstLijn, 20, 4) + Mid$(TekstLijn, 17, 2) + Mid$(TekstLijn, 14, 2)
+
+GetIt:
+bGet FlRekening, 0, RekeningNummer
+If Ktrl Then
+    Historiek.Caption = "Historiek"
+Else
+    RecordToVeld FlRekening
+    Historiek.Caption = "Historiek (" + Trim(rsMAR(FlRekening)("v020")) + ")"
+    grdJournaalDetail.Visible = False
+    Me.Refresh
+End If
+
+bFirst FlJournaal, 0
+bGetOrGreater FlJournaal, 0, Van
+If Ktrl Or KeyBuf(FlJournaal) > Tot Then
+    aa = vbTab & vbTab & vbTab & vbTab & vbTab & vbTab
+    grdJournaalDetail.AddItem aa, grdJournaalDetail.Rows - 1
+    GoTo JournaalJump
+Else
+    'RecordToVeld FlJournaal
+    Rekening.Text = vSet(rsMAR(FlJournaal)("v019"), 7)
+    Mid$(Van, 1, 7) = Mid$(KeyBuf(FlJournaal), 1, 7)
+    Mid$(Tot, 1, 7) = Mid$(KeyBuf(FlJournaal), 1, 7)
+    bGet FlRekening, 0, vSet(rsMAR(FlJournaal)("v019"), 7)
+    If Ktrl Then
+        Historiek.Caption = "Historiek"
+    Else
+        RecordToVeld FlRekening
+        Historiek.Caption = "Historiek (" + Trim(rsMAR(FlRekening)("v020")) + ")"
+    End If
+End If
+Screen.MousePointer = vbHourglass
+GoSub LijnErBij
+Do
+    bNext FlJournaal
+    If Ktrl Or KeyBuf(FlJournaal) > Tot Then
+        Exit Do
+    Else
+        RecordToVeld FlJournaal
+        GoSub LijnErBij
+    End If
+Loop
+
+JournaalJump:
+grdJournaalDetail.Row = 1
+grdJournaalDetail.Col = 0
+Screen.MousePointer = vbNormal
+LblSaldo = Format(dTotaalSaldo, "#,##0.00")
+grdJournaalDetail.Visible = True
+On Local Error Resume Next
+grdJournaalDetail.SetFocus
+Exit Sub
+
+LijnErBij:
+aa = rsMAR(FlJournaal)("v033") & vbTab
+aa = aa & fDatumText(rsMAR(FlJournaal)("v035")) & vbTab
+aa = aa & rsMAR(FlJournaal)("v038") & vbTab
+aa = aa & rsMAR(FlJournaal)("v067") & vbTab
+aa = aa & Format(rsMAR(FlJournaal)("dece068"), "#,##0.00") & vbTab
+aa = aa & Format(Euro * rsMAR(FlJournaal)("dece068"), "#,##0") & vbTab
+dTotaalSaldo = dTotaalSaldo + rsMAR(FlJournaal)("dece068").Value
+aa = aa & vBibTekst(FlJournaal, "#v069 #")
+On Local Error Resume Next
+grdJournaalDetail.AddItem aa, grdJournaalDetail.Rows - 1
+If Err Then
+    MsgBox Error
+End If
+If grdJournaalDetail.Rows >= maxLijn Then
+    If Zoekverder Then
+    Else
+        Msg = "Meer dan " + Format(maxLijn - 2) + " journaallijnen.  Enkel de eerste " + Format(maxLijn - 2) + " tonen ?"
+        KtrlBox = MsgBox(Msg, vbYesNo + vbDefaultButton1)
+        If KtrlBox = vbYes Then
+            bLast FlJournaal, 0
+        Else
+            Zoekverder = True
+        End If
+    End If
+End If
+Return
+
+End Sub

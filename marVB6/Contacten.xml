@@ -1,0 +1,4042 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>0</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+  <ss:Style ss:ID="VisitedLink">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#800080" ss:Bold="0"
+    ss:Italic="0" ss:Underline="Single"/>
+   <ss:Interior ss:Color="#FFFFFF" ss:Pattern="Solid" ss:PatternColor="#000000"/>
+  </ss:Style>
+  <ss:Style ss:ID="UnvisitedLink">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#0000FF" ss:Bold="0"
+    ss:Italic="0" ss:Underline="Single"/>
+   <ss:Interior ss:Color="#FFFFFF" ss:Pattern="Solid" ss:PatternColor="#000000"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE21A0" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:Color="#0000FF" ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE25D0" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:Color="#0000FF" ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE2710">
+   <ss:Alignment ss:Horizontal="Center" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#000000" ss:Bold="1"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE29F8" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:Color="#0000FF" ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE2D00" ss:Parent="UnvisitedLink">
+   <ss:Alignment/>
+   <ss:Font ss:Color="#0000FF" ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0BCE40B4">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Bold="1"/>
+   <ss:Interior ss:Color="#99CCFF" ss:Pattern="Solid"/>
+  </ss:Style>
+  <ss:Style ss:ID="TitleBar">
+   <ss:Alignment ss:Horizontal="Left" ss:Rotate="0.0" ss:Vertical="Center"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:LineStyle="Continuous" ss:Color="#C0C0C0"
+     ss:Weight="1.0"/>
+    <ss:Border ss:Position="Left" ss:LineStyle="Continuous" ss:Color="#C0C0C0"
+     ss:Weight="1.0"/>
+    <ss:Border ss:Position="Right" ss:LineStyle="Continuous" ss:Color="#C0C0C0"
+     ss:Weight="1.0"/>
+    <ss:Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Color="#C0C0C0"
+     ss:Weight="1.0"/>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="#FFFFFF" ss:Bold="1"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="#0A246A" ss:Pattern="Solid" ss:PatternColor="#000000"/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label ss:StyleID="TitleBar">
+   <c:Caption>Microsoft Office Spreadsheet</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>5</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>11.0.0.6255         </c:OWCVersion>
+  <x:DisableUndo/>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Worksheet ss:Name="AGF Belgium">
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R3C2</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="8"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="12.75">
+   <ss:Column ss:Width="296.25"/>
+   <ss:Column ss:Width="130.5"/>
+   <ss:Row>
+    <ss:Cell ss:StyleID="wc0BCE21A0" ss:HRef="http://www.agf.be/whoswho/nl">
+     <ss:Data ss:Type="String">http://www.agf.be/whoswho/nl</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="3">
+    <ss:Cell ss:StyleID="wc0BCE25D0"
+     ss:HRef="http://www.agf.be/media/broc_/filelib/WHOSWHO/Whoswho_NL.pdf">
+     <ss:Data ss:Type="String">http://www.agf.be/media/broc_/filelib/WHOSWHO/Whoswho_NL.pdf</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE2710">
+     <ss:Data ss:Type="String">voor meer details</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell>
+     <ss:Data ss:Type="String">(De toegangscode: AGFWW) </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="6">
+    <ss:Cell>
+     <ss:Data ss:Type="String">Particulieren : </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE29F8" ss:HRef="mailto:chantal.maes@agf.be">
+     <ss:Data ss:Type="String">mailto:chantal.maes@agf.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="8">
+    <ss:Cell>
+     <ss:Data ss:Type="String">Ondernemingen : </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE2D00" ss:HRef="mailto:corentin.letist@agf.be ">
+     <ss:Data ss:Type="String">mailto:corentin.letist@agf.be </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+ <ss:Worksheet ss:Name="0039 Axa">
+  <x:WorksheetOptions>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R1C1</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+ </ss:Worksheet>
+ <ss:Worksheet ss:Name="0145 Generali">
+  <x:WorksheetOptions>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R17C1</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="227"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="12.75">
+   <ss:Column ss:Width="120.75"/>
+   <ss:Column ss:Width="227.25"/>
+   <ss:Column ss:Span="1" ss:Width="60.0"/>
+   <ss:Column ss:Width="159.0"/>
+   <ss:Row>
+    <ss:Cell ss:StyleID="wc0BCE40B4">
+     <ss:Data ss:Type="String">Naam</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE40B4">
+     <ss:Data ss:Type="String">Dienst</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE40B4">
+     <ss:Data ss:Type="String">Tel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE40B4">
+     <ss:Data ss:Type="String">Fax</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0BCE40B4">
+     <ss:Data ss:Type="String">Email</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">AGNEESSENS P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8062</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ALGOET P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8345</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.63</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.rc.individuel@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ANNO S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8038</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ASTA N.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/238.37.11</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">nicolo.asta@pi.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BARBAY L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8260</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BAYARD</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/368.50.98</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/368.51.38</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">alain.bayard@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BEECKMAN G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8391</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BEECKMAN L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8028</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BEECKMANS J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8267</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BEKAERT A-M</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8096</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.rc.individuel@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BERGIERS N. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8317</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.16</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BLONDEEL G.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8054</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BOEUR CH. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/479.60.75</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/479.60.75</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">christian.boeur@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BORREMANS V. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8304</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BOUDRY J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8386</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.ba.persoonl@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BOURDEAUD'HUY J-P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8575</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.entreprise@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BOURGEOIS M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">056/77.93.07</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">056/77.21.15</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">michel.bourgeois@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BOUSSEMAERE C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8120</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BRICHAU E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8566</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BROUNS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">089/73.25.55</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">089/72.10.66</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">rik.brouns@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BUCHAU S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/523.55.71</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/523.55.71</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">sebastien.buchau@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BUEKENHOUT W.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.vie@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">BUYSSE T.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8116</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CALVI S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8450</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CAMPS R.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8351</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CAVYN M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Technisch Admin/Commerciële Leven Groep</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CLARYSSE J-C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8324</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CLAUS Y. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8368</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CLEYMANS P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8022</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COBUT </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/379.82.71</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">andré.cobut@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COENAERTS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">052/30.32.54</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">arnold.coenaerts@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COENEN J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Technische Inspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">03/480.55.48</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">jozef.coenen@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COLLAGE P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8114</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COREMANS Sven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">016/69.48.57</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">sven.cooremans@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">COUVREUR S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8266</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">CUSTERS F.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8352</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DALMOTE C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Lichamelijke Schade</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8077</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.89</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE BROUWER B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8056</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE CLERCQ C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8505</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE COENE J-P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8389</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE COSTER K. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8390</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE COSTER L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8040</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE DONCKER S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8341</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE GROOTE B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8716</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.81.58</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE GROOTE M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8043</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE LANGE M-CH. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8722</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE MEUTER M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8718</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE PAUW P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Uitgifte Leven Groep</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE PUNT S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.leven@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE SAUVAGE A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/732.52.41</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/735.26.23</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">andre.desauvage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE SAUVAGE Y.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">081/56.78.66</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">081/56.94.95</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">yves.desauvage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE WACHTER J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8037</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE WINNE P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8335</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.dommage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DE WOLF H. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8108</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DEBLANDER A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8101</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DEBUE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Technische Inspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">055/49.79.57</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">noel.debue@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DELHALLE MARC </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">084/21.19.48</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">marc.delhalle@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DELPIERRE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">071/45.95.84</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">danielle.delpierre@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DELVILLE A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">086/43.38.93</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">alain.delville@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DEMESMAEKER A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8719</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DENAYER M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8356</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DENOO K.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/234.37.65</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">katrien.denoo@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DEPLECHIN E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8091</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.dommage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DESMAELS P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciële Directie Niet-Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8132</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DEVILLE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/479.58.78</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">thierry.deville@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">D'HAESE N.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.leven@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DIERICK H. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8117</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DIERICKX L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8312</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DIEU N.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8196</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DRAYE P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8097</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DUBOIS R.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciële Directie Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8247</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DUFRENNE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">081/31.01.58</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">thierry.dufrenne@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">DUPONT R.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/426.57.05</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">robert.dupont@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">EECKHOUT Magda </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8348</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.89</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ENGELS E.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8264</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ESPEEL T. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8717</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">EVRARD C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving ondernemingen BA</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8325</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.entreprise@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">FETTES G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8339</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">FIEUW Y.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8338</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">FLEMAL R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8532</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">FRANCOT E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8315</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.loi@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">FUEYO B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8383</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">GENIQUE G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8029</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">GETTEMAN C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8272</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ong.schade@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">GOMEZ V. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8045</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">GUIETTE M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8308</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HARNIE G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.leven@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HELMBACHER M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8714</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HENROTTIN P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8069</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HEYVAERT H. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8032</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HOET J.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/269.88.33</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/269.73.46</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">hoet.jacques@wanadoo.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HUART F. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8030</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">HUYGHENS C.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.vie@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ISAAC S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8271</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">JACOBS M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8322</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">JANSSEN A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">011/34.11.07</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">andre.jansen@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">JANSSENS F. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8123</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.ba.persoonl@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">KAS S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8499</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">KENNOF L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8392</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">KNOOPS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">011/37.59.35</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">jacky.knoops@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LAINE M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">069/56.25.73</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">069/56.25.73</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">michel.laine@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LAPORTE M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving ondernemingen BA</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8098</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LAURENT C.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving ondernemingen BA</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8270</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.entreprise@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LAUWEREYS J.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Uitgifte Leven Groep</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LEBLICQ D. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8061</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LEMPEREUR I.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/254.42.19</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">isabelle.lempereur@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LERMUSIAUX R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8537</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LEYSEN </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">015/31.02.29</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">paul.leysen@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LIPPENS J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8102</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LO GIOCO V.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Hulpboekhouding</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LOGGHE Peter</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">051/69.59.27</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">peter.logghe@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LORMANS A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">03/653.43.77</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">alain.lormans@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">LUMLEY G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8064</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MAES P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">068/64.64.66</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">pascal.maes@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MALENGREAUX F.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/88.55.15</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/88.55.15</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">francois.malengreaux@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MARGREVE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">080/34.96.73</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">franzjoseph.margreve@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MARSHALL C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8103</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.loi@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MASSELUS</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/84.29.84</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">francois.masselus@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MATTHYS T.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8167</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MEERT G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8055</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MET DEN ANCXT J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8531</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MEUTER A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8313</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MINON M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8539</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MISEUR G.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.66</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">griet.miseur@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MOLIN W.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8727</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MONSIEUR E.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciële Directie Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8332</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.86</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MOTQUIN P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciële Directie Niet-Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8255</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MOYSON</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">052/37.16.53</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">052/38.02.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">erwin.moyson@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">MUTANGANWA I. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8361</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">NOTAERTS J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8387</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ong.schade@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PARMENTIER R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Lichamelijke Schade</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8261</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.89</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PATIJN A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8192</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.ba.persoonl@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PAUWELS C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8052</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PEETERS I. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8094</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.ba.persoonl@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PHILIPS L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciëel Leven Internationale Ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8251</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.97</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PILLE R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8346</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PLASMANS L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8109</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ong.schade@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">POELMANS A.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Technisch Admin/Commerciële Leven Groep</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">POOS M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciëel Leven Internationale Ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8250</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.97</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PRINCE</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/254.42.17</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">christelle.prince@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PULINX C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8538</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">PUTTEMANS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">015/71.27.49</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">marcel.puttemans@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RASNEUR A.S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">068/64.58.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">annesylvie.rasneur@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">REMY O.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8092</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.dommage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RENDERS C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8068</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.dommage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RETORE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">053/83.76.37</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">guido.retore@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">REYNAERTS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/351.64.64</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">olivier.reynaerts@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RING G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8090</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RISTAGNO S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/84.37.04</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/84.37.04</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">salvatore.ristagno@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ROELAND C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8258</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.63</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.ba.persoonl@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ROLIES J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciële Directie Niet-Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8259</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.comercieel@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RÖMER B.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">087/67.85.13</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">bruno.romer@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ROOBAERT E.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/361.51.79</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">manu.roobaert@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RUFFLART S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8119</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">RYSMAN D. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8104</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SACRE E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8023</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SANCHEZ P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8344</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SCHETS D. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8036</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SCHOLIERS P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8725</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SCHOLLAERT J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8105</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SCHUTIJZER B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8433</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SIMAEYS R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8269</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SIX </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Technische Inspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/538.75.58</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">christophe.six@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SOLE S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8340</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SONCK G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8337</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SORGELOOSE P.P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving ondernemingen BA</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8437</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">SPITAELS C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8033</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">STEENWERCKX E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8200</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">STIEVENARD N.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8729</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">STINGLHAMBER </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Technische Inspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">081/87.88.58</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">jeanluc.stinglhamber@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">STRUELENS F. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8333</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">STUER J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8720</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">TAILLEUR H. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8713</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">TEMPELS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">052/21.75.53</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">john.tempels@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">THIELENS </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/233.51.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">04/233.51.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">eric.thielens@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">THIENPONT A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8295</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">TOURNE B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8026</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">V.D.MYNSBRUGGE M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8230</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN AERT A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8199</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN BETS C.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">081/65.64.22</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">christophe.vanbets@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN BRUSSEL D. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8715</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN CUTSEM B. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8726</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DE KERCKHOVE C. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8053</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DEN BROECK R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Commerciëel Leven Internationale Ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8251</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.97</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DEN BROUCKE A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8075</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DEN HAUTE J-P. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8051</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DEN HOUT E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Lichamelijke Schade</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8350</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN DIJCK S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8274</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN GANSEN M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8122</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/40388.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN HAELEN V. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8349</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN HAMMEE M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8574</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN HORENBEKE J. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8215</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN LANGENHOVE P.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/366.09.55</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/366.09.55</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">philippe.vanlangenhove@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN MULDERS S. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8505</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN WIN D. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8065</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VAN ZEIR M-A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8723</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDEN BROECK F.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">03/605.64.38</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">03/664.51.35</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">frank.vandenbroek@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDENBEMPT M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Regelaars Individueel Leven</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">016/64.06.26</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">016/83.42.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">marc.vandenbempt@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDENBERGHE H. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8021</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDENPUT M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/688.18.64</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/687.47.66</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">marc.vandenput@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDEPONTSEELE E. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8110</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ong.schade@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDEPUTTE Johan</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">055/45.60.84</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">johan.vandeputte@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDERLINDEN M.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Makelarij Leven Groep Lokaal</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDEROOST R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8321</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.dom.rc@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDERSTOCKT I. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8099</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANDERVORST M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijving schade ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8115</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.entreprise@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANHECKE F.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Makelarij Leven Groep Lokaal</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8210</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANHERBERGHEN M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijvingsupport Ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8031</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.31</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.entreprise@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VANKONINXLOO A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen schade+BA/Verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8336</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.85</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.dommage@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERBEECK A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8151</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERGAELEN M. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8093</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERHASSELT R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Leven Particulieren: Cliënteel</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8214</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.80.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.admin.leven@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERHAVERT A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Onderschrijvingsupport Ondernemingen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8354</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.90</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.ondern@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERHEYDEN N.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Europaea</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8721</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.87.99</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.europaea@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERMASSEN </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/362.37.16</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/362.31.87</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">guy.vermassen@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERMEERSCH R. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8343</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERMEULEN K. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8063</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.sin.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VERSTREKEN G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8107</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VLOGAERT R.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Regionaal Commerciëel Verantwoordelijken</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/466.71.47</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">rudy.vlogaert@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VONCK B.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Inspecteurs Makelarij Leven Groep Lokaal</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">055/42.80.88</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">055/42.80.88</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">VORIADIS A. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Arbeidsongevallen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8470</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.86.51</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.wet@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">WALRAVENS G. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Onderschrijving schade &amp; BA verschillende</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8316</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.prod.schade.ba@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">WALSCHAP L. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Schadegevallen Auto</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8047</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.92</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">g.schade.auto@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">WATTE </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Schadeinspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">09/231.70.14</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">gilbert.watte@generali.be</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">WETSELS I. </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Lichamelijke Schade</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.8078</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">02/403.88.89</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">ZARDINI </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">Niet-Leven : Technische Inspecteurs</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String">065/79.47.61</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="Default">
+     <ss:Data ss:Type="String"> </ss:Data>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+  <x:AutoFilter x:Range="R1:R262144">
+  </x:AutoFilter>
+ </ss:Worksheet>
+</ss:Workbook>
+

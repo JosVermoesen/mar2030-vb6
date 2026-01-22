@@ -1,0 +1,686 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc02878C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc84A78C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc09B78C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc01D78C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc85E78C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc0CF78C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc41188C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC6288C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc488A8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc079A8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:left;
+	vertical-align:top;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC1478C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ \[$€-1\]";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC1788C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ \[$€-1\]";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc010C8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC62C8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC64C8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ \[$€-1\]";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc0C6C8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8A8C8C20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>10.0.0.4109         </x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>Microsoft Office Spreadsheet</x:Caption>
+    </x:Label>
+    <x:Name>Sheet</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>15240</x:Height>
+     <x:Width>27014</x:Width>
+     <x:DisableUndo/>
+     <x:DoNotDisplayTitleBar/>
+     <x:ViewableRange>$1:$262144</x:ViewableRange>
+     <x:Selection>D14</x:Selection>
+     <x:TopRowVisible>4</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wc02878C20 cellpadding=0 cellspacing=0 x:str>
+ <col class=wc02878C20 width="77" style='mso-width-source:userset'>
+ <col class=wc02878C20 width="111">
+ <col class=wc02878C20 width="166">
+ <col class=wc02878C20 width="233">
+ <col class=wc02878C20 width="81" style='mso-width-source:userset'>
+ <col class=wc02878C20 width="65" style='mso-width-source:userset'>
+ <col class=wc02878C20 width="73" style='mso-width-source:userset'>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc84A78C20>&nbsp;</td>
+  <td class=wc09B78C20>&nbsp;</td>
+  <td class=wc09B78C20>&nbsp;</td>
+  <td class=wc09B78C20 x:str="DE GROOT GUY">DE GROOT GUY</td>
+  <td class=wc09B78C20>&nbsp;</td>
+  <td class=wc01D78C20>&nbsp;</td>
+  <td class=wc84A78C20>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc41188C20 x:str="DienstType">DienstType</td>
+  <td class=wcC6288C20 x:str="Referte">Referte</td>
+  <td class=wcC6288C20 x:str="Maatschappij">Maatschappij</td>
+  <td class=wc41188C20 x:str="Omschrijving">Omschrijving</td>
+  <td class=wc488A8C20 x:str="Premie EUR">Premie EUR</td>
+  <td class=wc079A8C20 x:str="Lasten &amp; Kosten">Lasten &amp; Kosten</td>
+  <td class=wc41188C20 x:str="Cumul">Cumul</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td x:str="Verzekering">Verzekering</td>
+  <td class=wc85E78C20 x:num="6185602">6185602</td>
+  <td class=wc85E78C20 x:str="0196: Mauretus/Audi">0196: Mauretus/Audi</td>
+  <td x:str="B.A.Auto (FRT609)">B.A.Auto (FRT609)</td>
+  <td class=wc0CF78C20 x:num="294.44">€ 294,44</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E5*0.05)" x:num="14.722000000000001">€
+  14,72</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E5+F5)" x:num="309.16199999999998">€ 309,16</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td x:str="Verzekering">Verzekering</td>
+  <td class=wc85E78C20 x:num="6728312">6728312</td>
+  <td class=wc85E78C20 x:str="0196: Mauretus/Audi">0196: Mauretus/Audi</td>
+  <td x:str="Omnium A.W. (FRT609)">Omnium A.W. (FRT609)</td>
+  <td class=wc0CF78C20 x:num="937.52">€ 937,52</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E6*0.05)" x:num="46.876000000000005">€
+  46,88</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G5+E6+F6)" x:num="1293.558">€ 1.293,56</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td x:str="Verzekering">Verzekering</td>
+  <td class=wc85E78C20 x:num="518126267">518126267</td>
+  <td class=wc85E78C20 x:str="0039: Axa Royale Belge">0039: Axa Royale Belge</td>
+  <td x:str="B.A.Familiale/Rechtsbijstand">B.A.Familiale/Rechtsbijstand</td>
+  <td class=wc0CF78C20 x:num="60.09">€ 60,09</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E7*0.05)" x:num="3.0045000000000002">€ 3,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G6+E7+F7)" x:num="1356.6524999999999">€
+  1.356,65</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td x:str="Verzekering">Verzekering</td>
+  <td class=wc85E78C20 x:num="811744532.">811744532</td>
+  <td class=wc85E78C20 x:str="0039: Axa Royale Belge">0039: Axa Royale Belge</td>
+  <td x:str="Brand Huur+Inhoud (Tulpenlaan18)">Brand Huur+Inhoud (Tulpenlaan18)</td>
+  <td class=wc0CF78C20 x:num="129.2">€ 129,20</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E8*0.05)" x:num="6.46">€ 6,46</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G7+E8+F8)" x:num="1492.3125">€ 1.492,31</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td x:str="Verzekering">Verzekering</td>
+  <td class=wc85E78C20 x:str="GP117019">GP117019</td>
+  <td class=wc85E78C20 x:str="0145: Generali/Europaea">0145: Generali/Europaea</td>
+  <td x:str="Rechtsbijstand Auto GLOBALE">Rechtsbijstand Auto GLOBALE</td>
+  <td class=wc0CF78C20 x:num="49.59">€ 49,59</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E9*0.05)" x:num="2.4795000000000003">€ 2,48</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G8+E9+F9)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E10*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G9+E10+F10)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E11*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G10+E11+F11)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E12*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G11+E12+F12)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E13*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G12+E13+F13)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E14*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G13+E14+F14)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E15*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G14+E15+F15)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E16*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G14+E15+F15)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E17*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G15+E16+F16)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E18*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G17+E18+F18)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E19*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G18+E19+F19)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E20*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G19+E20+F20)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E21*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G20+E21+F21)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(E22*0.05)" x:num="0">€ 0,00</td>
+  <td class=wc0CF78C20 x:fmla="=SUM(G21+E22+F22)" x:num="1544.3819999999998">€
+  1.544,38</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc41188C20>&nbsp;</td>
+  <td class=wcC6288C20 x:str="Totalen EUR">Totalen EUR</td>
+  <td class=wcC6288C20>&nbsp;</td>
+  <td class=wc41188C20>&nbsp;</td>
+  <td class=wcC1478C20 x:fmla="=SUM(E5:E23)" x:num="1470.84">1.470,84 €</td>
+  <td class=wcC1478C20 x:fmla="=SUM(F5:F23)" x:num="73.542000000000002">73,54 €</td>
+  <td class=wcC1478C20 x:fmla="=SUM(E24+F24)" x:num="1544.3819999999998">1.544,38
+  €</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20 x:str="Totalen BEF">Totalen BEF</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wcC1788C20 x:fmla="=SUM(E24*40.3399)" x:num="59333.538515999993">59.333,54
+  €</td>
+  <td class=wc010C8C20 x:fmla="=SUM(F24*40.3399)" x:num="2966.6769257999999">2.967
+  BF</td>
+  <td class=wc010C8C20 x:fmla="=SUM(G24*40.3399)" x:num="62300.215441799992">62.300
+  BF</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc41188C20>&nbsp;</td>
+  <td class=wcC6288C20 x:str="Maandelijks EUR">Maandelijks EUR</td>
+  <td class=wcC6288C20>&nbsp;</td>
+  <td class=wc41188C20>&nbsp;</td>
+  <td class=wcC62C8C20 x:fmla="=SUM(E24/12)" x:num="122.57">€ 122,57</td>
+  <td class=wc488A8C20>&nbsp;</td>
+  <td class=wcC64C8C20 x:fmla="=ROUND(SUM(G24/12),2)" x:num="128.7">128,70 €</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20 x:str="Maandelijks BEF">Maandelijks BEF</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0C6C8C20 x:fmla="=SUM(E27*40.3399)" x:num="4944.4615429999994">4.944
+  BF</td>
+  <td class=wc010C8C20>&nbsp;</td>
+  <td class=wc8A8C8C20 x:fmla="=SUM(G27*40.3399)" x:num="5191.7451299999993">5.192
+  BF</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc41188C20
+  x:str="Diensttypes: Verzekering, KredietLijn, HardSoftware, SoftwareService, wwwDomein, ASP Hosting, Housing">Diensttypes:
+  Verzekering, KredietLijn, HardSoftware, SoftwareService, wwwDomein, ASP
+  Hosting, Housing</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td class=wc85E78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td class=wc0CF78C20>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

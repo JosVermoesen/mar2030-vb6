@@ -1,0 +1,11 @@
+Microsoft Visual Studio Solution File, Format Version 1.00
+Project("{73393D18-DAC4-11D1-88FC-0000F8064EBB}") = "marIntegraal NET Studio", "vbiMAR.wip", "{72DF68F6-FA4C-11D5-AD70-0050DA6D1BE6}"
+EndProject
+Global
+	GlobalSection(LocalDeployment) = postSolution
+		StartupProject = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+	GlobalSection(BuildOrder) = postSolution
+		0 = {72DF68F6-FA4C-11D5-AD70-0050DA6D1BE6}
+	EndGlobalSection
+EndGlobal

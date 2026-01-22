@@ -1,0 +1,1266 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>3</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38D968">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1" ss:Underline="Single"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="@"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38DA64">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1" ss:Underline="Single"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="[$€-2]\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38DB60">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38DC5C">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="@"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38DDB0">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="[$€-2]\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C38DED4">
+   <ss:Alignment ss:Horizontal="Right" ss:Vertical="Top"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="[$€-2]\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C382A10">
+   <ss:Alignment/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C382BCC">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="@"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C382D04">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="[$€-2]\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C383E94">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="#,##0.00\ [$€-1]"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C3840AC">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="#,##0\ &quot;BF&quot;"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C3843BC">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+   <ss:NumberFormat ss:Format="[$€-2]\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C384578">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1"/>
+   <ss:Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+   <ss:NumberFormat ss:Format="#,##0.00\ [$€-1]"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C3836F8">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+   <ss:NumberFormat ss:Format="#,##0\ &quot;BF&quot;"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C11048C">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+   <ss:NumberFormat ss:Format="#,##0\ &quot;BF&quot;"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C382EC0">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8" ss:Bold="1" ss:Underline="Single"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C24C864">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="24"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="@"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0C241E78">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:Size="8"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="#,##0.00 [$€-813];[red]-#,##0.00 [$€-813]"/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label>
+   <c:Caption>Microsoft Office-werkblad</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>5</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>11.0.0.6555         </c:OWCVersion>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Worksheet ss:Name="VandergheynstMarga">
+  <x:WorksheetOptions>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R19C2</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="22"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="11.25" ss:StyleID="wc0C382A10">
+   <ss:Column ss:Width="60.0" ss:AutoFitWidth="0"/>
+   <ss:Column ss:Width="72.0" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="114.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="170.25"/>
+   <ss:Column ss:Width="56.25" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="42.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="49.5" ss:AutoFitWidth="0"/>
+   <ss:Row ss:AutoFitHeight="0" ss:StyleID="wc0C382EC0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38D968"/>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">106220004085</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">Vandergheynst Marga</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968"/>
+    <ss:Cell ss:StyleID="wc0C38DA64"/>
+   </ss:Row>
+   <ss:Row ss:Index="3" ss:Height="10.5" ss:AutoFitHeight="0"
+    ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">DienstType</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Referte</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maatschappij</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Omschrijving</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0">
+     <ss:Data ss:Type="String">Premie EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DED4">
+     <ss:Data ss:Type="String">Kosten</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Cumul</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">NZSWISS0706</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0664: Swiss Life</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Pensioensparen 600 € op jaarbasis</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">600</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">600</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">600</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="8" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Totalen EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-3]C:R[-1]C)">
+     <ss:Data ss:Type="Number">600</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-3]C:R[-1]C)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">600</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Totalen BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">24203.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">24203.94</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="11" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maandelijks EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3843BC" ss:Formula="=SUM(R[-3]C/12)">
+     <ss:Data ss:Type="Number">50</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0"/>
+    <ss:Cell ss:StyleID="wc0C384578" ss:Formula="=ROUND(SUM(R[-3]C/12),2)">
+     <ss:Data ss:Type="Number">50</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Maandelijks BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3836F8" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2016.9949999999999</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC"/>
+    <ss:Cell ss:StyleID="wc0C11048C" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2016.9949999999999</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="15" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Diensttypes: Verzekeringspremie, boekhoudservice, eService</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Splitsingskost jaarpremie bedraagt 6 %.  Pensioensparen en Lange termijnsparen steeds zonder kosten.  De kosten worden vermindert tot 3% mits deze</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">pensioensparen, lange termijnsparen, zorgverzekeringen e.a. via ons kantoor.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Wordt U totaalklant bank &amp; verzekeringen, dan zullen aangerekende splitsingskosten op het einde van elk jaar teruggegeven onder vorm van tussenkomst</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">in bankkosten financiële rekeningen (aangerekende portkosten, bankkaarten MAESTRO, VISA, Internetbankieren enz.)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Voor akkoord,</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+ <ss:Worksheet ss:Name="LavinDaniel">
+  <x:WorksheetOptions>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R1:R262144</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="21"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="11.25" ss:StyleID="wc0C382A10">
+   <ss:Column ss:Width="60.0" ss:AutoFitWidth="0"/>
+   <ss:Column ss:Width="72.0" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="114.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="170.25"/>
+   <ss:Column ss:Width="56.25" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="42.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="49.5" ss:AutoFitWidth="0"/>
+   <ss:Row ss:AutoFitHeight="0" ss:StyleID="wc0C382EC0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38D968"/>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">106220004085</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">Lavin Daniël</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968"/>
+    <ss:Cell ss:StyleID="wc0C38DA64"/>
+   </ss:Row>
+   <ss:Row ss:Index="3" ss:Height="10.5" ss:AutoFitHeight="0"
+    ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">DienstType</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Referte</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maatschappij</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Omschrijving</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0">
+     <ss:Data ss:Type="String">Premie EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DED4">
+     <ss:Data ss:Type="String">Kosten</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Cumul</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">NZSWISS0606</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0664: Swiss Life</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Pensioensparen gemaximaliseerd</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">800</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">800</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">800</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="8" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Totalen EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-3]C:R[-1]C)">
+     <ss:Data ss:Type="Number">800</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-3]C:R[-1]C)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">800</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Totalen BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">32271.919999999998</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">0</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">32271.919999999998</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="11" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maandelijks EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3843BC" ss:Formula="=SUM(R[-3]C/12)">
+     <ss:Data ss:Type="Number">66.666666666666671</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0"/>
+    <ss:Cell ss:StyleID="wc0C384578" ss:Formula="=ROUND(SUM(R[-3]C/12),2)">
+     <ss:Data ss:Type="Number">66.67</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Maandelijks BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3836F8" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2689.3266666666668</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC"/>
+    <ss:Cell ss:StyleID="wc0C11048C" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2689.4611330000002</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="15" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Diensttypes: Verzekering, KredietLijn, eService</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Splitsingskost jaarpremie bedraagt 6 %.  Deze vermindert tot 3% mits levensverzekeringen, pensioensparen, zorgverzekeringen via ons kantoor</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Wordt U totaalklant bank &amp; verzekeringen, dan zullen aangerekende splitsingskosten op het einde van elk jaar teruggegeven onder vorm van tussenkomst</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">in bankkosten financiële rekeningen (aangerekende portkosten, bankkaarten MAESTRO, VISA, Internetbankieren enz.)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Voor akkoord,</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+ <ss:Worksheet ss:Name="VanBuggenhoutGeert">
+  <x:WorksheetOptions>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R21:R27</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="27"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="11.25" ss:StyleID="wc0C382A10">
+   <ss:Column ss:Width="60.0" ss:AutoFitWidth="0"/>
+   <ss:Column ss:Width="72.0" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="114.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="170.25"/>
+   <ss:Column ss:Width="56.25" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="42.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="49.5" ss:AutoFitWidth="0"/>
+   <ss:Row ss:Height="34.5" ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C24C864">
+     <ss:Data ss:Type="String">Overzichtstaat Domiciliëringen per 07/2006</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="3" ss:AutoFitHeight="0" ss:StyleID="wc0C382EC0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38D968"/>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">106220004085</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">Van Buggenhout Geert</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:Data ss:Type="String" x:Ticked="1">053146836631</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DA64"/>
+   </ss:Row>
+   <ss:Row ss:Index="5" ss:Height="10.5" ss:AutoFitHeight="0"
+    ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">DienstType</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Referte</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maatschappij</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Omschrijving</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0">
+     <ss:Data ss:Type="String">Premie EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DED4">
+     <ss:Data ss:Type="String">Kosten</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Cumul</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="7" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="Number">1284660</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0687: D.A.S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Recht THL932 + Recht Familie gecombineerd</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">96</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">5.76</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">101.76</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">1P224250</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0196: Nateus</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">B.A.Auto THL932</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C241E78">
+     <ss:Data ss:Type="Number">301.14</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">18.068399999999997</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">420.96839999999997</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">3B224282</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0196: Nateus</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Brand Huur/Inhoud ER (op naam Geert)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">164.32</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">9.8591999999999995</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">595.1475999999999</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">NCN300051073</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0097: Agf Belgium</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Veiligheid Bestuurder GR plaat THL932</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">58.22</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">3.4931999999999999</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">656.86079999999993</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">2G224290</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">0196: Nateus</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:Data ss:Type="String">B.A.Familiale</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:Data ss:Type="Number">50.75</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.06)">
+     <ss:Data ss:Type="Number">3.0449999999999999</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">710.65579999999989</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="14" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Totalen EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-7]C:R[-1]C)">
+     <ss:Data ss:Type="Number">670.43000000000006</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-7]C:R[-1]C)">
+     <ss:Data ss:Type="Number">40.2258</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:Data ss:Type="Number">710.65580000000011</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Totalen BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">27045.079157000004</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">1622.7047494200001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">28667.783906420005</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="17" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:Data ss:Type="String">Maandelijks EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3843BC" ss:Formula="=SUM(R[-3]C/12)">
+     <ss:Data ss:Type="Number">55.869166666666672</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0"/>
+    <ss:Cell ss:StyleID="wc0C384578" ss:Formula="=ROUND(SUM(R[-3]C/12),2)">
+     <ss:Data ss:Type="Number">59.22</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Maandelijks BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3836F8" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2253.756596416667</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC"/>
+    <ss:Cell ss:StyleID="wc0C11048C" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:Data ss:Type="Number">2388.9288780000002</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="21" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:Data ss:Type="String">Diensttypes: Verzekering, KredietLijn, eService</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:Index="23" ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Splitsingskost jaarpremie bedraagt 6 %.  Deze vermindert tot 3% mits levensverzekeringen, pensioensparen, zorgverzekeringen via ons kantoor</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Wordt U totaalklant bank &amp; verzekeringen, dan zullen aangerekende splitsingskosten op het einde van elk jaar teruggegeven onder vorm van tussenkomst</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">in bankkosten financiële rekeningen (aangerekende portkosten, bankkaarten MAESTRO, VISA, Internetbankieren enz.)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+   </ss:Row>
+   <ss:Row ss:Index="27" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:Data ss:Type="String">Voor akkoord,</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC"/>
+    <ss:Cell ss:StyleID="wc0C382A10"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+    <ss:Cell ss:StyleID="wc0C382D04"/>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+ <ss:Worksheet ss:Name="DeniseRoelandt">
+  <ss:Names>
+   <ss:NamedRange ss:Name="Print_Area" ss:RefersTo="=DeniseRoelandt!R1C1:R23C7"/>
+  </ss:Names>
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R33C1</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+   <x:Unsynced/>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="19"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="11.25" ss:StyleID="wc0C382A10">
+   <ss:Column ss:Width="60.0" ss:AutoFitWidth="0"/>
+   <ss:Column ss:Width="72.0" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="114.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382BCC"/>
+   <ss:Column ss:Width="170.25"/>
+   <ss:Column ss:Width="56.25" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="42.75" ss:AutoFitWidth="0" ss:StyleID="wc0C382D04"/>
+   <ss:Column ss:Width="49.5" ss:AutoFitWidth="0"/>
+   <ss:Row ss:AutoFitHeight="0" ss:StyleID="wc0C382EC0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38D968">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String" x:Ticked="1">108180007509</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String" x:Ticked="1">Roelandt Denise</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38D968">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String" x:Ticked="1">935007824926</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DA64">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="3" ss:Height="10.5" ss:AutoFitHeight="0"
+    ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">DienstType</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Referte</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Maatschappij</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Omschrijving</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Premie EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DED4">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Kosten</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Cumul</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="5" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">852178</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0687: D.A.S.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Bijstand Na Brand (Eigen woning)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">27</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1.35</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">28.35</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1095616</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0096: Mercator Verzekeringen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Kinderspaarplan (Nathalie)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">297.47</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">14.873500000000002</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">340.69350000000003</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">203861691</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0739: D.K.V.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Hospitalisatie PLANI+ met ZZ (Denise, vrijstelling BEF10000)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">421.91</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">21.095500000000001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">783.69900000000007</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">590856087</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0039: Axa Belgium</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">B.A.Familiale/Rechtsbijstand (Uitgebreide waarborg Familie)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">66.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">3.347</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">853.9860000000001</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Verzekering</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">890203450</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0039: Axa Belgium</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Brand Combi 2000 (Herdersem, Hardingstraat 8)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">180.43</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">9.0215000000000014</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1043.4375000000002</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">ADSL</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">BCN99103035</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">0001: Roelandt &amp; Vermoesen</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382A10">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Always ADSL Versatel (053772784)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">358.8</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(RC[-1]*0.05)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">17.94</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04" ss:Formula="=SUM(R[-1]C+RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1420.1775000000002</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="12" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Totalen EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-7]C:R[-1]C)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1352.5500000000002</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(R[-7]C:R[-1]C)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">67.627500000000012</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C383E94" ss:Formula="=SUM(RC[-2]+RC[-1])">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">1420.1775000000002</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Totalen BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">54561.731745000005</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">2728.0865872500003</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">57289.818332250012</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="15" ss:AutoFitHeight="0" ss:StyleID="wc0C38DB60">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Maandelijks EUR</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DC5C">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3843BC" ss:Formula="=SUM(R[-3]C/12)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">112.71250000000002</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C38DDB0">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C384578" ss:Formula="=ROUND(SUM(R[-3]C/12),2)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">118.35</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Maandelijks BEF</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C3836F8" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">4546.8109787500007</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C3840AC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C11048C" ss:Formula="=SUM(R[-1]C*40.3399)">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="Number">4774.2271649999993</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:AutoFitHeight="0">
+    <ss:Cell ss:Index="2" ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="19" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc0C38DB60">
+     <ss:NamedCell ss:Name="Print_Area"/>
+     <ss:Data ss:Type="String">Diensttypes: Verzekering, KredietLijn, HardSoftware, SoftwareService, wwwDomein, ASP Hosting, Housing</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382BCC">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:Index="5" ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0C382D04">
+     <ss:NamedCell ss:Name="Print_Area"/>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+</ss:Workbook>
+

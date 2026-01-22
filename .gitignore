@@ -1,0 +1,9 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+*.msi
+*.exe
+
+
+# Telebib2.mdb
+marVB6/Telebib2.mdb

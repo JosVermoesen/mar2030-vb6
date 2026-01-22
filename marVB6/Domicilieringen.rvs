@@ -1,0 +1,619 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;}
+.wc85787C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc4B887C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc0C987C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC9A87C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc03C87C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\@";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC0D87C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8ED87C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:center;
+	vertical-align:middle;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc042B7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ \[$€-1\]";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc066B7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8E9B7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\[$€-2\]\\ \#\,\#\#0\.00";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	background:#CCFFCC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8ABB7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ \[$€-1\]";
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	background:#FFCC99;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc82EB7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	background:#CCFFCC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcCDFB7C2
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\\ \0022BF\0022";
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	background:#FFCC99;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc810072D
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc0E7172D
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc85A172D
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc80212AF
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>9.0.0.4309</x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>marIntegraal.NET XP-Rekenblad</x:Caption>
+    </x:Label>
+    <x:Name>Blad1</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>15161</x:Height>
+     <x:Width>27014</x:Width>
+     <x:DoNotDisplayTitleBar/>
+     <x:DoNotDisplayToolBar/>
+     <x:ViewableRange>1:65536</x:ViewableRange>
+     <x:Selection>C20</x:Selection>
+     <x:TopRowVisible>0</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wc810072D x:str>
+ <col class=wc810072D width="75">
+ <col class=wc810072D width="111">
+ <col class=wc810072D width="155">
+ <col class=wc810072D width="220">
+ <col class=wc810072D width="81">
+ <col class=wc810072D width="77" style='mso-width-source:userset'>
+ <col class=wc810072D width="66">
+ <tr height="17">
+  <td class=wc0E7172D></td>
+  <td class=wc85787C2 x:str="101010001824"></td>
+  <td class=wc85787C2 x:str="ARIJS - VERMOESEN"></td>
+  <td class=wc85787C2 x:str="935003843882"></td>
+  <td class=wc4B887C2></td>
+  <td class=wc4B887C2></td>
+  <td class=wc0E7172D></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2></td>
+  <td class=wc810072D></td>
+ </tr>
+ <tr height="19" style='mso-height-source:userset;mso-height-alt:285'>
+  <td class=wc85A172D>DienstType</td>
+  <td class=wc03C87C2 x:str="Referte"></td>
+  <td class=wc03C87C2 x:str="Maatschappij"></td>
+  <td class=wc85A172D>Omschrijving</td>
+  <td class=wcC0D87C2 x:str="Premie EUR"></td>
+  <td class=wc8ED87C2 x:str="Last&amp;Kost"></td>
+  <td class=wc85A172D>Cumul</td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2></td>
+  <td class=wc810072D></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D x:autofilter="all" x:autofilterrange="$5:$22">Verzekering</td>
+  <td class=wc0C987C2 x:str="0008800006" x:autofilter="all"></td>
+  <td class=wc0C987C2 x:str="0001: Brokers Assistance" x:autofilter="all"></td>
+  <td class=wc810072D x:autofilter="all">Assistance Plus (ENB844)</td>
+  <td class=wcC9A87C2 x:num="72.93" x:autofilter="all"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E5*0.05)" x:num="3.6465000000000005"
+  x:autofilter="all"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E5+F5)" x:num="76.57650000000001"
+  x:autofilter="all"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="6722637"></td>
+  <td class=wc0C987C2 x:str="0196: Mauretus/Audi"></td>
+  <td class=wc810072D>Omnium A.W. (ENB844)</td>
+  <td class=wcC9A87C2 x:num="464.84"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E6*0.05)" x:num="23.242000000000001"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G5+E6+F6)" x:num="564.6585"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="190956139"></td>
+  <td class=wc0C987C2 x:str="0039: Axa Royale Belge"></td>
+  <td class=wc810072D>Hospitalisatie (Jos)</td>
+  <td class=wcC9A87C2 x:num="69.36"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E7*0.05)" x:num="3.468"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G6+E7+F7)" x:num="637.48649999999998"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="394901"></td>
+  <td class=wc0C987C2 x:str="0356: L.A.R."></td>
+  <td class=wc810072D>Rechtsbijstand volledig privaat leven</td>
+  <td class=wcC9A87C2 x:num="99.16"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E8*0.05)" x:num="4.9580000000000002"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G7+E8+F8)" x:num="741.60449999999992"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="3234059"></td>
+  <td class=wc0C987C2 x:str="0196: Mauretus/Audi"></td>
+  <td class=wc810072D>Rechtsbijstand Auto Super (ENB844)</td>
+  <td class=wcC9A87C2 x:num="42.02"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E9*0.05)" x:num="2.1010000000000004"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G8+E9+F9)" x:num="785.7254999999999"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="518016627"></td>
+  <td class=wc0C987C2 x:str="0039: Axa Royale Belge"></td>
+  <td class=wc810072D>Persoonlijke Ongevallen (Nicky)</td>
+  <td class=wcC9A87C2 x:num="48.79"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E10*0.05)" x:num="2.4395000000000002"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G9+E10+F10)" x:num="836.95499999999981"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="519003972001"></td>
+  <td class=wc0C987C2 x:str="0039: Axa Royale Belge"></td>
+  <td class=wc810072D>B.A. Uitbating (Podologe)</td>
+  <td class=wcC9A87C2 x:num="98.36"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E11*0.05)" x:num="4.9180000000000001"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G10+E11+F11)" x:num="940.23299999999983"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="811374698"></td>
+  <td class=wc0C987C2 x:str="0039: Axa Royale Belge"></td>
+  <td class=wc810072D>Brand (Molenstraat 8)</td>
+  <td class=wcC9A87C2 x:num="188.57"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E12*0.05)" x:num="9.4284999999999997"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G11+E12+F12)" x:num="1138.2314999999999"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="6181037"></td>
+  <td class=wc0C987C2 x:str="0196: Mauretus/Audi"></td>
+  <td class=wc810072D>B.A. Auto (ENB844)</td>
+  <td class=wcC9A87C2 x:num="279.32"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E13*0.05)" x:num="13.966000000000001"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G12+E13+F13)" x:num="1431.5174999999997"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="GE110058"></td>
+  <td class=wc0C987C2 x:str="0145: Generali Belgium"></td>
+  <td class=wc810072D>Auriga ALLE bestuurders (ENB844)</td>
+  <td class=wcC9A87C2 x:num="36.64"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E14*0.05)" x:num="1.8320000000000001"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G13+E14+F14)" x:num="1469.9894999999999"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D>Verzekering</td>
+  <td class=wc0C987C2 x:str="518016329"></td>
+  <td class=wc0C987C2 x:str="0039: Axa Royale Belge"></td>
+  <td class=wc810072D>B.A. Familiale/Rechtsbijstand</td>
+  <td class=wcC9A87C2 x:num="57.73"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E15*0.05)" x:num="2.8864999999999998"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G14+E15+F15)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E16*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G14+E15+F15)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E17*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G15+E16+F16)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E18*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G17+E18+F18)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E19*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G18+E19+F19)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E20*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G19+E20+F20)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E21*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G20+E21+F21)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(E22*0.05)" x:num="0"></td>
+  <td class=wcC9A87C2 x:fmla="=SUM(G21+E22+F22)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2></td>
+  <td class=wc810072D></td>
+ </tr>
+ <tr height="17">
+  <td class=wc85A172D></td>
+  <td class=wc03C87C2 x:str="Totalen EUR"></td>
+  <td class=wc03C87C2></td>
+  <td class=wc85A172D></td>
+  <td class=wc042B7C2 x:fmla="=SUM(E5:E23)" x:num="1457.72"></td>
+  <td class=wc042B7C2 x:fmla="=SUM(F5:F23)" x:num="72.885999999999996"></td>
+  <td class=wc042B7C2 x:fmla="=SUM(E24+F24)" x:num="1530.606"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2 x:str="Totalen BEF"></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wc066B7C2 x:fmla="=SUM(E24*40.3399)" x:num="58804.279028000004"></td>
+  <td class=wc066B7C2 x:fmla="=SUM(F24*40.3399)" x:num="2940.2139514"></td>
+  <td class=wc066B7C2 x:fmla="=SUM(G24*40.3399)" x:num="61744.492979399998"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc810072D></td>
+  <td class=wc0C987C2></td>
+  <td class=wc0C987C2></td>
+  <td class=wc810072D></td>
+  <td class=wcC9A87C2></td>
+  <td class=wcC9A87C2></td>
+  <td class=wc810072D></td>
+ </tr>
+ <tr height="17">
+  <td class=wc85A172D></td>
+  <td class=wc03C87C2 x:str="Maandelijks EUR"></td>
+  <td class=wc03C87C2></td>
+  <td class=wc85A172D></td>
+  <td class=wc8E9B7C2 x:fmla="=SUM(E24/12)" x:num="121.47666666666667"></td>
+  <td class=wcC0D87C2></td>
+  <td class=wc8ABB7C2 x:fmla="=SUM(G24/12)" x:num="127.5505"></td>
+ </tr>
+ <tr height="17">
+  <td class=wc80212AF></td>
+  <td class=wc0C987C2 x:str="Maandelijks BEF"></td>
+  <td class=wc0C987C2></td>
+  <td class=wc80212AF></td>
+  <td class=wc82EB7C2 x:fmla="=SUM(E27*40.3399)" x:num="4900.3565856666673"></td>
+  <td class=wc066B7C2></td>
+  <td class=wcCDFB7C2 x:fmla="=SUM(G27*40.3399)" x:num="5145.3744149499998"></td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

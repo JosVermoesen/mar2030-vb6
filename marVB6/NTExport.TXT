@@ -1,0 +1,429 @@
+053/41.31.75;Dhr. Roelandt Marc;Mw. Dierick Suzy;Bredestraat 346;B-9300 Aalst;    34774.22
+;J.M.B.;Dhr. Beeckman Joris;Houtemstraat 112;B-9552 Borsbeke;    15638.11
+053/21.59.25;Bvba Roelandt Hedwig&Vermoesen Jos;Zakenkantoor;Kouterbaan 25;B-9310 Herdersem;     8352.98
+ ;Siau - De Vos V.O.F.;Mr&Mw Siau Bart - De Vos Sara;Galglaan 22;B-9000 Gent;     8230.99
+053/70.10.09;Dhr. Debruyn Hedwig;Mw. Huylebroeck Anna-Marie;Katelijnestraat 4;B-9308 Hofstade (o.-vl.);     6941.25
+ ;Bvba Sico;Mr&Mw Siau Paul, De Ridder Emilienne;Baron Romain Moyersoenpark 28;B-9300 Aalst;     6214.40
+053/66.26.24;Dhr. Witterzeel David;Mw. Van Der Hoeven Rita;Broekstraat 139;B-9473 Welle;     6150.76
+09/362.96.85;Mw. Arijs Rose-Marie;;Molenstraat 8;B-9860 Balegem;     6143.37
+053784884;Dhr. Deweer Philippe;Mw. Waeterloos Chantal;Gevergemveldbaan 23;B-9310 Moorsel;     5726.37
+ ;Dhr. Permentier Luciaan;Mw. Permentier Simonne;Bergekouter 144;B-9300 Aalst;     5481.51
+052/21.84.12;Dhr. Van De Velde Roger;Mw. Librecht Annie;Bleienpark 37;B-9200 Oudegem;     5294.04
+ ;Dhr. Wellekens Kurt;;Driehoekstraat 23A;B-9320 Erembodegem;     5244.02
+053/78.66.40;Dhr. De Brul Frans;Mw. Van Cauwenbergh Christiane;Bosveld 4 A;B-9300 Aalst;     5196.90
+053/70.16.53;Dhr. Roelandt Ferdinand;Mw. Verdurmen Godelieve;Dompelstraat 13 B;B-9300 Aalst;     5094.96
+053/70.48.75;Dhr. Bockstael William;Mw. Van Den Berghe Denise;Anjersstraat 59;B-9308 Hofstade (o.-vl.);     5040.00
+ ;Dhr. Temsamani Mustapha;Mw. Dubois magda;Broekstraat 34;B-9310 Herdersem;     4995.66
+ ;Mw. Put Marie-Paule;;Koekeroel 55;B-9310 Herdersem;     4939.80
+053/700.800;Dhr. Van Keymeulen Jan Pierre;Mw. Van De Meerssche Georgette;Anjersstraat 40;B-9308 Hofstade (o.-vl.);     4906.24
+ ;Bvba Pavele;Dhr. Verschaeve Ignace;Axelwalle 19;B-9700 Heurne;     4803.42
+053/833967;Dhr. Coen Ronny;Mw. Van De Sype Conny;Kantonstraat 56;B-9320 Nieuwerkerken (aalst);     4728.58
+;Firma Buyle Antoin;;Grote Baan 161;B-9310 Herdersem;     4664.84
+053/70.08.49;Dhr. Van Durme Gustaaf;;Hopstraat 20;B-9300 Aalst;     4448.58
+053/78.85.96;Dhr. D'Haeseleer Paul;Mw. Huylebroeck Magda;Meersstraat 41;B-9308 Gijzegem;     4309.16
+0486442929 j;Dhr. Verdickt Jos;Mw. Buys Myriam;Meerstraat 123;B-1840 Londerzeel;     4307.25
+053/77.07.82;Dhr. De Cock Marc;Mw. Couckuyt Andrea;Kouterbaan 9;B-9310 Herdersem;     4129.90
+053 67 10 09;Dhr. De Schrijver Dirk;Mw. Peirlinck Erna;Kortestraat 48;B-9473 Welle;     4032.36
+053/21.59.25;Mw. Roelandt Hedwig;;Kouterbaan 25;B-9310 Herdersem;     3958.43
+ ;Dhr. Van Der Hoeven Marc;Mw. Van De Weghe Hilde;Bremtstraat 113;B-1790 Teralfene;     3827.38
+053784884;N.V. Watro Beheer;;Gevergemveldbaan 23;B-9310 Moorsel;     3796.55
+053/70.05.99;Dhr. De Cock Wim;Mw. Smekens Wendy;Kouterbaan 2;B-9310 Herdersem;     3749.36
+052/21.43.80;Bvba Van Gucht Natuursteen;;Acacialaan 14;B-9200 Sint-gillis-bij-dendermo;     3632.03
+053/77.75.49;Dhr. De Ridder Herman;Mw. Sentobin Marie-Therese;Hardingstraat 48;B-9310 Herdersem;     3626.72
+053/21.64.82;Dhr. De Man Peter;Mw. Van Keymeulen Anja;Beekkant 1;B-9310 Herdersem;     3605.44
+053/67.06.48;Dhr. De Rouck Norbert;Mw. Mertens Marlene;Moortelveld 3;B-9473 Welle;     3603.44
+053/21.32.26;Mw. De Schrijver Martine;Dhr. Lambrecht Patrick;Sinte Annalaan 108;B-9300 Aalst;     3503.64
+053/78.45.17;Dhr. Van Cauter Octaaf;;Koekeroel 9;B-9310 Herdersem;     3499.99
+053/83.60.80;N.V. Vanden Hole;;Oudenaardsesteenweg 376;B-9420 Erpe-Mere;     3407.89
+052/21.33.97;Dhr. Troffaes Hugo;Mw. Huylebroeck Lutgarde;Mespelarestraat 40;B-9200 Mespelare;     3368.31
+;Dhr. Van Immerzeele Johan;Mw. Beeckman Lucrece;Peperstraat 1;B-9550 Herzele;     3345.25
+053/70.20.26;Dhr. Van Lokeren Frans;Mw. Speeckaert Leontine;Oude Abdijstraat 37;B-9300 Aalst;     3338.48
+053/70.28.72;Dhr. Van Mossevelde Dirk;Mw. Arijs Els;Geldhofstraat 34;B-9300 Aalst;     3322.08
+053/77.27.84;Mw. Roelandt Denise;;Hardingstraat 8;B-9310 Herdersem;     3318.76
+ ;Dhr. Lemmens Patrick;Mw. Verleysen Peggy;Wijmenstraat 96;B-9340 Impe;     3302.08
+ ;Dhr. De Brul Frank;Mw. Verherstraeten Birgitt;Lange Nieuwstraat 67;B-9420 Erondegem;     3247.56
+053/66.58.83;Dhr. Vanhouche Michel;Mw. De Pauw Linda;Azalealaan 15;B-9470 Denderleeuw;     3208.06
+053/70.08.28;Dhr. Claessens Paul;Mw. Ruysbergh Alice;Oude Dendermondsestwg 310;B-9300 Aalst;     3150.22
+ ;Dhr. Bruyland Louis;Mw. Quintelier Monique;Broekstraat 32A;B-9310 Herdersem;     3134.04
+053/77.19.94;Dhr. Breckpot Gerrit;;Hyacintenstraat 56;B-9300 Aalst;     3121.42
+053/77.07.29;Dhr. Tombeur Peter;Mw. Put Marie-Paule;Koekeroel 55;B-9310 Herdersem;     3102.98
+;Mw. Moock Kathleen;;Kantonstraat 4 bus 4;B-9320 Nieuwerkerken (aalst);     3087.93
+052/42.57.94;Dhr. Everaert Dirk;Mw. Van Ranst Lucie;Boterhoek 36;B-9260 Wichelen;     3083.73
+ ;Dhr. Callebaut David;Mw. Goeman Katrien;Disgenaatdreef 4;B-9310 Herdersem;     3069.16
+053/77.23.23;Dhr. D'Hondt Louis;Mw. Rubbrecht Diane;Hammestraat 8;B-9300 Aalst;     2993.38
+053/77.48.80;Dhr. De Wolf Herman;Mw. Van Den Steen Ann;Broekstraat 45A;B-9310 Herdersem;     2966.68
+053/70.45.01;Dhr. Visart Jürgen;Mw. L'Ecluse Annick;Opwijksesteenweg 57;B-9310 Moorsel;     2959.47
+ ;Dhr. Heireman Joeri;;Dirk Martensstraat 42/1;B-9300 Aalst;     2955.04
+056/370465;Dhr. Allaerts Walter;Mw. Vanneste Claudine;Kortrijksestraat 90;B-8501 Heule;     2928.32
+053/70.15.17;Dhr. Van Der Stockt Rik;Mw. Beken Godelieve;Mazitsstraat 53;B-1790 Affligem;     2927.76
+09/362.24.63;Dhr. Beeckman Lucien;Mw. De Meue Mariette;Reigerstraat 92;B-9860 Oosterzele;     2922.70
+053/63.21.60;Dhr. Beeckman Joris;Mw. De Smet Evelyne;Houtemstraat 112;B-9552 Borsbeke;     2860.99
+053/77.93.35;Dhr. Buys Jozef;Mw. Van Cauwenberghe Hilde;Hof Ter Burchtstraat 1;B-9320 Erembodegem;     2837.85
+053/70.08.84;Dhr. Moens Pierre;Mw. Bieseman;Groenenbrielstraat 27;B-9320 Erembodegem;     2812.63
+053/77.49.01;Dhr. Meuleman Luc;Mw. Peleman Marie-José;Witgerstraat 22;B-9310 Herdersem;     2810.06
+053/77.00.77;Dhr. Leys Roland;Mw. Heyvaert Yvette;Schrovestraat 58;B-9280 Wieze;     2800.59
+09/362.41.98;Dhr. Van Eesbeek Danny;Mw. De Boever Nicole;Geraardsbergsesteenweg 268 D;B-9860 Balegem;     2794.64
+ ;Dhr. Van Vaerenbergh Roland;Mw. De Schrijver Anne-Marie;Ronsevaaldreef 56;B-9320 Erembodegem;     2770.73
+056/443708;Dhr. Matthys Gerard;Mw. Messiaen;Zwinstraat 54;B-8510 Marke (kortrijk);     2758.03
+053/21.66.12;Dhr. De Neef Jhonny;Mw. Derijst Emelda;Middenweg 17;B-9310 Herdersem;     2725.04
+053/78.03.42;Dhr. Bruyland Denis;Mw. De Cock Maria;Pontweg 27;B-9310 Herdersem;     2686.31
+0486600816;Mw. Cornand Veerle;;Klaterbaan 107;B-9300 Aalst;     2680.07
+ ;Dhr. Bruyland Toon;Mw. Bracke Karolien;Pontweg 53;B-9310 Herdersem;     2671.22
+053/77.90.53;Dhr. Van Langenhove Mario;Mw. Boel Pascale;Botermelkstraat 26;B-9300 Aalst;     2653.64
+02/219.21.89;Dhr. D'Haeseleer Kristof;Mw. Verberckmoes Eva;Rijke Klarenstraat 3;B-1000 Brussel;     2649.66
+053/67.25.51;Mw. Vandergheynst Marga;Dhr. Lavin Daniël;Kampstraat 55;B-9473 Welle;     2621.65
+053/41.91.18;Dhr. Klinckaert Ivan;Mw. Van Mol Kathleen;Leopoldlaan 37;B-9300 Aalst;     2600.19
+053/70.19.41;Dhr. Heyvaert Roger;Mw. Vermoesen Maria;Nieuwstraat 30;B-9280 Wieze - Lebbeke;     2594.94
+ ;Dhr. Willems Urbain;;Kouterbaan 72B;B-9310 Herdersem;     2588.83
+053/78.48.21;Dhr. Callebaut Carlos;Mw. De Meersman Jeanine;Pontweg 96;B-9310 Herdersem;     2558.43
+053/70.38.56;Dhr. Dierickx Gilbert;Mw. Vinck Hedwig;Pontweg 141;B-9310 Herdersem;     2519.31
+052/21.31.97;Bvba Ets. P. Pieters;;Werf 5 - 6;B-9200 Dendermonde;     2509.41
+;Mw. Baten Cindy;;Kapelleommegang 20;B-9310 Herdersem;     2506.14
+ ;Dhr. Moens Ludwig;Mw. Van De Broeck Anny;Perklaan 23;B-3390 Sint-joris-winge;     2504.02
+054/33.92.01;Dhr. Speybrouck Chris;Mw. De Cock Godelieve;Ankerstraat 37;B-9450 Denderhoutem;     2495.66
+ ;Dhr. Vinck Paul;Mw. Cassaer Leanne;'t Spieken 24;B-9300 Aalst;     2493.85
+ ;Dhr. Eeckhout Jonny;Mw. De Feyter;Elf dagwand 31;B-9473 Welle;     2454.91
+ ;Mw. Borloo Ilse;Dhr. Van Der Maelen Diego;Peehoopstraat  84;B-1770 Liedekerke;     2400.25
+ ;Dhr. De Man Johnny;Mw. Bogaerts Conny;Steenweg Op Aalst 30;B-9308 Hofstade (o.-vl.);     2399.34
+ ;Dhr. Cassiman Alexis;Mw. Lambrecht Jozee;Kouterbaan 42;B-9310 Herdersem;     2375.22
+053/78.34.31;Mw. Uyttersprot Yvonne;;Kapelleommegang 11;B-9310 Herdersem;     2374.28
+ ;Dhr. De Cock Rik;;Kouterbaan 9;B-9310 Herdersem;     2345.12
+050/41.82.24;Bvba Ok Travel;Dhr. De Geest Pol;Molenstraat 44;B-8370 Blankenberge;     2339.99
+052/41.32.57;Dhr. Schuddinck Rony;Mw. De Wit Christiane;Sint Corneliusstraat 10;B-9280 Denderbelle;     2317.41
+053/66.56.85;Mw. Baeyens Godelieve;Dhr. D'Hooghe Georges;Steenweg 169;B-9473 Welle;     2270.59
+053831899;Dhr. De Sutter Alfons;Mw. Ruysbergh Blondina;Deeskensveld 20;B-9451 Kerksken;     2264.89
+053/84.16.51;Mw. Ploskonos Olga;;Watervoorstraat 70;B-9451 Kerksken;     2261.81
+ ;Dhr. Van Der Eecken Marcel;Mw. Kennis Lilianne;Botermelkstraat 18;B-9300 Aalst;     2230.88
+053/77.27.26;Dhr. Lanckman Eddy;;Kouterbaan 51;B-9310 Herdersem;     2226.10
+ ;Dhr. Van De Vondel Antoin;Mw. Vercauteren An;Heikantstraat 36C;B-9290 Overmere;     2220.73
+052/42.24.05;Dhr. Roef Jozef;Mw. Everaert Paula;Klinkaertstraat 82;B-9200 Schoonaarde;     2209.34
+77 84 60;Dhr. Beulens paul;;Broekstraat 2;B-9310 Herdersem;     2183.70
+053/83.17.61;Dhr. Van Mulders Guido;;Langdries 40;B-9450 Haaltert;     2155.78
+ ;Mw. Van Nuffel Marie-Louise;;Stefaan De Jonghestraat 26;B-9300 Aalst;     2150.14
+053/66.95.80;Dhr. Vandergheynst Laurent;Mw. De Pril Eliane;Priester daenslaan 7;B-9473 Welle;     2111.14
+ ;Dhr. De Wolf Frans;;Baatmeers 14;B-9310 Herdersem;     2103.46
+053/70.13.50;Dhr. Everaert Jozef;Mw. Vastenavondt Lisette;Eegene 143;B-9200 Schoonaarde;     2100.55
+053/70.48.39;Dhr. Van Den Abbeele Marcel;Mw. Triest Emilienne;Popperodedries 9;B-9300 Aalst;     2098.05
+053809750;Dhr. De Meersman Christiaan;Mw. Arijs Lieve;Guido Gezellestraat 47;B-9340 Lede;     2083.65
+ ;Dhr. Linthout Marc;;Geldhofstraat 8;B-9300 Aalst;     2083.26
+;Mw. Vinck Marleen;;Kruisabeelstraat 69;B-9310 Moorsel;     2078.53
+ ;Dhr. Willems Wim;;Middenweg 32;B-9310 Herdersem;     2077.10
+ ;Dhr. Raemdonck Andre;Mw. Vercauteren Krista;Kloosterstraat 2;B-9200 Baasrode;     2068.31
+ ;Dhr. Eeckhaut Dirk;Mw. Roef Myriam;Dijkweg 15;B-9290 Berlare;     2060.30
+;Mej. Bauwens Inge;;Moorselbaan 464;B-9300 Aalst;     2037.90
+ ;Dhr. De Ridder Jan;Mw. De Ceukelaire Greetje;Desire De Wolfstraat 13;B-9300 Aalst;     2030.78
+ ;Dhr. Van Der Jeught Walter;;Alfons De Cockstraat 7;B-9310 Herdersem;     2027.57
+053/78.45.17;Mw. Van Dorpe Marie-Claire;;Koekeroel 9;B-9310 Herdersem;     2014.91
+053/83.45.08;Dhr. Van Den Eynde Marcel;;Baljuwsweg 13;B-9450 Haaltert;     1996.74
+059/26.75.66;Firma Jonckheere Jan & Dirk;;Gistelsesteenweg 13;B-8460 Westkerke;     1990.00
+ ;Dhr. Steenhout Frans;;Octaaf Van Dammestraat 65;B-9030 Mariakerke (gent);     1986.18
+053/83.35.70;Mw. Van Der Haegen Maria;;Beekstraat 44;B-9451 Kerksken;     1985.98
+ ;Dhr. Bruyland Mario;;Koekeroel 48;B-9310 Herdersem;     1971.77
+ ;Dhr. Witvrouwen Kris;Dhr. Bovie Steve;Beekstraat 16;B-9300 Aalst;     1955.76
+;Mw. Dierick Suzy;Dhr. Roelandt Marc;Bredestraat 346;B-9300 Aalst;     1953.70
+053/66.77.95;Mw. Van Praet Edwine;wwe. Triest Wilfried;Broekstraat 39;B-9473 Welle;     1944.60
+ ;Dhr. Van Belle Nicky;Mw. Buysse Ellen;Sint Lievenslaan 95 bus 501;B-9000 Gent;     1922.44
+ ;Mw. Schoonjans Hilde;;Petrus Van Nuffelstraat 19;B-9300 Aalst;     1903.89
+ ;Mej. Bal Daisy;;Groeneweg 24;B-9280 Wieze;     1893.26
+09/365.01.28;Dhr. Van Nuffel Siegfried;;Briel 80;B-9340 Smetlede;     1890.95
+053/78.33.95;Dhr. Scheerlinkx Guy;Mw. De Ridder Godelieve;Krekelstraat 13;B-9300 Aalst;     1851.08
+ ;Dhr. Vermandel Frederic;p/a Inge Bauwens;Moorselbaan 464;B-9300 Aalst;     1849.25
+053/78.68.35;Dhr. Laureys Constant;Mw. De Vis Elise;Scherreveldstraat 45;B-9300 Aalst;     1841.64
+053/83.01.45;Mw. Sterck Christine;Wwe. Verleysen Willy;Kerselaarstraat 10;B-9320 Nieuwerkerken (aalst);     1841.54
+053/21.36.64;Mw. De Wael Clemence;;Langestraat 220;B-9300 Aalst;     1833.29
+;Dhr. Moock Marc;;Hoogkouterbaan 29;B-9450 Haaltert;     1829.65
+053/782524;Dhr. Van Damme Joseph;Mw. De Meersman Godelieve;Grote Baan 117A;B-9310 Herdersem;     1827.31
+053/70.40.87;Dhr. Cassiman Omer;Mw. De Meersman Maria;Hof ter Hammestraat 25;B-9310 Herdersem;     1825.56
+ ;Dhr. Put Paul;Mw. Portier Peggy;Sasbaan 15;B-9280 Wieze;     1821.33
+053/78.93.82;Dhr. Kerbusch Johnny;Mw. Van Den Steen Hilde;Koekeroel 45;B-9310 Herdersem;     1816.96
+053/21.67.52;Dhr. Van Landuyt Freddy;Mw. Baert An;Populierenstraat 62;B-9310 Moorsel;     1809.52
+053/66.78.17;Mw. Bogaert Estella;wwe. Van Schelvergem Marcel;Schoolstraat 2C;B-9470 Denderleeuw;     1807.77
+ ;Dhr. Lauwerys Björn;;Meersstraat 227A;B-1770 Liedekerke;     1801.01
+053/66.69.43;Mw. De Maeght Yvonna        +;;Regentiestraat 117;B-9473 Welle;     1780.37
+053/66.89.11;Mw. De Brabanter Marie-Jeanne;;Broekstraat 45;B-9473 Welle;     1756.77
+053/78.21.91;Dhr. Van Langenhoven Paul;Mw. Vermeiren Marie-Louise;Kouterbaan 24;B-9310 Herdersem;     1755.50
+053/66.26.58;Mw. Scheerlinck Simonne;wwe. Wellekens Roger;Rodestraat 67;B-9470 Denderleeuw;     1745.17
+ ;Vermoesen Beheer;;Kouterbaan 25;B-9310 Herdersem;     1740.00
+053/77.29.38;Dhr. Van Heghe Marc;Mw. De Vuyst Marleen;Mijlbekelaan 35;B-9300 Aalst;     1739.28
+ ;Dhr. Vinck Rudy;;Kokstraat 9;B-9310 Moorsel;     1718.03
+;Dhr. Roelandt Dirk;Mw. Coppens Hilde;Brusselbaan 286B;B-9320 Erembodegem;     1707.48
+053/70.38.38;Dhr. De Corte Walter;Mw. De Smet Leona;Koekeroel 43;B-9310 Herdersem;     1700.18
+ ;Mw. Van Cauwenbergh Christiane;;Bosveld 4A;B-9300 Aalst;     1700.00
+053/77.50.43;Dhr. Steenhout Jan;;Grote baan 23;B-9310 Herdersem;     1685.88
+02/374.75.58;Mr. Briart André;;Square Des Mirabelles 3;B-1180 Uccle;     1677.52
+052/35.89.51;Dhr. Scheerlinckx Gert;Mw. Goeman Peggy;Rooien 47B;B-9280 Wieze;     1672.04
+053/78.28.15;Dhr. Maesschalck Roger;Mw. De Man Martina;H. Consciencestraat 27;B-9308 Hofstade (O.-Vl.);     1629.15
+052/44.54.19;N.V. Galvaton;Mr&Mw Kerremans Paul en Greet;Touwslagerstraat 4;B-9240 Zele;     1619.99
+053/77.72.46;Dhr. Bruyland Leon;Mw. Verbeeck Augusta;Gudstraat 41;B-9310 Herdersem;     1599.18
+053/78.20.37;Dhr. Heireman Adriaan;;Doriksveld 20;B-9308 Gijzegem;     1596.02
+053/70.44.04;Mw. Schuddinck Alice;;Grote Baan 51;B-9310 Herdersem;     1596.40
+ ;Dhr. Debbaut Christophe;;Zurendries 49;B-9320 Nieuwerkerken (aalst);     1586.23
+053/21.28.32;Dhr. Bal Vital;;Middenweg 36;B-9310 Herdersem;     1574.26
+053/78.53.13;Dhr. Van Den Abbeele Jozef;Mw. Demaret Karine;Botermelkstraat 42;B-9300 Aalst;     1534.61
+053/66.24.55;Dhr. Van De Velde Luc;Mw. Van Der Smissen;Kemelweg 50;B-9473 Welle;     1532.24
+016/78.99.01;Dhr. Mouton Jean-Luc;Mw. Vandersteen Marie-Anne;Landenstraat 40A;B-3350 Linter (Orsmaal);     1527.79
+ ;Dhr. Herinckx Tom;;Baron De Meerstraat 1;B-9310 Moorsel;     1523.66
+ ;Mw. De Waegeneer Lutgarde;Dhr. Visart Jean-Paul;Herdersem-Dorp 4;B-9310 Herdersem;     1519.84
+ ;Dhr. Wellemans Gunther;;Kerkstraat 191 bus 21;B-9473 Welle;     1510.81
+;Dhr. Lambrecht Patrick;Mw. De Schrijver Martine;Sinte Annalaan 108;B-9300 Aalst;     1506.37
+0479/75.2161;Dhr. Dubois Wilfried;Mw. Franck Annick;Alfons De Cockstraat 53;B-9310 Herdersem;     1503.98
+ ;Mw. Van De Meerssche Simonne;;Doolhofstraat 58A;B-9300 Aalst;     1501.31
+ ;Mw. Verberckmoes Eva;Mw. D'Haeseleer Kristof;Ieperlaan 25A;B-1000 Brussel 1;     1492.48
+053/78.35.15;Dhr. De Spiegeleer Johan;Mw. De Sadeleer;Arbeidsstraat 6;B-9300 Aalst;     1471.38
+053/66.47.57;Mw. Seminck Yvette;;Hazelaarstraat 3 Bus 12;B-9470 Denderleeuw;     1449.78
+ ;Mw. Vinck Alice;;Pontweg 15;B-9310 Herdersem;     1445.60
+ ;Dhr. Verbeiren Etienne;Mw. Ravijts Monique;Fresiastraat 14;B-9280 Lebbeke;     1445.25
+09/3690209;Dhr. Van Den Brempt Etienne;Mw. Rottiers Christiane;Huilaart 42;B-9260 Serskamp;     1444.25
+052/42.30.55;Dhr. Roef Paul;Mw. Van Driessche Annie;Steenweg Naar Wetteren 31;B-9200 Schoonaarde;     1443.00
+ ;Mw. Scheirlinckx Ilse;Dhr. De Clercq Tim;Pontweg 48;B-9310 Herdersem;     1440.62
+ ;Dhr. Lammens Willy;;Parklaan 48C B.7;B-9300 Aalst;     1439.54
+ ;Mw. Stevens Marina;;Baatmeers 14;B-9310 Herdersem;     1425.81
+053/77.35.85;Dhr. Van Geyt Paul;Mw. Jansegers;Pontweg 123;B-9310 Herdersem;     1399.92
+053/83.13.80;Mw. Coppens Sonja;Dhr. Moeyaert Johan;Hoogkouterbaan 74;B-9450 Haaltert;     1391.54
+ ;Mw. Verbeiren Martha;;Bookmolenstraat 253;B-9200 Baasrode;     1381.84
+053/71.18.16;Mw. Callebaut Sandra;;Hof Ter Hammestraat 3;B-9310 Herdersem;     1367.69
+ ;Dhr. De Bolle Jozef;Mw. Perdaen Rosa;Kouterbaan 30a;B-9310 Herdersem;     1368.26
+ ;Dhr. Van Den Brande Roger;Mw. Verbestel Nicole;Kapellestraat 120;B-9473 Welle;     1337.81
+ ;Dhr. Cassiman Johan;;Hoogstraat 9A;B-9280 Denderbelle;     1328.51
+053/78.84.59;Dhr. Lanckman Alfons;Mw. Vonck Rosa;Koekeroel 35;B-9310 Herdersem;     1322.36
+053 66 88 97;Mw. Broddelez Huguette;;Booglaan 45;B-9473 Welle;     1313.67
+;Dhr. De Groot Guy;;Tulpenlaan  18;B-9470 Denderleeuw;     1310.27
+ ;Bvba Drukkerij Schepens;;Grote baan 180;B-9310 Herdersem;     1305.26
+;Dhr. Hooghe Hans;;Sint Vincentiusstraat 13;B-9300 Aalst;     1293.19
+ ;Mw. Ediers Dionysia;wwe. Hanselaer;Broekstraat 6;B-9310 Herdersem;     1287.72
+0478252208;Mw. Tresinie Micheline;;Sluisvlietlaan 57;B-8450 Bredene;     1287.05
+ ;Dhr. Steenhout Jozef;Mw. Kurnianingsih Anna;Grote Kapellelaan 68;B-9340 Lede;     1286.25
+053/80.37.22;Dhr. Schepens Ronny;Mw. Van Caelenberg Madeleine;Ledestraat 55;B-9340 Impe;     1279.83
+ ;Dhr. Van Damme Jan;Mw. Van Molle Godelieve;Botermelkstraat 180;B-9300 Aalst;     1265.55
+09/230.88.32;Dhr. De Wit Peter;Mw. Capoen Pasc.;Koninginlaan 45;B-9820 Merelbeke;     1260.72
+02/374.75.58;Mme. Briart Fabienne;;Square des mirabelles 3;B-1180 Uccle;     1252.55
+ ;Mw. De Rocker Cindy;Dhr. Marynissen Timothy;Dendermondsesteenweg 12;B-9280 Lebbeke;     1252.31
+ ;Dhr. Verschaeve Ignace;Mw. Deprey Noëlla;Axelwalle 19;B-9700 Heurne;     1240.55
+ ;Dhr. Lossie Johnny;;Kampstraat  29;B-9473 Welle;     1228.26
+ ;Mw. Kiekens Yvonne;;Pieter Couckestraat 20;B-9300 Aalst;     1227.26
+053/78.71.19;Dhr. Gerard Stephane;Mw. Waterloos Marie Madeleine;Bauwensplaats 18;B-9300 Aalst;     1212.77
+;Dhr. Gerard Stephane;Mw. Waterloos Marie-Madeleine;Bauwensplaats 18;B-9300 Aalst;     1205.75
+052 22 35 87;Dhr. Steeman Frans;Mw. Van Weyenbergh Agnes;Mespelarestraat 39;B-9200 Mespelare;     1206.24
+053/21.38.76;Dhr. Janssens Albert;;Broekstraat 39;B-9310 Herdersem;     1200.24
+053/80.35.09;Dhr. Rosschaert Herman;Mw. Van Den Steen;Wijmenstraat 17;B-9340 Lede;     1199.52
+053/66.91.88;Mw. Vandenberghe Maria;Wwe. Chiau Gaston;Veldstraat 59;B-9470 Denderleeuw;     1193.97
+ ;Dhr. Leys Peter;Mw. Raes Isabel;Spoorwegstraat 45;B-9550 Herzele;     1193.08
+054/56.85.07;Mw. Gezels Magda;Wwe. D'Haeseleer Hedwig;Berghomstraat 8;B-1755 Gooik;     1183.36
+ ;Mw. Janssens Raymonde;;Kouter 28;B-8730 Sint-joris (beernem);     1170.10
+059/32.10.99;Bvba Gieterij Debaedts;;Victorialaan 69;B-8400 Oostende;     1138.54
+ ;Dhr. De Wolf Erwin;;Baatmeers 14;B-9310 Herdersem;     1128.99
+052/47.91.15;N.V. D'Hondt Keukens;;Moerheide 167-169;B-9220 Hamme (o.-vl.);     1120.00
+056/22.23.32;Electro Dobbeleir;Dhr. Dobbeleir Leonard;Oudenaardsesteenweg 143;B-8500 Kortrijk;     1120.00
+;Dhr. De buysere;;August Van Ackerstraat 10;B-9900 Eeklo;     1120.00
+ ;Mw. Bruyland Godelieve;Dhr. Cattrysse Herman;Evangeliestraat 107;B-9220 Hamme (o.-vl.);     1117.15
+053/78.30.42;Dhr. Tresinie Michel;Mw. Buys Emiliènne;Guido Gezellestraat 70;B-9300 Aalst;     1105.44
+ ;Dhr. Heireman Joris;;Doriksveld 20;B-9308 Gijzegem;     1103.50
+053/70.00.92;Mw. Van De Meerssche Delphina;wwe. Van Nuffel Rene;Koekeroel 32;B-9310 Herdersem;     1098.07
+013/33.54.08;Bvba TV Somers Macquoy;;Hasseltsestraat 75;B-3290 Diest;     1089.00
+053/66.86.69;Dhr. Van Den Driessche Ralph;Mw. Daem;Hoekstraat 46A;B-9472 Iddergem;     1088.21
+053/66.24.92;Dhr. Orwin Maurice;Mw. Van Der Niepen;Broekstraat 29;B-9473 Welle;     1076.76
+053/78.46.69;Mw. Thevelin Barbara;;Acaciastraat 7;B-9300 Aalst;     1076.29
+ ;Mw. Haems celesta;Mw. Haems josephine;Kouterbaan 13;B-9310 Herdersem;     1068.61
+ ;Mw. Hoebeeck Ann;;Sint-Rochusstraat 56;B-9320 Nieuwerkerken (aalst);     1065.31
+ ;Dhr. Breckpot Elias;Mw. Martens Mariette;Hyacintenstraat 56;B-9300 Aalst;     1063.40
+053/77.88.29;Dhr. Van Kerckhove Roger;Mw. Heyvaert Jacqueline;Kouterbaan 49;B-9310 Herdersem;     1059.68
+ ;Dhr. Van Rampelberg Jürgen;;Moenebroekstraat 53 B4;B-9506 Schendelbeke;     1058.84
+053/21.36.77;Dhr. Buyle Antoin;Mw. Hutsebaut Magda;Grote baan 161;B-9310 Herdersem;     1056.07
+ ;Dhr. Bruyland Bart;;Pontweg 27;B-9310 Herdersem;     1050.92
+053/70.53.65;Dhr. Van Nuffel Dirk;Mw. Schelck Maria;Vilainstraat 33;B-9300 Aalst;     1046.73
+053/21.21.26;Mw. Michiels Carine;;Aartstraat 52;B-9310 Herdersem;     1043.57
+053/77.34.82;Dhr. Souffreau Noël;Mw. De Waegeneer Maria;Koekeroel 57;B-9310 Herdersem;     1040.98
+053/77.64.41;Dhr. Hendrickx Marc;Mw. Cobbaut Marina;Grote baan 205;B-9310 Herdersem;     1027.06
+ ;Dhr. Roelandt Maurits;;Dompelstraat 13C;B-9300 Aalst;     1024.99
+053/78.73.03;Mw. Roelandt Angele;wwe. Willockx Armand;Sinte Annalaan 33;B-9300 Aalst;     1021.78
+ ;Dhr. Steenhaut Harry;Mw. De Boever Nelly;Acacialaan 34;B-9470 Denderleeuw;     1013.23
+053/78.52.09;Dhr. Van Mossevelde Robert;Mw. Vermoesen Gaby;Alfons De Cockstraat 6;B-9310 Herdersem;     1012.12
+053/62.16.11;Dhr. Immegeers Raphael;Mw. Van Den Ryse;Biezenstraat 6;B-9420 Burst;     1003.65
+ ;Dhr. De Lepeleer Jan;;Affligemsestraat 431 B11;B-1770 Liedekerke;     1002.44
+ ;Mw. Buys Joanna;Wwe. De Ridder Jozef;H. hartlaan 109;B-9300 Aalst;      988.19
+053/78.75.76;Mw. Coppens Denise;;Kouterbaan 50;B-9310 Herdersem;      984.09
+;Dhr. Dooremont Emile;Mw. Ringoir Paula;Doornveld 21;B-9300 Aalst;      981.91
+053771073;Dhr. Coppens Willy;Mw. Van Gucht Emiliènne;Rietstraat 3;B-9320 Erembodegem;      976.57
+053/67.24.39;Dhr. Lievens Jozef;Mw. Beeckman;Hertstraat 18;B-9473 Welle;      976.19
+053/77.55.54;Mw. Van Aerde Jeanine;Wwe. De Brabanter Emiel;Hoogkouterbaan 69;B-9450 Haaltert;      974.22
+ ;Dhr. De Kock-De Bruyn William;;Broekstraat 59;B-9473 Welle;      971.89
+ ;Dhr. Moock Jozef;;Hoogkouterbaan 29;B-9450 Haaltert;      964.30
+ ;Nal. Suenaert alfons;;Broekstraat 49;B-9310 Herdersem;      962.98
+ ;Dhr. Bruyland Koen;Mw. Van Den Abbeele Daphne;Kapittelstraat 27;B-9280 Wieze;      960.54
+ ;Mw. Suenaert Magdalena;;Broekstraat 59;B-9310 Herdersem;      956.51
+ ;Dhr. Van Rampelbergh Andre;;Van Lierdestraat 7 Bus 1;B-9470 Denderleeuw;      955.58
+053/66.11.37;Dhr. De Bruyn Fritz;;Autostradelaan 28;B-9320 Erembodegem;      950.26
+053/66.25.22;Dhr. Mertens Richard              +;Mw. Van Assche Elza;Kattestraat 36;B-9473 Welle;      940.25
+053/21.21.26;Dhr. Michiels Gustaaf;Mw. Van den Steen Denise;Aartstraat 52;B-9310 Herdersem;      936.12
+ ;Dhr. Van Geert Felix;;Varent 19;B-9320 Erembodegem;      935.04
+053/77.98.33;Dhr. Van Hauwermeiren Marcel;Mw. De Man Suzanne;Herdersem-Dorp 10;B-9310 Herdersem;      930.06
+ ;Dhr. De Wolf Clement;;Loddershoekstraat 15;B-1741 Wambeek;      920.98
+053/67.08.07;Dhr. Hooreman John;;Sint Amandsstraat 3;B-9470 Denderleeuw;      917.95
+053/77.34.93;Dhr. De Wit Herman;Mw. Willems Suzanne;Kouterbaan 72a;B-9310 Herdersem;      916.24
+053/66.79.09;Dhr. Wijnant Maurits;Mw. Van Schelvergem;Steenveldlaan 5;B-9470 Denderleeuw;      912.04
+053/21.32.56;Dhr. Snoeck Dirk;Mw. Van Den Brande Arlette;Walburgaweg 28;B-9310 Meldert (o.-vl.);      906.07
+053/67.06.87;Mw. Van Den Meerschaut Lydia;Wwe. Lauwerijs Victoor;Beukenlaan 7;B-9473 Welle;      903.24
+ ;Dhr. D'Haese Augusta;Wwe. Van Driessche Dominique;Wichelsesteenweg 9 Bus 6;B-9340 Lede;      901.27
+ ;Dhr. Leemans Jaak;Mw. Van Den Steen Marie-Jeanne;Geldhofstraat 12;B-9300 Aalst;      899.30
+ ;Dhr. Wellemans Rudi;Mw. Wauters Martine;Groenstraat 30;B-1730 Asse;      895.93
+;Onbekende Soldaat;;;B- ;      895.32
+ ;Dhr. Van Den Eede Armand;;Moorselbaan 169;B-9300 Aalst;      888.19
+0496/67.5880;Dhr. Van Den Abbeele Kevin;;Honegemstraat 68;B-9420 Erpe-mere;      886.25
+053/78.02.71;Mw. Van Den Broeck Denise;Wwe. Coppens Armand;Koebrugstraat 42;B-9310 Moorsel;      880.97
+053/66.25.19;Mw. Danau Marie-José;;Schoolstraat 3;B-9470 Denderleeuw;      879.12
+ ;Dhr. De Meersman Andy;Mw. Van Der Cammen;Bergekouter 28;B-9300 Aalst;      877.22
+053/66.03.25;Dhr. De Rijck Albert;;Kleine ganzenbaan 13;B-9473 Welle;      868.69
+053 77 71 39;Dhr. Hooghe Willem;;Hyacintenstraat 9;B-9300 Aalst;      851.96
+052/21.03.00;Dhr. De Rocker Guy;Mw. Geeraert Louisette;Rozenlaan 11;B-9200 Dendermonde;      848.71
+ ;Mw. Callebaut Erika;E-Clean;Schroverstraat 102;B-9310 Herdersem;      848.29
+ ;Mw. De Bruyn Yvonne;Wwe. Peirlinck Frans;Vooruitgangstraat 61;B-9473 Welle;      844.93
+ ;Mw. De Pourcq Chantal;;Burchtweg 2 Bus 5;B-9450 Haaltert;      843.47
+053/83.53.21;Mw. Van Der Haegen Irma;;Stationsstraat 102;B-9450 Haaltert;      831.88
+ ;Dhr. Podevyn Paul;;Burg. R. Eemanlaan 9;B-9473 Welle;      831.49
+053/77.94.00;Mw. Verleysen Jeanne;Wwe. Van De Keer Emiel;Oude Gentbaan 261;B-9300 Aalst;      819.62
+053 66 87 08;Dhr. Coppens Herman;Mw. De Brabanter Erna;Kerkstraat 115;B-9473 Welle;      819.47
+;Mw. Bruyland Katja;Dhr. Van Hover Tom;Hofstade-Dorp 22;B-9308 Hofstade (o.-vl.);      818.02
+ ;Mw. Witterzeel Juliana;;Langdries 40;B-9450 Haaltert;      816.91
+ ;Dhr. Lavin Daniël;;Kampstraat 55;B-9473 Welle;      810.00
+ ;Mw. Lowie Revilla;;Oude Dendermondsestwg 329a;B-9300 Aalst;      810.32
+053/66.30.93;Mw. De Block Josepha;;Priester Daenslaan 37;B-9473 Welle;      807.96
+053/66.91.53;Mw. Van Impe Estella;wwe. Chiau Edgar;Hofstraat 12;B-9470 Denderleeuw;      799.45
+ ;Dhr. D'Herde Steven;;Aartstraat 39;B-9310 Herdersem;      798.81
+ ;Mw. Hendrickx Katleen;Dhr. Cardon Luc;Pijpenbeek 77B;B-9320 Nieuwerkerken (aalst);      798.41
+ ;Dhr. Van Nuffel Koen;;Albert Dickschenstraat 44;B-2610 Wilrijk (antwerpen);      790.12
+053/83.51.83;Dhr. Fransaert Frank;Mw. Coppens Ann;Meidoornlaan 56;B-9320 Erembodegem;      786.65
+053/66.01.74;Mw. Haegeman Gerda;Dhr. Van Wesemael Ronny;Burg. De Dierlaan 8;B-9473 Welle;      784.68
+053/66.03.76;Dhr. Van Lierde Gerard;Mw. Houtman;Wellemeersenstraat 13;B-9473 Welle;      771.35
+052/35.02.75;Dhr. Van Den Brande Frans;Mw. Van Der Straeten Maria;Houwelgat 7;B-9310 Baardegem;      738.87
+ ;Mw. Vereecken Caroline;;Kleinesteenweg 1 A;B-2610 Wilrijk (antwerpen);      735.05
+ ;Dhr. Couckuyt Eddy;Mw. Schoof Hilde;Alfons de cockstraat 27;B-9310 Herdersem;      734.15
+ ;Dhr. Tombeur Bart;;Koekeroel 55;B-9310 Herdersem;      730.58
+053/66.90.90;Mw. Coudenijs Lisette;;Kapellestraat 47;B-9473 Welle;      731.26
+ ;Mw. Bruyland Simonne;Wwe. Couckuyt Andre;Alfons de Cockstraat 51;B-9310 Herdersem;      725.97
+053/78.50.69;Mw. De Waegeneer Adele;;Koekeroel 40;B-9310 Herdersem;      723.56
+053/80.30.56;Dhr. Van Vaerenbergh Herman;Mw. Van Thienen Maria;Eigenstraat 123;B-9450 Denderhoutem;      724.45
+ ;Mw. Everaert Louise;;Aartstraat 43;B-9310 Herdersem;      720.71
+ ;Dhr. Van Cauter Dave;;Koekeroel 9;B-9310 Herdersem;      721.12
+053/70.16.04;Garage De Clercq Tim;;Broekstraat 79;B-9310 Herdersem;      707.85
+053/21.44.89;Dhr. Vinck Camiel;Mw. De Wolf;Pieter Daensstraat 6;B-9300 Aalst;      704.33
+ ;Dhr. Pieters Gerri;Mw. Dooms Martine;Kouterbaan 48;B-9310 Herdersem;      701.83
+ ;Mw. Roelandt Hedwig;;Kouterbaan 25;B-9310 Herdersem;      700.69
+053/77.46.02;Mw. De Backer Margui;;Ronsevaaldreef 154;B-9320 Erembodegem;      698.31
+ ;Dhr. Janssens Rudi;Mw. De Wolf Helena;Baatmeers 15;B-9310 Herdersem;      690.41
+053/66.07.46;Dhr. De Boever Georges;;Elf dagwand 64;B-9473 Welle;      677.98
+ ;Dhr. Van De Sijpe Paul;Mw. De Meyer Nelly;Molenstraat 15;B-9860 Balegem;      676.61
+;Mw. Linthout Kelly;;Pachting 104 bus 21;B-9310 Moorsel;      660.89
+ ;Dhr. Van Laer Louis;Mw. De Valck;Ninoofsesteenweg 68;B-9320 Erembodegem;      652.60
+053/77.11.86;Mw. Van Der Jeught Leontine;wwe. De Neef Hubert;Alfons de cockstraat 5;B-9310 Herdersem;      652.16
+053/77.16.12;Dhr. Bruyland Antoine;;Koekeroel 48;B-9310 Herdersem;      646.90
+ ;Dhr. Triest David;Mw. Werbrouck Els;Azaleastraat 14;B-9820 Merelbeke;      643.55
+053/777348;Dhr. Van Geert Gilbert;Mw. Lampers Joanne;Kouterbaan 55;B-9310 Herdersem;      641.65
+ ;Mw. De Schrijver Clementine;;Baljuwsweg 13;B-9450 Haaltert;      640.90
+ ;Dhr. Put francois;;Alfons de cockstraat 49;B-9310 Herdersem;      641.04
+;Mw. Maesschalck Kelly;Dhr. Beeckman Tom;Klaverstraat 11;B-9300 Aalst;      636.99
+ ;Dhr. Baten Guy;Mw. Verhulst Karine;Kapelleommegang 20;B-9310 Herdersem;      632.31
+053/77.23.75;Mw. Buys Juliette;wwe. Van Den Bogaert Frans;Gefussillieerdenstraat 3;B-9300 Aalst;      628.32
+053/70.30.41;Dhr. De Craecker Romanus;Mw. Merckx Julia;Dompelstraat 13a;B-9300 Aalst;      626.22
+ ;Dhr. Van Keymeulen Chris;;Anjerstraat 40;B-9308 Hofstade (o.-vl.);      615.16
+053/21.17.86;Dhr. Van Den Bossche Georges;;Langdries 39;B-9450 Haaltert;      598.43
+ ;Dhr. Bieseman Raymond;p/a Bieseman Marleen;Aartstraat 39;B-9310 Herdersem;      591.01
+052/42.35.84;Dhr. Van Malderen Gaston;Mw. Speeckaert Alfonsine;Daalbos 5;B-9290 Berlare;      585.71
+ ;Mw. Temsamani Nadia;;Gentse Steenweg 63;B-9620 Zottegem;      583.01
+ ;Dhr. Dewannemacker Eddy;;Grote Baan 25;B-9310 Herdersem;      568.74
+ ;Dhr. Melckenbeeck Julien;;Vrijdagmarkt 17;B-9340 Lede;      566.70
+054 50 08 17;Dhr. Roggeman Andre;Mw. Sandland Dorothy;Populierenstraat 12;B-9550 Sint-Lievens-Esse;      566.67
+053/21.31.10;Dhr. Vinck Rene;Mw. De Meersman Denise;Grote Baan 117B;B-9310 Herdersem;      564.11
+ ;Mw. Everaert Emiliènne;;Koekeroel 26;B-9310 Herdersem;      549.22
+ ;Mw. De Graeve Elodie;;Gotegemstraat 3;B-9450 Haaltert;      540.01
+053/703081;Dhr. Nuelant Frans;Mw. De Cuyper Remonda;Waverstraat 18A;B-9310 Moorsel;      527.19
+ ;Dhr. De Wolf Constant;Mw. Roggeman Celine;Koekeroel 22;B-9310 Herdersem;      510.61
+ ;Mr&Mw Van Den Steen-Smit Jozef & Johanna;p/a Van Den Steen Nelly;Geldhofstraat 90;B-9300 Aalst;      510.77
+ ;Dhr. Vereecken Leonard;;Lindenstraat 225;B-9300 Aalst;      508.23
+ ;Mw. De Wit Maria;Wwe. Van Delsen Jaak;Hopstraat 6;B-9300 Aalst;      499.83
+ ;Dhr. Elskens Geert;;Kerkstraat 29;B-9406 Outer;      489.85
+ ;Mw. Van Nuffel Celine;;Koekeroel 30;B-9310 Herdersem;      481.10
+053/78.15.75;Mw. Van Molle Magda;Dhr. Vinck Roger;Koekeroel 31;B-9310 Herdersem;      480.45
+053/78.78.61;Dhr. Huylebroeck Frans;Mw. De Sutter;Hoveniersstraat 102;B-9300 Aalst;      473.75
+;Dhr. Heyvaert Aloïs;Mw. De Meersman Godelieve;Ploegstraat 3;B-9310 Moorsel;      473.58
+ ;Dhr. Van Mulders William;Mw. Van Gijseghem Annie;Priester Daenslaan 38;B-9473 Welle;      453.78
+053/70.36.71;Dhr. Ottoy Marcel;Mw. De Mey Yvonne;Mimosastraat 71A;B-9308 Gijzegem;      451.61
+053 71 02 47;Kaatsclub SV Herdersem;Dhr. Decappelle Maurits;Vlieguitweg 3;B-9310 Herdersem;      430.59
+ ;Dhr. Van De Velde Kris;Mw. Tombeur Ellen;Albert Liénartstraat 1 Bus 9;B-9300 Aalst;      421.16
+053 66 40 89;Mw. Perdaen Nicole;;Kortestraat 60;B-9473 Welle;      416.30
+ ;Mw. Roelandt Maria;;Doolhofstraat 6;B-9300 Aalst;      413.13
+ ;Mw. Van Mol Hermine;p/a Van Kerckhoven Freddy;Kapellestraat 84;B-9473 Welle;      413.09
+053/66.30.89;Dhr. De Man Frans;Mw. Schellaert Liliane;Priester Daenslaan 35;B-9473 Welle;      400.13
+053/77.87.25;Mw. Bauwens Martha;Dhr. Bombeek Edgard;Doornveld 29;B-9300 Aalst;      397.14
+;Mw. Coen Stephanie;;Leopoldstraat 54 BUS5;B-2330 Merksplas;      394.35
+053 83 18 85;Mw. Dierickx Diane;;Restert 95;B-9320 Nieuwerkerken (Aalst);      393.13
+053 78 67 87;Dhr. Penninck Francois;Mw. De Backer;Ronsevaaldreef 42;B-9320 Erembodegem;      381.20
+053/21.62.69;Mw. Kindermans Angele;;Geldhofstraat 6;B-9300 Aalst;      375.78
+053/78.26.19;Mw. Melkebeeck Sonja;;Witgerstraat 19;B-9310 Herdersem;      371.11
+053/66.74.52;Mw. Scheerlinck Maria;Wwe. Van De Velde Gaston;Kortestraat 46;B-9473 Welle;      370.89
+ ;Mw. De Waegeneer Martine;;Bergemeersenstraat 40;B-9300 Aalst;      360.98
+ ;Dhr. De Man Nick;;Steenweg op Aalst 30;B-9308 Hofstade (o.-vl.);      330.70
+053 66 15 77;Dhr. Chiau Freddy;Mw. Schandevijl;Braamlandstraat 3;B-9472 Iddergem;      329.27
+053/21.11.27;Dhr. Gigante Pasquale;Mw. Van De Maele Sonja;Pontweg 68;B-9310 Herdersem;      325.04
+09/362.60.32;Mw. Beeckman Marva;;Dorp 15;B-9860 Oosterzele;      313.42
+ ;Dhr. Vermoesen Jan;;Meivisstraat 2;B-9310 Herdersem;      305.91
+053/68.08.06;Mw. De Neve Marie-Jose;;Meiboomlaan 15 Bus 11;B-9470 Denderleeuw;      303.35
+ ;Mw. Van Hoorde Veerle;p/a Van Hoorde Annie;Brusselbaan 87;B-9320 Erembodegem;      299.53
+ ;Dhr. Abalo-Ramos Wesley;Mw. De Cock Tineke;Bredestraat 294;B-9300 Aalst;      295.95
+053/21.72.20;Mw. Buyle Godelieve;;Nieuwbeekstraat 152 Bus 5;B-9300 Aalst;      288.47
+ ;Dhr. Cuypers Jozef;;Kleinesteenweg 35;B-2610 Wilrijk (antwerpen);      278.79
+ ;Dhr. Reyns Renaat;;Schroverstraat 9;B-9280 Wieze;      276.51
+053/70.16.53;Roelandt gebroeders;Maurits en Ferdinand;Dompelstraat 13C;B-9300 Aalst;      274.45
+ ;Dhr. Van Damme Geert;;Driesleutelstraat 27 Bus 1;B-9300 Aalst;      261.14
+ ;Dhr. Demey Ronald;Mw. Descheemaecker Rosette;Minnezangerstraat 25;B-8211 Aartrijke;      260.38
+ ;Dhr. De Maeght Wilfried;Mw. Netens Annie;Booglaan 104;B-9473 Welle;      245.33
+053/21.21.94;Dhr. Siau Paul;Mw. De Ridder Emilienne;Baron Romain Moyersoenpark 28;B-9300 Aalst;      228.96
+ ;Mw. Callebaut Maria;;Azalealaan 8 Bus 2;B-9470 Denderleeuw;      215.81
+09/222.79.49;Mw. De Vos Sara;Dhr. Siau Bart;Galglaan 22;B-9000 Gent;      201.02
+ ;Dhr. D'Hooghe Filip;;Arteveldestraat 39 /  2;B-1000 Brussel 1;      196.71
+ ;Dhr. Roelandt Wilfried;;Groenstraat 103 Bus 2;B-9300 Aalst;      196.54
+ ;Mw. Pots Josephine;;Oude Pastorijwegel 9;B-9310 Herdersem;      194.88
+ ;Mw. Van Nuffel Roza;;Albert Lienaertstraat 5;B-9300 Aalst;      191.93
+;Mw. Bal Maria;;Middenweg 36;B-9310 Herdersem;      166.18
+ ;Dhr. De Wachter Andre;;A. Van De Moerenstraat 9;B-9240 Zele;      156.96
+053/80.81.59;Dhr. Goessens Aime;;Broeder De Saedeleerstraat 63;B-9340 Lede;      156.96
+7;Van Impe Odette;;Nijverheidsstraat 58;B-9420 Erpe-mere;      156.96
+053/77.82.57;Dhr. De Meersman Gustaaf;Mw. De Cock Rita;Pontweg 87;B-9310 Herdersem;      155.43
+052/70.32.24;Mw. Vermoesen Jeanine;Wwe. De Wolf Maurice;Koebrugstraat 13A;B-9310 Moorsel;      155.43
+ ;Dhr. Markey Luc;;Parklaan 83 Bus 6;B-9300 Aalst;      155.40
+78 85 03;Dhr. De waegeneer willy;Mw. Van cauter lisette;Kouterbaan 64;B-9310 Herdersem;      151.96
+ ;Dhr. Van Damme Johan;Mw. Fransen Linda;Grote Baan 113;B-9310 Herdersem;      152.43
+053/21.20.58;Dhr. Van Den Bossche Jozef        +;;G. De Schepperstraat 45;B-9320 Erembodegem;      152.43
+053/78.31.53;Mw. Ledegen Denise;;Aartstraat 54;B-9310 Herdersem;      150.40
+ ;Dhr. Van Den Steen Johan;;Broekstraat 25;B-9310 Herdersem;      142.56
+ ;Mr. Van De Velde Michel;;Residence Betelgeuse 5;B-1300 Limal;      141.56
+053/83.88.61;Dhr. De Smet Lieven;;Geraardsbergsesteenweg 135;B-9320 Erembodegem;      137.57
+ ;Mw. Stalpaert Emilienne;wwe. Van Rampelberg Petrus;De Ronde 1/05;B-8580 Avelgem;      137.56
+053 66 90 32;Dhr. Van Schelvergem Petrus;;Elf Dagwand 3;B-9473 Welle;      136.00
+ ;Mw. Van Den Steen Maria;;Middenweg 11;B-9310 Herdersem;      135.29
+;Mw. Van Welssenaers Simonne;;Oudenaardsesteenweg 376;B-9420 Erpe-mere;      135.08
+ ;Mw. Bonnarens Rosa;;Denderstraat 78 Bus 22;B-9300 Aalst;      133.52
+053/77.04.24;Dhr. Melkebeeck Firmin;Mw. De Meersman Beatrijs;Klausstraat 6;B-9310 Herdersem;      134.36
+053/66.98.64;Dhr. De Schepper Lucien;Mw. Heiremans Julia;Stationsplein 17 Bus 22;B-9470 Denderleeuw;      118.98
+053/71.03.15;Bvba Van Molle;;Broekstraat 14;B-9310 Herdersem;      112.44
+052/33.08.49;Dhr. Vercauteren Johan;Mw. De Wachter Kristel;Rosstraat 137;B-9200 Baasrode;      101.96
+053/21.55.69;Mw. Roos Gilberte;;Pieter Coeckestraat 79;B-9300 Aalst;       93.82
+053 66 79 36;Dhr. Houtman Frans;Mw. Cornelis Marie-Louise;Steenweg 92;B-9473 Welle;       92.51
+ ;Dhr. De Wilde Freddy;Mw. Verslijpe Rita;Varingstraat 9;B-9090 Melle;       88.46
+ ;Mw. De Block Ludovika;;Broekstraat 35;B-9310 Herdersem;       85.70
+ ;Mw. Wellemans Wendy;;Serskampstraat 10;B-9230 Wetteren;       86.10
+053/66.22.05;Dhr. De Lepeleer Paul;Mw. Pots Emy;Ringlaan 54;B-9470 Denderleeuw;       84.57
+ ;Dhr. Hoffman Willy;Mw. Scheerlinck Y.;Drieselken 56;B-9473 Welle;       74.84
+ ;Dhr. Van Lierde Lieven;Mw. Eeckhaut Sabine;Nederkouter 93;B-9260 Wichelen;       74.61
+ ;Mw. Van Der Hoeven Marie-Paule;p/a;Klaarhaagstraat 1;B-9310 Meldert (o.-vl.);       74.84
+ ;Mw. Verschaeve Rebecca;;Tinnenpotstraat 13;B-9000 Gent;       73.19
+ ;Dhr. Van Aerde Julien;Mw. Coen Nelly;Stevensveld 5;B-9420 Erpe-mere;       72.00
+;Dhr. Voicu Marius;;Krakeelstraat 3D;B-9450 Haaltert;       65.90
+ ;Dhr. De Wolf Francois;;Petrus Van Nuffelstraat 44;B-9300 Aalst;       63.08
+ ;Mw. Roelandt Rita;;Marnixstraat 43;B-2060 Antwerpen 6;       55.40
+059/26.75.66;K.W.B.;Dhr. Jonckheere;Gistelsesteenweg 84;B-8460 Oudenburg;       43.66
+ ;Dhr. Reunis Wim;;Rooigemstraat 6;B-9860 Balegem;       38.77
+053/62.78.47;Mw. Van Tittelboom Georgette;Wwe. Brackeva Benoit;Kloosterstraat 3;B-9520 Sint-lievens-houtem;      -34.43
+ ;Mej. De Pourcq Sofie;;Driehoekstraat 23A;B-9320 Erembodegem;      -44.03
+053/21.93.77;Dhr. Van Der Stockt Robert;;Grote Baan 27;B-9310 Herdersem;      -60.31
+ ;Dhr. Claessens Guy;;Termurenlaan 17 bus 4;B-9320 Erembodegem;     -284.96
+ ;Nal. Van Der Stockt Ida;p/a Mw. De Knibber Bea;Lippensbekweg 21;B-9450 Haaltert;     -296.52

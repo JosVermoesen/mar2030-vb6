@@ -1,0 +1,262 @@
+<HTML>
+<!--Sitemap 1.0-->
+<OBJECT type="text/site properties">
+</OBJECT>
+<UL>
+	<LI><OBJECT type="text/sitemap">
+		<param name="Name" value="marIntegeraal NT Help">
+		</OBJECT>
+	<UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="marIntegraal Help Startpagina">
+			<param name="Local" value="html/marn2abc.htm">
+			</OBJECT>
+			<A HREF="html/marn2abc.htm">marIntegraal Help Startpagina</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Voorwoord">
+			<param name="Local" value="html/marn5uqs.htm">
+			</OBJECT>
+			<A HREF="html/marn5uqs.htm">Voorwoord</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Installatie van marIntegraal (Setup)">
+			<param name="Local" value="html/marn96ss.htm">
+			</OBJECT>
+			<A HREF="html/marn96ss.htm">Installatie van marIntegraal (Setup)</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Menu Keuzeopties">
+			<param name="Local" value="html/marn6oc3.htm">
+			</OBJECT>
+			<A HREF="html/marn6oc3.htm">Menu Keuzeopties</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Akties (Menu 0)">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Bedrijf Openen">
+				<param name="Local" value="html/marn2m5q.htm">
+				</OBJECT>
+				<A HREF="html/marn2m5q.htm">Bedrijf Openen</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Nieuw Bedrijf">
+				<param name="Local" value="html/marn3hie.htm">
+				</OBJECT>
+				<A HREF="html/marn3hie.htm">Nieuw Bedrijf</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Service Pro Instellingen">
+				<param name="Local" value="html/marn21f2.htm">
+				</OBJECT>
+				<A HREF="html/marn21f2.htm">Service Pro Instellingen</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Printerkeuze Vergrendeld">
+				<param name="Local" value="html/marn3t0s.htm">
+				</OBJECT>
+				<A HREF="html/marn3t0s.htm">Printerkeuze Vergrendeld</A><BR>
+		</UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Systeem (Menu 1)">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Boekjaar En Parameters wijzigen">
+				</OBJECT>
+			<UL>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Boekjaar En Parameters">
+					<param name="Local" value="html/marn6ak3.htm">
+					</OBJECT>
+					<A HREF="html/marn6ak3.htm">Setup Boekjaar En Parameters</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Boekingen En Algemene Instellingen">
+					<param name="Local" value="html/marn78ha.htm">
+					</OBJECT>
+					<A HREF="html/marn78ha.htm">Boekingen En Algemene Instellingen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Aankoopverrichtingen">
+					<param name="Local" value="html/marn5pv2.htm">
+					</OBJECT>
+					<A HREF="html/marn5pv2.htm">Setup Aankoopverrichtingen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Verkoopverrichtingen">
+					<param name="Local" value="html/marn3xym.htm">
+					</OBJECT>
+					<A HREF="html/marn3xym.htm">Setup Verkoopverrichtingen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup BTW Rekeningen">
+					<param name="Local" value="html/marn265h.htm">
+					</OBJECT>
+					<A HREF="html/marn265h.htm">Setup BTW Rekeningen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Collectieve Rekeningen">
+					<param name="Local" value="html/marn57la.htm">
+					</OBJECT>
+					<A HREF="html/marn57la.htm">Setup Collectieve Rekeningen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Financiële Rekeningen">
+					<param name="Local" value="html/marn538u.htm">
+					</OBJECT>
+					<A HREF="html/marn538u.htm">Setup Financiële Rekeningen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Bedrijfsinformatie">
+					<param name="Local" value="html/marn4oit.htm">
+					</OBJECT>
+					<A HREF="html/marn4oit.htm">Setup Bedrijfsinformatie</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Status Boekjaar">
+					<param name="Local" value="html/marn0piq.htm">
+					</OBJECT>
+					<A HREF="html/marn0piq.htm">Setup Status Boekjaar</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Setup Kassaverkoop">
+					<param name="Local" value="html/marn9ru8.htm">
+					</OBJECT>
+					<A HREF="html/marn9ru8.htm">Setup Kassaverkoop</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Aktief Boekjaar, Periode, Datum instellen">
+					<param name="Local" value="html/marn5b5g.htm">
+					</OBJECT>
+					<A HREF="html/marn5b5g.htm">Aktief Boekjaar, Periode, Datum instellen</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Lay-Out Uitgaand Dokument">
+					<param name="Local" value="html/marn3g1g.htm">
+					</OBJECT>
+					<A HREF="html/marn3g1g.htm">Lay-Out Uitgaand Dokument</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Import (Vsoft EDI)-bestanden">
+					<param name="Local" value="html/marn3eqx.htm">
+					</OBJECT>
+					<A HREF="html/marn3eqx.htm">Import (Vsoft EDI)-bestanden</A><BR>
+				<LI><OBJECT type="text/sitemap">
+					<param name="Name" value="Kontrole Data">
+					<param name="Local" value="html/marn640x.htm">
+					</OBJECT>
+					<A HREF="html/marn640x.htm">Kontrole Data</A><BR>
+			</UL>
+		</UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Fiches (Menu 3)">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Basisfiches, gemeenschappelijke funkties">
+				<param name="Local" value="html/marn60j2.htm">
+				</OBJECT>
+				<A HREF="html/marn60j2.htm">Basisfiches, gemeenschappelijke funkties</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="SQL Zoekopdrachten">
+				<param name="Local" value="html/marn8mum.htm">
+				</OBJECT>
+				<A HREF="html/marn8mum.htm">SQL Zoekopdrachten</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Klantenfiche">
+				<param name="Local" value="html/marn2std.htm">
+				</OBJECT>
+				<A HREF="html/marn2std.htm">Klantenfiche</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Leveranciersfiche">
+				<param name="Local" value="html/marn40yp.htm">
+				</OBJECT>
+				<A HREF="html/marn40yp.htm">Leveranciersfiche</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Rekeningfiche">
+				<param name="Local" value="html/marn6btt.htm">
+				</OBJECT>
+				<A HREF="html/marn6btt.htm">Rekeningfiche</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Artikel-, Dienst- en Produktiefiche">
+				<param name="Local" value="html/marn4v35.htm">
+				</OBJECT>
+				<A HREF="html/marn4v35.htm">Artikel-, Dienst- en Produktiefiche</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Gebruikersfiche">
+				<param name="Local" value="html/marn6ggx.htm">
+				</OBJECT>
+				<A HREF="html/marn6ggx.htm">Gebruikersfiche</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Lijstrapportage">
+				<param name="Local" value="html/marn54bp.htm">
+				</OBJECT>
+				<A HREF="html/marn54bp.htm">Lijstrapportage</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Bestanden Importeren">
+				<param name="Local" value="html/marn7qcu.htm">
+				</OBJECT>
+				<A HREF="html/marn7qcu.htm">Bestanden Importeren</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Grafische Voorstellingen">
+				<param name="Local" value="html/marn8wxa.htm">
+				</OBJECT>
+				<A HREF="html/marn8wxa.htm">Grafische Voorstellingen</A><BR>
+		</UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Dokument (Menu 4)">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Aankoopverrichtingen">
+				<param name="Local" value="html/marn6uav.htm">
+				</OBJECT>
+				<A HREF="html/marn6uav.htm">Aankoopverrichtingen</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Verkoopverrichtingen">
+				<param name="Local" value="html/marn292f.htm">
+				</OBJECT>
+				<A HREF="html/marn292f.htm">Verkoopverrichtingen</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Inbreng Financiëel">
+				<param name="Local" value="html/marn6tyk.htm">
+				</OBJECT>
+				<A HREF="html/marn6tyk.htm">Inbreng Financiëel</A><BR>
+		</UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Boekhouding (Menu 5)">
+			</OBJECT>
+		<UL>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Inbreng Diverse Post">
+				<param name="Local" value="html/marn3ano.htm">
+				</OBJECT>
+				<A HREF="html/marn3ano.htm">Inbreng Diverse Post</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Financiële Boeken">
+				<param name="Local" value="html/marn17sb.htm">
+				</OBJECT>
+				<A HREF="html/marn17sb.htm">Financiële Boeken</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Jaarlisting BTW Binnenland">
+				<param name="Local" value="html/marn4hyc.htm">
+				</OBJECT>
+				<A HREF="html/marn4hyc.htm">Jaarlisting BTW Binnenland</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Stand BTW Aangifte">
+				<param name="Local" value="html/marn7oit.htm">
+				</OBJECT>
+				<A HREF="html/marn7oit.htm">Stand BTW Aangifte</A><BR>
+			<LI><OBJECT type="text/sitemap">
+				<param name="Name" value="Balans Klanten/Leveranciers">
+				<param name="Local" value="html/marn0ap8.htm">
+				</OBJECT>
+				<A HREF="html/marn0ap8.htm">Balans Klanten/Leveranciers</A><BR>
+		</UL>
+	</UL>
+	<LI><OBJECT type="text/sitemap">
+		<param name="Name" value="Tips en Praktijkhulp">
+		</OBJECT>
+	<UL>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="marINTEGRAAL EDIBIB woordenboek">
+			<param name="Local" value="html/marn0so2.htm">
+			</OBJECT>
+			<A HREF="html/marn0so2.htm">marINTEGRAAL EDIBIB woordenboek</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="SQL Referentie">
+			<param name="Local" value="html/marn1x64.htm">
+			</OBJECT>
+			<A HREF="html/marn1x64.htm">SQL Referentie</A><BR>
+		<LI><OBJECT type="text/sitemap">
+			<param name="Name" value="Maken van veiligheidskopijen">
+			<param name="Local" value="html/marn6641.htm">
+			</OBJECT>
+			<A HREF="html/marn6641.htm">Maken van veiligheidskopijen</A><BR>
+	</UL>
+</UL>
+</HTML>

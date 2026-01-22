@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>0</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label>
+   <c:Caption>Microsoft Office-werkblad</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>2</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>11.0.0.6255         </c:OWCVersion>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Names>
+  <ss:NamedRange ss:Name="TestjeOpB" ss:RefersTo="=Blad1!R8C2"/>
+  <ss:NamedRange ss:Name="TestjeOpD" ss:RefersTo="=Blad1!R8C4"/>
+ </ss:Names>
+ <ss:Worksheet ss:Name="Blad1">
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R8C2</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="8"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="12.75">
+   <ss:Row>
+    <ss:Cell>
+     <ss:Data ss:Type="String">Testje voor rekenblad</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Index="3">
+    <ss:Cell ss:Index="2" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">2</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="4" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">2</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:Index="2" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">7</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="4" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">9</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:Index="2" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">7</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="4" ss:StyleID="Default">
+     <ss:Data ss:Type="Number">7</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:Index="4" ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:Index="2" ss:StyleID="Default"/>
+    <ss:Cell ss:Index="4" ss:StyleID="Default"/>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:Index="2" ss:StyleID="Default" ss:Formula="=SUM(R[-5]C:R[-1]C)">
+     <ss:NamedCell ss:Name="TestjeOpB"/>
+     <ss:Data ss:Type="Number">16</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:Index="4" ss:StyleID="Default" ss:Formula="=SUM(R[-5]C:R[-1]C)">
+     <ss:NamedCell ss:Name="TestjeOpD"/>
+     <ss:Data ss:Type="Number">18</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+</ss:Workbook>
+

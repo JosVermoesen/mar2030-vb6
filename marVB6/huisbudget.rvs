@@ -1,0 +1,5214 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcC1FC3DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc85AE3DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc46BE3DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc0B013DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:18pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcC9113DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:18pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc88213DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:18pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc85DE3DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc44EE3DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc42A63DD0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcC582EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#3366FF;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8492EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#3366FF;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc43A2EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#3366FF;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcC2B2EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc0733EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC543EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc4553EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:center;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc4444EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:middle;
+	border-top:none;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4F74EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:middle;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0E84EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:middle;
+	border-top:none;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8E94EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4E45EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCB65EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4B75EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC0D5EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc04A6EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC2B6EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8387EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc01A7EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:yellow;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCF38EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:middle;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8619EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:middle;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8159EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:middle;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCD79EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:middle;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8C89EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:red;
+	text-align:general;
+	vertical-align:middle;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc864AEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc455AEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc046AEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8AFAEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc490BEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc081BEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc059BEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc86CCEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc4CECEFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8E10EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4D20EFC0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFCC99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8E11FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4D21FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0C31FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0C51FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC0D1FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8FD1FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0FE1FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC702FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc0C12FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc01E2FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8CA4FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4BB4FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFFF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4226FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0136FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCF36FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCE56FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc83D6FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc42E6FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc01F6FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8017FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcCBEDFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcCE6AFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8D7AFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FF99CC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc85CBFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc44DBFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc03EBFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc877CFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc468CFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC59CFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCFACFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc04CCFC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc85D3FC80
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCFF638D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC77338D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#FFFF99;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC32838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc823838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc414838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc48D838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc07E838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC5F838D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wcCF0938D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC22938D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc081B38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC62B38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CC99FF;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0B6C38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC97C38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc888C38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:14pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc0AAC38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCE1D38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc8D2D38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc4C3D38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc465D38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc8A6D38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc086E38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc891F38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc482F38D0
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc81699370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#CCFFCC;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc44BC9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc03CC9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC1DC9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcCB1D9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:unlocked;}
+.wc493D9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:9pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:none;
+	mso-protection:unlocked;}
+.wc084D9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc88EE9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wc060F9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC02F9370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc43752370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00\\ _€\;\[Red\]\\-\#\,\#\#0\.00\\ _€";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:locked;}
+.wc0AE52370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:solid .5pt black;
+	border-right:none;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+.wcC8F52370
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:11pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:#333399;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:solid .5pt black;
+	border-left:none;
+	border-right:solid .5pt black;
+	border-bottom:solid .5pt black;
+	mso-protection:unlocked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>10.0.0.4109         </x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>Microsoft Office Spreadsheet</x:Caption>
+    </x:Label>
+    <x:Name>Sheet</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>15240</x:Height>
+     <x:Width>27014</x:Width>
+     <x:DisableUndo/>
+     <x:DoNotDisplayTitleBar/>
+     <x:ViewableRange>$1:$262144</x:ViewableRange>
+     <x:Selection>1:262144</x:Selection>
+     <x:TopRowVisible>0</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wcC1FC3DD0 cellpadding=0 cellspacing=0 x:str>
+ <col width="47" style='mso-width-source:userset'>
+ <col width="95" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc85AE3DD0 width="68" style='mso-width-source:userset'>
+ <col class=wc46BE3DD0 width="77" style='mso-width-source:userset'>
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <col width="64">
+ <tr height="31" style='mso-height-source:userset;mso-height-alt:465'>
+  <td class=wc0B013DD0 x:str="Personal Budget" colspan="15" style='border-right:
+  solid .5pt black'>Personal Budget</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc85DE3DD0 colspan="15" style='border-right:solid .5pt black'>&nbsp;</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC582EFC0 x:str="Yearly" colspan="15" style='border-right:solid .5pt black'>Yearly</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B2EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc0733EFC0 colspan="2">&nbsp;</td>
+  <td class=wc4553EFC0 x:str="Jan">Jan</td>
+  <td class=wc4553EFC0 x:str="Feb">Feb</td>
+  <td class=wc4553EFC0 x:str="March">March</td>
+  <td class=wc4553EFC0 x:str="April">April</td>
+  <td class=wc4553EFC0 x:str="May">May</td>
+  <td class=wc4553EFC0 x:str="June">June</td>
+  <td class=wc4553EFC0 x:str="July">July</td>
+  <td class=wc4553EFC0 x:str="Aug">Aug</td>
+  <td class=wc4553EFC0 x:str="Sept">Sept</td>
+  <td class=wc4553EFC0 x:str="Oct">Oct</td>
+  <td class=wc4553EFC0 x:str="Nov">Nov</td>
+  <td class=wc4553EFC0 x:str="Dec">Dec</td>
+  <td class=wc4553EFC0 x:str="Total">Total</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B2EFC0>&nbsp;</td>
+ </tr>
+ <tr height="41" style='mso-height-source:userset;mso-height-alt:615'>
+  <td class=wc4444EFC0 x:str="Income" colspan="15" style='border-right:solid .5pt black'>Income</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc4E45EFC0 x:str="Wages" colspan="2" style='border-right:solid .5pt black'>Wages</td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=C6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=D6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=E6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=F6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=G6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=H6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=I6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=J6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=K6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=L6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:fmla="=M6" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(C6:N6)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc4E45EFC0 x:str="Interest/dividends" colspan="2" style='border-right:
+  solid .5pt black'>Interest/dividends</td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(C7:N7)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8E94EFC0 x:str="Miscellaneous">Miscellaneous</td>
+  <td class=wc8E94EFC0>&nbsp;</td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4B75EFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(C8:N8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc4E45EFC0 colspan="15" style='border-right:solid .5pt black'>&nbsp;</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc8387EFC0 x:str="TOTAL INCOME" colspan="2" style='border-right:
+  solid .5pt black'>TOTAL INCOME</td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(C6:C8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(D6:D8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(E6:E8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(F6:F8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(G6:G8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(H6:H8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(I6:I8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(J6:J8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(K6:K8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(L6:L8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(M6:M8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(N6:N8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC0D5EFC0 x:fmla="=SUM(O6:O8)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr class=wcCF38EFC0 height="59" style='mso-height-source:userset;mso-height-alt:
+  885'>
+  <td class=wc8159EFC0 x:str="Expenses" colspan="15" style='border-right:solid .5pt black'>Expenses</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+  <td class=wc8619EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc864AEFC0 x:str="Home" colspan="15" style='border-right:solid .5pt black'>Home</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Mortgage/rent" colspan="2" style='border-right:
+  solid .5pt black'>Mortgage/rent</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=C13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=D13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=E13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=F13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=G13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=H13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=I13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=J13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=K13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=L13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=M13" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc059BEFC0 x:fmla="=SUM(C13:N13)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Utilities" colspan="2" style='border-right:solid .5pt black'>Utilities</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=C14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=D14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=E14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=F14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=G14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=H14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=I14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=J14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=K14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=L14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=M14" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc059BEFC0 x:fmla="=SUM(C14:N14)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Home telephone" colspan="2" style='border-right:
+  solid .5pt black'>Home telephone</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=C15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=D15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=E15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=F15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=G15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=H15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=I15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=J15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=K15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc86CCEFC0 x:fmla="=L15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=M15" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C15:N15)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Cellular telephone" colspan="2" style='border-right:
+  solid .5pt black'>Cellular telephone</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=C16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=D16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=E16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=F16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=G16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=H16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=I16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=J16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=K16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc86CCEFC0 x:fmla="=L16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:fmla="=M16" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C16:N16)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Home repairs" colspan="2" style='border-right:
+  solid .5pt black'>Home repairs</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc86CCEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C17:N17)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Home improvement" colspan="2" style='border-right:
+  solid .5pt black'>Home improvement</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C18:N18)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Home security" colspan="2" style='border-right:
+  solid .5pt black'>Home security</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C19:N19)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Garden supplies" colspan="2" style='border-right:
+  solid .5pt black'>Garden supplies</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C20:N20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc8E10EFC0 x:str="Home totals" colspan="2" style='border-right:
+  solid .5pt black'>Home totals</td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C13:C20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(D13:D20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(E13:E20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(F13:F20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(G13:G20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(H13:H20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(I13:I20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(J13:J20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(K13:K20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(L13:L20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(M13:M20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(N13:N20)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C21:N21)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc8E11FC80 x:str="Daily living" colspan="15" style='border-right:
+  solid .5pt black'>Daily living</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Groceries " colspan="2" style='border-right:solid .5pt black'>Groceries
+  </td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC702FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C23:N23)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Child care" colspan="2" style='border-right:solid .5pt black'>Child
+  care</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC702FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C24:N24)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Dry cleaning" colspan="2" style='border-right:
+  solid .5pt black'>Dry cleaning</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC702FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C25:N25)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Dining out" colspan="2" style='border-right:solid .5pt black'>Dining
+  out</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC702FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C26:N26)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc0C51FC80 x:str="Housecleaning service">Housecleaning service</td>
+  <td class=wc01E2FC80>&nbsp;</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C27:N27)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Dog walker" colspan="2" style='border-right:solid .5pt black'>Dog
+  walker</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC702FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C28:N28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc8CA4FC80 x:str="Daily living totals" colspan="2"
+  style='border-right:solid .5pt black'>Daily living totals</td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C23:C28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(D23:D28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(E23:E28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(F23:F28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(G23:G28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(H23:H28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(I23:I28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(J23:J28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(K23:K28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(L23:L28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(M23:M28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(N23:N28)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C29:N29)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc4226FC80 x:str="Transportation" colspan="15" style='border-right:
+  solid .5pt black'>Transportation</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Gas/fuel" colspan="2" style='border-right:solid .5pt black'>Gas/fuel</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C31:N31)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Insurance" colspan="2" style='border-right:solid .5pt black'>Insurance</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C32:N32)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Repairs" colspan="2" style='border-right:solid .5pt black'>Repairs</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C33:N33)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Car wash/detailing svcs" colspan="2"
+  style='border-right:solid .5pt black'>Car wash/detailing svcs</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C34:N34)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Parking" colspan="2" style='border-right:solid .5pt black'>Parking</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C35:N35)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE56FC80 x:str="Public transportation">Public transportation</td>
+  <td class=wcCBEDFC80>&nbsp;</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C36:N36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wcCE6AFC80 x:str="Transportation totals" colspan="2"
+  style='border-right:solid .5pt black'>Transportation totals</td>
+  <td class=wc8017FC80 x:fmla="=SUM(C31:C36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(D31:D36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(E31:E36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(F31:F36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(G31:G36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(H31:H36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(I31:I36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(J31:J36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(K31:K36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(L31:L36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(M31:M36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(N31:N36)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C37:N37)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc85CBFC80 x:str="Entertainment" colspan="15" style='border-right:
+  solid .5pt black'>Entertainment</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="Cable TV" colspan="2" style='border-right:solid .5pt black'>Cable
+  TV</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C39:N39)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="Video/DVD rentals" colspan="2" style='border-right:
+  solid .5pt black'>Video/DVD rentals</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C40:N40)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="Movies/plays" colspan="2" style='border-right:
+  solid .5pt black'>Movies/plays</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCFACFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C41:N41)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="Concerts/clubs" colspan="2" style='border-right:
+  solid .5pt black'>Concerts/clubs</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc85D3FC80 x:fmla="=SUM(C42:N42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wcCFF638D0 x:str="Entertainment totals" colspan="2"
+  style='border-right:solid .5pt black'>Entertainment totals</td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C39:C42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(D39:D42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(E39:E42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(F39:F42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(G39:G42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(H39:H42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(I39:I42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(J39:J42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(K39:K42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(L39:L42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(M39:M42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(N39:N42)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C43:N43)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wcC32838D0 x:str="Health" colspan="15" style='border-right:solid .5pt black'>Health</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Health club dues" colspan="2" style='border-right:
+  solid .5pt black'>Health club dues</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C45:N45)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Insurance" colspan="2" style='border-right:solid .5pt black'>Insurance</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C46:N46)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Prescriptions" colspan="2" style='border-right:
+  solid .5pt black'>Prescriptions</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C47:N47)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Over-the-counter drugs" colspan="2"
+  style='border-right:solid .5pt black'>Over-the-counter drugs</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C48:N48)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Co-pays/out-of-pocket" colspan="2"
+  style='border-right:solid .5pt black'>Co-pays/out-of-pocket</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C49:N49)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Veterinarians/pet meds" colspan="2"
+  style='border-right:solid .5pt black'>Veterinarians/pet meds</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C50:N50)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc48D838D0 x:str="Life insurance" colspan="2" style='border-right:
+  solid .5pt black'>Life insurance</td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC5F838D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcCF0938D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C51:N51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc081B38D0 x:str="Health totals" colspan="2" style='border-right:
+  solid .5pt black'>Health totals</td>
+  <td class=wcC22938D0 x:fmla="=SUM(C45:C51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(D45:D51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(E45:E51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(F45:F51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(G45:G51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(H45:H51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(I45:I51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(J45:J51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(K45:K51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(L45:L51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(M45:M51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(N45:N51)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC22938D0 x:fmla="=SUM(C52:N52)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc0B6C38D0 x:str="Vacations" colspan="15" style='border-right:solid .5pt black'>Vacations</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Plane fare" colspan="2" style='border-right:solid .5pt black'>Plane
+  fare</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc465D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C54:N54)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Accommodations" colspan="2" style='border-right:
+  solid .5pt black'>Accommodations</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc465D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C55:N55)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Food" colspan="2" style='border-right:solid .5pt black'>Food</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc465D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C56:N56)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Souvenirs" colspan="2" style='border-right:solid .5pt black'>Souvenirs</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc465D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C57:N57)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Pet boarding" colspan="2" style='border-right:
+  solid .5pt black'>Pet boarding</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc465D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C58:N58)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc0AAC38D0 x:str="Rental car">Rental car</td>
+  <td class=wc086E38D0>&nbsp;</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C59:N59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc891F38D0 x:str="Vacations totals" colspan="2" style='border-right:
+  solid .5pt black'>Vacations totals</td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C54:C59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(D54:D59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(E54:E59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(F54:F59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(G54:G59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(H54:H59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(I54:I59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(J54:J59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(K54:K59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(L54:L59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(M54:M59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(N54:N59)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C60:N60)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="55" style='mso-height-source:userset;mso-height-alt:825'>
+  <td class=wc864AEFC0 x:str="Recreation" colspan="15" style='border-right:
+  solid .5pt black'>Recreation</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Gym fees" colspan="2" style='border-right:solid .5pt black'>Gym
+  fees</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C62:N62)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Sports equipment" colspan="2" style='border-right:
+  solid .5pt black'>Sports equipment</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C63:N63)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Team dues" colspan="2" style='border-right:solid .5pt black'>Team
+  dues</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C64:N64)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8AFAEFC0 x:str="Toys/child gear" colspan="2" style='border-right:
+  solid .5pt black'>Toys/child gear</td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc081BEFC0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C65:N65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wc8E10EFC0 x:str="Recreation totals" colspan="2" style='border-right:
+  solid .5pt black'>Recreation totals</td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C62:C65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(D62:D65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(E62:E65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(F62:F65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(G62:G65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(H62:H65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(I62:I65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(J62:J65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(K62:K65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(L62:L65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(M62:M65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(N62:N65)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4CECEFC0 x:fmla="=SUM(C66:N66)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc8E11FC80 x:str="Dues/subscriptions" colspan="15"
+  style='border-right:solid .5pt black'>Dues/subscriptions</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Magazines" colspan="2" style='border-right:solid .5pt black'>Magazines</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C68:N68)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Newspapers" colspan="2" style='border-right:solid .5pt black'>Newspapers</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C69:N69)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Internet connection" colspan="2"
+  style='border-right:solid .5pt black'>Internet connection</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C70:N70)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Public radio" colspan="2" style='border-right:
+  solid .5pt black'>Public radio</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C71:N71)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Public television" colspan="2" style='border-right:
+  solid .5pt black'>Public television</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C72:N72)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Religious orgs." colspan="2" style='border-right:
+  solid .5pt black'>Religious orgs.</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C73:N73)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcC0D1FC80 x:str="Charity" colspan="2" style='border-right:solid .5pt black'>Charity</td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0FE1FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C74:N74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8CA4FC80 x:str="Dues/subscr. totals" colspan="2"
+  style='border-right:solid .5pt black'>Dues/subscr. totals</td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C68:C74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(D68:D74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(E68:E74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(F68:F74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(G68:G74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(H68:H74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(I68:I74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(J68:J74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(K68:K74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(L68:L74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(M68:M74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(N68:N74)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc0C12FC80 x:fmla="=SUM(C75:N75)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc4226FC80 x:str="Personal" colspan="15" style='border-right:solid .5pt black'>Personal</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Clothing" colspan="2" style='border-right:solid .5pt black'>Clothing</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C77:N77)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Gifts" colspan="2" style='border-right:solid .5pt black'>Gifts</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C78:N78)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Salon/barber" colspan="2" style='border-right:
+  solid .5pt black'>Salon/barber</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C79:N79)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Books" colspan="2" style='border-right:solid .5pt black'>Books</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C80:N80)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc83D6FC80 x:str="Music (CDs, etc.)" colspan="2" style='border-right:
+  solid .5pt black'>Music (CDs, etc.)</td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc01F6FC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(C81:N81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wcCE6AFC80 x:str="Personal totals" colspan="2" style='border-right:
+  solid .5pt black'>Personal totals</td>
+  <td class=wc8017FC80 x:fmla="=SUM(C77:C81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(D77:D81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(E77:E81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(F77:F81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(G77:G81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(H77:H81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(I77:I81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(J77:J81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(K77:K81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(L77:L81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(M77:M81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(N77:N81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8017FC80 x:fmla="=SUM(O77:O81)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc0B6C38D0 x:str="Financial obligations" colspan="15"
+  style='border-right:solid .5pt black'>Financial obligations</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Long term savings" colspan="2" style='border-right:
+  solid .5pt black'>Long term savings</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C84:N84)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc0AAC38D0 x:str="Retirement (401k, Roth)">Retirement (401k, Roth)</td>
+  <td class=wc086E38D0>&nbsp;</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C85:N85)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Credit card payments" colspan="2"
+  style='border-right:solid .5pt black'>Credit card payments</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C86:N86)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Income tax (additional)" colspan="2"
+  style='border-right:solid .5pt black'>Income tax (additional)</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C87:N87)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Other obligations" colspan="2" style='border-right:
+  solid .5pt black'>Other obligations</td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc4C3D38D0 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(C88:N88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCE1D38D0 x:str="Personal totals" colspan="2" style='border-right:
+  solid .5pt black'>Personal totals</td>
+  <td class=wc81699370 x:fmla="=SUM(C84:C88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(D84:D88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(E84:E88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(F84:F88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(G84:G88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(H84:H88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(I84:I88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(J84:J88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(K84:K88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(L84:L88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(M84:M88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc81699370 x:fmla="=SUM(N84:N88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc8A6D38D0 x:fmla="=SUM(O84:O88)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="46" style='mso-height-source:userset;mso-height-alt:690'>
+  <td class=wc85CBFC80 x:str="Misc. payments" colspan="15" style='border-right:
+  solid .5pt black'>Misc. payments</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="   Other" colspan="2" style='border-right:solid .5pt black'><span
+  style='mso-spacerun:yes'>   </span>Other</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C91:N91)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="   Other" colspan="2" style='border-right:solid .5pt black'><span
+  style='mso-spacerun:yes'>   </span>Other</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C92:N92)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="   Other" colspan="2" style='border-right:solid .5pt black'><span
+  style='mso-spacerun:yes'>   </span>Other</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C93:N93)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="   Other" colspan="2" style='border-right:solid .5pt black'><span
+  style='mso-spacerun:yes'>   </span>Other</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C94:N94)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc877CFC80 x:str="   Other" colspan="2" style='border-right:solid .5pt black'><span
+  style='mso-spacerun:yes'>   </span>Other</td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC59CFC80 x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C95:N95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr class=wcC2B6EFC0 height="17" style='mso-height-alt:255'>
+  <td class=wcCFF638D0 x:str="Misc. payments totals" colspan="2"
+  style='border-right:solid .5pt black'>Misc. payments totals</td>
+  <td class=wc04CCFC80 x:fmla="=SUM(C91:C95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(D91:D95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(E91:E95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(F91:F95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(G91:G95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(H91:H95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(I91:I95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(J91:J95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(K91:K95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(L91:L95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(M91:M95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(N91:N95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc04CCFC80 x:fmla="=SUM(O91:O95)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td class=wcC2B6EFC0>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc44BC9370 colspan="15" style='border-right:solid .5pt black'>&nbsp;</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wcCB1D9370 colspan="2" style='border-right:solid .5pt black'>&nbsp;</td>
+  <td class=wc084D9370 x:str="Jan">Jan</td>
+  <td class=wc084D9370 x:str="Feb">Feb</td>
+  <td class=wc084D9370 x:str="March">March</td>
+  <td class=wc084D9370 x:str="April">April</td>
+  <td class=wc084D9370 x:str="May">May</td>
+  <td class=wc084D9370 x:str="June">June</td>
+  <td class=wc084D9370 x:str="July">July</td>
+  <td class=wc084D9370 x:str="Aug">Aug</td>
+  <td class=wc084D9370 x:str="Sept">Sept</td>
+  <td class=wc084D9370 x:str="Oct">Oct</td>
+  <td class=wc084D9370 x:str="Nov">Nov</td>
+  <td class=wc084D9370 x:str="Dec">Dec</td>
+  <td class=wc084D9370 x:str="Year">Year</td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="45" style='mso-height-source:userset;mso-height-alt:675'>
+  <td class=wc88EE9370 x:str="TOTAL EXPENSES" colspan="2" style='border-right:
+  solid .5pt black'>TOTAL EXPENSES</td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(C21+C29+C37+C43+C52+C60+C66+C75+C82+C89+C96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(D21+D29+D37+D43+D52+D60+D66+D75+D82+D89+D96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(E21+E29+E37+E43+E52+E60+E66+E75+E82+E89+E96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(F21+F29+F37+F43+F52+F60+F66+F75+F82+F89+F96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(G21+G29+G37+G43+G52+G60+G66+G75+G82+G89+G96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(H21+H29+H37+H43+H52+H60+H66+H75+H82+H89+H96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(I21+I29+I37+I43+I52+I60+I66+I75+I82+I89+I96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(J21+J29+J37+J43+J52+J60+J66+J75+J82+J89+J96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(K21+K29+K37+K43+K52+K60+K66+K75+K82+K89+K96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(L21+L29+L37+L43+L52+L60+L66+L75+L82+L89+L96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(M21+M29+M37+M43+M52+M60+M66+M75+M82+M89+M96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370
+  x:fmla="=SUM(N21+N29+N37+N43+N52+N60+N66+N75+N82+N89+N96)" x:num="0"
+  align=Right>0,00<span style='mso-spacerun:yes'>  </span></td>
+  <td class=wc43752370 x:fmla="=SUM(C99:N99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr height="59" style='mso-height-source:userset;mso-height-alt:885'>
+  <td class=wc0AE52370 x:str="Cash short/extra" colspan="2" style='border-right:
+  solid .5pt black'>Cash short/extra</td>
+  <td class=wcC02F9370 x:fmla="=SUM(C10-C99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(D10-D99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(E10-E99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(F10-F99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(G10-G99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(H10-H99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(I10-I99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(J10-J99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(K10-K99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(L10-L99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(M10-M99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wcC02F9370 x:fmla="=SUM(N10-N99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td class=wc43752370 x:fmla="=SUM(O10-O99)" x:num="0" align=Right>0,00<span
+  style='mso-spacerun:yes'>  </span></td>
+  <td colspan="240" style='mso-ignore:colspan'></td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

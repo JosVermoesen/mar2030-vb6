@@ -1,0 +1,1854 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc41777D20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc8BC17D20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc40F17D20
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	background:#99CCFF;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>10.0.0.4109         </x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>Microsoft Office Spreadsheet</x:Caption>
+    </x:Label>
+    <x:Name>Sheet</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>15240</x:Height>
+     <x:Width>27014</x:Width>
+     <x:DisableUndo/>
+     <x:DoNotDisplayTitleBar/>
+     <x:ViewableRange>$1:$262144</x:ViewableRange>
+     <x:Selection>B8</x:Selection>
+     <x:TopRowVisible>0</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wc41777D20 cellpadding=0 cellspacing=0 x:str>
+ <col width="161">
+ <col width="303">
+ <col width="80">
+ <col width="80">
+ <col width="212">
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc40F17D20 x:str="Naam" x:autofilter="all"
+  x:autofilterrange="$1:$262144">Naam</td>
+  <td class=wc40F17D20 x:str="Dienst" x:autofilter="all">Dienst</td>
+  <td class=wc40F17D20 x:str="Tel" x:autofilter="all">Tel</td>
+  <td class=wc40F17D20 x:str="Fax" x:autofilter="all">Fax</td>
+  <td class=wc40F17D20 x:str="Email" x:autofilter="all">Email</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="AGNEESSENS P.">AGNEESSENS P.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8062">02/403.8062</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ALGOET P. ">ALGOET P. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8345">02/403.8345</td>
+  <td class=wc8BC17D20 x:str="02/403.88.63">02/403.88.63</td>
+  <td class=wc8BC17D20 x:str="g.sin.rc.individuel@generali.be">g.sin.rc.individuel@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ANNO S. ">ANNO S. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8038">02/403.8038</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ASTA N.">ASTA N.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="09/238.37.11">09/238.37.11</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="nicolo.asta@pi.be">nicolo.asta@pi.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BARBAY L. ">BARBAY L. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8260">02/403.8260</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BAYARD">BAYARD</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="04/368.50.98">04/368.50.98</td>
+  <td class=wc8BC17D20 x:str="04/368.51.38">04/368.51.38</td>
+  <td class=wc8BC17D20 x:str="alain.bayard@generali.be">alain.bayard@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BEECKMAN G. ">BEECKMAN G. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8391">02/403.8391</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BEECKMAN L. ">BEECKMAN L. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8028">02/403.8028</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BEECKMANS J. ">BEECKMANS J. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8267">02/403.8267</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BEKAERT A-M">BEKAERT A-M</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8096">02/403.8096</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.sin.rc.individuel@generali.be">g.sin.rc.individuel@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BERGIERS N. ">BERGIERS N. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8317">02/403.8317</td>
+  <td class=wc8BC17D20 x:str="02/403.86.16">02/403.86.16</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BLONDEEL G.">BLONDEEL G.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8054">02/403.8054</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BOEUR CH. ">BOEUR CH. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="02/479.60.75">02/479.60.75</td>
+  <td class=wc8BC17D20 x:str="02/479.60.75">02/479.60.75</td>
+  <td class=wc8BC17D20 x:str="christian.boeur@generali.be">christian.boeur@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BORREMANS V. ">BORREMANS V. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8304">02/403.8304</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BOUDRY J. ">BOUDRY J. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8386">02/403.8386</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.ba.persoonl@generali.be">g.schade.ba.persoonl@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BOURDEAUD'HUY J-P.">BOURDEAUD'HUY J-P.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8575">02/403.8575</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.entreprise@generali.be">g.entreprise@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BOURGEOIS M.">BOURGEOIS M.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="056/77.93.07">056/77.93.07</td>
+  <td class=wc8BC17D20 x:str="056/77.21.15">056/77.21.15</td>
+  <td class=wc8BC17D20 x:str="michel.bourgeois@generali.be">michel.bourgeois@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BOUSSEMAERE C. ">BOUSSEMAERE C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8120">02/403.8120</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BRICHAU E. ">BRICHAU E. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8566">02/403.8566</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BROUNS ">BROUNS </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="089/73.25.55">089/73.25.55</td>
+  <td class=wc8BC17D20 x:str="089/72.10.66">089/72.10.66</td>
+  <td class=wc8BC17D20 x:str="rik.brouns@generali.be">rik.brouns@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BUCHAU S.">BUCHAU S.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="02/523.55.71">02/523.55.71</td>
+  <td class=wc8BC17D20 x:str="02/523.55.71">02/523.55.71</td>
+  <td class=wc8BC17D20 x:str="sebastien.buchau@generali.be">sebastien.buchau@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BUEKENHOUT W.">BUEKENHOUT W.</td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.vie@generali.be">g.admin.vie@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="BUYSSE T.">BUYSSE T.</td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8116">02/403.8116</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CALVI S.">CALVI S.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8450">02/403.8450</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CAMPS R.">CAMPS R.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8351">02/403.8351</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CAVYN M.">CAVYN M.</td>
+  <td class=wc8BC17D20 x:str="Technisch Admin/Commerciële Leven Groep">Technisch
+  Admin/Commerciële Leven Groep</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CLARYSSE J-C. ">CLARYSSE J-C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8324">02/403.8324</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CLAUS Y. ">CLAUS Y. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Arbeidsongevallen">Onderschrijving
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8368">02/403.8368</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.wet@generali.be">g.prod.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CLEYMANS P. ">CLEYMANS P. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8022">02/403.8022</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COBUT ">COBUT </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="04/379.82.71">04/379.82.71</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="andré.cobut@generali.be">andré.cobut@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COENAERTS ">COENAERTS </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="052/30.32.54">052/30.32.54</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="arnold.coenaerts@generali.be">arnold.coenaerts@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COENEN J. ">COENEN J. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Technische Inspecteurs">Niet-Leven :
+  Technische Inspecteurs</td>
+  <td class=wc8BC17D20 x:str="03/480.55.48">03/480.55.48</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="jozef.coenen@generali.be">jozef.coenen@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COLLAGE P.">COLLAGE P.</td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8114">02/403.8114</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COREMANS Sven">COREMANS Sven</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="016/69.48.57">016/69.48.57</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="sven.cooremans@generali.be">sven.cooremans@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="COUVREUR S. ">COUVREUR S. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8266">02/403.8266</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="CUSTERS F.">CUSTERS F.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8352">02/403.8352</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DALMOTE C. ">DALMOTE C. </td>
+  <td class=wc8BC17D20 x:str="Lichamelijke Schade">Lichamelijke Schade</td>
+  <td class=wc8BC17D20 x:str="02/403.8077">02/403.8077</td>
+  <td class=wc8BC17D20 x:str="02/403.88.89">02/403.88.89</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE BROUWER B. ">DE BROUWER B. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8056">02/403.8056</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE CLERCQ C. ">DE CLERCQ C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8505">02/403.8505</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE COENE J-P. ">DE COENE J-P. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8389">02/403.8389</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE COSTER K. ">DE COSTER K. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8390">02/403.8390</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE COSTER L. ">DE COSTER L. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8040">02/403.8040</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE DONCKER S. ">DE DONCKER S. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8341">02/403.8341</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE GROOTE B. ">DE GROOTE B. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8716">02/403.8716</td>
+  <td class=wc8BC17D20 x:str="02/403.81.58">02/403.81.58</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE GROOTE M. ">DE GROOTE M. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8043">02/403.8043</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE LANGE M-CH. ">DE LANGE M-CH. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8722">02/403.8722</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE MEUTER M.">DE MEUTER M.</td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8718">02/403.8718</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE PAUW P.">DE PAUW P.</td>
+  <td class=wc8BC17D20 x:str="Uitgifte Leven Groep">Uitgifte Leven Groep</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE PUNT S.">DE PUNT S.</td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.leven@generali.be">g.admin.leven@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE SAUVAGE A. ">DE SAUVAGE A. </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="02/732.52.41">02/732.52.41</td>
+  <td class=wc8BC17D20 x:str="02/735.26.23">02/735.26.23</td>
+  <td class=wc8BC17D20 x:str="andre.desauvage@generali.be">andre.desauvage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE SAUVAGE Y.">DE SAUVAGE Y.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="081/56.78.66">081/56.78.66</td>
+  <td class=wc8BC17D20 x:str="081/56.94.95">081/56.94.95</td>
+  <td class=wc8BC17D20 x:str="yves.desauvage@generali.be">yves.desauvage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE WACHTER J. ">DE WACHTER J. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8037">02/403.8037</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE WINNE P. ">DE WINNE P. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8335">02/403.8335</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.sin.dommage@generali.be">g.sin.dommage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DE WOLF H. ">DE WOLF H. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8108">02/403.8108</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DEBLANDER A. ">DEBLANDER A. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8101">02/403.8101</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DEBUE ">DEBUE </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Technische Inspecteurs">Niet-Leven :
+  Technische Inspecteurs</td>
+  <td class=wc8BC17D20 x:str="055/49.79.57">055/49.79.57</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="noel.debue@generali.be">noel.debue@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DELHALLE MARC ">DELHALLE MARC </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="084/21.19.48">084/21.19.48</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="marc.delhalle@generali.be">marc.delhalle@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DELPIERRE ">DELPIERRE </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="071/45.95.84">071/45.95.84</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="danielle.delpierre@generali.be">danielle.delpierre@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DELVILLE A.">DELVILLE A.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="086/43.38.93">086/43.38.93</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="alain.delville@generali.be">alain.delville@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DEMESMAEKER A.">DEMESMAEKER A.</td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8719">02/403.8719</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DENAYER M.">DENAYER M.</td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8356">02/403.8356</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DENOO K.">DENOO K.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="09/234.37.65">09/234.37.65</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="katrien.denoo@generali.be">katrien.denoo@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DEPLECHIN E. ">DEPLECHIN E. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8091">02/403.8091</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.sin.dommage@generali.be">g.sin.dommage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DESMAELS P. ">DESMAELS P. </td>
+  <td class=wc8BC17D20 x:str="Commerciële Directie Niet-Leven">Commerciële
+  Directie Niet-Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.8132">02/403.8132</td>
+  <td class=wc8BC17D20 x:str="02/403.86.99">02/403.86.99</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DEVILLE ">DEVILLE </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="02/479.58.78">02/479.58.78</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="thierry.deville@generali.be">thierry.deville@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="D'HAESE N.">D'HAESE N.</td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.leven@generali.be">g.admin.leven@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DIERICK H. ">DIERICK H. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8117">02/403.8117</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DIERICKX L. ">DIERICKX L. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8312">02/403.8312</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.wet@generali.be">g.prod.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DIEU N.">DIEU N.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8196">02/403.8196</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DRAYE P. ">DRAYE P. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8097">02/403.8097</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DUBOIS R.">DUBOIS R.</td>
+  <td class=wc8BC17D20 x:str="Commerciële Directie Individueel Leven">Commerciële
+  Directie Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.8247">02/403.8247</td>
+  <td class=wc8BC17D20 x:str="02/403.86.99">02/403.86.99</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DUFRENNE ">DUFRENNE </td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="081/31.01.58">081/31.01.58</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="thierry.dufrenne@generali.be">thierry.dufrenne@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="DUPONT R.">DUPONT R.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="02/426.57.05">02/426.57.05</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="robert.dupont@generali.be">robert.dupont@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="EECKHOUT Magda ">EECKHOUT Magda </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8348">02/403.8348</td>
+  <td class=wc8BC17D20 x:str="02/403.88.89">02/403.88.89</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ENGELS E.">ENGELS E.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8264">02/403.8264</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ESPEEL T. ">ESPEEL T. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8717">02/403.8717</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="EVRARD C. ">EVRARD C. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving ondernemingen BA">Niet-Leven
+  : Onderschrijving ondernemingen BA</td>
+  <td class=wc8BC17D20 x:str="02/403.8325">02/403.8325</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.entreprise@generali.be">g.entreprise@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="FETTES G. ">FETTES G. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8339">02/403.8339</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="FIEUW Y.">FIEUW Y.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8338">02/403.8338</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="FLEMAL R. ">FLEMAL R. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8532">02/403.8532</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="FRANCOT E. ">FRANCOT E. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Arbeidsongevallen">Onderschrijving
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8315">02/403.8315</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.loi@generali.be">g.prod.loi@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="FUEYO B. ">FUEYO B. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8383">02/403.8383</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="GENIQUE G. ">GENIQUE G. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8029">02/403.8029</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="GETTEMAN C. ">GETTEMAN C. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8272">02/403.8272</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.ong.schade@generali.be">g.ong.schade@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="GOMEZ V. ">GOMEZ V. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8045">02/403.8045</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="GUIETTE M. ">GUIETTE M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8308">02/403.8308</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HARNIE G. ">HARNIE G. </td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.leven@generali.be">g.admin.leven@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HELMBACHER M. ">HELMBACHER M. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8714">02/403.8714</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HENROTTIN P. ">HENROTTIN P. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8069">02/403.8069</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HEYVAERT H. ">HEYVAERT H. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8032">02/403.8032</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HOET J.">HOET J.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="02/269.88.33">02/269.88.33</td>
+  <td class=wc8BC17D20 x:str="02/269.73.46">02/269.73.46</td>
+  <td class=wc8BC17D20 x:str="hoet.jacques@wanadoo.be">hoet.jacques@wanadoo.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HUART F. ">HUART F. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8030">02/403.8030</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="HUYGHENS C.">HUYGHENS C.</td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.vie@generali.be">g.admin.vie@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ISAAC S. ">ISAAC S. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8271">02/403.8271</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="JACOBS M. ">JACOBS M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8322">02/403.8322</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="JANSSEN A.">JANSSEN A.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="011/34.11.07">011/34.11.07</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="andre.jansen@generali.be">andre.jansen@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="JANSSENS F. ">JANSSENS F. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8123">02/403.8123</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.schade.ba.persoonl@generali.be">g.schade.ba.persoonl@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="KAS S.">KAS S.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8499">02/403.8499</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="KENNOF L. ">KENNOF L. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8392">02/403.8392</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="KNOOPS ">KNOOPS </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="011/37.59.35">011/37.59.35</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="jacky.knoops@generali.be">jacky.knoops@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LAINE M.">LAINE M.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="069/56.25.73">069/56.25.73</td>
+  <td class=wc8BC17D20 x:str="069/56.25.73">069/56.25.73</td>
+  <td class=wc8BC17D20 x:str="michel.laine@generali.be">michel.laine@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LAPORTE M. ">LAPORTE M. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving ondernemingen BA">Niet-Leven
+  : Onderschrijving ondernemingen BA</td>
+  <td class=wc8BC17D20 x:str="02/403.8098">02/403.8098</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LAURENT C.">LAURENT C.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving ondernemingen BA">Niet-Leven
+  : Onderschrijving ondernemingen BA</td>
+  <td class=wc8BC17D20 x:str="02/403.8270">02/403.8270</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.entreprise@generali.be">g.entreprise@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LAUWEREYS J.">LAUWEREYS J.</td>
+  <td class=wc8BC17D20 x:str="Uitgifte Leven Groep">Uitgifte Leven Groep</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LEBLICQ D. ">LEBLICQ D. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8061">02/403.8061</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LEMPEREUR I.">LEMPEREUR I.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="04/254.42.19">04/254.42.19</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="isabelle.lempereur@generali.be">isabelle.lempereur@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LERMUSIAUX R. ">LERMUSIAUX R. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8537">02/403.8537</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LEYSEN ">LEYSEN </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="015/31.02.29">015/31.02.29</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="paul.leysen@generali.be">paul.leysen@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LIPPENS J. ">LIPPENS J. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8102">02/403.8102</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LO GIOCO V.">LO GIOCO V.</td>
+  <td class=wc8BC17D20 x:str="Hulpboekhouding">Hulpboekhouding</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LOGGHE Peter">LOGGHE Peter</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="051/69.59.27">051/69.59.27</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="peter.logghe@generali.be">peter.logghe@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LORMANS A.">LORMANS A.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="03/653.43.77">03/653.43.77</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="alain.lormans@generali.be">alain.lormans@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="LUMLEY G. ">LUMLEY G. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8064">02/403.8064</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MAES P.">MAES P.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="068/64.64.66">068/64.64.66</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="pascal.maes@generali.be">pascal.maes@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MALENGREAUX F.">MALENGREAUX F.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="065/88.55.15">065/88.55.15</td>
+  <td class=wc8BC17D20 x:str="065/88.55.15">065/88.55.15</td>
+  <td class=wc8BC17D20 x:str="francois.malengreaux@generali.be">francois.malengreaux@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MARGREVE ">MARGREVE </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="080/34.96.73">080/34.96.73</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="franzjoseph.margreve@generali.be">franzjoseph.margreve@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MARSHALL C. ">MARSHALL C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Arbeidsongevallen">Onderschrijving
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8103">02/403.8103</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.loi@generali.be">g.prod.loi@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MASSELUS">MASSELUS</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="065/84.29.84">065/84.29.84</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="francois.masselus@generali.be">francois.masselus@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MATTHYS T.">MATTHYS T.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8167">02/403.8167</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MEERT G. ">MEERT G. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8055">02/403.8055</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MET DEN ANCXT J. ">MET DEN ANCXT J. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8531">02/403.8531</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MEUTER A. ">MEUTER A. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8313">02/403.8313</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MINON M. ">MINON M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8539">02/403.8539</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MISEUR G.">MISEUR G.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.80.66">02/403.80.66</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="griet.miseur@generali.be">griet.miseur@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MOLIN W.">MOLIN W.</td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8727">02/403.8727</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MONSIEUR E.">MONSIEUR E.</td>
+  <td class=wc8BC17D20 x:str="Commerciële Directie Individueel Leven">Commerciële
+  Directie Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.8332">02/403.8332</td>
+  <td class=wc8BC17D20 x:str="02/403.88.86">02/403.88.86</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MOTQUIN P.">MOTQUIN P.</td>
+  <td class=wc8BC17D20 x:str="Commerciële Directie Niet-Leven">Commerciële
+  Directie Niet-Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.8255">02/403.8255</td>
+  <td class=wc8BC17D20 x:str="02/403.86.99">02/403.86.99</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MOYSON">MOYSON</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="052/37.16.53">052/37.16.53</td>
+  <td class=wc8BC17D20 x:str="052/38.02.92">052/38.02.92</td>
+  <td class=wc8BC17D20 x:str="erwin.moyson@generali.be">erwin.moyson@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="MUTANGANWA I. ">MUTANGANWA I. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8361">02/403.8361</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="NOTAERTS J. ">NOTAERTS J. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8387">02/403.8387</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.ong.schade@generali.be">g.ong.schade@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PARMENTIER R. ">PARMENTIER R. </td>
+  <td class=wc8BC17D20 x:str="Lichamelijke Schade">Lichamelijke Schade</td>
+  <td class=wc8BC17D20 x:str="02/403.8261">02/403.8261</td>
+  <td class=wc8BC17D20 x:str="02/403.88.89">02/403.88.89</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PATIJN A.">PATIJN A.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8192">02/403.8192</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.schade.ba.persoonl@generali.be">g.schade.ba.persoonl@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PAUWELS C. ">PAUWELS C. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8052">02/403.8052</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PEETERS I. ">PEETERS I. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8094">02/403.8094</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.schade.ba.persoonl@generali.be">g.schade.ba.persoonl@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PHILIPS L. ">PHILIPS L. </td>
+  <td class=wc8BC17D20 x:str="Commerciëel Leven Internationale Ondernemingen">Commerciëel
+  Leven Internationale Ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8251">02/403.8251</td>
+  <td class=wc8BC17D20 x:str="02/403.88.97">02/403.88.97</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PILLE R. ">PILLE R. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8346">02/403.8346</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PLASMANS L. ">PLASMANS L. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8109">02/403.8109</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.ong.schade@generali.be">g.ong.schade@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="POELMANS A.">POELMANS A.</td>
+  <td class=wc8BC17D20 x:str="Technisch Admin/Commerciële Leven Groep">Technisch
+  Admin/Commerciële Leven Groep</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="POOS M. ">POOS M. </td>
+  <td class=wc8BC17D20 x:str="Commerciëel Leven Internationale Ondernemingen">Commerciëel
+  Leven Internationale Ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8250">02/403.8250</td>
+  <td class=wc8BC17D20 x:str="02/403.88.97">02/403.88.97</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PRINCE">PRINCE</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="04/254.42.17">04/254.42.17</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="christelle.prince@generali.be">christelle.prince@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PULINX C. ">PULINX C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8538">02/403.8538</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="PUTTEMANS ">PUTTEMANS </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="015/71.27.49">015/71.27.49</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="marcel.puttemans@generali.be">marcel.puttemans@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RASNEUR A.S.">RASNEUR A.S.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="068/64.58.99">068/64.58.99</td>
+  <td class=wc8BC17D20 x:str="annesylvie.rasneur@generali.be">annesylvie.rasneur@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="REMY O.">REMY O.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8092">02/403.8092</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.sin.dommage@generali.be">g.sin.dommage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RENDERS C. ">RENDERS C. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8068">02/403.8068</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.dommage@generali.be">g.sin.dommage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RETORE ">RETORE </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="053/83.76.37">053/83.76.37</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="guido.retore@generali.be">guido.retore@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="REYNAERTS ">REYNAERTS </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="02/351.64.64">02/351.64.64</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="olivier.reynaerts@generali.be">olivier.reynaerts@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RING G. ">RING G. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Arbeidsongevallen">Onderschrijving
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8090">02/403.8090</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.wet@generali.be">g.prod.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RISTAGNO S.">RISTAGNO S.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="065/84.37.04">065/84.37.04</td>
+  <td class=wc8BC17D20 x:str="065/84.37.04">065/84.37.04</td>
+  <td class=wc8BC17D20 x:str="salvatore.ristagno@generali.be">salvatore.ristagno@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ROELAND C. ">ROELAND C. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8258">02/403.8258</td>
+  <td class=wc8BC17D20 x:str="02/403.88.63">02/403.88.63</td>
+  <td class=wc8BC17D20 x:str="g.schade.ba.persoonl@generali.be">g.schade.ba.persoonl@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ROLIES J. ">ROLIES J. </td>
+  <td class=wc8BC17D20 x:str="Commerciële Directie Niet-Leven">Commerciële
+  Directie Niet-Leven</td>
+  <td class=wc8BC17D20 x:str="02/403.8259">02/403.8259</td>
+  <td class=wc8BC17D20 x:str="02/403.86.99">02/403.86.99</td>
+  <td class=wc8BC17D20 x:str="g.comercieel@generali.be">g.comercieel@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RÖMER B.">RÖMER B.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="087/67.85.13">087/67.85.13</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="bruno.romer@generali.be">bruno.romer@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ROOBAERT E.">ROOBAERT E.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="02/361.51.79">02/361.51.79</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="manu.roobaert@generali.be">manu.roobaert@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RUFFLART S. ">RUFFLART S. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8119">02/403.8119</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="RYSMAN D. ">RYSMAN D. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8104">02/403.8104</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SACRE E. ">SACRE E. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8023">02/403.8023</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SANCHEZ P.">SANCHEZ P.</td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8344">02/403.8344</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SCHETS D. ">SCHETS D. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8036">02/403.8036</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SCHOLIERS P. ">SCHOLIERS P. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8725">02/403.8725</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SCHOLLAERT J. ">SCHOLLAERT J. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Arbeidsongevallen">Onderschrijving
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8105">02/403.8105</td>
+  <td class=wc8BC17D20 x:str="02/403.88.96">02/403.88.96</td>
+  <td class=wc8BC17D20 x:str="g.prod.wet@generali.be">g.prod.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SCHUTIJZER B. ">SCHUTIJZER B. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8433">02/403.8433</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SIMAEYS R. ">SIMAEYS R. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8269">02/403.8269</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SIX ">SIX </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Technische Inspecteurs">Niet-Leven :
+  Technische Inspecteurs</td>
+  <td class=wc8BC17D20 x:str="02/538.75.58">02/538.75.58</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="christophe.six@generali.be">christophe.six@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SOLE S. ">SOLE S. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8340">02/403.8340</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SONCK G. ">SONCK G. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8337">02/403.8337</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SORGELOOSE P.P.">SORGELOOSE P.P.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving ondernemingen BA">Niet-Leven
+  : Onderschrijving ondernemingen BA</td>
+  <td class=wc8BC17D20 x:str="02/403.8437">02/403.8437</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="SPITAELS C. ">SPITAELS C. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8033">02/403.8033</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="STEENWERCKX E. ">STEENWERCKX E. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8200">02/403.8200</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="STIEVENARD N.">STIEVENARD N.</td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8729">02/403.8729</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="STINGLHAMBER ">STINGLHAMBER </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Technische Inspecteurs">Niet-Leven :
+  Technische Inspecteurs</td>
+  <td class=wc8BC17D20 x:str="081/87.88.58">081/87.88.58</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="jeanluc.stinglhamber@generali.be">jeanluc.stinglhamber@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="STRUELENS F. ">STRUELENS F. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8333">02/403.8333</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="STUER J. ">STUER J. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8720">02/403.8720</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="TAILLEUR H. ">TAILLEUR H. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8713">02/403.8713</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="TEMPELS ">TEMPELS </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="052/21.75.53">052/21.75.53</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="john.tempels@generali.be">john.tempels@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="THIELENS ">THIELENS </td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="04/233.51.85">04/233.51.85</td>
+  <td class=wc8BC17D20 x:str="04/233.51.85">04/233.51.85</td>
+  <td class=wc8BC17D20 x:str="eric.thielens@generali.be">eric.thielens@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="THIENPONT A. ">THIENPONT A. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8295">02/403.8295</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="TOURNE B. ">TOURNE B. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8026">02/403.8026</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="V.D.MYNSBRUGGE M. ">V.D.MYNSBRUGGE M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8230">02/403.8230</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN AERT A. ">VAN AERT A. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8199">02/403.8199</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN BETS C.">VAN BETS C.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="081/65.64.22">081/65.64.22</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="christophe.vanbets@generali.be">christophe.vanbets@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN BRUSSEL D. ">VAN BRUSSEL D. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8715">02/403.8715</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN CUTSEM B. ">VAN CUTSEM B. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8726">02/403.8726</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DE KERCKHOVE C. ">VAN DE KERCKHOVE C. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8053">02/403.8053</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DEN BROECK R. ">VAN DEN BROECK R. </td>
+  <td class=wc8BC17D20 x:str="Commerciëel Leven Internationale Ondernemingen">Commerciëel
+  Leven Internationale Ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8251">02/403.8251</td>
+  <td class=wc8BC17D20 x:str="02/403.88.97">02/403.88.97</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DEN BROUCKE A. ">VAN DEN BROUCKE A. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8075">02/403.8075</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DEN HAUTE J-P. ">VAN DEN HAUTE J-P. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8051">02/403.8051</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DEN HOUT E. ">VAN DEN HOUT E. </td>
+  <td class=wc8BC17D20 x:str="Lichamelijke Schade">Lichamelijke Schade</td>
+  <td class=wc8BC17D20 x:str="02/403.8350">02/403.8350</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN DIJCK S. ">VAN DIJCK S. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8274">02/403.8274</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN GANSEN M. ">VAN GANSEN M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8122">02/403.8122</td>
+  <td class=wc8BC17D20 x:str="02/40388.87">02/40388.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN HAELEN V. ">VAN HAELEN V. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8349">02/403.8349</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN HAMMEE M.">VAN HAMMEE M.</td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8574">02/403.8574</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN HORENBEKE J. ">VAN HORENBEKE J. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8215">02/403.8215</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN LANGENHOVE P.">VAN LANGENHOVE P.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="09/366.09.55">09/366.09.55</td>
+  <td class=wc8BC17D20 x:str="09/366.09.55">09/366.09.55</td>
+  <td class=wc8BC17D20 x:str="philippe.vanlangenhove@generali.be">philippe.vanlangenhove@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN MULDERS S. ">VAN MULDERS S. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8505">02/403.8505</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN WIN D. ">VAN WIN D. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8065">02/403.8065</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VAN ZEIR M-A. ">VAN ZEIR M-A. </td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8723">02/403.8723</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDEN BROECK F.">VANDEN BROECK F.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="03/605.64.38">03/605.64.38</td>
+  <td class=wc8BC17D20 x:str="03/664.51.35">03/664.51.35</td>
+  <td class=wc8BC17D20 x:str="frank.vandenbroek@generali.be">frank.vandenbroek@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDENBEMPT M.">VANDENBEMPT M.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Regelaars Individueel Leven">Inspecteurs
+  Regelaars Individueel Leven</td>
+  <td class=wc8BC17D20 x:str="016/64.06.26">016/64.06.26</td>
+  <td class=wc8BC17D20 x:str="016/83.42.91">016/83.42.91</td>
+  <td class=wc8BC17D20 x:str="marc.vandenbempt@generali.be">marc.vandenbempt@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDENBERGHE H. ">VANDENBERGHE H. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8021">02/403.8021</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDENPUT M.">VANDENPUT M.</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="02/688.18.64">02/688.18.64</td>
+  <td class=wc8BC17D20 x:str="02/687.47.66">02/687.47.66</td>
+  <td class=wc8BC17D20 x:str="marc.vandenput@generali.be">marc.vandenput@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDEPONTSEELE E. ">VANDEPONTSEELE E. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8110">02/403.8110</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.ong.schade@generali.be">g.ong.schade@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDEPUTTE Johan">VANDEPUTTE Johan</td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="055/45.60.84">055/45.60.84</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="johan.vandeputte@generali.be">johan.vandeputte@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDERLINDEN M.">VANDERLINDEN M.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Makelarij Leven Groep Lokaal">Inspecteurs
+  Makelarij Leven Groep Lokaal</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDEROOST R. ">VANDEROOST R. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8321">02/403.8321</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.dom.rc@generali.be">g.prod.dom.rc@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDERSTOCKT I. ">VANDERSTOCKT I. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8099">02/403.8099</td>
+  <td class=wc8BC17D20 x:str="02/403.88.87">02/403.88.87</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANDERVORST M. ">VANDERVORST M. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijving schade ondernemingen">Niet-Leven
+  : Onderschrijving schade ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8115">02/403.8115</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.entreprise@generali.be">g.entreprise@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANHECKE F.">VANHECKE F.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Makelarij Leven Groep Lokaal">Inspecteurs
+  Makelarij Leven Groep Lokaal</td>
+  <td class=wc8BC17D20 x:str="02/403.8210">02/403.8210</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANHERBERGHEN M. ">VANHERBERGHEN M. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijvingsupport Ondernemingen">Niet-Leven
+  : Onderschrijvingsupport Ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8031">02/403.8031</td>
+  <td class=wc8BC17D20 x:str="02/403.80.31">02/403.80.31</td>
+  <td class=wc8BC17D20 x:str="g.entreprise@generali.be">g.entreprise@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VANKONINXLOO A. ">VANKONINXLOO A. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen schade+BA/Verschillende">Schadegevallen
+  schade+BA/Verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8336">02/403.8336</td>
+  <td class=wc8BC17D20 x:str="02/403.88.85">02/403.88.85</td>
+  <td class=wc8BC17D20 x:str="g.sin.dommage@generali.be">g.sin.dommage@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERBEECK A. ">VERBEECK A. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8151">02/403.8151</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERGAELEN M. ">VERGAELEN M. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving Auto">Onderschrijving Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8093">02/403.8093</td>
+  <td class=wc8BC17D20 x:str="02/403.88.91">02/403.88.91</td>
+  <td class=wc8BC17D20 x:str="g.prod.auto@generali.be">g.prod.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERHASSELT R. ">VERHASSELT R. </td>
+  <td class=wc8BC17D20 x:str="Leven Particulieren: Cliënteel">Leven
+  Particulieren: Cliënteel</td>
+  <td class=wc8BC17D20 x:str="02/403.8214">02/403.8214</td>
+  <td class=wc8BC17D20 x:str="02/403.80.44">02/403.80.44</td>
+  <td class=wc8BC17D20 x:str="g.admin.leven@generali.be">g.admin.leven@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERHAVERT A. ">VERHAVERT A. </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Onderschrijvingsupport Ondernemingen">Niet-Leven
+  : Onderschrijvingsupport Ondernemingen</td>
+  <td class=wc8BC17D20 x:str="02/403.8354">02/403.8354</td>
+  <td class=wc8BC17D20 x:str="02/403.88.90">02/403.88.90</td>
+  <td class=wc8BC17D20 x:str="g.ondern@generali.be">g.ondern@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERHEYDEN N.">VERHEYDEN N.</td>
+  <td class=wc8BC17D20 x:str="Europaea">Europaea</td>
+  <td class=wc8BC17D20 x:str="02/403.8721">02/403.8721</td>
+  <td class=wc8BC17D20 x:str="02/403.87.99">02/403.87.99</td>
+  <td class=wc8BC17D20 x:str="g.europaea@generali.be">g.europaea@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERMASSEN ">VERMASSEN </td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="09/362.37.16">09/362.37.16</td>
+  <td class=wc8BC17D20 x:str="09/362.31.87">09/362.31.87</td>
+  <td class=wc8BC17D20 x:str="guy.vermassen@generali.be">guy.vermassen@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERMEERSCH R. ">VERMEERSCH R. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8343">02/403.8343</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERMEULEN K. ">VERMEULEN K. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8063">02/403.8063</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.sin.auto@generali.be">g.sin.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VERSTREKEN G. ">VERSTREKEN G. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8107">02/403.8107</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VLOGAERT R.">VLOGAERT R.</td>
+  <td class=wc8BC17D20 x:str="Regionaal Commerciëel Verantwoordelijken">Regionaal
+  Commerciëel Verantwoordelijken</td>
+  <td class=wc8BC17D20 x:str="02/466.71.47">02/466.71.47</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="rudy.vlogaert@generali.be">rudy.vlogaert@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VONCK B.">VONCK B.</td>
+  <td class=wc8BC17D20 x:str="Inspecteurs Makelarij Leven Groep Lokaal">Inspecteurs
+  Makelarij Leven Groep Lokaal</td>
+  <td class=wc8BC17D20 x:str="055/42.80.88">055/42.80.88</td>
+  <td class=wc8BC17D20 x:str="055/42.80.88">055/42.80.88</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="VORIADIS A. ">VORIADIS A. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Arbeidsongevallen">Schadegevallen
+  Arbeidsongevallen</td>
+  <td class=wc8BC17D20 x:str="02/403.8470">02/403.8470</td>
+  <td class=wc8BC17D20 x:str="02/403.86.51">02/403.86.51</td>
+  <td class=wc8BC17D20 x:str="g.schade.wet@generali.be">g.schade.wet@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="WALRAVENS G. ">WALRAVENS G. </td>
+  <td class=wc8BC17D20 x:str="Onderschrijving schade &amp; BA verschillende">Onderschrijving
+  schade &amp; BA verschillende</td>
+  <td class=wc8BC17D20 x:str="02/403.8316">02/403.8316</td>
+  <td class=wc8BC17D20 x:str="02/403.88.94">02/403.88.94</td>
+  <td class=wc8BC17D20 x:str="g.prod.schade.ba@generali.be">g.prod.schade.ba@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="WALSCHAP L. ">WALSCHAP L. </td>
+  <td class=wc8BC17D20 x:str="Schadegevallen Auto">Schadegevallen Auto</td>
+  <td class=wc8BC17D20 x:str="02/403.8047">02/403.8047</td>
+  <td class=wc8BC17D20 x:str="02/403.88.92">02/403.88.92</td>
+  <td class=wc8BC17D20 x:str="g.schade.auto@generali.be">g.schade.auto@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="WATTE ">WATTE </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Schadeinspecteurs">Niet-Leven :
+  Schadeinspecteurs</td>
+  <td class=wc8BC17D20 x:str="09/231.70.14">09/231.70.14</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str="gilbert.watte@generali.be">gilbert.watte@generali.be</td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="WETSELS I. ">WETSELS I. </td>
+  <td class=wc8BC17D20 x:str="Lichamelijke Schade">Lichamelijke Schade</td>
+  <td class=wc8BC17D20 x:str="02/403.8078">02/403.8078</td>
+  <td class=wc8BC17D20 x:str="02/403.88.89">02/403.88.89</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height="17" style='mso-height-alt:255'>
+  <td class=wc8BC17D20 x:str="ZARDINI ">ZARDINI </td>
+  <td class=wc8BC17D20 x:str="Niet-Leven : Technische Inspecteurs">Niet-Leven :
+  Technische Inspecteurs</td>
+  <td class=wc8BC17D20 x:str="065/79.47.61">065/79.47.61</td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+  <td class=wc8BC17D20 x:str=" "><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

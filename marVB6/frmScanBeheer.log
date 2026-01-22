@@ -1,0 +1,11 @@
+Line 2: Could not create reference: '{84926CA3-2941-101C-816F-0E6013114B7F}#1.0#0'.
+Line 13: Class ScanLibCtl.ImgScan of control ImgScan1 was not a loaded control class.
+Line 16: The property name _Version in ImgScan1 is invalid.
+Line 17: The property name _ExtentX in ImgScan1 is invalid.
+Line 18: The property name _ExtentY in ImgScan1 is invalid.
+Line 19: The property name _StockProps in ImgScan1 is invalid.
+Line 20: The property name Image in ImgScan1 is invalid.
+Line 21: The property name FileType in ImgScan1 is invalid.
+Line 22: The property name CompressionType in ImgScan1 is invalid.
+Line 23: The property name CompressionInfo in ImgScan1 is invalid.
+Line 24: The property name ScanTo in ImgScan1 is invalid.

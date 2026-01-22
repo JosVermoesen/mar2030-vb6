@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <x:ExcelWorkbook>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ActiveSheet>0</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <ss:Styles>
+  <ss:Style ss:ID="Default">
+   <ss:Alignment ss:Horizontal="Automatic" ss:Rotate="0.0" ss:Vertical="Bottom"
+    ss:ReadingOrder="Context"/>
+   <ss:Borders>
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="10" ss:Color="Automatic" ss:Bold="0"
+    ss:Italic="0" ss:Underline="None"/>
+   <ss:Interior ss:Color="Automatic" ss:Pattern="None"/>
+   <ss:NumberFormat ss:Format="General"/>
+   <ss:Protection ss:Protected="1"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc05740E0000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0416FB0000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="&quot;€&quot;\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc05740F0000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="Standard"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc10D8970000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Color="#000000"/>
+   <ss:Interior/>
+  </ss:Style>
+  <ss:Style ss:ID="wc0574020000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Color="#FF0000" ss:Bold="1"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="&quot;€&quot;\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc10D8980000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Color="#000000"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="&quot;€&quot;\ #,##0.00"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc10D89A0000000000">
+   <ss:Alignment ss:Vertical="Bottom"/>
+   <ss:Font ss:FontName="Calibri" ss:Size="11" ss:Color="#000000"/>
+   <ss:Interior/>
+   <ss:NumberFormat ss:Format="Standard"/>
+  </ss:Style>
+  <ss:Style ss:ID="wc05740D0000000000">
+   <ss:Alignment/>
+   <ss:Font ss:Color="#FF0000" ss:Bold="1"/>
+   <ss:Interior/>
+  </ss:Style>
+ </ss:Styles>
+ <c:ComponentOptions>
+  <c:Label>
+   <c:Caption>Microsoft Office Spreadsheet</c:Caption>
+  </c:Label>
+  <c:MaxHeight>80%</c:MaxHeight>
+  <c:MaxWidth>80%</c:MaxWidth>
+  <c:NextSheetNumber>2</c:NextSheetNumber>
+ </c:ComponentOptions>
+ <x:WorkbookOptions>
+  <c:OWCVersion>12.0.0.6502         </c:OWCVersion>
+  <x:Height>7646</x:Height>
+  <x:Width>15266</x:Width>
+ </x:WorkbookOptions>
+ <ss:Worksheet ss:Name="Sheet1">
+  <x:WorksheetOptions>
+   <x:Selected/>
+   <x:ViewableRange>R1:R262144</x:ViewableRange>
+   <x:Selection>R6C10</x:Selection>
+   <x:TopRowVisible>0</x:TopRowVisible>
+   <x:LeftColumnVisible>0</x:LeftColumnVisible>
+   <x:ProtectContents>False</x:ProtectContents>
+  </x:WorksheetOptions>
+  <c:WorksheetOptions>
+  </c:WorksheetOptions>
+  <ss:Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="8"
+   ss:DefaultColumnWidth="48.0" ss:DefaultRowHeight="12.75">
+   <ss:Column ss:Width="103.5"/>
+   <ss:Column ss:Width="64.5" ss:StyleID="wc05740D0000000000"/>
+   <ss:Column ss:Width="49.49999999999999"/>
+   <ss:Column ss:Width="30.0"/>
+   <ss:Column ss:Width="40.49999999999999"/>
+   <ss:Column ss:Width="35.24999999999999"/>
+   <ss:Column ss:Width="37.49999999999999"/>
+   <ss:Column ss:Width="72.75"/>
+   <ss:Column ss:Width="69.0"/>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc05740E0000000000">
+     <ss:Data ss:Type="String">Waarborg</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0416FB0000000000">
+     <ss:Data ss:Type="String">Nettopremie</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0416FB0000000000">
+     <ss:Data ss:Type="String">Fee/Com.</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc05740E0000000000">
+     <ss:Data ss:Type="String">F/C %</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0416FB0000000000">
+     <ss:Data ss:Type="String">Taks</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc05740E0000000000">
+     <ss:Data ss:Type="String">Taks%</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0416FB0000000000">
+     <ss:Data ss:Type="String">Beheer</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc05740F0000000000">
+     <ss:Data ss:Type="String">Totaal Kwijting</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc05740F0000000000">
+     <ss:Data ss:Type="String">Totaal Factuur</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="String">Omnium (commissie)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0574020000000000">
+     <ss:Data ss:Type="Number">632.20000000000005</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-1]*RC[1])/100">
+     <ss:Data ss:Type="Number">126.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">20</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000"
+     ss:Formula="=SUM(RC[-3]+RC[-2])*RC[1]/100">
+     <ss:Data ss:Type="Number">202.96654560000002</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">26.754000000000001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000">
+     <ss:Data ss:Type="Number">5</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"
+     ss:Formula="=SUM(RC[-6]+RC[-5]+RC[-3]+RC[-1])">
+     <ss:Data ss:Type="Number">966.60654560000012</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="String">Omnium (fee)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0574020000000000">
+     <ss:Data ss:Type="Number">632.20000000000005</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-1]*RC[1])/100">
+     <ss:Data ss:Type="Number">126.44</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">20</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-3])*RC[1]/100">
+     <ss:Data ss:Type="Number">169.13878800000003</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">26.754000000000001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000">
+     <ss:Data ss:Type="Number">5</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"
+     ss:Formula="=SUM(RC[-7]+RC[-6]+RC[-4]+RC[-2])">
+     <ss:Data ss:Type="Number">932.77878800000008</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc0574020000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="String">B.A. Auto (fee)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0574020000000000">
+     <ss:Data ss:Type="Number">212.28999999999999</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-1]*RC[1])/100">
+     <ss:Data ss:Type="Number">42.457999999999998</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">20</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000"
+     ss:Formula="=SUM(RC[-3]+RC[-2])*RC[1]/100">
+     <ss:Data ss:Type="Number">69.036708000000004</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">27.100000000000001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000">
+     <ss:Data ss:Type="Number">5</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"
+     ss:Formula="=SUM(RC[-6]+RC[-5]+RC[-3]+RC[-1])">
+     <ss:Data ss:Type="Number">328.78470800000002</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="String">B.A. Auto (commisse)</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0574020000000000">
+     <ss:Data ss:Type="Number">212.28999999999999</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-1]*RC[1])/100">
+     <ss:Data ss:Type="Number">42.457999999999998</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">20</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000" ss:Formula="=SUM(RC[-3])*RC[1]/100">
+     <ss:Data ss:Type="Number">57.530590000000004</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="Number">27.100000000000001</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D8980000000000">
+     <ss:Data ss:Type="Number">5</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"
+     ss:Formula="=SUM(RC[-7]+RC[-6]+RC[-4]+RC[-2])">
+     <ss:Data ss:Type="Number">317.27859000000001</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc0574020000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000"/>
+   </ss:Row>
+   <ss:Row ss:Height="15.0" ss:AutoFitHeight="0">
+    <ss:Cell ss:StyleID="wc10D8970000000000">
+     <ss:Data ss:Type="String">TOTAAL</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc0574020000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D8970000000000"/>
+    <ss:Cell ss:StyleID="wc10D8980000000000"/>
+    <ss:Cell ss:StyleID="wc10D89A0000000000" ss:Formula="=SUM(R[-6]C:R[-2]C)">
+     <ss:Data ss:Type="Number">1295.3912536000003</ss:Data>
+    </ss:Cell>
+    <ss:Cell ss:StyleID="wc10D89A0000000000" ss:Formula="=SUM(R[-6]C:R[-1]C)">
+     <ss:Data ss:Type="Number">1250.057378</ss:Data>
+    </ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </ss:Worksheet>
+</ss:Workbook>
+

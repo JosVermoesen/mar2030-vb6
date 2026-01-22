@@ -1,0 +1,214 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<style type="text/css">
+<!--tr
+	{mso-height-source:auto;}
+td
+	{white-space:nowrap;}
+.wc84A391F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc00E791F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00 \[$€-813\]\;\[red\]-\#\,\#\#0\.00 \[$€-813\]";
+	font-size:10pt;
+	font-weight:auto;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc43E891F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00 \[$€-813\]\;\[red\]-\#\,\#\#0\.00 \[$€-813\]";
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc46B591F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:700;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wcC31691F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:"\#\,\#\#0\.00 \[$€-813\]\;\[red\]-\#\,\#\#0\.00 \[$€-813\]";
+	font-size:10pt;
+	font-weight:400;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+.wc4B1691F
+	{white-space:nowrap;
+	font-family:Arial;
+	mso-number-format:General;
+	font-size:10pt;
+	font-weight:400;
+	font-style:auto;
+	text-decoration:auto;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-color-source:auto;
+	text-align:general;
+	vertical-align:bottom;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	mso-protection:locked;}
+-->
+</style>
+</head>
+
+<body>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:OWCVersion>9.0.0.4309</x:OWCVersion>
+    <x:Label Style='font-family:Arial;font-size:10pt;border-top:solid .5pt silver;
+     border-left:solid .5pt silver;border-right:solid .5pt silver;border-bottom:
+     solid .5pt silver'>
+     <x:Caption>marIntegraal.NET XP-Rekenblad</x:Caption>
+    </x:Label>
+    <x:Name>Blad1</x:Name>
+    <x:WorksheetOptions>
+     <x:Selected/>
+     <x:Height>10716</x:Height>
+     <x:Width>21087</x:Width>
+     <x:DoNotDisplayTitleBar/>
+     <x:ViewableRange>1:65536</x:ViewableRange>
+     <x:Selection>B14</x:Selection>
+     <x:TopRowVisible>0</x:TopRowVisible>
+     <x:LeftColumnVisible>0</x:LeftColumnVisible>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:DefaultRowHeight>255</x:DefaultRowHeight>
+     <x:StandardWidth>2340</x:StandardWidth>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:MaxHeight>80%</x:MaxHeight>
+  <x:MaxWidth>80%</x:MaxWidth>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+
+<table class=wc84A391F x:str>
+ <col width="64">
+ <col class=wc00E791F width="64">
+ <tr height="17">
+  <td x:str="Jan"></td>
+  <td class=wc00E791F x:num="14.8"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Feb"></td>
+  <td class=wc00E791F x:num="15.5"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Maa"></td>
+  <td class=wc00E791F x:num="4"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Apr"></td>
+  <td class=wc00E791F x:num="8"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Mei"></td>
+  <td class=wc00E791F x:num="9"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Jun"></td>
+  <td class=wc00E791F x:num="5"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Jul"></td>
+  <td class=wc00E791F x:num="2"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Aug"></td>
+  <td class=wc00E791F x:num="2"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Sep"></td>
+  <td class=wc00E791F x:num="5"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Okt"></td>
+  <td class=wc00E791F x:num="4"></td>
+ </tr>
+ <tr height="17">
+  <td x:str="Nov"></td>
+  <td class=wc00E791F x:num="9"></td>
+ </tr>
+ <tr class=wc4B1691F height="17">
+  <td x:str="Dec"></td>
+  <td class=wcC31691F x:num="7"></td>
+ </tr>
+ <tr class=wc46B591F height="17">
+  <td>Totaal</td>
+  <td class=wc43E891F x:fmla="=SUM(B1:B12)" x:num="85.3"></td>
+ </tr>
+</table>
+
+</body>
+
+</html>
+

@@ -1,0 +1,1476 @@
+[Root]
+Most Recent Package=Standard Setup Package 2
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\marIntegraal Studio\Package (2)
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=
+C:\marIntegraal Studio\SCPLAYER.EXE=
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=
+C:\WINNT\system32\msadox.dll=
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=
+C:\WINNT\system32\shfolder.dll=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=
+C:\WINNT\system32\scrrun.dll=
+C:\marIntegraal Studio\Beveiliging61.dll=
+
+[Package|Standard Setup Package 1|Files Added]
+c:\marnt.arc=
+c:\marintegraal studio\arc.exe=
+c:\marintegraal studio\scplayer.exe=
+c:\marintegraal studio\vsoft.ini=
+c:\marintegraal studio\welkom.scm=
+c:\marintegraal studio\marnt.mdv=
+c:\marintegraal studio\default.mdb=
+c:\marintegraal studio\marintegraal.mdb=
+c:\hndldng\marnt.cnt=
+c:\hndldng\marot.cnt=
+c:\hndldng\marot.hlp=
+c:\marintegraal studio\download.avi=
+C:\marIntegraal Studio\LeesMij61118.htm=
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\marIntegraal Studio\marIntegraal.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\HNDLDNG\MARNT.HLP=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\MARNT.ARC=Yes
+C:\marIntegraal Studio\ARC.EXE=Yes
+C:\marIntegraal Studio\SCPLAYER.EXE=Yes
+C:\marIntegraal Studio\VSOFT.INI=Yes
+C:\marIntegraal Studio\Welkom.scm=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO360.DLL=Yes
+C:\marIntegraal Studio\marnt.mdv=Yes
+C:\marIntegraal Studio\Default.mdb=Yes
+C:\marIntegraal Studio\marIntegraal.mdb=Yes
+C:\HNDLDNG\MARNT.CNT=Yes
+C:\HNDLDNG\MAROT.CNT=Yes
+C:\HNDLDNG\MAROT.HLP=Yes
+C:\marIntegraal Studio\DOWNLOAD.AVI=Yes
+C:\WINNT\system32\msvbvm60.dll=Yes
+C:\WINNT\system32\oleaut32.dll=Yes
+C:\WINNT\system32\olepro32.dll=Yes
+C:\WINNT\system32\asycfilt.dll=Yes
+C:\WINNT\system32\stdole2.tlb=Yes
+C:\WINNT\system32\shfolder.dll=Yes
+C:\WINNT\system32\msbind.dll=Yes
+C:\WINNT\system32\msstdfmt.dll=Yes
+C:\WINNT\system32\mshflxgd.ocx=Yes
+C:\WINNT\system32\msadodc.ocx=Yes
+C:\WINNT\system32\mscomctl.ocx=Yes
+C:\WINNT\system32\scrrun.dll=Yes
+C:\WINNT\system32\msvcrt.dll=Yes
+C:\WINNT\system32\msmask32.ocx=Yes
+C:\WINNT\system32\mci32.ocx=Yes
+C:\WINNT\system32\msmapi32.ocx=Yes
+C:\WINNT\system32\richtx32.ocx=Yes
+C:\WINNT\system32\comdlg32.ocx=Yes
+C:\WINNT\system32\mscomct2.ocx=Yes
+C:\WINNT\system32\msflxgrd.ocx=Yes
+C:\WINNT\system32\msinet.ocx=Yes
+C:\WINNT\system32\msdatgrd.ocx=Yes
+C:\WINNT\system32\msadox.dll=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\marIntegraal Studio\LeesMij61118.htm=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\marIntegraal Studio\marIntegraal.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\Msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DAO360.DLL=$(MSDAOPath)
+C:\WINDOWS\SYSTEM\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB5DB.DLL=$(WinSysPath)
+C:\marIntegraal Studio\Beveiliging61.dll=$(AppPath)
+C:\WINDOWS\SYSTEM\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSHFLXGD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDATGRD.OCX=$(WinSysPath)
+C:\HNDLDNG\MARNT.HLP=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\MARNT.ARC=$(AppPath)
+C:\marIntegraal Studio\ARC.EXE=$(AppPath)
+C:\marIntegraal Studio\SCPLAYER.EXE=$(AppPath)
+C:\marIntegraal Studio\VSOFT.INI=$(AppPath)
+C:\marIntegraal Studio\Welkom.scm=$(AppPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO360.DLL=$(MSDAOPath)
+C:\Program Files\Common Files\designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\marIntegraal Studio\marnt.mdv=$(AppPath)
+C:\marIntegraal Studio\Default.mdb=$(AppPath)
+C:\marIntegraal Studio\marIntegraal.mdb=$(AppPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=$(WinSysPath)
+C:\HNDLDNG\MARNT.CNT=$(AppPath)
+C:\HNDLDNG\MAROT.CNT=$(AppPath)
+C:\HNDLDNG\MAROT.HLP=$(AppPath)
+C:\marIntegraal Studio\DOWNLOAD.AVI=$(AppPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\WINNT\system32\shfolder.dll=$(WinSysPath)
+C:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vb5db.dll=$(WinSysPath)
+C:\WINNT\system32\msbind.dll=$(WinSysPath)
+C:\WINNT\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINNT\system32\mshflxgd.ocx=$(WinSysPath)
+C:\WINNT\system32\msadodc.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINNT\system32\scrrun.dll=$(WinSysPath)
+C:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msmask32.ocx=$(WinSysPath)
+C:\WINNT\system32\mci32.ocx=$(WinSysPath)
+C:\WINNT\system32\msmapi32.ocx=$(WinSysPath)
+C:\WINNT\system32\richtx32.ocx=$(WinSysPath)
+C:\WINNT\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomct2.ocx=$(WinSysPath)
+C:\WINNT\system32\msflxgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\msinet.ocx=$(WinSysPath)
+C:\WINNT\system32\msdatgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\msadox.dll=$(WinSysPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\marIntegraal Studio\LeesMij61118.htm=$(AppPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\marIntegraal Studio\marIntegraal.exe=No
+C:\marIntegraal Studio\Beveiliging61.dll=No
+C:\HNDLDNG\MARNT.HLP=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\MARNT.ARC=No
+C:\marIntegraal Studio\ARC.EXE=No
+C:\marIntegraal Studio\SCPLAYER.EXE=No
+C:\marIntegraal Studio\VSOFT.INI=No
+C:\marIntegraal Studio\Welkom.scm=No
+C:\marIntegraal Studio\marnt.mdv=No
+C:\marIntegraal Studio\Default.mdb=No
+C:\marIntegraal Studio\marIntegraal.mdb=No
+C:\HNDLDNG\MARNT.CNT=No
+C:\HNDLDNG\MAROT.CNT=No
+C:\HNDLDNG\MAROT.HLP=No
+C:\marIntegraal Studio\DOWNLOAD.AVI=No
+C:\marIntegraal Studio\LeesMij61118.htm=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=marIntegraal Studio
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\marIntegraal Studio\Package (2)
+ProjectFolder=C:\marIntegraal Studio
+ServerSideCab=
+File1=C:\marIntegraal Studio\Package (2)\setup.exe
+File2=C:\marIntegraal Studio\Package (2)\Setup.Lst
+File3=C:\marIntegraal Studio\Package (2)\marIntegraal.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=marIntegraal Studio
+PrivateGroup0=True
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|marIntegraal Studio]
+Icon1=marIntegraal.exe
+Title1=marIntegraal Studio
+StartIn1=$(AppPath)
+Key1=Icon1
+Icon2=MARNT.HLP
+Title2=marIntegraal NT Handleiding
+StartIn2=$(AppPath)
+Key2=Icon3
+Icon3=MAROT.HLP
+Title3=marIntegraal DOS HTML Handleiding
+StartIn3=$(AppPath)
+Key3=Icon2
+
+
+[Package|Standard Setup marIntegraal SQL Studio|marIntegraal SQL Studio]
+Icon1=MARNT.HLP
+Title1=marIntegraal NT Handleiding
+StartIn1=$(AppPath)
+Key1=Icon3
+Icon2=MAROT.HLP
+Title2=marIntegraal DOS HTML Handleiding
+StartIn2=$(AppPath)
+Key2=Icon2
+Icon3=marIntegraal.exe
+Title3=.marIntegraal SQL Studio
+StartIn3=$(AppPath)
+Key3=Icon1
+
+[Package|Standard Setup marIntegraal SQL Studio|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\marIntegraal Studio\Package (2)
+
+[Package|Standard Setup marIntegraal SQL Studio|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup marIntegraal SQL Studio|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup marIntegraal SQL Studio|Files Found]
+
+[Package|Standard Setup marIntegraal SQL Studio|Files Released]
+uda_logoani.gif=
+LeesMij64214.html=
+
+[Package|Standard Setup marIntegraal SQL Studio|Missing Dependency Information]
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=
+C:\marIntegraal Studio\SCPLAYER.EXE=
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=
+C:\WINNT\system32\msadox.dll=
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=
+C:\WINNT\system32\shfolder.dll=
+C:\WINDOWS\SYSTEM\msscript.ocx=
+C:\WINDOWS\SYSTEM\URLLabel.ocx=
+C:\Program Files\Common Files\SYSTEM\ADO\MSJRO.DLL=
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=
+C:\WINNT\system32\msscript.ocx=
+
+[Package|Standard Setup marIntegraal SQL Studio|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=
+C:\WINNT\system32\scrrun.dll=
+C:\marIntegraal Studio\Beveiliging61.dll=
+
+[Package|Standard Setup marIntegraal SQL Studio|Files Added]
+c:\marnt.arc=
+c:\marintegraal studio\arc.exe=
+c:\marintegraal studio\scplayer.exe=
+c:\marintegraal studio\vsoft.ini=
+c:\marintegraal studio\welkom.scm=
+c:\marintegraal studio\marnt.mdv=
+c:\marintegraal studio\default.mdb=
+c:\marintegraal studio\marintegraal.mdb=
+c:\hndldng\marnt.cnt=
+c:\hndldng\marot.cnt=
+c:\hndldng\marot.hlp=
+c:\marintegraal studio\download.avi=
+c:\marintegraal studio\leesmij61118.htm=
+c:\marintegraal studio\leesmij61127.htm=
+c:\marintegraal studio\leesmij64210.htm=
+c:\marintegraal studio\kassa.mdb=
+c:\marintegraal studio\leesmij64212.htm=
+c:\marintegraal studio\leesmij64213.htm=
+c:\marintegraal studio\gkauto.600=
+c:\marintegraal studio\leesmij64215.htm=
+C:\marIntegraal Studio\LeesMij64300.htm=
+
+[Package|Standard Setup marIntegraal SQL Studio|Files Removed]
+c:\marintegraal studio\leesmij61118.htm=
+c:\marintegraal studio\leesmij61127.htm=
+c:\winnt\system32\shfolder.dll=
+c:\marintegraal studio\leesmij64210.htm=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+c:\marintegraal studio\leesmij64212.htm=
+c:\marintegraal studio\leesmij64213.htm=
+c:\marintegraal studio\leesmij64215.htm=
+
+[Package|Standard Setup marIntegraal SQL Studio|Files In Project]
+C:\marIntegraal Studio\marIntegraal.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\HNDLDNG\MARNT.HLP=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\MARNT.ARC=Yes
+C:\marIntegraal Studio\ARC.EXE=Yes
+C:\marIntegraal Studio\SCPLAYER.EXE=Yes
+C:\marIntegraal Studio\VSOFT.INI=Yes
+C:\marIntegraal Studio\Welkom.scm=Yes
+C:\marIntegraal Studio\marnt.mdv=Yes
+C:\marIntegraal Studio\Default.mdb=Yes
+C:\marIntegraal Studio\marIntegraal.mdb=Yes
+C:\HNDLDNG\MARNT.CNT=Yes
+C:\HNDLDNG\MAROT.CNT=Yes
+C:\HNDLDNG\MAROT.HLP=Yes
+C:\marIntegraal Studio\DOWNLOAD.AVI=Yes
+C:\marIntegraal Studio\LeesMij61118.htm=No
+C:\marIntegraal Studio\LeesMij61127.htm=No
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO360.DLL=Yes
+C:\marIntegraal Studio\LeesMij64210.htm=No
+C:\marIntegraal Studio\Kassa.mdb=Yes
+C:\WINNT\system32\msvbvm60.dll=Yes
+C:\WINNT\system32\shfolder.dll=No
+C:\WINNT\system32\msscript.ocx=Yes
+C:\WINNT\system32\msjet40.dll=Yes
+C:\WINNT\system32\msjter40.dll=Yes
+C:\WINNT\system32\msjint40.dll=Yes
+C:\WINNT\system32\vbajet32.dll=Yes
+C:\WINNT\system32\expsrv.dll=Yes
+C:\WINNT\system32\mswstr10.dll=Yes
+C:\WINNT\system32\mswdat10.dll=Yes
+C:\WINNT\system32\msrd2x40.dll=Yes
+C:\WINNT\system32\msrd3x40.dll=Yes
+C:\WINNT\system32\msrepl40.dll=Yes
+C:\WINNT\system32\msjtes40.dll=Yes
+C:\WINNT\system32\vb5db.dll=Yes
+C:\WINNT\system32\msbind.dll=Yes
+C:\WINNT\system32\msstdfmt.dll=Yes
+C:\WINNT\system32\scrrun.dll=Yes
+C:\WINNT\system32\msvcrt.dll=Yes
+C:\WINNT\system32\msmask32.ocx=Yes
+C:\WINNT\system32\mci32.ocx=Yes
+C:\WINNT\system32\msmapi32.ocx=Yes
+C:\WINNT\system32\richtx32.ocx=Yes
+C:\WINNT\system32\comdlg32.ocx=Yes
+C:\WINNT\system32\mscomctl.ocx=Yes
+C:\WINNT\system32\mscomct2.ocx=Yes
+C:\WINNT\system32\msflxgrd.ocx=Yes
+C:\WINNT\system32\msinet.ocx=Yes
+C:\WINNT\system32\msdatgrd.ocx=Yes
+C:\WINNT\system32\mshflxgd.ocx=Yes
+C:\WINNT\system32\msadodc.ocx=Yes
+C:\WINNT\system32\tabctl32.ocx=Yes
+C:\WINNT\system32\Vb6stkit.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\WINNT\system32\msadox.dll=Yes
+C:\WINNT\system32\msjro.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\WINNT\system32\MBLink.ocx=Yes
+C:\marIntegraal Studio\LeesMij64212.htm=No
+C:\marIntegraal Studio\LeesMij64213.htm=No
+C:\marIntegraal Studio\gkauto.600=Yes
+C:\marIntegraal Studio\LeesMij64215.htm=No
+C:\marIntegraal Studio\LeesMij64300.htm=Yes
+
+[Package|Standard Setup marIntegraal SQL Studio|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup marIntegraal SQL Studio|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup marIntegraal SQL Studio|Install Locations]
+C:\marIntegraal Studio\marIntegraal.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\Msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\DAO360.DLL=$(MSDAOPath)
+C:\WINDOWS\SYSTEM\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB5DB.DLL=$(WinSysPath)
+C:\marIntegraal Studio\Beveiliging61.dll=$(AppPath)
+C:\WINDOWS\SYSTEM\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSHFLXGD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\SCRRUN.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSDATGRD.OCX=$(WinSysPath)
+C:\HNDLDNG\MARNT.HLP=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\MARNT.ARC=$(AppPath)
+C:\marIntegraal Studio\ARC.EXE=$(AppPath)
+C:\marIntegraal Studio\SCPLAYER.EXE=$(AppPath)
+C:\marIntegraal Studio\VSOFT.INI=$(AppPath)
+C:\marIntegraal Studio\Welkom.scm=$(AppPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\DAO360.DLL=$(MSDAOPath)
+C:\Program Files\Common Files\designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\marIntegraal Studio\marnt.mdv=$(AppPath)
+C:\marIntegraal Studio\Default.mdb=$(AppPath)
+C:\marIntegraal Studio\marIntegraal.mdb=$(AppPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=$(WinSysPath)
+C:\HNDLDNG\MARNT.CNT=$(AppPath)
+C:\HNDLDNG\MAROT.CNT=$(AppPath)
+C:\HNDLDNG\MAROT.HLP=$(AppPath)
+C:\marIntegraal Studio\DOWNLOAD.AVI=$(AppPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\WINNT\system32\shfolder.dll=$(WinSysPath)
+C:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vb5db.dll=$(WinSysPath)
+C:\WINNT\system32\msbind.dll=$(WinSysPath)
+C:\WINNT\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINNT\system32\mshflxgd.ocx=$(WinSysPath)
+C:\WINNT\system32\msadodc.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINNT\system32\scrrun.dll=$(WinSysPath)
+C:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msmask32.ocx=$(WinSysPath)
+C:\WINNT\system32\mci32.ocx=$(WinSysPath)
+C:\WINNT\system32\msmapi32.ocx=$(WinSysPath)
+C:\WINNT\system32\richtx32.ocx=$(WinSysPath)
+C:\WINNT\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomct2.ocx=$(WinSysPath)
+C:\WINNT\system32\msflxgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\msinet.ocx=$(WinSysPath)
+C:\WINNT\system32\msdatgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\msadox.dll=$(WinSysPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\marIntegraal Studio\LeesMij61118.htm=$(AppPath)
+C:\WINDOWS\SYSTEM\msscript.ocx=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij61127.htm=$(AppPath)
+C:\marIntegraal Studio\uda_logoani.gif=$(AppPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSJRO.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\URLLabel.ocx=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij64210.htm=$(AppPath)
+C:\marIntegraal Studio\Kassa.mdb=$(AppPath)
+C:\WINNT\system32\msscript.ocx=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\system32\tabctl32.ocx=$(WinSysPath)
+C:\WINNT\system32\msjro.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\WINNT\system32\MBLink.ocx=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij64212.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij64213.htm=$(AppPath)
+C:\marIntegraal Studio\gkauto.600=$(AppPath)
+C:\marIntegraal Studio\LeesMij64214.html=$(AppPath)
+C:\marIntegraal Studio\LeesMij64215.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij64300.htm=$(AppPath)
+
+[Package|Standard Setup marIntegraal SQL Studio|Configure Shared Files]
+Applicable=Yes
+C:\marIntegraal Studio\marIntegraal.exe=No
+C:\marIntegraal Studio\Beveiliging61.dll=No
+C:\HNDLDNG\MARNT.HLP=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\MARNT.ARC=No
+C:\marIntegraal Studio\ARC.EXE=No
+C:\marIntegraal Studio\SCPLAYER.EXE=No
+C:\marIntegraal Studio\VSOFT.INI=No
+C:\marIntegraal Studio\Welkom.scm=No
+C:\marIntegraal Studio\marnt.mdv=No
+C:\marIntegraal Studio\Default.mdb=No
+C:\marIntegraal Studio\marIntegraal.mdb=No
+C:\HNDLDNG\MARNT.CNT=No
+C:\HNDLDNG\MAROT.CNT=No
+C:\HNDLDNG\MAROT.HLP=No
+C:\marIntegraal Studio\DOWNLOAD.AVI=No
+C:\marIntegraal Studio\LeesMij61118.htm=No
+C:\marIntegraal Studio\LeesMij61127.htm=No
+C:\marIntegraal Studio\uda_logoani.gif=No
+C:\marIntegraal Studio\LeesMij64210.htm=No
+C:\marIntegraal Studio\Kassa.mdb=No
+C:\marIntegraal Studio\LeesMij64212.htm=No
+C:\marIntegraal Studio\LeesMij64213.htm=No
+C:\marIntegraal Studio\gkauto.600=No
+C:\marIntegraal Studio\LeesMij64214.html=No
+C:\marIntegraal Studio\LeesMij64215.htm=No
+C:\marIntegraal Studio\LeesMij64300.htm=No
+
+[Package|Standard Setup marIntegraal SQL Studio|Distribution]
+Type=single
+Size=
+Title=marIntegraal SQL Studio
+
+[Package|Standard Setup marIntegraal SQL Studio|Package]
+PackageFolder=C:\marIntegraal Studio\Package (2)
+ProjectFolder=C:\marIntegraal Studio
+ServerSideCab=
+File1=C:\marIntegraal Studio\Package (2)\setup.exe
+File2=C:\marIntegraal Studio\Package (2)\Setup.Lst
+File3=C:\marIntegraal Studio\Package (2)\marIntegraal.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup marIntegraal SQL Studio|IconGroups]
+Group0=marIntegraal.NET
+PrivateGroup0=0
+Parent0=$(Start Menu)
+
+[Package|Standard Setup marIntegraal SQL Studio|marIntegraal.NET]
+Icon1=marIntegraal.exe
+Title1=marIntegraal SQL Studio
+StartIn1=$(AppPath)
+Key1=Icon4
+Icon2=MARNT.HLP
+Title2=NT Help Handleiding
+StartIn2=$(AppPath)
+Key2=Icon5
+Icon3=MAROT.HLP
+Title3=OT Help
+StartIn3=$(AppPath)
+Key3=Icon6
+
+
+[Package|Standard Setup marIntegraalNET|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\mar2002\w0116
+
+[Package|Standard Setup marIntegraalNET|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup marIntegraalNET|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup marIntegraalNET|Files Found]
+ARC.EXE=C:\mar2002\ARC.EXE
+default.mdb=C:\mar2002\default.mdb
+
+[Package|Standard Setup marIntegraalNET|Files Released]
+leesmij64308.htm=
+leesmij64307.htm=
+leesmij64305.htm=
+leesmij64303.htm=
+leesmij64302.htm=
+leesmij65100.htm=
+leesmij65116.htm=
+leesmij65115.htm=
+leesmij65114.htm=
+leesmij65113.htm=
+leesmij65112.htm=
+leesmij65111.htm=
+leesmij65110.htm=
+leesmij65109.htm=
+leesmij65108.htm=
+leesmij65107.htm=
+leesmij65106.htm=
+leesmij65105.htm=
+leesmij65104.htm=
+leesmij65103.htm=
+leesmij65102.htm=
+leesmij65101.htm=
+leesmij65121.htm=
+leesmij65120.htm=
+leesmij65119.htm=
+LeesMij65125.htm=
+leesmij65123.htm=
+leesmij65122.htm=
+leesmij65118.htm=
+leesmij65117.htm=
+LeesMij65128.htm=
+leesmij65127.htm=
+leesmij65126.htm=
+scplayer.exe=
+3=
+leesmij65130.htm=
+leesmij65129.htm=
+welkom.scm=
+Marnt.hlp=
+leesmij65132.htm=
+leesmij65131.htm=
+LeesMij65202.htm=
+leesmij65201.htm=
+
+[Package|Standard Setup marIntegraalNET|Missing Dependency Information]
+C:\marIntegraal Studio\SCPLAYER.EXE=
+C:\WINNT\system32\msscript.ocx=
+C:\WINNT\system32\msjro.dll=
+C:\WINNT\system32\msadox.dll=
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=
+C:\WINNT\system32\shfolder.dll=
+C:\WINNT\system32\imgscan.ocx=
+C:\lotus\scrcamnt\scplayer.exe=
+C:\WINDOWS\SYSTEM\imgscan.ocx=
+C:\WINDOWS\SYSTEM\msscript.ocx=
+C:\WINDOWS\SYSTEM\msjro.dll=
+C:\WINDOWS\SYSTEM\msadox.dll=
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=
+C:\WINNT\system32\OWC10.DLL=
+C:\Program Files\Common Files\SYSTEM\ADO\msjro.dll=
+C:\Program Files\Common Files\SYSTEM\ADO\msadox.dll=
+C:\WINDOWS\SYSTEM32\imgscan.ocx=
+C:\WINDOWS\SYSTEM32\msscript.ocx=
+C:\WINDOWS\SYSTEM32\shfolder.dll=
+C:\WINNT\system32\msderun.dll=
+C:\Program Files\Microsoft Office\Office\MSOWC.DLL=
+D:\Program Files\Microsoft Office\2002\Office10\MSOWC.DLL=
+D:\Program Files\Common Files\System\ado\msjro.dll=
+D:\WINDOWS\system32\msderun.dll=
+D:\WINDOWS\system32\msscript.ocx=
+D:\Program Files\Common Files\System\ado\msadox.dll=
+D:\WINDOWS\system32\shfolder.dll=
+D:\WINDOWS\system32\MSOWC.DLL=
+D:\WINDOWS\system32\msjro.dll=
+D:\WINDOWS\system32\msadox.dll=
+D:\Program Files\Microsoft Office\Office\MSOWC.DLL=
+C:\WINDOWS\SYSTEM\MSOWC.DLL=
+C:\WINDOWS\SYSTEM\msderun.dll=
+C:\WINNT\system32\MSOWC.DLL=
+
+[Package|Standard Setup marIntegraalNET|Out-of-Date Dependency Information]
+C:\WINNT\system32\scrrun.dll=
+C:\WINNT\system32\mscomctl.ocx=
+C:\WINNT\system32\richtx32.ocx=
+C:\WINDOWS\SYSTEM\COMCT332.OCX=
+C:\WINDOWS\SYSTEM\tabctl32.ocx=
+C:\WINDOWS\SYSTEM\MSADODC.OCX=
+C:\WINDOWS\SYSTEM\MSHFLXGD.OCX=
+C:\WINDOWS\SYSTEM\msdatgrd.ocx=
+C:\WINDOWS\SYSTEM\MSINET.OCX=
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=
+C:\WINDOWS\SYSTEM\mscomctl.ocx=
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=
+C:\WINDOWS\SYSTEM\richtx32.ocx=
+C:\WINDOWS\SYSTEM\MCI32.OCX=
+C:\WINDOWS\SYSTEM\MSMASK32.OCX=
+C:\WINDOWS\SYSTEM\scrrun.dll=
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=
+C:\WINDOWS\SYSTEM\MSBIND.DLL=
+C:\Program Files\Common Files\designer\msderun.dll=
+C:\WINDOWS\SYSTEM32\richtx32.ocx=
+C:\WINDOWS\SYSTEM32\scrrun.dll=
+D:\WINDOWS\system32\scrrun.dll=
+D:\WINDOWS\system32\richtx32.ocx=
+D:\Program Files\Common Files\Designer\msderun.dll=
+
+[Package|Standard Setup marIntegraalNET|Files Added]
+c:\mar2002\marnt.arc=
+c:\mar2002\vsoft.ini=
+c:\mar2002\marintegraal.mdb=
+c:\mar2002\kassa.mdb=
+c:\mar2002\default.mdb=
+c:\mar2002\marnt.mdv=
+c:\mar2002\arc.exe=
+c:\mar2002\gkauto.600=
+c:\mar2002\scan.mdb=
+c:\mar2002\eindebef.htm=
+c:\mar2002\leesmij65201.htm=
+c:\mar2002\leesmij65202.htm=
+c:\mar2002\leesmij2001.htm=
+c:\mar2002\leesmij65203.htm=
+
+[Package|Standard Setup marIntegraalNET|Files Removed]
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+c:\winnt\system32\shfolder.dll=
+c:\marintegraal studio\leesmij64302.htm=
+c:\marintegraal studio\leesmij64303.htm=
+c:\marintegraal studio\leesmij64305.htm=
+c:\marintegraal studio\leesmij64307.htm=
+c:\marintegraal studio\leesmij64308.htm=
+c:\marintegraal studio\leesmij65100.htm=
+c:\marintegraal studio\leesmij65101.htm=
+c:\marintegraal studio\leesmij65102.htm=
+c:\marintegraal studio\leesmij65103.htm=
+c:\marintegraal studio\leesmij65104.htm=
+c:\marintegraal studio\leesmij65105.htm=
+c:\marintegraal studio\leesmij65106.htm=
+c:\marintegraal studio\leesmij65107.htm=
+c:\marintegraal studio\leesmij65108.htm=
+c:\marintegraal studio\leesmij65109.htm=
+c:\winnt\system32\imgscan.ocx=
+c:\marintegraal studio\leesmij65110.htm=
+c:\marintegraal studio\leesmij65111.htm=
+c:\marintegraal studio\leesmij65112.htm=
+c:\marintegraal studio\leesmij65113.htm=
+c:\marintegraal studio\leesmij65114.htm=
+c:\marintegraal studio\leesmij65115.htm=
+c:\marintegraal studio\leesmij65116.htm=
+c:\marintegraal studio\leesmij65117.htm=
+c:\marintegraal studio\leesmij65118.htm=
+c:\marintegraal studio\leesmij65119.htm=
+c:\marintegraal studio\leesmij65120.htm=
+c:\marintegraal studio\leesmij65121.htm=
+c:\marintegraal studio\leesmij65122.htm=
+c:\marintegraal studio\leesmij65123.htm=
+c:\marintegraal studio\leesmij65126.htm=
+c:\marintegraal studio\leesmij65127.htm=
+c:\windows\system32\shfolder.dll=
+c:\windows\system32\imgscan.ocx=
+c:\marintegraal studio\welkom.scm=
+c:\marintegraal studio\leesmij65129.htm=
+c:\marintegraal studio\leesmij65130.htm=
+d:\windows\system32\shfolder.dll=
+d:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+c:\windows\system\shfolder.dll=
+c:\mar2002\leesmij65131.htm=
+c:\mar2002\leesmij65201.htm=
+c:\mar2002\leesmij65202.htm=
+
+[Package|Standard Setup marIntegraalNET|Files In Project]
+C:\mar2002\marIntegraal.exe=Yes
+C:\mar2002\MARNT.ARC=Yes
+C:\mar2002\VSOFT.INI=Yes
+C:\mar2002\marIntegraal.mdb=Yes
+C:\mar2002\Kassa.mdb=Yes
+C:\mar2002\default.mdb=Yes
+C:\mar2002\marnt.mdv=Yes
+C:\mar2002\ARC.EXE=Yes
+C:\mar2002\gkauto.600=Yes
+C:\mar2002\scan.mdb=Yes
+C:\mar2002\EindeBEF.htm=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\mar2002\LeesMij2001.htm=Yes
+C:\mar2002\LeesMij65203.htm=Yes
+C:\WINNT\system32\msvbvm60.dll=Yes
+C:\WINNT\system32\shfolder.dll=No
+C:\WINNT\system32\msadox.dll=Yes
+C:\WINNT\system32\msjet40.dll=Yes
+C:\WINNT\system32\msjter40.dll=Yes
+C:\WINNT\system32\msjint40.dll=Yes
+C:\WINNT\system32\vbajet32.dll=Yes
+C:\WINNT\system32\expsrv.dll=Yes
+C:\WINNT\system32\mswstr10.dll=Yes
+C:\WINNT\system32\mswdat10.dll=Yes
+C:\WINNT\system32\msrd2x40.dll=Yes
+C:\WINNT\system32\msrd3x40.dll=Yes
+C:\WINNT\system32\msrepl40.dll=Yes
+C:\WINNT\system32\msjtes40.dll=Yes
+C:\WINNT\system32\vb5db.dll=Yes
+C:\WINNT\system32\msscript.ocx=Yes
+C:\WINNT\system32\MSBIND.DLL=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\WINNT\system32\scrrun.dll=Yes
+C:\WINNT\system32\msvcrt.dll=Yes
+C:\WINNT\system32\msderun.dll=Yes
+C:\WINNT\system32\msjro.dll=Yes
+C:\WINNT\system32\Msmask32.ocx=Yes
+C:\WINNT\system32\MCI32.OCX=Yes
+C:\WINNT\system32\Msmapi32.ocx=Yes
+C:\WINNT\system32\richtx32.ocx=Yes
+C:\WINNT\system32\comdlg32.ocx=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+C:\WINNT\system32\Mscomct2.ocx=Yes
+C:\WINNT\system32\Msflxgrd.ocx=Yes
+C:\WINNT\system32\Msinet.ocx=Yes
+C:\WINNT\system32\MSDATGRD.OCX=Yes
+C:\WINNT\system32\MSHFLXGD.OCX=Yes
+C:\WINNT\system32\MSADODC.OCX=Yes
+C:\WINNT\system32\Tabctl32.ocx=Yes
+C:\WINNT\system32\MSOWC.DLL=Yes
+C:\HNDLDNG\MARNT.HLP=Yes
+C:\WINNT\system32\Vb6stkit.dll=Yes
+C:\mar2002\LeesMij65201.htm=No
+C:\mar2002\LeesMij65202.htm=No
+
+[Package|Standard Setup marIntegraalNET|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup marIntegraalNET|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup marIntegraalNET|Install Locations]
+C:\marIntegraal Studio\marIntegraal.exe=$(AppPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\shfolder.dll=$(WinSysPath)
+C:\WINNT\system32\msscript.ocx=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\vb5db.dll=$(WinSysPath)
+C:\WINNT\system32\msbind.dll=$(WinSysPath)
+C:\WINNT\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINNT\system32\scrrun.dll=$(WinSysPath)
+C:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Program Files\Common Files\SYSTEM\ADO\msadox.dll=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msjro.dll=$(WinSysPath)
+C:\WINNT\system32\msmask32.ocx=$(WinSysPath)
+C:\WINNT\system32\mci32.ocx=$(WinSysPath)
+C:\WINNT\system32\msmapi32.ocx=$(WinSysPath)
+C:\WINNT\system32\richtx32.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINNT\system32\mscomct2.ocx=$(WinSysPath)
+C:\WINNT\system32\msflxgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\msinet.ocx=$(WinSysPath)
+C:\WINNT\system32\msdatgrd.ocx=$(WinSysPath)
+C:\WINNT\system32\mshflxgd.ocx=$(WinSysPath)
+C:\WINNT\system32\msadodc.ocx=$(WinSysPath)
+C:\WINNT\system32\tabctl32.ocx=$(WinSysPath)
+C:\WINNT\system32\MBLink.ocx=$(WinSysPath)
+C:\HNDLDNG\MARNT.HLP=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\marIntegraal Studio\MARNT.ARC=$(AppPath)
+C:\marIntegraal Studio\VSOFT.INI=$(AppPath)
+C:\marIntegraal Studio\SCPLAYER.EXE=$(AppPath)
+C:\marIntegraal Studio\Welkom.scm=$(AppPath)
+C:\WINNT\system32\msadox.dll=$(WinSysPath)
+C:\WINNT\system32\msjro.dll=$(WinSysPath)
+C:\marIntegraal Studio\marIntegraal.mdb=$(AppPath)
+C:\marIntegraal Studio\Kassa.mdb=$(AppPath)
+C:\marIntegraal Studio\default.mdb=$(AppPath)
+C:\marIntegraal Studio\marnt.mdv=$(AppPath)
+C:\marIntegraal Studio\ARC.EXE=$(AppPath)
+C:\marIntegraal Studio\LeesMij64302.htm=$(AppPath)
+C:\marIntegraal Studio\gkauto.600=$(AppPath)
+C:\marIntegraal Studio\LeesMij64303.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij64305.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij64307.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij64308.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65100.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65101.htm=$(AppPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65102.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65103.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65104.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65105.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65106.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65107.htm=$(AppPath)
+C:\WINNT\system32\dao360.dll=$(MSDAOPath)
+C:\marIntegraal Studio\LeesMij65108.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65109.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65110.htm=$(AppPath)
+C:\marIntegraal Studio\scan.mdb=$(AppPath)
+C:\marIntegraal Studio\LeesMij65111.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65112.htm=$(AppPath)
+C:\WINNT\system32\COMCT332.OCX=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65113.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65114.htm=$(AppPath)
+C:\lotus\scrcamnt\scplayer.exe=$(AppPath)
+C:\marIntegraal Studio\LeesMij65115.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65116.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65117.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65118.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65119.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65120.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65121.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65122.htm=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\SHFOLDER.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\msadox.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\msjro.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSJET40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSJTER40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSJINT40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VBAJET32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSWSTR10.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSRD2X40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSRD3X40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSREPL40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSJTES40.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\msscript.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\richtx32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\msdatgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSHFLXGD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\tabctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\imgscan.ocx=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65123.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65125.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65126.htm=$(AppPath)
+C:\Program Files\Common Files\designer\msderun.dll=$(CommonFiles)\designer
+C:\WINNT\system32\OWC10.DLL=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65127.htm=$(AppPath)
+C:\marIntegraal Studio\EindeBEF.htm=$(AppPath)
+C:\marIntegraal Studio\LeesMij65128.htm=$(AppPath)
+C:\WINDOWS\SYSTEM32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\msscript.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\msvcrt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\richtx32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\msdatgrd.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSHFLXGD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\tabctl32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\marIntegraal Studio\LeesMij65129.htm=$(AppPath)
+C:\WINNT\system32\msderun.dll=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65130.htm=$(AppPath)
+C:\Program Files\Microsoft Office\Office\MSOWC.DLL=$(WinSysPath)
+C:\marIntegraal Studio\LeesMij65131.htm=$(AppPath)
+D:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Common Files\System\ado\msadox.dll=$(WinSysPath)
+D:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+D:\WINDOWS\system32\msjet40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msjter40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msjint40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\mswstr10.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\mswdat10.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msrd2x40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msrd3x40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msrepl40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msjtes40.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+D:\WINDOWS\system32\msscript.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msbind.dll=$(WinSysPath)
+D:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+D:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+D:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+D:\WINDOWS\system32\msderun.dll=$(WinSysPath)
+D:\Program Files\Common Files\System\ado\msjro.dll=$(WinSysPath)
+D:\WINDOWS\system32\msmask32.ocx=$(WinSysPath)
+D:\WINDOWS\system32\mci32.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msmapi32.ocx=$(WinSysPath)
+D:\WINDOWS\system32\richtx32.ocx=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+D:\WINDOWS\system32\comdlg32.ocx=$(WinSysPath)
+D:\WINDOWS\system32\mscomctl.ocx=$(WinSysPath)
+D:\WINDOWS\system32\mscomct2.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msflxgrd.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msinet.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msdatgrd.ocx=$(WinSysPath)
+D:\WINDOWS\system32\mshflxgd.ocx=$(WinSysPath)
+D:\WINDOWS\system32\msadodc.ocx=$(WinSysPath)
+D:\WINDOWS\system32\tabctl32.ocx=$(WinSysPath)
+D:\Program Files\Microsoft Office\2002\Office10\MSOWC.DLL=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+D:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\WINDOWS\system32\msadox.dll=$(WinSysPath)
+D:\WINDOWS\system32\msjro.dll=$(WinSysPath)
+D:\WINDOWS\system32\MSOWC.DLL=$(WinSysPath)
+D:\Program Files\Microsoft Office\Office\MSOWC.DLL=$(WinSysPath)
+C:\mar2002\marIntegraal.exe=$(AppPath)
+D:\Program Files\Common Files\Designer\msderun.dll=$(CommonFiles)\designer
+C:\mar2002\MARNT.ARC=$(AppPath)
+C:\mar2002\VSOFT.INI=$(AppPath)
+C:\mar2002\marIntegraal.mdb=$(AppPath)
+C:\mar2002\Kassa.mdb=$(AppPath)
+C:\mar2002\default.mdb=$(AppPath)
+C:\mar2002\marnt.mdv=$(AppPath)
+C:\mar2002\ARC.EXE=$(AppPath)
+C:\mar2002\gkauto.600=$(AppPath)
+C:\mar2002\scan.mdb=$(AppPath)
+C:\mar2002\EindeBEF.htm=$(AppPath)
+C:\mar2002\LeesMij65131.htm=$(AppPath)
+C:\WINDOWS\SYSTEM\MSOWC.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\msderun.dll=$(WinSysPath)
+C:\mar2002\LeesMij65132.htm=$(AppPath)
+C:\mar2002\LeesMij65201.htm=$(AppPath)
+C:\WINNT\system32\MSOWC.DLL=$(WinSysPath)
+C:\mar2002\LeesMij65202.htm=$(AppPath)
+C:\mar2002\LeesMij2001.htm=$(AppPath)
+C:\mar2002\LeesMij65203.htm=$(AppPath)
+
+[Package|Standard Setup marIntegraalNET|Configure Shared Files]
+Applicable=Yes
+C:\marIntegraal Studio\marIntegraal.exe=No
+C:\HNDLDNG\MARNT.HLP=No
+C:\marIntegraal Studio\MARNT.ARC=No
+C:\marIntegraal Studio\VSOFT.INI=No
+C:\marIntegraal Studio\SCPLAYER.EXE=No
+C:\marIntegraal Studio\Welkom.scm=No
+C:\marIntegraal Studio\marIntegraal.mdb=No
+C:\marIntegraal Studio\Kassa.mdb=No
+C:\marIntegraal Studio\default.mdb=No
+C:\marIntegraal Studio\marnt.mdv=No
+C:\marIntegraal Studio\ARC.EXE=No
+C:\marIntegraal Studio\LeesMij64302.htm=No
+C:\marIntegraal Studio\gkauto.600=No
+C:\marIntegraal Studio\LeesMij64303.htm=No
+C:\marIntegraal Studio\LeesMij64305.htm=No
+C:\marIntegraal Studio\LeesMij64307.htm=No
+C:\marIntegraal Studio\LeesMij64308.htm=No
+C:\marIntegraal Studio\LeesMij65100.htm=No
+C:\marIntegraal Studio\LeesMij65101.htm=No
+C:\marIntegraal Studio\LeesMij65102.htm=No
+C:\marIntegraal Studio\LeesMij65103.htm=No
+C:\marIntegraal Studio\LeesMij65104.htm=No
+C:\marIntegraal Studio\LeesMij65105.htm=No
+C:\marIntegraal Studio\LeesMij65106.htm=No
+C:\marIntegraal Studio\LeesMij65107.htm=No
+C:\marIntegraal Studio\LeesMij65108.htm=No
+C:\marIntegraal Studio\LeesMij65109.htm=No
+C:\marIntegraal Studio\LeesMij65110.htm=No
+C:\marIntegraal Studio\scan.mdb=No
+C:\marIntegraal Studio\LeesMij65111.htm=No
+C:\marIntegraal Studio\LeesMij65112.htm=No
+C:\marIntegraal Studio\LeesMij65113.htm=No
+C:\marIntegraal Studio\LeesMij65114.htm=No
+C:\lotus\scrcamnt\scplayer.exe=No
+C:\marIntegraal Studio\LeesMij65115.htm=No
+C:\marIntegraal Studio\LeesMij65116.htm=No
+C:\marIntegraal Studio\LeesMij65117.htm=No
+C:\marIntegraal Studio\LeesMij65118.htm=No
+C:\marIntegraal Studio\LeesMij65119.htm=No
+C:\marIntegraal Studio\LeesMij65120.htm=No
+C:\marIntegraal Studio\LeesMij65121.htm=No
+C:\marIntegraal Studio\LeesMij65122.htm=No
+C:\marIntegraal Studio\LeesMij65123.htm=No
+C:\marIntegraal Studio\LeesMij65125.htm=No
+C:\marIntegraal Studio\LeesMij65126.htm=No
+C:\marIntegraal Studio\LeesMij65127.htm=No
+C:\marIntegraal Studio\EindeBEF.htm=No
+C:\marIntegraal Studio\LeesMij65128.htm=No
+C:\marIntegraal Studio\LeesMij65129.htm=No
+C:\marIntegraal Studio\LeesMij65130.htm=No
+C:\marIntegraal Studio\LeesMij65131.htm=No
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\mar2002\marIntegraal.exe=No
+C:\mar2002\MARNT.ARC=No
+C:\mar2002\VSOFT.INI=No
+C:\mar2002\marIntegraal.mdb=No
+C:\mar2002\Kassa.mdb=No
+C:\mar2002\default.mdb=No
+C:\mar2002\marnt.mdv=No
+C:\mar2002\ARC.EXE=No
+C:\mar2002\gkauto.600=No
+C:\mar2002\scan.mdb=No
+C:\mar2002\EindeBEF.htm=No
+C:\mar2002\LeesMij65131.htm=No
+C:\mar2002\LeesMij65132.htm=No
+C:\mar2002\LeesMij65201.htm=No
+C:\mar2002\LeesMij65202.htm=No
+C:\mar2002\LeesMij2001.htm=No
+C:\mar2002\LeesMij65203.htm=No
+
+[Package|Standard Setup marIntegraalNET|Distribution]
+Type=single
+Size=
+Title=marIntegraal.NET Studio
+
+[Package|Standard Setup marIntegraalNET|IconGroups]
+Group0=marIntegraal.NET Studio
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup marIntegraalNET|marIntegraal.NET Studio]
+Icon1=marIntegraal.exe
+Title1=marIntegraal.NET Studio
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup marIntegraalNET|Package]
+PackageFolder=C:\mar2002\w0116
+ProjectFolder=C:\mar2002
+ServerSideCab=
+File1=C:\mar2002\w0116\setup.exe
+File2=C:\mar2002\w0116\Setup.Lst
+File3=C:\mar2002\w0116\marIntegraal.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Standard Setup Package 2|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Package
+
+[Package|Standard Setup Package 2|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 2|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 2|Files Found]
+
+[Package|Standard Setup Package 2|Files Released]
+Marnt.hlp=
+
+[Package|Standard Setup Package 2|Missing Dependency Information]
+C:\Program Files\Common Files\Microsoft Shared\Web Components\11\OWC11.DLL=
+C:\WINDOWS\system32\fxscomex.dll=
+D:\Program Files\Microsoft Office\OFFICE11\MSWORD.OLB=
+C:\Program Files\Common Files\System\ado\msjro.dll=
+C:\WINDOWS\system32\msderun.dll=
+C:\WINDOWS\system32\msscript.ocx=
+C:\Program Files\Common Files\System\ado\msadox.dll=
+C:\WINDOWS\system32\shfolder.dll=
+C:\WINDOWS\system32\OWC11.DLL=
+C:\Program Files\marIntegraal NET Studio\Beveiliging2xx.dll=
+C:\WINDOWS\system32\msjro.dll=
+C:\Program Files\Common Files\Microsoft Shared\MODI\11.0\MDIVWCTL.DLL=
+C:\WINDOWS\system32\msadox.dll=
+
+[Package|Standard Setup Package 2|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MCI32.OCX=
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Beveiliging2xx.dll=
+C:\WINDOWS\system32\scrrun.dll=
+
+[Package|Standard Setup Package 2|Files Added]
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\vsoft.ini=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\asscan.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\default.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\kassa.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\marintegraal.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\telebib2.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\scan.mdb=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\sbrief.doc=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\arc.exe=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\eindebef.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\leesmij66101.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\leesmij2003.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\leesmij2001.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\leesmij2002.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\systeem dsn rvbeveiliging aanmaken.htm=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\marnt.arc=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\marnt.mdv=
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66102.htm=
+
+[Package|Standard Setup Package 2|Files Removed]
+c:\windows\system32\shfolder.dll=
+d:\mijn documenten\visual studio projects\!vs projects\marvb6\leesmij66101.htm=
+
+[Package|Standard Setup Package 2|Files In Project]
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\shfolder.dll=No
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINDOWS\system32\msjet40.dll=Yes
+C:\WINDOWS\system32\msjter40.dll=Yes
+C:\WINDOWS\system32\msjint40.dll=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\mswstr10.dll=Yes
+C:\WINDOWS\system32\mswdat10.dll=Yes
+C:\WINDOWS\system32\msrd2x40.dll=Yes
+C:\WINDOWS\system32\msrd3x40.dll=Yes
+C:\WINDOWS\system32\msrepl40.dll=Yes
+C:\WINDOWS\system32\msjtes40.dll=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\WINDOWS\system32\msscript.ocx=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\msderun.dll=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT.DLL=Yes
+D:\Program Files\Microsoft Office\OFFICE11\MSWORD.OLB=Yes
+C:\WINDOWS\system32\fxscomex.dll=Yes
+C:\WINDOWS\system32\MSHFLXGD.OCX=Yes
+C:\WINDOWS\system32\MSADODC.OCX=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\MSINET.OCX=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MCI32.OCX=Yes
+C:\WINDOWS\system32\MSMAPI32.OCX=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\RICHTX32.OCX=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\system32\msjro.dll=Yes
+C:\WINDOWS\system32\OWC11.DLL=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\VSOFT.INI=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ASScan.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\default.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Kassa.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\TELEBIB2.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\scan.mdb=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\sBrief.doc=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ARC.EXE=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\EindeBEF.htm=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66101.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2003.htm=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2001.htm=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2002.htm=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Systeem DSN RVBEVEILIGING aanmaken.htm=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\MARNT.ARC=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marnt.mdv=Yes
+C:\WINDOWS\system32\msadox.dll=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Beveiliging2xx.dll=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66102.htm=Yes
+
+[Package|Standard Setup Package 2|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 2|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 2|Install Locations]
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\shfolder.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msadox.dll=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINDOWS\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msscript.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msderun.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msjro.dll=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Office\OFFICE11\MSWORD.OLB=$(WinSysPath)
+C:\WINDOWS\system32\fxscomex.dll=$(WinSysPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Beveiliging2xx.dll=$(AppPath)
+C:\WINDOWS\system32\MSHFLXGD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\Web Components\11\OWC11.DLL=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINDOWS\system32\msjro.dll=$(WinSysPath)
+C:\Program Files\marIntegraal NET Studio\Beveiliging2xx.dll=$(WinSysPath)
+C:\WINDOWS\system32\OWC11.DLL=$(WinSysPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\VSOFT.INI=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ASScan.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\default.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Kassa.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\TELEBIB2.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\scan.mdb=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\sBrief.doc=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ARC.EXE=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\EindeBEF.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66101.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2003.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2001.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2002.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Systeem DSN RVBEVEILIGING aanmaken.htm=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\MARNT.ARC=$(AppPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marnt.mdv=$(AppPath)
+C:\WINDOWS\system32\msadox.dll=$(WinSysPath)
+C:\Program Files\Common Files\Microsoft Shared\MODI\11.0\MDIVWCTL.DLL=$(WinSysPath)
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66102.htm=$(AppPath)
+
+[Package|Standard Setup Package 2|Configure Shared Files]
+Applicable=Yes
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.exe=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Beveiliging2xx.dll=No
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\VSOFT.INI=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ASScan.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\default.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Kassa.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marIntegraal.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\TELEBIB2.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\scan.mdb=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\sBrief.doc=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\ARC.EXE=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\EindeBEF.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66101.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2003.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2001.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij2002.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Systeem DSN RVBEVEILIGING aanmaken.htm=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\MARNT.ARC=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\marnt.mdv=No
+D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\LeesMij66102.htm=No
+
+[Package|Standard Setup Package 2|Distribution]
+Type=single
+Size=
+Title=marIntegraal NET Studio
+
+[Package|Standard Setup Package 2|Package]
+PackageFolder=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Package
+ProjectFolder=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6
+ServerSideCab=
+File1=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Package\setup.exe
+File2=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Package\Setup.Lst
+File3=D:\Mijn Documenten\Visual Studio Projects\!VS Projects\marVB6\Package\marIntegraal.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Standard Setup Package 2|IconGroups]
+Group0=marIntegraal NET Studio
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 2|marIntegraal NET Studio]
+Icon1=marIntegraal.exe
+Title1=marIntegraal NET Studio
+StartIn1=$(AppPath)
+Key1=Icon1

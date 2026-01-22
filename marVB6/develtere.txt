@@ -1,0 +1,11 @@
+Standaardlicentie=on
+&Welkontrole=on
+&voorkeurdata=geen+voorkeur%0D%0A
+&NaamBedrijf=bvba+garage+develtere
+&BTWNummer=&StraatEnNummer=deerlijkstraat+38
+&PostKode=8550
+&Plaats=zwevegem
+&Telefoon=056.755644
+&Fax=
+&Email=develtere.zwevegem@peugeot.be
+&Gebruikerslicentie=E-mailen+naar+Roelandt+%26+vermoesen
