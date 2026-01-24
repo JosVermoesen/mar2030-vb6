@@ -2383,12 +2383,20 @@ For T = 0 To 3
         subTaxableAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxableAmount}", subTaxableAmount)
                 
-        subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
-        subTaxCategory = Trim(Dec((T), "00"))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
-        subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
+        If T = 0 Then
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", "0")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "Z")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", "00")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", "0")
+        Else
+            subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "S")
+            subTaxCategory = Trim(Dec((T), "00"))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
+            subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
+        End If
 
         subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), sy2))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxExclusiveAmount}", subTaxExclusiveAmount)
@@ -2485,15 +2493,24 @@ For T = 0 To VerkoopDetail.ListCount - 1
         
         If VeldUblInfo(9) = "6" Then
             VeldUblInfo(9) = "0"
+            thisInvoiceLine = Replace(thisInvoiceLine, "{taxIndex}", "Z")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", "00")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", "0")
+            
+            lineTaxAmountAccurate = "0.0000"
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
+        Else
+            thisInvoiceLine = Replace(thisInvoiceLine, "{taxIndex}", "S")
+            
+            lineTaxCategory = Dec(Val(VeldUblInfo(9)), "00")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", lineTaxCategory)
+        
+            lineTaxPercentage = Mid(fmarBoxText("002", "2", VeldUblInfo(9)), 4, 4)
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", lineTaxPercentage)
+        
+            lineTaxAmountAccurate = Trim(Dec((dVeldUblInfo(7) * Val(lineTaxPercentage) / 100), MASK_EUR))
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
         End If
-        lineTaxCategory = Dec(Val(VeldUblInfo(9)), "00")
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", lineTaxCategory)
-        
-        lineTaxPercentage = Mid(fmarBoxText("002", "2", VeldUblInfo(9)), 4, 4)
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", lineTaxPercentage)
-        
-        lineTaxAmountAccurate = Trim(Dec((dVeldUblInfo(7) * Val(lineTaxPercentage) / 100), MASK_EUR))
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
                 
         lineSellerItemIdentification = Trim(VeldUblInfo(0))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineSellerItemIdentification}", lineSellerItemIdentification)
@@ -5173,6 +5190,7 @@ reprintOnly = False
 
 Dim T As Integer
 
+orderMarReferences = ""
 Me.ButtonInfoSupported.Enabled = False
 Me.ButtonInfoSupported.Visible = False
 orderMarReferences = ""
@@ -6177,6 +6195,7 @@ documentTemplate = Replace(documentTemplate, "{supplierBIC}", supplierBIC)
 'paymentTerms = "024010022505"
 documentTemplate = Replace(documentTemplate, "{paymentTerms}", paymentTerms)
 
+
 documentTemplate = Replace(documentTemplate, "{taxTotalAmount}", taxGlobalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{taxableAmount}", taxableGlobalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{taxExclusiveAmount}", taxableGlobalTotalAmount)
@@ -6197,13 +6216,21 @@ For T = 0 To 3
         subTaxableAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxableAmount}", subTaxableAmount)
                 
-        subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
-        subTaxCategory = Trim(Dec((T), "00"))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
-        subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
-
+        If T = 0 Then
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", "0")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "Z")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", "00")
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", "0")
+        Else
+            subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "S")
+            subTaxCategory = Trim(Dec((T), "00"))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
+            subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
+        End If
+        
         subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), sy2))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxExclusiveAmount}", subTaxExclusiveAmount)
         subTaxInclusiveAmount = Trim(Dec(BTWEuroBasis(T) + BTWEuroBedrag(T), MASK_EUR))
@@ -6273,16 +6300,10 @@ For T = 0 To VerkoopDetail.ListCount - 1
         dVeldUblInfo(3) = Val(Left(GridText, 7))           'number ledgeraccount
         GridText = Right(GridText, Len(GridText) - 8)
         VeldUblInfo(0) = Left(GridText, 13)                'product reference id or description
-                
-        linePriceAmount = Trim(Dec((dVeldUblInfo(7) / dVeldUblInfo(6)), MASK_EUR + "00"))
-        thisInvoiceLine = Replace(thisInvoiceLine, "{linePriceAmount}", linePriceAmount)
                         
         lineQuantity = Trim(Dec(dVeldUblInfo(6), MASK_EUR))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineQuantity}", lineQuantity)
                 
-        lineExtentionAmount = Trim(Dec(dVeldUblInfo(7), MASK_EUR + "00"))
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineExtensionAmount}", lineExtentionAmount)
-        
         'tmpString = "701000;701000;701000"
         'lineAccountingcost = Split(tmpString, ";")
         'tmpString = "8.4000;83.8951;343.5600"
@@ -6299,16 +6320,38 @@ For T = 0 To VerkoopDetail.ListCount - 1
         
         If VeldUblInfo(9) = "6" Then
             VeldUblInfo(9) = "0"
-        End If
-        lineTaxCategory = Dec(Val(VeldUblInfo(9)), "00")
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", lineTaxCategory)
+            
+            linePriceAmount = Trim(Dec((dVeldUblInfo(7) / dVeldUblInfo(6)), MASK_EUR)) + "00"
+            thisInvoiceLine = Replace(thisInvoiceLine, "{linePriceAmount}", linePriceAmount)
+                    
+            lineExtentionAmount = Trim(Dec(dVeldUblInfo(7), MASK_EUR)) + "00"
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineExtensionAmount}", lineExtentionAmount)
         
-        lineTaxPercentage = Mid(fmarBoxText("002", "2", VeldUblInfo(9)), 4, 4)
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", lineTaxPercentage)
+            thisInvoiceLine = Replace(thisInvoiceLine, "{taxIndex}", "Z")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", "00")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", "0")
+            
+            lineTaxAmountAccurate = "0.0000"
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
+            
+        Else
+            linePriceAmount = Trim(Dec((dVeldUblInfo(7) / dVeldUblInfo(6)), MASK_EUR + "00"))
+            thisInvoiceLine = Replace(thisInvoiceLine, "{linePriceAmount}", linePriceAmount)
+        
+            lineExtentionAmount = Trim(Dec(dVeldUblInfo(7), MASK_EUR + "00"))
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineExtensionAmount}", lineExtentionAmount)
+        
+            thisInvoiceLine = Replace(thisInvoiceLine, "{taxIndex}", "S")
+            lineTaxCategory = Dec(Val(VeldUblInfo(9)), "00")
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxCategory}", lineTaxCategory)
+        
+            lineTaxPercentage = Mid(fmarBoxText("002", "2", VeldUblInfo(9)), 4, 4)
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxPercentage}", lineTaxPercentage)
                 
-        lineTaxAmountAccurate = Trim(Dec((dVeldUblInfo(7) * Val(lineTaxPercentage) / 100), MASK_EUR + "00"))
-        thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
-                
+            lineTaxAmountAccurate = Trim(Dec((dVeldUblInfo(7) * Val(lineTaxPercentage) / 100), MASK_EUR + "00"))
+            thisInvoiceLine = Replace(thisInvoiceLine, "{lineTaxAmountAccurate}", lineTaxAmountAccurate)
+        End If
+        
         lineSellerItemIdentification = Trim(VeldUblInfo(0))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineSellerItemIdentification}", lineSellerItemIdentification)
         

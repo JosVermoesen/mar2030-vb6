@@ -10,7 +10,7 @@
                      <cbc:ID>{lineSellerItemIdentification}</cbc:ID>
               </cac:SellersItemIdentification>
               <cac:ClassifiedTaxCategory>
-                     <cbc:ID>S</cbc:ID>
+                     <cbc:ID>{taxIndex}</cbc:ID>
                      <cbc:Percent>{lineTaxPercentage}</cbc:Percent>
                      <cac:TaxScheme>
                             <cbc:ID>{supplierTaxScheme}</cbc:ID>

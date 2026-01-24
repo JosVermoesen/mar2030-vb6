@@ -9,6 +9,14 @@ Begin VB.Form frmDNNinstellingen
    ScaleHeight     =   2580
    ScaleWidth      =   9450
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton ButtonToggle 
+      Caption         =   "Toggle Bewerken"
+      Height          =   375
+      Left            =   6720
+      TabIndex        =   15
+      Top             =   2040
+      Width           =   1515
+   End
    Begin VB.CommandButton ButtonDefaultResetForMapMarnt 
       Caption         =   "AutoDefault MAP MarNT"
       Enabled         =   0   'False
@@ -22,11 +30,11 @@ Begin VB.Form frmDNNinstellingen
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   2280
+      Left            =   2400
       TabIndex        =   14
       TabStop         =   0   'False
       Top             =   2040
-      Width           =   2475
+      Width           =   2295
    End
    Begin VB.CommandButton ButtonDefaultResetForOneDrive 
       Caption         =   "AutoDefault OneDrive"
@@ -41,11 +49,11 @@ Begin VB.Form frmDNNinstellingen
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   120
+      Left            =   240
       TabIndex        =   13
       TabStop         =   0   'False
       Top             =   2040
-      Width           =   2115
+      Width           =   1995
    End
    Begin VB.CommandButton ButtonCloudArchive 
       Height          =   315
@@ -93,10 +101,10 @@ Begin VB.Form frmDNNinstellingen
       Cancel          =   -1  'True
       Caption         =   "Sluiten"
       Height          =   375
-      Left            =   8160
+      Left            =   8400
       TabIndex        =   7
       Top             =   2040
-      Width           =   1215
+      Width           =   975
    End
    Begin VB.TextBox txtPDFpostvak 
       Height          =   285
@@ -108,12 +116,12 @@ Begin VB.Form frmDNNinstellingen
       Width           =   6735
    End
    Begin VB.CommandButton CmdBewaar 
-      Caption         =   "Instellingen &bewaren en sluiten"
+      Caption         =   "&Bewaren en sluiten"
       Height          =   375
-      Left            =   5400
+      Left            =   4920
       TabIndex        =   6
       Top             =   2040
-      Width           =   2595
+      Width           =   1635
    End
    Begin VB.TextBox txtURLwww 
       Height          =   285
@@ -176,6 +184,21 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 DefInt A-Z
+
+Dim toggleEdit As Boolean
+
+Sub ToggleProperties(toggleSet As Boolean)
+
+    ButtonDefaultResetForMapMarnt.Visible = toggleSet
+    ButtonDefaultResetForOneDrive.Visible = toggleSet
+    CmdBewaar.Visible = toggleSet
+    
+    txtURLwww.Enabled = toggleSet
+    txtSkyDriveMap.Enabled = toggleSet
+    txtPDFpostvak.Enabled = toggleSet
+    txtURLlokaal.Enabled = toggleSet
+    
+End Sub
 
 Private Sub ButtonCloudArchive_Click()
     
@@ -312,6 +335,16 @@ Private Sub ButtonDefaultResetForOneDrive_Click()
     
 End Sub
 
+Private Sub ButtonToggle_Click()
+
+    toggleEdit = Not toggleEdit
+    ToggleProperties (toggleEdit)
+    If toggleEdit = True Then
+        MsgBox "Wees bedachtzaam bij het wijzigen van deze belangrijke instellingen voor MarIntegraal en MarSync", vbExclamation
+    End If
+    
+End Sub
+
 Private Sub CmdBewaar_Click()
 
     BeWaarTekst "dnnInstellingen", "Archief", Me.txtURLlokaal.Text 'archief cloud
@@ -328,8 +361,12 @@ Private Sub cmdSluiten_Click()
     
 End Sub
 
-Private Sub Form_Load()
 
+Private Sub Form_Load()
+    
+    toggleEdit = False
+    ToggleProperties (toggleEdit)
+        
     If LOCATION_COMPANYDATA = "" Then
     Else
         Me.ButtonDefaultResetForOneDrive.Enabled = True
