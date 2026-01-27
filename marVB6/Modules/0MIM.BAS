@@ -708,6 +708,34 @@ Else
     recCustomer.Close
 End If
 
+'ALTER TABLE Leveranciers ADD COLUMN v410 MEMO
+bClose TABLE_SUPPLIERS
+Err = 0
+On Error Resume Next
+Dim recSupplier As ADODB.Recordset
+Set recSupplier = New ADODB.Recordset
+Msg = "SELECT TOP 1 v410 FROM Leveranciers"
+recSupplier.CursorLocation = adUseClient
+recSupplier.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
+If Err Then
+    bClose TABLE_SUPPLIERS
+    Err = 0
+    On Error Resume Next
+    Msg = "ALTER TABLE Leveranciers ADD COLUMN v410 MEMO"
+    adntDB.Execute Msg
+    If Err = -2147217887 Then
+        'Stop
+    ElseIf Err = -2147217900 Then
+        'Stop
+        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
+        End
+    ElseIf Err = 0 Then
+        'ok
+    End If
+Else
+    recSupplier.Close
+End If
+
 'ALTER TABLE Dokumenten ADD COLUMN v408 MEMO
 bClose TABLE_CUSTOMERS
 Err = 0

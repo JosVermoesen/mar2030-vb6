@@ -126,20 +126,41 @@ Begin VB.Form DirekteAankoop
       Tab(0).Control(34).Enabled=   0   'False
       Tab(0).Control(35)=   "ButtonOptimize"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).ControlCount=   36
+      Tab(0).Control(36)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(36).Enabled=   0   'False
+      Tab(0).ControlCount=   37
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbAfbeelding"
-      Tab(1).Control(1)=   "OLE1"
+      Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(1)=   "cbAfbeelding"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obTAB(1)"
+      Tab(2).Control(0)=   "Label3"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "Label3"
+      Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
+      Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
+         Alignment       =   1  'Right Justify
+         Caption         =   "Check steeds Peppol"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   3000
+         TabIndex        =   47
+         TabStop         =   0   'False
+         Top             =   0
+         Width           =   1815
+      End
       Begin VB.CommandButton ButtonOptimize 
          Caption         =   "Dubbels Vermijden"
          BeginProperty Font 
@@ -171,8 +192,8 @@ Begin VB.Form DirekteAankoop
          Height          =   345
          Left            =   6480
          TabIndex        =   39
-         Top             =   1530
-         Width           =   1305
+         Top             =   1560
+         Width           =   1425
       End
       Begin VB.CommandButton cbImportUBL 
          Caption         =   "&UBL B2B IN"
@@ -239,6 +260,7 @@ Begin VB.Form DirekteAankoop
          _ExtentY        =   3307
          _Version        =   393216
          Style           =   1
+         Tab             =   2
          TabHeight       =   494
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
@@ -249,22 +271,22 @@ Begin VB.Form DirekteAankoop
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         TabCaption(0)   =   "&Leverancier Activeren"
+         TabCaption(0)   =   "&Leverancier"
          TabPicture(0)   =   "0200001.frx":035E
-         Tab(0).ControlEnabled=   -1  'True
+         Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "LeverancierInfo"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "cmdXLog"
-         Tab(1).Control(1)=   "LabelInfoXlog"
+         Tab(1).Control(0)=   "LabelInfoXlog"
+         Tab(1).Control(1)=   "cmdXLog"
          Tab(1).ControlCount=   2
-         TabCaption(2)   =   "Lijst &Historiek"
+         TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
-         Tab(2).ControlEnabled=   0   'False
+         Tab(2).ControlEnabled=   -1  'True
          Tab(2).Control(0)=   "ListView1"
+         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin VB.CommandButton cmdXLog 
             Caption         =   "LeverancierFiche Opvragen / Wijzigen"
@@ -277,7 +299,7 @@ Begin VB.Form DirekteAankoop
          End
          Begin MSComctlLib.ListView ListView1 
             Height          =   1395
-            Left            =   -74880
+            Left            =   120
             TabIndex        =   41
             Top             =   360
             Width           =   4575
@@ -329,7 +351,7 @@ Begin VB.Form DirekteAankoop
                Strikethrough   =   0   'False
             EndProperty
             Height          =   1395
-            Left            =   120
+            Left            =   -74880
             TabIndex        =   30
             Top             =   360
             Width           =   4575
@@ -1085,6 +1107,89 @@ Function CheckSupplier() As Boolean
 
 End Function
 
+Function CheckSupplierDocuments(supplierCode As String) As Boolean
+       
+    Dim valueInRecordV410 As String
+    Dim checkWithVatNumber As String
+    
+    CheckSupplierDocuments = False
+    
+    Dim rsAny As ADODB.Recordset
+    Set rsAny = New ADODB.Recordset
+    
+    On Error Resume Next
+    Err = 0
+    rsAny.CursorLocation = adUseClient
+    
+    Msg = "SELECT A110, v150, A161, v404, v410, A100 FROM Leveranciers WHERE A110 = '" & supplierCode & "'"
+    SnelHelpPrint Msg, BL_LOGGING
+    Screen.MousePointer = vbHourglass
+    rsAny.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
+    Screen.MousePointer = vbNormal
+    If Err Then
+        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+    ElseIf rsAny.RecordCount = 1 Then
+        If IsNull(rsAny("v410")) Or rsAny("v410").Value = "" Then
+            'First check with 0208:"
+            checkWithVatNumber = "0208:" + rsAny("V404")
+            valueInRecordV410 = CheckPeppolRegistration(checkWithVatNumber)
+            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+            'TODO: definitly to check for Peppol readiness
+            If Len(valueInRecordV410) < 300 Then
+                Msg = "Gecontroleerd met code: "
+                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
+                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
+                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
+                MsgBox Msg, vbInformation
+                checkWithVatNumber = "9925:BE" + rsAny("V404")
+                valueInRecordV410 = CheckPeppolRegistration(checkWithVatNumber)
+                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+                'TODO: definitly to check for Peppol readiness
+                If Len(valueInRecordV410) < 300 Then
+                    CheckSupplierDocuments = False
+                Else
+                    CheckSupplierDocuments = True
+                End If
+            Else
+                CheckSupplierDocuments = True
+            End If
+            rsAny("v410") = valueInRecordV410
+            rsAny.Update
+        ElseIf Len(rsAny("v410")) > 500 And Me.CheckBoxAlwaysPeppolRefresh.Value = vbUnchecked Then
+            CheckSupplierDocuments = True
+        ElseIf Me.CheckBoxAlwaysPeppolRefresh.Value = vbChecked Then 'always refresh!
+            'First check with 0208:"
+            checkWithVatNumber = "0208:" + rsAny("V404")
+            valueInRecordV410 = CheckPeppolRegistration(checkWithVatNumber)
+            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+            'TODO: definitly to check for Peppol readiness
+            If Len(valueInRecordV410) < 300 Then
+                Msg = "Gecontroleerd met code: "
+                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
+                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
+                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
+                MsgBox Msg, vbInformation
+                checkWithVatNumber = "9925:BE" + rsAny("V404")
+                valueInRecordV410 = CheckPeppolRegistration(checkWithVatNumber)
+                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+                'TODO: definitly to check for Peppol readiness
+                If Len(valueInRecordV410) < 300 Then
+                    CheckSupplierDocuments = False
+                Else
+                    CheckSupplierDocuments = True
+                End If
+            Else
+                CheckSupplierDocuments = True
+            End If
+            rsAny("v410") = valueInRecordV410
+            rsAny.Update
+        End If
+        rsAny.Close
+    End If
+    Set rsAny = Nothing
+    
+End Function
+
 
 Private Sub Aankoopdetail_DblClick()
 
@@ -1373,9 +1478,23 @@ Private Sub cbCheckTools_Click()
     ValidatingTool.tbVatNumber = supplierCountryCode + supplierVatNumber
     ValidatingTool.tbPeppolID = "0208:" + supplierVatNumber
     ValidatingTool.Show 1
+    
     'If Trim(ValidatingTool.TextBoxSupportedDocuments) = "" Then
     'Else
-    '    MsgBox "TODO: RV(rsKlant, v407) bijwerken"
+    '    If rsSupplier("v410") = ValidatingTool.TextBoxSupportedDocuments.Text Then
+    '        'MsgBox "Er zijn geen wijzigingen aan ondersteunde documenten", vbInformation
+    '    Else
+    '        Msg = "Ondersteunde Peppol verrichtingen bijwerken voor deze leverancier" & vbCrLf & vbCrLf
+    '        Msg = Msg + "Bent U zeker"
+    '        KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2 + vbQuestion)
+    '        If KtrlBox = vbYes Then
+    '            rsSupplier("v410") = ValidatingTool.TextBoxSupportedDocuments.Text
+    '            rsSupplier.Update
+                
+    '            MsgBox "Ondersteunde verrichtingen bijgewerkt. Herstart de aankoopprocedure", vbInformation
+    '            Schoon
+    '        End If
+    '    End If
     'End If
     Unload ValidatingTool
 
@@ -1875,6 +1994,15 @@ End If
 Me.cmdXLog.Enabled = True
 Me.LabelInfoXlog.Visible = False
 SSTab1.Tab = 0
+
+If supplierCompanyId = "" Then
+ElseIf supplierCountryCode = "BE" Then
+    Dim beSupplierPeppolCheck As Boolean
+    beSupplierPeppolCheck = CheckSupplierDocuments(supplierA110)
+    If beSupplierPeppolCheck = False Then
+        MsgBox "Deze BE Leverancier is niet Peppol klaar" & vbCrLf & vbCrLf & "In principe mag je geen aankoopdocumenten aanvaarden", vbExclamation
+    End If
+End If
 
 DirekteAankoop.AankoopDetail.SetFocus
 

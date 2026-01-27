@@ -605,4 +605,46 @@ Private Function GetNodeText(parentNode As Object, xpath As String) As String
     End If
 End Function
 
+Public Function CheckPeppolRegistration(peppolID As String) As String
+    
+    'r = ShellExecute(0, "open", "https://directory.peppol.eu/search/1.0/json?q=iso6523-actorid-upis:" + Me.tbPeppolID, 0, 0, 1)
+    
+    Dim http As Object
+    Dim xmlDoc As Object
+    Dim docNodes As Object
+    Dim docNode As Object
+    Dim entityNode As Object
+    
+    Dim url As String
+    Dim responseText As String
+    responseText = ""
+
+    url = "https://directory.peppol.eu/search/1.0/json?q=iso6523-actorid-upis:" + peppolID
+    On Local Error Resume Next
+    Err = 0
+
+    Screen.MousePointer = vbHourglass
+    DoEvents
+    
+    Set http = CreateObject("MSXML2.XMLHTTP")
+    http.Open "GET", url, False
+    http.Send
+
+    If http.Status = 200 Then
+        responseText = http.responseText
+    Else
+        'MsgBox "HTTP Error: " & http.Status
+        responseText = ""
+    End If
+    Screen.MousePointer = vbNormal
+    DoEvents
+    
+    Set http = Nothing
+    Set xmlDoc = Nothing
+    Set docNodes = Nothing
+    Set docNode = Nothing
+    Set entityNode = Nothing
+    CheckPeppolRegistration = responseText
+
+End Function
 

@@ -30,7 +30,7 @@ Begin VB.Form DirekteVerkoop
       BackColor       =   &H000000FF&
       Enabled         =   0   'False
       Height          =   285
-      Left            =   5160
+      Left            =   6240
       TabIndex        =   64
       TabStop         =   0   'False
       Text            =   "Opgelet: Dit is een testbedrijf!"
@@ -293,13 +293,15 @@ Begin VB.Form DirekteVerkoop
       Tab(0).Control(50).Enabled=   0   'False
       Tab(0).Control(51)=   "ButtonInfoSupported"
       Tab(0).Control(51).Enabled=   0   'False
-      Tab(0).ControlCount=   52
+      Tab(0).Control(52)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(52).Enabled=   0   'False
+      Tab(0).ControlCount=   53
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -311,6 +313,25 @@ Begin VB.Form DirekteVerkoop
       Tab(3).ControlEnabled=   0   'False
       Tab(3).Control(0)=   "lstKopiePlak"
       Tab(3).ControlCount=   1
+      Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
+         Alignment       =   1  'Right Justify
+         Caption         =   "Check Peppol Docs"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   345
+         Left            =   7200
+         TabIndex        =   69
+         TabStop         =   0   'False
+         Top             =   1200
+         Width           =   1815
+      End
       Begin VB.CommandButton ButtonInfoSupported 
          Caption         =   "Info UBL Klant"
          Enabled         =   0   'False
@@ -457,7 +478,7 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   240
          Index           =   2
-         Left            =   7980
+         Left            =   8010
          TabIndex        =   21
          TabStop         =   0   'False
          Top             =   660
@@ -477,7 +498,7 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   240
          Index           =   1
-         Left            =   7740
+         Left            =   7770
          TabIndex        =   20
          TabStop         =   0   'False
          Top             =   420
@@ -497,7 +518,7 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   240
          Index           =   0
-         Left            =   7260
+         Left            =   7290
          TabIndex        =   19
          Top             =   180
          Value           =   -1  'True
@@ -572,7 +593,7 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   7590
+         Left            =   7620
          TabIndex        =   16
          TabStop         =   0   'False
          Top             =   900
@@ -590,10 +611,10 @@ Begin VB.Form DirekteVerkoop
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   360
-         Left            =   7140
+         Height          =   240
+         Left            =   7170
          TabIndex        =   15
-         Top             =   1200
+         Top             =   1560
          Width           =   1845
       End
       Begin VB.CommandButton Afsluiten 
@@ -602,10 +623,10 @@ Begin VB.Form DirekteVerkoop
          Caption         =   "&Verwerken"
          Enabled         =   0   'False
          Height          =   330
-         Left            =   4200
+         Left            =   3840
          TabIndex        =   14
          Top             =   1740
-         Width           =   1485
+         Width           =   1125
       End
       Begin VB.CommandButton Klassement 
          Caption         =   "&Haal uit klassement"
@@ -669,25 +690,25 @@ Begin VB.Form DirekteVerkoop
          TabIndex        =   10
          TabStop         =   0   'False
          Top             =   1740
-         Width           =   945
+         Width           =   915
       End
       Begin VB.CommandButton CmdOmschrijving 
          Caption         =   "Via &Omschrijving"
          Height          =   330
-         Left            =   1080
+         Left            =   960
          TabIndex        =   9
          TabStop         =   0   'False
          Top             =   1740
-         Width           =   1725
+         Width           =   1605
       End
       Begin VB.CommandButton CmdTekst 
          Caption         =   "Vrije &Tekst"
          Height          =   330
-         Left            =   2880
+         Left            =   2640
          TabIndex        =   8
          TabStop         =   0   'False
          Top             =   1740
-         Width           =   1185
+         Width           =   1065
       End
       Begin VB.CommandButton CmbExtraAfdruk 
          Appearance      =   0  'Flat
@@ -715,7 +736,7 @@ Begin VB.Form DirekteVerkoop
          Left            =   5040
          TabIndex        =   6
          TabStop         =   0   'False
-         Top             =   1140
+         Top             =   720
          Visible         =   0   'False
          Width           =   645
       End
@@ -767,9 +788,9 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   240
-         Left            =   7380
+         Left            =   7410
          TabIndex        =   3
-         Top             =   1560
+         Top             =   1800
          Width           =   1605
       End
       Begin VB.CheckBox ckEURINFO 
@@ -1565,6 +1586,7 @@ Dim isDOM As Boolean
 Dim locPOSTVAKIN As String
 Dim customerPrefersEmail As Boolean
 Dim useEmail As Boolean
+Dim customerA110 As String
 
 Function checkForB2BInvoice() As Boolean
 
@@ -4545,6 +4567,7 @@ Klantje = vbCrLf & RV(rsKlant, "A100") & vbCrLf & _
 
 customerVatNumber = Trim(RV(rsKlant, "A161"))
 customerCompanyId = Trim(RV(rsKlant, "v404"))
+customerA110 = Trim(RV(rsKlant, "A110"))
 
 If (customerVatNumber + customerCompanyId) = "" Then
     Me.cbCheckTools.Enabled = False
@@ -4566,6 +4589,18 @@ Else
             '    Exit Sub
             'End If
         End If
+    End If
+End If
+
+If customerCompanyId = "" Then
+ElseIf customerCountryCode = "BE" Then
+    Dim beCustomerPeppolCheck As Boolean
+    beCustomerPeppolCheck = CheckCustomerDocuments(customerA110)
+    If beCustomerPeppolCheck = False Then
+        Msg = "Deze BE Klant is niet Peppol klaar" & vbCrLf & vbCrLf
+        Msg = Msg & "In principe moet je deze klant als particulier bedienen met verkoopdocumenten. Controleer online ondernemingsnummer en btw nummer" & vbCrLf & vbCrLf
+        Msg = Msg & "In principe mag je deze klant geen B2B verkoopdocumenten afleveren."
+        MsgBox Msg, vbInformation
     End If
 End If
 
@@ -6437,4 +6472,86 @@ Function CheckDocument(sellerDoc As String) As String
     
 End Function
 
+Function CheckCustomerDocuments(customerCode As String) As Boolean
+       
+    Dim valueInRecordV407 As String
+    Dim checkWithVatNumber As String
+    
+    CheckCustomerDocuments = False
+    
+    Dim rsAny As ADODB.Recordset
+    Set rsAny = New ADODB.Recordset
+    
+    On Error Resume Next
+    Err = 0
+    rsAny.CursorLocation = adUseClient
+    
+    Msg = "SELECT A110, v150, A161, v404, v407, A100 FROM Klanten WHERE A110 = '" & customerCode & "'"
+    SnelHelpPrint Msg, BL_LOGGING
+    Screen.MousePointer = vbHourglass
+    rsAny.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
+    Screen.MousePointer = vbNormal
+    If Err Then
+        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+    ElseIf rsAny.RecordCount = 1 Then
+        If IsNull(rsAny("v407")) Or rsAny("v407").Value = "" Then
+            'First check with 0208:"
+            checkWithVatNumber = "0208:" + rsAny("V404")
+            valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+            'TODO: definitly to check for Peppol readiness
+            If Len(valueInRecordV407) < 300 Then
+                Msg = "Gecontroleerd met code: "
+                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
+                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
+                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
+                MsgBox Msg, vbInformation
+                checkWithVatNumber = "9925:BE" + rsAny("V404")
+                valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+                'TODO: definitly to check for Peppol readiness
+                If Len(valueInRecordV407) < 300 Then
+                    CheckCustomerDocuments = False
+                Else
+                    CheckCustomerDocuments = True
+                End If
+            Else
+                CheckCustomerDocuments = True
+            End If
+            rsAny("v407") = valueInRecordV407
+            rsAny.Update
+        ElseIf Len(rsAny("v407")) > 500 And Me.CheckBoxAlwaysPeppolRefresh.Value = vbUnchecked Then
+            CheckCustomerDocuments = True
+        ElseIf Me.CheckBoxAlwaysPeppolRefresh.Value = vbChecked Then 'always refresh!
+            'First check with 0208:"
+            checkWithVatNumber = "0208:" + rsAny("V404")
+            valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+            'TODO: definitly to check for Peppol readiness
+            If Len(valueInRecordV407) < 300 Then
+                Msg = "Gecontroleerd met code: "
+                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
+                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
+                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
+                MsgBox Msg, vbInformation
+                checkWithVatNumber = "9925:BE" + rsAny("V404")
+                valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+                'TODO: definitly to check for Peppol readiness
+                If Len(valueInRecordV407) < 300 Then
+                    CheckCustomerDocuments = False
+                Else
+                    CheckCustomerDocuments = True
+                End If
+            Else
+                CheckCustomerDocuments = True
+            End If
+            rsAny("v407") = valueInRecordV407
+            rsAny.Update
+        End If
+        rsAny.Close
+    End If
+    Set rsAny = Nothing
+    
+End Function
 
