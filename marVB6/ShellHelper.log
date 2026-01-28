@@ -355,3 +355,12 @@
 24/01/2026 15:44:18  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
 24/01/2026 15:44:18  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\archief params=
 24/01/2026 15:44:18  - ShellExecute returned: 33 (Success)
+28/01/2026 8:45:35  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+28/01/2026 8:45:35  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\archief params=
+28/01/2026 8:45:35  - ShellExecute returned: 33 (Success)
+28/01/2026 8:45:38  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+28/01/2026 8:45:38  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\manueel params=
+28/01/2026 8:45:38  - ShellExecute returned: 33 (Success)
+28/01/2026 10:21:20  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+28/01/2026 10:21:20  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\out\V0202650050-040183.pdf params=
+28/01/2026 10:21:20  - ShellExecute returned: 42 (Success)

@@ -299,9 +299,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1425,15 +1425,12 @@ Attribute VB_Exposed = False
 Option Explicit
 DefInt A-Z
 
-Dim reprintOnly As Boolean
-
 Dim rsSellerUBL As New ADODB.Recordset
 
 Dim adminNoVat As Boolean
 Dim orderMarReferences As String
 
 Dim idPdfForUbl As String
-Dim printAndSave As Boolean
 
 Dim path As String * 260
 Dim ret As Integer
@@ -1545,7 +1542,7 @@ Dim dokumentSleutel As String * 11
 Dim KlantRekening As String * 7
 
 Dim VerkoopFLG As Integer
-Dim AfdrukFlag As Integer
+
 Dim AantalEx As String * 2
 Dim DefaultVerkoop As String * 7
 Dim KontaktPersoon As Integer
@@ -1625,17 +1622,13 @@ Function checkForB2BInvoice() As Boolean
             If InStr(RV(rsKlant, "v407"), "urn:fdc:peppol.eu:2017:poacc:billing:3.0::2.1") Then
                 Me.OptionPEPPOL_V3.Enabled = True
                 Me.OptionPEPPOL_V3.Value = vbChecked
-            ElseIf TextBoxWarningTestCompany.Visible Then
-                Me.OptionPEPPOL_V3.Enabled = True
             Else
                 Me.OptionPEPPOL_V3.Enabled = False
             End If
             'urn:UBL.BE:1.0.0.20180214::2.1
             If InStr(RV(rsKlant, "v407"), "urn:UBL.BE:1.0.0.20180214::2.1") Then
                 Me.OptionUBL_BE_3_0.Enabled = True
-                Me.OptionUBL_BE_3_0.Value = True
-            ElseIf TextBoxWarningTestCompany.Visible Then
-                Me.OptionUBL_BE_3_0.Enabled = True
+                Me.OptionUBL_BE_3_0.Value = vbChecked
             Else
                 Me.OptionUBL_BE_3_0.Enabled = False
             End If
@@ -2568,17 +2561,6 @@ Dim BestondReeds    As Integer
 Dim T As Integer
 Dim tempBDos As Integer
 
-' REFRESH CLIENT FIRST!!??
-'XLogKey = Trim(Left(KlantInfo.Caption, 12))
-'bGet TABLE_CUSTOMERS, 0, XLogKey
-'If Ktrl Then
-'    MsgBox "error"
-'Else
-'    RecordToVeld TABLE_CUSTOMERS
-'End If
-
-printAndSave = True
-
 If Vr = 11 Or Vr = 13 Then
     If dokumentSleutel <> SleutelDok(Vr) Then
     Msg = dokumentSleutel + " <> " + SleutelDok(Vr) + vbCrLf + vbCrLf
@@ -3249,13 +3231,12 @@ If Not IsNull(rsMAR(TABLE_CUSTOMERS)("V224")) Then
         Mim.Report.WriteDoc (locPOSTVAKIN & "\" & idPdfForUbl)
     End If
 End If
-            
-If reprintOnly = False Then
-    If Trim(customerVatNumber) = "" Then
-    ElseIf VerkoopOptie(0).Value = True Then
-        Mim.Report.WriteDoc (locPOSTVAKIN & "\" & idPdfForUbl)
-        Dim peppolSuccess As Boolean
-        If Me.OptionUBL_BE_3_0.Visible And Me.OptionPEPPOL_V3.Visible = True Then
+
+If Trim(customerVatNumber) = "" Then
+ElseIf VerkoopOptie(0).Value = True Then
+    Mim.Report.WriteDoc (locPOSTVAKIN & "\" & idPdfForUbl)
+    Dim peppolSuccess As Boolean
+    If Me.OptionUBL_BE_3_0.Visible And Me.OptionPEPPOL_V3.Visible = True Then
             customerPrefersEmail = False
             If Me.OptionUBL_BE_3_0.Value = True Then
                 If adminNoVat = True Then
@@ -3277,12 +3258,12 @@ If reprintOnly = False Then
             'customerPrefersEmail = False
         End If
     End If
-End If
+'End If
 
 If useEmail = False Then
     mailAddressV224 = ""
     If String99(READING, 306) = "2" Then
-        Msg = "Kopij van verkoopdocument staat klaar in de map Manueel voor afdruk."
+        Msg = "Kopij van verkoopdocument staat eveneens klaar in de map Manueel voor afdruk."
         MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
     Else
         Mim.Report.Preview
@@ -3336,6 +3317,7 @@ Else
             Me.MPIBericht.MsgNoteText = emailTemplate
                 
             'KtrlBox = MsgBox("Verstuurde E-mail aan " & vBibTekst(FlPartij, "#v224 #") & vbCr & vbCr & "Afdruk maken ?", vbQuestion + vbYesNo + vbDefaultButton2)
+            Mim.Report.WriteDoc (locPOSTVAKIN & "\" & idPdfForUbl)
             Me.MPIBericht.AttachmentPathName = locPOSTVAKIN & "\" & idPdfForUbl
                 
             'Send the message
@@ -3370,14 +3352,23 @@ Else
             Mim.Report.Preview
         End If
         Screen.MousePointer = vbNormal
+        
+    Else
+        If String99(READING, 306) = "2" Then
+            Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
+            MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
+        Else
+            Mim.Report.Preview
+        End If
     End If
 End If
+
 Exit Function
 
 DVKMPIError:
 'MsgBox Error
 Screen.MousePointer = vbNormal
-MsgBox "Mailverzending afgebroken" & vbCrLf & vbCrLf & "Doe zelf verder het nodige", vbExclamation
+'MsgBox "Mailverzending afgebroken" & vbCrLf & vbCrLf & "Doe zelf verder het nodige", vbExclamation
 If Dir(locPOSTVAKIN & "\" & idPdfForUbl) = "" Then
 Else
     Kill (locPOSTVAKIN & "\" & idPdfForUbl)
@@ -3387,10 +3378,24 @@ Mim.Report.Preview
 End Function
 
 Private Sub CmbExtraAfdruk_Click()
-
-    'MsgBox "Extra afdruk is tijdelijk uitgeschakeld", vbInformation
-    printAndSave = False
-    reprintOnly = True
+    
+    If Me.CreditNota.Value = vbChecked Then
+        If Me.OptionUBL_BE_3_0.Visible And Me.OptionPEPPOL_V3.Visible = True Then
+            MsgBox "Opnieuw genereren van eeen Peppol creditnota is niet mogelijk", vbInformation
+            Exit Sub
+        End If
+    End If
+    
+    If VerkoopOptie(0).Value = True Then
+        If Me.OptionUBL_BE_3_0.Visible And Me.OptionPEPPOL_V3.Visible = True Then
+            Msg = "Herafdruk en/of opnieuw genereren van eeen Peppolfactuur op eigen verantwoordelijkheid" & vbCrLf & vbCrLf
+            Msg = Msg + "Bent U zeker"
+            KtrlBox = MsgBox(Msg, vbQuestion + vbDefaultButton2 + vbYesNo)
+            If KtrlBox = vbNo Then
+                Exit Sub
+            End If
+        End If
+    End If
     Afdrukken
     
 End Sub
@@ -4747,12 +4752,10 @@ Sjabloon.Enabled = True
         cmdSQLInfo.Visible = True
     End If
 
-    If Trim(RV(rsKlant, "g101")) = "0" Then
+    If Trim(RV(rsKlant, "g101")) = "0" Or Trim(RV(rsKlant, "g101")) = "" Then
         customerPrefersEmail = False
-    ElseIf Trim(RV(rsKlant, "v224")) <> "" Then
-        customerPrefersEmail = True
     Else
-        customerPrefersEmail = False
+        customerPrefersEmail = True
     End If
 End Sub
 
@@ -5221,8 +5224,6 @@ End Sub
 
 Private Function Schoon()
 
-reprintOnly = False
-
 Dim T As Integer
 
 orderMarReferences = ""
@@ -5311,6 +5312,7 @@ On Error Resume Next
 DirekteVerkoop.SetFocus
 
 End Function
+
 
 Private Sub SchoonVegen_Click()
 
