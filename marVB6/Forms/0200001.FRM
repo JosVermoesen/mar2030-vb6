@@ -132,15 +132,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "OLE1"
-      Tab(1).Control(1)=   "cbAfbeelding"
+      Tab(1).Control(0)=   "cbAfbeelding"
+      Tab(1).Control(1)=   "OLE1"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label3"
+      Tab(2).Control(0)=   "obTAB(1)"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "obTAB(1)"
+      Tab(2).Control(2)=   "Label3"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -279,8 +279,8 @@ Begin VB.Form DirekteAankoop
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "LabelInfoXlog"
-         Tab(1).Control(1)=   "cmdXLog"
+         Tab(1).Control(0)=   "cmdXLog"
+         Tab(1).Control(1)=   "LabelInfoXlog"
          Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
@@ -1512,7 +1512,7 @@ Private Sub cbImportUBL_Click()
     On Local Error Resume Next
     
     FormB2BAMonitor.Hide
-    
+        
     FormB2BAMonitor.mfgToBook.Clear
     FormB2BAMonitor.mfgToBook.Cols = 6
     FormB2BAMonitor.mfgToBook.Rows = 2
@@ -1654,8 +1654,30 @@ Private Sub cbImportUBL_Click()
     Screen.MousePointer = vbNormal
     XLogKey = ""
     FormB2BAMonitor.mfgToBook.SetFocus
-    FormB2BAMonitor.Show 1
     
+    If Not purchasePeppolTODOShowed Then
+        purchasePeppolTODOShowed = True
+        If FormB2BAMonitor.mfgToBook.Rows = 2 Then
+            'no documents to book
+            Unload FormB2BAMonitor
+            Exit Sub
+        Else
+            'documents to book message until 28/02/2026
+            If #2/28/2026# > Date Then
+                Msg = Trim(Str(FormB2BAMonitor.mfgToBook.Rows - 2)) & " in te boeken Peppol aankoopdocumenten." & vbCrLf
+                Msg = Msg & "Boek ze spoedig in via [Document Inladen]." & vbCrLf & vbCrLf
+                Msg = Msg & "Manueel ingeboekte Peppol aankoopdocumenten zijn niet controleerbaar." & vbCrLf & vbCrLf
+                Msg = Msg & "Dit bericht verschijnt t.e.m. 28/02/2026"
+                MsgBox Msg, vbInformation, "Documenten in te boeken"
+            End If
+        End If
+        
+        'TODO message when documents have to be booked
+        FormB2BAMonitor.Show 1
+    Else
+        FormB2BAMonitor.Show 1
+    End If
+        
     ifSupplierInsertWarning = True
     ublFileUrl = LCase(XLogKey)
     If ublFileUrl = "" Then
@@ -1752,9 +1774,11 @@ End If
 
 End Sub
 
+
 Private Sub Form_Load()
 
-ifSupplierInsertWarning = False
+purchasePeppolTODOShowed = False
+purchasePeppolTODOShowed = False
 
 If Not Toegankelijk(Me) Then
     Unload Me
@@ -1843,14 +1867,18 @@ StartBlad = Msg
 Schoon
 
 Screen.MousePointer = vbNormal
+If Not purchasePeppolTODOShowed Then
+    cbImportUBL_Click
+End If
 
 End Sub
 
 Private Sub Form_Resize()
 
-AankoopDetail.Width = DirekteAankoop.Width - 250
-Me.SSTab1.SetFocus
-
+    AankoopDetail.Width = DirekteAankoop.Width - 250
+    Me.SSTab1.SetFocus
+       
+    
 End Sub
 
 

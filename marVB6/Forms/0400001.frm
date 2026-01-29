@@ -299,9 +299,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -3355,8 +3355,8 @@ Else
         
     Else
         If String99(READING, 306) = "2" Then
-            Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
-            MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
+            'Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
+            'MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
         Else
             Mim.Report.Preview
         End If

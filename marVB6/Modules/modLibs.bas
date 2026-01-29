@@ -24,8 +24,8 @@ Public Const PROPERTIES_STR = "Eigenschappen"
 
 Public Const ADOJET_PROVIDER = "Provider=Microsoft.Jet.OLEDB.4.0;"
 
-Public gnodDBNode    As Node        'current database node in treeview
-Public gnodDBNode2   As Node        'backup of current database node i
+Public gnodDBNode    As node        'current database node in treeview
+Public gnodDBNode2   As node        'backup of current database node i
 
 'marNT constanten
 Public Const NUMBER_TABLES = 9
@@ -244,3 +244,4 @@ Public uitwisselingDATAArray() As String
 Public documentLinesOMSArray() As String
 Public documentLinesDATAArray() As String
 
+Public purchasePeppolTODOShowed As Boolean

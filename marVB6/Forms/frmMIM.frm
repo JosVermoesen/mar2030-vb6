@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16515075
+         Format          =   76939267
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
