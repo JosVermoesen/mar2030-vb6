@@ -645,6 +645,12 @@ Else
     MsgBox "Breng SPOEDIG Setup Bedrijfsinformatie van de 2 hoogste boekjaren in orde a.u.b.", vbExclamation, "Ontbrekende bedrijfsinfo voor Peppol"
 End If
 
+'supplierElectronicMail
+If IsValidEmail(Trim(String99(READING, 295))) Then
+Else
+    MsgBox "Mailadres van uw onderneming is ongeldig.", vbExclamation, "Ontbrekende bedrijfsinfo voor Peppol"
+End If
+
 'ALTER TABLE Dokumenten ADD COLUMN v405 MEMO
 'ALTER TABLE Dokumenten ADD COLUMN v406 MEMO
 bClose TABLE_INVOICES

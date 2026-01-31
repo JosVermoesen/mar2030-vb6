@@ -4,7 +4,7 @@ Option Explicit
 Private Declare Function ShellExecute _
                             Lib "shell32.dll" _
                             Alias "ShellExecuteA" ( _
-                            ByVal HWND As Long, _
+                            ByVal hwnd As Long, _
                             ByVal lpOperation As String, _
                             ByVal lpFile As String, _
                             ByVal lpParameters As String, _
@@ -321,5 +321,18 @@ ElseIf UitKomst <> "" Then
     EenLijnRekenen = UitKomst
 End If
 
+End Function
+
+Public Function IsValidEmail(ByVal sEmail As String) As Boolean
+    Dim oReg As Object
+    Set oReg = CreateObject("VBScript.RegExp")
+
+    With oReg
+        .Pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+        .IgnoreCase = True
+        .Global = False
+    End With
+
+    IsValidEmail = oReg.Test(Trim$(sEmail))
 End Function
 

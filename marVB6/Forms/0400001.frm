@@ -299,9 +299,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1469,6 +1469,7 @@ Dim supplierCountryCode As String 'BE
 Dim supplierCompanyId As String '0423100736
 Dim supplierCompanyIdExtended As String 'BE0423100736
 Dim supplierTelephone As String '09 232 28 00
+Dim supplierElectronicMail As String
 
 'CUSTOMER:
 Dim customerVatNumber As String '0440058217
@@ -1589,10 +1590,10 @@ Function checkForB2BInvoice() As Boolean
 
     checkForB2BInvoice = False
     Me.FramePeppol.Visible = False
-    
+        
     customerElectronicMail = Trim(RV(rsKlant, "v224"))
-    If Trim(customerElectronicMail) = "" Then
-        MsgBox "Straks een B2B klant met een Peppol document. Adres en/of mailadres ontbreken." & vbCrLf & vbCrLf & "Klantfiche eerst bijwerken a.u.b.!", vbCritical
+    If customerElectronicMail = "" Or Not IsValidEmail(customerElectronicMail) Then
+        MsgBox "Een B2B klant voor een Peppol verrichting. Adres en/of mailadres ongeldig." & vbCrLf & vbCrLf & "Klantfiche eerst bijwerken a.u.b.!", vbCritical
         Exit Function
     End If
     
@@ -2011,6 +2012,9 @@ documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supp
 'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
 
+'supplierElectronicMail
+documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
+
 'customerVatNumber = "0440058217"
 documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
@@ -2193,6 +2197,9 @@ End Function
 
 Function XmlInvoiceGenerateUBLV3(thisPdf As String) As Boolean
 
+Dim maskV3 As String
+maskV3 = MASK_EUR
+
 'UBL
 'base64Str = ""
 documentTemplate = ""
@@ -2342,6 +2349,9 @@ documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supp
 'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
 
+'supplierElectronicMail
+documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
+
 'customerVatNumber = "0440058217"
 documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
@@ -2413,7 +2423,7 @@ For T = 0 To 3
             taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
         End If
 
-        subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), sy2))
+        subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxExclusiveAmount}", subTaxExclusiveAmount)
         subTaxInclusiveAmount = Trim(Dec(BTWEuroBasis(T) + BTWEuroBedrag(T), MASK_EUR))
         taxSubtotalLine = Replace(taxSubtotalLine, "{taxInclusiveAmount}", subTaxInclusiveAmount)
@@ -3110,7 +3120,7 @@ Dim BestondReeds    As Integer
 Dim T As Integer
 
 ' REFRESH CLIENT FIRST!!
-XLogKey = Trim(Left(KlantInfo.Caption, 12))
+XLogKey = Trim(Left(Klantinfo.Caption, 12))
 bGet TABLE_CUSTOMERS, 0, XLogKey
 If Ktrl Then
     MsgBox "error"
@@ -3388,10 +3398,13 @@ Private Sub CmbExtraAfdruk_Click()
     
     If VerkoopOptie(0).Value = True Then
         If Me.OptionUBL_BE_3_0.Visible And Me.OptionPEPPOL_V3.Visible = True Then
-            Msg = "Herafdruk en/of opnieuw genereren van eeen Peppolfactuur op eigen verantwoordelijkheid" & vbCrLf & vbCrLf
+            Msg = "Herafdruk en/of opnieuw genereren van eeen Peppolfactuur op eigen verantwoordelijkheid en onder controle van Vsoft 1985" & vbCrLf & vbCrLf
             Msg = Msg + "Bent U zeker"
             KtrlBox = MsgBox(Msg, vbQuestion + vbDefaultButton2 + vbYesNo)
             If KtrlBox = vbNo Then
+                Exit Sub
+            Else
+                MsgBox "Neem eerst contact op met Vsoft 1985", vbCritical
                 Exit Sub
             End If
         End If
@@ -3664,7 +3677,7 @@ Private Sub CreditNota_Click()
 
 Dim peppolCtrl As Boolean
 
-If KlantInfo.Caption <> "" Then
+If Klantinfo.Caption <> "" Then
     If customerCompanyId = "" Then
     Else
         peppolCtrl = checkForB2BInvoice()
@@ -4343,6 +4356,14 @@ If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) =
     Me.TextBoxWarningTestCompany.Visible = True
 End If
 
+'supplierElectronicMail
+supplierElectronicMail = Trim(String99(READING, 295))
+If IsValidEmail(supplierElectronicMail) Then
+Else
+    MsgBox "Mailadres in setup van uw onderneming is ongeldig. Eerst verbeteren a.u.b.", vbExclamation, "Ontbrekende bedrijfsinfo voor Peppol"
+    Unload Me
+    Exit Sub
+End If
 
 ret = SHGetFolderPath(0, 0, 0, 0, path)
 desktopLocatie = Left(path, InStr(path, Chr(0)) - 1)
@@ -4433,6 +4454,7 @@ supplierRegistrationName = Trim(String99(READING, 46))
 If InStr(supplierRegistrationName, "&") Then
     supplierRegistrationName = Replace(supplierRegistrationName, "&", "&amp;")
 End If
+
 
 If Left(String99(READING, 20), 1) = "4" Then
     ForFait = 1
@@ -4689,7 +4711,7 @@ Sjabloon.Enabled = True
         MsgBox "Landnummer is verplicht !"
         Exit Sub
     ElseIf RV(rsKlant, "v149") = "002" Then
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
         VerkoopFLG = 0
         Medekontraktant.Enabled = True
         Dim btwBE As String
@@ -4703,15 +4725,15 @@ Sjabloon.Enabled = True
         End If
         'kontroleren LU speciaal
     ElseIf InStr(SISO, RV(rsKlant, "v149")) Then
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
         VerkoopFLG = 1
         Medekontraktant.Enabled = False
         If vSet(RV(rsKlant, "A161"), 12) = Space$(12) Then
-            KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
+            Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
             VerkoopFLG = 0
         End If
     Else
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
         VerkoopFLG = 2
         Medekontraktant.Enabled = False
     End If
@@ -4842,7 +4864,7 @@ Dim T As Integer
 Dim LaatsteWAS As String
 Dim TotaalEX As Currency
 
-If KlantInfo.Caption = "" Then Exit Sub
+If Klantinfo.Caption = "" Then Exit Sub
 Unload Xlog
 Xlog.X.Rows = 1
 Xlog.X.Cols = 5
@@ -5248,7 +5270,7 @@ Klassement.Enabled = False
 Klassement.FontBold = False
 chkBTWBouw.Value = 0
 VAT_BOBTHEBUILDERS = False
-KlantInfo.Caption = ""
+Klantinfo.Caption = ""
 Annuleren.Enabled = True
 Medekontraktant.Value = 0
 If VerkoopOptie(0).Enabled = True Then CreditNota.Value = 0
@@ -5718,7 +5740,7 @@ Private Sub VerkoopOptie_Click(Index As Integer)
 
 Dim ktrlKlant As Boolean
 
-If KlantInfo.Caption <> "" Then
+If Klantinfo.Caption <> "" Then
     Select Case Index
         Case 0
             If customerCompanyId = "" Then
@@ -6195,6 +6217,10 @@ documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supp
 
 'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
+
+'supplierElectronicMail
+documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
+                            
 
 'customerVatNumber = "0440058217"
 documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)

@@ -51,9 +51,10 @@
                      <cac:PartyLegalEntity>
                             <cbc:RegistrationName>{supplierRegistrationName}</cbc:RegistrationName>
                             <cbc:CompanyID schemeID="0208">{supplierCompanyId}</cbc:CompanyID>                     
-                     </cac:PartyLegalEntity>
-                     <cac:Contact>
+                     </cac:PartyLegalEntity>                     
+		     <cac:Contact>
                             <cbc:Telephone>{supplierTelephone}</cbc:Telephone>
+                            <cbc:ElectronicMail>{supplierElectronicMail}</cbc:ElectronicMail>
                      </cac:Contact>
               </cac:Party>
        </cac:AccountingSupplierParty>
