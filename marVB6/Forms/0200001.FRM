@@ -132,15 +132,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbAfbeelding"
-      Tab(1).Control(1)=   "OLE1"
+      Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(1)=   "cbAfbeelding"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obTAB(1)"
+      Tab(2).Control(0)=   "Label3"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "Label3"
+      Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -279,8 +279,8 @@ Begin VB.Form DirekteAankoop
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "cmdXLog"
-         Tab(1).Control(1)=   "LabelInfoXlog"
+         Tab(1).Control(0)=   "LabelInfoXlog"
+         Tab(1).Control(1)=   "cmdXLog"
          Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
@@ -1096,7 +1096,14 @@ Function CheckSupplier() As Boolean
             Exit Function
         End If
     ElseIf rsSupplier.RecordCount > 1 Then
-        MsgBox "Meerdere leveranciers gevonden met dit ondernemingsnummer. Verbeter eerst", vbExclamation, "KBO nummer: " & uitwisselingDATAArray(5)
+        Msg = "Meerdere leveranciers gevonden met ondernemingsnummer " & searchOnVat & ". Verbeter eerst" & vbCrLf & vbCrLf
+        rsSupplier.MoveFirst
+        Msg = Msg & "=> " & Trim(rsSupplier("A110")) & " " & Trim(rsSupplier("A100")) & vbCrLf
+        Do While Not rsSupplier.EOF
+            rsSupplier.MoveNext
+            Msg = Msg & "=> " & Trim(rsSupplier("A110")) & " " & Trim(rsSupplier("A100")) & vbCrLf
+        Loop
+        MsgBox Msg, vbExclamation, "KBO nummer: " & uitwisselingDATAArray(5)
         Exit Function
     End If
     'If searchCountry = "BE" Then
