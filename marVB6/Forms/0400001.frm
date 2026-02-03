@@ -299,9 +299,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -2860,11 +2860,17 @@ ElseIf Trim$(dokumentHistoriek) <> "" Then
 End If
 
 Nextdokument:
+Dim sellerDocCheck As String
+sellerDocCheck = Dir(LOCATION_COMPANYDATA + "peppol\out\" + invoiceNumber + ".xml")
+           
 dokumentSleutel = SleutelDok(Vr)
 TekstInfo3 = dokumentSleutel
 DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + dokumentSleutel + ")"
 SchoonVegen_Click
 KlantAktiveren.SetFocus
+If sellerDocCheck <> "" Then
+    cbMonitortUBL_Click
+End If
 
 End Sub
 
@@ -3120,7 +3126,7 @@ Dim BestondReeds    As Integer
 Dim T As Integer
 
 ' REFRESH CLIENT FIRST!!
-XLogKey = Trim(Left(Klantinfo.Caption, 12))
+XLogKey = Trim(Left(KlantInfo.Caption, 12))
 bGet TABLE_CUSTOMERS, 0, XLogKey
 If Ktrl Then
     MsgBox "error"
@@ -3677,7 +3683,7 @@ Private Sub CreditNota_Click()
 
 Dim peppolCtrl As Boolean
 
-If Klantinfo.Caption <> "" Then
+If KlantInfo.Caption <> "" Then
     If customerCompanyId = "" Then
     Else
         peppolCtrl = checkForB2BInvoice()
@@ -4711,7 +4717,7 @@ Sjabloon.Enabled = True
         MsgBox "Landnummer is verplicht !"
         Exit Sub
     ElseIf RV(rsKlant, "v149") = "002" Then
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
         VerkoopFLG = 0
         Medekontraktant.Enabled = True
         Dim btwBE As String
@@ -4725,15 +4731,15 @@ Sjabloon.Enabled = True
         End If
         'kontroleren LU speciaal
     ElseIf InStr(SISO, RV(rsKlant, "v149")) Then
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
         VerkoopFLG = 1
         Medekontraktant.Enabled = False
         If vSet(RV(rsKlant, "A161"), 12) = Space$(12) Then
-            Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
+            KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
             VerkoopFLG = 0
         End If
     Else
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
         VerkoopFLG = 2
         Medekontraktant.Enabled = False
     End If
@@ -4864,7 +4870,7 @@ Dim T As Integer
 Dim LaatsteWAS As String
 Dim TotaalEX As Currency
 
-If Klantinfo.Caption = "" Then Exit Sub
+If KlantInfo.Caption = "" Then Exit Sub
 Unload Xlog
 Xlog.X.Rows = 1
 Xlog.X.Cols = 5
@@ -5270,7 +5276,7 @@ Klassement.Enabled = False
 Klassement.FontBold = False
 chkBTWBouw.Value = 0
 VAT_BOBTHEBUILDERS = False
-Klantinfo.Caption = ""
+KlantInfo.Caption = ""
 Annuleren.Enabled = True
 Medekontraktant.Value = 0
 If VerkoopOptie(0).Enabled = True Then CreditNota.Value = 0
@@ -5740,7 +5746,7 @@ Private Sub VerkoopOptie_Click(Index As Integer)
 
 Dim ktrlKlant As Boolean
 
-If Klantinfo.Caption <> "" Then
+If KlantInfo.Caption <> "" Then
     Select Case Index
         Case 0
             If customerCompanyId = "" Then

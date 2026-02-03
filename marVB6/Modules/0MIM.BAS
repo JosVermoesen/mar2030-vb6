@@ -156,13 +156,13 @@ Xlog.X.Text = "CumulRest"
 Xlog.X.Col = 6
 Xlog.X.Text = "Referte"
 
-Xlog.X.ColWidth(0) = 1125
+Xlog.X.ColWidth(0) = 1150
 Xlog.X.ColWidth(1) = 1110
-Xlog.X.ColWidth(2) = 975
+Xlog.X.ColWidth(2) = 980
 Xlog.X.ColWidth(3) = 1005
 Xlog.X.ColWidth(4) = 975
 Xlog.X.ColWidth(5) = 1185
-Xlog.X.ColWidth(6) = 1185
+Xlog.X.ColWidth(6) = 2200
 
 Xlog.X.ColAlignment(0) = flexAlignLeftTop
 Xlog.X.ColAlignment(1) = flexAlignRightTop
@@ -1755,7 +1755,7 @@ Mim.AV(11).Enabled = False
 Mim.Basis(11).Enabled = False
 
 LOCATION_COMPANYDATA = LOCATION_
-Mim.Caption = App.Title & " v." & App.Major & "." & App.Minor & "." & App.Revision
+Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision
 Screen.MousePointer = vbNormal
 
 On Error Resume Next

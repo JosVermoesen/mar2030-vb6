@@ -175,6 +175,7 @@ Begin VB.Form DirekteAankoop
          Height          =   360
          Left            =   6240
          TabIndex        =   46
+         TabStop         =   0   'False
          Top             =   5160
          Width           =   1635
       End
@@ -192,6 +193,7 @@ Begin VB.Form DirekteAankoop
          Height          =   345
          Left            =   6480
          TabIndex        =   39
+         TabStop         =   0   'False
          Top             =   1560
          Width           =   1425
       End
@@ -210,6 +212,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   5040
          TabIndex        =   0
+         TabStop         =   0   'False
          ToolTipText     =   "B2B Aankoopdocumenten Monitor"
          Top             =   1560
          Width           =   1215
@@ -279,8 +282,8 @@ Begin VB.Form DirekteAankoop
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "LabelInfoXlog"
-         Tab(1).Control(1)=   "cmdXLog"
+         Tab(1).Control(0)=   "cmdXLog"
+         Tab(1).Control(1)=   "LabelInfoXlog"
          Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
@@ -437,6 +440,7 @@ Begin VB.Form DirekteAankoop
          Height          =   240
          Left            =   2640
          TabIndex        =   25
+         TabStop         =   0   'False
          Top             =   1920
          Width           =   1575
       End
@@ -473,6 +477,7 @@ Begin VB.Form DirekteAankoop
          Height          =   240
          Left            =   4320
          TabIndex        =   23
+         TabStop         =   0   'False
          Top             =   1920
          Width           =   1215
       End
@@ -571,8 +576,8 @@ Begin VB.Form DirekteAankoop
          Left            =   1680
          TabIndex        =   11
          Top             =   6840
-         Width           =   2445
-         _ExtentX        =   4313
+         Width           =   4245
+         _ExtentX        =   7488
          _ExtentY        =   556
          _Version        =   393216
          ClipMode        =   1
@@ -673,9 +678,11 @@ Begin VB.Form DirekteAankoop
       End
       Begin MSMask.MaskEdBox TekstInfo9 
          Height          =   315
-         Left            =   4560
+         Left            =   6360
          TabIndex        =   44
+         TabStop         =   0   'False
          Top             =   6840
+         Visible         =   0   'False
          Width           =   1425
          _ExtentX        =   2514
          _ExtentY        =   556
@@ -841,9 +848,10 @@ Begin VB.Form DirekteAankoop
          Caption         =   "Koers"
          Height          =   240
          Index           =   3
-         Left            =   4560
+         Left            =   6480
          TabIndex        =   31
-         Top             =   6600
+         Top             =   6480
+         Visible         =   0   'False
          Width           =   525
       End
       Begin VB.Label Label2 
@@ -1670,13 +1678,13 @@ Private Sub cbImportUBL_Click()
             Exit Sub
         Else
             'documents to book message until 28/02/2026
-            If #2/28/2026# > Date Then
-                Msg = Trim(Str(FormB2BAMonitor.mfgToBook.Rows - 2)) & " in te boeken Peppol aankoopdocumenten." & vbCrLf
-                Msg = Msg & "Boek ze spoedig in via [Document Inladen]." & vbCrLf & vbCrLf
-                Msg = Msg & "Manueel ingeboekte Peppol aankoopdocumenten zijn niet controleerbaar." & vbCrLf & vbCrLf
-                Msg = Msg & "Dit bericht verschijnt t.e.m. 28/02/2026"
-                MsgBox Msg, vbInformation, "Documenten in te boeken"
-            End If
+            'If #2/28/2026# > Date Then
+            '    Msg = Trim(Str(FormB2BAMonitor.mfgToBook.Rows - 2)) & " in te boeken Peppol aankoopdocumenten." & vbCrLf
+            '    Msg = Msg & "Boek ze spoedig in via [Document Inladen]." & vbCrLf & vbCrLf
+            '    Msg = Msg & "Manueel ingeboekte Peppol aankoopdocumenten zijn niet controleerbaar." & vbCrLf & vbCrLf
+            '    Msg = Msg & "Dit bericht verschijnt t.e.m. 28/02/2026"
+            '    MsgBox Msg, vbInformation, "Documenten in te boeken"
+            'End If
         End If
         
         'TODO message when documents have to be booked

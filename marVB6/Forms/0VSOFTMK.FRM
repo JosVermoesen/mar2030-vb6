@@ -3,7 +3,7 @@ Begin VB.Form Vsoft
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Info Licentie"
-   ClientHeight    =   6285
+   ClientHeight    =   5265
    ClientLeft      =   435
    ClientTop       =   1110
    ClientWidth     =   12675
@@ -14,7 +14,7 @@ Begin VB.Form Vsoft
    MinButton       =   0   'False
    Moveable        =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   6285
+   ScaleHeight     =   5265
    ScaleWidth      =   12675
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton cmdLeesMij 
@@ -30,18 +30,18 @@ Begin VB.Form Vsoft
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   1920
+      Left            =   1440
       TabIndex        =   7
-      Top             =   5760
+      Top             =   4680
       Width           =   2175
    End
    Begin VB.CommandButton cmdLog 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Log"
       Height          =   375
-      Left            =   1080
+      Left            =   600
       TabIndex        =   6
-      Top             =   5760
+      Top             =   4680
       Visible         =   0   'False
       Width           =   735
    End
@@ -52,48 +52,28 @@ Begin VB.Form Vsoft
       Caption         =   "Ok"
       Default         =   -1  'True
       Height          =   375
-      Left            =   4200
+      Left            =   3720
       TabIndex        =   0
-      Top             =   5760
+      Top             =   4680
       Width           =   855
-   End
-   Begin VB.Label Label1 
-      Alignment       =   2  'Center
-      BackColor       =   &H00FFFFFF&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   18
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   645
-      Left            =   5760
-      TabIndex        =   9
-      Top             =   5640
-      Width           =   5625
-      WordWrap        =   -1  'True
    End
    Begin VB.Label AppInfo 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "Label5"
       ForeColor       =   &H00FF0000&
-      Height          =   885
+      Height          =   645
       Index           =   2
-      Left            =   6360
+      Left            =   960
       TabIndex        =   2
-      Top             =   4200
+      Top             =   3120
       Width           =   4545
       WordWrap        =   -1  'True
    End
    Begin VB.Label lblCloud 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
-      Caption         =   "marIntegraal 2025"
+      Caption         =   "marIntegraal 2026"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   18
@@ -105,10 +85,10 @@ Begin VB.Form Vsoft
       EndProperty
       ForeColor       =   &H00FF0000&
       Height          =   645
-      Left            =   5880
+      Left            =   840
       TabIndex        =   8
-      Top             =   5160
-      Width           =   5385
+      Top             =   3840
+      Width           =   4425
       WordWrap        =   -1  'True
    End
    Begin VB.Label AppInfo 
@@ -116,11 +96,11 @@ Begin VB.Form Vsoft
       BackColor       =   &H00FFFFFF&
       Caption         =   "Label4"
       ForeColor       =   &H00FF0000&
-      Height          =   585
+      Height          =   945
       Index           =   1
-      Left            =   720
+      Left            =   960
       TabIndex        =   1
-      Top             =   840
+      Top             =   2040
       Width           =   4455
       WordWrap        =   -1  'True
    End
@@ -131,18 +111,18 @@ Begin VB.Form Vsoft
       ForeColor       =   &H00FF0000&
       Height          =   195
       Index           =   0
-      Left            =   5640
+      Left            =   5760
       TabIndex        =   3
-      Top             =   480
+      Top             =   4800
       Width           =   1170
    End
    Begin VB.Image Image1 
-      Height          =   3495
-      Left            =   6960
+      Height          =   4455
+      Left            =   5880
       Picture         =   "0VSOFTMK.frx":030A
       Stretch         =   -1  'True
       Top             =   0
-      Width           =   5745
+      Width           =   6825
    End
    Begin VB.Label LabelInfo 
       Alignment       =   2  'Center
@@ -150,7 +130,7 @@ Begin VB.Form Vsoft
       Caption         =   "Produktnaam"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   24
+         Size            =   18
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -179,12 +159,32 @@ Begin VB.Form Vsoft
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FF0000&
-      Height          =   3285
+      Height          =   1035
       Index           =   2
-      Left            =   600
+      Left            =   720
       TabIndex        =   5
-      Top             =   1680
+      Top             =   840
       Width           =   4365
+   End
+   Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   645
+      Left            =   6960
+      TabIndex        =   9
+      Top             =   3960
+      Width           =   5625
+      WordWrap        =   -1  'True
    End
 End
 Attribute VB_Name = "Vsoft"
@@ -280,7 +280,7 @@ Dim XX As Integer
 Dim cnnLic As ADODB.Connection
 Dim rsLic As ADODB.Recordset
 
-LabelInfo(0).Caption = App.ProductName
+LabelInfo(0).Caption = App.ProductName & "-{Local First}"
 AppInfo(1).Caption = App.LegalCopyright
 AppInfo(2).Caption = App.FileDescription
 AppInfo(0).Caption = "Versie " + Format(App.Major) + "." + Format(App.Minor) + "." + Format(App.Revision)
@@ -313,13 +313,13 @@ Else
     sVar2 = sVar1
           
           Msg = "(Licentie)" + sVar1 + vbCrLf
-    'sVar3 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#A100 #"))
+    sVar3 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#A100 #"))
     sVar3 = "Pré 1990 gebruikers"
-    Msg = Msg + "(Bedrijf)" + vbCrLf + sVar3 + vbCrLf
+    'Msg = Msg + "(Bedrijf)" + vbCrLf + sVar3 + vbCrLf
     
-    'sVar4 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#v008 #"))
+    sVar4 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#v008 #"))
     sVar4 = "000-000-000"
-    Msg = Msg + "(BTW- of NAT.Nr)" + vbCrLf + sVar4 + vbCrLf
+    'Msg = Msg + "(BTW- of NAT.Nr)" + vbCrLf + sVar4 + vbCrLf
     
     'sVar5 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#vx02 #"))
     sVar5 = "01/12/2024 - 31/01/2030"

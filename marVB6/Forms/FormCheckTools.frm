@@ -277,15 +277,23 @@ Private Sub cbCheckAllPartners_Click()
 End Sub
 
 Private Sub cbCheckCompanyNumber_Click()
-    
-    r = ShellExecute(0, "open", "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=" + Me.tbCompanyNumber + "&actionLu=Zoek", 0, 0, 1)
+
+    If Internet_IsAvailable() Then
+        r = ShellExecute(0, "open", "https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=" + Me.tbCompanyNumber + "&actionLu=Zoek", 0, 0, 1)
+    Else
+        MsgBox "Geen internet verbinding.", vbInformation
+    End If
     
 End Sub
 
 Private Sub cbCheckPeppolRegistration_Click()
     
-    'r = ShellExecute(0, "open", "https://directory.peppol.eu/search/1.0/json?q=iso6523-actorid-upis:" + Me.tbPeppolID, 0, 0, 1)
-    
+    If Internet_IsAvailable() Then
+    Else
+        MsgBox "Geen internet verbinding.", vbInformation
+        Exit Sub
+    End If
+
     Dim http As Object
     Dim xmlDoc As Object
     Dim docNodes As Object
@@ -342,7 +350,11 @@ End Sub
 
 Private Sub cbCheckVatNumber_Click()
     
-    r = ShellExecute(0, "open", "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/" + Mid(Me.tbVatNumber, 1, 2) + "/vat/" + Mid(Me.tbVatNumber, 3), 0, 0, 1)
+    If Internet_IsAvailable() Then
+        r = ShellExecute(0, "open", "https://ec.europa.eu/taxation_customs/vies/rest-api/ms/" + Mid(Me.tbVatNumber, 1, 2) + "/vat/" + Mid(Me.tbVatNumber, 3), 0, 0, 1)
+    Else
+        MsgBox "Geen internet verbinding.", vbInformation
+    End If
 
 End Sub
 

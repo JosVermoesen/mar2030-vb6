@@ -466,9 +466,9 @@ Private Sub Ok_Click()
 
 If ListView1.ListItems.Count = 0 Then Exit Sub
 LOCATION_COMPANYDATA = LOCATION_ + ListView1.SelectedItem.ListSubItems(1) + "\"
-Mim.Caption = App.Title & " v." & App.Major & "." & App.Minor & "." & App.Revision & " - [" & Trim$(ListView1.SelectedItem) & "]"
+Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision & " - [" & Trim$(ListView1.SelectedItem) & "]"
 AutoLoadBedrijf
-If Mim.Caption = App.Title & " v." & App.Major & "." & App.Minor & "." & App.Revision Then
+If Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision Then
     BedrijfOpenen.SetFocus
 Else
     Annuleren_Click
