@@ -24,15 +24,15 @@ Begin VB.Form KeuzeVSF
    StartUpPosition =   1  'CenterOwner
    Begin VB.ListBox NTBoxLijst 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Name            =   "Courier New"
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2010
+      Height          =   1740
       Left            =   0
       TabIndex        =   0
       Top             =   0

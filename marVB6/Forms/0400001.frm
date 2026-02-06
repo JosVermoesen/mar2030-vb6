@@ -354,7 +354,6 @@ Begin VB.Form DirekteVerkoop
       End
       Begin VB.CommandButton cbMonitortUBL 
          Caption         =   "&UBL B2B OUT"
-         Default         =   -1  'True
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -367,6 +366,7 @@ Begin VB.Form DirekteVerkoop
          Height          =   315
          Left            =   5760
          TabIndex        =   65
+         TabStop         =   0   'False
          ToolTipText     =   "Monitor B2B Verkoopdocumenten"
          Top             =   1755
          Width           =   1455
@@ -2101,6 +2101,8 @@ If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
 
+Dim unitCodeValue As String
+
 ublTT = 0
 For T = 0 To VerkoopDetail.ListCount - 1
     If T > 0 Then
@@ -2129,6 +2131,17 @@ For T = 0 To VerkoopDetail.ListCount - 1
         dVeldUblInfo(2) = Val(Left(GridText, 6))           'maatstaf anders default 1.0
         GridText = Right(GridText, Len(GridText) - 7)
         VeldUblInfo(8) = Left(GridText, 1)                 '9 ??
+        
+        If Right(GridText, 1) = "1" Then
+            unitCodeValue = "C62"
+        Else
+            unitCodeValue = Trim(Mid(fmarBoxText("004", "2", VeldUblInfo(8)), 12))
+            If unitCodeValue = "" Then
+                unitCodeValue = "C62"
+            End If
+        End If
+        thisInvoiceLine = Replace(thisInvoiceLine, "{unitCode}", unitCodeValue)
+                
         GridText = Right(GridText, Len(GridText) - 2)
         dVeldUblInfo(5) = Val(Left(GridText, 3))           'korting
         GridText = Right(GridText, Len(GridText) - 4)
@@ -2453,6 +2466,8 @@ Else
     End If
 End If
 
+Dim unitCodeValue As String
+
 ublTT = 0
 For T = 0 To VerkoopDetail.ListCount - 1
     If T > 0 Then
@@ -2481,6 +2496,17 @@ For T = 0 To VerkoopDetail.ListCount - 1
         dVeldUblInfo(2) = Val(Left(GridText, 6))           'maatstaf anders default 1.0
         GridText = Right(GridText, Len(GridText) - 7)
         VeldUblInfo(8) = Left(GridText, 1)                 '9 ??
+        
+        If Right(GridText, 1) = "1" Then
+            unitCodeValue = "C62"
+        Else
+            unitCodeValue = Trim(Mid(fmarBoxText("004", "2", VeldUblInfo(8)), 12))
+            If unitCodeValue = "" Then
+                unitCodeValue = "C62"
+            End If
+        End If
+        thisInvoiceLine = Replace(thisInvoiceLine, "{unitCode}", unitCodeValue)
+                
         GridText = Right(GridText, Len(GridText) - 2)
         dVeldUblInfo(5) = Val(Left(GridText, 3))           'korting
         GridText = Right(GridText, Len(GridText) - 4)
@@ -6330,6 +6356,8 @@ Else
     End If
 End If
 
+Dim unitCodeValue As String
+
 ublTT = 0
 For T = 0 To VerkoopDetail.ListCount - 1
     If T > 0 Then
@@ -6358,6 +6386,17 @@ For T = 0 To VerkoopDetail.ListCount - 1
         dVeldUblInfo(2) = Val(Left(GridText, 6))           'maatstaf anders default 1.0
         GridText = Right(GridText, Len(GridText) - 7)
         VeldUblInfo(8) = Left(GridText, 1)                 '9 ??
+        
+        If Right(GridText, 1) = "1" Then
+            unitCodeValue = "C62"
+        Else
+            unitCodeValue = Trim(Mid(fmarBoxText("004", "2", VeldUblInfo(8)), 12))
+            If unitCodeValue = "" Then
+                unitCodeValue = "C62"
+            End If
+        End If
+        thisInvoiceLine = Replace(thisInvoiceLine, "{unitCode}", unitCodeValue)
+        
         GridText = Right(GridText, Len(GridText) - 2)
         dVeldUblInfo(5) = Val(Left(GridText, 3))           'korting
         GridText = Right(GridText, Len(GridText) - 4)
@@ -6370,6 +6409,7 @@ For T = 0 To VerkoopDetail.ListCount - 1
         GridText = Right(GridText, Len(GridText) - 8)
         VeldUblInfo(0) = Left(GridText, 13)                'product reference id or description
                         
+        
         lineQuantity = Trim(Dec(dVeldUblInfo(6), MASK_EUR))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineQuantity}", lineQuantity)
                 

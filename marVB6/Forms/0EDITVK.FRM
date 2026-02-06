@@ -3,7 +3,7 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form WijzigenVerkoop 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Gegevens Invoegen / Wijzigen"
-   ClientHeight    =   3870
+   ClientHeight    =   4050
    ClientLeft      =   4020
    ClientTop       =   420
    ClientWidth     =   5400
@@ -21,7 +21,7 @@ Begin VB.Form WijzigenVerkoop
    MaxButton       =   0   'False
    MinButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   3870
+   ScaleHeight     =   4050
    ScaleWidth      =   5400
    StartUpPosition =   1  'CenterOwner
    Begin VB.ComboBox cmbSortering 
@@ -59,9 +59,9 @@ Begin VB.Form WijzigenVerkoop
       ForeColor       =   &H00000000&
       Height          =   285
       Index           =   8
-      Left            =   1680
+      Left            =   1560
       TabIndex        =   26
-      Top             =   3210
+      Top             =   3450
       Width           =   1335
    End
    Begin VB.TextBox TekstInfo 
@@ -70,9 +70,9 @@ Begin VB.Form WijzigenVerkoop
       ForeColor       =   &H00000000&
       Height          =   285
       Index           =   7
-      Left            =   300
+      Left            =   180
       TabIndex        =   25
-      Top             =   3210
+      Top             =   3450
       Width           =   1335
    End
    Begin VB.TextBox TekstInfo 
@@ -175,7 +175,7 @@ Begin VB.Form WijzigenVerkoop
       Height          =   315
       Left            =   3960
       TabIndex        =   12
-      Top             =   2760
+      Top             =   3000
       Width           =   1275
    End
    Begin VB.CommandButton Annuleren 
@@ -191,22 +191,31 @@ Begin VB.Form WijzigenVerkoop
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   4020
+      Left            =   3960
       TabIndex        =   20
       TabStop         =   0   'False
-      Top             =   3120
+      Top             =   3360
       Width           =   1275
    End
    Begin VB.ComboBox Keuze 
       BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "Courier New"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00000000&
-      Height          =   315
+      Height          =   360
       Index           =   0
-      Left            =   2400
+      Left            =   2520
       Style           =   2  'Dropdown List
       TabIndex        =   15
       Top             =   1920
-      Width           =   1440
+      Width           =   2160
    End
    Begin VB.ComboBox Keuze 
       BackColor       =   &H00FFFFFF&
@@ -242,7 +251,7 @@ Begin VB.Form WijzigenVerkoop
       Height          =   285
       Left            =   0
       TabIndex        =   28
-      Top             =   3585
+      Top             =   3765
       Width           =   5400
       _ExtentX        =   9525
       _ExtentY        =   503
@@ -270,12 +279,12 @@ Begin VB.Form WijzigenVerkoop
       BorderStyle     =   1  'Fixed Single
       Caption         =   "Ter Info: Minimum Stock overschreden"
       ForeColor       =   &H000000FF&
-      Height          =   855
-      Left            =   3960
+      Height          =   495
+      Left            =   3120
       TabIndex        =   31
-      Top             =   1680
+      Top             =   2400
       Visible         =   0   'False
-      Width           =   1335
+      Width           =   2175
    End
    Begin VB.Label lbMilieu 
       Caption         =   "Product met heffing(en) !"
@@ -381,18 +390,18 @@ Begin VB.Form WijzigenVerkoop
       Caption         =   "Totaal Ex. BTW"
       Height          =   240
       Index           =   5
-      Left            =   120
+      Left            =   0
       TabIndex        =   22
-      Top             =   2940
+      Top             =   3180
       Width           =   1470
    End
    Begin VB.Label VerkoopLabel 
       Caption         =   "Totaal In. BTW"
       Height          =   240
       Index           =   6
-      Left            =   1680
+      Left            =   1560
       TabIndex        =   23
-      Top             =   2940
+      Top             =   3180
       Width           =   1380
    End
    Begin VB.Label VerkoopLabel 

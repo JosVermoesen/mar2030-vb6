@@ -312,7 +312,7 @@ Else
     ProgrammaVersie = sVar1
     sVar2 = sVar1
           
-          Msg = "(Licentie)" + sVar1 + vbCrLf
+          Msg = sVar1 + vbCrLf
     sVar3 = Trim$(ADOBIB_TEXT(rsLic("MEMO"), "#A100 #"))
     sVar3 = "Pré 1990 gebruikers"
     'Msg = Msg + "(Bedrijf)" + vbCrLf + sVar3 + vbCrLf

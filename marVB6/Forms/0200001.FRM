@@ -1464,9 +1464,9 @@ Private Sub cbAfbeelding_Click()
         Mim.Teken.InitDir = LaadTekst("dnnInstellingen", "Mario")
     End If
     Mim.Teken.Filter = "Acrobat bestanden (*.pdf)|*.pdf"
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.ShowOpen
-    BestandHier = LCase(Mim.Teken.filename)
+    BestandHier = LCase(Mim.Teken.fileName)
     If BestandHier = "" Then
         Exit Sub
     Else
@@ -1475,7 +1475,7 @@ Private Sub cbAfbeelding_Click()
             Exit Sub
         End If
     End If
-    GeScanBestand = Mim.Teken.filename
+    GeScanBestand = Mim.Teken.fileName
     Screen.MousePointer = vbHourglass
     On Local Error Resume Next
     OLE1.CreateEmbed GeScanBestand
@@ -2411,6 +2411,12 @@ Dim BedragBtw6 As Currency
 Dim BedragBtw7 As Currency
 Dim BedragBtw8 As Currency
 
+If Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+    BJPERDAT.WindowState = 0
+    BJPERDAT.SetFocus
+    BJPERDAT.PeriodeBoekjaar.SetFocus
+End If
+
 If DATE_KEY(TekstInfo1.Text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.Text) > Right(BOOKYEAR_FROMTO, 8) Then
     Msg = "Datum aankoopdocument valt BUITEN het actieve boekjaar." & vbCr
     Msg = Msg & "De optie 'boekhoudcontrole' in balans leveranciers zal" & vbCr
@@ -2899,7 +2905,7 @@ Private Sub TekstInfo0_LostFocus()
 End Sub
 
 Private Sub TekstInfo1_LostFocus()
-
+    
     If DATE_INVALID((TekstInfo1.Text)) Then
         TekstInfo1.Text = MIM_GLOBAL_DATE
         TekstInfo1.SetFocus
@@ -2914,6 +2920,7 @@ Private Sub TekstInfo1_LostFocus()
         Msg = Msg & "Controleer eventueel."
         MsgBox Msg, vbExclamation
     End If
+    TekstInfo0.Text = TekstInfo1.Text
 
 End Sub
 
