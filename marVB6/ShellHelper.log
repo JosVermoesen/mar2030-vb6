@@ -370,3 +370,45 @@
 3/02/2026 7:57:10  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
 3/02/2026 7:57:10  - ShellExecute parameters: verb=open file=Y:\Data\099\peppol\in\invoiceNoPdf.html params=
 3/02/2026 7:57:10  - ShellExecute returned: 42 (Success)
+4/02/2026 18:43:41  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:43:41  - ShellExecute parameters: verb=open file=accto-20251230-invoice1_202530368.pdf params=
+4/02/2026 18:43:41  - ShellExecute returned: 2 (SE_ERR_FileNotFound)
+4/02/2026 18:43:48  - ShellExecuteEx returned: 0 (hProcess=0)
+4/02/2026 18:43:48  - Trying COMSPEC fallback. Command: "C:\WINDOWS\system32\cmd.exe" /C start "" "accto-20251230-invoice1_202530368.pdf" 
+4/02/2026 18:43:48  - Shell(cmd) returned pid: 480
+4/02/2026 18:45:28  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:45:28  - ShellExecute parameters: verb=open file=accto-20251230-invoice1_202530368.pdf params=
+4/02/2026 18:45:28  - ShellExecute returned: 2 (SE_ERR_FileNotFound)
+4/02/2026 18:45:35  - ShellExecuteEx returned: 0 (hProcess=0)
+4/02/2026 18:45:35  - Trying COMSPEC fallback. Command: "C:\WINDOWS\system32\cmd.exe" /C start "" "accto-20251230-invoice1_202530368.pdf" 
+4/02/2026 18:45:35  - Shell(cmd) returned pid: 1904
+4/02/2026 18:45:53  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:45:53  - ShellExecute parameters: verb=open file=belgomine-20260131-invoice1_F_K083609_VT_0105766_20260131.PDF params=
+4/02/2026 18:45:53  - ShellExecute returned: 2 (SE_ERR_FileNotFound)
+4/02/2026 18:45:55  - ShellExecuteEx returned: 0 (hProcess=0)
+4/02/2026 18:45:55  - Trying COMSPEC fallback. Command: "C:\WINDOWS\system32\cmd.exe" /C start "" "belgomine-20260131-invoice1_F_K083609_VT_0105766_20260131.PDF" 
+4/02/2026 18:45:55  - Shell(cmd) returned pid: 1272
+4/02/2026 18:56:25  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:56:25  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\accto-20251230-invoice1_202530368.pdf params=
+4/02/2026 18:56:25  - ShellExecute returned: 42 (Success)
+4/02/2026 18:56:46  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:56:46  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\allscaff-invoice4_F20260001.pdf params=
+4/02/2026 18:56:46  - ShellExecute returned: 42 (Success)
+4/02/2026 18:57:04  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 18:57:04  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\allstafbv-20251231-invoice_F20252602.pdf params=
+4/02/2026 18:57:04  - ShellExecute returned: 42 (Success)
+4/02/2026 19:00:50  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 19:00:50  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\BVLAMMENS-30260131-INVOICE2_26010632.pdf params=
+4/02/2026 19:00:50  - ShellExecute returned: 42 (Success)
+4/02/2026 19:00:50  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 19:00:50  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\BVLAMMENS-30260131-INVOICE2_dis20260121_092755_8922.pdf params=
+4/02/2026 19:00:50  - ShellExecute returned: 42 (Success)
+4/02/2026 19:00:50  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 19:00:50  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\BVLAMMENS-30260131-INVOICE2_dis20260202_104315_8245.pdf params=
+4/02/2026 19:00:50  - ShellExecute returned: 42 (Success)
+4/02/2026 19:01:24  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 19:01:24  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\belgomine-20260131-invoice1_F_K083609_VT_0105766_20260131.PDF params=
+4/02/2026 19:01:24  - ShellExecute returned: 42 (Success)
+4/02/2026 19:01:34  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+4/02/2026 19:01:34  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+4/02/2026 19:01:34  - ShellExecute returned: 42 (Success)

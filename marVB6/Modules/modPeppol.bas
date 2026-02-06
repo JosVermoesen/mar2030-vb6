@@ -648,3 +648,105 @@ Public Function CheckPeppolRegistration(peppolID As String) As String
 
 End Function
 
+
+Public Sub ExtractPdfAttachments(ByVal ublFilePath As String, ByVal xmlLocation As String)
+
+    Dim xml As New MSXML2.DOMDocument60
+    xml.async = False
+    xml.preserveWhiteSpace = True
+
+    If Not xml.Load(ublFilePath) Then
+        MsgBox "XML kon niet geladen worden: " & xml.parseError.reason
+        Exit Sub
+    End If
+
+    ' Correct namespace registration for VB6
+    xml.SetProperty "SelectionNamespaces", _
+        "xmlns:cac='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2' " & _
+        "xmlns:cbc='urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'"
+
+    ' Find ALL attachments
+    Dim nodes As MSXML2.IXMLDOMNodeList
+    Set nodes = xml.selectNodes("//cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject")
+
+    If nodes Is Nothing Or nodes.Length = 0 Then
+        MsgBox "Geen bijlagen gevonden."
+        Exit Sub
+    End If
+
+    Dim node As MSXML2.IXMLDOMNode
+    For Each node In nodes
+
+        Dim fileName As String
+        Dim mime As String
+
+        fileName = node.Attributes.getNamedItem("filename").Text
+        mime = node.Attributes.getNamedItem("mimeCode").Text
+
+        If LCase$(mime) <> "application/pdf" Then GoTo NextNode
+
+        Dim base64 As String
+        base64 = CleanBase64(node.Text)
+
+        Dim bytes() As Byte
+        bytes = Base64Decode(base64)
+
+        Dim pdfPath As String
+        pdfPath = Left$(ublFilePath, Len(ublFilePath) - 4) & "_" & fileName
+
+        SaveBinary pdfPath, bytes
+        DoEvents
+        
+        Dim lookForPDF As String
+        'look for documents to print or send with peppol and remove them
+        On Error Resume Next
+        Err = 0
+        lookForPDF = Dir(pdfPath)
+        DoEvents
+        If lookForPDF = "" Then
+            MsgBox "Er is geen PDF beschikbaar in " & vbCrLf & lookForPDF & vbCrLf & vbCrLf & "Opteer XML tonen", vbExclamation
+        Else
+            If ShellExecuteWithFallback(xmlLocation + lookForPDF) = False Then
+                MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+            End If
+        End If
+        
+
+        'ShellExecute 0, "open", pdfPath, vbNullString, vbNullString, 1
+
+NextNode:
+    Next node
+
+End Sub
+
+
+Public Function CleanBase64(ByVal s As String) As String
+    Dim tmp As String
+    tmp = Replace(s, vbCr, "")
+    tmp = Replace(tmp, vbLf, "")
+    tmp = Replace(tmp, vbTab, "")
+    tmp = Replace(tmp, " ", "")
+    CleanBase64 = tmp
+End Function
+
+Public Function Base64Decode(ByVal base64String As String) As Byte()
+    Dim xml As Object
+    Set xml = CreateObject("MSXML2.DOMDocument.6.0")
+
+    Dim node As Object
+    Set node = xml.createElement("b64")
+
+    node.dataType = "bin.base64"
+    node.Text = base64String
+
+    Base64Decode = node.nodeTypedValue
+End Function
+
+Public Sub SaveBinary(ByVal filePath As String, ByRef bytes() As Byte)
+    Dim hFile As Integer
+    hFile = FreeFile
+    Open filePath For Binary Access Write As #hFile
+        Put #hFile, , bytes
+    Close #hFile
+End Sub
+

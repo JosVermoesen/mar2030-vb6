@@ -1,13 +1,16 @@
 VERSION 5.00
 Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
 Begin VB.Form FormB2BAMonitor 
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitor B2B Aankoopdocumenten"
    ClientHeight    =   9060
-   ClientLeft      =   60
-   ClientTop       =   450
+   ClientLeft      =   45
+   ClientTop       =   435
    ClientWidth     =   9870
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   9060
    ScaleWidth      =   9870
    StartUpPosition =   1  'CenterOwner
@@ -588,24 +591,25 @@ Private Sub ButtonShowBookedPDF_Click()
     If selectedRowItem = "" Then
     Else
         selectedFile = LOCATION_COMPANYDATA & "peppol\in\" & selectedRowItem
-        ExtractPdfFromUBLDocument (selectedFile)
-        fileUrlAsPdf = Left(selectedFile, Len(selectedFile) - 3) + "pdf"
+        Call ExtractPdfAttachments(selectedFile, LOCATION_COMPANYDATA + "peppol\in\")
+        'ExtractPdfFromUBLDocument (selectedFile)
+        'fileUrlAsPdf = Left(selectedFile, Len(selectedFile) - 3) + "pdf"
         ' Voorbeeld gebruik
         
-        DoEvents
-        Dim lookForPDF As String
+        'DoEvents
+        'Dim lookForPDF As String
         'look for documents to print or send with peppol and remove them
-        On Error Resume Next
-        Err = 0
-        lookForPDF = Dir(fileUrlAsPdf)
-        DoEvents
-        If lookForPDF = "" Then
-            MsgBox "Er is geen PDF beschikbaar in " & vbCrLf & selectedFile & vbCrLf & vbCrLf & "Opteer eventueel voor XML tonen in MarSync", vbExclamation
-        Else
-            If ShellExecuteWithFallback(fileUrlAsPdf) = False Then
-                MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
-            End If
-        End If
+        'On Error Resume Next
+        'Err = 0
+        'lookForPDF = Dir(fileUrlAsPdf)
+        'DoEvents
+        'If lookForPDF = "" Then
+        '    MsgBox "Er is geen PDF beschikbaar in " & vbCrLf & selectedFile & vbCrLf & vbCrLf & "Opteer eventueel voor XML tonen in MarSync", vbExclamation
+        'Else
+        '    If ShellExecuteWithFallback(fileUrlAsPdf) = False Then
+        '        MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+        '    End If
+        'End If
     End If
     
 End Sub

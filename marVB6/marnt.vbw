@@ -99,5 +99,5 @@ ValidatingTool = 440, 174, 1134, 641, C, 41, 121, 514, 510, C
 modPeppol = 69, 53, 982, 597, C
 FormB2BVMonitor = 53, 35, 944, 646, C, 1, 6, 682, 543, C
 Module1 = 66, 87, 1123, 504, C
-FormB2BAMonitor = 61, 180, 743, 661, C, 182, 14, 872, 732, C
+FormB2BAMonitor = 61, 180, 743, 661, C, 450, 32, 1140, 750, C
 modInternet = 66, 87, 1065, 545, C

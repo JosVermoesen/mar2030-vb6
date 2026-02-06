@@ -1,13 +1,16 @@
 VERSION 5.00
 Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
 Begin VB.Form FormB2BVMonitor 
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitor B2B Verkoopdocumenten"
    ClientHeight    =   6015
-   ClientLeft      =   60
-   ClientTop       =   450
+   ClientLeft      =   45
+   ClientTop       =   435
    ClientWidth     =   9675
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
    ScaleHeight     =   6015
    ScaleWidth      =   9675
    StartUpPosition =   1  'CenterOwner
@@ -230,7 +233,7 @@ End Sub
 Private Sub ExtractPdfFromUBLDocument(ublFileUrl As String)
     
     Dim xmlDoc As New MSXML2.DOMDocument
-    Dim Node As MSXML2.IXMLDOMNode
+    Dim node As MSXML2.IXMLDOMNode
     Dim base64Data As String
     Dim byteData() As Byte
     Dim stream As Object
@@ -239,9 +242,9 @@ Private Sub ExtractPdfFromUBLDocument(ublFileUrl As String)
     xmlDoc.Load ublFileUrl
 
     If xmlDoc.parseError.errorCode = 0 Then
-        Set Node = xmlDoc.selectSingleNode("//cbc:EmbeddedDocumentBinaryObject")
-        If Not Node Is Nothing Then
-            base64Data = Node.Text
+        Set node = xmlDoc.selectSingleNode("//cbc:EmbeddedDocumentBinaryObject")
+        If Not node Is Nothing Then
+            base64Data = node.Text
             byteData = Base64Decode_MSXML(base64Data)
             'Base64Decode_MSXML
 
