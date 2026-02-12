@@ -7,7 +7,7 @@ Private Function SafeGetNodeText(parentNode As Object, xpath As String, ns As St
     Dim node As Object
     Set node = parentNode.selectSingleNode(xpath & "[" & ns & "]")
     If Not node Is Nothing Then
-        SafeGetNodeText = node.Text
+        SafeGetNodeText = node.text
     Else
         SafeGetNodeText = ""
     End If
@@ -19,7 +19,7 @@ Private Function SafeGetAttribute(parentNode As Object, xpath As String, attribu
     Dim node As Object
     Set node = parentNode.selectSingleNode(xpath & "[" & ns & "]")
     If Not node Is Nothing Then
-        SafeGetAttribute = node.Attributes.getNamedItem(attributeName).Text
+        SafeGetAttribute = node.Attributes.getNamedItem(attributeName).text
     Else
         SafeGetAttribute = ""
     End If
@@ -31,17 +31,26 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
     Dim xml As Object  ' MSXML2.DOMDocument
     Dim xsl As Object  ' MSXML2.DOMDocument
     Dim result As String
-
+    Dim utf8Text As String
+    utf8Text = MarReadUtf8File(filePath)
+    
     NoPdfPeppolViewer = False
     
     Set xml = CreateObject("MSXML2.DOMDocument.6.0")
     xml.async = False
-    xml.Load filePath
+    xml.validateOnParse = False
+    
+    'xml.Load filePath
 
-    If xml.parseError.errorCode <> 0 Then
-        MsgBox "XML error: " & xml.parseError.reason
+    If Not xml.loadXML(utf8Text) Then
+        MsgBox "XML parse error: " & xml.parseError.reason
         Exit Function
     End If
+
+    'If xml.parseError.errorCode <> 0 Then
+    '    MsgBox "XML error: " & xml.parseError.reason
+    '    Exit Function
+    'End If
 
     Set xsl = CreateObject("MSXML2.DOMDocument.6.0")
     xsl.async = False
@@ -53,13 +62,14 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
     End If
 
     result = xml.transformNode(xsl)
+    Call MarWriteUtf8File(LOCATION_COMPANYDATA & "peppol\in\invoiceNoPdf.html", result)
 
     ' Save result to HTML
-    Dim f As Integer
-    f = FreeFile
-    Open LOCATION_COMPANYDATA & "peppol\in\invoiceNoPdf.html" For Output As #f
-    Print #f, result
-    Close #f
+    'Dim f As Integer
+    'f = FreeFile
+    'Open LOCATION_COMPANYDATA & "peppol\in\invoiceNoPdf.html" For Output As #f
+    'Print #f, result
+    'Close #f
     NoPdfPeppolViewer = True
 
 End Function
@@ -85,7 +95,7 @@ Public Function PeppolHasPdfAttachment(xmlPath As String) As Boolean
 
     For Each node In nodeList
         Dim mime As String
-        mime = LCase$(node.Attributes.getNamedItem("mimeCode").Text)
+        mime = LCase$(node.Attributes.getNamedItem("mimeCode").text)
 
         If mime = "application/pdf" Then
             PeppolHasPdfAttachment = True
@@ -160,7 +170,7 @@ TRYFORCREDITNOTE:
     Set invTypeNode = xmlDoc.selectSingleNode(InvoiceOrCreditnoteTypeCode)
     
     If Not invTypeNode Is Nothing Then
-        Select Case Dec(Val(invTypeNode.Text), "000")
+        Select Case Dec(Val(invTypeNode.text), "000")
             Case "071", "084"
                 isInvoiceTocheck = True
             Case "380", "386"
@@ -168,18 +178,18 @@ TRYFORCREDITNOTE:
             Case "381"
                 isInvoiceTocheck = False
             Case Else
-                MsgBox "Onbekende verwerkingscode " & Dec(Val(invTypeNode.Text), "000") & vbCrLf & vbCrLf & "Bezorg ons het document. Dank voor medewerking", vbInformation
+                MsgBox "Onbekende verwerkingscode " & Dec(Val(invTypeNode.text), "000") & vbCrLf & vbCrLf & "Bezorg ons het document. Dank voor medewerking", vbInformation
         End Select
         
         '5
         uitwisselingOMS = uitwisselingOMS & vbTab & "documentTypeCode"
-        uitwisselingDATA = uitwisselingDATA & vbTab & Dec(Val(invTypeNode.Text), "000")
-        sb = sb & "documentTypeCode: " & invTypeNode.Text & vbCrLf
+        uitwisselingDATA = uitwisselingDATA & vbTab & Dec(Val(invTypeNode.text), "000")
+        sb = sb & "documentTypeCode: " & invTypeNode.text & vbCrLf
         
         If Not invTypeNode.Attributes Is Nothing Then
             Dim listID As String
             On Error Resume Next
-            listID = invTypeNode.Attributes.getNamedItem("listID").Text
+            listID = invTypeNode.Attributes.getNamedItem("listID").text
             If listID = "" Then listID = "not found"
             On Error GoTo 0
             sb = sb & "document listID: " & listID & vbCrLf
@@ -364,7 +374,7 @@ TRYFORCREDITNOTE:
     currencyID = ""
     If Not taxAmountEl Is Nothing Then
         On Error Resume Next
-        currencyID = taxAmountEl.Attributes.getNamedItem("currencyID").Text
+        currencyID = taxAmountEl.Attributes.getNamedItem("currencyID").text
         On Error GoTo 0
         If currencyID = "" Then
             MsgBox "Attribute currencyID is missing on <cbc:TaxAmount>"
@@ -542,7 +552,7 @@ TRYFORCREDITNOTE:
             Set percentNode = lineNode.selectSingleNode("cac:Item/cac:ClassifiedTaxCategory/cbc:Percent")
         
             If Not percentNode Is Nothing Then
-                taxPercentage = percentNode.Text
+                taxPercentage = percentNode.text
             Else
                 taxPercentage = "0"
             End If
@@ -588,7 +598,7 @@ Private Function NodeText(parentNode As MSXML2.IXMLDOMNode, xpath As String) As 
     Set child = parentNode.selectSingleNode(xpath)
     
     If Not child Is Nothing Then
-        NodeText = Trim(child.Text)
+        NodeText = Trim(child.text)
     Else
         NodeText = ""
     End If
@@ -599,7 +609,7 @@ Private Function GetNodeText(parentNode As Object, xpath As String) As String
     Dim node As Object
     Set node = parentNode.selectSingleNode(xpath)
     If Not node Is Nothing Then
-        GetNodeText = Trim(node.Text)
+        GetNodeText = Trim(node.text)
     Else
         GetNodeText = ""
     End If
@@ -677,22 +687,22 @@ Public Sub ExtractPdfAttachments(ByVal ublFilePath As String, ByVal xmlLocation 
     Dim node As MSXML2.IXMLDOMNode
     For Each node In nodes
 
-        Dim fileName As String
+        Dim filename As String
         Dim mime As String
 
-        fileName = node.Attributes.getNamedItem("filename").Text
-        mime = node.Attributes.getNamedItem("mimeCode").Text
+        filename = node.Attributes.getNamedItem("filename").text
+        mime = node.Attributes.getNamedItem("mimeCode").text
 
         If LCase$(mime) <> "application/pdf" Then GoTo NextNode
 
         Dim base64 As String
-        base64 = CleanBase64(node.Text)
+        base64 = CleanBase64(node.text)
 
         Dim bytes() As Byte
         bytes = Base64Decode(base64)
 
         Dim pdfPath As String
-        pdfPath = Left$(ublFilePath, Len(ublFilePath) - 4) & "_" & fileName
+        pdfPath = Left$(ublFilePath, Len(ublFilePath) - 4) & "_" & filename
 
         SaveBinary pdfPath, bytes
         DoEvents
@@ -737,7 +747,7 @@ Public Function Base64Decode(ByVal base64String As String) As Byte()
     Set node = xml.createElement("b64")
 
     node.dataType = "bin.base64"
-    node.Text = base64String
+    node.text = base64String
 
     Base64Decode = node.nodeTypedValue
 End Function
@@ -750,3 +760,39 @@ Public Sub SaveBinary(ByVal filePath As String, ByRef bytes() As Byte)
     Close #hFile
 End Sub
 
+
+' Reference: Microsoft ActiveX Data Objects 2.x Library
+Function MarReadUtf8File(filename As String) As String
+    
+    Dim available As String
+    available = Dir(filename)
+    If available = "" Then
+        MarReadUtf8File = ""
+        Exit Function
+    End If
+    
+    Dim stream As Object
+    Set stream = CreateObject("ADODB.Stream")
+    stream.Type = 2 ' Text
+    stream.Charset = "utf-8"
+    On Error Resume Next
+    stream.Open
+    stream.LoadFromFile filename
+    
+    MarReadUtf8File = stream.ReadText
+    stream.Close
+    Set stream = Nothing
+End Function
+
+' Reference: Microsoft ActiveX Data Objects 2.x Library (Project > References)
+Sub MarWriteUtf8File(filename As String, text As String)
+    Dim stream As Object
+    Set stream = CreateObject("ADODB.Stream")
+    stream.Type = 2 ' Text
+    stream.Charset = "utf-8"
+    stream.Open
+    stream.WriteText text
+    stream.SaveToFile filename, 2 ' 2 = adSaveCreateOverWrite
+    stream.Close
+    Set stream = Nothing
+End Sub

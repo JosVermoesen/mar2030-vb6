@@ -222,7 +222,7 @@ Private Sub cmdLeesMij_Click()
     
     Dim ZoekHTM As Variant
     'ZoekHTM = App.path & "\LeesMij" & App.Major & App.Minor & Format(App.Revision, "000") & ".htm"
-    ZoekHTM = "https://vsoft.be/#/marintegraal"
+    ZoekHTM = "https://rv.be/accounting"
     'If Dir(ZoekHTM) <> "" Then
         Err = 0
         On Error Resume Next

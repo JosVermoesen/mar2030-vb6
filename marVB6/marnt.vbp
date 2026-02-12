@@ -133,6 +133,7 @@ Form=Forms\frmVdMonitor.frm
 Module=Module1; Modules\ShellHelper.bas
 Form=Forms\frmAdMonitor.frm
 Module=modInternet; Modules\modInternet.bas
+Form=Forms\ReactionsDialog.frm
 IconForm="Mim"
 Startup="Sub Main"
 HelpFile="C:\HNDLDNG\Marnt.hlp"

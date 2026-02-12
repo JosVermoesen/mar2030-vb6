@@ -3,7 +3,7 @@ Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
 Begin VB.Form FormB2BAMonitor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitor B2B Aankoopdocumenten"
-   ClientHeight    =   9060
+   ClientHeight    =   8205
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   9870
@@ -11,7 +11,7 @@ Begin VB.Form FormB2BAMonitor
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   9060
+   ScaleHeight     =   8205
    ScaleWidth      =   9870
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton ButtonShowToBookXML 
@@ -29,7 +29,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   240
       TabIndex        =   11
-      Top             =   8520
+      Top             =   7680
       Width           =   1215
    End
    Begin VB.CommandButton ButtonShowPeppolDocTypes 
@@ -55,7 +55,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   3360
       TabIndex        =   9
-      Top             =   8520
+      Top             =   7680
       Width           =   2055
    End
    Begin VB.CommandButton ButtonResponsesToSeller 
@@ -73,7 +73,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   5520
       TabIndex        =   8
-      Top             =   8520
+      Top             =   7680
       Width           =   2775
    End
    Begin VB.CommandButton ButtonLoadDocument 
@@ -92,7 +92,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   1680
       TabIndex        =   3
-      Top             =   8520
+      Top             =   7680
       Width           =   1215
    End
    Begin VB.CommandButton ButtonShowToBookPDF 
@@ -111,17 +111,17 @@ Begin VB.Form FormB2BAMonitor
       Left            =   8400
       TabIndex        =   5
       TabStop         =   0   'False
-      Top             =   8520
+      Top             =   7680
       Width           =   1215
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgToBook 
-      Height          =   4455
+      Height          =   2295
       Left            =   240
       TabIndex        =   0
       Top             =   600
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   7858
+      _ExtentY        =   4048
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -137,13 +137,13 @@ Begin VB.Form FormB2BAMonitor
       _Band(0).TextStyleHeader=   0
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgBooked 
-      Height          =   2895
+      Height          =   4215
       Left            =   240
       TabIndex        =   1
-      Top             =   5520
+      Top             =   3360
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   5106
+      _ExtentY        =   7435
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -164,7 +164,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   255
       Left            =   8520
       TabIndex        =   7
-      Top             =   5160
+      Top             =   3000
       Width           =   1095
    End
    Begin VB.Label LabelToBook 
@@ -195,7 +195,6 @@ Private Sub ButtonClose_Click()
     uitwisselingDATA = ""
     documentLinesOMS = ""
     documentLinesDATA = ""
-
     Unload Me
     
 End Sub
@@ -206,7 +205,7 @@ Private Sub ButtonLoadDocument_Click()
     Dim selectedRowItem As String
     
     mfgToBook.Col = 5
-    selectedRowItem = mfgToBook.Text
+    selectedRowItem = mfgToBook.text
     If selectedRowItem = "" Then
     Else
         XLogKey = LOCATION_COMPANYDATA & "peppol\in\" & selectedRowItem
@@ -225,14 +224,16 @@ Private Sub ButtonResponsesToSeller_Click()
     Dim result As String
     
     Me.mfgBooked.Col = 1
-    selectedRowItem = Me.mfgBooked.Text
+    selectedRowItem = Me.mfgBooked.text
     If selectedRowItem = "" Then
     Else
         result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 2)
         If InStr(result, """count""" + ": 0") Then
             MsgBox "Geen", vbInformation
         Else
-            MsgBox result, vbInformation
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = result
+            FormReactionsDialog.Show 1
         End If
     End If
 
@@ -244,7 +245,7 @@ Private Sub ButtonSentReceiptSeller_Click()
     Dim result As String
     
     Me.mfgBooked.Col = 1
-    selectedRowItem = Me.mfgBooked.Text
+    selectedRowItem = Me.mfgBooked.text
     If selectedRowItem = "" Then
     Else
         result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 1)
@@ -314,7 +315,7 @@ Private Sub ExtractPdfFromUBLDocument(ublFileUrl As String)
     If xmlDoc.parseError.errorCode = 0 Then
         Set node = xmlDoc.selectSingleNode("//cbc:EmbeddedDocumentBinaryObject")
         If Not node Is Nothing Then
-            base64Data = node.Text
+            base64Data = node.text
             byteData = Base64Decode_MSXML(base64Data)
             'Base64Decode_MSXML
 
@@ -344,7 +345,7 @@ Public Function Base64Decode_MSXML(ByVal sB64 As String) As Byte()
     Set dom = New MSXML2.DOMDocument60
     Set el = dom.createElement("b64")
     el.dataType = "bin.base64"
-    el.Text = sB64                ' assign Base64 text
+    el.text = sB64                ' assign Base64 text
     Base64Decode_MSXML = el.nodeTypedValue ' returns Byte()
 End Function
 
@@ -356,7 +357,7 @@ Public Function Base64Encode_MSXML(ByRef bytes() As Byte) As String
     Set el = dom.createElement("b64")
     el.dataType = "bin.base64"
     el.nodeTypedValue = bytes     ' assign bytes
-    Base64Encode_MSXML = el.Text  ' returns Base64 string
+    Base64Encode_MSXML = el.text  ' returns Base64 string
 End Function
 
 
@@ -392,14 +393,30 @@ End Sub
 
 Private Sub mfgBooked_RowColChange()
 
-    Dim fileId As String
-    fileId = mfgBooked.TextMatrix(mfgBooked.Row, 5)
+    Dim selectedRowItem As String
+    selectedRowItem = mfgBooked.TextMatrix(mfgBooked.Row, 5)
     
-    If fileId <> "" Then
-        If PeppolHasPdfAttachment(LOCATION_COMPANYDATA & "peppol\in\" & fileId) Then
+    If selectedRowItem <> "" Then
+        If PeppolHasPdfAttachment(LOCATION_COMPANYDATA & "peppol\in\" & selectedRowItem) Then
             Me.ButtonShowBookedPDF.Visible = True
         Else
             Me.ButtonShowBookedPDF.Visible = False
+        End If
+    End If
+    
+    Me.mfgBooked.Col = 1
+    selectedRowItem = Me.mfgBooked.text
+    If selectedRowItem = "" Then
+        Me.ButtonSentReceiptSeller.Visible = False
+        Me.ButtonResponsesToSeller.Visible = False
+    Else
+        Me.ButtonSentReceiptSeller.Visible = True
+        Dim result As String
+        result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 2)
+        If InStr(result, """count""" + ": 0") Then
+            ButtonResponsesToSeller.Visible = False
+        Else
+            ButtonResponsesToSeller.Visible = True
         End If
     End If
         
@@ -523,7 +540,7 @@ Private Sub ButtonShowToBookPDF_Click()
     Dim selectedRowItem As String
     
     mfgToBook.Col = 5
-    selectedRowItem = mfgToBook.Text
+    selectedRowItem = mfgToBook.text
     If selectedRowItem = "" Then
     Else
         selectedFile = LOCATION_COMPANYDATA & "peppol\in\" & selectedRowItem
@@ -587,7 +604,7 @@ Private Sub ButtonShowBookedPDF_Click()
     Dim selectedRowItem As String
     
     mfgBooked.Col = 5
-    selectedRowItem = mfgBooked.Text
+    selectedRowItem = mfgBooked.text
     If selectedRowItem = "" Then
     Else
         selectedFile = LOCATION_COMPANYDATA & "peppol\in\" & selectedRowItem

@@ -132,15 +132,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "OLE1"
-      Tab(1).Control(1)=   "cbAfbeelding"
+      Tab(1).Control(0)=   "cbAfbeelding"
+      Tab(1).Control(1)=   "OLE1"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label3"
+      Tab(2).Control(0)=   "obTAB(1)"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "obTAB(1)"
+      Tab(2).Control(2)=   "Label3"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -282,8 +282,8 @@ Begin VB.Form DirekteAankoop
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "cmdXLog"
-         Tab(1).Control(1)=   "LabelInfoXlog"
+         Tab(1).Control(0)=   "LabelInfoXlog"
+         Tab(1).Control(1)=   "cmdXLog"
          Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
@@ -1096,7 +1096,7 @@ Function CheckSupplier() As Boolean
 
             BasisB(TABLE_SUPPLIERS).WindowState = 0
             BasisB(TABLE_SUPPLIERS).SetFocus
-            BasisB(TABLE_SUPPLIERS).TekstInfo(0).Text = uitwisselingDATAArray(5)
+            BasisB(TABLE_SUPPLIERS).TekstInfo(0).text = uitwisselingDATAArray(5)
             BasisB(TABLE_SUPPLIERS).Knop(5).Enabled = True
             BasisB(TABLE_SUPPLIERS).Knop(5).Default = True
             BasisB(TABLE_SUPPLIERS).TekstInfo(0).Enabled = True
@@ -1272,7 +1272,7 @@ Select Case KeyAscii
             MsgBox "Eerst een lijn selecteren !", 0, "Lijn wijzigen"
             Exit Sub
         End If
-        GridText = AankoopDetail.Text
+        GridText = AankoopDetail.text
         Wijzigen.Show 1
         If GridText = "" Then
         Else
@@ -1324,7 +1324,7 @@ Dim DummySleutel        As String
 
 If AankoopDetail.ListCount = 0 Then Exit Sub
 
-If Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
     Beep
     On Error Resume Next
     TekstInfo0.SetFocus
@@ -1464,9 +1464,9 @@ Private Sub cbAfbeelding_Click()
         Mim.Teken.InitDir = LaadTekst("dnnInstellingen", "Mario")
     End If
     Mim.Teken.Filter = "Acrobat bestanden (*.pdf)|*.pdf"
-    Mim.Teken.fileName = ""
+    Mim.Teken.filename = ""
     Mim.Teken.ShowOpen
-    BestandHier = LCase(Mim.Teken.fileName)
+    BestandHier = LCase(Mim.Teken.filename)
     If BestandHier = "" Then
         Exit Sub
     Else
@@ -1475,7 +1475,7 @@ Private Sub cbAfbeelding_Click()
             Exit Sub
         End If
     End If
-    GeScanBestand = Mim.Teken.fileName
+    GeScanBestand = Mim.Teken.filename
     Screen.MousePointer = vbHourglass
     On Local Error Resume Next
     OLE1.CreateEmbed GeScanBestand
@@ -1674,6 +1674,7 @@ Private Sub cbImportUBL_Click()
         purchasePeppolTODOShowed = True
         If FormB2BAMonitor.mfgToBook.Rows = 2 Then
             'no documents to book
+            documentLinesDATA = ""
             Unload FormB2BAMonitor
             Exit Sub
         Else
@@ -1792,7 +1793,6 @@ End Sub
 
 Private Sub Form_Load()
 
-purchasePeppolTODOShowed = False
 purchasePeppolTODOShowed = False
 
 If Not Toegankelijk(Me) Then
@@ -1921,21 +1921,21 @@ ElseIf vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "002" Then
     AankoopFlg = 0
     Medekontraktant.Enabled = True
     TekstInfo7.Visible = False
-    TekstInfo7.Text = TekstInfo5.Text
+    TekstInfo7.text = TekstInfo5.text
     Label1(12).Visible = False
 ElseIf InStr(SISO, vBibTekst(TABLE_SUPPLIERS, "#v149 #")) Then
     LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* E.U. Verschuldigde BTW * " + Lever
     AankoopFlg = 1
     Medekontraktant.Enabled = False
     TekstInfo7.Visible = True
-    TekstInfo7.Text = "0"
+    TekstInfo7.text = "0"
     Label1(12).Visible = True
 Else
     LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Niet E.U. + BTW ! *" + Lever
     AankoopFlg = 2
     Medekontraktant.Enabled = False
     TekstInfo7.Visible = True
-    TekstInfo7.Text = "0"
+    TekstInfo7.text = "0"
     Label1(12).Visible = True
 End If
 
@@ -1965,14 +1965,14 @@ If Ktrl Then
     Else
         sMuntLever = "BEF"
     End If
-    TekstInfo9.Text = Dec$(1, "###.########")
+    TekstInfo9.text = Dec$(1, "###.########")
 Else
     RecordToVeld TABLE_VARIOUS
-    TekstInfo9.Text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
+    TekstInfo9.text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
 End If
 
-TekstInfo9.Text = Dec$(1, "##0.########")
-dMuntL = Val(TekstInfo9.Text)
+TekstInfo9.text = Dec$(1, "##0.########")
+dMuntL = Val(TekstInfo9.text)
 
 If vBibTekst(TABLE_SUPPLIERS, "#v151 #") = "1" Then
     Medekontraktant.Value = 1
@@ -2007,18 +2007,17 @@ If vSet(vBibTekst(TABLE_SUPPLIERS, "#v016 #"), 7) <> Space$(7) Then
 End If
 
 If Left(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 3) = "440" Then
-    TekstInfo3.Text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
+    TekstInfo3.text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
     bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 7)
     If Ktrl Then
-        Beep
-        TekstInfo3.Text = LeverancierRekening
+        TekstInfo3.text = LeverancierRekening
     End If
 Else
-    TekstInfo3.Text = LeverancierRekening
+    TekstInfo3.text = LeverancierRekening
 End If
 TekstInfo10.Enabled = True
 
-TekstInfo2.Text = VValdag((TekstInfo0.Text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
+TekstInfo2.text = VValdag((TekstInfo0.text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
 If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
     TekstInfo4.AutoTab = True
     TekstInfo4.ClipMode = 1
@@ -2029,7 +2028,7 @@ Else
     TekstInfo4.ClipMode = 0
     TekstInfo4.PromptInclude = True
     TekstInfo4.Mask = ""
-    TekstInfo4.Text = ""
+    TekstInfo4.text = ""
 End If
 If vBibTekst(TABLE_SUPPLIERS, "#v254 #") <> "" Then
     cmdSQLInfo.Visible = True
@@ -2074,21 +2073,21 @@ ElseIf vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "002" Then
     AankoopFlg = 0
     Medekontraktant.Enabled = True
     TekstInfo7.Visible = False 'btw verschuldigd
-    TekstInfo7.Text = TekstInfo5.Text 'btw aftrekbaar
+    TekstInfo7.text = TekstInfo5.text 'btw aftrekbaar
     Label1(12).Visible = False
 ElseIf InStr(SISO, vBibTekst(TABLE_SUPPLIERS, "#v149 #")) Then
     LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* E.U. Verschuldigde BTW * " + Lever
     AankoopFlg = 1
     Medekontraktant.Enabled = False
     TekstInfo7.Visible = True
-    TekstInfo7.Text = "0"
+    TekstInfo7.text = "0"
     Label1(12).Visible = True
 Else
     LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Niet E.U. + BTW ! *" + Lever
     AankoopFlg = 2
     Medekontraktant.Enabled = False
     TekstInfo7.Visible = True
-    TekstInfo7.Text = "0"
+    TekstInfo7.text = "0"
     Label1(12).Visible = True
 End If
 
@@ -2131,42 +2130,42 @@ If Ktrl Then
     Else
         sMuntLever = "BEF"
     End If
-    TekstInfo9.Text = Dec$(1, "###.########")
+    TekstInfo9.text = Dec$(1, "###.########")
 Else
     RecordToVeld TABLE_VARIOUS
-    TekstInfo9.Text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
+    TekstInfo9.text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
 End If
 
 If bhEuro Then
     If sMuntLever = "BEF" Then
         'cmdSwitch.Caption = "Ingave in BEF"
         'cmdSwitch.Enabled = True
-        TekstInfo9.Text = Dec$(1 / EURO, "##0.########")
+        TekstInfo9.text = Dec$(1 / EURO, "##0.########")
     ElseIf sMuntLever = "EUR" Then
         'cmdSwitch.Caption = "Ingave in EUR"
         'cmdSwitch.Enabled = True
-        TekstInfo9.Text = Dec$(1, "##0.########")
+        TekstInfo9.text = Dec$(1, "##0.########")
     Else
         'cmdSwitch.Caption = "Ingave in EUR"
         'cmdSwitch.Enabled = False
-        TekstInfo9.Text = Dec$(1, "##0.########")
+        TekstInfo9.text = Dec$(1, "##0.########")
     End If
 Else
     If sMuntLever = "EUR" Then
         'cmdSwitch.Caption = "Ingave in EUR"
         'cmdSwitch.Enabled = True
-        TekstInfo9.Text = Dec$(1 / EURO, "##0.########")
+        TekstInfo9.text = Dec$(1 / EURO, "##0.########")
     ElseIf sMuntLever = "BEF" Then
         'cmdSwitch.Caption = "Ingave in BEF"
         'cmdSwitch.Enabled = True
-        TekstInfo9.Text = Dec$(1, "##0.########")
+        TekstInfo9.text = Dec$(1, "##0.########")
     Else
         'cmdSwitch.Caption = "Ingave in BEF"
         'cmdSwitch.Enabled = False
         'TekstInfo9.Text = Dec$(1, "##0.########")
     End If
 End If
-dMuntL = Val(TekstInfo9.Text)
+dMuntL = Val(TekstInfo9.text)
 
 If vBibTekst(TABLE_SUPPLIERS, "#v151 #") = "1" Then
     Medekontraktant.Value = 1
@@ -2183,14 +2182,13 @@ Err = 0
 On Local Error Resume Next
 
 If Left(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 3) = "440" Then
-    TekstInfo3.Text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
+    TekstInfo3.text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
     bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 7)
     If Ktrl Then
-        Beep
-        TekstInfo3.Text = LeverancierRekening
+        TekstInfo3.text = LeverancierRekening
     End If
 Else
-    TekstInfo3.Text = LeverancierRekening
+    TekstInfo3.text = LeverancierRekening
 End If
 TekstInfo10.Enabled = True
 
@@ -2204,7 +2202,7 @@ Else
     TekstInfo4.ClipMode = 0
     TekstInfo4.PromptInclude = True
     TekstInfo4.Mask = ""
-    TekstInfo4.Text = ""
+    TekstInfo4.text = ""
 End If
 If vBibTekst(TABLE_SUPPLIERS, "#v254 #") <> "" Then
     cmdSQLInfo.Visible = True
@@ -2213,18 +2211,18 @@ Me.cmdXLog.Enabled = True
 Me.LabelInfoXlog.Visible = False
 SSTab1.Tab = 0
 
-TekstInfo1.Text = DATE_TEXT(Replace(uitwisselingDATAArray(2), "-", "")) 'date document
-TekstInfo0.Text = TekstInfo1.Text
-TekstInfo2.Text = DATE_TEXT(Replace(uitwisselingDATAArray(3), "-", "")) 'expiring
-TekstInfo4.Text = uitwisselingDATAArray(14)
-TekstInfo12.Text = uitwisselingDATAArray(1)
+TekstInfo1.text = DATE_TEXT(Replace(uitwisselingDATAArray(2), "-", "")) 'date document
+TekstInfo0.text = TekstInfo1.text
+TekstInfo2.text = DATE_TEXT(Replace(uitwisselingDATAArray(3), "-", "")) 'expiring
+TekstInfo4.text = uitwisselingDATAArray(14)
+TekstInfo12.text = uitwisselingDATAArray(1)
 
 If adminNoVat Then
-    TekstInfo5.Text = "0"
+    TekstInfo5.text = "0"
 Else
-    TekstInfo5.Text = Str((Val(uitwisselingDATAArray(21)) - Val(uitwisselingDATAArray(20))))
+    TekstInfo5.text = Str((Val(uitwisselingDATAArray(21)) - Val(uitwisselingDATAArray(20))))
 End If
-TekstInfo6.Text = uitwisselingDATAArray(21)
+TekstInfo6.text = uitwisselingDATAArray(21)
 TekstInfo1.Enabled = False
 TekstInfo2.Enabled = False
 TekstInfo4.Enabled = False
@@ -2388,7 +2386,7 @@ Dim fRekNum As String * 7
 fRekNum = Left(GridText, 7)
 If fRekNum < Left(GrensDetail(0), 7) Or fRekNum > Right(GrensDetail(0), 7) Then
 Else
-    GridText = TekstInfo0.Text + Dec$(Val(Mid(GridText, 50, 12)), MASK_EURBH)
+    GridText = TekstInfo0.text + Dec$(Val(Mid(GridText, 50, 12)), MASK_EURBH)
     InvesteringsFiche.Show 1
 End If
 
@@ -2411,13 +2409,14 @@ Dim BedragBtw6 As Currency
 Dim BedragBtw7 As Currency
 Dim BedragBtw8 As Currency
 
-If Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
     BJPERDAT.WindowState = 0
     BJPERDAT.SetFocus
     BJPERDAT.PeriodeBoekjaar.SetFocus
+    Exit Sub
 End If
 
-If DATE_KEY(TekstInfo1.Text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.Text) > Right(BOOKYEAR_FROMTO, 8) Then
+If DATE_KEY(TekstInfo1.text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.text) > Right(BOOKYEAR_FROMTO, 8) Then
     Msg = "Datum aankoopdocument valt BUITEN het actieve boekjaar." & vbCr
     Msg = Msg & "De optie 'boekhoudcontrole' in balans leveranciers zal" & vbCr
     Msg = Msg & "mogelijk niet goed functioneren." & vbCr & vbCr
@@ -2434,9 +2433,9 @@ For T = 0 To AankoopDetail.ListCount - 1
         BedragTotaal = BedragTotaal + BedragTot
     End If
 Next
-BedragBtw5 = Val(TekstInfo5.Text)
-BedragBtw6 = Val(TekstInfo6.Text)
-BedragBtw7 = Val(TekstInfo7.Text)
+BedragBtw5 = Val(TekstInfo5.text)
+BedragBtw6 = Val(TekstInfo6.text)
+BedragBtw7 = Val(TekstInfo7.text)
 BedragTotaal = BedragTotaal + BedragBtw5 - BedragBtw7 + BedragBtw8
 If BedragTotaal = 0 Then Exit Sub
 If BedragTotaal <> BedragBtw6 Then
@@ -2490,15 +2489,15 @@ Private Sub Medekontraktant_Click()
 
 If Medekontraktant.Value = 1 Then
     TekstInfo7.Visible = True
-    TekstInfo5.Text = "0"
-    TekstInfo6.Text = "0"
-    TekstInfo7.Text = "0" 'TekstInfo(5).Text
+    TekstInfo5.text = "0"
+    TekstInfo6.text = "0"
+    TekstInfo7.text = "0" 'TekstInfo(5).Text
     Label1(12).Visible = True
 Else
     TekstInfo7.Visible = False
-    TekstInfo5.Text = "0"
-    TekstInfo6.Text = "0"
-    TekstInfo7.Text = "0"
+    TekstInfo5.text = "0"
+    TekstInfo6.text = "0"
+    TekstInfo7.text = "0"
     Label1(12).Visible = False
 End If
 
@@ -2578,35 +2577,35 @@ Private Sub Schoon()
     TekstInfo0.Enabled = False
     TekstInfo0.Mask = ""
     TekstInfo0.Mask = "##/##/####"
-    TekstInfo0.Text = MIM_GLOBAL_DATE
+    TekstInfo0.text = MIM_GLOBAL_DATE
     
     TekstInfo1.Enabled = False
     TekstInfo1.Mask = ""
     TekstInfo1.Mask = "##/##/####"
-    TekstInfo1.Text = MIM_GLOBAL_DATE
+    TekstInfo1.text = MIM_GLOBAL_DATE
     
     TekstInfo2.Enabled = False
     TekstInfo2.Mask = ""
     TekstInfo2.Mask = "##/##/####"
-    TekstInfo2.Text = MIM_GLOBAL_DATE
+    TekstInfo2.text = MIM_GLOBAL_DATE
     
     TekstInfo3.Enabled = False
-    TekstInfo3.Text = ""
+    TekstInfo3.text = ""
     TekstInfo3 = LeverancierRekening
     TekstInfo4.Enabled = False
-    TekstInfo4.Text = ""
+    TekstInfo4.text = ""
     TekstInfo12.Enabled = False
-    TekstInfo12.Text = ""
+    TekstInfo12.text = ""
     TekstInfo5.Enabled = False
-    TekstInfo5.Text = ""
+    TekstInfo5.text = ""
     TekstInfo6.Enabled = False
-    TekstInfo6.Text = ""
+    TekstInfo6.text = ""
     TekstInfo7.Enabled = False
-    TekstInfo7.Text = ""
+    TekstInfo7.text = ""
     TekstInfo9.Enabled = False
-    TekstInfo9.Text = ""
+    TekstInfo9.text = ""
     TekstInfo10.Enabled = False
-    TekstInfo10.Text = ""
+    TekstInfo10.text = ""
     TekstInfo10 = rbtwVAK(4)
     
     RasterSchoon
@@ -2699,14 +2698,14 @@ Private Sub TekstInfo0_KeyDown(KeyCode As Integer, Shift As Integer)
         SendKeys "{TAB}", True
         Exit Sub
     Else
-        TekstInfo0.Text = TekstInfo1.Text
+        TekstInfo0.text = TekstInfo1.text
     End If
     
 End Sub
 
 Private Sub TekstInfo0_KeyPress(KeyAscii As Integer)
 
-    TekstInfo0.Text = TekstInfo1.Text
+    TekstInfo0.text = TekstInfo1.text
 
 End Sub
 
@@ -2724,7 +2723,7 @@ End Sub
 Private Sub TekstInfo10_GotFocus()
 
     TekstInfo10.SelStart = 0
-    TekstInfo10.SelLength = Len(TekstInfo10.Text)
+    TekstInfo10.SelLength = Len(TekstInfo10.text)
     
 End Sub
 
@@ -2754,7 +2753,7 @@ End Sub
 Private Sub TekstInfo3_GotFocus()
 
     TekstInfo3.SelStart = 0
-    TekstInfo3.SelLength = Len(TekstInfo3.Text)
+    TekstInfo3.SelLength = Len(TekstInfo3.text)
     
 End Sub
 
@@ -2771,7 +2770,7 @@ End Sub
 Private Sub TekstInfo5_Change()
     
     If Medekontraktant.Value Then
-        TekstInfo7.Text = TekstInfo5.Text
+        TekstInfo7.text = TekstInfo5.text
     End If
     
 End Sub
@@ -2792,7 +2791,7 @@ End Sub
 Private Sub TekstInfo0_GotFocus()
 
     TekstInfo0.SelStart = 0
-    TekstInfo0.SelLength = Len(TekstInfo0.Text)
+    TekstInfo0.SelLength = Len(TekstInfo0.text)
     TekstInfo0.SelLength = 5
     
 End Sub
@@ -2800,7 +2799,7 @@ End Sub
 Private Sub TekstInfo1_GotFocus()
 
     TekstInfo1.SelStart = 0
-    TekstInfo1.SelLength = Len(TekstInfo1.Text)
+    TekstInfo1.SelLength = Len(TekstInfo1.text)
     TekstInfo1.SelLength = 5
 
 End Sub
@@ -2808,7 +2807,7 @@ End Sub
 Private Sub TekstInfo2_GotFocus()
 
     TekstInfo2.SelStart = 0
-    TekstInfo2.SelLength = Len(TekstInfo2.Text)
+    TekstInfo2.SelLength = Len(TekstInfo2.text)
     TekstInfo2.SelLength = 5
     
 End Sub
@@ -2816,7 +2815,7 @@ End Sub
 Private Sub TekstInfo6_GotFocus()
 
     TekstInfo6.SelStart = 0
-    TekstInfo6.SelLength = Len(TekstInfo6.Text)
+    TekstInfo6.SelLength = Len(TekstInfo6.text)
     Kontrole.Default = True
 
 End Sub
@@ -2884,9 +2883,9 @@ Private Sub TekstInfo5_KeyUp(KeyCode As Integer, Shift As Integer)
             If Len(TekstInfo5) = 1 Then
                 Exit Sub
             End If
-            RekenHier = EenLijnRekenen(TekstInfo5.Text)
+            RekenHier = EenLijnRekenen(TekstInfo5.text)
             If RekenHier Then
-                TekstInfo5.Text = Str(Round(RekenHier, 2))
+                TekstInfo5.text = Str(Round(RekenHier, 2))
             End If
     End Select
 
@@ -2894,10 +2893,10 @@ End Sub
 
 Private Sub TekstInfo0_LostFocus()
 
-    If DATE_INVALID((TekstInfo0.Text)) Then
-        TekstInfo0.Text = MIM_GLOBAL_DATE
+    If DATE_INVALID((TekstInfo0.text)) Then
+        TekstInfo0.text = MIM_GLOBAL_DATE
         TekstInfo0.SetFocus
-    ElseIf Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+    ElseIf Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         BJPERDAT.WindowState = 0
         BJPERDAT.PeriodeBoekjaar.SetFocus
     End If
@@ -2906,28 +2905,28 @@ End Sub
 
 Private Sub TekstInfo1_LostFocus()
     
-    If DATE_INVALID((TekstInfo1.Text)) Then
-        TekstInfo1.Text = MIM_GLOBAL_DATE
+    If DATE_INVALID((TekstInfo1.text)) Then
+        TekstInfo1.text = MIM_GLOBAL_DATE
         TekstInfo1.SetFocus
     Else
-        TekstInfo2.Text = VValdag((TekstInfo1.Text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
-        TekstInfo0.Text = MIM_GLOBAL_DATE
+        TekstInfo2.text = VValdag((TekstInfo1.text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
+        TekstInfo0.text = MIM_GLOBAL_DATE
     End If
-    If DATE_KEY(TekstInfo1.Text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.Text) > Right(BOOKYEAR_FROMTO, 8) Then
+    If DATE_KEY(TekstInfo1.text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.text) > Right(BOOKYEAR_FROMTO, 8) Then
         Msg = "Datum aankoopdocument valt BUITEN het actieve boekjaar." & vbCr
         Msg = Msg & "De optie 'boekhoudcontrole' in balans leveranciers zal" & vbCr
         Msg = Msg & "mogelijk niet goed functioneren." & vbCr & vbCr
         Msg = Msg & "Controleer eventueel."
         MsgBox Msg, vbExclamation
     End If
-    TekstInfo0.Text = TekstInfo1.Text
+    TekstInfo0.text = TekstInfo1.text
 
 End Sub
 
 Private Sub TekstInfo2_LostFocus()
 
-    If DATE_INVALID((TekstInfo2.Text)) Then
-        TekstInfo2.Text = VValdag((TekstInfo1.Text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
+    If DATE_INVALID((TekstInfo2.text)) Then
+        TekstInfo2.text = VValdag((TekstInfo1.text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
         TekstInfo2.SetFocus
     End If
 
@@ -2935,16 +2934,15 @@ End Sub
 
 Private Sub TekstInfo3_LostFocus()
 
-    If Left(TekstInfo3.Text, 3) <> "440" Then
-        TekstInfo3.Text = LeverancierRekening
+    If Left(TekstInfo3.text, 3) <> "440" Then
+        TekstInfo3.text = LeverancierRekening
         
         TekstInfo3.SetFocus
         Exit Sub
     End If
-    bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo3.Text), 7)
+    bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo3.text), 7)
     If Ktrl Then
-        Beep
-        TekstInfo3.Text = LeverancierRekening
+        TekstInfo3.text = LeverancierRekening
         TekstInfo3.SetFocus
     End If
     
@@ -2953,12 +2951,12 @@ End Sub
 Private Sub TekstInfo4_LostFocus()
 
     If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
-        If BankOk((TekstInfo4.Text)) Then
+        If BankOk((TekstInfo4.text)) Then
         Else
             Beep
             On Error Resume Next
             SnelHelpPrint "Gestructureerde betaalreferte onjuist !", BL_LOGGING
-            TekstInfo4.Text = "OGM onjuist"
+            TekstInfo4.text = "OGM onjuist"
             On Error GoTo 0
             Exit Sub
         End If
@@ -2969,19 +2967,19 @@ End Sub
 Private Sub TekstInfo5_LostFocus()
 
     If AankoopFlg = 1 And AankoopOptie(1).Value = True Then
-        If Val(TekstInfo5.Text) <> 0 Then
+        If Val(TekstInfo5.text) <> 0 Then
             KtrlBox = MsgBox("De aanbeveling door meeste BTW-diensten om bij creditnota E.U. géén B.T.W op te nemen negeren", vbQuestion + vbYesNo + vbDefaultButton1)
             If KtrlBox = vbYes Then
-                TekstInfo5.Text = "0"
+                TekstInfo5.text = "0"
             End If
         End If
     ElseIf AankoopFlg = 1 And AankoopOptie(1).Value = False Then
-        If Val(TekstInfo5.Text) = 0 Then
+        If Val(TekstInfo5.text) = 0 Then
             MsgBox "Respecteer de aanbeveling door de BTW-diensten om bij factuur E.U. de B.T.W. zelf uit te rekenen en zowel AFTREKBAAR als VERSCHULDIGD (0-operatie dus...) het toepasbaar B.T.W. bedrag mee te delen !", vbExclamation
             TekstInfo5.SetFocus
             Exit Sub
         Else
-            TekstInfo7.Text = TekstInfo5.Text
+            TekstInfo7.text = TekstInfo5.text
         End If
     End If
 
@@ -2991,15 +2989,14 @@ End Sub
 Private Sub TekstInfo10_LostFocus()
     
     If Left(TekstInfo10, 6) <> Left(rbtwVAK(4), 6) Then
-        TekstInfo10.Text = rbtwVAK(4)
+        TekstInfo10.text = rbtwVAK(4)
         
         TekstInfo10.SetFocus
         Exit Sub
     End If
-    bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo10.Text), 7)
+    bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo10.text), 7)
     If Ktrl Then
-        Beep
-        TekstInfo10.Text = rbtwVAK(4)
+        TekstInfo10.text = rbtwVAK(4)
         TekstInfo10.SetFocus
     End If
 
@@ -3028,7 +3025,7 @@ If Ktrl Then
     Exit Function
 Else
     RecordToVeld TABLE_SUPPLIERS
-    dMuntL = Val(TekstInfo9.Text)
+    dMuntL = Val(TekstInfo9.text)
 End If
 
 'gewijzigd voor scanning
@@ -3046,30 +3043,30 @@ rsMAR(TABLE_INVOICES).AddNew
 
 vBib TABLE_JOURNAL, "L" + vBibTekst(TABLE_SUPPLIERS, "#A110 #"), "v034"
 '19
-vBib TABLE_JOURNAL, DATE_KEY((TekstInfo0.Text)), "v066"
+vBib TABLE_JOURNAL, DATE_KEY((TekstInfo0.text)), "v066"
 vBib TABLE_JOURNAL, dokumentSleutel, "v033"
-vBib TABLE_JOURNAL, DATE_KEY((TekstInfo1.Text)), "v035"
-vBib TABLE_JOURNAL, (TekstInfo3.Text), "v069"
+vBib TABLE_JOURNAL, DATE_KEY((TekstInfo1.text)), "v035"
+vBib TABLE_JOURNAL, (TekstInfo3.text), "v069"
 
 vBib TABLE_INVOICES, dokumentSleutel, "v033"
-vBib TABLE_INVOICES, (TekstInfo12.Text), "v409"
+vBib TABLE_INVOICES, (TekstInfo12.text), "v409"
 vBib TABLE_INVOICES, "L" + vBibTekst(TABLE_SUPPLIERS, "#A110 #"), "v034"
-vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.Text)), "v035"
-vBib TABLE_INVOICES, DATE_KEY((TekstInfo2.Text)), "v036"
-vBib TABLE_INVOICES, (TekstInfo4.Text), "v039"
+vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.text)), "v035"
+vBib TABLE_INVOICES, DATE_KEY((TekstInfo2.text)), "v036"
+vBib TABLE_INVOICES, (TekstInfo4.text), "v039"
 vBib TABLE_INVOICES, Dec$(dMuntL, "###.##########"), "v040"
 vBib TABLE_INVOICES, vBibTekst(TABLE_SUPPLIERS, "#vs03 #"), "vs03"
 vBib TABLE_JOURNAL, vBibTekst(TABLE_SUPPLIERS, "#A100 #"), "v067"
 For T = 0 To AankoopDetail.ListCount - 1
     AankoopDetail.ListIndex = T
-    LokRekening = Left(AankoopDetail.Text, 7)
+    LokRekening = Left(AankoopDetail.text, 7)
     vBib TABLE_JOURNAL, LokRekening, "v019"
     bGet TABLE_LEDGERACCOUNTS, 0, LokRekening
     If Ktrl Then
         WegBoekFout = True
         Exit Function
     End If
-    Bedrag = Val(Mid(AankoopDetail.Text, 50, 12))
+    Bedrag = Val(Mid(AankoopDetail.text, 50, 12))
     TotaalBedrag = TotaalBedrag + Bedrag
     If AankoopOptie(0).Value = True Then
         'factuur
@@ -3082,18 +3079,18 @@ For T = 0 To AankoopDetail.ListCount - 1
     End If
     
     vBib TABLE_JOURNAL, "", "v102"
-    If Len(AankoopDetail.Text) > 62 Then
+    If Len(AankoopDetail.text) > 62 Then
         
-        bGet TABLE_PRODUCTS, 0, Mid(AankoopDetail.Text, 63, 13)
+        bGet TABLE_PRODUCTS, 0, Mid(AankoopDetail.text, 63, 13)
         If Ktrl Then
             MsgBox "Onverwacht situatie"
             WegBoekFout = True
             Exit Function
         Else
             RecordToVeld TABLE_PRODUCTS
-            vBib TABLE_JOURNAL, Mid(AankoopDetail.Text, 77, 30), "v067"
-            vBib TABLE_JOURNAL, Mid(AankoopDetail.Text, 63, 13), "v102"
-            AantalStuks = Val(Mid(AankoopDetail.Text, 77 + 41, 10))
+            vBib TABLE_JOURNAL, Mid(AankoopDetail.text, 77, 30), "v067"
+            vBib TABLE_JOURNAL, Mid(AankoopDetail.text, 63, 13), "v102"
+            AantalStuks = Val(Mid(AankoopDetail.text, 77 + 41, 10))
             If AankoopOptie(0).Value = True Then
                 'IseenFactuur
                 'AankoopPrijs
@@ -3151,7 +3148,7 @@ For T = 0 To AankoopDetail.ListCount - 1
 Next
 vBib TABLE_JOURNAL, vBibTekst(TABLE_SUPPLIERS, "#A100 #"), "v067"
 
-vBib TABLE_INVOICES, (TekstInfo5.Text), "v045"
+vBib TABLE_INVOICES, (TekstInfo5.text), "v045"
 'If Ar = 3 Then
 '    vBib TABLE_INVOICES, "0", "v048"
 '    vBib TABLE_INVOICES, "0", "v049"
@@ -3165,7 +3162,7 @@ vBib TABLE_INVOICES, (TekstInfo5.Text), "v045"
 DVT99 = Str$(dInvest + dAlKost + dHandel + dPrive)
 
 If Medekontraktant.Value Then
-    vBib TABLE_INVOICES, (TekstInfo7.Text), "v043"
+    vBib TABLE_INVOICES, (TekstInfo7.text), "v043"
     If Ar = 1 Then
         vBib TABLE_INVOICES, DVT99, "v053"
     Else
@@ -3179,7 +3176,7 @@ Else
     End If
 End If
 If AankoopFlg = 1 Then
-    vBib TABLE_INVOICES, (TekstInfo7.Text), "v042"
+    vBib TABLE_INVOICES, (TekstInfo7.text), "v042"
     If Ar = 1 Then
         vBib TABLE_INVOICES, DVT99, "v052"
     Else
@@ -3187,7 +3184,7 @@ If AankoopFlg = 1 Then
     End If
 End If
 If AankoopFlg = 2 Then
-    vBib TABLE_INVOICES, (TekstInfo7.Text), "v044"
+    vBib TABLE_INVOICES, (TekstInfo7.text), "v044"
     If Ar = 1 Then
         MsgBox "in pseudo vak 88 wordt " & DVT99 & " bijgevoegd.  Bij de eigenlijke BTW aangifte dient U de cijfers van kolom '88!'  bij te tellen bij vak 87", vbInformation
         vBib TABLE_INVOICES, DVT99, "v054"
@@ -3196,13 +3193,13 @@ If AankoopFlg = 2 Then
     End If
 End If
 
-If Val(TekstInfo5.Text) <> 0 Then
+If Val(TekstInfo5.text) <> 0 Then
     If Ar = 3 Then
-        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo5.Text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo5.text), MASK_EURBH), "v068"
         vBib TABLE_JOURNAL, rbtwVAK(5), "v019"
     Else
-        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo5.Text), MASK_EURBH), "v068"
-        vBib TABLE_JOURNAL, vSet((TekstInfo10.Text), 7), "v019"
+        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo5.text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, vSet((TekstInfo10.text), 7), "v019"
     End If
     bInsert TABLE_JOURNAL, 0
 End If
@@ -3210,9 +3207,9 @@ End If
 If AankoopFlg = 0 Then
     If Medekontraktant.Value Then
         If Ar = 1 Then
-            vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.Text), MASK_EURBH), "v068"
+            vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.text), MASK_EURBH), "v068"
         Else
-            vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.Text), MASK_EURBH), "v068"
+            vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.text), MASK_EURBH), "v068"
         End If
         FVT(TABLE_JOURNAL, 1) = rbtwVAK(2)
         vBib TABLE_JOURNAL, rbtwVAK(2), "v019"
@@ -3223,29 +3220,29 @@ End If
 
 If AankoopFlg = 2 Then
     If Ar = 1 Then
-        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.Text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.text), MASK_EURBH), "v068"
     Else
-        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.Text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.text), MASK_EURBH), "v068"
     End If
     vBib TABLE_JOURNAL, rbtwVAK(3), "v019"
 Else
     If Ar = 1 Then
-        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.Text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, Dec$(-Val(TekstInfo7.text), MASK_EURBH), "v068"
     Else
-        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.Text), MASK_EURBH), "v068"
+        vBib TABLE_JOURNAL, Dec$(Val(TekstInfo7.text), MASK_EURBH), "v068"
     End If
     vBib TABLE_JOURNAL, rbtwVAK(1), "v019"
 End If
 bInsert TABLE_JOURNAL, 0
 
 LabeL1440:
-DVT99 = Str$(Val(DVT99) + Val(TekstInfo5.Text) - Val(TekstInfo7.Text))
+DVT99 = Str$(Val(DVT99) + Val(TekstInfo5.text) - Val(TekstInfo7.text))
 If Ar = 1 Then
     vBib TABLE_JOURNAL, Dec$(-Val(DVT99), MASK_EURBH), "v068"
 Else
     vBib TABLE_JOURNAL, Dec$(Val(DVT99), MASK_EURBH), "v068"
 End If
-vBib TABLE_JOURNAL, vSet((TekstInfo3.Text), 7), "v019"
+vBib TABLE_JOURNAL, vSet((TekstInfo3.text), 7), "v019"
 bInsert TABLE_JOURNAL, 0
 
 If XisEuroWisBEF = False Then
@@ -3271,7 +3268,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     WegBoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then

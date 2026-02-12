@@ -45,69 +45,70 @@ Begin VB.Form As2TelebibIn
       _ExtentY        =   7646
       _Version        =   393216
       Tabs            =   5
-      Tab             =   3
+      Tab             =   2
       TabsPerRow      =   5
       TabHeight       =   520
       TabCaption(0)   =   "&AS/2"
       TabPicture(0)   =   "frmAS2Telebib2IN.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "RichTextBox1"
-      Tab(0).Control(1)=   "lbBerichten"
-      Tab(0).Control(2)=   "cbAS2BerichtType"
-      Tab(0).Control(3)=   "cmdPManueel"
-      Tab(0).Control(4)=   "cmdEManueel"
-      Tab(0).Control(5)=   "cbPrintNote"
+      Tab(0).Control(0)=   "cbPrintNote"
+      Tab(0).Control(1)=   "cmdEManueel"
+      Tab(0).Control(2)=   "cmdPManueel"
+      Tab(0).Control(3)=   "cbAS2BerichtType"
+      Tab(0).Control(4)=   "lbBerichten"
+      Tab(0).Control(5)=   "RichTextBox1"
       Tab(0).ControlCount=   6
       TabCaption(1)   =   "&Historiek"
       TabPicture(1)   =   "frmAS2Telebib2IN.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "RichTextBoxHistoriek"
-      Tab(1).Control(1)=   "cbAS2BerichtTypeHistoriek"
+      Tab(1).Control(0)=   "cbNogEens"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "lbBerichtenHistoriek"
       Tab(1).Control(2)=   "KeuzeInfo(0)"
-      Tab(1).Control(3)=   "lbBerichtenHistoriek"
-      Tab(1).Control(4)=   "cbNogEens"
-      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(3)=   "cbAS2BerichtTypeHistoriek"
+      Tab(1).Control(4)=   "RichTextBoxHistoriek"
       Tab(1).ControlCount=   5
       TabCaption(2)   =   "GBO"
       TabPicture(2)   =   "frmAS2Telebib2IN.frx":0038
-      Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obVerwerking(1)"
-      Tab(2).Control(1)=   "obVerwerking(0)"
-      Tab(2).Control(2)=   "oGBO300"
-      Tab(2).Control(3)=   "opRekeningUittreksel"
+      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).Control(0)=   "Label1(4)"
+      Tab(2).Control(0).Enabled=   0   'False
+      Tab(2).Control(1)=   "RichTextBox2"
+      Tab(2).Control(1).Enabled=   0   'False
+      Tab(2).Control(2)=   "cbGBO"
+      Tab(2).Control(2).Enabled=   0   'False
+      Tab(2).Control(3)=   "cbFile"
+      Tab(2).Control(3).Enabled=   0   'False
       Tab(2).Control(4)=   "obBorderel"
-      Tab(2).Control(5)=   "cbFile"
-      Tab(2).Control(6)=   "cbGBO"
-      Tab(2).Control(7)=   "RichTextBox2"
-      Tab(2).Control(8)=   "Label1(4)"
+      Tab(2).Control(4).Enabled=   0   'False
+      Tab(2).Control(5)=   "opRekeningUittreksel"
+      Tab(2).Control(5).Enabled=   0   'False
+      Tab(2).Control(6)=   "oGBO300"
+      Tab(2).Control(6).Enabled=   0   'False
+      Tab(2).Control(7)=   "obVerwerking(0)"
+      Tab(2).Control(7).Enabled=   0   'False
+      Tab(2).Control(8)=   "obVerwerking(1)"
+      Tab(2).Control(8).Enabled=   0   'False
       Tab(2).ControlCount=   9
       TabCaption(3)   =   "MailBox"
       TabPicture(3)   =   "frmAS2Telebib2IN.frx":0054
-      Tab(3).ControlEnabled=   -1  'True
-      Tab(3).Control(0)=   "Label2"
-      Tab(3).Control(0).Enabled=   0   'False
-      Tab(3).Control(1)=   "Label3"
-      Tab(3).Control(1).Enabled=   0   'False
-      Tab(3).Control(2)=   "rtbMail"
-      Tab(3).Control(2).Enabled=   0   'False
-      Tab(3).Control(3)=   "cbMailBerichten"
-      Tab(3).Control(3).Enabled=   0   'False
-      Tab(3).Control(4)=   "cbFetch"
-      Tab(3).Control(4).Enabled=   0   'False
-      Tab(3).Control(5)=   "txtMailBox"
-      Tab(3).Control(5).Enabled=   0   'False
-      Tab(3).Control(6)=   "cbMailManueel"
-      Tab(3).Control(6).Enabled=   0   'False
-      Tab(3).Control(7)=   "tbTelRetours"
-      Tab(3).Control(7).Enabled=   0   'False
+      Tab(3).ControlEnabled=   0   'False
+      Tab(3).Control(0)=   "tbTelRetours"
+      Tab(3).Control(1)=   "cbMailManueel"
+      Tab(3).Control(2)=   "txtMailBox"
+      Tab(3).Control(3)=   "cbFetch"
+      Tab(3).Control(4)=   "cbMailBerichten"
+      Tab(3).Control(5)=   "rtbMail"
+      Tab(3).Control(6)=   "Label3"
+      Tab(3).Control(7)=   "Label2"
       Tab(3).ControlCount=   8
       TabCaption(4)   =   "AS/2 no Outlook"
       TabPicture(4)   =   "frmAS2Telebib2IN.frx":0070
       Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "Label1(5)"
-      Tab(4).Control(1)=   "RichTextBox3"
-      Tab(4).Control(2)=   "aswebcbFile"
-      Tab(4).Control(3)=   "cbASWEB"
+      Tab(4).Control(0)=   "cbASWEB"
+      Tab(4).Control(1)=   "aswebcbFile"
+      Tab(4).Control(2)=   "RichTextBox3"
+      Tab(4).Control(3)=   "Label1(5)"
       Tab(4).ControlCount=   4
       Begin VB.CommandButton cbASWEB 
          Caption         =   "Verwerken"
@@ -130,7 +131,7 @@ Begin VB.Form As2TelebibIn
          Alignment       =   1  'Right Justify
          Enabled         =   0   'False
          Height          =   285
-         Left            =   5760
+         Left            =   -69240
          TabIndex        =   38
          Text            =   "0"
          Top             =   720
@@ -140,14 +141,14 @@ Begin VB.Form As2TelebibIn
          Caption         =   "Verwerken"
          Enabled         =   0   'False
          Height          =   375
-         Left            =   7680
+         Left            =   -67320
          TabIndex        =   36
          Top             =   600
          Width           =   1815
       End
       Begin VB.TextBox txtMailBox 
          Height          =   285
-         Left            =   5760
+         Left            =   -69240
          TabIndex        =   34
          Text            =   "rbr@rv.be"
          Top             =   450
@@ -156,7 +157,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.CommandButton cbFetch 
          Caption         =   "Fetch"
          Height          =   495
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   33
          Top             =   480
          Width           =   1455
@@ -164,7 +165,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.ComboBox cbMailBerichten 
          Height          =   315
          ItemData        =   "frmAS2Telebib2IN.frx":008C
-         Left            =   240
+         Left            =   -74760
          List            =   "frmAS2Telebib2IN.frx":008E
          Sorted          =   -1  'True
          Style           =   2  'Dropdown List
@@ -177,7 +178,7 @@ Begin VB.Form As2TelebibIn
          Caption         =   "Uitwisseling enkel opslaan (verwerking later)"
          Height          =   195
          Index           =   1
-         Left            =   -69720
+         Left            =   5280
          TabIndex        =   30
          Top             =   3960
          Width           =   4215
@@ -186,7 +187,7 @@ Begin VB.Form As2TelebibIn
          Caption         =   "Directe verwerking (synchroon)"
          Height          =   195
          Index           =   0
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   29
          Top             =   3960
          Value           =   -1  'True
@@ -195,7 +196,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.OptionButton oGBO300 
          Caption         =   "Ruilkaart 300"
          Height          =   435
-         Left            =   -71760
+         Left            =   3240
          TabIndex        =   28
          ToolTipText     =   "Interessant voor import naam en volledig adres!"
          Top             =   840
@@ -204,7 +205,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.OptionButton opRekeningUittreksel 
          Caption         =   "TB2 Rek. Uittreksel"
          Height          =   435
-         Left            =   -73320
+         Left            =   1680
          TabIndex        =   27
          Top             =   840
          Width           =   1455
@@ -212,7 +213,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.OptionButton obBorderel 
          Caption         =   "TB2 Borderel"
          Height          =   435
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   26
          Top             =   840
          Width           =   1095
@@ -229,7 +230,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.CommandButton cbFile 
          Caption         =   "..."
          Height          =   375
-         Left            =   -66000
+         Left            =   9000
          TabIndex        =   23
          Top             =   480
          Width           =   495
@@ -237,7 +238,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.CommandButton cbGBO 
          Caption         =   "Verwerken"
          Height          =   375
-         Left            =   -66720
+         Left            =   8280
          TabIndex        =   22
          Top             =   960
          Width           =   1215
@@ -374,11 +375,11 @@ Begin VB.Form As2TelebibIn
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmAS2Telebib2IN.frx":017E
+         TextRTF         =   $"frmAS2Telebib2IN.frx":012E
       End
       Begin RichTextLib.RichTextBox RichTextBox2 
          Height          =   2415
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   21
          Top             =   1440
          Width           =   9375
@@ -389,11 +390,11 @@ Begin VB.Form As2TelebibIn
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmAS2Telebib2IN.frx":0264
+         TextRTF         =   $"frmAS2Telebib2IN.frx":01C4
       End
       Begin RichTextLib.RichTextBox rtbMail 
          Height          =   2775
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   31
          Top             =   1440
          Width           =   9495
@@ -404,7 +405,7 @@ Begin VB.Form As2TelebibIn
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmAS2Telebib2IN.frx":033E
+         TextRTF         =   $"frmAS2Telebib2IN.frx":024F
       End
       Begin RichTextLib.RichTextBox RichTextBox3 
          Height          =   2415
@@ -419,7 +420,7 @@ Begin VB.Form As2TelebibIn
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
-         TextRTF         =   $"frmAS2Telebib2IN.frx":0418
+         TextRTF         =   $"frmAS2Telebib2IN.frx":02DA
       End
       Begin VB.Label Label1 
          BorderStyle     =   1  'Fixed Single
@@ -434,7 +435,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.Label Label3 
          Caption         =   "Ontvangen Retour"
          Height          =   255
-         Left            =   3960
+         Left            =   -71040
          TabIndex        =   37
          Top             =   720
          Width           =   1695
@@ -442,7 +443,7 @@ Begin VB.Form As2TelebibIn
       Begin VB.Label Label2 
          Caption         =   "Te Controleren Mailbox"
          Height          =   255
-         Left            =   3600
+         Left            =   -71400
          TabIndex        =   35
          Top             =   480
          Width           =   2295
@@ -452,7 +453,7 @@ Begin VB.Form As2TelebibIn
          Caption         =   "Manueel"
          Height          =   255
          Index           =   4
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   24
          Top             =   480
          Width           =   8610
@@ -677,9 +678,9 @@ On Local Error Resume Next
         'CURRAC= rekeninguittreksel
         'PRENOT= termijnborderel
         If ScrLeesBestandAlleTekst(aswebCPstr, aswebDIR & aswebFILE) Then
-            Me.RichTextBox3.Text = aswebCPstr
+            Me.RichTextBox3.text = aswebCPstr
         Else
-            Me.RichTextBox3.Text = ""
+            Me.RichTextBox3.text = ""
         End If
     End If
 
@@ -701,16 +702,16 @@ End Sub
 
 Private Sub cbASWEB_Click()
 
-    If Trim$(Me.RichTextBox3.Text) = "" Then Exit Sub
+    If Trim$(Me.RichTextBox3.text) = "" Then Exit Sub
     Dim atXGHarray() As String
     
-    Do While InStr(Me.RichTextBox3.Text, "XGT+01'")
+    Do While InStr(Me.RichTextBox3.text, "XGT+01'")
         MsgBox "RTB check for XGT+1"
-        Me.RichTextBox3.Text = Replace(Me.RichTextBox3.Text, "XGT+01'", "XGT+1'")
+        Me.RichTextBox3.text = Replace(Me.RichTextBox3.text, "XGT+01'", "XGT+1'")
     Loop
     
     
-    atXGHarray = Split(Me.RichTextBox3.Text, "XGT+1'")
+    atXGHarray = Split(Me.RichTextBox3.text, "XGT+1'")
     For COUNT_TO = 0 To UBound(atXGHarray()) - 1
         atXGHarray(COUNT_TO) = atXGHarray(COUNT_TO) & "XGT+1'"
     Next
@@ -734,9 +735,9 @@ Private Sub cbASWEB_Click()
     
    
     For COUNT_TO = 0 To UBound(atXGHarray()) - 1
-        RichTextBox1.Text = atXGHarray(COUNT_TO)
+        RichTextBox1.text = atXGHarray(COUNT_TO)
         
-        tb2infoHier = tb2Indent(Me.RichTextBox1.Text)
+        tb2infoHier = tb2Indent(Me.RichTextBox1.text)
         pdfY = Mim.Report.VPEPRINT(1, 1, tb2infoHier & vbCrLf)
         Mim.Report.PageBreak
         MsgBox "Start " + Str(COUNT_TO + 1)
@@ -756,7 +757,7 @@ ASWEBeinde:
         If Err Then
             MsgBox Error
         Else
-            Me.RichTextBox3.Text = ""
+            Me.RichTextBox3.text = ""
         End If
     ElseIf KtrlBox = vbCancel Then
         GoTo ASWEBeinde
@@ -786,9 +787,9 @@ Private Sub cbFile_Click()
         'CURRAC= rekeninguittreksel
         'PRENOT= termijnborderel
         If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
-            Me.RichTextBox2.Text = gboCPstr
+            Me.RichTextBox2.text = gboCPstr
         Else
-            Me.RichTextBox2.Text = ""
+            Me.RichTextBox2.text = ""
         End If
     End If
 
@@ -802,10 +803,10 @@ Private Sub cbGBO_Click()
     End If
     
 
-    If Trim$(Me.RichTextBox2.Text) = "" Then Exit Sub
+    If Trim$(Me.RichTextBox2.text) = "" Then Exit Sub
     Dim atXGHarray() As String
     
-    atXGHarray = Split(Me.RichTextBox2.Text, "XGT+1'")
+    atXGHarray = Split(Me.RichTextBox2.text, "XGT+1'")
     For COUNT_TO = 0 To UBound(atXGHarray()) - 1
         atXGHarray(COUNT_TO) = atXGHarray(COUNT_TO) & "XGT+1'"
     Next
@@ -829,8 +830,8 @@ Private Sub cbGBO_Click()
      
     
     For COUNT_TO = 0 To UBound(atXGHarray()) - 1
-        RichTextBox1.Text = atXGHarray(COUNT_TO)
-        tb2infoHier = tb2Indent(Me.RichTextBox1.Text)
+        RichTextBox1.text = atXGHarray(COUNT_TO)
+        tb2infoHier = tb2Indent(Me.RichTextBox1.text)
         pdfY = Mim.Report.VPEPRINT(1, 1, tb2infoHier & vbCrLf)
         Mim.Report.PageBreak
         KtrlBox = DoTheGBO()
@@ -861,16 +862,16 @@ End Sub
 Private Sub cbMailBerichten_Click()
 
     Me.MPIBericht.MsgIndex = Me.cbMailBerichten.ListIndex
-    If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.Text) Then
+    If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
         If Me.MPIBericht.AttachmentCount <> 0 Then
             Me.rtbMail.LoadFile MPIBericht.AttachmentPathName
             Me.cbMailManueel.Enabled = True
         Else
-            Me.rtbMail.Text = "Er is geen TB2 bijlage?"
+            Me.rtbMail.text = "Er is geen TB2 bijlage?"
             Me.cbMailManueel.Enabled = False
         End If
     Else
-        Me.rtbMail.Text = Me.MPIBericht.MsgNoteText
+        Me.rtbMail.text = Me.MPIBericht.MsgNoteText
         Me.cbMailManueel.Enabled = False
     End If
     Me.cbMailBerichten.SetFocus
@@ -880,10 +881,10 @@ End Sub
 Private Sub cbNogEens_Click()
 
 
-    If Trim$(RichTextBoxHistoriek.Text) = "" Then Exit Sub
+    If Trim$(RichTextBoxHistoriek.text) = "" Then Exit Sub
     Msg = "Bericht nog eens doorsturen"
     If MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2) = vbYes Then
-        RichTextBox1.Text = RichTextBoxHistoriek.Text
+        RichTextBox1.text = RichTextBoxHistoriek.text
         cmdEManueel_Click
     End If
     
@@ -896,7 +897,7 @@ Private Sub cbPrintNote_Click()
     Printer.FontSize = 10
     Printer.FontBold = True
         Printer.Print vbCrLf; vbCrLf;
-        Printer.Print RichTextBox1.Text
+        Printer.Print RichTextBox1.text
     Printer.FontBold = False
     Printer.EndDoc
     GoSub VerwijderPRINTnote
@@ -969,10 +970,10 @@ Private Sub cbTestTB2Table_Click()
     rcTB2.MoveFirst
     
     Do While Not rcTB2.EOF
-        strDocType = rcTB2.Fields("DocType")
+        strDocType = rcTB2.fields("DocType")
         Select Case strDocType
             Case "01", "02"
-                strMemoTB2 = rcTB2.Fields("MemoTB2")
+                strMemoTB2 = rcTB2.fields("MemoTB2")
                 'search RFF+001: (start is position + 8)
                 searchString = "RFF+001:"
                 startIndex = InStr(strMemoTB2, searchString)
@@ -993,12 +994,12 @@ Private Sub cbTestTB2Table_Click()
                     strSub = Left(strSub, endIndex - 1)
                     bGet TABLE_CONTRACTS, 0, strSub
                     If Ktrl Then
-                        rcTB2.Fields("Polis") = "999999999999"
+                        rcTB2.fields("Polis") = "999999999999"
                     Else
-                        rcTB2.Fields("Polis") = strSub
+                        rcTB2.fields("Polis") = strSub
                     End If
                 Else
-                    rcTB2.Fields("Polis") = "999999999999"
+                    rcTB2.fields("Polis") = "999999999999"
                 End If
         End Select
         rcTB2.MoveNext
@@ -1023,7 +1024,7 @@ Dim XGHarray() As String
 Dim XEHarray() As String
 
 
-MAPIString = RichTextBox1.Text
+MAPIString = RichTextBox1.text
 Xarray = Split(MAPIString, "'")
 XGHarray = Split(Xarray(0) + "+", "+")
 XEHarray = Split(Xarray(1) + "+", "+")
@@ -1098,12 +1099,12 @@ Else
     vBib TABLE_VARIOUS, Format(XGHarray(2), "0000"), "A010"
     vBib TABLE_VARIOUS, "E1", "v400"
     vBib TABLE_VARIOUS, vSet("30" + Format(XGHarray(2), "0000") + "E1", 20), "v005"
-    vBib TABLE_VARIOUS, RichTextBox1.Text, "v132"
+    vBib TABLE_VARIOUS, RichTextBox1.text, "v132"
     vBib TABLE_VARIOUS, strA000RB, "A000"
       
     rsTB2.AddNew
     rsTB2("Mij").Value = Format(Left(XGHarray(2), 4), "0000")
-    rsTB2("memoTB2").Value = RichTextBox1.Text
+    rsTB2("memoTB2").Value = RichTextBox1.text
     rsTB2("DocType").Value = XEHcode
     rsTB2("Polis").Value = strA000RB
     'nu nog de datum op basis van doctype
@@ -1191,7 +1192,7 @@ Dim XGHarray() As String
 Dim XEHarray() As String
 
 
-MAPIString = Me.rtbMail.Text
+MAPIString = Me.rtbMail.text
 Xarray = Split(MAPIString, "'")
 XGHarray = Split(Xarray(0) + "+", "+")
 XEHarray = Split(Xarray(1) + "+", "+")
@@ -1255,12 +1256,12 @@ Else
     vBib TABLE_VARIOUS, Format(XGHarray(2), "0000"), "A010"
     vBib TABLE_VARIOUS, "E1", "v400"
     vBib TABLE_VARIOUS, vSet("30" + Format(XGHarray(2), "0000") + "E1", 20), "v005"
-    vBib TABLE_VARIOUS, Me.rtbMail.Text, "v132"
+    vBib TABLE_VARIOUS, Me.rtbMail.text, "v132"
     vBib TABLE_VARIOUS, strA000RB, "A000"
       
     rsTB2.AddNew
     rsTB2("Mij").Value = Format(Left(XGHarray(2), 4), "0000")
-    rsTB2("memoTB2").Value = Me.rtbMail.Text
+    rsTB2("memoTB2").Value = Me.rtbMail.text
     rsTB2("DocType").Value = XEHcode
     rsTB2("Polis").Value = strA000RB
     'nu nog de datum op basis van doctype
@@ -1345,7 +1346,7 @@ Dim XGHarray() As String
 Dim XEHarray() As String
 
 
-MAPIString = RichTextBox1.Text
+MAPIString = RichTextBox1.text
 Xarray = Split(MAPIString, "'")
 XGHarray = Split(Xarray(0) + "+", "+")
 XEHarray = Split(Xarray(1) + "+", "+")
@@ -1475,7 +1476,7 @@ Else
     vBib TABLE_VARIOUS, Format(XGHarray(2), "0000"), "A010"
     vBib TABLE_VARIOUS, "P1", "v400"
     vBib TABLE_VARIOUS, vSet("30" + Format(XGHarray(2), "0000") + "P1", 20), "v005"
-    vBib TABLE_VARIOUS, RichTextBox1.Text, "v132"
+    vBib TABLE_VARIOUS, RichTextBox1.text, "v132"
     bInsert TABLE_VARIOUS, 1
     If Ktrl Then
     Else
@@ -1506,11 +1507,17 @@ Private Sub Form_Load()
         Me.cbGBO.Enabled = False
     Else
         Me.cbGBO.Enabled = True
-        If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
-            Me.RichTextBox2.Text = gboCPstr
+        gboCPstr = MarReadUtf8File(gboDIR & gboFILE)
+        If gboCPstr = "" Then
+            Me.RichTextBox2.text = ""
         Else
-            Me.RichTextBox2.Text = ""
+            Me.RichTextBox2.text = gboCPstr
         End If
+        'If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
+        '    Me.RichTextBox2.text = gboCPstr
+        'Else
+        '    Me.RichTextBox2.text = ""
+        'End If
     End If
     Label1(4).Caption = gboDIR & gboFILE
     
@@ -1520,11 +1527,18 @@ Private Sub Form_Load()
         Me.cbASWEB.Enabled = False
     Else
         Me.cbASWEB.Enabled = True
-        If ScrLeesBestandAlleTekst(aswebCPstr, aswebDIR & aswebFILE) Then
-            Me.RichTextBox3.Text = aswebCPstr
+        aswebCPstr = MarReadUtf8File(aswebDIR & aswebFILE)
+        If aswebCPstr = "" Then
+            Me.RichTextBox3.text = ""
         Else
-            Me.RichTextBox3.Text = ""
+            Me.RichTextBox3.text = aswebCPstr
         End If
+        
+        'If ScrLeesBestandAlleTekst(aswebCPstr, aswebDIR & aswebFILE) Then
+        '    Me.RichTextBox3.text = aswebCPstr
+        'Else
+        '    Me.RichTextBox3.text = ""
+        'End If
     End If
     Label1(5).Caption = aswebDIR & aswebFILE
     
@@ -2422,7 +2436,7 @@ End Sub
 
 Function VernieuwMAPIBerichten()
 
-MPIBericht.FetchMsgType = Mid(cbAS2BerichtType.Text, 1, InStr(cbAS2BerichtType.Text, ":") - 1)
+MPIBericht.FetchMsgType = Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1)
 MPIBericht.Fetch
 
 lblAantalBerichten.Caption = MPIBericht.MsgCount
@@ -2447,10 +2461,10 @@ cmdEManueel.Enabled = False
 cmdPManueel.Enabled = False
 cbPrintNote.Enabled = False
 If MPIBericht.MsgCount > 0 Then
-    If Mid(cbAS2BerichtType.Text, 1, InStr(cbAS2BerichtType.Text, ":") - 1) = "IPC.AS2.E1" Then
+    If Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPC.AS2.E1" Then
         cmdEManueel.Enabled = True
         cmdEManueel.Default = True
-    ElseIf Mid(cbAS2BerichtType.Text, 1, InStr(cbAS2BerichtType.Text, ":") - 1) = "IPM.NOTE.ASSURNET" Then
+    ElseIf Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPM.NOTE.ASSURNET" Then
         cbPrintNote.Enabled = True
         cbPrintNote.Default = True
     Else
@@ -2483,7 +2497,7 @@ Function refreshMPIBericht() As Boolean
             MPIBericht.MsgIndex = COUNT_TO
             ' TODO
             ' eerst kijken of het mailadres in orde is
-            If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.Text) Then
+            If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
                 cbMailTekstLijn = "ok RBR-mail:=" & Me.MPIBericht.RecipAddress  'MPIBericht.MsgSubject
                 'dan controleren of er attachment is met TB2
                 If Me.MPIBericht.AttachmentCount <> 0 Then
@@ -2502,7 +2516,7 @@ Function refreshMPIBericht() As Boolean
             If Err Then Exit For
             Me.cbMailBerichten.AddItem cbMailTekstLijn ', Me.cbMailBerichten.ListCount - 1
         Next
-        Me.tbTelRetours.Text = Str(aantalRB)
+        Me.tbTelRetours.text = Str(aantalRB)
     On Error GoTo 0
     If Me.cbMailBerichten.ListCount Then
         Me.cbMailBerichten.ListIndex = 0
@@ -2519,11 +2533,11 @@ Private Sub KeuzeInfo_Click(Index As Integer)
     If rsTB2.State = adStateOpen Then
         rsTB2.Close
     End If
-    Msg = "SELECT * FROM TB2 WHERE Mij = '" & Left(KeuzeInfo(0).Text, 4) & "'"
+    Msg = "SELECT * FROM TB2 WHERE Mij = '" & Left(KeuzeInfo(0).text, 4) & "'"
     rsTB2.Open Msg, adntDB, adOpenDynamic, adLockOptimistic, adCmdText
     
     lbBerichtenHistoriek.Clear
-    RichTextBoxHistoriek.Text = ""
+    RichTextBoxHistoriek.text = ""
     If rsTB2.RecordCount = 0 Then
     Else
         Do While Not rsTB2.EOF
@@ -2538,7 +2552,7 @@ End Sub
 Private Sub lbBerichten_Click()
 
 MPIBericht.MsgIndex = lbBerichten.ListIndex
-RichTextBox1.Text = MPIBericht.MsgNoteText
+RichTextBox1.text = MPIBericht.MsgNoteText
 
 End Sub
 
@@ -2583,7 +2597,7 @@ End Sub
 Private Sub lbBerichtenHistoriek_Click()
 
     rsTB2.AbsolutePosition = lbBerichtenHistoriek.ListIndex + 1
-    RichTextBoxHistoriek.Text = rsTB2("memoTB2").Value
+    RichTextBoxHistoriek.text = rsTB2("memoTB2").Value
     
 End Sub
 
@@ -2591,11 +2605,19 @@ End Sub
 Private Sub obBorderel_Click()
 
     gboFILE = "PRENOT.GBO"
-    If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
-        Me.RichTextBox2.Text = gboCPstr
+    gboCPstr = MarReadUtf8File(gboDIR & gboFILE)
+    If gboCPstr = "" Then
+        Me.RichTextBox2.text = ""
     Else
-        Me.RichTextBox2.Text = ""
+        Me.RichTextBox2.text = gboCPstr
     End If
+    
+    'If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
+    '    Me.RichTextBox2.text = gboCPstr
+    'Else
+    '    Me.RichTextBox2.text = ""
+    'End If
+    
     Label1(4).Caption = gboDIR & gboFILE
     
 End Sub
@@ -2604,11 +2626,18 @@ End Sub
 Private Sub opRekeningUittreksel_Click()
 
     gboFILE = "CURRAC.GBO"
-    If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
-        Me.RichTextBox2.Text = gboCPstr
+    gboCPstr = MarReadUtf8File(gboDIR & gboFILE)
+    If gboCPstr = "" Then
+        Me.RichTextBox2.text = ""
     Else
-        Me.RichTextBox2.Text = ""
+        Me.RichTextBox2.text = gboCPstr
     End If
+    
+    'If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
+    '    Me.RichTextBox2.text = gboCPstr
+    'Else
+    '    Me.RichTextBox2.text = ""
+    'End If
     Label1(4).Caption = gboDIR & gboFILE
     
 End Sub
@@ -2618,9 +2647,9 @@ Private Sub oGBO300_Click()
 
     gboFILE = "UNIFEP.300"
     If ScrLeesBestandAlleTekst(gboCPstr, gboDIR & gboFILE) Then
-        Me.RichTextBox2.Text = gboCPstr
+        Me.RichTextBox2.text = gboCPstr
     Else
-        Me.RichTextBox2.Text = ""
+        Me.RichTextBox2.text = ""
     End If
     Label1(4).Caption = gboDIR & gboFILE
 
@@ -2642,7 +2671,7 @@ Dim XEHarray() As String
 Dim intCrLfOpkuis As Integer
 
 
-MAPIString = RichTextBox1.Text
+MAPIString = RichTextBox1.text
 
 'nazien of er geen CRLF's zijn ! AXA en GBO...
     intCrLfOpkuis = 0
@@ -2734,7 +2763,7 @@ VerwijderENslaOP:
     vBib TABLE_VARIOUS, Format(Left(XGHarray(2), 4), "0000"), "A010"
     vBib TABLE_VARIOUS, "E1", "v400"
     vBib TABLE_VARIOUS, vSet("30" + Format(Left(XGHarray(2), 4), "0000") + "E1", 20), "v005"
-    vBib TABLE_VARIOUS, RichTextBox1.Text, "v132"
+    vBib TABLE_VARIOUS, RichTextBox1.text, "v132"
     'rsmar(flallerlei)("A000")= djfkddk
     'rsMAR(TABLE_VARIOUS).Update
     
@@ -2795,7 +2824,7 @@ VerwijderENslaOP:
     If Ktrl Then
         MsgBox Error
     Else
-        RichTextBox1.Text = ""
+        RichTextBox1.text = ""
     End If
 Return
 
@@ -2813,7 +2842,7 @@ Dim strTO As String
 Dim strAGENTNR As String
 Dim strVERRICHTING As String
         
-    RuilKaart = Me.RichTextBox2.Text
+    RuilKaart = Me.RichTextBox2.text
     Do While RuilKaart <> ""
         strLijn = Left(RuilKaart, InStr(RuilKaart, vbCrLf) - 1)
         If Len(strLijn) <> 300 Then
@@ -2855,7 +2884,7 @@ Private Sub SSTab1_Click(PreviousTab As Integer)
         Case 1
             If strTELEBIBIO = "" Then
             Else
-                RichTextBoxHistoriek.Text = strTELEBIBIO
+                RichTextBoxHistoriek.text = strTELEBIBIO
             End If
             
         Case 2

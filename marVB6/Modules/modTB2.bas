@@ -1,6 +1,24 @@
 Attribute VB_Name = "modTB2"
 Option Explicit
 
+Private Declare Function GetVersion Lib "kernel32" () As Long
+
+Public Function IsXP() As Boolean
+
+    Dim v As Long
+    v = GetVersion()
+    
+    Dim major As Long
+    Dim minor As Long
+    
+    major = v And &HFF
+    minor = (v And &HFF00&) \ &H100
+    
+    IsXP = (major = 5 And minor = 1)
+
+End Function
+
+
 Function tb2Indent(MAPIString As String) As String
 
     Dim Xarray() As String
@@ -47,6 +65,11 @@ Function tb2Indent(MAPIString As String) As String
     
         End If
     Next
+    
+    If IsXP Then
+        strIndent = Replace$(strIndent, vbTab, Space$(4))
+    End If
+    
     Screen.MousePointer = vbNormal
     tb2Indent = strIndent
 

@@ -156,11 +156,11 @@ Begin VB.Form DirekteVerkoop
          Strikethrough   =   0   'False
       EndProperty
       Height          =   405
-      Left            =   8160
+      Left            =   8280
       TabIndex        =   53
       TabStop         =   0   'False
       Top             =   5040
-      Width           =   1005
+      Width           =   885
    End
    Begin TabDlg.SSTab SSTab1 
       Height          =   6855
@@ -345,12 +345,12 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   555
-         Left            =   8040
+         Left            =   8160
          TabIndex        =   66
          TabStop         =   0   'False
          Top             =   5880
          Visible         =   0   'False
-         Width           =   915
+         Width           =   795
       End
       Begin VB.CommandButton cbMonitortUBL 
          Caption         =   "&UBL B2B OUT"
@@ -1131,10 +1131,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   6540
+         Left            =   6660
          TabIndex        =   39
          ToolTipText     =   "Totaal dokument in EURO exclusief BTW"
-         Top             =   5340
+         Top             =   5100
          Width           =   1365
       End
       Begin VB.Label LblIn2Btw 
@@ -1152,10 +1152,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   38
          ToolTipText     =   "Totaal dokument in EURO inclusief BTW"
-         Top             =   5340
+         Top             =   5100
          Width           =   1365
       End
       Begin VB.Label LblExBtw 
@@ -1173,10 +1173,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   6540
+         Left            =   6660
          TabIndex        =   37
          ToolTipText     =   "Totaal dokument in BEF exclusief BTW"
-         Top             =   5040
+         Top             =   5400
          Width           =   1365
       End
       Begin VB.Label LblInBtw 
@@ -1194,10 +1194,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5160
+         Left            =   5280
          TabIndex        =   36
          ToolTipText     =   "Totaal dokument in BEF inclusief BTW"
-         Top             =   5040
+         Top             =   5400
          Width           =   1365
       End
       Begin VB.Label Label1 
@@ -1214,9 +1214,9 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   285
          Index           =   12
-         Left            =   3660
+         Left            =   3780
          TabIndex        =   35
-         Top             =   5340
+         Top             =   5100
          Width           =   1485
       End
       Begin VB.Label Label1 
@@ -1233,9 +1233,9 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   285
          Index           =   20
-         Left            =   3660
+         Left            =   3780
          TabIndex        =   34
-         Top             =   5040
+         Top             =   5400
          Width           =   1485
       End
       Begin VB.Label Label1 
@@ -1273,10 +1273,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2400
+         Left            =   2520
          TabIndex        =   32
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5340
+         Top             =   5100
          Width           =   1245
       End
       Begin VB.Label lblBTWBedrag2 
@@ -1294,10 +1294,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   1140
+         Left            =   1260
          TabIndex        =   31
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5340
+         Top             =   5100
          Width           =   1245
       End
       Begin VB.Label lblBTWBedrag1 
@@ -1315,10 +1315,10 @@ Begin VB.Form DirekteVerkoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -120
+         Left            =   0
          TabIndex        =   30
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5340
+         Top             =   5100
          Width           =   1245
       End
       Begin VB.Label Label1 
@@ -1336,10 +1336,10 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   285
          Index           =   6
-         Left            =   -120
+         Left            =   0
          TabIndex        =   29
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5040
+         Top             =   5400
          Width           =   1245
       End
       Begin VB.Label Label1 
@@ -1357,10 +1357,10 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   285
          Index           =   8
-         Left            =   1140
+         Left            =   1260
          TabIndex        =   28
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5040
+         Top             =   5400
          Width           =   1245
       End
       Begin VB.Label Label1 
@@ -1378,10 +1378,10 @@ Begin VB.Form DirekteVerkoop
          EndProperty
          Height          =   285
          Index           =   9
-         Left            =   2400
+         Left            =   2520
          TabIndex        =   27
          ToolTipText     =   "Bij afdruk/boeking nog te manipuleren via vlag medekontraktant indien nodig"
-         Top             =   5040
+         Top             =   5400
          Width           =   1245
       End
    End
@@ -1802,9 +1802,9 @@ Dim docInEur As String
 
 TekstInfo3 = dokumentSleutel
 Medekontraktant.Value = Val(ADOBIB_TEXT(rsDetail("Memo"), "#v135 #"))
-TekstInfo0.Text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v035 #"))
-TekstInfo1.Text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v036 #"))
-TekstInfo2.Text = ADOBIB_TEXT(rsDetail("Memo"), "#v136 #")
+TekstInfo0.text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v035 #"))
+TekstInfo1.text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v036 #"))
+TekstInfo2.text = ADOBIB_TEXT(rsDetail("Memo"), "#v136 #")
 DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + dokumentSleutel + ")"
 docInEur = ADOBIB_TEXT(rsDetail("Memo"), "#vEUR #")
 
@@ -2614,7 +2614,7 @@ If Vr = 11 Or Vr = 13 Then
 End If
 
 If dokumentType = "15" And Annuleren.Enabled = True Then
-    If Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+    If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         Beep
         TekstInfo0.SetFocus
         Exit Sub
@@ -2789,9 +2789,9 @@ vBib TABLE_VARIOUS, dokumentType + dokumentSleutel, "v005"
 vBib TABLE_VARIOUS, RV(rsKlant, "A110"), "A110"
 vBib TABLE_VARIOUS, dokumentSleutel, "v033"
 vBib TABLE_VARIOUS, Format(Medekontraktant.Value), "v135"
-vBib TABLE_VARIOUS, DATE_KEY((TekstInfo0.Text)), "v035"
-vBib TABLE_VARIOUS, DATE_KEY((TekstInfo1.Text)), "v036"
-vBib TABLE_VARIOUS, (TekstInfo2.Text), "v136"
+vBib TABLE_VARIOUS, DATE_KEY((TekstInfo0.text)), "v035"
+vBib TABLE_VARIOUS, DATE_KEY((TekstInfo1.text)), "v036"
+vBib TABLE_VARIOUS, (TekstInfo2.text), "v136"
 If bhEuro Then
     vBib TABLE_VARIOUS, (LblEx2Btw), "v137"
     vBib TABLE_VARIOUS, (LblIn2Btw), "v138"
@@ -2800,7 +2800,7 @@ Else
     vBib TABLE_VARIOUS, (LblExBtw), "v137"
     vBib TABLE_VARIOUS, (LblInBtw), "v138"
 End If
-vBib TABLE_VARIOUS, (TekstInfo5.Text), "v040"
+vBib TABLE_VARIOUS, (TekstInfo5.text), "v040"
 vBib TABLE_VARIOUS, Right(DagKoers.Caption, 3), "vs03"
 If dokumentType = "15" Then
     If BonnenString <> "" Then
@@ -2813,7 +2813,7 @@ For T = 0 To 7
         Exit For
     Else
         VerkoopDetail.ListIndex = tempBDos + T
-        vBib TABLE_VARIOUS, (VerkoopDetail.Text), "v" + Format(139 + T, "000")
+        vBib TABLE_VARIOUS, (VerkoopDetail.text), "v" + Format(139 + T, "000")
     End If
 Next
 bInsert TABLE_VARIOUS, 1
@@ -2934,14 +2934,14 @@ Private Sub cbCheckTools_Click()
     ValidatingTool.Show 1
     If Trim(ValidatingTool.TextBoxSupportedDocuments) = "" Then
     Else
-        If rsKlant("v407") = ValidatingTool.TextBoxSupportedDocuments.Text Then
+        If rsKlant("v407") = ValidatingTool.TextBoxSupportedDocuments.text Then
             MsgBox "Er zijn geen wijzigingen aan ondersteunde documenten", vbInformation
         Else
             Msg = "Ondersteunde Peppol verrichtingen bijwerken voor deze klant" & vbCrLf & vbCrLf
             Msg = Msg + "Bent U zeker"
             KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2 + vbQuestion)
             If KtrlBox = vbYes Then
-                rsKlant("v407") = ValidatingTool.TextBoxSupportedDocuments.Text
+                rsKlant("v407") = ValidatingTool.TextBoxSupportedDocuments.text
                 rsKlant.Update
                 
                 MsgBox "Ondersteunde verrichtingen bijgewerkt. Herstart de verkoopprocedure", vbInformation
@@ -3094,7 +3094,7 @@ End Sub
 
 Private Sub cbUncl1001_Click()
     
-    invoiceTypeCode = Mid(Me.cbUncl1001.Text, 1, InStr(Me.cbUncl1001.Text, ":") - 1)
+    invoiceTypeCode = Mid(Me.cbUncl1001.text, 1, InStr(Me.cbUncl1001.text, ":") - 1)
     
 End Sub
 
@@ -3161,7 +3161,7 @@ Else
 End If
 
 If dokumentType = "15" And Annuleren.Enabled = True Then
-    If Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+    If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         Beep
         BJPERDAT.WindowState = 0
         BJPERDAT.PeriodeBoekjaar.SetFocus
@@ -3257,9 +3257,9 @@ pdfDrukAf
 idClient = Trim(rsMAR(TABLE_CUSTOMERS)("A110"))
 If Not IsNull(rsMAR(TABLE_CUSTOMERS)("g101")) Then voorkeurg101 = Trim(rsMAR(TABLE_CUSTOMERS)("g101"))
 idDocument = dokumentSleutel
-tmpString = DATE_KEY(TekstInfo0.Text)
+tmpString = DATE_KEY(TekstInfo0.text)
 invoiceDate = Mid(tmpString, 1, 4) + "-" + Mid(tmpString, 5, 2) + "-" + Mid(tmpString, 7, 2)
-tmpString = DATE_KEY(TekstInfo1.Text)
+tmpString = DATE_KEY(TekstInfo1.text)
 invoiceDueDate = Mid(tmpString, 1, 4) + "-" + Mid(tmpString, 5, 2) + "-" + Mid(tmpString, 7, 2)
     
 'idPdfForUbl = "{" + idDocument + "}-{" + DATE_KEY(TekstInfo1.Text) + "}-{" + idClient + "}.pdf"
@@ -3683,7 +3683,7 @@ Else
         End If
     Next
 End If
-TekstInfo5.Text = Dec$(dMuntK, "##0.########")
+TekstInfo5.text = Dec$(dMuntK, "##0.########")
 DIRECTSELL_STRING = cmdSwitch.Caption
 RefreshBTW
 
@@ -3936,7 +3936,7 @@ Else
     If customerVatNumber <> "" Then customerTaxScheme = "VAT"
 End If
 
-pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerCompanyIdExtended, 14) & " " & TekstInfo0.Text & " " & TekstInfo1.Text)
+pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerCompanyIdExtended, 14) & " " & TekstInfo0.text & " " & TekstInfo1.text)
 pdfY = Mim.Report.VPEPRINT(1.5, pdfY, vbCrLf)
 
 If MeerLijn = 1 Then
@@ -4186,7 +4186,7 @@ Else
         
         ShowAndSaveQR.Hide
         DoEvents
-        ShowAndSaveQR.Text1.Text = serviceTagValue + versionValue + charactersetValue + identificationValue + bicValue + nameValue + ibanValue + amountValue + purposeValue + referenceValue + remittanceValue + informationValue
+        ShowAndSaveQR.Text1.text = serviceTagValue + versionValue + charactersetValue + identificationValue + bicValue + nameValue + ibanValue + amountValue + purposeValue + referenceValue + remittanceValue + informationValue
         DoEvents
         Unload ShowAndSaveQR
         DoEvents
@@ -4317,7 +4317,7 @@ Private Function SaveBinaryDataToXML(ByVal sInputFile As String, ByVal sOutputXM
     base64Elem.nodeTypedValue = bData
     
     Dim base64Str As String
-    base64Str = base64Elem.Text   ' This is the Base64 encoded string
+    base64Str = base64Elem.text   ' This is the Base64 encoded string
 
     ' Step 3: Build the XML document and insert the Base64 string
     Dim rootElem As IXMLDOMElement
@@ -4326,7 +4326,7 @@ Private Function SaveBinaryDataToXML(ByVal sInputFile As String, ByVal sOutputXM
 
     Dim dataElem As IXMLDOMElement
     Set dataElem = xmlDoc.createElement("FileData")
-    dataElem.Text = base64Str   ' Insert the Base64 string as the text of the element
+    dataElem.text = base64Str   ' Insert the Base64 string as the text of the element
     rootElem.appendChild dataElem
 
     ' Save the XML to a file
@@ -4364,7 +4364,7 @@ Private Function GetBase64Str(ByVal sInputFile As String) As String
     Dim base64HereStr As String
     
         
-    base64HereStr = base64Elem.Text   ' This is the Base64 encoded string
+    base64HereStr = base64Elem.text   ' This is the Base64 encoded string
     GetBase64Str = base64HereStr
     
 End Function
@@ -4496,7 +4496,7 @@ Else
     ForFait = 0
 End If
 KlantRekening = String99(READING, 9)
-TekstInfo2.Text = KlantRekening
+TekstInfo2.text = KlantRekening
 
 If String99(READING, 290) = "1" Then
     Me.cbQRCode.Value = vbChecked
@@ -4698,7 +4698,7 @@ Sjabloon.Enabled = True
             dMuntK = 1
         End If
     Else
-        TekstInfo5.Text = Dec$(Val(ADOBIB_TEXT(rsDetail("Memo"), "#v040 #")), "###.########")
+        TekstInfo5.text = Dec$(Val(ADOBIB_TEXT(rsDetail("Memo"), "#v040 #")), "###.########")
         dMuntK = Val(ADOBIB_TEXT(rsDetail("Memo"), "#v040 #"))
     End If
 
@@ -4731,9 +4731,9 @@ Sjabloon.Enabled = True
         End If
     End If
     If sMuntKlant = "BEF" Or sMuntKlant = "EUR" Then
-        TekstInfo5.Text = Dec$(dMuntK, "##0.########")
+        TekstInfo5.text = Dec$(dMuntK, "##0.########")
     Else
-        dMuntK = Val(TekstInfo5.Text)
+        dMuntK = Val(TekstInfo5.text)
     End If
     DIRECTSELL_STRING = cmdSwitch.Caption
     rsDetail.Close
@@ -4779,16 +4779,16 @@ Sjabloon.Enabled = True
     End If
     
     If Left(RV(rsKlant, "v161"), 3) = "400" Then
-        TekstInfo2.Text = RV(rsKlant, "v161")
+        TekstInfo2.text = RV(rsKlant, "v161")
         KlantRekening = RV(rsKlant, "v161")
         If Not ADO_GET(TABLE_LEDGERACCOUNTS, 0, "=", KlantRekening) Then
             Beep
             KlantRekening = String99(READING, 9)
-            TekstInfo2.Text = KlantRekening
+            TekstInfo2.text = KlantRekening
         End If
     Else
         KlantRekening = String99(READING, 9)
-        TekstInfo2.Text = KlantRekening
+        TekstInfo2.text = KlantRekening
     End If
     If Left(RV(rsKlant, "v225"), 2) = "70" Then
         DefaultVerkoop = RV(rsKlant, "v225")
@@ -4800,7 +4800,7 @@ Sjabloon.Enabled = True
         DefaultVerkoop = String99(READING, 25)
     End If
     
-    TekstInfo1.Text = VValdag((TekstInfo0.Text), RV(rsKlant, "vs04"))
+    TekstInfo1.text = VValdag((TekstInfo0.text), RV(rsKlant, "vs04"))
     IsErKlassement
     If RV(rsKlant, "v253") <> "" Then
         cmdSQLInfo.Visible = True
@@ -4933,15 +4933,15 @@ Load Xlog
 Xlog.Caption = "dokument inladen voor : " + RV(rsKlant, "A100")
 Xlog.X.Col = 0
 Xlog.X.Row = 0
-Xlog.X.Text = "dokument"
+Xlog.X.text = "dokument"
 Xlog.X.Col = 1
-Xlog.X.Text = "Datum"
+Xlog.X.text = "Datum"
 Xlog.X.Col = 2
-Xlog.X.Text = "Bedrag EUR"
+Xlog.X.text = "Bedrag EUR"
 Xlog.X.Col = 3
-Xlog.X.Text = "Bedrag BEF"
+Xlog.X.text = "Bedrag BEF"
 Xlog.X.Col = 4
-Xlog.X.Text = "Zie ook dokument"
+Xlog.X.text = "Zie ook dokument"
 Xlog.X.Row = 1
 Xlog.X.Col = 0
 
@@ -5310,11 +5310,11 @@ customerVatNumber = ""
 
 Err = 0
 On Error Resume Next
-TekstInfo0.Text = MIM_GLOBAL_DATE
+TekstInfo0.text = MIM_GLOBAL_DATE
 If Err Then MsgBox "Landinstellingen voor België voorzien a.u.b.  Het programma wordt hierna beëindigd.", vbCritical: End
    
-TekstInfo1.Text = MIM_GLOBAL_DATE
-TekstInfo2.Text = KlantRekening
+TekstInfo1.text = MIM_GLOBAL_DATE
+TekstInfo2.text = KlantRekening
 LblExBtw = ""
 LblInBtw = ""
 LblEx2Btw = ""
@@ -5382,7 +5382,7 @@ Dim LeftPos As Integer
 GridText = ""
 For T = 1 To VerkoopDetail.ListCount
     VerkoopDetail.ListIndex = T - 1
-    GridText = GridText + VerkoopDetail.Text + Chr$(13)
+    GridText = GridText + VerkoopDetail.text + Chr$(13)
 Next
 SjabloonIO.Show 1
 If GridText <> "" Then
@@ -5410,14 +5410,14 @@ End Sub
 Private Sub TekstInfo0_GotFocus()
 
     TekstInfo0.SelStart = 0
-    TekstInfo0.SelLength = Len(TekstInfo0.Text)
+    TekstInfo0.SelLength = Len(TekstInfo0.text)
 
 End Sub
 
 Private Sub TekstInfo1_GotFocus()
 
     TekstInfo1.SelStart = 0
-    TekstInfo1.SelLength = Len(TekstInfo1.Text)
+    TekstInfo1.SelLength = Len(TekstInfo1.text)
 
 End Sub
 
@@ -5425,7 +5425,7 @@ End Sub
 Private Sub TekstInfo2_GotFocus()
 
     TekstInfo2.SelStart = 0
-    TekstInfo2.SelLength = Len(TekstInfo2.Text)
+    TekstInfo2.SelLength = Len(TekstInfo2.text)
 
 End Sub
 
@@ -5433,7 +5433,7 @@ End Sub
 Private Sub TekstInfo3_GotFocus()
 
     TekstInfo3.SelStart = 0
-    TekstInfo3.SelLength = Len(TekstInfo3.Text)
+    TekstInfo3.SelLength = Len(TekstInfo3.text)
 
 End Sub
 
@@ -5441,7 +5441,7 @@ End Sub
 Private Sub TekstInfo5_GotFocus()
 
     TekstInfo5.SelStart = 0
-    TekstInfo5.SelLength = Len(TekstInfo5.Text)
+    TekstInfo5.SelLength = Len(TekstInfo5.text)
 
 End Sub
 
@@ -5449,16 +5449,16 @@ Private Sub TekstInfo0_LostFocus()
 
     On Local Error Resume Next
 
-    If DATE_INVALID((TekstInfo0.Text)) Then
-        TekstInfo0.Text = MIM_GLOBAL_DATE
+    If DATE_INVALID((TekstInfo0.text)) Then
+        TekstInfo0.text = MIM_GLOBAL_DATE
         TekstInfo0.SetFocus
-    ElseIf Not DATE_CHECK((TekstInfo0.Text), PERIODAS_TEXT) Then
+    ElseIf Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         If dokumentType = "15" Then
             BJPERDAT.WindowState = 0
             BJPERDAT.PeriodeBoekjaar.SetFocus
         End If
     Else
-        TekstInfo1.Text = VValdag((TekstInfo0.Text), RV(rsKlant, "vs04"))
+        TekstInfo1.text = VValdag((TekstInfo0.text), RV(rsKlant, "vs04"))
     End If
 
 End Sub
@@ -5467,8 +5467,8 @@ Private Sub TekstInfo1_LostFocus()
 
     On Local Error Resume Next
 
-    If DATE_INVALID((TekstInfo1.Text)) Then
-        TekstInfo1.Text = MIM_GLOBAL_DATE
+    If DATE_INVALID((TekstInfo1.text)) Then
+        TekstInfo1.text = MIM_GLOBAL_DATE
         TekstInfo1.SetFocus
     End If
 
@@ -5478,13 +5478,13 @@ Private Sub TekstInfo2_LostFocus()
 
     On Local Error Resume Next
 
-    If Left(TekstInfo2.Text, 2) <> "40" Then
-        TekstInfo2.Text = KlantRekening
+    If Left(TekstInfo2.text, 2) <> "40" Then
+        TekstInfo2.text = KlantRekening
         TekstInfo2.SetFocus
     End If
         
     If Not ADO_GET(TABLE_LEDGERACCOUNTS, 0, "=", TekstInfo2) Then
-        TekstInfo2.Text = KlantRekening
+        TekstInfo2.text = KlantRekening
         TekstInfo2.SetFocus
     End If
     
@@ -5495,7 +5495,7 @@ Private Sub TekstInfo3_LostFocus()
 
     On Local Error Resume Next
 
-    dokumentSleutel = TekstInfo3.Text
+    dokumentSleutel = TekstInfo3.text
     DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
 
 End Sub
@@ -5505,8 +5505,8 @@ Private Sub TekstInfo5_LostFocus()
 
     On Local Error Resume Next
 
-    dMuntK = Val(TekstInfo5.Text)
-    TekstInfo5.Text = Dec$(Val(TekstInfo5.Text), "##0.000000")
+    dMuntK = Val(TekstInfo5.text)
+    TekstInfo5.text = Dec$(Val(TekstInfo5.text), "##0.000000")
     
 End Sub
 
@@ -5563,7 +5563,7 @@ Select Case KeyCode
         If dokumentType <> "15" And Annuleren.Enabled = False Then
             Annuleren.Enabled = True
         End If
-        GridText = VerkoopDetail.Text
+        GridText = VerkoopDetail.text
         If Right(GridText, 1) = "2" Then
         Else
             RefreshBTW
@@ -5573,7 +5573,7 @@ Select Case KeyCode
         Select Case Ktrl
             Case 7
         Case Else
-            Me.lstKopiePlak.AddItem VerkoopDetail.Text
+            Me.lstKopiePlak.AddItem VerkoopDetail.text
         End Select
         VerkoopDetail.RemoveItem Positie
         RefreshBTW
@@ -5610,7 +5610,7 @@ Select Case KeyAscii
         If dokumentType <> "15" And Annuleren.Enabled = False Then
             Annuleren.Enabled = True
         End If
-        GridText = VerkoopDetail.Text
+        GridText = VerkoopDetail.text
         If Right(GridText, 1) = "2" Then
         Else
             RefreshBTW
@@ -5818,8 +5818,8 @@ Select Case Index
         CreditNota.Value = 0
         Vr = 11
         dokumentSleutel = SleutelDok(11)
-        TekstInfo0.Text = MIM_GLOBAL_DATE
-        TekstInfo1.Text = MIM_GLOBAL_DATE
+        TekstInfo0.text = MIM_GLOBAL_DATE
+        TekstInfo1.text = MIM_GLOBAL_DATE
         DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
         chkZonderRelatie.Visible = False
         
@@ -5859,7 +5859,7 @@ Dim AantalStuks     As Single
 
 'Gewijzigd voor scanning
 WegBoekFout = False
-dMuntK = Val(TekstInfo5.Text)
+dMuntK = Val(TekstInfo5.text)
 DKTRL_CUMUL = 0: DKTRL_BEF = 0: DKTRL_EUR = 0
 Unload frmBoeking
 frmBoeking.Hide
@@ -5873,7 +5873,7 @@ rsMAR(TABLE_INVOICES).AddNew
 vBib TABLE_INVOICES, dokumentSleutel, "v033"
 vBib TABLE_INVOICES, "K" + RV(rsKlant, "A110"), "v034"
 vBib TABLE_INVOICES, DATE_KEY(TekstInfo0), "v035"
-vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.Text)), "v036"
+vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.text)), "v036"
 vBib TABLE_INVOICES, Dec$(dMuntK, "###.0000000000"), "v040"
 vBib TABLE_INVOICES, sMuntKlant, "vs03"
 
@@ -5953,7 +5953,7 @@ End If
 
 For T = 0 To VerkoopDetail.ListCount - 1
     VerkoopDetail.ListIndex = T
-    Select Case Right(VerkoopDetail.Text, 1)
+    Select Case Right(VerkoopDetail.text, 1)
         Case "0", "1"
             GoSub JournaalNew
             '1, 40      Omschrijving
@@ -5964,31 +5964,31 @@ For T = 0 To VerkoopDetail.ListCount - 1
             '90, 7      VerkoopRekening
             '98, 13     ProduktNummer
             
-            rsJournaal("v067") = Trim(Mid(VerkoopDetail.Text, 1, 30))
-            If Trim(Mid(VerkoopDetail.Text, 98, 13)) = "OMSCHRIJVING" Then
+            rsJournaal("v067") = Trim(Mid(VerkoopDetail.text, 1, 30))
+            If Trim(Mid(VerkoopDetail.text, 98, 13)) = "OMSCHRIJVING" Then
                 'niks
             Else
-                rsJournaal("v102") = Trim(Mid(VerkoopDetail.Text, 98, 13))
+                rsJournaal("v102") = Trim(Mid(VerkoopDetail.text, 98, 13))
             End If
             If Vr = 11 Then
-                rsJournaal("v068") = Dec(-Val(Mid(VerkoopDetail.Text, 62, 12)), "#.00")
-                rsJournaal("dece068") = Val(Dec(-Val(Mid(VerkoopDetail.Text, 62, 12)), "#.00"))
+                rsJournaal("v068") = Dec(-Val(Mid(VerkoopDetail.text, 62, 12)), "#.00")
+                rsJournaal("dece068") = Val(Dec(-Val(Mid(VerkoopDetail.text, 62, 12)), "#.00"))
             Else
-                rsJournaal("v068") = Dec(Val(Mid(VerkoopDetail.Text, 62, 12)), "#.00")
-                rsJournaal("dece068") = Val(Dec(Val(Mid(VerkoopDetail.Text, 62, 12)), "#.00"))
+                rsJournaal("v068") = Dec(Val(Mid(VerkoopDetail.text, 62, 12)), "#.00")
+                rsJournaal("dece068") = Val(Dec(Val(Mid(VerkoopDetail.text, 62, 12)), "#.00"))
             End If
-            rsJournaal("v019") = Mid(VerkoopDetail.Text, 90, 7)
+            rsJournaal("v019") = Mid(VerkoopDetail.text, 90, 7)
             If Not ADOJOURNAL_OK Then
                 MsgBox Error
                 Exit Function
             End If
             
-            If Right(VerkoopDetail.Text, 1) = "0" And BJPERDAT.Boekjaar.ListIndex = 0 Then
-                If Not ADO_GET(TABLE_PRODUCTS, 0, "=", Mid(VerkoopDetail.Text, 98, 13)) Then
+            If Right(VerkoopDetail.text, 1) = "0" And BJPERDAT.Boekjaar.ListIndex = 0 Then
+                If Not ADO_GET(TABLE_PRODUCTS, 0, "=", Mid(VerkoopDetail.text, 98, 13)) Then
                     Beep
                     MsgBox "stop"
                 Else
-                    AantalStuks = Val(Mid(VerkoopDetail.Text, 54, 7)) * Val(Mid(VerkoopDetail.Text, 75, 6))
+                    AantalStuks = Val(Mid(VerkoopDetail.text, 54, 7)) * Val(Mid(VerkoopDetail.text, 75, 6))
                     If Vr = 11 Then
                         rsMAR(TABLE_PRODUCTS)("v120") = Dec(AantalStuks + Val(RV(rsMAR(TABLE_PRODUCTS), "v120")), MASK_SY(2))
                         rsMAR(TABLE_PRODUCTS)("e122") = Dec((AantalStuks * Val(RV(rsMAR(TABLE_PRODUCTS), "e113"))) + Val(RV(rsMAR(TABLE_PRODUCTS), "e122")), "##" & MASK_EURX)
@@ -6024,7 +6024,7 @@ End If
 
 GoSub JournaalNew
 rsJournaal("v067") = RV(rsKlant, "A100")
-rsJournaal("v019") = TekstInfo2.Text
+rsJournaal("v019") = TekstInfo2.text
 If Vr <> 11 Then
     rsJournaal("v068") = Str$(-CDbl(LblEx2Btw) - TotaalBTW)
     rsJournaal("dece068") = -CDbl(LblEx2Btw) - TotaalBTW
@@ -6059,7 +6059,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     WegBoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then
@@ -6085,7 +6085,7 @@ rsJournaal("v034") = "K" + RV(rsKlant, "A110")
 rsJournaal("v066") = DATE_KEY(TekstInfo0)
 rsJournaal("v035") = DATE_KEY(TekstInfo0)
 rsJournaal("v033") = dokumentSleutel
-rsJournaal("v069") = TekstInfo2.Text
+rsJournaal("v069") = TekstInfo2.text
 Return
 
 End Function
@@ -6189,7 +6189,7 @@ Else
     End If
 End If
 
-documentTemplate = Replace(documentTemplate, "{marVersion}", Trim(App.Major & "." & App.Minor & "." & App.Revision))
+documentTemplate = Replace(documentTemplate, "{marVersion}", Trim(App.major & "." & App.minor & "." & App.Revision))
 
 If Left(invoiceNumber, 2) = "V0" Then
     documentTemplate = Replace(documentTemplate, "{invoiceOrCreditnote}", "CommercialInvoice")

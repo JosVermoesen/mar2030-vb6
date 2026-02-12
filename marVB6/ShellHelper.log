@@ -412,3 +412,24 @@
 4/02/2026 19:01:34  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
 4/02/2026 19:01:34  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
 4/02/2026 19:01:34  - ShellExecute returned: 42 (Success)
+6/02/2026 8:20:58  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+6/02/2026 8:20:58  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+6/02/2026 8:20:58  - ShellExecute returned: 42 (Success)
+6/02/2026 8:43:08  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+6/02/2026 8:43:08  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+6/02/2026 8:43:08  - ShellExecute returned: 42 (Success)
+6/02/2026 9:00:04  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+6/02/2026 9:00:04  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+6/02/2026 9:00:04  - ShellExecute returned: 42 (Success)
+6/02/2026 9:08:15  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+6/02/2026 9:08:15  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+6/02/2026 9:08:15  - ShellExecute returned: 42 (Success)
+6/02/2026 9:08:50  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+6/02/2026 9:08:50  - ShellExecute parameters: verb=open file=Y:\Data\098\peppol\in\invoiceNoPdf.html params=
+6/02/2026 9:08:50  - ShellExecute returned: 42 (Success)
+12/02/2026 5:50:35  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+12/02/2026 5:50:35  - ShellExecute parameters: verb=open file=Y:\Data\001\peppol\in\invoiceNoPdf.html params=
+12/02/2026 5:50:35  - ShellExecute returned: 42 (Success)
+12/02/2026 6:56:11  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+12/02/2026 6:56:11  - ShellExecute parameters: verb=open file=Y:\Data\001\peppol\in\invoiceNoPdf.html params=
+12/02/2026 6:56:11  - ShellExecute returned: 42 (Success)
