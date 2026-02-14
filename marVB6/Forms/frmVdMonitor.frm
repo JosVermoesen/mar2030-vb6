@@ -3,7 +3,7 @@ Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
 Begin VB.Form FormB2BVMonitor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitor B2B Verkoopdocumenten"
-   ClientHeight    =   6015
+   ClientHeight    =   7200
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   9675
@@ -11,7 +11,7 @@ Begin VB.Form FormB2BVMonitor
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6015
+   ScaleHeight     =   7200
    ScaleWidth      =   9675
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton ButtonResponsesToClient 
@@ -27,13 +27,13 @@ Begin VB.Form FormB2BVMonitor
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   5640
+      Left            =   5880
       TabIndex        =   9
-      Top             =   5520
+      Top             =   6720
       Width           =   2295
    End
    Begin VB.CommandButton ButtonSentReceiptClient 
-      Caption         =   "Verzendbewijs (server klant)"
+      Caption         =   "Ontvangstbewijs (server klant)"
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -47,8 +47,8 @@ Begin VB.Form FormB2BVMonitor
       Height          =   375
       Left            =   2880
       TabIndex        =   7
-      Top             =   5520
-      Width           =   2655
+      Top             =   6720
+      Width           =   2895
    End
    Begin VB.CommandButton ButtonSentReceiptSeller 
       Caption         =   "Verzend ID"
@@ -65,7 +65,7 @@ Begin VB.Form FormB2BVMonitor
       Height          =   375
       Left            =   1440
       TabIndex        =   6
-      Top             =   5520
+      Top             =   6720
       Width           =   1335
    End
    Begin VB.CommandButton ButtonShowToSendPDF 
@@ -83,7 +83,7 @@ Begin VB.Form FormB2BVMonitor
       Height          =   375
       Left            =   240
       TabIndex        =   1
-      Top             =   5520
+      Top             =   6720
       Width           =   1095
    End
    Begin VB.CommandButton ButtonClose 
@@ -92,17 +92,17 @@ Begin VB.Form FormB2BVMonitor
       Height          =   375
       Left            =   8280
       TabIndex        =   0
-      Top             =   5520
+      Top             =   6720
       Width           =   1215
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgToSend 
-      Height          =   1575
+      Height          =   2775
       Left            =   120
       TabIndex        =   2
       Top             =   600
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   2778
+      _ExtentY        =   4895
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -121,7 +121,7 @@ Begin VB.Form FormB2BVMonitor
       Height          =   2775
       Left            =   120
       TabIndex        =   5
-      Top             =   2640
+      Top             =   3840
       Width           =   9375
       _ExtentX        =   16536
       _ExtentY        =   4895
@@ -145,7 +145,7 @@ Begin VB.Form FormB2BVMonitor
       Height          =   255
       Left            =   8040
       TabIndex        =   8
-      Top             =   2280
+      Top             =   3480
       Width           =   1455
    End
    Begin VB.Label LabelToBook 
@@ -244,7 +244,7 @@ Private Sub ExtractPdfFromUBLDocument(ublFileUrl As String)
     If xmlDoc.parseError.errorCode = 0 Then
         Set node = xmlDoc.selectSingleNode("//cbc:EmbeddedDocumentBinaryObject")
         If Not node Is Nothing Then
-            base64Data = node.Text
+            base64Data = node.text
             byteData = Base64Decode_MSXML(base64Data)
             'Base64Decode_MSXML
 
@@ -269,7 +269,7 @@ Public Function Base64Decode_MSXML(ByVal sB64 As String) As Byte()
     Set dom = New MSXML2.DOMDocument60
     Set el = dom.createElement("b64")
     el.dataType = "bin.base64"
-    el.Text = sB64                ' assign Base64 text
+    el.text = sB64                ' assign Base64 text
     Base64Decode_MSXML = el.nodeTypedValue ' returns Byte()
 End Function
 
@@ -281,7 +281,7 @@ Public Function Base64Encode_MSXML(ByRef bytes() As Byte) As String
     Set el = dom.createElement("b64")
     el.dataType = "bin.base64"
     el.nodeTypedValue = bytes     ' assign bytes
-    Base64Encode_MSXML = el.Text  ' returns Base64 string
+    Base64Encode_MSXML = el.text  ' returns Base64 string
 End Function
 
 
@@ -292,14 +292,16 @@ Private Sub ButtonResponsesToClient_Click()
     Dim result As String
         
     mfgSent.Col = 5
-    selectedRowItem = mfgSent.Text
+    selectedRowItem = mfgSent.text
     If selectedRowItem = "" Then
     Else
         result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 2)
         If InStr(result, """count""" + ": 0") Then
             MsgBox "Geen", vbInformation
         Else
-            MsgBox result, vbInformation
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = result
+            FormReactionsDialog.Show 1
         End If
     End If
 
@@ -311,7 +313,7 @@ Private Sub ButtonSentReceiptClient_Click()
     Dim result As String
     
     mfgSent.Col = 5
-    selectedRowItem = mfgSent.Text
+    selectedRowItem = mfgSent.text
     If selectedRowItem = "" Then
     Else
         result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 0)
@@ -330,7 +332,7 @@ Private Sub ButtonSentReceiptSeller_Click()
     Dim result As String
     
     mfgSent.Col = 5
-    selectedRowItem = mfgSent.Text
+    selectedRowItem = mfgSent.text
     If selectedRowItem = "" Then
     Else
         result = GetSentReceipt(Mid(selectedRowItem, 1, 11), 1)
@@ -344,7 +346,7 @@ Private Sub ButtonShowPDFSent_Click()
     Dim selectedRowItem As String
     
     mfgSent.Col = 5
-    selectedRowItem = mfgSent.Text
+    selectedRowItem = mfgSent.text
     If selectedRowItem = "" Then
     Else
         selectedFile = LOCATION_COMPANYDATA & "peppol\out\" & selectedRowItem
@@ -364,7 +366,7 @@ Private Sub ButtonShowToSendPDF_Click()
     Dim selectedRowItem As String
     
     mfgToSend.Col = 5
-    selectedRowItem = mfgToSend.Text
+    selectedRowItem = mfgToSend.text
     If selectedRowItem = "" Then
     Else
         selectedFile = LOCATION_COMPANYDATA & "peppol\out\" & selectedRowItem

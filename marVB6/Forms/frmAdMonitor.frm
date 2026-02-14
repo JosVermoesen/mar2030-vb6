@@ -3,7 +3,7 @@ Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
 Begin VB.Form FormB2BAMonitor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Monitor B2B Aankoopdocumenten"
-   ClientHeight    =   8205
+   ClientHeight    =   7275
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   9870
@@ -11,11 +11,11 @@ Begin VB.Form FormB2BAMonitor
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8205
+   ScaleHeight     =   7275
    ScaleWidth      =   9870
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton ButtonShowToBookXML 
-      Caption         =   "XMLTonen"
+      Caption         =   "XML Tonen"
       Enabled         =   0   'False
       Height          =   375
       Left            =   2400
@@ -24,12 +24,12 @@ Begin VB.Form FormB2BAMonitor
       Width           =   1215
    End
    Begin VB.CommandButton ButtonShowBookedXML 
-      Caption         =   "XMLTonen"
+      Caption         =   "XML Tonen"
       Enabled         =   0   'False
       Height          =   375
       Left            =   240
       TabIndex        =   11
-      Top             =   7680
+      Top             =   6720
       Width           =   1215
    End
    Begin VB.CommandButton ButtonShowPeppolDocTypes 
@@ -55,7 +55,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   3360
       TabIndex        =   9
-      Top             =   7680
+      Top             =   6720
       Width           =   2055
    End
    Begin VB.CommandButton ButtonResponsesToSeller 
@@ -73,7 +73,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   5520
       TabIndex        =   8
-      Top             =   7680
+      Top             =   6720
       Width           =   2775
    End
    Begin VB.CommandButton ButtonLoadDocument 
@@ -92,7 +92,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   375
       Left            =   1680
       TabIndex        =   3
-      Top             =   7680
+      Top             =   6720
       Width           =   1215
    End
    Begin VB.CommandButton ButtonShowToBookPDF 
@@ -111,17 +111,17 @@ Begin VB.Form FormB2BAMonitor
       Left            =   8400
       TabIndex        =   5
       TabStop         =   0   'False
-      Top             =   7680
+      Top             =   6720
       Width           =   1215
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgToBook 
-      Height          =   2295
+      Height          =   2775
       Left            =   240
       TabIndex        =   0
       Top             =   600
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   4048
+      _ExtentY        =   4895
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -137,13 +137,13 @@ Begin VB.Form FormB2BAMonitor
       _Band(0).TextStyleHeader=   0
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgBooked 
-      Height          =   4215
+      Height          =   2775
       Left            =   240
       TabIndex        =   1
-      Top             =   3360
+      Top             =   3840
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   7435
+      _ExtentY        =   4895
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -164,7 +164,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   255
       Left            =   8520
       TabIndex        =   7
-      Top             =   3000
+      Top             =   3480
       Width           =   1095
    End
    Begin VB.Label LabelToBook 
