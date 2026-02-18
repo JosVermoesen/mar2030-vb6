@@ -113,7 +113,7 @@ Begin VB.Form BedrijfOpenen
       EndProperty
       Height          =   315
       Left            =   6360
-      Picture         =   "frmBedrijfOpenen.frx":014A
+      Picture         =   "frmBedrijfOpenen.frx":0102
       Style           =   1  'Graphical
       TabIndex        =   2
       TabStop         =   0   'False
@@ -286,7 +286,7 @@ End Sub
 Private Sub ButtonOpenFolder_Click()
 
     Dim r As Long
-    r = ShellExecute(0, "open", Me.lblLokatie.Text, 0, 0, 1)
+    r = ShellExecute(0, "open", Me.lblLokatie.text, 0, 0, 1)
     
 End Sub
 
@@ -466,9 +466,9 @@ Private Sub Ok_Click()
 
 If ListView1.ListItems.Count = 0 Then Exit Sub
 LOCATION_COMPANYDATA = LOCATION_ + ListView1.SelectedItem.ListSubItems(1) + "\"
-Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision & " - [" & Trim$(ListView1.SelectedItem) & "]"
+Mim.Caption = appTitleAndVersion & " - [" & Trim$(ListView1.SelectedItem) & "]"
 AutoLoadBedrijf
-If Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision Then
+If Mim.Caption = appTitleAndVersion Then
     BedrijfOpenen.SetFocus
 Else
     Annuleren_Click
@@ -483,20 +483,20 @@ Private Sub opLocatie_Click(Index As Integer)
     On Error Resume Next
     'dlbFolder.path = LOCATION_
     If Me.opLocatie(1).Value = True Then
-        lblLokatie.Text = LaadTekst(App.Title, "ServerBedrijfsinhoudsopgave")  'Server anders
+        lblLokatie.text = LaadTekst(App.Title, "ServerBedrijfsinhoudsopgave")  'Server anders
         BeWaarTekst "BedrijfOpenen", "DataDefault", "server"
         Me.CmbCompactDatabase.Enabled = False
         Mim.Basis(4).Enabled = False
     Else
-        lblLokatie.Text = LaadTekst(App.Title, "Bedrijfsinhoudsopgave" & "2025") 'Lokaal is standaard
+        lblLokatie.text = LaadTekst(App.Title, "Bedrijfsinhoudsopgave" & "2025") 'Lokaal is standaard
         BeWaarTekst "BedrijfOpenen", "DataDefault", "lokaal"
         Me.CmbCompactDatabase.Enabled = True
         Mim.Basis(4).Enabled = True
     End If
-    If Err Or Trim$(lblLokatie.Text) = "" Then
+    If Err Or Trim$(lblLokatie.text) = "" Then
         SnelHelpPrint "Verbinding controleren en/of instellen a.u.b.", False
     End If
-    LOCATION_ = lblLokatie.Text + "\"
+    LOCATION_ = lblLokatie.text + "\"
     KeuzeLijstVullen
     
 End Sub

@@ -142,19 +142,19 @@ Xlog.X.Rows = 2
 Xlog.X.Cols = 7
 Xlog.X.Col = 0
 Xlog.X.Row = 0
-Xlog.X.Text = "dokument"
+Xlog.X.text = "dokument"
 Xlog.X.Col = 1
-Xlog.X.Text = "Totaal"
+Xlog.X.text = "Totaal"
 Xlog.X.Col = 2
-Xlog.X.Text = "Datum"
+Xlog.X.text = "Datum"
 Xlog.X.Col = 3
-Xlog.X.Text = "Fin.Stuk"
+Xlog.X.text = "Fin.Stuk"
 Xlog.X.Col = 4
-Xlog.X.Text = "Betaald"
+Xlog.X.text = "Betaald"
 Xlog.X.Col = 5
-Xlog.X.Text = "CumulRest"
+Xlog.X.text = "CumulRest"
 Xlog.X.Col = 6
-Xlog.X.Text = "Referte"
+Xlog.X.text = "Referte"
 
 Xlog.X.ColWidth(0) = 1150
 Xlog.X.ColWidth(1) = 1110
@@ -376,7 +376,7 @@ Dim updateLengths20250809 As Boolean
 Dim updateLengthsBis20250809 As Boolean
 Dim updateLengths20251025 As Boolean
 
-Mim.SnelHelp.Panels(2).Text = "---"
+Mim.SnelHelp.Panels(2).text = "---"
 XisEuroWisBEF = False
 
 Static ProducentKopij As String * 8
@@ -422,7 +422,7 @@ Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
     AktievePeriode = Val(aa)
 Close FlTemp
 BJPERDAT.Boekjaar.ListIndex = ACTIVE_BOOKYEAR
-bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.Text
+bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.text
 
 FlTemp = FreeFile
 Open LOCATION_COMPANYDATA + "DEF" + Format(ACTIVE_BOOKYEAR, "00") + ".OCT" For Random As FlTemp Len = 16
@@ -430,7 +430,7 @@ Open LOCATION_COMPANYDATA + "DEF" + Format(ACTIVE_BOOKYEAR, "00") + ".OCT" For R
         Get FlTemp, T, A
         If A = Space$(16) Then
             BJPERDAT.PeriodeBoekjaar.ListIndex = 0
-            YY = BJPERDAT.PeriodeBoekjaar.Text
+            YY = BJPERDAT.PeriodeBoekjaar.text
             BOOKYEAR_FROMTO = Mid(YY, 7, 4) + Mid(YY, 4, 2) + Mid(YY, 1, 2) + Mid(XX, 20, 4) + Mid(XX, 17, 2) + Mid(XX, 14, 2)
             Exit For
         Else
@@ -443,7 +443,7 @@ Open LOCATION_COMPANYDATA + "DEF" + Format(ACTIVE_BOOKYEAR, "00") + ".OCT" For R
         AktievePeriode = 1
     End If
     BJPERDAT.PeriodeBoekjaar.ListIndex = AktievePeriode - 1
-    AT = BJPERDAT.PeriodeBoekjaar.Text
+    AT = BJPERDAT.PeriodeBoekjaar.text
     PERIOD_FROMTO = Mid(AT, 7, 4) + Mid(AT, 4, 2) + Left(AT, 2) + Right(AT, 4) + Mid(AT, 17, 2) + Mid(AT, 14, 2)
 Close FlTemp
 BJPERDAT.Show
@@ -612,6 +612,7 @@ EerstEnVooral:
 'Dim Dummietje As String
 Dim Dummietje2 As String
 
+'Checking for new fields needed
 For ktrlfl = TABLE_CUSTOMERS To TABLE_JOURNAL
     ptel = 0
     bClose ktrlfl
@@ -651,126 +652,42 @@ Else
     MsgBox "Mailadres van uw onderneming is ongeldig.", vbExclamation, "Ontbrekende bedrijfsinfo voor Peppol"
 End If
 
-'ALTER TABLE Dokumenten ADD COLUMN v405 MEMO
-'ALTER TABLE Dokumenten ADD COLUMN v406 MEMO
-bClose TABLE_INVOICES
-Err = 0
-On Error Resume Next
-Dim recDokument As ADODB.Recordset
-Set recDokument = New ADODB.Recordset
-Msg = "SELECT TOP 1 v405 FROM Dokumenten"
-recDokument.CursorLocation = adUseClient
-recDokument.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-If Err Then
-    bClose TABLE_INVOICES
-    Err = 0
-    On Error Resume Next
-    Msg = "ALTER TABLE Dokumenten ADD COLUMN v405 MEMO"
-    adntDB.Execute Msg
-    If Err = -2147217887 Then
-        'Stop
-    ElseIf Err = -2147217900 Then
-        'Stop
-        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
-        End
-    ElseIf Err = 0 Then
-        Msg = "ALTER TABLE Dokumenten ADD COLUMN v406 MEMO"
-        adntDB.Execute Msg
-        If Err = 0 Then
-        Else
-            MsgBox Err.Description
-        End If
-    Else
-        MsgBox "Een foutmelding buiten controle:" & vbCrLf & Err.Description & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
-        End
-    End If
-End If
+'Example ALTER TABLE Dokumenten ADD COLUMN v405 MEMO
+'Example ALTER TABLE Dokumenten ADD COLUMN v406 MEMO
+'bClose TABLE_INVOICES
+'Err = 0
+'On Error Resume Next
+'Dim recDokument As ADODB.Recordset
+'Set recDokument = New ADODB.Recordset
+'Msg = "SELECT TOP 1 v405 FROM Dokumenten"
+'recDokument.CursorLocation = adUseClient
+'recDokument.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
+'If Err Then
+'    bClose TABLE_INVOICES
+'    Err = 0
+'    On Error Resume Next
+'    Msg = "ALTER TABLE Dokumenten ADD COLUMN v405 MEMO"
+'    adntDB.Execute Msg
+'    If Err = -2147217887 Then
+'        'Stop
+'    ElseIf Err = -2147217900 Then
+'        'Stop
+'        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
+'        End
+'    ElseIf Err = 0 Then
+'        Msg = "ALTER TABLE Dokumenten ADD COLUMN v406 MEMO"
+'        adntDB.Execute Msg
+'        If Err = 0 Then
+'        Else
+'            MsgBox Err.Description
+'        End If
+'    Else
+'        MsgBox "Een foutmelding buiten controle:" & vbCrLf & Err.Description & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
+'        End
+'    End If
+'End If
 
-'ALTER TABLE Klanten ADD COLUMN v407 MEMO
-bClose TABLE_CUSTOMERS
-Err = 0
-On Error Resume Next
-Dim recCustomer As ADODB.Recordset
-Set recCustomer = New ADODB.Recordset
-Msg = "SELECT TOP 1 v407 FROM Klanten"
-recCustomer.CursorLocation = adUseClient
-recCustomer.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-If Err Then
-    bClose TABLE_CUSTOMERS
-    Err = 0
-    On Error Resume Next
-    Msg = "ALTER TABLE Klanten ADD COLUMN v407 MEMO"
-    adntDB.Execute Msg
-    If Err = -2147217887 Then
-        'Stop
-    ElseIf Err = -2147217900 Then
-        'Stop
-        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
-        End
-    ElseIf Err = 0 Then
-        'ok
-    End If
-Else
-    recCustomer.Close
-End If
-
-'ALTER TABLE Leveranciers ADD COLUMN v410 MEMO
-bClose TABLE_SUPPLIERS
-Err = 0
-On Error Resume Next
-Dim recSupplier As ADODB.Recordset
-Set recSupplier = New ADODB.Recordset
-Msg = "SELECT TOP 1 v410 FROM Leveranciers"
-recSupplier.CursorLocation = adUseClient
-recSupplier.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-If Err Then
-    bClose TABLE_SUPPLIERS
-    Err = 0
-    On Error Resume Next
-    Msg = "ALTER TABLE Leveranciers ADD COLUMN v410 MEMO"
-    adntDB.Execute Msg
-    If Err = -2147217887 Then
-        'Stop
-    ElseIf Err = -2147217900 Then
-        'Stop
-        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd.", vbInformation
-        End
-    ElseIf Err = 0 Then
-        'ok
-    End If
-Else
-    recSupplier.Close
-End If
-
-'ALTER TABLE Dokumenten ADD COLUMN v408 MEMO
-bClose TABLE_CUSTOMERS
-Err = 0
-On Error Resume Next
-Set recDokument = New ADODB.Recordset
-Msg = "SELECT TOP 1 v408 FROM Dokumenten"
-recDokument.CursorLocation = adUseClient
-recDokument.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-If Err Then
-    bClose TABLE_INVOICES
-    Err = 0
-    On Error Resume Next
-    Msg = "ALTER TABLE Dokumenten ADD COLUMN v408 MEMO"
-    adntDB.Execute Msg
-    If Err = -2147217887 Then
-        'Stop
-    ElseIf Err = -2147217900 Then
-        'Stop
-        MsgBox "De database kan niet bijgewerkt worden wanneer in gebruik (netwerk?)" & vbCrLf & "Veiligheidshalve wordt het programma beëindigd." & vbCrLf & vbCrLf & "Sluit het bedrijf op alle toestellen en probeer opnieuw", vbInformation
-        End
-    ElseIf Err = 0 Then
-        'ok
-    End If
-Else
-    recDokument.Close
-End If
-
-
-'hier de velden 20250809 bijwerken klanten- en leveranciersbestand
+'Here example for fields 20250809 editing for klanten- en leveranciersbestand
 If updateLengths20251025 = True Then
     bClose TABLE_INVOICES
     Err = 0
@@ -883,8 +800,8 @@ If updateLengthsBis20250809 = True Then
 End If
 
 Volgende:
-Mim.SnelHelp.Panels(1).Text = Mid(fmarBoxText("899", "2", Left(String99(READING, 20), 1)), 4)
-If Mim.SnelHelp.Panels(1).Text = "marIntegraal NT Light" Then
+Mim.SnelHelp.Panels(1).text = Mid(fmarBoxText("899", "2", Left(String99(READING, 20), 1)), 4)
+If Mim.SnelHelp.Panels(1).text = "marIntegraal NT Light" Then
     MsgBox PROGRAM_LOCATION & "NTIMPORT.LOG is geactiveerd.", vbInformation
 End If
 Mim.AV(1).Enabled = True
@@ -951,9 +868,11 @@ If bhEuro = False Then
     MsgBox "Hoogste boekjaar enkel nog in EUR vanaf versie 6.5.301 of hoger.  Indien U nog BEF verrichtingen wenst uit te voeren, gelieve een eerdere versie opnieuw te installeren a.u.b.", vbInformation
     End
 Else
-    Mim.SnelHelp.Panels(2).Text = "EUR"
+    Mim.SnelHelp.Panels(2).text = "EUR"
 End If
 
+'checking directories
+'1. Peppol
 PeppolDirCheck:
 Dim peppolDir As String
 peppolDir = LOCATION_COMPANYDATA + "peppol"
@@ -975,7 +894,7 @@ Else
 End If
 On Local Error GoTo 0
 
-
+'2. QR
 QRCodeDIRCheck:
 Dim qrDir As String
 qrDir = LOCATION_COMPANYDATA + "BMP-qr"
@@ -993,6 +912,7 @@ Else
 End If
 On Local Error GoTo 0
 
+'3. VPE templates check
 VPESJBSCheck:
 Dim vpeSjbsDir As String
 vpeSjbsDir = LOCATION_COMPANYDATA + "vpeSjbs"
@@ -1010,6 +930,7 @@ Else
 End If
 On Local Error GoTo 0
 
+'4. xlsx directory
 XLSXCheck:
 Dim xlsxDir As String
 xlsxDir = LOCATION_COMPANYDATA + "xlsx-templates"
@@ -1033,6 +954,7 @@ Else
 End If
 On Local Error GoTo 0
 
+'5. vat directory
 VATCheck:
 Dim vatDir As String
 vatDir = LOCATION_COMPANYDATA + "vat"
@@ -1049,220 +971,6 @@ Else
     ChDir LOCATION_COMPANYDATA
 End If
 On Local Error GoTo 0
-
-VPEDOCCheck:
-Dim vpeSjbsInRoot As String
-vpeSjbsInRoot = LOCATION_COMPANYDATA + "pdfDDEF*.txt"
-Dim docName As String
-
-On Local Error Resume Next
-
-docName = Dir(vpeSjbsInRoot)
-If docName = "" Then
-Else
-    Msg = "Vanaf versie 11.3.001 dienen pdfDDEF definities zich te bevinden in de vpeSjbs inhoudsopgave van een bedrijf." & vbCrLf & vbCrLf
-    Msg = Msg & "De transfert van bestaande definities wordt hierna uitgevoerd."
-    MsgBox Msg, vbInformation
-    Do While docName <> ""
-        Ktrl = CopyFile(LOCATION_COMPANYDATA, LOCATION_COMPANYDATA & "vpeSjbs\", docName)
-        If Ktrl = 0 Then
-            MsgBox "fout tijdens kopieren"
-        Else
-            Kill LOCATION_COMPANYDATA & docName
-            If Err Then
-                MsgBox Err.Description
-            End If
-        End If
-        docName = Dir(vpeSjbsInRoot)
-    Loop
-End If
-On Local Error GoTo 0
-
-BEBtwNummerCheck:
-Dim beBtwCheck As String
-beBtwCheck = LOCATION_COMPANYDATA + "btwBEChecked-donotremove.txt"
-Dim checkFileAvailable As String
-Dim recClient As ADODB.Recordset
-Dim recLeverancier As ADODB.Recordset
-Dim AantalRC As Long
-
-On Local Error Resume Next
-checkFileAvailable = Dir(beBtwCheck)
-If Len(checkFileAvailable) <> 0 Then
-Else
-    Msg = "Vanaf versie 11.3.005 wordt het Belgisch BTW nummer van uw klanten bewaard als 10 cijfers (zonder leestekens!)" & vbCrLf & vbCrLf & "bvb. 0234234234 of 1234234234 enz." & vbCrLf & vbCrLf
-    Msg = Msg & "De omwerking wordt hierna uitgevoerd."
-    MsgBox Msg, vbOKOnly + vbInformation, "Eénmalig controle btw nummers"
-    
-    Screen.MousePointer = vbHourglass
-    
-    On Error Resume Next
-    Set recClient = New ADODB.Recordset
-    Err = 0
-    Msg = "SELECT * FROM Klanten"
-    recClient.CursorLocation = adUseClient
-    recClient.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-    If Err Then MsgBox "stop"
-    recClient.MoveFirst
-    
-    Dim btwKlantVeldje As String
-    Dim tmpKlantVeldje As String
-    Dim manueelKlantVeldje As String
-    Dim manueelList As String
-    Dim okKlantVeldje As String
-    Dim okList As String
-    Dim warningMessage As String
-    Dim warningMessage2 As String
-    Dim warningMessage3 As String
-    
-    warningMessage = "Sinds 1985 tot heden werd notatie verwacht 000.000.000 of 000-000-000" & vbCrLf & "marIntegraal plaatste daar later automatsch een '0' en 'BE' voor." & vbCrLf & vbCrLf & "Na update manueel zelf verbeteren a.u.b. voor deze klant"
-    warningMessage2 = "Sinds 1985 tot heden werd notatie verwacht 000.000.000 of 000-000-000" & vbCrLf & "Btw nummer 9 tekens lang? Een '0' wordt toegevoegd." & vbCrLf & vbCrLf & "Na update manueel controleren en verbeteren a.u.b. voor deze klant"
-    warningMessage3 = "Sinds 1985 tot heden werd notatie verwacht 000.000.000 of 000-000-000" & vbCrLf & "Btw nummer reeds 10 tekens lang?" & vbCrLf & vbCrLf & "Na update manueel controleren en verbeteren a.u.b. voor deze klant"
-        
-    On Error GoTo 0
-    Do While Not recClient.EOF
-        If recClient("v150") = "BE" Then
-            If Trim(recClient("A161")) = "" Or IsNull(recClient("A161")) Then
-            Else
-                btwKlantVeldje = Trim(recClient("A161"))
-                If Len(btwKlantVeldje) = 11 Then 'zou zo moeten zijn, notering sinds 1985!
-                    tmpKlantVeldje = "0" + Mid(btwKlantVeldje, 1, 3) + Mid(btwKlantVeldje, 5, 3) + Mid(btwKlantVeldje, 9, 3)
-                    okKlantVeldje = Trim(recClient(0)) & " " & Trim(recClient(2)) & " " & btwKlantVeldje
-                    recClient("A161").Value = tmpKlantVeldje
-                    recClient("dnnSync").Value = False
-                    okList = okList + okKlantVeldje + vbCrLf
-                ElseIf Len(btwKlantVeldje) = 9 Then
-                    manueelKlantVeldje = Trim(recClient(0)) & " " & Trim(recClient(2)) & " " & btwKlantVeldje
-                    MsgBox manueelKlantVeldje & vbCrLf & vbCrLf & warningMessage2
-                    manueelList = manueelList + manueelKlantVeldje + vbCrLf
-                    recClient("A161").Value = "0" + btwKlantVeldje
-                    recClient("dnnSync").Value = False
-                ElseIf Len(btwKlantVeldje) = 10 Then
-                    manueelKlantVeldje = Trim(recClient(0)) & " " & Trim(recClient(2)) & " " & btwKlantVeldje
-                    MsgBox manueelKlantVeldje & vbCrLf & vbCrLf & warningMessage3
-                    manueelList = manueelList + manueelKlantVeldje + vbCrLf
-                Else
-                    manueelKlantVeldje = Trim(recClient(0)) & " " & Trim(recClient(2)) & " " & btwKlantVeldje
-                    MsgBox manueelKlantVeldje & vbCrLf & vbCrLf & warningMessage
-                    manueelList = manueelList + manueelKlantVeldje + vbCrLf
-                End If
-            End If
-        End If
-        recClient.MoveNext
-    Loop
-    Screen.MousePointer = vbNormal
-    MsgBox "Einde update BE BTW nummers"
-    recClient.Close
-    Set recClient = Nothing
-    
-    flHier = FreeFile
-    Open beBtwCheck For Output As flHier
-        Print #flHier, "done"
-    Close flHier
-    
-    Dim btwOudNummerBedrijf As String
-    Dim btwNieuwNummerBedrijf As String
-    
-    btwOudNummerBedrijf = Trim(String99(READING, 51))
-    If Len(btwOudNummerBedrijf) = 11 Then 'zou zo moeten zijn, notering sinds 1985 tot heden!
-        btwNieuwNummerBedrijf = "0" + Mid(btwOudNummerBedrijf, 1, 3) + Mid(btwOudNummerBedrijf, 5, 3) + Mid(btwOudNummerBedrijf, 9, 3)
-        SS99 btwNieuwNummerBedrijf, 51
-    Else
-        'MsgBox btwOudNummerBedrijf & " ???" & vbCrLf & vbCrLf & "Er klopt iets niet! Gelieve zelf uw btw nummer in setup boekjaar en parameters correct te vermelden."
-    End If
-    
-    flHier = FreeFile
-    Open LOCATION_COMPANYDATA + "ManueelControleren.txt" For Output As flHier
-        Print #flHier, manueelList
-    Close flHier
-    DoEvents
-    Shell "notepad.exe " + LOCATION_COMPANYDATA + "ManueelControleren.txt", vbNormalFocus
-            
-    flHier = FreeFile
-    Open LOCATION_COMPANYDATA + "BtwOk.txt" For Output As flHier
-        Print #flHier, okList
-    Close flHier
-    DoEvents
-    Shell "notepad.exe " + LOCATION_COMPANYDATA + "BtwOk.txt", vbNormalFocus
-End If
-    
-On Local Error GoTo 0
-
-'versie 11.3.015
-Dim aantalON As Integer
-
-'CompanyNumberChecked-doNotRemove
-ONNummerCheck:
-Dim ONNRCheck As String
-ONNRCheck = LOCATION_COMPANYDATA + "CompanyNumberChecked-doNotRemove.txt"
-Dim checkONFileAvailable As String
-
-On Local Error Resume Next
-checkONFileAvailable = Dir(ONNRCheck)
-
-If Len(checkONFileAvailable) <> 0 Then
-Else
-    'MsgBox "Tabellen Klanten en Leveranciers." & vbCrLf & vbCrLf & "Hierna wordt het btwnummer eveneens aangeduid als ondernemingsnummer. Gelieve zelf manueel te controleren.", vbInformation
-    
-    Screen.MousePointer = vbHourglass
-    bClose TABLE_CUSTOMERS
-    
-    On Error Resume Next
-    Set recClient = New ADODB.Recordset
-    Err = 0
-    Msg = "SELECT * FROM Klanten"
-    recClient.CursorLocation = adUseClient
-    recClient.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-    If Err Then MsgBox "stop"
-    recClient.MoveFirst
-                    
-    aantalON = 0
-    On Error GoTo 0
-    Do While Not recClient.EOF
-        If Trim(recClient("A161")) = "" Then
-        Else
-            aantalON = aantalON + 1
-            recClient("v404").Value = recClient("A161").Value
-        End If
-        recClient.MoveNext
-    Loop
-    Screen.MousePointer = vbNormal
-    'MsgBox "Einde update Ondernemingsnummers voor " & aantalON & " ondernemingen klanten"
-    recClient.Close
-    Set recClient = Nothing
-    
-        Screen.MousePointer = vbHourglass
-    
-    On Error Resume Next
-    Set recLeverancier = New ADODB.Recordset
-    Err = 0
-    Msg = "SELECT * FROM Leveranciers"
-    recLeverancier.CursorLocation = adUseClient
-    recLeverancier.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-    If Err Then MsgBox "stop"
-    recLeverancier.MoveFirst
-                    
-    aantalON = 0
-    On Error GoTo 0
-        
-    Do While Not recLeverancier.EOF
-        If Trim(recLeverancier("A161")) = "" Then
-        Else
-            aantalON = aantalON + 1
-            recLeverancier("v404").Value = recLeverancier("A161").Value
-        End If
-        recLeverancier.MoveNext
-    Loop
-    Screen.MousePointer = vbNormal
-    'MsgBox "Einde update Ondernemingsnummers voor " & aantalON & " ondernemingen leveranciers"
-    recLeverancier.Close
-    Set recLeverancier = Nothing
-    flHier = FreeFile
-    Open ONNRCheck For Output As flHier
-    Print #flHier, "done"
-    Close flHier
-End If
-
 
 X = bOpen(TABLE_JOURNAL)
 If Left(usrLicentieInfo, 9) = "DemoModus" Then
@@ -1282,13 +990,6 @@ If InStr(UCase(Command), "/J=TRUE") Then
     GoTo JumpToJournaal
 End If
 
-'If VeldOK(TABLE_INVOICES, "e069") <> 0 Then
-'    KtrlLong = VeldOK(TABLE_INVOICES, "e069", "TEXT[12]")
-'End If
-'If VeldOK(TABLE_CONTRACTS, "dece069") <> 0 Then
-'    KtrlLong = VeldOK(TABLE_CONTRACTS, "e069", "TEXT[12]")
-'End If
-
 Dim resultDir As Boolean
 destpath$ = LOCATION_COMPANYDATA & "sjb"
 Err = 0
@@ -1297,357 +998,6 @@ If Dir(destpath & "\sBrief.doc") = "" Then
     resultDir = CreatePath(destpath$)
     If Not CopyFile(App.path, destpath$, "sbrief.doc") Then
        MsgBox "Fout tijdens installatie briefsjabloon: sbrief.doc", vbExclamation
-    End If
-End If
-
-'versie 7.1.2xx
-If VeldOK(TABLE_CUSTOMERS, "v263") = 0 Then
-    'het bestaat al dus ok
-Else
-    MsgBox "Tabel Klanten dient vanaf versie 7.1.200 te beschikken over veld v263 (Outlook EntryID).  Hierna wordt automatisch de herwerking uitgevoerd.", vbInformation
-    bClose TABLE_CUSTOMERS
-    Msg = "ALTER TABLE Klanten ADD COLUMN v263 TEXT[64];"
-    Err = 0
-
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-
-    MsgBox "Tabel Klanten dient vanaf versie 7.1.200 te beschikken over veld v262 (Outlook EntryID).  Hierna wordt automatisch de herwerking uitgevoerd.", vbInformation
-    bClose TABLE_CUSTOMERS
-    Msg = "ALTER TABLE Klanten ADD COLUMN v262 TEXT[64];"
-    Err = 0
-
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-    MsgBox "Tabel Leveranciers dient vanaf versie 7.1.200 te beschikken over veld v262 (Outlook EntryID).  Hierna wordt automatisch de herwerking uitgevoerd.", vbInformation
-    bClose TABLE_SUPPLIERS
-    Msg = "ALTER TABLE Leveranciers ADD COLUMN v262 TEXT[64];"
-    Err = 0
-
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-End If
-
-'versie 6.6.8xx
-If VeldOK(TABLE_JOURNAL, "v102") = 0 Then
-    'het bestaat al
-Else
-    MsgBox "Journaaltabel dient vanaf versie 6.6.800 te beschikken over veld v102 (productnummer).  Hierna wordt automatisch de herwerking uitgevoerd.", vbInformation
-    bClose TABLE_JOURNAL
-    Msg = "ALTER TABLE Journalen ADD COLUMN v102 TEXT[13];"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-End If
-
-'versie 6.5.3xx
-If VeldOK(TABLE_JOURNAL, "dece068") = 0 Then
-    'het bestaat al
-Else
-    MsgBox "Alle rekening- en journaalvelden voor cijfers/bedragen dienen vanaf versie 6.5.301 formaat DECIMAL te zijn (of ook CURRENCY).  Hierna worden automatisch de herwerkingen uitgevoerd.  STRAKS VOORAL AANDACHT voor juiste datum overstap naar EURO a.u.b.  GEEN NOOD ECHTER indien U zich vergist, U kan steeds opnieuw hersamenstellen tot uiterlijk 6.5.400" & vbCr & vbCr & "Aarzel niet ons te contacteren voor bijkomende inlichtingen.", vbInformation
-    bClose TABLE_JOURNAL
-    Msg = "ALTER TABLE Journalen ADD COLUMN dece068 CURRENCY;"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-    Msg = "UPDATE Journalen SET dece068=0 WHERE dece068=NULL"
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-    txtTest = InputBox("ALLEREerste dag invoering EURO in uw boekhouding (gebruik formaat JJJJMMDD a.u.b. bvb. 20010701 voor één juli 2002) ?", , "20020101")
-    If Len(txtTest) <> 8 Then
-        MsgBox "Begin opnieuw", vbCritical
-        Msg = "ALTER TABLE Journalen DROP COLUMN dece068"
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-            End
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-    End If
-    Msg = "UPDATE Journalen SET dece068=(Val(v068)/40.3399) WHERE v066 <= '" & txtTest & "'"
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        MsgBox "Begin opnieuw", vbCritical
-        Msg = "ALTER TABLE Journalen DROP COLUMN dece068"
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-            End
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd voor " & AantalRC & " lijnen.", vbInformation
-    End If
-    Msg = "UPDATE Journalen SET dece068=(Val(v068)) WHERE v066 >= '" & txtTest & "'"
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        End
-    Else
-        MsgBox Msg & " met succes uitgevoerd voor " & AantalRC & " lijnen.", vbInformation
-    End If
-    Screen.MousePointer = vbHourglass
-    Dim rcDummy As ADODB.Recordset
-    
-    On Error Resume Next
-    Set rcDummy = New ADODB.Recordset
-    Err = 0
-    Msg = "SELECT * FROM Rekeningen"
-    rcDummy.CursorLocation = adUseClient
-    rcDummy.Open Msg, adntDB, adOpenForwardOnly, adLockOptimistic
-    If Err Then MsgBox "stop"
-    rcDummy.MoveFirst
-    
-    Dim bVeldje As String
-    Dim eVeldje As String
-        
-    On Error GoTo 0
-    Do While Not rcDummy.EOF
-        For COUNT_TO = 22 To 31
-            bVeldje = "e0" + Dec((COUNT_TO), "00")
-            eVeldje = "dece0" + Dec((COUNT_TO), "00")
-            Err = 0
-            On Error Resume Next
-            rcDummy(eVeldje) = Val(rcDummy(bVeldje))
-            If Err Then rcDummy(eVeldje) = 0
-            SnelHelpPrint rcDummy("v019") & rcDummy(eVeldje), BL_LOGGING
-        Next
-        rcDummy.MoveNext
-    Loop
-    Screen.MousePointer = vbNormal
-    MsgBox "Einde update DECIMAAL veld(en) rekeningen"
-    rcDummy.Close
-    Set rcDummy = Nothing
-End If
-
-Dim DitTellertje As Integer
-
-If VeldOK(TABLE_VARIOUS, "rvID") = 0 Then
-Else
-    For DitTellertje = TABLE_VARIOUS To TABLE_JOURNAL
-        bClose DitTellertje
-        'sysID autonummering toevoegen 22/04/2004
-        'eerst contoleren of nog niet gewijzigd !!
-        Msg = "ALTER TABLE " & _
-            bstNaam(DitTellertje) & _
-            " ADD COLUMN rvID int IDENTITY (1,1)"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            'MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-    Next
-End If
-
-If VeldOK(TABLE_VARIOUS, "dnnSync") = 0 Then
-Else
-    For DitTellertje = TABLE_VARIOUS To TABLE_JOURNAL
-        'Debug.Print bstNaam(DitTellertje)
-        bClose DitTellertje
-        'sysID autonummering toevoegen 22/04/2004
-        'eerst contoleren of nog niet gewijzigd !!
-        Msg = "ALTER TABLE " & _
-            bstNaam(DitTellertje) & _
-            " ADD COLUMN [dnnSync] Bit"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-        Msg = "ALTER TABLE " & _
-            bstNaam(DitTellertje) & _
-            " ADD COLUMN [dnnSyncAlready] Bit"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-    Next
-    'vervolgens nog voor TB2 en Briefwisseling maar TB2 enkel voor makelaars !!!!
-    'Msg = "ALTER TABLE TB2 ADD COLUMN [dnnSync] Bit"
-    'Err = 0
-    'adntDB.Execute Msg, AantalRC
-    'If Err Then
-    '    MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    'Else
-    '    MsgBox Msg & " met succes uitgevoerd", vbInformation
-    'End If
-    Msg = "ALTER TABLE Briefwisseling ADD COLUMN [dnnSync] Bit"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-    Msg = "ALTER TABLE Briefwisseling ADD COLUMN [dnnSyncAlready] Bit"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-End If
-
-'If VeldOK(TABLE_SUPPLIERS, "sqlID") = 0 Then
-'Else
-'    Stop
-'    bClose TABLE_SUPPLIERS
-'    Msg = "ALTER TABLE " & bstNaam(TABLE_SUPPLIERS) & " ADD COLUMN sqlID LONG"
-'    Err = 0
-'    adntDB.Execute Msg, AantalRC
-'    If Err Then
-'        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-'    Else
-'        MsgBox Msg & " met succes uitgevoerd", vbInformation
-'    End If
-'    Msg = "UPDATE " & bstNaam(TABLE_SUPPLIERS) & " SET sqlID = 0"
-'    Err = 0
-'    adntDB.Execute Msg, AantalRC
-'    If Err Then
-'        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-'    Else
-'        MsgBox Msg & " met succes uitgevoerd", vbInformation
-'    End If
-'End If
-
-
-If VeldOK(TABLE_VARIOUS, "sqlID") = 0 Then
-Else
-    For DitTellertje = TABLE_VARIOUS To TABLE_INVOICES
-        bClose DitTellertje
-        Msg = "ALTER TABLE " & bstNaam(DitTellertje) & " ADD COLUMN sqlID INT"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            Msg = "UPDATE " & bstNaam(DitTellertje) & " SET sqlID = 0"
-            Err = 0
-            adntDB.Execute Msg, AantalRC
-            If Err Then
-                MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-            Else
-                MsgBox Msg & " met succes uitgevoerd", vbInformation
-            End If
-        End If
-    Next
-End If
-
-If VeldOK(TABLE_JOURNAL, "sqlID") = 0 Then
-    bClose TABLE_JOURNAL
-    Msg = "ALTER TABLE " & bstNaam(TABLE_JOURNAL) & " DROP COLUMN sqlID"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        MsgBox Msg & " met succes uitgevoerd", vbInformation
-    End If
-End If
-    
-If VeldOK(TABLE_INVOICES, "vsoftKLID") = 0 Then
-Else
-    'TABLE_CUSTOMERS = 1 : TABLE_INVOICES = 6 'K' vsoftKLID
-    'TABLE_SUPPLIERS = 2 : 'TABLE_INVOICES = 6 'L' vsoftKLID
-    bClose TABLE_INVOICES
-    Msg = "ALTER TABLE " & bstNaam(TABLE_INVOICES) & " ADD COLUMN vsoftKLID INT"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        Msg = "UPDATE " & bstNaam(TABLE_INVOICES) & " SET vsoftKLID = 0"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-    End If
-End If
-
-If VeldOK(TABLE_JOURNAL, "vsoftRID") = 0 Then
-Else
-    'TABLE_JOURNAL = 7 : vsoftRID
-    bClose TABLE_JOURNAL
-    Msg = "ALTER TABLE " & bstNaam(TABLE_JOURNAL) & " ADD COLUMN vsoftRID INT"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        Msg = "UPDATE " & bstNaam(TABLE_JOURNAL) & " SET vsoftRID = 0"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
-    End If
-End If
-
-If VeldOK(TABLE_CONTRACTS, "vsoftKID") = 0 Then
-Else
-    'TABLE_CONTRACTS = 5 vsoftKID
-    bClose TABLE_CONTRACTS
-    Msg = "ALTER TABLE " & bstNaam(TABLE_CONTRACTS) & " ADD COLUMN vsoftKID INT"
-    Err = 0
-    adntDB.Execute Msg, AantalRC
-    If Err Then
-        MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-    Else
-        Msg = "UPDATE " & bstNaam(TABLE_CONTRACTS) & " SET vsoftKID = 0"
-        Err = 0
-        adntDB.Execute Msg, AantalRC
-        If Err Then
-            MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
-        Else
-            MsgBox Msg & " met succes uitgevoerd", vbInformation
-        End If
     End If
 End If
 
@@ -1755,7 +1105,7 @@ Mim.AV(11).Enabled = False
 Mim.Basis(11).Enabled = False
 
 LOCATION_COMPANYDATA = LOCATION_
-Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision
+Mim.Caption = appTitleAndVersion
 Screen.MousePointer = vbNormal
 
 On Error Resume Next
@@ -1952,7 +1302,7 @@ Dim Idx As New ADOX.Index
 
 'Open the catalog.
 cat.ActiveConnection = jetConnect
-bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.Text) + 1, "0000")
+bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.text) + 1, "0000")
 tbl.Name = bstNaam(TABLE_COUNTERS)
     tbl.Columns.Append "v071", adVarWChar, 5
     tbl.Columns.Append "v217", adVarWChar, 30
@@ -2030,7 +1380,7 @@ bClose TABLE_COUNTERS
 rsTempo.Close
 Set rsTempo = Nothing
 
-bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.Text) + 1, "0000")
+bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.text) + 1, "0000")
 FL99_RECORD = "0"
 
 'status boekjaar

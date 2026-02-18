@@ -69,7 +69,7 @@ Begin VB.Form frmDNNinstellingen
    Begin VB.CommandButton ButtonCloudMario 
       Height          =   315
       Left            =   8880
-      Picture         =   "frmDNNinstellingen.frx":014A
+      Picture         =   "frmDNNinstellingen.frx":0102
       Style           =   1  'Graphical
       TabIndex        =   11
       TabStop         =   0   'False
@@ -80,7 +80,7 @@ Begin VB.Form frmDNNinstellingen
    Begin VB.CommandButton ButtonCloudMarnt 
       Height          =   315
       Left            =   8880
-      Picture         =   "frmDNNinstellingen.frx":0294
+      Picture         =   "frmDNNinstellingen.frx":0204
       Style           =   1  'Graphical
       TabIndex        =   10
       TabStop         =   0   'False
@@ -191,7 +191,7 @@ Sub ToggleProperties(toggleSet As Boolean)
 
     ButtonDefaultResetForMapMarnt.Visible = toggleSet
     ButtonDefaultResetForOneDrive.Visible = toggleSet
-    CmdBewaar.Visible = toggleSet
+    cmdBewaar.Visible = toggleSet
     
     txtURLwww.Enabled = toggleSet
     txtSkyDriveMap.Enabled = toggleSet
@@ -202,24 +202,24 @@ End Sub
 
 Private Sub ButtonCloudArchive_Click()
     
-    If ShellExecuteWithFallback(Me.txtURLlokaal.Text) = False Then
-        MsgBox "Kon " & Me.txtURLlokaal.Text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+    If ShellExecuteWithFallback(Me.txtURLlokaal.text) = False Then
+        MsgBox "Kon " & Me.txtURLlokaal.text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
     End If
     
 End Sub
 
 Private Sub ButtonCloudMario_Click()
 
-    If ShellExecuteWithFallback(Me.txtPDFpostvak.Text) = False Then
-        MsgBox "Kon " & Me.txtPDFpostvak.Text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+    If ShellExecuteWithFallback(Me.txtPDFpostvak.text) = False Then
+        MsgBox "Kon " & Me.txtPDFpostvak.text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
     End If
     
 End Sub
 
 Private Sub ButtonCloudMarnt_Click()
     
-    If ShellExecuteWithFallback(Me.txtSkyDriveMap.Text) = False Then
-        MsgBox "Kon " & Me.txtSkyDriveMap.Text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+    If ShellExecuteWithFallback(Me.txtSkyDriveMap.text) = False Then
+        MsgBox "Kon " & Me.txtSkyDriveMap.text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
     End If
     
 End Sub
@@ -251,23 +251,23 @@ Private Sub ButtonDefaultResetForMapMarnt_Click()
     
     KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
     If KtrlBox = vbYes Then
-        Me.txtSkyDriveMap.Text = marNTLocatie
-        Me.txtPDFpostvak.Text = marNTLocatie + "\manueel"
-        Me.txtURLlokaal.Text = marNTLocatie + "\archief"
+        Me.txtSkyDriveMap.text = marNTLocatie
+        Me.txtPDFpostvak.text = marNTLocatie + "\manueel"
+        Me.txtURLlokaal.text = marNTLocatie + "\archief"
         
         On Error Resume Next
         Err = 0
-        fs.CreateFolder (Me.txtPDFpostvak.Text)
+        fs.CreateFolder (Me.txtPDFpostvak.text)
         
         If Err Then
-            MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtPDFpostvak.Text, vbInformation
+            MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtPDFpostvak.text, vbInformation
         End If
         On Error Resume Next
         Err = 0
         
-        fs.CreateFolder (Me.txtURLlokaal.Text)
+        fs.CreateFolder (Me.txtURLlokaal.text)
         If Err Then
-            MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtURLlokaal.Text, vbInformation
+            MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtURLlokaal.text, vbInformation
         End If
         Call CmdBewaar_Click
     End If
@@ -304,29 +304,29 @@ Private Sub ButtonDefaultResetForOneDrive_Click()
         Msg = Msg & "CLOUD ARCHIEF: " & systemPersonalDocs & "\marNT\archief" & vbCrLf
         KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
         If KtrlBox = vbYes Then
-            Me.txtSkyDriveMap.Text = systemPersonalDocs & "\marNT"
-            Me.txtPDFpostvak.Text = systemPersonalDocs & "\marNT\manueel"
-            Me.txtURLlokaal.Text = systemPersonalDocs & "\marNT\archief"
+            Me.txtSkyDriveMap.text = systemPersonalDocs & "\marNT"
+            Me.txtPDFpostvak.text = systemPersonalDocs & "\marNT\manueel"
+            Me.txtURLlokaal.text = systemPersonalDocs & "\marNT\archief"
             
             On Error Resume Next
             Err = 0
-            fs.CreateFolder (Me.txtSkyDriveMap.Text)
+            fs.CreateFolder (Me.txtSkyDriveMap.text)
             If Err Then
-                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtSkyDriveMap.Text, vbInformation
+                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtSkyDriveMap.text, vbInformation
             End If
         
             On Error Resume Next
             Err = 0
-            fs.CreateFolder (Me.txtPDFpostvak.Text)
+            fs.CreateFolder (Me.txtPDFpostvak.text)
             If Err Then
-                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtPDFpostvak.Text, vbInformation
+                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtPDFpostvak.text, vbInformation
             End If
             
             On Error Resume Next
             Err = 0
-            fs.CreateFolder (Me.txtURLlokaal.Text)
+            fs.CreateFolder (Me.txtURLlokaal.text)
             If Err Then
-                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtURLlokaal.Text, vbInformation
+                MsgBox "Map bestaat reeds" & vbCrLf & vbCrLf & Me.txtURLlokaal.text, vbInformation
             End If
                         
             Call CmdBewaar_Click
@@ -347,10 +347,10 @@ End Sub
 
 Private Sub CmdBewaar_Click()
 
-    BeWaarTekst "dnnInstellingen", "Archief", Me.txtURLlokaal.Text 'archief cloud
-    BeWaarTekst "dnnInstellingen", "URLwww", Me.txtURLwww.Text
-    BeWaarTekst "dnnInstellingen", "Mario", Me.txtPDFpostvak.Text 'mario cloud
-    BeWaarTekst "dnnInstellingen", "Cloud", Me.txtSkyDriveMap.Text 'marnt cloud
+    BeWaarTekst "dnnInstellingen", "Archief", Me.txtURLlokaal.text 'archief cloud
+    BeWaarTekst "dnnInstellingen", "URLwww", Me.txtURLwww.text
+    BeWaarTekst "dnnInstellingen", "Mario", Me.txtPDFpostvak.text 'mario cloud
+    BeWaarTekst "dnnInstellingen", "Cloud", Me.txtSkyDriveMap.text 'marnt cloud
     Unload Me
 
 End Sub
@@ -377,15 +377,15 @@ Private Sub Form_Load()
         Dim bedrijfsLoc As String
         bedrijfsLoc = LaadTekst(App.Title, "Bedrijfsinhoudsopgave")
         MsgBox "Nieuwe PC of nog geen instellingen voor Cloud.  Wijzig de volgende standaardwaarden a.u.b. voor uw bedrijf (zie aanbevelingen in onze voorbeeld nota!) of vraag onze gratis bijstand om dit in uw plaats in orde te brengen.", vbInformation
-        Me.txtURLlokaal.Text = bedrijfsLoc & "\cloud\archief" ' "http://localhost/rvDNN"
-        Me.txtURLwww.Text = "https://mijndomein.be"
-        Me.txtSkyDriveMap.Text = bedrijfsLoc & "\cloud" '"C:\Users\NaamVanGebruiker\SkyDrive"
-        Me.txtPDFpostvak.Text = bedrijfsLoc & "\cloud\mario" '"c:\dotnetnuke\rvDNN\portals\0\documenten\postvak"
+        Me.txtURLlokaal.text = bedrijfsLoc & "\cloud\archief" ' "http://localhost/rvDNN"
+        Me.txtURLwww.text = "https://mijndomein.be"
+        Me.txtSkyDriveMap.text = bedrijfsLoc & "\cloud" '"C:\Users\NaamVanGebruiker\SkyDrive"
+        Me.txtPDFpostvak.text = bedrijfsLoc & "\cloud\mario" '"c:\dotnetnuke\rvDNN\portals\0\documenten\postvak"
     Else
-        Me.txtURLlokaal.Text = LaadTekst("dnnInstellingen", "Archief")
-        Me.txtURLwww.Text = LaadTekst("dnnInstellingen", "URLwww")
-        Me.txtSkyDriveMap.Text = LaadTekst("dnnInstellingen", "Cloud")
-        Me.txtPDFpostvak.Text = LaadTekst("dnnInstellingen", "Mario")
+        Me.txtURLlokaal.text = LaadTekst("dnnInstellingen", "Archief")
+        Me.txtURLwww.text = LaadTekst("dnnInstellingen", "URLwww")
+        Me.txtSkyDriveMap.text = LaadTekst("dnnInstellingen", "Cloud")
+        Me.txtPDFpostvak.text = LaadTekst("dnnInstellingen", "Mario")
     End If
 
 End Sub

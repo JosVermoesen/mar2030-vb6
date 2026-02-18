@@ -245,3 +245,5 @@ Public documentLinesOMSArray() As String
 Public documentLinesDATAArray() As String
 
 Public purchasePeppolTODOShowed As Boolean
+Public appTitleAndVersion As String
+

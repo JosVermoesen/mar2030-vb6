@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76873731
+         Format          =   77070339
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -1666,9 +1666,9 @@ Private Sub CmbDokumentPrinter_Click()
     
     FlTemp = FreeFile
     Open PROGRAM_LOCATION + "Def\prnt2000.SET" For Output As FlTemp
-    Print #FlTemp, CmbDokumentPrinter.Text
-    Print #FlTemp, CmbLijstPrinter.Text
-    Print #FlTemp, cmbKassaPrinter.Text
+    Print #FlTemp, CmbDokumentPrinter.text
+    Print #FlTemp, CmbLijstPrinter.text
+    Print #FlTemp, cmbKassaPrinter.text
     Close FlTemp
     dokumentPrinterNr = CmbDokumentPrinter.ListIndex
     
@@ -1677,18 +1677,18 @@ End Sub
 Private Sub CmbdokumentPrinter_Validate(Cancel As Boolean)
 
 Msg = "Voor dokumentPRINTER papierinvoer :" & vbLf & vbLf
-Msg = Msg & cmbpaperbin.Text & vbLf & vbLf
+Msg = Msg & cmbpaperbin.text & vbLf & vbLf
 Msg = Msg & "Bent U zeker"
 KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1)
 If KtrlBox = vbYes Then
     On Error Resume Next
     Set Printer = Printers(dokumentPrinterNr)
-    Printer.PaperBin = Left(cmbpaperbin.Text, 2)
+    Printer.PaperBin = Left(cmbpaperbin.text, 2)
     If Err Then
         MsgBox Error
         Exit Sub
     Else
-        BeWaarTekst App.Title, "dokumentPRINTER", Left(cmbpaperbin.Text, 2)
+        BeWaarTekst App.Title, "dokumentPRINTER", Left(cmbpaperbin.text, 2)
     End If
 End If
 
@@ -1703,9 +1703,9 @@ Private Sub cmbKassaPrinter_Click()
     Dim FlTemp As Integer
     FlTemp = FreeFile
     Open PROGRAM_LOCATION + "Def\prnt2000.SET" For Output As FlTemp
-    Print #FlTemp, CmbDokumentPrinter.Text
-    Print #FlTemp, CmbLijstPrinter.Text
-    Print #FlTemp, cmbKassaPrinter.Text
+    Print #FlTemp, CmbDokumentPrinter.text
+    Print #FlTemp, CmbLijstPrinter.text
+    Print #FlTemp, cmbKassaPrinter.text
     Close FlTemp
     KassaPrinterNr = cmbKassaPrinter.ListIndex
     
@@ -1714,18 +1714,18 @@ End Sub
 Private Sub cmbKassaPrinter_Validate(Cancel As Boolean)
 
 Msg = "Voor KASSAPRINTER papierinvoer :" & vbLf & vbLf
-Msg = Msg & cmbpaperbin.Text & vbLf & vbLf
+Msg = Msg & cmbpaperbin.text & vbLf & vbLf
 Msg = Msg & "Bent U zeker"
 KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1)
 If KtrlBox = vbYes Then
     On Error Resume Next
     Set Printer = Printers(KassaPrinterNr)
-    Printer.PaperBin = Left(cmbpaperbin.Text, 2)
+    Printer.PaperBin = Left(cmbpaperbin.text, 2)
     If Err Then
         MsgBox Error
         Exit Sub
     Else
-        BeWaarTekst App.Title, "KASSAPRINTER", Left(cmbpaperbin.Text, 2)
+        BeWaarTekst App.Title, "KASSAPRINTER", Left(cmbpaperbin.text, 2)
     End If
 End If
 
@@ -1740,9 +1740,9 @@ Private Sub CmbLijstPrinter_Click()
     Dim FlTemp As Integer
     FlTemp = FreeFile
     Open PROGRAM_LOCATION + "Def\prnt2000.SET" For Output As FlTemp
-    Print #FlTemp, CmbDokumentPrinter.Text
-    Print #FlTemp, CmbLijstPrinter.Text
-    Print #FlTemp, cmbKassaPrinter.Text
+    Print #FlTemp, CmbDokumentPrinter.text
+    Print #FlTemp, CmbLijstPrinter.text
+    Print #FlTemp, cmbKassaPrinter.text
     Close FlTemp
     LijstPrinterNr = CmbLijstPrinter.ListIndex
     
@@ -1752,18 +1752,18 @@ End Sub
 Private Sub CmbLijstPrinter_Validate(Cancel As Boolean)
 
 Msg = "Voor LIJSTPRINTER papierinvoer :" & vbLf & vbLf
-Msg = Msg & cmbpaperbin.Text & vbLf & vbLf
+Msg = Msg & cmbpaperbin.text & vbLf & vbLf
 Msg = Msg & "Bent U zeker"
 KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1)
 If KtrlBox = vbYes Then
     On Error Resume Next
     Set Printer = Printers(LijstPrinterNr)
-    Printer.PaperBin = Left(cmbpaperbin.Text, 2)
+    Printer.PaperBin = Left(cmbpaperbin.text, 2)
     If Err Then
         MsgBox Error
         Exit Sub
     Else
-        BeWaarTekst App.Title, "LIJSTPRINTER", Left(cmbpaperbin.Text, 2)
+        BeWaarTekst App.Title, "LIJSTPRINTER", Left(cmbpaperbin.text, 2)
     End If
 End If
 
@@ -1772,7 +1772,7 @@ End Sub
 
 Private Sub cmdWegBoekModus_Click()
 
-BeWaarTekst "Algemeen", "BoekInfoModus", cmdWegBoekModus.Text
+BeWaarTekst "Algemeen", "BoekInfoModus", cmdWegBoekModus.text
 
 End Sub
 
@@ -1851,8 +1851,8 @@ End Sub
 
 Private Sub FontGrootte_LostFocus()
 
-Printer.FontSize = FontGrootte.Text
-FontGrootte.Text = Printer.FontSize
+Printer.FontSize = FontGrootte.text
+FontGrootte.text = Printer.FontSize
 
 End Sub
 
@@ -1965,9 +1965,9 @@ Select Case Index
         If KtrlBox = vbYes Then
             Instellingen(4).Checked = Not Instellingen(4).Checked
             If Instellingen(4).Checked Then
-                SnelHelp.Panels(3).Text = "SQL"
+                SnelHelp.Panels(3).text = "SQL"
             Else
-                SnelHelp.Panels(3).Text = "JET4"
+                SnelHelp.Panels(3).text = "JET4"
             End If
             BeWaarTekst App.Title, "MSDE Gebruik", Instellingen(4).Checked
             AutoUnloadBedrijf
@@ -2014,7 +2014,7 @@ Dim Paswoord As String
 ret = SHGetFolderPath(0, CSIDL_APPDATA, 0, 0, path)
 
 PROGRAM_LOCATION = App.path + "\"
-Mim.Caption = App.Title & "-{Local First} v." & App.Major & "." & App.Minor & "." & App.Revision
+Mim.Caption = appTitleAndVersion
 
 usrMailAdres = "demo@rv.be"
 usrPW = "9999"
@@ -2023,6 +2023,8 @@ ret = SHGetFolderPath(0, CSIDL_PERSONAL, 0, 0, path)
 SYSTEM_MYPERSONALDOCUMENTS = Left(path, InStr(path, Chr(0)) - 1)
 
 WaarBenIk:
+
+BeWaarTekst App.Title, "VersionNumber", App.major & App.minor & Dec(App.Revision, "000")
 
 LOCATION_MYDOCUMENTS = LaadTekst(App.Title, "Bedrijfsinhoudsopgave" & "2025")
 
@@ -2163,15 +2165,15 @@ Dim ZoekHTM As Variant
 Dim ZoekNietMeerHTM As Variant
 
 BedrijfOpenen.Show
-ZoekHTM = App.path & "\LeesMij" & App.Major & App.Minor & Format(App.Revision, "000") & ".htm"
-ZoekNietMeerHTM = App.path & "\LeesMij" & App.Major & App.Minor & App.Revision & ".not"
+ZoekHTM = App.path & "\LeesMij" & App.major & App.minor & Format(App.Revision, "000") & ".htm"
+ZoekNietMeerHTM = App.path & "\LeesMij" & App.major & App.minor & App.Revision & ".not"
 
 Dim r As Long
 
 If Dir(ZoekHTM) <> "" Then
     If Dir(ZoekNietMeerHTM) <> "" Then
     Else
-        KtrlBox = MsgBox("Bij volgende opstart LeesMij.htm voor deze versie en revisie verbergen", vbQuestion + vbYesNo + vbDefaultButton2, App.Title & " Versie " & App.Major & "." & App.Minor & "." & App.Revision)
+        KtrlBox = MsgBox("Bij volgende opstart LeesMij.htm voor deze versie en revisie verbergen", vbQuestion + vbYesNo + vbDefaultButton2, App.Title & " Versie " & App.major & "." & App.minor & "." & App.Revision)
         If KtrlBox = vbYes Then
             ScrMaakTekstBestand (Now), (ZoekNietMeerHTM)
         End If
@@ -2526,7 +2528,7 @@ End Sub
 Private Sub SnelHelpTijd_Timer()
 
 SnelHelpTijd.Enabled = False
-Mim.SnelHelp.Panels(4).Text = ""
+Mim.SnelHelp.Panels(4).text = ""
 
 If LOG_PRINT = "" Then
 Else

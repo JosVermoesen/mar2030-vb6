@@ -283,7 +283,7 @@ Dim rsLic As ADODB.Recordset
 LabelInfo(0).Caption = App.ProductName & "-{Local First}"
 AppInfo(1).Caption = App.LegalCopyright
 AppInfo(2).Caption = App.FileDescription
-AppInfo(0).Caption = "Versie " + Format(App.Major) + "." + Format(App.Minor) + "." + Format(App.Revision)
+AppInfo(0).Caption = Mid(appTitleAndVersion, InStr(appTitleAndVersion, "v.")) '"Versie " + Format(App.major) + "." + Format(App.minor) + "." + Format(App.Revision)
 
 MousePointer = vbHourglass
 Set NTRuimte = Workspaces(0)

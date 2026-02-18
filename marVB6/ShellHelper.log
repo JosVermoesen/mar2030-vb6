@@ -433,3 +433,15 @@
 12/02/2026 6:56:11  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
 12/02/2026 6:56:11  - ShellExecute parameters: verb=open file=Y:\Data\001\peppol\in\invoiceNoPdf.html params=
 12/02/2026 6:56:11  - ShellExecute returned: 42 (Success)
+15/02/2026 8:05:27  - Attempting ShellExecute. CurDir=Y:\Data\003\sjb COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+15/02/2026 8:05:27  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\manueel params=
+15/02/2026 8:05:27  - ShellExecute returned: 33 (Success)
+15/02/2026 8:05:32  - Attempting ShellExecute. CurDir=Y:\Data\003\sjb COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+15/02/2026 8:05:32  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\archief params=
+15/02/2026 8:05:32  - ShellExecute returned: 33 (Success)
+15/02/2026 8:06:05  - Attempting ShellExecute. CurDir=Y:\Data\003\sjb COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+15/02/2026 8:06:05  - ShellExecute parameters: verb=open file=https://rv.be/accounting params=
+15/02/2026 8:06:05  - ShellExecute returned: 42 (Success)
+15/02/2026 8:19:47  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+15/02/2026 8:19:47  - ShellExecute parameters: verb=open file=https://docs.peppol.eu/poacc/billing/3.0/ params=
+15/02/2026 8:19:47  - ShellExecute returned: 42 (Success)
