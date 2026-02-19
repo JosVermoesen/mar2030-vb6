@@ -445,3 +445,6 @@
 15/02/2026 8:19:47  - Attempting ShellExecute. CurDir=c:\progra~1\micros~3\office14 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
 15/02/2026 8:19:47  - ShellExecute parameters: verb=open file=https://docs.peppol.eu/poacc/billing/3.0/ params=
 15/02/2026 8:19:47  - ShellExecute returned: 42 (Success)
+19/02/2026 9:54:15  - Attempting ShellExecute. CurDir=C:\Documents and Settings\Jos\Desktop\marVB6 COMSPEC=C:\WINDOWS\system32\cmd.exe PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+19/02/2026 9:54:15  - ShellExecute parameters: verb=open file=Z:\Documenten\marNT\archief params=
+19/02/2026 9:54:15  - ShellExecute returned: 33 (Success)

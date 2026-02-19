@@ -11,7 +11,7 @@ Public Sub Main()
 
 MAR_VERSION = App.major & "." & App.minor & "." & App.Revision
 BeWaarTekst "marIntegraal", "Version", MAR_VERSION
-appTitleAndVersion = App.Title & "-{Local First} v." & MAR_VERSION & "a"
+appTitleAndVersion = App.Title & "-{Local First} v." & MAR_VERSION & "b"
 PeppolFlag = False
 
 Dim T As Variant

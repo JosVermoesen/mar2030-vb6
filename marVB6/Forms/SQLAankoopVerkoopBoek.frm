@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form AVBoek 
+Begin VB.Form AVBoekPrePeppol 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Aankoop / Verkoop"
    ClientHeight    =   1785
@@ -179,7 +179,7 @@ Begin VB.Form AVBoek
       Width           =   480
    End
 End
-Attribute VB_Name = "AVBoek"
+Attribute VB_Name = "AVBoekPrePeppol"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -225,7 +225,7 @@ Dim aa As String
 
 Dim MaskHier As String
 
-Dim rsAVBoekHier As ADODB.Recordset
+Dim rsAVBoekPrePeppolHier As ADODB.Recordset
 Dim rsJourHier As ADODB.Recordset
 
 
@@ -351,7 +351,7 @@ If chkDetailJournaal Then
 End If
 
 Do While rsJourHier.EOF = False
-    If RV(rsJourHier, "v033") = RV(rsAVBoekHier, "v033") Then
+    If RV(rsJourHier, "v033") = RV(rsAVBoekPrePeppolHier, "v033") Then
         If Left(RV(rsJourHier, "v019"), 2) = "40" Or Left(RV(rsJourHier, "v019"), 2) = "44" Then
             RekeningNaam = RV(rsJourHier, "v067")
         Else
@@ -496,38 +496,38 @@ End Select
 Select Case FaktuurCreditnota(0).Value
     Case -1
         BeginSleutel = BeginSleutel + "0" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstVan.Caption), "00000")
-        EindSleutel = EindSleutel + "0" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstLijn(3).Text), "00000")
+        EindSleutel = EindSleutel + "0" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstLijn(3).text), "00000")
         Tekst$ = FaktuurCreditnota(0).Caption
     Case Else
         BeginSleutel = BeginSleutel + "1" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstVan.Caption), "00000")
-        EindSleutel = EindSleutel + "1" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstLijn(3).Text), "00000")
+        EindSleutel = EindSleutel + "1" + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(TekstLijn(3).text), "00000")
         Tekst$ = FaktuurCreditnota(1).Caption
 End Select
 
 psTekst(2) = LijstNaam + " " + Tekst$ + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = TekstLijn(1).Text
-psTekst(3) = TekstLijn(0).Text
+psTekst(0) = TekstLijn(1).text
+psTekst(3) = TekstLijn(0).text
 InitVelden
 
 Screen.MousePointer = vbHourglass
 
 'recordset maken
-Set rsAVBoekHier = New ADODB.Recordset
+Set rsAVBoekPrePeppolHier = New ADODB.Recordset
 On Error Resume Next
 Err = 0
-rsAVBoekHier.CursorLocation = adUseClient
+rsAVBoekPrePeppolHier.CursorLocation = adUseClient
 
 Msg = "SELECT * FROM dokumenten WHERE v033 >='" & _
     BeginSleutel & "' AND v033 <= '" & _
     EindSleutel & "' ORDER BY v033"
 
 SnelHelpPrint Msg, BL_LOGGING
-rsAVBoekHier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
+rsAVBoekPrePeppolHier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
 If Err Then
     MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
     Screen.MousePointer = vbNormal
     Exit Sub
-ElseIf rsAVBoekHier.RecordCount = 0 Then
+ElseIf rsAVBoekPrePeppolHier.RecordCount = 0 Then
     MsgBox "Er zijn géén dokumenten", vbExclamation
     Screen.MousePointer = vbNormal
     Exit Sub
@@ -554,7 +554,7 @@ End If
 bClose TABLE_DUMMY
 ClearFlDummy
 Ktrl = bOpen(TABLE_DUMMY)
-AVBoek.Refresh
+AVBoekPrePeppol.Refresh
 
 PAGE_COUNTER = 0
 If chkAfdrukInVenster = 0 Then
@@ -574,10 +574,10 @@ End If
 PrintTitel
 
 
-Do While Not rsAVBoekHier.EOF
+Do While Not rsAVBoekPrePeppolHier.EOF
     PrintVelden
     DetailRekeningen
-    rsAVBoekHier.MoveNext
+    rsAVBoekPrePeppolHier.MoveNext
 Loop
 PrintTotaal
 CumulPrint
@@ -594,11 +594,11 @@ CumulPrint
     If Ktrl = vbYes Then
         GoSub BTWAangifte
     End If
-    AVBoek.Refresh
-    AVBoek.SetFocus
-    rsAVBoekHier.Close
+    AVBoekPrePeppol.Refresh
+    AVBoekPrePeppol.SetFocus
+    rsAVBoekPrePeppolHier.Close
     rsJourHier.Close
-    Set rsAVBoekHier = Nothing
+    Set rsAVBoekPrePeppolHier = Nothing
     Set rsJourHier = Nothing
     If FaktuurCreditnota(0).Value = True Then
         FaktuurCreditnota(1).Value = True
@@ -612,7 +612,7 @@ MsgBox "Kontroleer de printer."
 Resume
 
 BTWAangifte:
-bGet TABLE_VARIOUS, 1, vSet("17" + BJPERDAT.Boekjaar.Text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
+bGet TABLE_VARIOUS, 1, vSet("17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
 If Ktrl Then
     MsgBox "Stop"
 Else
@@ -639,7 +639,7 @@ Select Case aIndex
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(12)), "v054" 'vak 88
                 
                 vBib TABLE_VARIOUS, Format(Val(TekstVan.Caption), "00000"), "v092"
-                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).Text), "00000"), "v093"
+                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).text), "00000"), "v093"
                 
             Case 3
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(16)), "v100" 'vak 63
@@ -647,7 +647,7 @@ Select Case aIndex
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(8)), "v051" 'vak 85
                 
                 vBib TABLE_VARIOUS, Format(Val(TekstVan.Caption), "00000"), "v094"
-                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).Text), "00000"), "v095"
+                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).text), "00000"), "v095"
                 For Tel = 3 To 16
                     KolomTotaal(Tel) = -KolomTotaal(Tel)
                 Next
@@ -684,7 +684,7 @@ Select Case aIndex
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(8)), "v061" 'vak 47
                 
                 vBib TABLE_VARIOUS, Format(Val(TekstVan.Caption), "00000"), "v096"
-                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).Text), "00000"), "v097"
+                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).text), "00000"), "v097"
                 
             Case 14
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(12)), "v101" 'vak 64
@@ -694,7 +694,7 @@ Select Case aIndex
                 vBib TABLE_VARIOUS, Str$(KolomTotaal(11)), "v063" 'vak 49
                 
                 vBib TABLE_VARIOUS, Format(Val(TekstVan.Caption), "00000"), "v098"
-                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).Text), "00000"), "v099"
+                vBib TABLE_VARIOUS, Format(Val(TekstLijn(3).text), "00000"), "v099"
 
             Case Else
                 MsgBox "Stop"
@@ -711,16 +711,16 @@ bUpdate TABLE_VARIOUS, 1
 Select Case FaktuurCreditnota(0).Value
     Case True 'Faktuur
         If aIndex = TABLE_SUPPLIERS Then
-            SS99 TekstLijn(3).Text, 2
+            SS99 TekstLijn(3).text, 2
         Else
-            SS99 TekstLijn(3).Text, 12
+            SS99 TekstLijn(3).text, 12
         End If
 
     Case False
         If aIndex = TABLE_SUPPLIERS Then
-            SS99 TekstLijn(3).Text, 4
+            SS99 TekstLijn(3).text, 4
         Else
-            SS99 TekstLijn(3).Text, 14
+            SS99 TekstLijn(3).text, 14
         End If
 End Select
 Return
@@ -744,9 +744,9 @@ getal = 0
 Select Case FaktuurCreditnota(0).Value
     Case True 'Faktuur
         FL99_RECORD = String99(READING, 1 + T)
-        TekstLijn(3).Text = Format(Val(FL99_RECORD), "00000")
+        TekstLijn(3).text = Format(Val(FL99_RECORD), "00000")
         FL99_RECORD = String99(READING, 2 + T)
-        If Format(Val(FL99_RECORD), "00000") = TekstLijn(3).Text Then
+        If Format(Val(FL99_RECORD), "00000") = TekstLijn(3).text Then
             Drukken.Enabled = False
             TekstVan.Caption = Format(Val(FL99_RECORD), "00000")
         Else
@@ -763,9 +763,9 @@ Select Case FaktuurCreditnota(0).Value
 
     Case Else
         FL99_RECORD = String99(READING, 3 + T)
-        TekstLijn(3).Text = Format(Val(FL99_RECORD), "00000")
+        TekstLijn(3).text = Format(Val(FL99_RECORD), "00000")
         FL99_RECORD = String99(READING, 4 + T)
-        If Format(Val(FL99_RECORD), "00000") = TekstLijn(3).Text Then
+        If Format(Val(FL99_RECORD), "00000") = TekstLijn(3).text Then
             Drukken.Enabled = False
             TekstVan.Caption = Format(Val(FL99_RECORD), "00000")
         Else
@@ -794,10 +794,10 @@ Dim PeriodeSleutel  As String * 20
 Dim T               As Integer
 Dim PeriodeMax      As Integer
 
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
+'If Not Toegankelijk(Me) Then
+'    Unload Me
+'    Exit Sub
+'End If
 
 If bhEuro Then
     MaskHier = "#####0.00"
@@ -814,7 +814,7 @@ Else
 End If
 chkAfdrukLiggend_Click
 
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(1).text = MIM_GLOBAL_DATE
 Select Case aIndex
     Case TABLE_SUPPLIERS
         LijstNaam = "Aankoopboek"
@@ -823,17 +823,17 @@ Select Case aIndex
     Case Else
         MsgBox "Stop"
 End Select
-AVBoek.Caption = LijstNaam
+AVBoekPrePeppol.Caption = LijstNaam
 
 Ktrl = 0
 SnelHelpPrint "Kontrole hogere periodes...", BL_LOGGING
 PeriodeMax = BJPERDAT.PeriodeBoekjaar.ListCount + 1
 Do While PeriodeMax > BJPERDAT.PeriodeBoekjaar.ListIndex + 1
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.Text + Format(PeriodeMax, "00")
+    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.Text), "v090"
+        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(PeriodeMax, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -857,11 +857,11 @@ If getal Then
     Drukken.Visible = False
     Exit Sub
 Else
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.Text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.Text), "v090"
+        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -1058,7 +1058,7 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 0
     For T = 0 To tMaxVeld
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -1162,19 +1162,19 @@ Do While REPORT_TAB(T) <> 0
     
     Select Case RapportManier(T)
         Case 1
-            If Not ADO_GET(aIndex, 0, "=", Mid(RV(rsAVBoekHier, "v034"), 2)) Then
-                VeldTekst = Mid(RV(rsAVBoekHier, "v034"), 2) + " is niet meer aanwezig"
+            If Not ADO_GET(aIndex, 0, "=", Mid(RV(rsAVBoekPrePeppolHier, "v034"), 2)) Then
+                VeldTekst = Mid(RV(rsAVBoekPrePeppolHier, "v034"), 2) + " is niet meer aanwezig"
                 MsgBox VeldTekst
             Else
                 VeldTekst = Trim$(RV(rsMAR(aIndex), "A110")) + " " + Trim$(RV(rsMAR(aIndex), "A100"))
             End If
         Case 5
-            VeldTekst = DATE_TEXT(RV(rsAVBoekHier, "v" + Format(RapportVeldNr(T), "000")))
+            VeldTekst = DATE_TEXT(RV(rsAVBoekPrePeppolHier, "v" + Format(RapportVeldNr(T), "000")))
         Case 9
-            VeldTekst = Dec(Val(RV(rsAVBoekHier, "v" + Format(RapportVeldNr(T), "000"))), MaskHier)
+            VeldTekst = Dec(Val(RV(rsAVBoekPrePeppolHier, "v" + Format(RapportVeldNr(T), "000"))), MaskHier)
             KolomTotaal(T) = KolomTotaal(T) + Val(VeldTekst)
         Case Else
-            VeldTekst = RV(rsAVBoekHier, "v" + Format(RapportVeldNr(T), "000"))
+            VeldTekst = RV(rsAVBoekPrePeppolHier, "v" + Format(RapportVeldNr(T), "000"))
     End Select
         
     If chkAfdrukInVenster = 0 Then
@@ -1205,7 +1205,7 @@ End Sub
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
 TekstLijn(Index).SelStart = 0
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -1213,13 +1213,13 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
             TekstLijn(1).SetFocus
         End If
     Case 3
-        TekstLijn(3).Text = Format(Val(TekstLijn(3).Text), "00000")
+        TekstLijn(3).text = Format(Val(TekstLijn(3).text), "00000")
 End Select
 
 End Sub

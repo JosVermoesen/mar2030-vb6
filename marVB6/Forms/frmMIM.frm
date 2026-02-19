@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   77070339
+         Format          =   76546051
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -772,6 +772,22 @@ Begin VB.MDIForm Mim
          End
          Begin VB.Menu Overgang 
             Caption         =   "&Opkuis bestanden"
+            Index           =   1
+         End
+      End
+      Begin VB.Menu Boekhouding 
+         Caption         =   "-"
+         Index           =   23
+      End
+      Begin VB.Menu Boekhouding 
+         Caption         =   "Boeken Pré Peppol"
+         Index           =   24
+         Begin VB.Menu PrePeppol 
+            Caption         =   "Aankoopboek"
+            Index           =   0
+         End
+         Begin VB.Menu PrePeppol 
+            Caption         =   "Verkoopboek"
             Index           =   1
          End
       End
@@ -1522,12 +1538,22 @@ Select Case Index
         DiversePosten.Show
     
     Case 2
-        aIndex = TABLE_SUPPLIERS
-        AVBoek.Show 1
+        If Mid(PERIOD_FROMTO, 1, 4) < "2026" Then
+            MsgBox "Gebruik de oude versie t.e.m. 31/12/2025", vbInformation, "Pré-Peppol boekperiode"
+            Exit Sub
+        Else
+            aIndex = TABLE_SUPPLIERS
+            AVBoek.Show 1
+        End If
 
     Case 3
-        aIndex = TABLE_CUSTOMERS
-        AVBoek.Show 1
+        If Mid(PERIOD_FROMTO, 1, 4) < "2026" Then
+            MsgBox "Gebruik de oude versie t.e.m. 31/12/2025", vbInformation, "Pré-Peppol boekperiode"
+            Exit Sub
+        Else
+            aIndex = TABLE_CUSTOMERS
+            AVBoek.Show 1
+        End If
 
     Case 4
         FinancieelBoek.Show 1
@@ -1583,6 +1609,35 @@ If Index <> 0 Then
 End If
 
 End Sub
+
+Private Sub PrePeppol_Click(Index As Integer)
+
+On Error Resume Next
+Select Case Index
+    Case 0
+        If Mid(PERIOD_FROMTO, 1, 4) >= "2026" Then
+            MsgBox "Gebruik de nieuwe versie vanaf 01/01/2026", vbInformation, "Peppol boekperiode"
+            Exit Sub
+        Else
+            aIndex = TABLE_SUPPLIERS
+            AVBoekPrePeppol.Show 1
+        End If
+
+    Case 1
+        If Mid(PERIOD_FROMTO, 1, 4) >= "2026" Then
+            MsgBox "Gebruik de nieuwe versie vanaf 01/01/2026", vbInformation, "Peppol boekperiode"
+            Exit Sub
+        Else
+            aIndex = TABLE_CUSTOMERS
+            AVBoekPrePeppol.Show 1
+        End If
+End Select
+If Index <> 0 Then
+    Mim.SetFocus
+End If
+
+End Sub
+
 
 Private Function GaVerder(Bericht As String, BedrijfOpenKontrole As Integer, Titel As String) As Integer
 

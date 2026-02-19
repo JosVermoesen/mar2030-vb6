@@ -134,6 +134,7 @@ Module=Module1; Modules\ShellHelper.bas
 Form=Forms\frmAdMonitor.frm
 Module=modInternet; Modules\modInternet.bas
 Form=Forms\ReactionsDialog.frm
+Form=Forms\PeppolAankoopVerkoopBoek.frm
 IconForm="Mim"
 Startup="Sub Main"
 HelpFile="C:\HNDLDNG\Marnt.hlp"
