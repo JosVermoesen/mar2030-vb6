@@ -550,10 +550,6 @@ On Error Resume Next
 Err = 0
 rsAVBoekHier.CursorLocation = adUseClient
 
-'Msg = "SELECT * FROM dokumenten WHERE v033 >='" & _
-'    BeginSleutel & "' AND v033 <= '" & _
-'    EindSleutel & "' ORDER BY v033"
-    
 Msg = "SELECT * FROM Dokumenten "
 Msg = Msg & "WHERE Mid(v033, 1, 2) = '" & Mid(BeginSleutel, 1, 2) & "' "
 Msg = Msg & "AND v035 >= '" & beginPeriod & "' "
@@ -590,7 +586,7 @@ Msg = Msg & "WHERE v033 >= '" & rsAVBoekHier("v033") & "' "
 Msg = Msg & "AND v035 >= '" & beginPeriod & "' "
 Msg = Msg & "AND v035 <= '" & endPeriod & "' "
 Msg = Msg & "AND v038 IS NULL "
-Msg = Msg & "ORDER BY v033 ASC"
+Msg = Msg & "ORDER BY v033 ASC, v019 ASC"
 
 SnelHelpPrint Msg, BL_LOGGING
 rsJourHier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
@@ -873,11 +869,12 @@ AVBoek.Caption = LijstNaam
 typeVATPeriod = String99(READING, 301)
 Select Case typeVATPeriod
     Case "1"
-        TekstLijn0 = "Maandelijkse aangifte " & Mid(PERIOD_FROMTO, 1, 4)
+        TekstLijn0 = "Maandelijkse aangifte " & Mid(PERIOD_FROMTO, 5, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4)
         'Monthly periods shoud be (easy)
         beginPeriod = Mid(PERIOD_FROMTO, 1, 8)
         endPeriod = Mid(PERIOD_FROMTO, 9)
-        Stop
+        LabelDateFrom.Caption = DATE_TEXT(beginPeriod)
+        LabelDateTo.Caption = DATE_TEXT(endPeriod)
     Case "2"
         'Quarter Perdiods should be
         '01/01 - 31/03
