@@ -45,7 +45,7 @@ Private Function GetDefaultLogPath() As String
         GetDefaultLogPath = g_ShellHelperLogPath
     Else
         On Error Resume Next
-        GetDefaultLogPath = App.path
+        GetDefaultLogPath = LOCATION_MYDOCUMENTS 'App.path
         If Right$(GetDefaultLogPath, 1) <> "\" Then GetDefaultLogPath = GetDefaultLogPath & "\"
         GetDefaultLogPath = GetDefaultLogPath & "ShellHelper.log"
         If Err.Number <> 0 Then

@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76546051
+         Format          =   76677123
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -2556,6 +2556,16 @@ If Button = 2 Then
     ElseIf Msg = "thequickbrownfox" Then
         VSF_PRO = True
         Exit Sub
+    ElseIf Msg = "CORR" Then
+        If LaadTekst(App.Title, "CORR") = "CORR" Then
+            VSF_PRO = False
+            MsgBox "Code niet meer geldig. Vraag nieuwe code", vbExclamation
+            Exit Sub
+        Else
+            VSF_PRO = True
+            BeWaarTekst "marIntegraal", "CORR", "CORR"
+            Exit Sub
+        End If
     End If
     dPip = Val(Left(Msg, 10))
     sPip = Format(dPip - Int(dPip / 97) * 97, "00")

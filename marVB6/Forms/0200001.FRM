@@ -257,13 +257,13 @@ Begin VB.Form DirekteAankoop
          Height          =   1875
          Left            =   120
          TabIndex        =   1
+         TabStop         =   0   'False
          Top             =   0
          Width           =   4815
          _ExtentX        =   8493
          _ExtentY        =   3307
          _Version        =   393216
          Style           =   1
-         Tab             =   2
          TabHeight       =   494
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
@@ -276,8 +276,9 @@ Begin VB.Form DirekteAankoop
          EndProperty
          TabCaption(0)   =   "&Leverancier"
          TabPicture(0)   =   "0200001.frx":035E
-         Tab(0).ControlEnabled=   0   'False
+         Tab(0).ControlEnabled=   -1  'True
          Tab(0).Control(0)=   "LeverancierInfo"
+         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
@@ -287,9 +288,8 @@ Begin VB.Form DirekteAankoop
          Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
-         Tab(2).ControlEnabled=   -1  'True
+         Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "ListView1"
-         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin VB.CommandButton cmdXLog 
             Caption         =   "LeverancierFiche Opvragen / Wijzigen"
@@ -302,7 +302,7 @@ Begin VB.Form DirekteAankoop
          End
          Begin MSComctlLib.ListView ListView1 
             Height          =   1395
-            Left            =   120
+            Left            =   -74880
             TabIndex        =   41
             Top             =   360
             Width           =   4575
@@ -334,7 +334,7 @@ Begin VB.Form DirekteAankoop
          Begin VB.Label LabelInfoXlog 
             Alignment       =   2  'Center
             BorderStyle     =   1  'Fixed Single
-            Caption         =   "Activeer manueel een leverancier via TAB 'Leverancier Activeren' of TAB 'Lijst Historiek'"
+            Caption         =   "Activeer manueel de leverancier via TAB 'Leverancier' of TAB 'Historiek'"
             Height          =   495
             Left            =   -74640
             TabIndex        =   42
@@ -354,7 +354,7 @@ Begin VB.Form DirekteAankoop
                Strikethrough   =   0   'False
             EndProperty
             Height          =   1395
-            Left            =   -74880
+            Left            =   120
             TabIndex        =   30
             Top             =   360
             Width           =   4575
@@ -924,6 +924,7 @@ Function CheckDocument() As String
     
     payRefClean = Replace(uitwisselingDATAArray(14), "/", "")
     payRefClean = Replace(payRefClean, "+", "")
+    
     'If payRefClean = "" Then
     '    payRefClean = uitwisselingDATAArray(1)
     'End If
@@ -1416,7 +1417,7 @@ Dim totalAfterTwice As Integer
 
     If AankoopDetail.ListCount = 0 Then Exit Sub
 
-    Msg = "Buiten producten, meermaals voorkomende lijnen samenvoegen tot één." + vbCrLf + vbCrLf
+    Msg = "Buiten producten, meermaals voorkomende lijnen samenvoegen tot ï¿½ï¿½n." + vbCrLf + vbCrLf
     Msg = Msg + "Bent U zeker ?"
     KtrlBox = MsgBox(Msg, 292)
     If KtrlBox = 6 Then
@@ -1716,7 +1717,7 @@ Private Sub cbImportUBL_Click()
     ReDim uitwisselingDATAArray(50)
     uitwisselingOMSArray() = Split(uitwisselingOMS, vbTab)
     uitwisselingDATAArray() = Split(uitwisselingDATA, vbTab)
-    
+            
     Screen.MousePointer = vbNormal
     'Supplier lookup with companyId
     If CheckSupplier Then
@@ -1810,7 +1811,7 @@ If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) =
     Me.TextBoxWarningTestCompany.Visible = True
 End If
 
-SSTab1.Tab = 0
+SSTab1.Tab = 1
 Me.cbImportUBL.Enabled = True
 'rsMAR(TABLE_INVOICES).Close
 Ktrl = ktrlBLOBRecord
@@ -2042,7 +2043,7 @@ ElseIf supplierCountryCode = "BE" Then
     Dim beSupplierPeppolCheck As Boolean
     beSupplierPeppolCheck = CheckSupplierDocuments(supplierA110)
     If beSupplierPeppolCheck = False Then
-        MsgBox "Deze BE Leverancier is niet Peppol klaar" & vbCrLf & vbCrLf & "In principe mag je geen aankoopdocumenten aanvaarden", vbExclamation
+        MsgBox "Deze BE Leverancier dient via Peppol te werken" & vbCrLf & vbCrLf & "In principe mag je geen aankoopdocumenten MANUEEL inbrengen", vbExclamation
     End If
 End If
 
@@ -2214,6 +2215,7 @@ SSTab1.Tab = 0
 TekstInfo1.text = DATE_TEXT(Replace(uitwisselingDATAArray(2), "-", "")) 'date document
 TekstInfo0.text = TekstInfo1.text
 TekstInfo2.text = DATE_TEXT(Replace(uitwisselingDATAArray(3), "-", "")) 'expiring
+    
 TekstInfo4.text = uitwisselingDATAArray(14)
 TekstInfo12.text = uitwisselingDATAArray(1)
 
@@ -2454,20 +2456,17 @@ End If
 End Sub
 
 
-
-
-
 Private Sub ListView1_Click()
     
     If ListView1.ListItems.Count Then
         lvLeverancier = ListView1.SelectedItem.SubItems(1)
-        SSTab1.Tab = 0:
         bGet TABLE_SUPPLIERS, 0, lvLeverancier
         If Ktrl Then
-            MsgBox "stop"
+            'MsgBox "stop"
         Else
             RecordToVeld TABLE_SUPPLIERS
             InstalLeverancier
+            SSTab1.Tab = 0:
         End If
     Else
         KtrlBox = MsgBox("Historiek van reeds bestaande leveranciers tonen", vbQuestion + vbYesNo + vbDefaultButton2)
@@ -2524,7 +2523,7 @@ Next
 If TFlag = False Then
           Msg = "Uw rekening : " + fRekeningNummer + " past niet in de begrenzing." + vbCrLf + vbCrLf
     Msg = Msg + "Investeringen  : vanaf " + Left(GrensDetail(0), 7) + " tot " + Right(GrensDetail(0), 7) + vbCrLf
-    Msg = Msg + "Schulden/privé : vanaf " + Left(GrensDetail(1), 7) + " tot " + Right(GrensDetail(1), 7) + vbCrLf
+    Msg = Msg + "Schulden/privï¿½ : vanaf " + Left(GrensDetail(1), 7) + " tot " + Right(GrensDetail(1), 7) + vbCrLf
     Msg = Msg + "Handelsgoed    : vanaf " + Left(GrensDetail(2), 7) + " tot " + Right(GrensDetail(2), 7) + vbCrLf
     Msg = Msg + "Diverse kosten : vanaf " + Left(GrensDetail(3), 7) + " tot " + Right(GrensDetail(3), 7)
     MsgBox Msg
@@ -2610,7 +2609,7 @@ Private Sub Schoon()
     
     RasterSchoon
     If DirekteAankoop.Visible Then
-        SSTab1.Tab = 0
+        SSTab1.Tab = 1
     End If
     If Me.obTAB(0).Value = True Then
         SSTab2.Tab = 0
@@ -2663,6 +2662,14 @@ Function SQLZoekLeverancier()
     End If
 
 End Function
+
+Private Sub SSTab1_Click(PreviousTab As Integer)
+
+    If SSTab1.Tab = 0 And Len(Me.LeverancierInfo) = 0 Then
+        SQLZoekLeverancier
+    End If
+
+End Sub
 
 Private Sub SSTab1_KeyDown(KeyCode As Integer, Shift As Integer)
 
@@ -2953,7 +2960,6 @@ Private Sub TekstInfo4_LostFocus()
     If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
         If BankOk((TekstInfo4.text)) Then
         Else
-            Beep
             On Error Resume Next
             SnelHelpPrint "Gestructureerde betaalreferte onjuist !", BL_LOGGING
             TekstInfo4.text = "OGM onjuist"
@@ -2968,7 +2974,7 @@ Private Sub TekstInfo5_LostFocus()
 
     If AankoopFlg = 1 And AankoopOptie(1).Value = True Then
         If Val(TekstInfo5.text) <> 0 Then
-            KtrlBox = MsgBox("De aanbeveling door meeste BTW-diensten om bij creditnota E.U. géén B.T.W op te nemen negeren", vbQuestion + vbYesNo + vbDefaultButton1)
+            KtrlBox = MsgBox("De aanbeveling door meeste BTW-diensten om bij creditnota E.U. gï¿½ï¿½n B.T.W op te nemen negeren", vbQuestion + vbYesNo + vbDefaultButton1)
             If KtrlBox = vbYes Then
                 TekstInfo5.text = "0"
             End If

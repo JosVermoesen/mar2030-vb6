@@ -275,7 +275,7 @@ Dim Voorkeurquick(10, 10)               As String * 5
 
 Private Sub FicheNaarRecord(Fl As Integer)
 
-bGet Fl, 0, vSet(TekstInfo(0).Text, FLINDEX_LEN(Fl, 0))
+bGet Fl, 0, vSet(TekstInfo(0).text, FLINDEX_LEN(Fl, 0))
 If Ktrl = 0 Then
     bUpdate Fl, 0
 Else
@@ -338,18 +338,18 @@ Select Case Index
                 Venster.Show 1
             Case Else
                 SharedFl = Fl
-                aIndex = Val(Left(cmbSortering.Text, 2))
-                GridText = TekstInfo(0).Text
+                aIndex = Val(Left(cmbSortering.text, 2))
+                GridText = TekstInfo(0).text
                 SqlSearch.Show 1
         End Select
         If Ktrl = 0 Then
-            TekstInfo(0).Text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
+            TekstInfo(0).text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
             INSERT_FLAG(Fl) = 0
             RecordNaarFiche Fl
             Knop(5).Enabled = True
         Else
             Knop(5).Enabled = False
-            TekstInfo(0).Text = ""
+            TekstInfo(0).text = ""
             INSERT_FLAG(Fl) = 1
         End If
         
@@ -359,7 +359,10 @@ Select Case Index
         Case 4  'Boekhouding
             Select Case Fl
                 Case TABLE_CUSTOMERS To TABLE_SUPPLIERS
-                    BalansKontrole Fl
+                    'BalansKontrole Fl
+                    'Stop
+                    BalansKontroleWithRecordSet Fl
+                    
                 Case TABLE_LEDGERACCOUNTS
                     HistoriekSQL.Show
                 Case Else
@@ -371,7 +374,7 @@ Select Case Index
         
         Case 5  'Fiche EDITEREN
             If PeppolFlag Then
-                vBib TABLE_SUPPLIERS, Me.TekstInfo(0).Text, "A110"   'Uniek Codenummer
+                vBib TABLE_SUPPLIERS, Me.TekstInfo(0).text, "A110"   'Uniek Codenummer
             Else
                 TeZoeken = Trim$(TekstInfo(0))
                 If TeZoeken = "" Then Beep: Exit Sub
@@ -384,14 +387,14 @@ Select Case Index
                         NieuweFiche Fl
                         TekstInfo(0) = TeZoeken
                     End If
-                    If Fl = TABLE_LEDGERACCOUNTS Then DbKontrole (TekstInfo(0).Text), TABLE_LEDGERACCOUNTS
+                    If Fl = TABLE_LEDGERACCOUNTS Then DbKontrole (TekstInfo(0).text), TABLE_LEDGERACCOUNTS
             
                     If INSERT_FLAG(Fl) = 1 Then
                     Select Case Fl
                         Case TABLE_CUSTOMERS, TABLE_SUPPLIERS
-                            vBib Fl, (TekstInfo(0).Text), "A110"   'Klant/Levnummer
+                            vBib Fl, (TekstInfo(0).text), "A110"   'Klant/Levnummer
                         Case TABLE_LEDGERACCOUNTS
-                            vBib Fl, (TekstInfo(0).Text), "v019"   'Rekeningnummer
+                            vBib Fl, (TekstInfo(0).text), "v019"   'Rekeningnummer
                         Case Else
                             MsgBox "Stop"
                     End Select
@@ -458,8 +461,8 @@ Select Case Index
             End If
         Case 10
             If INSERT_FLAG(Fl) = 0 Then
-                Msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
-                KtrlBox = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo(0).Text)
+                msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
+                KtrlBox = MsgBox(msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo(0).text)
                 If KtrlBox = vbYes Then
                     bDelete Fl
                     Knop_Click 3
@@ -480,7 +483,7 @@ If PeppolFlag Then
 Else
     xTMP = daoBlankoRecord(Fl)
 
-    TekstInfo(0).Text = ""
+    TekstInfo(0).text = ""
     INSERT_FLAG(Fl) = 1
     Knop(5).Enabled = False
     Knop(5).Default = True
@@ -502,21 +505,21 @@ If Ktrl Then
 Else
     RecordToVeld Fl
 End If
-TekstInfo(0).Text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
+TekstInfo(0).text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
 XDoEvents = DoEvents
 
-Msg = ""
+msg = ""
 For T = 0 To 1
-    Msg = Msg + RTrim$(FVT(Fl, T)) + " "
+    msg = msg + RTrim$(FVT(Fl, T)) + " "
 Next
-SnelHelpPrint Msg, BL_LOGGING
+SnelHelpPrint msg, BL_LOGGING
 INSERT_FLAG(Fl) = 0
 
 End Sub
 
 Private Sub TekstInfo_Change(Index As Integer)
 
-If TekstInfo(0).Text = "" Then
+If TekstInfo(0).text = "" Then
     INSERT_FLAG(Fl) = 1
     Knop(5).Enabled = False
 Else
@@ -530,7 +533,7 @@ Private Sub TekstInfo_GotFocus(Index As Integer)
 SnelHelpPrint TekstInfo(0).ToolTipText & ", " & "[Ctrl] voor geSELECTeerd zoeken !", BL_LOGGING
 
 Knop(5).Default = True
-TekstInfo(0).SelLength = Len(TekstInfo(0).Text)
+TekstInfo(0).SelLength = Len(TekstInfo(0).text)
 
 End Sub
 
@@ -538,9 +541,9 @@ Private Sub TekstInfo_KeyDown(Index As Integer, KeyCode As Integer, Shift As Int
 
 Select Case KeyCode
     Case 17
-        aIndex = Val(Left(cmbSortering.Text, 2))
+        aIndex = Val(Left(cmbSortering.text, 2))
         SharedFl = Fl
-        GridText = TekstInfo(0).Text
+        GridText = TekstInfo(0).text
         SqlSearch.Show 1
         If Ktrl = 0 Then
             INSERT_FLAG(Fl) = 0
