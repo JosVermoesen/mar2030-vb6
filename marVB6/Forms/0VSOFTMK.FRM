@@ -280,7 +280,7 @@ Dim XX As Integer
 Dim cnnLic As ADODB.Connection
 Dim rsLic As ADODB.Recordset
 
-LabelInfo(0).Caption = App.ProductName & "-{Local First}"
+LabelInfo(0).Caption = App.ProductName & "-{LocalFirst}"
 AppInfo(1).Caption = App.LegalCopyright
 AppInfo(2).Caption = App.FileDescription
 AppInfo(0).Caption = Mid(appTitleAndVersion, InStr(appTitleAndVersion, "v.")) '"Versie " + Format(App.major) + "." + Format(App.minor) + "." + Format(App.Revision)

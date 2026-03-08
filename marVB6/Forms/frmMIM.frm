@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76677123
+         Format          =   76611587
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -501,9 +501,8 @@ Begin VB.MDIForm Mim
          Index           =   10
       End
       Begin VB.Menu Bewerken 
-         Caption         =   "EURO wisselfunctie"
+         Caption         =   "SEPA Leveranciers converteren"
          Index           =   11
-         Shortcut        =   ^W
       End
    End
    Begin VB.Menu MenuTitel 
@@ -1164,7 +1163,7 @@ Select Case Index
     Case 6
         Rappelklanten.Show 1
     Case 7
-        frmOGM.Show
+        frmOGM.Show 1
         
     Case 9
         If ACTIVE_BOOKYEAR > 0 Then MsgBox "Opmaak uitsluiten in hoogste boekjaar mogelijk !": Exit Sub
@@ -1226,17 +1225,17 @@ Select Case Index
         End If
         
     Case 4
-        checkLock = LOCATION_COMPANYDATA
+        'checkLock = LOCATION_COMPANYDATA
         
-        If checkLock = "" Then
-        Else
-            Ktrl = 100
-            AutoUnloadBedrijf
-            On Local Error Resume Next
-            ntDB.Close
-            On Local Error GoTo 0
-            DoEvents
-        End If
+        'If checkLock = "" Then
+        'Else
+        '    Ktrl = 100
+        '    AutoUnloadBedrijf
+        '    On Local Error Resume Next
+        '    ntDB.Close
+        '    On Local Error GoTo 0
+        '    DoEvents
+        'End If
         Call DetectClickOnceShortcut
         
     Case 6
@@ -1397,11 +1396,12 @@ Select Case Index
         'frmMarNtInetUpgrade.Show
         
     Case 8
-        X = KontroleerDatabase()
+        'X = KontroleerDatabase()
         
     Case 11
         'Wissel.Show
-               
+        Call ConvertSuppliersSEPAs
+                       
 End Select
 
 ErrorJump:
@@ -1846,8 +1846,8 @@ End Sub
 
 Private Sub DatumVerwerking_Change()
 
-    MIM_GLOBAL_DATE = Format(DatumVerwerking.Value, "dd/mm/yyyy")
-    BJPERDAT.DatumVerwerking.Value = DatumVerwerking.Value
+    MIM_GLOBAL_DATE = Format(DatumVerwerking.value, "dd/mm/yyyy")
+    BJPERDAT.DatumVerwerking.value = DatumVerwerking.value
             
 End Sub
 
@@ -2239,7 +2239,7 @@ If Dir(ZoekHTM) <> "" Then
         End If
     End If
 End If
-Mim.DatumVerwerking.Value = Now
+Mim.DatumVerwerking.value = Now
 Exit Sub
 
 MDIErrorOpvang:

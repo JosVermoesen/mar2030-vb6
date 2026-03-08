@@ -24,6 +24,264 @@ End If
 
 End Function
 
+Public Function IbanCheck(anyRekString As String, _
+                          sepaFlag As Boolean, _
+                          returnFormatted As Boolean) As String
+
+    Dim rekLength As Long
+    Dim calcPip As Long
+    Dim dPip2 As Long
+    Dim inputIsSepa As Boolean
+
+    Dim rekOld As String
+    Dim rekSepa As String
+    Dim longString As String
+
+    rekLength = Len(anyRekString)
+    rekSepa = ""
+
+    '--- Determine input format ---
+    Select Case rekLength
+        Case 12
+            inputIsSepa = False
+            rekOld = anyRekString
+
+        Case 14
+            inputIsSepa = False
+            rekOld = Mid$(anyRekString, 1, 3) & _
+                     Mid$(anyRekString, 5, 7) & _
+                     Mid$(anyRekString, 13)
+
+        Case 16
+            inputIsSepa = True
+            rekSepa = anyRekString
+            rekOld = Mid$(rekSepa, 5)
+
+        Case 19
+            inputIsSepa = True
+            rekSepa = Mid$(anyRekString, 1, 4) & _
+                      Mid$(anyRekString, 6, 4) & _
+                      Mid$(anyRekString, 11, 4) & _
+                      Mid$(anyRekString, 16)
+            rekOld = Mid$(rekSepa, 5)
+
+        Case Else
+            IbanCheck = "invalid"
+            Exit Function
+    End Select
+
+    '--- Validate rekOld (Belgian BBAN) ---
+    Dim dPip As String
+    dPip = Mid$(rekOld, 1, 10)
+    dPip2 = Val(Mid$(rekOld, 11, 2))
+
+    calcPip = Mod97(dPip)
+
+    If Mid$(rekOld, 11, 2) = "00" Then
+        IbanCheck = "invalid"
+        Exit Function
+
+    ElseIf calcPip = 0 And Mid$(rekOld, 11, 2) = "97" Then
+        ' OK
+
+    ElseIf calcPip = dPip2 Then
+        ' OK
+
+    Else
+        IbanCheck = "invalid"
+        Exit Function
+    End If
+
+    '--- If SEPA not requested, return old format ---
+    If Not sepaFlag Then
+
+        If Not returnFormatted Then
+            IbanCheck = rekOld
+        Else
+            IbanCheck = Mid$(rekOld, 1, 3) & " " & _
+                        Mid$(rekOld, 4, 7) & " " & _
+                        Mid$(rekOld, 11)
+        End If
+
+        Exit Function
+    End If
+
+    '--- SEPA requested ---
+    If Not inputIsSepa Then
+        rekSepa = "BE00" & rekOld
+    ElseIf Left$(rekSepa, 2) <> "BE" Then
+        IbanCheck = "invalid"
+        Exit Function
+    End If
+
+    '--- Compute SEPA checksum using safe Mod97 ---
+    longString = Mid$(rekOld, 11) & Mid$(rekOld, 11) & "111400"
+    calcPip = Mod97(longString)
+
+    If Not inputIsSepa Then
+        rekSepa = Replace(rekSepa, "BE00", "BE" & FormatDummy(98 - calcPip, 2))
+    End If
+
+    dPip2 = Val(Mid$(rekSepa, 3, 2))
+
+    If (98 - calcPip) <> dPip2 Then
+        IbanCheck = "invalid"
+        Exit Function
+    End If
+
+    '--- Return SEPA result ---
+    If Not returnFormatted Then
+        IbanCheck = rekSepa
+    Else
+        IbanCheck = Mid$(rekSepa, 1, 4) & " " & _
+                    Mid$(rekSepa, 5, 4) & " " & _
+                    Mid$(rekSepa, 9, 4) & " " & _
+                    Mid$(rekSepa, 13)
+    End If
+End Function
+
+Public Function Mod97(ByVal s As String) As Long
+    Dim value As Long
+    Dim i As Long
+    Dim c As Integer
+
+    value = 0
+
+    For i = 1 To Len(s)
+        c = Asc(Mid$(s, i, 1)) - 48   ' convert char ? digit
+        value = (value * 10 + c) Mod 97
+    Next i
+
+    Mod97 = value
+End Function
+
+Public Function FormatDummy(num As Long, size As Long) As String
+    Dim s As String
+    s = String$(9, "0") & CStr(num)
+    FormatDummy = Right$(s, size)
+End Function
+
+Public Function ConvertSuppliersSEPAs()
+
+    Dim numberOldValid As Integer
+    Dim numberNewValid As Integer
+    Dim numberOldInvalid As Integer
+    Dim numberNewInvalid As Integer
+        
+    Dim rsPartners As New ADODB.Recordset
+    
+    Set rsPartners = New ADODB.Recordset
+            
+    On Error Resume Next
+    Err = 0
+    rsPartners.CursorLocation = adUseClient
+    Msg = "SELECT A110, v150, A161, A100, v259, A170 FROM Leveranciers WHERE v150 = 'BE' ORDER BY A110"
+
+    SnelHelpPrint Msg, BL_LOGGING
+    Screen.MousePointer = vbHourglass
+    rsPartners.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
+    If Err Then
+        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+        Screen.MousePointer = vbNormal
+        Exit Function
+    ElseIf rsPartners.RecordCount = 0 Then
+        MsgBox "Geen leveranciers.", vbInformation
+        Screen.MousePointer = vbNormal
+        Exit Function
+    End If
+    
+    Dim checker As String
+        
+    rsPartners.MoveFirst
+    Do While Not rsPartners.EOF
+        On Local Error Resume Next
+        Err = 0
+        checker = Trim(rsPartners("v259")) 'is there alreade a SEPA account
+        If Err Then
+            'it is null, try to get old account number
+            On Local Error Resume Next
+            Err = 0
+            checker = Trim(rsPartners("A170"))
+            If Err Then
+                'old number also null so do nothing
+            Else
+                'check if there is an old account
+                If checker = "" Then
+                    'nothing to convert
+                Else
+                    checker = IbanCheck(checker, True, False)
+                    If checker = "invalid" Then
+                        numberOldInvalid = numberOldInvalid + 1
+                        rsPartners("v259") = ""
+                        rsPartners("A170") = ""
+                        rsPartners.Update
+                    Else
+                        numberOldValid = numberOldValid + 1
+                        numberNewValid = numberNewValid + 1
+                        'numberOldInvalid
+                        'numberNewInvalid
+                        rsPartners("v259") = checker
+                        rsPartners.Update
+                    End If
+                End If
+            End If
+        Else
+            'check validity of SEPA account
+            If Trim(checker) = "" Then
+                'Try with old account
+                On Local Error Resume Next
+                Err = 0
+                checker = Trim(rsPartners("A170"))
+                If Err Then
+                    'no use
+                Else
+                    checker = IbanCheck(checker, True, False)
+                    If checker = "invalid" Then
+                        numberOldInvalid = numberOldInvalid + 1
+                        rsPartners("v259") = ""
+                        rsPartners("A170") = ""
+                        rsPartners.Update
+                    Else
+                        numberOldValid = numberOldValid + 1
+                        numberNewValid = numberNewValid + 1
+                        'numberOldInvalid
+                        'numberNewInvalid
+                        rsPartners("v259") = checker
+                        rsPartners.Update
+                    End If
+                End If
+            Else
+                checker = IbanCheck(checker, True, False)
+                If checker = "invalid" Then
+                    numberNewInvalid = numberNewInvalid + 1
+                    rsPartners("v259") = ""
+                    rsPartners.Update
+                Else
+                    numberNewValid = numberNewValid + 1
+                    If checker = rsPartners("v259") Then
+                    Else
+                        rsPartners("v259") = checker
+                        rsPartners.Update
+                    End If
+                End If
+            End If
+        End If
+        '? ibancheck("891-8540319-61",false,false)
+        rsPartners.MoveNext
+    Loop
+    Screen.MousePointer = vbNormal
+       
+    rsPartners.Close
+    Set rsPartners = Nothing
+    
+    Msg = "Aantal oude nummers naar SEPA: " & Trim(Str(numberOldValid)) & vbCrLf
+    Msg = Msg & "Aantal geldige SEPA: " & Trim(Str(numberNewValid)) & vbCrLf
+    MsgBox Msg, vbInformation, "SEPA Check Leveranciers"
+
+End Function
+
+
+
 Function BtwKontrole(BtwString As String, bStrip As Boolean) As String
 ReDim dPip(3) As Double
 Dim ipip As Integer
@@ -401,7 +659,7 @@ Else
     'String99 = ntRS(TABLE_COUNTERS).Fields("v217")
     On Error Resume Next
     Err = 0
-    String99 = rsMAR(TABLE_COUNTERS).Fields("v217")
+    String99 = rsMAR(TABLE_COUNTERS).fields("v217")
     If Err Then MsgBox Error
 End If
 bClose TABLE_COUNTERS

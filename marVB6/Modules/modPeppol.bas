@@ -2,6 +2,30 @@ Attribute VB_Name = "modPeppol"
 Option Explicit
 DefInt A-Z
 
+Private Type GUID
+    Data1 As Long
+    Data2 As Integer
+    Data3 As Integer
+    Data4(0 To 7) As Byte
+End Type
+
+Private Declare Function CoCreateGuid Lib "ole32.dll" (ByRef pguid As GUID) As Long
+Private Declare Function StringFromGUID2 Lib "ole32.dll" (ByRef rguid As GUID, ByVal lpsz As Long, ByVal cchMax As Long) As Long
+
+Public Function CreateGUID() As String
+    Dim g As GUID
+    Dim buffer As String
+    buffer = String$(39, vbNullChar)
+
+    If CoCreateGuid(g) = 0 Then
+        Call StringFromGUID2(g, StrPtr(buffer), 39)
+        CreateGUID = Left$(buffer, InStr(buffer, vbNullChar) - 1)
+    Else
+        CreateGUID = ""
+    End If
+End Function
+
+
 Private Function SafeGetNodeText(parentNode As Object, xpath As String, ns As String) As String
     On Error Resume Next ' Handle errors gracefully
     Dim node As Object
