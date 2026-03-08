@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76611587
+         Format          =   76808195
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -501,7 +501,7 @@ Begin VB.MDIForm Mim
          Index           =   10
       End
       Begin VB.Menu Bewerken 
-         Caption         =   "SEPA Leveranciers converteren"
+         Caption         =   "SEPA leveranciers controleren en converteren"
          Index           =   11
       End
    End
@@ -1846,8 +1846,8 @@ End Sub
 
 Private Sub DatumVerwerking_Change()
 
-    MIM_GLOBAL_DATE = Format(DatumVerwerking.value, "dd/mm/yyyy")
-    BJPERDAT.DatumVerwerking.value = DatumVerwerking.value
+    MIM_GLOBAL_DATE = Format(DatumVerwerking.Value, "dd/mm/yyyy")
+    BJPERDAT.DatumVerwerking.Value = DatumVerwerking.Value
             
 End Sub
 
@@ -2239,7 +2239,7 @@ If Dir(ZoekHTM) <> "" Then
         End If
     End If
 End If
-Mim.DatumVerwerking.value = Now
+Mim.DatumVerwerking.Value = Now
 Exit Sub
 
 MDIErrorOpvang:
