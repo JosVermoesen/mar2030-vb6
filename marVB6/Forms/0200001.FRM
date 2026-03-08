@@ -5,7 +5,6 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form DirekteAankoop 
    BackColor       =   &H00C0C0C0&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Aankoopverrichtingen"
    ClientHeight    =   7770
    ClientLeft      =   1170
    ClientTop       =   1365
@@ -132,15 +131,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbAfbeelding"
-      Tab(1).Control(1)=   "OLE1"
+      Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(1)=   "cbAfbeelding"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obTAB(1)"
+      Tab(2).Control(0)=   "Label3"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "Label3"
+      Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -264,6 +263,7 @@ Begin VB.Form DirekteAankoop
          _ExtentY        =   3307
          _Version        =   393216
          Style           =   1
+         Tab             =   1
          TabHeight       =   494
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
@@ -276,29 +276,50 @@ Begin VB.Form DirekteAankoop
          EndProperty
          TabCaption(0)   =   "&Leverancier"
          TabPicture(0)   =   "0200001.frx":035E
-         Tab(0).ControlEnabled=   -1  'True
+         Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "LeverancierInfo"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
-         Tab(1).ControlEnabled=   0   'False
+         Tab(1).ControlEnabled=   -1  'True
          Tab(1).Control(0)=   "LabelInfoXlog"
+         Tab(1).Control(0).Enabled=   0   'False
          Tab(1).Control(1)=   "cmdXLog"
-         Tab(1).ControlCount=   2
+         Tab(1).Control(1).Enabled=   0   'False
+         Tab(1).Control(2)=   "ButtonInfoPeppol"
+         Tab(1).Control(2).Enabled=   0   'False
+         Tab(1).ControlCount=   3
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "ListView1"
          Tab(2).ControlCount=   1
+         Begin VB.CommandButton ButtonInfoPeppol 
+            Caption         =   "Peppel B2B 2026 - 2030 Klik hier voor meer info"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Left            =   120
+            TabIndex        =   48
+            TabStop         =   0   'False
+            Top             =   1440
+            Width           =   4575
+         End
          Begin VB.CommandButton cmdXLog 
             Caption         =   "LeverancierFiche Opvragen / Wijzigen"
             Enabled         =   0   'False
             Height          =   495
-            Left            =   -73680
+            Left            =   120
             TabIndex        =   40
-            Top             =   1080
-            Width           =   2175
+            Top             =   360
+            Width           =   4575
          End
          Begin MSComctlLib.ListView ListView1 
             Height          =   1395
@@ -333,13 +354,21 @@ Begin VB.Form DirekteAankoop
          End
          Begin VB.Label LabelInfoXlog 
             Alignment       =   2  'Center
-            BorderStyle     =   1  'Fixed Single
-            Caption         =   "Activeer manueel de leverancier via TAB 'Leverancier' of TAB 'Historiek'"
-            Height          =   495
-            Left            =   -74640
+            Caption         =   "Voor manuele verrichting activeer een leverancier via TAB 'Leverancier' of TAB 'Historiek'"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   375
+            Left            =   120
             TabIndex        =   42
-            Top             =   480
-            Width           =   4095
+            Top             =   960
+            Width           =   4575
          End
          Begin VB.Label LeverancierInfo 
             BackColor       =   &H80000018&
@@ -354,7 +383,7 @@ Begin VB.Form DirekteAankoop
                Strikethrough   =   0   'False
             EndProperty
             Height          =   1395
-            Left            =   120
+            Left            =   -74880
             TabIndex        =   30
             Top             =   360
             Width           =   4575
@@ -1404,6 +1433,27 @@ Unload Me
 End Sub
 
 
+Private Sub ButtonInfoPeppol_Click()
+
+    Dim peppolInfoPDF As String
+    
+    peppolInfoPDF = PROGRAM_LOCATION & "Def\B2B_Factuur_in_mail.pdf"
+    Dim lookForPDF As String
+    'look for document
+    On Error Resume Next
+    Err = 0
+    lookForPDF = Dir(peppolInfoPDF)
+    DoEvents
+    If peppolInfoPDF = "" Then
+        MsgBox "PDF niet gevonden in " & vbCrLf & peppolInfoPDF & vbCrLf & vbCrLf & "Controleer correcte installatie MarIntegraal", vbExclamation
+    Else
+        If ShellExecuteWithFallback(peppolInfoPDF) = False Then
+            MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+        End If
+    End If
+
+End Sub
+
 Private Sub ButtonOptimize_Click()
 
 Dim HuidigeRekening As String
@@ -1893,7 +1943,9 @@ Private Sub Form_Resize()
 
     AankoopDetail.Width = DirekteAankoop.Width - 250
     Me.SSTab1.SetFocus
-       
+    If ifSupplierInsertWarning Then
+        BasisB(TABLE_SUPPLIERS).SetFocus
+    End If
     
 End Sub
 

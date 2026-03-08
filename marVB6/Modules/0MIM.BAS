@@ -233,9 +233,9 @@ If XLogKey <> "" Then
             'bFirst TABLE_JOURNAL, 1
             bGet TABLE_JOURNAL, 1, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#")
             If Ktrl Then
-                      msg = "Ja = alle TYPE-dokumenten DAT jaar vernietigen !" + vbCrLf
-                msg = msg + "Nee = enkel DIT dokument verwijderen."
-                Ktrl = MsgBox(msg$, 19 + 512, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#") + ": dokument vernietigen !")
+                      Msg = "Ja = alle TYPE-dokumenten DAT jaar vernietigen !" + vbCrLf
+                Msg = Msg + "Nee = enkel DIT dokument verwijderen."
+                Ktrl = MsgBox(Msg$, 19 + 512, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#") + ": dokument vernietigen !")
                     Select Case Ktrl
                     Case 2
                         'niks
@@ -243,9 +243,9 @@ If XLogKey <> "" Then
                         RecordToVeld TABLE_INVOICES
                         KontroleString = Left(vBibTekst(TABLE_INVOICES, "#v035 #"), 4)
                         
-                        msg = "Onvoorwaardelijk meerdere dokumenten in reeks vernietigen van jaar " + KontroleString + vbCrLf + vbCrLf
-                        msg = msg + "Bent U zeker ?"
-                        Ktrl = MsgBox(msg, vbYesNo + vbDefaultButton2, "Opkuis dokumenten jaar " + KontroleString)
+                        Msg = "Onvoorwaardelijk meerdere dokumenten in reeks vernietigen van jaar " + KontroleString + vbCrLf + vbCrLf
+                        Msg = Msg + "Bent U zeker ?"
+                        Ktrl = MsgBox(Msg, vbYesNo + vbDefaultButton2, "Opkuis dokumenten jaar " + KontroleString)
                         If Ktrl = vbYes Then
                             bFirst TABLE_INVOICES, 0
                             If Ktrl Then
@@ -346,8 +346,8 @@ Return
 
 ErrorOpvang:
 Screen.MousePointer = vbNormal
-msg = "Er zijn reeds" + Str$(T) + " dokumenten !  Teveel voor het geheugen.  Alleen de openstaande dokumenten weergeven ?"
-KtrlBox = MsgBox(msg, 292)
+Msg = "Er zijn reeds" + Str$(T) + " dokumenten !  Teveel voor het geheugen.  Alleen de openstaande dokumenten weergeven ?"
+KtrlBox = MsgBox(Msg, 292)
 If KtrlBox = 6 Then
     EnkelOpenstaand = True
     Resume Opnieuw
@@ -431,12 +431,12 @@ On Error Resume Next
 Err = 0
 rsLocalAV.CursorLocation = adUseClient
 
-msg = "SELECT * FROM Dokumenten "
-msg = msg & "WHERE v034 = '" & VoorLetter & Trim(vBibTekst(Fl, "#A110 #")) & "' "
-msg = msg & "ORDER BY v035 DESC"
+Msg = "SELECT * FROM Dokumenten "
+Msg = Msg & "WHERE v034 = '" & VoorLetter & Trim(vBibTekst(Fl, "#A110 #")) & "' "
+Msg = Msg & "ORDER BY v035 DESC"
 
-SnelHelpPrint msg, BL_LOGGING
-rsLocalAV.Open msg, adntDB, adOpenForwardOnly, adLockReadOnly
+SnelHelpPrint Msg, BL_LOGGING
+rsLocalAV.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
 If Err Then
     MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
     Screen.MousePointer = vbNormal
@@ -481,9 +481,9 @@ If XLogKey <> "" Then
             'bFirst TABLE_JOURNAL, 1
             bGet TABLE_JOURNAL, 1, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#")
             If Ktrl Then
-                      msg = "Ja = alle TYPE-dokumenten DAT jaar vernietigen !" + vbCrLf
-                msg = msg + "Nee = enkel DIT dokument verwijderen."
-                Ktrl = MsgBox(msg$, 19 + 512, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#") + ": dokument vernietigen !")
+                      Msg = "Ja = alle TYPE-dokumenten DAT jaar vernietigen !" + vbCrLf
+                Msg = Msg + "Nee = enkel DIT dokument verwijderen."
+                Ktrl = MsgBox(Msg$, 19 + 512, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#") + ": dokument vernietigen !")
                     Select Case Ktrl
                     Case 2
                         'niks
@@ -491,9 +491,9 @@ If XLogKey <> "" Then
                         RecordToVeld TABLE_INVOICES
                         KontroleString = Left(vBibTekst(TABLE_INVOICES, "#v035 #"), 4)
                         
-                        msg = "Onvoorwaardelijk meerdere dokumenten in reeks vernietigen van jaar " + KontroleString + vbCrLf + vbCrLf
-                        msg = msg + "Bent U zeker ?"
-                        Ktrl = MsgBox(msg, vbYesNo + vbDefaultButton2, "Opkuis dokumenten jaar " + KontroleString)
+                        Msg = "Onvoorwaardelijk meerdere dokumenten in reeks vernietigen van jaar " + KontroleString + vbCrLf + vbCrLf
+                        Msg = Msg + "Bent U zeker ?"
+                        Ktrl = MsgBox(Msg, vbYesNo + vbDefaultButton2, "Opkuis dokumenten jaar " + KontroleString)
                         If Ktrl = vbYes Then
                             bFirst TABLE_INVOICES, 0
                             If Ktrl Then
@@ -537,7 +537,11 @@ T = T + 1
 Select Case Fl
     Case TABLE_CUSTOMERS
         A = rsLocalAV("v033") & vbTab 'vBibTekst(TABLE_INVOICES, "#v033 #") & vbTab
+        On Local Error Resume Next
+        Err = 0
         dBetaald = Val(rsLocalAV("v037"))
+        If Err = 94 Then dBetaald = 0
+                
         Select Case Left(rsLocalAV("v033"), 1)
             Case "V"
                 dTotaal = Val(rsLocalAV("v249"))
@@ -548,6 +552,7 @@ Select Case Fl
             Case "Q"
                 dTotaal = Val(rsLocalAV("v249"))
         End Select
+        
         A = A & Format(dTotaal, "#,##0.00") & vbTab
         Cumul = Cumul + dTotaal - dBetaald
         A = A & DATE_TEXT(rsLocalAV("v035")) & vbTab
@@ -587,8 +592,8 @@ Return
 
 ErrorOpvang:
 Screen.MousePointer = vbNormal
-msg = "Er zijn reeds" + Str$(T) + " dokumenten !  Teveel voor het geheugen.  Alleen de openstaande dokumenten weergeven ?"
-KtrlBox = MsgBox(msg, 292)
+Msg = "Er zijn reeds" + Str$(T) + " dokumenten !  Teveel voor het geheugen.  Alleen de openstaande dokumenten weergeven ?"
+KtrlBox = MsgBox(Msg, 292)
 If KtrlBox = 6 Then
     EnkelOpenstaand = True
     Resume Opnieuw
@@ -811,8 +816,8 @@ Else
                     bClose TABLE_COUNTERS
                     Err = 0
                     On Error Resume Next
-                    msg = "ALTER TABLE " & sTBLName & " ALTER COLUMN v217 TEXT(50)"
-                    adntDB.Execute msg
+                    Msg = "ALTER TABLE " & sTBLName & " ALTER COLUMN v217 TEXT(50)"
+                    adntDB.Execute Msg
                     If Err Then
                         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
                         End
@@ -934,8 +939,8 @@ If updateLengths20251025 = True Then
     bClose TABLE_INVOICES
     Err = 0
     On Error Resume Next
-    msg = "ALTER TABLE Dokumenten ALTER COLUMN v039 TEXT(35)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Dokumenten ALTER COLUMN v039 TEXT(35)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
@@ -947,50 +952,50 @@ If updateLengths20250809 = True Then
     bClose TABLE_CUSTOMERS
     Err = 0
     On Error Resume Next
-    msg = "ALTER TABLE Klanten ALTER COLUMN A100 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A100 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN A101 TEXT(25)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A101 TEXT(25)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN A104 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A104 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN A108 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A108 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN A120 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A120 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN A127 TEXT(25)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A127 TEXT(25)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN v254 TEXT(100)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN v254 TEXT(100)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Klanten ALTER COLUMN v247 TEXT(100)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN v247 TEXT(100)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
@@ -1000,26 +1005,26 @@ If updateLengths20250809 = True Then
     bClose TABLE_SUPPLIERS
     Err = 0
     On Error Resume Next
-    msg = "ALTER TABLE Leveranciers ALTER COLUMN A100 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Leveranciers ALTER COLUMN A100 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Leveranciers ALTER COLUMN A104 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Leveranciers ALTER COLUMN A104 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Leveranciers ALTER COLUMN A108 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Leveranciers ALTER COLUMN A108 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
     End If
-    msg = "ALTER TABLE Leveranciers ALTER COLUMN A125 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Leveranciers ALTER COLUMN A125 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
@@ -1033,8 +1038,8 @@ If updateLengthsBis20250809 = True Then
     bClose TABLE_CUSTOMERS
     Err = 0
     On Error Resume Next
-    msg = "ALTER TABLE Klanten ALTER COLUMN A125 TEXT(50)"
-    adntDB.Execute msg
+    Msg = "ALTER TABLE Klanten ALTER COLUMN A125 TEXT(50)"
+    adntDB.Execute Msg
     If Err Then
         MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
         End
@@ -1468,8 +1473,8 @@ Else
     End If
     
     If Val(String99(READING, 62)) <> 1 Then
-        msg = "Eindinventaris van vorig boekjaar overslaan en stock-roulatie vernietigen !  Bent U zeker ?"
-        KtrlBox = MsgBox(msg, 292)
+        Msg = "Eindinventaris van vorig boekjaar overslaan en stock-roulatie vernietigen !  Bent U zeker ?"
+        KtrlBox = MsgBox(Msg, 292)
         If KtrlBox = 6 Then
         Else
             bClose TABLE_COUNTERS
@@ -1481,8 +1486,8 @@ End If
 bClose TABLE_COUNTERS
 TABLEDEF_ONT(TABLE_COUNTERS) = TempoBestand
 
-msg = "Een nieuw boekjaar wordt geïnstalleerd hierna !  Bent U zeker ?"
-KtrlBox = MsgBox(msg, vbQuestion + vbYesNo + vbDefaultButton2)
+Msg = "Een nieuw boekjaar wordt geïnstalleerd hierna !  Bent U zeker ?"
+KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
 If KtrlBox = vbYes Then
 Else
     Exit Sub
@@ -1948,7 +1953,7 @@ Public Function VeldOK(flHier As Integer, VeldNaam As String, Optional VeldDef A
     End If
     On Error Resume Next
     Err = 0
-    msg = rsMAR(flHier)(VeldNaam).Name
+    Msg = rsMAR(flHier)(VeldNaam).Name
     If Err = 0 Then
         VeldOK = Err
         Exit Function
@@ -1957,14 +1962,14 @@ Public Function VeldOK(flHier As Integer, VeldNaam As String, Optional VeldDef A
         Exit Function
     Else
         bClose flHier
-        msg = "ALTER TABLE " & bstNaam(flHier) & " ADD COLUMN " & VeldNaam & " " & VeldDef & ";"
-        If MsgBox(msg & vbCr & vbCr & "SQL-instructie uitvoeren", vbYesNo + vbDefaultButton1 + vbQuestion) = vbYes Then
+        Msg = "ALTER TABLE " & bstNaam(flHier) & " ADD COLUMN " & VeldNaam & " " & VeldDef & ";"
+        If MsgBox(Msg & vbCr & vbCr & "SQL-instructie uitvoeren", vbYesNo + vbDefaultButton1 + vbQuestion) = vbYes Then
             Err = 0
-            adntDB.Execute msg, AantalRC
+            adntDB.Execute Msg, AantalRC
             If Err Then
                 MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
             Else
-                MsgBox msg & " met succes uitgevoerd", vbInformation
+                MsgBox Msg & " met succes uitgevoerd", vbInformation
                 
             End If
             VeldOK = Err

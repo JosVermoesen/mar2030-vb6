@@ -103,7 +103,7 @@ Begin VB.Form JaarBtwBelgie
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   73990147
+      Format          =   16449539
       CurrentDate     =   39083
       MaxDate         =   73050
       MinDate         =   31048
@@ -412,7 +412,7 @@ Select Case Ktrl
                     
         'Create the message
         Me.MPIBericht.MsgSubject = "Btwjaarlisting"
-        Me.MPIBericht.MsgNoteText = "Formaat:Positioneel Bericht.  Aangemaakt met marIntegraal versie " & MAR_VERSION
+        Me.MPIBericht.MsgNoteText = "Formaat: XML Bericht.  Aangemaakt met marIntegraal versie " & MAR_VERSION
         Me.MPIBericht.AttachmentPathName = desktopLocatie & "\" + Me.tbRefDeclarant + ".xml"
             
         'Send the message
@@ -539,7 +539,7 @@ yearListingMain = Replace(yearListingMain, "{turnoverSum}", Trim(Xlog.X.Clip))
 Xlog.X.Col = 8
 yearListingMain = Replace(yearListingMain, "{vatAmountSum}", Trim(Xlog.X.Clip))
 '{referenceDeclarant}
-yearListingMain = Replace(yearListingMain, "{referenceDeclarant}", Trim(Me.tbRefDeclarant.Text))
+yearListingMain = Replace(yearListingMain, "{referenceDeclarant}", Trim(Me.tbRefDeclarant.text))
 '{fiscalYear}
 yearListingMain = Replace(yearListingMain, "{fiscalYear}", Right(Datum, 4))
 yearListingMain = Replace(yearListingMain, "{vatNumberDeclarant}", String99(READING, 51))
@@ -582,11 +582,11 @@ If Ktrl = 0 Then
     MsgBox "Fout bij bewaren van " + Me.tbRefDeclarant + ".xml", vbCritical
 End If
 
-Dim Ret As Integer
+Dim ret As Integer
 Dim path As String * 260
 
 'Application Data lokatie ?
-Ret = SHGetFolderPath(0, 0, 0, 0, path)
+ret = SHGetFolderPath(0, 0, 0, 0, path)
 desktopLocatie = Left(path, InStr(path, Chr(0)) - 1)
 Ktrl = ScrMaakTekstBestand(yearListingMain, desktopLocatie + "\" + Me.tbRefDeclarant + ".xml")
 If Ktrl = 0 Then
@@ -623,7 +623,13 @@ Next
 JaarBtwBelgie.Caption = "Jaarlisting B.T.W. België " + Right(Format(Datum, "dd/mm/yyyy"), 4) + " !!!"
 LijstNaam = JaarBtwBelgie.Caption
 TopDown.Caption = LijstNaam
-Me.tbRefDeclarant.Text = "L" + String99(READING, 51) + Right(Format(Datum, "dd/mm/yyyy"), 4)
+Dim checkOnZero As String
+
+checkOnZero = String99(READING, 51)
+If Mid(checkOnZero, 1, 1) = "0" Then
+    checkOnZero = Mid(checkOnZero, 2)
+End If
+Me.tbRefDeclarant.text = "L" + checkOnZero + Right(Format(Datum, "dd/mm/yyyy"), 4)
 
 End Sub
 
@@ -668,7 +674,7 @@ REPORT_TAB(9) = 0
     Xlog.X.Row = 0
     For T = 0 To 8
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 
@@ -810,7 +816,7 @@ End Sub
 
 Private Sub tbRefDeclarant_Change()
 
-    MsgBox "Wijzigingen aanbrengen wordt niet aanbevolen.", vbOKOnly + vbExclamation
+    MsgBox "Wijzigingen aan RefDeclarant aanbrengen kan tot foutmeldingen leiden bij aangifte.", vbOKOnly + vbExclamation
     
 End Sub
 
@@ -832,7 +838,7 @@ If Right(BOOKYEAR_FROMTO, 4) <> "1231" Then
         'eventjes kijken naar vorig jaar
         bClose TABLE_COUNTERS
         tempoBoekjaar = bstNaam(TABLE_COUNTERS)
-        bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.Text - 1
+        bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.text - 1
         If String99(READING, 296) <> "EUR" Then
             'extra controle nodig...
             EurBefJaar = True

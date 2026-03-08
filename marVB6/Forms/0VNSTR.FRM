@@ -1231,7 +1231,6 @@ Begin VB.Form Venster
          _ExtentX        =   21828
          _ExtentY        =   8493
          _Version        =   393217
-         Enabled         =   -1  'True
          TextRTF         =   $"0VNSTR.frx":008C
       End
       Begin VB.ComboBox cbPolisHistoriek 
@@ -1301,7 +1300,6 @@ Begin VB.Form Venster
          _ExtentX        =   21828
          _ExtentY        =   8281
          _Version        =   393217
-         Enabled         =   -1  'True
          TextRTF         =   $"0VNSTR.frx":0119
       End
       Begin VB.Label Label2 
@@ -1382,19 +1380,19 @@ Dim DummyText As String
 Dim TempoX As Integer
 Dim Ktrl99 As Integer
 
-bGet TABLE_VARIOUS, 1, vSet("25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + Venster!TxtInfo(0).Text, 20)
+bGet TABLE_VARIOUS, 1, vSet("25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + Venster!TxtInfo(0).text, 20)
 If Ktrl Then
     MsgBox "Detailfiche voertuig opmaken a.u.b.", vbInformation
 Else
     RecordToVeld TABLE_VARIOUS
     'hier moet het gebeuren...
     Load frmGroeneKaart
-    frmGroeneKaart.mebTekstinfo(0).Text = TxtInfo(1).Text & " " & TxtInfo(2).Text
-    frmGroeneKaart.mebTekstinfo(1).Text = TxtInfo(5).Text & " " & TxtInfo(6).Text & " " & TxtInfo(7).Text
-    frmGroeneKaart.mebTekstinfo(2).Text = TxtInfo(9).Text & " " & TxtInfo(10).Text
-    frmGroeneKaart.mebTekstinfo(3).Text = vBibTekst(TABLE_CONTRACTS, "#A000 #")
-    frmGroeneKaart.mebTekstinfo(4).Text = vBibTekst(TABLE_VARIOUS, "#5020 #")
-    frmGroeneKaart.mebTekstinfo(5).Text = Trim$(vBibTekst(TABLE_VARIOUS, "#500A #")) & " " & Trim$(vBibTekst(TABLE_VARIOUS, "#500B #"))
+    frmGroeneKaart.mebTekstinfo(0).text = TxtInfo(1).text & " " & TxtInfo(2).text
+    frmGroeneKaart.mebTekstinfo(1).text = TxtInfo(5).text & " " & TxtInfo(6).text & " " & TxtInfo(7).text
+    frmGroeneKaart.mebTekstinfo(2).text = TxtInfo(9).text & " " & TxtInfo(10).text
+    frmGroeneKaart.mebTekstinfo(3).text = vBibTekst(TABLE_CONTRACTS, "#A000 #")
+    frmGroeneKaart.mebTekstinfo(4).text = vBibTekst(TABLE_VARIOUS, "#5020 #")
+    frmGroeneKaart.mebTekstinfo(5).text = Trim$(vBibTekst(TABLE_VARIOUS, "#500A #")) & " " & Trim$(vBibTekst(TABLE_VARIOUS, "#500B #"))
     For COUNT_TO = 1 To frmGroeneKaart.cmbMaatschappij.ListCount
         If InStr(frmGroeneKaart.cmbMaatschappij.List(COUNT_TO), vBibTekst(TABLE_CONTRACTS, "#A010 #")) Then
             frmGroeneKaart.cmbMaatschappij.ListIndex = COUNT_TO
@@ -1414,13 +1412,13 @@ Dim DummyText As String
 Dim TempoX As Integer
 Dim Ktrl99 As Integer
 
-bGet TABLE_VARIOUS, 1, vSet("25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + Venster!TxtInfo(0).Text, 20)
+bGet TABLE_VARIOUS, 1, vSet("25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + Venster!TxtInfo(0).text, 20)
 If Ktrl Then
     Ktrl99 = Ktrl
     TLB_RECORD(TABLE_VARIOUS) = ""
-    vBib TABLE_VARIOUS, Venster!TxtInfo(0).Text, "A000"
-    vBib TABLE_VARIOUS, Venster!TxtInfo(18).Text, "A110"
-    bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).Text
+    vBib TABLE_VARIOUS, Venster!TxtInfo(0).text, "A000"
+    vBib TABLE_VARIOUS, Venster!TxtInfo(18).text, "A110"
+    bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).text
     If Ktrl Then
         MsgBox "logicastop"
     Else
@@ -1433,7 +1431,7 @@ If Ktrl Then
         End If
         vBib TABLE_VARIOUS, vBibTekst(TABLE_CONTRACTS, "#A010 #"), "A010"
         If TeleBibClick(4000 + Val(Left(vBibTekst(TABLE_CONTRACTS, "#vs96 #"), 1))) Then
-            vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).Text, "v004"
+            vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).text, "v004"
             vBib TABLE_VARIOUS, "25" + vBibTekst(TABLE_VARIOUS, "#A010 #") + vBibTekst(TABLE_VARIOUS, "#A000 #"), "v005"
             bInsert TABLE_VARIOUS, 1
         End If
@@ -1449,7 +1447,7 @@ Else
     vBib TABLE_VARIOUS, vBibTekst(TABLE_CONTRACTS, "#A010 #"), "A010"
     
     If TeleBibClick(4000 + Val(Left(vBibTekst(TABLE_CONTRACTS, "#vs96 #"), 1))) Then
-        vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).Text, "v004"
+        vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).text, "v004"
         vBib TABLE_VARIOUS, "25" + vBibTekst(TABLE_VARIOUS, "#A010 #") + vBibTekst(TABLE_VARIOUS, "#A000 #"), "v005"
         bUpdate TABLE_VARIOUS, 1
     End If
@@ -1472,7 +1470,7 @@ Private Sub RefreshKlanten(Klant As String)
     Venster.Caption = "Fiche : " + RTrim$(vBibTekst(TABLE_CUSTOMERS, "#A100 #")) + " " + RTrim$(vBibTekst(TABLE_CUSTOMERS, "#A125 #"))
 
     For Teller = 1 To 22
-        TxtInfo(Teller).Text = vBibTekst(TABLE_CUSTOMERS, "#" + TxtInfo(Teller).Tag + " #")
+        TxtInfo(Teller).text = vBibTekst(TABLE_CUSTOMERS, "#" + TxtInfo(Teller).Tag + " #")
     Next
     If rsMAR(TABLE_CUSTOMERS)("g101") = "0" Then
         Me.imgPapierArm.Visible = False
@@ -1501,18 +1499,18 @@ BeginSchadeLog:
 Unload Xlog
 Load Xlog
 Xlog.WijzigenLijn.Visible = False
-Xlog.Caption = "Schadedossiers voor klant : " + TxtInfo(18).Text
+Xlog.Caption = "Schadedossiers voor klant : " + TxtInfo(18).text
 Xlog.X.Cols = 4
 Xlog.X.Rows = 2
 Xlog.X.Col = 0
 Xlog.X.Row = 0
-Xlog.X.Text = "Schadenummer"
+Xlog.X.text = "Schadenummer"
 Xlog.X.Col = 1
-Xlog.X.Text = "Datum schade"
+Xlog.X.text = "Datum schade"
 Xlog.X.Col = 2
-Xlog.X.Text = "Datum afsluiting"
+Xlog.X.text = "Datum afsluiting"
 Xlog.X.Col = 3
-Xlog.X.Text = "Tegenpartij"
+Xlog.X.text = "Tegenpartij"
 
 bGetOrGreater TABLE_VARIOUS, 0, vSet("K" + vBibTekst(TABLE_CUSTOMERS, "#A110 #"), 13)
 If Ktrl Then
@@ -1548,12 +1546,12 @@ Xlog.SSTab1.TabVisible(1) = False
 Xlog.Show 1
 If RTrim$(XLogKey) <> "" Then
     If XLogKey = "Nieuw" Then
-        Msg = "Nieuw schadedossier invoegen voor polis " + Venster!TxtInfo(0).Text + ".  Bent U zeker ?"
+        Msg = "Nieuw schadedossier invoegen voor polis " + Venster!TxtInfo(0).text + ".  Bent U zeker ?"
         KtrlBox = MsgBox(Msg, vbYesNo + vbDefaultButton2)
         If KtrlBox = vbYes Then
             TLB_RECORD(TABLE_VARIOUS) = ""
-            vBib TABLE_VARIOUS, Venster!TxtInfo(0).Text, "A000"
-            bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).Text
+            vBib TABLE_VARIOUS, Venster!TxtInfo(0).text, "A000"
+            bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).text
             If Ktrl Then
                 MsgBox "logikastop"
             Else
@@ -1562,7 +1560,7 @@ If RTrim$(XLogKey) <> "" Then
             End If
             
             If TeleBibClick(3001) Then
-                vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).Text, "v004"
+                vBib TABLE_VARIOUS, "K" + Venster!TxtInfo(18).text, "v004"
                 vBib TABLE_VARIOUS, "24" + vBibTekst(TABLE_VARIOUS, "#A010 #") + vBibTekst(TABLE_VARIOUS, "#C000 #"), "v005"
                 bInsert TABLE_VARIOUS, 1
             End If
@@ -1609,19 +1607,19 @@ X.Rows = 2
 With X
     .Col = 0
     .Row = 1
-    .Text = ""
+    .text = ""
     
     .Col = 1
-    .Text = ""
+    .text = ""
     
     .Col = 2
-    .Text = ""
+    .text = ""
 
     .Col = 3
-    .Text = ""
+    .text = ""
 
     .Col = 4
-    .Text = ""
+    .text = ""
 End With
 lblCommissieWJ.Caption = Format(TotaalCommissie(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), Left(BOOKYEAR_FROMTO, 4) + "0101", Left(BOOKYEAR_FROMTO, 4) + "1231"), "#,##0.00")
 lblCommissieBJ.Caption = Format(TotaalCommissie(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), Left(BOOKYEAR_FROMTO, 8), Right(BOOKYEAR_FROMTO, 8)), "#,##0.00")
@@ -1633,12 +1631,12 @@ Private Sub Alfa_Click()
 SharedFl = TABLE_CUSTOMERS
 
 aIndex = 1
-GridText = TxtInfo(1).Text
+GridText = TxtInfo(1).text
 SqlSearch.Show 1
 If Ktrl Then
 Else
     RefreshKlanten Trim(rsMAR(TABLE_CUSTOMERS)("A110"))
-    If Mim.SnelHelp.Panels(1).Text = "Verzekeringsbemiddelaar" Then
+    If Mim.SnelHelp.Panels(1).text = "Verzekeringsbemiddelaar" Then
         ContractVensterVullen Trim(rsMAR(TABLE_CUSTOMERS)("A110"))
     End If
 End If
@@ -1648,7 +1646,7 @@ End Sub
 
 Private Sub cbBoekDatum_Click()
 
-    Me.mebBoekDatum.Text = Format(Now, "mm/yyyy")
+    Me.mebBoekDatum.text = Format(Now, "mm/yyyy")
     If Me.cbBoekDatum.Value = vbChecked Then
         Me.mebBoekDatum.Enabled = True
     Else
@@ -1669,7 +1667,7 @@ End Sub
 
 Private Sub cbIndent_Click()
 
-    Me.rtbNoIndent.Text = tb2Indent(Me.rtbNoIndent.Text)
+    Me.rtbNoIndent.text = tb2Indent(Me.rtbNoIndent.text)
 
 End Sub
 
@@ -1740,14 +1738,14 @@ Private Sub cbPolisHistoriek_Click()
     MAPIString = rsTB2("memoTB2").Value
     Me.cbInboeken.Enabled = False
     
-    Select Case Right(cbPolisHistoriek.Text, 2)
+    Select Case Right(cbPolisHistoriek.text, 2)
         Case "03"
-            Me.rtbIndentTB2.Text = SnippetXEH(MAPIString, Trim(Me.TxtInfo(0).Text), True)
-            Me.rtbNoIndent.Text = MAPIString
+            Me.rtbIndentTB2.text = SnippetXEH(MAPIString, Trim(Me.TxtInfo(0).text), True)
+            Me.rtbNoIndent.text = MAPIString
         
         Case "01"
-            Me.rtbIndentTB2.Text = tb2Indent(MAPIString)
-            Me.rtbNoIndent.Text = MAPIString
+            Me.rtbIndentTB2.text = tb2Indent(MAPIString)
+            Me.rtbNoIndent.text = MAPIString
             'controleren of er een (nog te verwerken) boekingsstuk is
             Me.cbInboeken.Enabled = False
             If InStr(MAPIString, "XEH+03") Then 'ER IS EEN CONTANTE!
@@ -1756,9 +1754,9 @@ Private Sub cbPolisHistoriek_Click()
             Me.rtbIndentTB2.SetFocus
         
         Case Else
-            MsgBox "nog niets voorzien voor: " & Right(cbPolisHistoriek.Text, 2)
-            Me.rtbIndentTB2.Text = tb2Indent(MAPIString)
-            Me.rtbNoIndent.Text = MAPIString
+            MsgBox "nog niets voorzien voor: " & Right(cbPolisHistoriek.text, 2)
+            Me.rtbIndentTB2.text = tb2Indent(MAPIString)
+            Me.rtbNoIndent.text = MAPIString
     End Select
    
 End Sub
@@ -1797,11 +1795,13 @@ End Sub
 
 Private Sub CmdBoekhouding_Click()
 
-bGet TABLE_CUSTOMERS, 0, vSet(TxtInfo(18).Text, 12)
+bGet TABLE_CUSTOMERS, 0, vSet(TxtInfo(18).text, 12)
 If Ktrl Then
 Else
     RecordToVeld TABLE_CUSTOMERS
-    BalansKontrole TABLE_CUSTOMERS
+    'BalansKontrole TABLE_CUSTOMERS
+    'Stop
+    BalansKontroleWithRecordSet TABLE_CUSTOMERS
 End If
 
 End Sub
@@ -1810,10 +1810,10 @@ End Sub
 
 Private Sub cmdGroeneKaart_Click()
 
-If Trim(Venster!TxtInfo(0).Text) = "" Then
+If Trim(Venster!TxtInfo(0).text) = "" Then
     Exit Sub
 Else
-    bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).Text
+    bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).text
     If Ktrl Then
     Else
         RecordToVeld TABLE_CONTRACTS
@@ -1829,7 +1829,7 @@ End Sub
 
 Private Sub CmdKennisBeheer_Click()
 
-bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).Text
+bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).text
 If Ktrl Then
 Else
     RecordToVeld TABLE_CONTRACTS
@@ -1887,7 +1887,7 @@ Private Sub CmdProduktStatus_Click()
 Dim fKtrl As Integer
 Dim OptieTxt As String
 
-bGet TABLE_CONTRACTS, 0, TxtInfo(0).Text
+bGet TABLE_CONTRACTS, 0, TxtInfo(0).text
 If Ktrl Then
     MsgBox "stop"
 Else
@@ -1899,7 +1899,7 @@ Else
     Else
         RecordToVeld TABLE_SUPPLIERS
     End If
-    bGet TABLE_VARIOUS, 1, "25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + TxtInfo(0).Text
+    bGet TABLE_VARIOUS, 1, "25" + vBibTekst(TABLE_CONTRACTS, "#A010 #") + TxtInfo(0).text
     fKtrl = Ktrl
     If fKtrl Then
         MsgBox "Polis nog niet in bestand.  Wordt nu aangemaakt..."
@@ -1935,7 +1935,7 @@ If KtrlBox = vbYes Then
         Printer.Print vbCrLf; vbCrLf;
         Printer.Print "marINTEGRAAL NT : ";
     Printer.FontBold = True
-        Printer.Print "Gekontroleerde toestand risico's via polis :" + TxtInfo(0).Text;
+        Printer.Print "Gekontroleerde toestand risico's via polis :" + TxtInfo(0).text;
     Printer.FontBold = False
         Printer.Print vbCrLf;
         Printer.Print Left(FULL_LINE, 80); vbCrLf;
@@ -1948,25 +1948,25 @@ If KtrlBox = vbYes Then
         Printer.Print Left(FULL_LINE, 80); vbCrLf;
         Printer.Print Tab(1); "Klanten       : ";
     Printer.FontBold = True
-        Printer.Print RTrim$(TxtInfo(1).Text + " " + TxtInfo(2).Text); " "; vbCrLf;
+        Printer.Print RTrim$(TxtInfo(1).text + " " + TxtInfo(2).text); " "; vbCrLf;
         Printer.Print Tab(1); "                ";
-        Printer.Print ; RTrim$(TxtInfo(3).Text + " " + TxtInfo(4).Text);
+        Printer.Print ; RTrim$(TxtInfo(3).text + " " + TxtInfo(4).text);
     Printer.FontBold = False
         Printer.Print vbCrLf;
         Printer.Print Tab(1); "Adres         : ";
     Printer.FontBold = True
-        Printer.Print RTrim$(TxtInfo(5).Text + " " + TxtInfo(6).Text + " " + TxtInfo(7).Text); vbCrLf;
-        Printer.Print Tab(1); "                "; RTrim$(TxtInfo(8).Text + " " + TxtInfo(9).Text + " " + TxtInfo(10).Text);
+        Printer.Print RTrim$(TxtInfo(5).text + " " + TxtInfo(6).text + " " + TxtInfo(7).text); vbCrLf;
+        Printer.Print Tab(1); "                "; RTrim$(TxtInfo(8).text + " " + TxtInfo(9).text + " " + TxtInfo(10).text);
     Printer.FontBold = False
         Printer.Print vbCrLf;
         Printer.Print Tab(1); "Telefoon      : ";
     Printer.FontBold = True
-        Printer.Print TxtInfo(13).Text;
+        Printer.Print TxtInfo(13).text;
     Printer.FontBold = False
         Printer.Print vbCrLf;
         Printer.Print Tab(1); "Fax           : ";
     Printer.FontBold = True
-        Printer.Print TxtInfo(14).Text;
+        Printer.Print TxtInfo(14).text;
     Printer.FontBold = False
         Printer.Print vbCrLf; vbCrLf;
         Printer.Print Tab(1); "Korte omschrijving voor polis bovenvermeld :"; vbCrLf;
@@ -2039,12 +2039,12 @@ End Sub
 Private Sub cmdWijzigen_Click()
 Dim TempoFL As Integer
 
-TempoFL = Val(Left(CmbBestandsKeuze.Text, 2))
+TempoFL = Val(Left(CmbBestandsKeuze.text, 2))
 Select Case TempoFL
     Case TABLE_CONTRACTS
-        bGet TABLE_CONTRACTS, 0, vSet(TxtInfo(0).Text, 12)
+        bGet TABLE_CONTRACTS, 0, vSet(TxtInfo(0).text, 12)
     Case TABLE_CUSTOMERS
-        bGet TABLE_CUSTOMERS, 0, vSet(TxtInfo(18).Text, 12)
+        bGet TABLE_CUSTOMERS, 0, vSet(TxtInfo(18).text, 12)
 End Select
 If Ktrl = 0 Then
     RecordToVeld TempoFL
@@ -2053,7 +2053,7 @@ Else
     If TempoFL = TABLE_CUSTOMERS Then MsgBox "Nieuwe klanten moeten via klantenfiches aangemaakt worden": Exit Sub
     INSERT_FLAG(TempoFL) = 1
     TLB_RECORD(TempoFL) = ""
-    vBib TempoFL, (TxtInfo(0).Text), "A000"   'Kontraktnummer
+    vBib TempoFL, (TxtInfo(0).text), "A000"   'Kontraktnummer
 End If
            
 If TeleBibClick(TempoFL) = False Then
@@ -2106,32 +2106,32 @@ X.Cols = 6
 With X
     .Col = 0
     .Row = 0
-    .Text = "Jaarvdag"
+    .text = "Jaarvdag"
     .ColWidth(0) = 750
     .ColAlignment(0) = flexAlignLeftTop
     
     .Col = 1
-    .Text = "Betaalbaar, status"
+    .text = "Betaalbaar, status"
     .ColWidth(1) = 3000
     .ColAlignment(1) = flexAlignLeftTop
         
     .Col = 2
-    .Text = "Contract"
+    .text = "Contract"
     .ColWidth(2) = 1365
     .ColAlignment(2) = flexAlignLeftTop
         
     .Col = 3
-    .Text = "Maatschappij"
+    .text = "Maatschappij"
     .ColWidth(3) = 2145
     .ColAlignment(3) = flexAlignLeftTop
         
     .Col = 4
-    .Text = "Soort Verzekering en [Detail]"
+    .text = "Soort Verzekering en [Detail]"
     .ColWidth(4) = 4485
     .ColAlignment(4) = flexAlignLeftTop
     
     .Col = 5
-    .Text = "%Fee"
+    .text = "%Fee"
     .ColWidth(5) = 495
     .ColAlignment(5) = flexAlignRightTop
 
@@ -2140,7 +2140,7 @@ End With
 CmbBestandsKeuze.AddItem "01: Klantenfiche"
 SSTab2.TabVisible(1) = False 'retourblokken
 
-If Mim.SnelHelp.Panels(1).Text = "Verzekeringsbemiddelaar" Then
+If Mim.SnelHelp.Panels(1).text = "Verzekeringsbemiddelaar" Then
     TxtInfo(0).Visible = True
     CmbBestandsKeuze.AddItem "05: Polisfiche"
     CmbBestandsKeuze.ListIndex = 1
@@ -2175,18 +2175,18 @@ Dim DummyText As String
 Unload Xlog
 Load Xlog
 Xlog.WijzigenLijn.Visible = False
-Xlog.Caption = "Logboek voor polis : " + TxtInfo(0).Text
+Xlog.Caption = "Logboek voor polis : " + TxtInfo(0).text
 Xlog.X.Cols = 3
 Xlog.X.Rows = 2
 Xlog.X.Col = 0
 Xlog.X.Row = 0
-Xlog.X.Text = "Assurnet IDA"
+Xlog.X.text = "Assurnet IDA"
 Xlog.X.Col = 1
-Xlog.X.Text = "Datum en uur"
+Xlog.X.text = "Datum en uur"
 Xlog.X.Col = 2
-Xlog.X.Text = "Omschrijving"
+Xlog.X.text = "Omschrijving"
 
-bGetOrGreater TABLE_VARIOUS, 1, vSet("22" + TxtInfo(0).Text, 20)
+bGetOrGreater TABLE_VARIOUS, 1, vSet("22" + TxtInfo(0).text, 20)
 If Ktrl Then
     Beep
     Unload Xlog
@@ -2194,16 +2194,16 @@ If Ktrl Then
 Else
     RecordToVeld TABLE_VARIOUS
 End If
-If vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet("22" + TxtInfo(0).Text, 20) Then
+If vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet("22" + TxtInfo(0).text, 20) Then
     Unload Xlog
-    MsgBox "Geen Assurnetberichten te vinden voor polis : " + TxtInfo(0).Text
+    MsgBox "Geen Assurnetberichten te vinden voor polis : " + TxtInfo(0).text
     Exit Sub
 Else
     Screen.MousePointer = vbHourglass
     GoSub LijnErBij
     Do
         bNext TABLE_VARIOUS
-        If Ktrl Or vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet("22" + TxtInfo(0).Text, 20) Then
+        If Ktrl Or vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet("22" + TxtInfo(0).text, 20) Then
             Exit Do
         Else
             RecordToVeld TABLE_VARIOUS
@@ -2312,7 +2312,7 @@ On Local Error Resume Next
 
 EindeOpzoeking:
 If X.Rows = 2 Then
-    TxtInfo(0).Text = ""
+    TxtInfo(0).text = ""
 Else
     X.Row = 1
     X.Col = 2
@@ -2320,7 +2320,7 @@ Else
     'X.SelEndCol = 4
     'X.SelStartRow = X.Row
     'X.SelEndRow = X.Row
-    TxtInfo(0).Text = X.Text
+    TxtInfo(0).text = X.text
     On Local Error Resume Next
 End If
 
@@ -2351,7 +2351,7 @@ Private Sub Form_Unload(Cancel As Integer)
 Dim X As Boolean
 
 On Local Error Resume Next
-bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).Text
+bGet TABLE_CONTRACTS, 0, Venster!TxtInfo(0).text
 If Ktrl Then
 Else
     RecordToVeld TABLE_CONTRACTS
@@ -2376,12 +2376,12 @@ Private Sub TxtInfo_Change(Index As Integer)
     Dim strDatum008 As String
             
 If Index = 0 Then
-    If Me.cbTB2query.Value = vbChecked And Trim(Me.TxtInfo(0).Text) <> "" Then
+    If Me.cbTB2query.Value = vbChecked And Trim(Me.TxtInfo(0).text) <> "" Then
         Me.cbPolisHistoriek.Clear
-        Me.rtbIndentTB2.Text = ""
-        Me.rtbNoIndent.Text = ""
+        Me.rtbIndentTB2.text = ""
+        Me.rtbNoIndent.text = ""
             
-        bGet TABLE_CONTRACTS, 0, Trim(TxtInfo(0).Text)
+        bGet TABLE_CONTRACTS, 0, Trim(TxtInfo(0).text)
         If Ktrl Then
             TLB_RECORD(TABLE_CONTRACTS) = ""
         Else
@@ -2391,7 +2391,7 @@ If Index = 0 Then
         If rsTB2.State = adStateOpen Then
             rsTB2.Close
         End If
-        Msg = "SELECT * FROM TB2 WHERE Polis = '" & TxtInfo(0).Text & "'"
+        Msg = "SELECT * FROM TB2 WHERE Polis = '" & TxtInfo(0).text & "'"
         'Msg = "SELECT * FROM TB2 WHERE memoTB2 Like '%RFF+001:" & Trim(Me.TxtInfo(0).Text) & "%'"
         'If Me.cbBoekDatum.Value = vbChecked Then
         '    Msg = Msg & " AND memoTB2 Like '%DTM+005:" & Me.mebBoekDatum.ClipText & ":005" & "%'"
@@ -2403,8 +2403,8 @@ If Index = 0 Then
         If rsTB2.RecordCount = 0 Then
             SSTab2.TabCaption(1) = "&TB2= (0)"
             SSTab2.TabVisible(1) = False
-            Me.rtbIndentTB2.Text = ""
-            Me.rtbNoIndent.Text = ""
+            Me.rtbIndentTB2.text = ""
+            Me.rtbNoIndent.text = ""
         Else
             SSTab2.TabCaption(1) = "&TB2= (" & Trim$(Str$(rsTB2.RecordCount)) & ")"
             SSTab2.TabVisible(1) = True
@@ -2418,7 +2418,7 @@ If Index = 0 Then
     End If
 End If
 
-If RTrim$(TxtInfo(0).Text) = "" Then
+If RTrim$(TxtInfo(0).text) = "" Then
     TxtInfo(0).TabStop = True
 Else
     TxtInfo(0).TabStop = False
@@ -2442,14 +2442,14 @@ Select Case KeyCode
         Else
             X.Row = X.Row - 1
         End If
-        TxtInfo(0).Text = X.Text
+        TxtInfo(0).text = X.text
     Case 40 'naar beneden
         X.Col = 2
         If X.Row = X.Rows - 1 Then
         Else
             X.Row = X.Row + 1
         End If
-        TxtInfo(0).Text = X.Text
+        TxtInfo(0).text = X.text
 End Select
 
 End Sub
@@ -2465,7 +2465,7 @@ Private Sub X_Click()
 On Local Error Resume Next
 With X
     .Col = 2
-    TxtInfo(0).Text = .Text
+    TxtInfo(0).text = .text
 End With
 
 End Sub
@@ -2512,13 +2512,13 @@ datPrimairRS.CursorLocation = adUseClient
 Msg = "SELECT Sum(val(B014)) FROM Klanten, dokumenten WHERE NOT IsNull(B014) AND 'K'+A110 = v034 AND v035 >= '" + PeriodeVan + "' AND v035 <= '" + PeriodeTot + "' AND A110 = '" + KlantKode + "'"
 datPrimairRS.Open Msg, adntDB, adOpenStatic, adLockReadOnly
 If datPrimairRS.RecordCount Then
-    TotaalCommissie = datPrimairRS.Fields(0) / 40.3399
+    TotaalCommissie = datPrimairRS.fields(0) / 40.3399
 End If
 datPrimairRS.Close
 Msg = "SELECT Sum(val(B094)) FROM Klanten, dokumenten WHERE NOT IsNull(B094) AND 'K'+A110 = v034 AND v035 >= '" + PeriodeVan + "' AND v035 <= '" + PeriodeTot + "' AND A110 = '" + KlantKode + "'"
 datPrimairRS.Open Msg, adntDB, adOpenStatic, adLockReadOnly
 If datPrimairRS.RecordCount Then
-    TotaalCommissie = (TotaalCommissie - datPrimairRS.Fields(0)) / 40.3399
+    TotaalCommissie = (TotaalCommissie - datPrimairRS.fields(0)) / 40.3399
 End If
 datPrimairRS.Close
 Set datPrimairRS = Nothing
@@ -2578,7 +2578,7 @@ If Err = 3265 Then
         rsTB2.Open Msg, adntDB, adOpenDynamic, adLockOptimistic, adCmdText
     
     While Not rsHier.EOF
-        TLB_RECORD(TABLE_VARIOUS) = rsHier.Fields("MEMO")
+        TLB_RECORD(TABLE_VARIOUS) = rsHier.fields("MEMO")
         MAPIString = vBibTekst(TABLE_VARIOUS, "#v132 #")
         'tb2Indent (MAPIString)
         'If InStr$(MAPIString, "XEH+01") Then
