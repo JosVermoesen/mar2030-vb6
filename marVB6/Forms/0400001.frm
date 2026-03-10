@@ -299,9 +299,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1872,8 +1872,6 @@ End Sub
 
 Function XmlInvoiceGenerateUBLBE30NoVat(thisPdf As String) As Boolean
 
-'UBL
-'base64Str = ""
 documentTemplate = ""
 invoiceLineTemplate = ""
 invoiceTaxLineTemplate = ""
@@ -1882,43 +1880,8 @@ listTaxSubtotalLines = ""
 thisInvoiceLine = ""
 listInvoiceLines = ""
 tmpString = ""
-'SUPPLIER:
-'invoiceNumber = "" '240100225
-'invoiceCustomerNumber = "" ' 844
 invoiceCurrency = "" 'EUR
-'invoiceDate = "" '2024-01-31
-'invoiceDueDate = "" '2024-03-01
-'invoiceTypeCode = "" '380 (see https://docs.peppol.eu/poac/pint/pint/trn-invoice/codelist/UNCL1001-inv/)
-'orderReference = "" 'ex. 024010022505 as of +++024/0100/22505+++
-'supplierTaxScheme = "" 'ex. VAT
-'supplierRegistrationId = "" 'ex. 0423100736
-'supplierVatNumber = "" 'ex. 0423100736 (Titeca)
-'supplierRegistrationName = "" 'Titeca Accountancy Merelbeke NV
-'supplierStreetName = "" 'Fraterstraat 132
-'supplierCityName = "" 'MERELBEKE
-'supplierPostalZone = "" '9820
-'supplierCountryCode = "" 'BE
-'supplierCompanyId = "" 'BE0423100736
-'supplierTelephone = "" '09 232 28 00
-'CUSTOMER:
-'customerVatNumber = "" '0440058217
-'customerTaxScheme = "" 'ex. VAT
-'if customer is VAT then else ?
-'customerName = "" 'ex. Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
-'customerStreetName = "" 'Grote Baan 141
-'customerCityName = "" 'HERDERSEM
-'customerPostalZone = "" '9310
-'customerCountryCode = "" 'BE
-'customerCompanyId = "" 'BE04400580217
-'customerRegistrationName = "" 'Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
-'customerElectronicMail = "" 'info@rv.be
-'PAYMENTMEANS/TERMS
 paymentMeansCode = "1" '1 see: https://docs.peppol.eu/poac/pint/pint/trn-invoice/codelist/UNCL4461/
-'paymentID = "" '024010022505
-'supplierIBAN = "" 'BE50001683378618
-'supplierBIC = "" 'GEBABEBB
-'paymentTerms = "" '024010022505
-'TAXTOTAL
 subTaxTotalAmount = "" '435.86
 subTaxableAmount = "" '2075.50
 subTaxAmount = "" '435.86
@@ -1928,16 +1891,12 @@ subTaxExclusiveAmount = ""
 subTaxInclusiveAmount = ""
 subPayableAmount = ""
 
-'taxGlobalTotalAmount = ""
-'taxableGlobalTotalAmount = ""
 globalTotalAmount = ""
 
-'LEGALMTOTAL
 taxExclusiveAmount = "" '2075.50
 taxInclusiveAmount = "" '2511.36
 payableAmount = "" '2511.36
 
-'LINES
 lineCounter = ""
 lineQuantity = ""
 lineExtentionAmount = ""
@@ -1956,14 +1915,12 @@ If Me.OptionUBL_BE_3_0.Enabled = False Then
     Exit Function
 End If
 
-Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoice-no-vat.xml")
+Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoice-no-vat.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
 
-'invoiceNumber = "240100225"
 documentTemplate = Replace(documentTemplate, "{documentNumber}", invoiceNumber)
-'invoiceCustomerNumber = "844"
 documentTemplate = Replace(documentTemplate, "{customerNumber}", invoiceCustomerNumber)
 invoiceCurrency = "EUR"
 documentTemplate = Replace(documentTemplate, "{currency}", invoiceCurrency)
@@ -1978,91 +1935,47 @@ base64Str = GetBase64Str(thisPdf)
 documentTemplate = Replace(documentTemplate, "{pdfFileName}", invoiceNumber + ".pdf")
 documentTemplate = Replace(documentTemplate, "{pdfBase64}", base64Str)
     
-'invoiceDate = "2024-01-31"
 documentTemplate = Replace(documentTemplate, "{documentDate}", invoiceDate)
-'invoiceDueDate = "2024-03-01"
 documentTemplate = Replace(documentTemplate, "{documentDueDate}", invoiceDueDate)
 documentTemplate = Replace(documentTemplate, "{documentTypeCode}", invoiceTypeCode)
-'orderReference = "024010022505" 'as of +++024/0100/22505+++
 documentTemplate = Replace(documentTemplate, "{orderReference}", orderReference)
 documentTemplate = Replace(documentTemplate, "{supplierTaxScheme}", supplierTaxScheme)
-'supplierVatNumber = "0423100736"
 documentTemplate = Replace(documentTemplate, "{supplierVatNumber}", supplierVatNumber)
-'tmpString = String99(READING, 46)
-'If InStr(tmpString, "&") Then 'verbeteren voor XML bestand!!!
-'    tmpString = Replace(tmpString, "&", "&amp;")
-'End If
-'supplierRegistrationId = "0423100736"
 documentTemplate = Replace(documentTemplate, "{supplierRegistrationId}", supplierRegistrationId)
-'supplierRegistrationName = "Titeca Accountancy Merelbeke NV"
 documentTemplate = Replace(documentTemplate, "{supplierRegistrationName}", supplierRegistrationName)
-'supplierStreetName = "Fraterstraat 132"
 documentTemplate = Replace(documentTemplate, "{supplierStreetName}", supplierStreetName)
-'supplierCityName = "MERELBEKE"
 documentTemplate = Replace(documentTemplate, "{supplierCityName}", supplierCityName)
-'supplierPostalZone = "9820"
 documentTemplate = Replace(documentTemplate, "{supplierPostalZone}", supplierPostalZone)
-'supplierCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{supplierCountryCode}", supplierCountryCode)
-'supplierCompanyId = "0423100736"
 documentTemplate = Replace(documentTemplate, "{supplierCompanyId}", supplierCompanyId)
-'supplierCompanyIdExtended = "BE0423100736"
 documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supplierCompanyIdExtended)
-
-'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
-
-'supplierElectronicMail
 documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
-
-'customerVatNumber = "0440058217"
 documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
-'customerName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerName)
-'customerStreetName = "Grote Baan 141"
 documentTemplate = Replace(documentTemplate, "{customerStreetName}", customerStreetName)
-'customerCityName = "HERDERSEM"
 documentTemplate = Replace(documentTemplate, "{customerCityName}", customerCityName)
-'customerPostalZone = "9310"
 documentTemplate = Replace(documentTemplate, "{customerPostalZone}", customerPostalZone)
-'customerCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{customerCountryCode}", customerCountryCode)
-'customerCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{customerSchemeId}", customerSchemeId)
-'customerCompanyId = "04400580217"
 documentTemplate = Replace(documentTemplate, "{customerCompanyId}", customerCompanyId)
-'customerCompanyIdExtended = "BE04400580217"
 documentTemplate = Replace(documentTemplate, "{customerCompanyIdExtended}", customerCompanyIdExtended)
-
-'customerRegistrationName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerRegistrationName)
-'customerElectronicMail = "info@rv.be"
 documentTemplate = Replace(documentTemplate, "{customerElectronicMail}", customerElectronicMail)
 
 paymentMeansCode = "1"
 documentTemplate = Replace(documentTemplate, "{paymentMeansCode}", paymentMeansCode)
-'paymentID = "024010022505"
 documentTemplate = Replace(documentTemplate, "{paymentId}", paymentID)
-'supplierIBAN = "BE50001683378618"
 documentTemplate = Replace(documentTemplate, "{supplierIBAN}", supplierIBAN)
-'supplierBIC = "GEBABEBB"
 documentTemplate = Replace(documentTemplate, "{supplierBIC}", supplierBIC)
-'paymentTerms = "024010022505"
 documentTemplate = Replace(documentTemplate, "{paymentTerms}", paymentTerms)
-
 documentTemplate = Replace(documentTemplate, "{taxTotalAmount}", taxGlobalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{taxableAmount}", taxableGlobalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{taxExclusiveAmount}", taxableGlobalTotalAmount)
-
 globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotalAmount)), MASK_EUR))
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
-
-'Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoicetaxline.xml")
-'If Ktrl = 0 Then
-'    MsgBox "Onverwachte situatie", vbCritical
-'End If
 
 '0%, 6%, 12%, 21%
 For T = 0 To 3
@@ -2094,9 +2007,8 @@ For T = 0 To 3
         End If
     End If
 Next
-'documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
-Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoiceline-no-vat.xml")
+Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoiceline-no-vat.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -2147,9 +2059,6 @@ For T = 0 To VerkoopDetail.ListCount - 1
         GridText = Right(GridText, Len(GridText) - 4)
         VeldUblInfo(9) = Left(GridText, 1)                 'vat id
         GridText = Right(GridText, Len(GridText) - 2)
-        'If VeldUblInfo(9) = "6" Then
-        '    VeldUblInfo(9) = "0"
-        'End If
         dVeldUblInfo(3) = Val(Left(GridText, 7))           'number ledgeraccount
         GridText = Right(GridText, Len(GridText) - 8)
         VeldUblInfo(0) = Left(GridText, 13)                'product reference id or description
@@ -2162,18 +2071,7 @@ For T = 0 To VerkoopDetail.ListCount - 1
                 
         lineExtentionAmount = Trim(Dec(dVeldUblInfo(7), MASK_EUR + "00"))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineExtensionAmount}", lineExtentionAmount)
-        
-        'tmpString = "701000;701000;701000"
-        'lineAccountingcost = Split(tmpString, ";")
-        'tmpString = "8.4000;83.8951;343.5600"
-        'lineTaxAmountAccurate = Split(tmpString, ";")
-        'tmpString = "1-701000;1-701000;1-701000"
-        'lineSellerItemIdentification = Split(tmpString, ";")
-        'tmpString = "03;03;03"
-        'lineTaxCategory = Split(tmpString, ";")
-        'tmpString = "21.00;21.00;21.00"
-        'lineTaxPercentage = Split(tmpString, ";")
-
+                
         lineAccountingcost = Trim(Str(dVeldUblInfo(3)))
         thisInvoiceLine = Replace(thisInvoiceLine, "{lineAccountingCost}", lineAccountingcost)
         
@@ -2298,12 +2196,12 @@ If Me.OptionPEPPOL_V3.Enabled = False Then
 End If
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol_bis_billing_ubl_v3-invoice.xml")
+    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoice.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
 Else
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol_bis_billing_ubl_v3-creditnote.xml")
+    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-creditnote.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
@@ -2409,7 +2307,7 @@ globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotal
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
 
-Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol_bis_billing_ubl_v3-invoicetaxline.xml")
+Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicetaxline.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -2455,12 +2353,12 @@ Next
 documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol_bis_billing_ubl_v3-invoiceline.xml")
+    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoiceline.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
 Else
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol_bis_billing_ubl_v3-creditnoteline.xml")
+    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-creditnoteline.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
@@ -3871,9 +3769,7 @@ Else
 End If
 
 customerName = Trim(rSip(0))
-If InStr(customerName, "&") Then
-    customerName = Replace(customerName, "&", "&amp;")
-End If
+customerName = CheckforAmp(customerName)
 customerRegistrationName = customerName
 
 If KontaktPersoon = 1 Then
@@ -3888,9 +3784,7 @@ End If
 
 rSip(2) = RV(rsKlant, "A104") & " " & RV(rsKlant, "A105") & " " & RV(rsKlant, "A106")
 customerStreetName = Trim(rSip(2))
-If InStr(customerStreetName, "&") Then
-    customerStreetName = Replace(customerStreetName, "&", "&amp;")
-End If
+customerStreetName = CheckforAmp(customerStreetName)
 
 customerCityName = Trim(RV(rsKlant, "A108"))
 customerPostalZone = Trim(RV(rsKlant, "A107"))
@@ -4483,10 +4377,7 @@ supplierVatNumber = Trim(String99(READING, 51))
 If supplierVatNumber = supplierRegistrationId Then supplierTaxScheme = "VAT"
 
 supplierRegistrationName = Trim(String99(READING, 46))
-If InStr(supplierRegistrationName, "&") Then
-    supplierRegistrationName = Replace(supplierRegistrationName, "&", "&amp;")
-End If
-
+supplierRegistrationName = CheckforAmp(supplierRegistrationName)
 
 If Left(String99(READING, 20), 1) = "4" Then
     ForFait = 1
@@ -4572,9 +4463,7 @@ Function checkSetUp() As Boolean
         numberFalse = numberFalse + 1
     End If
     supplierStreetName = Trim(String99(READING, 47))
-    If InStr(supplierStreetName, "&") Then
-        supplierStreetName = Replace(supplierStreetName, "&", "&amp;")
-    End If
+    supplierStreetName = CheckforAmp(supplierStreetName)
     
     supplierCountryCode = "BE"
     supplierCompanyId = supplierRegistrationId
@@ -6177,13 +6066,13 @@ If Me.OptionUBL_BE_3_0.Enabled = False Then
 End If
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoice.xml")
+    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoice.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
 Else
-    '                                                                                  ubl_be_3_0-creditnote
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-creditnote.xml")
+    'ubl_be_3_0-creditnote
+    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-creditnote.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
@@ -6299,7 +6188,7 @@ globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotal
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
 
-Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoicetaxline.xml")
+Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicetaxline.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -6345,12 +6234,12 @@ Next
 documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-invoiceline.xml")
+    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoiceline.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
 Else
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\ubl_be_3_0-creditnoteline.xml")
+    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-creditnoteline.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If

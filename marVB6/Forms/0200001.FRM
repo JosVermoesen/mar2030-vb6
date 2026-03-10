@@ -417,7 +417,7 @@ Begin VB.Form DirekteAankoop
          Width           =   1215
       End
       Begin VB.CommandButton Kontrole 
-         Caption         =   "Controle"
+         Caption         =   "&Controle"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   9.75
@@ -449,6 +449,7 @@ Begin VB.Form DirekteAankoop
          Height          =   360
          Left            =   6240
          TabIndex        =   19
+         TabStop         =   0   'False
          Top             =   5880
          Visible         =   0   'False
          Width           =   1635
@@ -1745,9 +1746,10 @@ Private Sub cbImportUBL_Click()
         FormB2BAMonitor.Show 1
     End If
         
-    ifSupplierInsertWarning = True
+    
     ublFileUrl = LCase(XLogKey)
     If ublFileUrl = "" Then
+        ifSupplierInsertWarning = False
         Exit Sub
     ElseIf Dir(ublFileUrl) = "" Then
         Exit Sub
@@ -2099,6 +2101,7 @@ ElseIf supplierCountryCode = "BE" Then
     End If
 End If
 
+Kontrole.Enabled = True
 DirekteAankoop.AankoopDetail.SetFocus
 
 End Sub
@@ -2394,6 +2397,7 @@ ElseIf uitwisselingDATAArray(4) = "381" Then
     Me.AankoopOptie(1).Value = True
 End If
 
+Kontrole.Enabled = True
 DirekteAankoop.AankoopDetail.SetFocus
 
 End Sub
@@ -2463,6 +2467,19 @@ Dim BedragBtw6 As Currency
 Dim BedragBtw7 As Currency
 Dim BedragBtw8 As Currency
 
+If Trim(TekstInfo12.text) = "" Then
+    MsgBox "Referte Document is verplicht", vbInformation
+    TekstInfo12.SetFocus
+    Exit Sub
+End If
+
+If Trim(TekstInfo4.text) = "" Then
+    MsgBox "BetaalReferte is verplicht", vbInformation
+    TekstInfo4.SetFocus
+    Exit Sub
+End If
+
+
 If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
     BJPERDAT.WindowState = 0
     BJPERDAT.SetFocus
@@ -2477,7 +2494,7 @@ If DATE_KEY(TekstInfo1.text) < Left(BOOKYEAR_FROMTO, 8) Or DATE_KEY(TekstInfo1.t
     Msg = Msg & "Controleer eventueel."
     MsgBox Msg, vbExclamation
 End If
-        
+
 Kontrole.Default = True
 For T = 0 To AankoopDetail.ListCount - 1
     BedragTot = Val(Mid(AankoopDetail.List(T), 50, 12))
@@ -2591,6 +2608,7 @@ Private Sub Schoon()
 
     Dim T As Integer
     
+    Kontrole.Enabled = False
     uitwisselingOMS = ""
     uitwisselingDATA = ""
     documentLinesDATA = ""
@@ -2845,8 +2863,6 @@ Private Sub TekstInfo5_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 
-
-
 Private Sub TekstInfo0_GotFocus()
 
     TekstInfo0.SelStart = 0
@@ -3008,7 +3024,7 @@ Private Sub TekstInfo3_LostFocus()
 End Sub
 
 Private Sub TekstInfo4_LostFocus()
-
+    
     If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
         If BankOk((TekstInfo4.text)) Then
         Else
@@ -3018,7 +3034,12 @@ Private Sub TekstInfo4_LostFocus()
             On Error GoTo 0
             Exit Sub
         End If
+    Else
+        If Trim(TekstInfo4.text) = "" Then
+            TekstInfo4.text = TekstInfo12.text
+        End If
     End If
+
 
 End Sub
 

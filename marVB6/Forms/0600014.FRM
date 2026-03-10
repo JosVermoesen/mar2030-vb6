@@ -103,7 +103,7 @@ Begin VB.Form JaarBtwBelgie
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16449539
+      Format          =   76611587
       CurrentDate     =   39083
       MaxDate         =   73050
       MinDate         =   31048
@@ -525,7 +525,7 @@ Dim vatYearClient As String
 Dim clientLine As String
 Dim listClientLines As String
 
-Ktrl = ScrLeesBestandAlleTekst(yearListingMain, PROGRAM_LOCATION + "xml-templates\be-vatyearlisting-main.xml")
+Ktrl = ScrLeesBestandAlleTekst(yearListingMain, PROGRAM_LOCATION + "xml-templates\vat\be-vatyearlisting-main.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -547,16 +547,15 @@ yearListingMain = Replace(yearListingMain, "{vatNumberDeclarant}", String99(READ
 Dim tmpString As String
 
 tmpString = String99(READING, 46)
-If InStr(tmpString, "&") Then 'verbeteren voor XML bestand!!!
-    tmpString = Replace(tmpString, "&", "&amp;")
-End If
+tmpString = CheckforAmp(tmpString)
+
 yearListingMain = Replace(yearListingMain, "{nameDeclarant}", Trim(tmpString))
 yearListingMain = Replace(yearListingMain, "{streetDeclarant}", Trim(String99(READING, 47)))
 yearListingMain = Replace(yearListingMain, "{postalCodeDeclarant}", Mid(String99(READING, 48), 1, 4))
 yearListingMain = Replace(yearListingMain, "{cityDeclarant}", Mid(String99(READING, 48), 6))
 yearListingMain = Replace(yearListingMain, "{emailDeclarant}", Trim(String99(READING, 50)))
 
-Ktrl = ScrLeesBestandAlleTekst(vatYearClient, PROGRAM_LOCATION + "xml-templates\be-vatyearclient.xml")
+Ktrl = ScrLeesBestandAlleTekst(vatYearClient, PROGRAM_LOCATION + "xml-templates\vat\be-vatyearclient.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If

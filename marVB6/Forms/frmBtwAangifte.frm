@@ -3813,7 +3813,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 DefInt A-Z
 
-Private mNode As Node
+Private mNode As node
 Dim btwVakken As String
 
 Dim rFlag As String
@@ -3861,7 +3861,7 @@ Private Sub cbAanvraagBetaalformulieren_Click()
     Dim ABOld As String
     Dim ABNew As String
     
-    tmpXMLHier = RichTextBox1.Text
+    tmpXMLHier = RichTextBox1.text
     If Me.cbAanvraagTerugbetaling.Value = vbChecked Then
         ATOld = "YES"
     Else
@@ -3883,7 +3883,7 @@ Private Sub cbAanvraagBetaalformulieren_Click()
     tmpVakNieuw = "<ASK PAYMENT=" & Chr(34) & ABNew & Chr(34) & " RESTITUTION=" & Chr(34) & ATNew & Chr(34) & "/>"
     tmpXMLHier = Replace(tmpXMLHier, tmpVakOud, tmpVakNieuw)
     
-    RichTextBox1.Text = tmpXMLHier
+    RichTextBox1.text = tmpXMLHier
 
 End Sub
 
@@ -3897,7 +3897,7 @@ Private Sub cbAanvraagTerugbetaling_Click()
     Dim ABOld As String
     Dim ABNew As String
     
-    tmpXMLHier = RichTextBox1.Text
+    tmpXMLHier = RichTextBox1.text
     If Me.cbAanvraagBetaalformulieren.Value = vbChecked Then
         ABOld = "YES"
     Else
@@ -3919,7 +3919,7 @@ Private Sub cbAanvraagTerugbetaling_Click()
     tmpVakNieuw = "<ASK PAYMENT=" & Chr(34) & ABNew & Chr(34) & " RESTITUTION=" & Chr(34) & ATNew & Chr(34) & "/>"
     tmpXMLHier = Replace(tmpXMLHier, tmpVakOud, tmpVakNieuw)
     
-    RichTextBox1.Text = tmpXMLHier
+    RichTextBox1.text = tmpXMLHier
     
 End Sub
 
@@ -3964,7 +3964,7 @@ Select Case Ktrl
         
         'Address message
         Me.MPIBericht.RecipDisplayName = "INTERVATBEHEER"
-        Me.MPIBericht.RecipAddress = "SMTP:" & Me.tbmailbtw.Text
+        Me.MPIBericht.RecipAddress = "SMTP:" & Me.tbmailbtw.text
         
         'Resolve recipient name
         Me.MPIBericht.AddressResolveUI = True '=dialogbox, false = error genereren
@@ -3972,14 +3972,14 @@ Select Case Ktrl
         'Create the message
         Me.MPIBericht.MsgSubject = "Verzoek tot BTW controle en aangifte"
         
-        If Me.tbmailbtw.Text = "info@rv.be" Then
+        If Me.tbmailbtw.text = "info@rv.be" Then
             Me.MPIBericht.MsgNoteText = "Formaat:XML bestand" & vbCrLf & "In bijlage onze aangifte aangemaakt met marIntegraal versie " & MAR_VERSION & " voor controle en verzending.  Graag ontvangstbewijs binnen de 24 uur via mail of onze DNN postbus" & vbCrLf & vbCrLf & Now
         Else
             Me.MPIBericht.MsgNoteText = "Formaat:XML bestand" & vbCrLf & "In bijlage XML btw aangifte gegenereerd door ons boekhoudpakket.  Graag de aangifte door uw diensten na de gebruikelijke controles a.u.b." & vbCrLf & "Bezorgt U ons tevens nog ontvangstbevestiging ?" & vbCrLf & vbCrLf & "Dank bij voorbaat!" & vbCrLf & vbCrLf & Now
         End If
         
         Dim tmpXMLHier As String
-        tmpXMLHier = Me.RichTextBox2.Text
+        tmpXMLHier = Me.RichTextBox2.text
         
         Ktrl = ScrMaakTekstBestand(tmpXMLHier, vatFileName)
         Me.MPIBericht.AttachmentPathName = vatFileName
@@ -4018,19 +4018,19 @@ Private Sub cbPayment2025_Click()
     Dim specialChar As String
     specialChar = """"
         
-    tmpXmlToChange = Me.RichTextBox2.Text
+    tmpXmlToChange = Me.RichTextBox2.text
     If Me.cbPayment2025.Value = vbChecked Then
         'search for Payment="NO"
         paymentSearch = "Payment=" + specialChar + "NO" + specialChar
         paymentChange = "Payment=" + specialChar + "YES" + specialChar
         tmpXmlToChange = Replace(tmpXmlToChange, paymentSearch, paymentChange)
-        Me.RichTextBox2.Text = tmpXmlToChange
+        Me.RichTextBox2.text = tmpXmlToChange
     Else
         'Payment="YES"
         paymentSearch = "Payment=" + specialChar + "YES" + specialChar
         paymentChange = "Payment=" + specialChar + "NO" + specialChar
         tmpXmlToChange = Replace(tmpXmlToChange, paymentSearch, paymentChange)
-        Me.RichTextBox2.Text = tmpXmlToChange
+        Me.RichTextBox2.text = tmpXmlToChange
     End If
 
 
@@ -4044,19 +4044,19 @@ Private Sub cbRestitution2025_Click()
     Dim specialChar As String
     specialChar = """"
         
-    tmpXmlToChange = Me.RichTextBox2.Text
+    tmpXmlToChange = Me.RichTextBox2.text
     If Me.cbRestitution2025.Value = vbChecked Then
         'search for Restitution="NO"
         restitutionSearch = "Restitution=" + specialChar + "NO" + specialChar
         restitutionChange = "Restitution=" + specialChar + "YES" + specialChar
         tmpXmlToChange = Replace(tmpXmlToChange, restitutionSearch, restitutionChange)
-        Me.RichTextBox2.Text = tmpXmlToChange
+        Me.RichTextBox2.text = tmpXmlToChange
     Else
         'Restitution="YES"
         restitutionSearch = "Restitution=" + specialChar + "YES" + specialChar
         restitutionChange = "Restitution=" + specialChar + "NO" + specialChar
         tmpXmlToChange = Replace(tmpXmlToChange, restitutionSearch, restitutionChange)
-        Me.RichTextBox2.Text = tmpXmlToChange
+        Me.RichTextBox2.text = tmpXmlToChange
     End If
 
 End Sub
@@ -4078,7 +4078,7 @@ Private Sub cbXml2025_Click()
     Mim.Teken.ShowSave
     If Mim.Teken.filename = "" Then Exit Sub
     Dim tmpXMLHier As String
-    tmpXMLHier = Me.RichTextBox2.Text
+    tmpXMLHier = Me.RichTextBox2.text
     Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.filename)
 
 End Sub
@@ -4160,7 +4160,7 @@ Private Sub Command1_Click()
     Mim.Teken.ShowSave
     If Mim.Teken.filename = "" Then Exit Sub
     Dim tmpXMLHier As String
-    tmpXMLHier = Me.RichTextBox1.Text
+    tmpXMLHier = Me.RichTextBox1.text
     Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.filename)
     
 End Sub
@@ -4202,7 +4202,7 @@ Select Case Ktrl
         
         'Address message
         Me.MPIBericht.RecipDisplayName = "INTERVATBEHEER"
-        Me.MPIBericht.RecipAddress = "SMTP:" & Me.tbmailbtw.Text
+        Me.MPIBericht.RecipAddress = "SMTP:" & Me.tbmailbtw.text
         
         'Resolve recipient name
         Me.MPIBericht.AddressResolveUI = True '=dialogbox, false = error genereren
@@ -4210,14 +4210,14 @@ Select Case Ktrl
         'Create the message
         Me.MPIBericht.MsgSubject = "Verzoek tot BTW controle en aangifte"
         
-        If Me.tbmailbtw.Text = "info@rv.be" Then
+        If Me.tbmailbtw.text = "info@rv.be" Then
             Me.MPIBericht.MsgNoteText = "Formaat:XML bestand" & vbCrLf & "In bijlage onze aangifte aangemaakt met marIntegraal versie " & MAR_VERSION & " voor controle en verzending.  Graag ontvangstbewijs binnen de 24 uur via mail of onze DNN postbus" & vbCrLf & vbCrLf & Now
         Else
             Me.MPIBericht.MsgNoteText = "Formaat:XML bestand" & vbCrLf & "In bijlage XML btw aangifte gegenereerd door ons boekhoudpakket.  Graag de aangifte door uw diensten na de gebruikelijke controles a.u.b." & vbCrLf & "Bezorgt U ons tevens nog ontvangstbevestiging ?" & vbCrLf & vbCrLf & "Dank bij voorbaat!" & vbCrLf & vbCrLf & Now
         End If
         
         Dim tmpXMLHier As String
-        tmpXMLHier = Me.RichTextBox1.Text
+        tmpXMLHier = Me.RichTextBox1.text
         Ktrl = ScrMaakTekstBestand(tmpXMLHier, "btwaangifte.xml")
         '
 
@@ -4254,7 +4254,7 @@ End Sub
 Function XmlGenerate() As Boolean
 
 XmlGenerate = False
-Ktrl = ScrLeesBestandAlleTekst(vatDeclarationTemplate, PROGRAM_LOCATION + "xml-templates\be-vatdeclare.xml")
+Ktrl = ScrLeesBestandAlleTekst(vatDeclarationTemplate, PROGRAM_LOCATION + "xml-templates\vat\be-vatdeclare.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -4308,19 +4308,15 @@ lblInfoTekst = "Vak 54 t.e.m. Vak 72 geeft de som weer resulterende uit afdruk v
                 "rVak 54 t.e.m. rVak 72 geeft som van de cijfers teruggevonden op de boekhoudrekeningen voor Vak54 tot Vak72 !" & vbCrLf & vbCrLf & _
                 "AANDACHT:" & vbCrLf & "De cijfers in rVak54 tot rVak72 worden aangewend voor GESTRUCTUREERDE AANGIFTE !!"
 
-Set mNode = tvwBtwAangiftes.Nodes.Add() ' Create the first node.
-mNode.Text = "Btw aangiftes"
+Set mNode = tvwBtwAangiftes.nodes.Add() ' Create the first node.
+mNode.text = "Btw aangiftes"
 
 myVatNumber = Trim(String99(READING, 51))
 myRegistrationName = Trim(String99(READING, 46))
-If InStr(myRegistrationName, "&") Then
-    myRegistrationName = Replace(myRegistrationName, "&", "&amp;")
-End If
+myRegistrationName = CheckforAmp(myRegistrationName)
 
 myStreetName = Trim(String99(READING, 47))
-If InStr(myStreetName, "&") Then
-    myStreetName = Replace(myStreetName, "&", "&amp;")
-End If
+myStreetName = CheckforAmp(myStreetName)
 
 If Mid(String99(READING, 48), 5, 1) = " " Then
     myPostalZone = Mid(String99(READING, 48), 1, 4)
@@ -4344,8 +4340,8 @@ Else
             dokumentTot = dokumentTot + Val(vBibTekst(TABLE_VARIOUS, "#v" + Format(COUNT_TO, "000") + " #"))
         Next
         If dokumentTot Then
-            Set mNode = tvwBtwAangiftes.Nodes.Add(1, tvwChild)
-            mNode.Text = vBibTekst(TABLE_VARIOUS, "#v090 #") + " " + vBibTekst(TABLE_VARIOUS, "#v091 #")
+            Set mNode = tvwBtwAangiftes.nodes.Add(1, tvwChild)
+            mNode.text = vBibTekst(TABLE_VARIOUS, "#v090 #") + " " + vBibTekst(TABLE_VARIOUS, "#v091 #")
         End If
         bNext TABLE_VARIOUS
         If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "17" Then
@@ -4354,7 +4350,7 @@ Else
     Loop
 End If
 SnelHelpPrint Now & ":In verdere ontwikkeling voor BEF/EUR/E-mail", BL_LOGGING
-VulDeVelden BJPERDAT.Boekjaar.Text, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+VulDeVelden BJPERDAT.Boekjaar.text, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
 'BJPERDAT.Boekjaar.Text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
 End Sub
 
@@ -4382,11 +4378,11 @@ Ktrl = 0
 SnelHelpPrint "Kontrole hogere periodes...", BL_LOGGING
 PeriodeMax = BJPERDAT.PeriodeBoekjaar.ListCount + 1
 Do While PeriodeMax > BJPERDAT.PeriodeBoekjaar.ListIndex + 1
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.Text + Format(PeriodeMax, "00")
+    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.Text), "v090"
+        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(PeriodeMax, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -4413,11 +4409,11 @@ If getal Then
     CmdEmailNBB.Enabled = False
     Exit Sub
 Else
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.Text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.Text), "v090"
+        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -4439,13 +4435,13 @@ For T = 1 To 8 Step 2
     End If
 Next
 TLB_RECORD(TABLE_VARIOUS) = ""
-vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.Text), "v090"
+vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
 vBib TABLE_VARIOUS, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
 vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
 bUpdate TABLE_VARIOUS, 1
 Initialiseren.Enabled = False
 CmdEmailNBB.Enabled = False
-VulDeVelden BJPERDAT.Boekjaar.Text, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+VulDeVelden BJPERDAT.Boekjaar.text, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
 Annuleren.SetFocus
 
 End Sub
@@ -4462,8 +4458,8 @@ Else
     RecordToVeld TABLE_VARIOUS
 End If
 
-TekstInfo(28).Text = Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
-TekstInfo(29).Text = Right(BJPERDAT.PeriodeBoekjaar.Text, 10)
+TekstInfo(28).text = Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+TekstInfo(29).text = Right(BJPERDAT.PeriodeBoekjaar.text, 10)
 
 Label2(0).Caption = Format(Val(vBibTekst(TABLE_VARIOUS, "#v092 #")), "00000") + " - " + Format(Val(vBibTekst(TABLE_VARIOUS, "#v093 #")), "00000")
 Label2(2).Caption = Format(Val(vBibTekst(TABLE_VARIOUS, "#v096 #")), "00000") + " - " + Format(Val(vBibTekst(TABLE_VARIOUS, "#v097 #")), "00000")
@@ -4492,7 +4488,7 @@ Dim tmpVakHier As String
 
 INTERVAT2008:
 Me.RichTextBox1.LoadFile App.path & "\XMLbtwAangifte.rtf"
-tmpXMLHier = RichTextBox1.Text
+tmpXMLHier = RichTextBox1.text
 
 tmpVak = "<VATNUMBER>9999999999</VATNUMBER>"
 tmpVakHier = String99(READING, 51)
@@ -4510,16 +4506,12 @@ End If
 
 tmpVak = "<NAME>Contactpersoon</NAME>"
 tmpVakHier = String99(READING, 52)
-If InStr(tmpVakHier, "&") Then 'verbeteren voor XML bestand!!!
-    tmpVakHier = Replace(tmpVakHier, "&", "&amp;")
-End If
+tmpVakHier = CheckforAmp(tmpVakHier)
 tmpXMLHier = Replace(tmpXMLHier, tmpVak, "<NAME>" & tmpVakHier & "</NAME>")
 
 tmpVak = "<ADDRESS>StraatContact</ADDRESS>"
 tmpVakHier = String99(READING, 47)
-If InStr(tmpVakHier, "&") Then 'verbeteren voor XML bestand!!!
-    tmpVakHier = Replace(tmpVakHier, "&", "&amp;")
-End If
+tmpVakHier = CheckforAmp(tmpVakHier)
 tmpXMLHier = Replace(tmpXMLHier, tmpVak, "<ADDRESS>" & tmpVakHier & "</ADDRESS>")
 
 tmpVak = "<POSTCODE>0000</POSTCODE>"
@@ -4560,16 +4552,12 @@ End If
                 
 tmpVak = "<NAME>NaamBedrijf</NAME>"
 tmpVakHier = String99(READING, 46)
-If InStr(tmpVakHier, "&") Then 'verbeteren voor XML bestand!!!
-    tmpVakHier = Replace(tmpVakHier, "&", "&amp;")
-End If
+tmpVakHier = CheckforAmp(tmpVakHier)
 tmpXMLHier = Replace(tmpXMLHier, tmpVak, "<NAME>" & tmpVakHier & "</NAME>")
                 
 tmpVak = "<ADDRESS>StraatBedrijf</ADDRESS>"
 tmpVakHier = String99(READING, 47)
-If InStr(tmpVakHier, "&") Then 'verbeteren voor XML bestand!!!
-    tmpVakHier = Replace(tmpVakHier, "&", "&amp;")
-End If
+tmpVakHier = CheckforAmp(tmpVakHier)
 tmpXMLHier = Replace(tmpXMLHier, tmpVak, "<ADDRESS>" & tmpVakHier & "</ADDRESS>")
 
 tmpVak = "<POSTCODE>9999</POSTCODE>"
@@ -4605,7 +4593,7 @@ lblEvak(61).Caption = Format(0, "#,##0.00")
 lblEURVak(62).Caption = Format(0, "#,##0.00")
 lblEvak(62).Caption = Format(0, "#,##0.00")
 
-Ktrl = ScrLeesBestandAlleTekst(vatGridLineTemplate, PROGRAM_LOCATION + "xml-templates\be-vatgridline.xml")
+Ktrl = ScrLeesBestandAlleTekst(vatGridLineTemplate, PROGRAM_LOCATION + "xml-templates\vat\be-vatgridline.xml")
 If Ktrl = 0 Then
     MsgBox "Onverwachte situatie", vbCritical
 End If
@@ -4689,11 +4677,11 @@ Else
     vatGridLinesList = vatGridLinesList + thisVatGridLine
     
 End If
-RichTextBox1.Text = tmpXMLHier
+RichTextBox1.text = tmpXMLHier
 
 '<Vsoft>vatDeclareGridLinesList</Vsoft>
 vatDeclarationTemplate = Replace(vatDeclarationTemplate, "<Vsoft>vatDeclareGridLinesList</Vsoft>", vatGridLinesList)
-Me.RichTextBox2.Text = vatDeclarationTemplate
+Me.RichTextBox2.text = vatDeclarationTemplate
 
 If Left(tmpVakHier, 5) = "</D72>" Then
     '72 is teruggave dus aanvraag teruggave automatisch aanklikken
@@ -4724,13 +4712,13 @@ Private Sub SSTab1_Click(PreviousTab As Integer)
 End Sub
 
 
-Private Sub tvwBtwAangiftes_NodeClick(ByVal Node As MSComctlLib.Node)
+Private Sub tvwBtwAangiftes_NodeClick(ByVal node As MSComctlLib.node)
    
-    If Node.Index > 1 Then
+    If node.Index > 1 Then
         'MsgBox "Index = " & Node.Index & " Text:" & Node.Text
         Initialiseren.Enabled = False
         CmdEmailNBB.Enabled = False
-        VulDeVelden Left(Node.Text, 4), Right(Node.Text, 2)
+        VulDeVelden Left(node.text, 4), Right(node.text, 2)
     End If
     
 End Sub

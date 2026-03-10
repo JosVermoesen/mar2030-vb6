@@ -12,6 +12,21 @@ End Type
 Private Declare Function CoCreateGuid Lib "ole32.dll" (ByRef pguid As GUID) As Long
 Private Declare Function StringFromGUID2 Lib "ole32.dll" (ByRef rguid As GUID, ByVal lpsz As Long, ByVal cchMax As Long) As Long
 
+Public Function CheckforAmp(toCheck As String) As String
+
+    If InStr(toCheck, "&") Then 'verbeteren voor XML bestand!!!
+        CheckforAmp = Replace(toCheck, "&", "&amp;")
+    Else
+        CheckforAmp = toCheck
+    End If
+    
+End Function
+
+Public Function GetCreationDateTime() As String
+    GetCreationDateTime = Format$(Now, "yyyy-mm-dd") & "T" & Format$(Now, "hh:nn:ss")
+End Function
+
+
 Public Function CreateGUID() As String
     Dim g As GUID
     Dim buffer As String
@@ -78,7 +93,7 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
 
     Set xsl = CreateObject("MSXML2.DOMDocument.6.0")
     xsl.async = False
-    xsl.Load PROGRAM_LOCATION & "xml-templates\peppol-invoice.xslt"
+    xsl.Load PROGRAM_LOCATION & "xml-templates\peppol\peppol-invoice.xslt"
 
     If xsl.parseError.errorCode <> 0 Then
         MsgBox "XSLT error: " & xsl.parseError.reason
