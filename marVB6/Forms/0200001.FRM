@@ -131,15 +131,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "OLE1"
-      Tab(1).Control(1)=   "cbAfbeelding"
+      Tab(1).Control(0)=   "cbAfbeelding"
+      Tab(1).Control(1)=   "OLE1"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label3"
+      Tab(2).Control(0)=   "obTAB(1)"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "obTAB(1)"
+      Tab(2).Control(2)=   "Label3"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -1086,7 +1086,10 @@ Function CheckSupplier() As Boolean
         Exit Function
     ElseIf rsSupplier.RecordCount = 0 Then
         If ifSupplierInsertWarning Then
-            Msg = "Geen leverancier gevonden met het ondernemingsnummer " & uitwisselingDATAArray(5) & vbCrLf
+            Msg = "Geen leverancier gevonden met het ondernemingsnummer " & uitwisselingDATAArray(5) & vbCrLf & vbCrLf
+            Msg = Msg & "Naam: " & uitwisselingDATAArray(7) & vbCrLf
+            Msg = Msg & "Straat: " & uitwisselingDATAArray(8) & vbCrLf
+            Msg = Msg & "Plaatsnaam: " & uitwisselingDATAArray(9) & vbCrLf & vbCrLf
             Msg = Msg & "Controleer eerst of voeg een nieuwe leverancier toe" & vbCrLf & vbCrLf
             Msg = Msg & "Hierna wordt voorgesteld een nieuwe leverancier aan te maken" & vbCrLf & "met gegevens uit het UBL document en ondernemingsnummer als codenummer." & vbCrLf & "Wijzig het codenummer indien nodig en druk enter om de fiche te controleren, te vervolledigen." & vbCrLf & vbCrLf
             
@@ -1746,10 +1749,10 @@ Private Sub cbImportUBL_Click()
         FormB2BAMonitor.Show 1
     End If
         
-    
+    ifSupplierInsertWarning = True
     ublFileUrl = LCase(XLogKey)
     If ublFileUrl = "" Then
-        ifSupplierInsertWarning = False
+        ifSupplierInsertWarning = True
         Exit Sub
     ElseIf Dir(ublFileUrl) = "" Then
         Exit Sub
