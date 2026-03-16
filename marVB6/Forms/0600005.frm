@@ -263,8 +263,8 @@ BeginSleutel = "D0" + PlGrensVan
 EindSleutel = "D0" + PlGrensTot
 
     psTekst(2) = "Diverse Postenboek " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-    psTekst(0) = TekstLijn(1).Text
-    psTekst(3) = TekstLijn(0).Text
+    psTekst(0) = TekstLijn(1).text
+    psTekst(3) = TekstLijn(0).text
 
 InitVelden
 bGetOrGreater TABLE_JOURNAL, 1, Trim$(BeginSleutel)
@@ -315,7 +315,7 @@ PrintInfo:
 RecordToVeld TABLE_JOURNAL
 Lijn = Lijn + 1
 VeldTXT(0) = Format(Lijn, "0000")
-VeldTXT(1) = DATE_TEXT(oWaarde(rsMAR(TABLE_JOURNAL)("v066").Value))
+VeldTXT(1) = DATE_TEXT(objectValue(rsMAR(TABLE_JOURNAL)("v066").Value))
 VeldTXT(2) = vBibTekst(TABLE_JOURNAL, "#v019 #")
 bGet TABLE_LEDGERACCOUNTS, 0, vSet(VeldTXT(2), 7)
 If Ktrl Then
@@ -324,8 +324,8 @@ Else
     RecordToVeld TABLE_LEDGERACCOUNTS
     VeldTXT(3) = Left(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 36)
 End If
-VeldTXT(4) = oWaarde(rsMAR(TABLE_JOURNAL)("v067").Value)
-DCBedrag = oWaarde(rsMAR(TABLE_JOURNAL)("dece068").Value)
+VeldTXT(4) = objectValue(rsMAR(TABLE_JOURNAL)("v067").Value)
+DCBedrag = objectValue(rsMAR(TABLE_JOURNAL)("dece068").Value)
 SnelHelpPrint VeldTXT(1) + " " + VeldTXT(4), BL_LOGGING
 Select Case DCBedrag
     Case Is < 0
@@ -379,8 +379,8 @@ Dim TempB_MODUS As Integer
 TotaalD = 0
 TotaalC = 0
 
-TekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
+TekstLijn(1).text = MIM_GLOBAL_DATE
 
 PlGrensVan = Left(PERIOD_FROMTO, 8)
 PlGrensTot = Right(PERIOD_FROMTO, 8)
@@ -435,7 +435,7 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 0
     For T = 0 To 7
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -555,7 +555,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -563,25 +563,25 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 0
-        If DATE_INVALID(Right(TekstLijn(0).Text, 10)) Then
+        If DATE_INVALID(Right(TekstLijn(0).text, 10)) Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
             Exit Sub
-        ElseIf Len(TekstLijn(0).Text) <> 23 Then
+        ElseIf Len(TekstLijn(0).text) <> 23 Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
             Exit Sub
         Else
-            PlGrensVan = Mid(TekstLijn(0).Text, 7, 4) + Mid(TekstLijn(0).Text, 4, 2) + Mid(TekstLijn(0).Text, 1, 2)
-            PlGrensTot = Mid(TekstLijn(0).Text, 20, 4) + Mid(TekstLijn(0).Text, 17, 2) + Mid(TekstLijn(0).Text, 14, 2)
+            PlGrensVan = Mid(TekstLijn(0).text, 7, 4) + Mid(TekstLijn(0).text, 4, 2) + Mid(TekstLijn(0).text, 1, 2)
+            PlGrensTot = Mid(TekstLijn(0).text, 20, 4) + Mid(TekstLijn(0).text, 17, 2) + Mid(TekstLijn(0).text, 14, 2)
         End If
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
         End If
     Case 3
-        TekstLijn(3).Text = Format(Val(TekstLijn(3).Text), "00000")
+        TekstLijn(3).text = Format(Val(TekstLijn(3).text), "00000")
 End Select
 
 End Sub

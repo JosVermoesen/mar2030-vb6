@@ -88,11 +88,31 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "KeuzeInfo(1)"
+      Tab(1).Control(0)=   "mfgLijst"
       Tab(1).Control(1)=   "cbCoda"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "mfgLijst"
-      Tab(1).ControlCount=   3
+      Tab(1).Control(2)=   "KeuzeInfo(1)"
+      Tab(1).Control(3)=   "ButtonReadCamt053"
+      Tab(1).Control(4)=   "CheckBoxSepaViewer"
+      Tab(1).ControlCount=   5
+      Begin VB.CheckBox CheckBoxSepaViewer 
+         Alignment       =   1  'Right Justify
+         Caption         =   "Ook Inkijken"
+         Height          =   375
+         Left            =   -74760
+         TabIndex        =   26
+         Top             =   6840
+         Value           =   1  'Checked
+         Width           =   1695
+      End
+      Begin VB.CommandButton ButtonReadCamt053 
+         Caption         =   "TESTING ReadCamt053"
+         Height          =   375
+         Left            =   -72960
+         TabIndex        =   25
+         Top             =   6840
+         Width           =   2535
+      End
       Begin VB.TextBox TextBoxWarningTestCompany 
          BackColor       =   &H000000FF&
          Enabled         =   0   'False
@@ -294,7 +314,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16384003
+         Format          =   76546051
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -658,7 +678,7 @@ If Ktrl = vbYes Then
             MsgBox "TellerStop.  Versiekonflikt !  Kontakteer R&&Vsoft"
         Else
             RecordToVeld TABLE_COUNTERS
-            FL99_RECORD = Left(KeuzeInfo(0).Text, 7)
+            FL99_RECORD = Left(KeuzeInfo(0).text, 7)
             If BAModus = 1 Then
                 vBib TABLE_COUNTERS, FL99_RECORD, "v217 "
             Else
@@ -690,6 +710,56 @@ End If
 Unload Me
 GridText = ""
 
+End Sub
+
+Private Sub ButtonReadCamt053_Click()
+
+    'Exit Sub
+
+    Dim filePath As String
+    Dim actionResult As Boolean
+    
+    On Error GoTo OnCancel
+    Mim.Teken.filename = ""
+    Mim.Teken.InitDir = LOCATION_COMPANYDATA & "coda\in\"
+    Mim.Teken.CancelError = True
+    Mim.Teken.Filter = "Alle bestanden (*.xda)|*.xda"
+    Mim.Teken.ShowOpen
+    
+    filePath = Mim.Teken.filename
+    If Me.CheckBoxSepaViewer.Value = vbChecked Then
+        actionResult = ReadCamt053XDA(filePath, True)
+    Else
+        actionResult = ReadCamt053XDA(filePath, False)
+    End If
+    
+    ReDim xdaOMSArray(50)
+    ReDim xdaDATAArray(50)
+    xdaOMSArray() = Split(xdaOMS, vbTab)
+    xdaDATAArray() = Split(xdaDATA, vbTab)
+            
+    ReDim xdaLinesOMSArray(20)
+    xdaLinesOMSArray() = Split(xdaLinesOMS, vbTab)
+    xdaParseToArray (xdaLinesDATA)
+        
+    'For T = 0 To UBound(xdaOMSArray): Debug.Print T; " "; xdaOMSArray(T); ": "; xdaDATAArray(T): Next
+    'Debug.Print xdaLinesOMSArray(UBound(xdaLinesOMSArray))
+    'Debug.Print xdaLinesOMSArray(7); " "; xdaLinesDATAArray(0, 7)
+    'Debug.Print UBound(xdaLinesDATAArray)
+    'Debug.Print xdaLinesDATAArray(5, 0)
+    'For T = 0 To 13: Debug.Print xdaLinesDATAArray(0, counterHere) & ": " & xdaLinesDATAArray(indexHere + 1, counterHere): Next
+    'For T = 0 To UBound(xdaLinesOMSArray): Debug.Print T; " "; xdaLinesOMSArray(T); " "; xdaLinesDATAArray(0, T): Next
+    
+    'For T = 0 To UBound(xdaOMSArray): Debug.Print T; " "; xdaOMSArray(T); ": "; xdaDATAArray(T): Next
+    Dim i As Integer
+    'For i = 0 To UBound(xdaLinesDATAArray) - 1
+    '    For T = 0 To UBound(xdaLinesOMSArray)
+    '        Debug.Print i; "> "; T; " "; xdaLinesOMSArray(T); " "; xdaLinesDATAArray(i, T)
+    '    Next
+    'Next
+    
+OnCancel:
+    
 End Sub
 
 Private Sub cbCoda_Click()
@@ -926,7 +996,7 @@ Select Case Index
             Case Else
                 LabelInfo(11).Caption = Str$(Val(Uittreksel(KeuzeInfo(0).ListIndex)) + 1)
         End Select
-        bGet TABLE_LEDGERACCOUNTS, 0, vSet((KeuzeInfo(0).Text), 7)
+        bGet TABLE_LEDGERACCOUNTS, 0, vSet((KeuzeInfo(0).text), 7)
         If Ktrl Then
         Else
             RecordToVeld TABLE_LEDGERACCOUNTS
@@ -958,7 +1028,7 @@ Private Sub KeuzeInfo_LostFocus(Index As Integer)
 
 Select Case Index
     Case 0
-        If KeuzeInfo(0).Text = "" Then
+        If KeuzeInfo(0).text = "" Then
             Beep
             KeuzeInfo(0).SetFocus
         End If
@@ -1176,11 +1246,11 @@ Unload frmBoeking
 frmBoeking.Hide
 
 TLB_RECORD(TABLE_JOURNAL) = ""
-vBib TABLE_JOURNAL, Left(KeuzeInfo(0).Text, 7), "v019"
+vBib TABLE_JOURNAL, Left(KeuzeInfo(0).text, 7), "v019"
 vBib TABLE_JOURNAL, Format(Datum.Value, "yyyymmdd"), "v066"
 vBib TABLE_JOURNAL, Format(Datum.Value, "yyyymmdd"), "v035"
 
-bGet TABLE_LEDGERACCOUNTS, 0, Left(KeuzeInfo(0).Text, 7)
+bGet TABLE_LEDGERACCOUNTS, 0, Left(KeuzeInfo(0).text, 7)
 If Ktrl Then
     Exit Function
 Else
@@ -1201,19 +1271,19 @@ End If
 bInsert TABLE_JOURNAL, 2
 If Ktrl Then Exit Function
 
-vBib TABLE_JOURNAL, Left(KeuzeInfo(0).Text, 7), "v069"
+vBib TABLE_JOURNAL, Left(KeuzeInfo(0).text, 7), "v069"
 For T = 1 To FinancieelDetail.ListCount
     FinancieelDetail.ListIndex = T - 1
-    If Left(FinancieelDetail.Text, 1) = "+" Then
+    If Left(FinancieelDetail.text, 1) = "+" Then
         Ontvangst = True
     Else
         Ontvangst = False
     End If
-    If Mid(FinancieelDetail.Text, 2, 11) = Space$(11) Then
+    If Mid(FinancieelDetail.text, 2, 11) = Space$(11) Then
         vBib TABLE_JOURNAL, " ", "v033"
         vBib TABLE_JOURNAL, " ", "v034"
     Else
-        bGet TABLE_INVOICES, 0, Mid(FinancieelDetail.Text, 2, 11)
+        bGet TABLE_INVOICES, 0, Mid(FinancieelDetail.text, 2, 11)
         If Ktrl Then
             Exit Function
         Else
@@ -1223,10 +1293,10 @@ For T = 1 To FinancieelDetail.ListCount
         End If
     End If
     
-    TotaalBedrag = Val(Mid(FinancieelDetail.Text, 22, 12))
-    vBib TABLE_JOURNAL, Trim$(Mid(FinancieelDetail.Text, 35, 29)), "v067"
-    If Val(Mid(FinancieelDetail.Text, 65, 12)) <> 0 Then
-        FinKort = Val(Mid(FinancieelDetail.Text, 65, 12))
+    TotaalBedrag = Val(Mid(FinancieelDetail.text, 22, 12))
+    vBib TABLE_JOURNAL, Trim$(Mid(FinancieelDetail.text, 35, 29)), "v067"
+    If Val(Mid(FinancieelDetail.text, 65, 12)) <> 0 Then
+        FinKort = Val(Mid(FinancieelDetail.text, 65, 12))
         TotaalBedrag = TotaalBedrag + FinKort
         Select Case Ontvangst
             Case True
@@ -1243,7 +1313,7 @@ For T = 1 To FinancieelDetail.ListCount
         If Ktrl Then Exit Function
     End If
     
-    vBib TABLE_JOURNAL, Mid(FinancieelDetail.Text, 14, 7), "v019"
+    vBib TABLE_JOURNAL, Mid(FinancieelDetail.text, 14, 7), "v019"
     Select Case Ontvangst
         Case True
             vBib TABLE_JOURNAL, Str$(-TotaalBedrag), "v068"
@@ -1279,7 +1349,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     WegBoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then
@@ -1435,3 +1505,38 @@ Function BewegingSchoon()
     sNaamEnAdres(2) = ""
     
 End Function
+
+Private Sub xdaParseToArray(inputText As String)
+    
+    Dim lines() As String
+    Dim fields() As String
+    Dim result() As String
+    Dim i As Long, j As Long
+    Dim maxCols As Long
+    
+    On Local Error GoTo 0
+    
+    ' Split into lines
+    lines = Split(inputText, vbCrLf)
+    
+    ' Find maximum number of columns
+    For i = LBound(lines) To UBound(lines)
+        fields = Split(lines(i), vbTab)
+        If UBound(fields) + 1 > maxCols Then
+            maxCols = UBound(fields) + 1
+        End If
+    Next i
+    
+    ' Dimension result array: rows = number of lines, cols = max fields
+    ReDim xdaLinesDATAArray(UBound(lines), maxCols - 1)
+    
+    ' Fill the array
+    For i = LBound(lines) To UBound(lines)
+        fields = Split(lines(i), vbTab)
+        For j = LBound(fields) To UBound(fields)
+            xdaLinesDATAArray(i, j) = fields(j)
+        Next j
+    Next i
+    
+End Sub
+

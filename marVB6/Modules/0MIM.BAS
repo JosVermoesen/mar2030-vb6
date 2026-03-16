@@ -134,8 +134,8 @@ Dim KontroleString As String
 Unload Xlog
 Load Xlog
 On Local Error Resume Next
-Xlog.Caption = "Balans voor : " & oWaarde(rsMAR(Fl)("A100"))
-Xlog.Caption = Xlog.Caption & " " & oWaarde(rsMAR(Fl)("A101"))
+Xlog.Caption = "Balans voor : " & objectValue(rsMAR(Fl)("A100"))
+Xlog.Caption = Xlog.Caption & " " & objectValue(rsMAR(Fl)("A101"))
 SharedScanFl = TABLE_INVOICES
 
 Xlog.X.Rows = 2
@@ -373,8 +373,8 @@ Dim KontroleString As String
 Unload Xlog
 Load Xlog
 On Local Error Resume Next
-Xlog.Caption = "Balans voor : " & oWaarde(rsMAR(Fl)("A100"))
-Xlog.Caption = Xlog.Caption & " " & oWaarde(rsMAR(Fl)("A101"))
+Xlog.Caption = "Balans voor : " & objectValue(rsMAR(Fl)("A100"))
+Xlog.Caption = Xlog.Caption & " " & objectValue(rsMAR(Fl)("A101"))
 SharedScanFl = TABLE_INVOICES
 
 Xlog.X.Rows = 2
@@ -1119,6 +1119,28 @@ Else
 End If
 
 'checking directories
+'0. Coda
+CodaDirCheck:
+Dim codaDir As String
+codaDir = LOCATION_COMPANYDATA + "coda"
+On Local Error Resume Next
+ChDir codaDir
+
+If Err = 76 Then
+    'Msg = "Vanaf versie 11.5.012 dient de datainhoudsopgave over submap 'coda' te beschikken." & vbCrLf & vbCrLf
+    'Msg = Msg & "Deze map wordt hierna aangemaakt"
+    'MsgBox Msg, vbInformation
+    MkDir (LOCATION_COMPANYDATA + "coda")
+    ChDir codaDir
+    MkDir (LOCATION_COMPANYDATA + "coda\in")
+    ChDir codaDir
+    MkDir (LOCATION_COMPANYDATA + "coda\out")
+    ChDir LOCATION_COMPANYDATA
+Else
+    ChDir LOCATION_COMPANYDATA
+End If
+On Local Error GoTo 0
+
 '1. Peppol
 PeppolDirCheck:
 Dim peppolDir As String

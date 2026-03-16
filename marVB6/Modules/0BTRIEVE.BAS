@@ -119,7 +119,7 @@ If Left(PrintTekst, 1) = "~" Then
 Else
     Mim!SnelHelpTijd.Enabled = True
 End If
-Mim.SnelHelp.Panels(4).Text = PrintTekst
+Mim.SnelHelp.Panels(4).text = PrintTekst
 If Logging = True Then
     LOG_PRINT = LOG_PRINT & PrintTekst & vbCrLf
 End If
@@ -200,13 +200,13 @@ Function xrsMar(Fl As Integer, TBS As String) As Variant
     
 End Function
 
-Function oWaarde(dbWaarde As Variant) As Variant
+Function objectValue(dbValue As Variant) As Variant
 
     'On Error Resume Next
-    If IsNull(dbWaarde) Or IsEmpty(dbWaarde) Then
-        oWaarde = ""
+    If IsNull(dbValue) Or IsEmpty(dbValue) Then
+        objectValue = ""
     Else
-        oWaarde = dbWaarde
+        objectValue = dbValue
     End If
     
 End Function
@@ -572,13 +572,13 @@ KEY_INDEX(Fl) = fIndex
 
 On Local Error Resume Next
 KEY_BUF(Fl) = ""
-If IsNull(rsMAR(Fl).Fields(Trim$(JETTABLEUSE_INDEX(Fl, fIndex)))) Then
+If IsNull(rsMAR(Fl).fields(Trim$(JETTABLEUSE_INDEX(Fl, fIndex)))) Then
 ElseIf FLINDEX_LEN(Fl, fIndex) = 0 Then
     'KEY_BUF(Fl) = Trim$(ntRS(Fl).Fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4)))
-    KEY_BUF(Fl) = Trim$(rsMAR(Fl).Fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4)))
+    KEY_BUF(Fl) = Trim$(rsMAR(Fl).fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4)))
 Else
     'KEY_BUF(Fl) = vSet(ntRS(Fl).Fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex))), FLINDEX_LEN(Fl, fIndex))
-    KEY_BUF(Fl) = vSet(rsMAR(Fl).Fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex))), FLINDEX_LEN(Fl, fIndex))
+    KEY_BUF(Fl) = vSet(rsMAR(Fl).fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex))), FLINDEX_LEN(Fl, fIndex))
 End If
 If Err Then KEY_BUF(Fl) = ""
 Exit Sub
@@ -695,7 +695,7 @@ Else
     Else
         Ktrl = 0
     End If
-    KEY_BUF(Fl) = rsMAR(Fl).Fields(RTrim(JETTABLEUSE_INDEX(Fl, fIndex)))
+    KEY_BUF(Fl) = rsMAR(Fl).fields(RTrim(JETTABLEUSE_INDEX(Fl, fIndex)))
     KEY_INDEX(Fl) = fIndex
     'KEY_BUF(Fl) = vSet(fSleutel, FLINDEX_LEN(Fl, fIndex))
 End If
@@ -856,11 +856,12 @@ Else
 End If
 KEY_INDEX(Fl) = fIndex
 KEY_BUF(Fl) = ""
-If IsNull(ntRS(Fl).Fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex)))) Then
+If IsNull(ntRS(Fl).fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex)))) Then
+    bPrev Fl
 ElseIf FLINDEX_LEN(Fl, fIndex) = 0 Then
     KEY_BUF(Fl) = "..."
 Else
-    KEY_BUF(Fl) = vSet(ntRS(Fl).Fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex))), FLINDEX_LEN(Fl, fIndex))
+    KEY_BUF(Fl) = vSet(ntRS(Fl).fields(RTrim$(JETTABLEUSE_INDEX(Fl, fIndex))), FLINDEX_LEN(Fl, fIndex))
 End If
 
 End Sub
@@ -897,7 +898,7 @@ Else
     Else
         Ktrl = 0
         'KEY_BUF(Fl) = ntRS(Fl).Fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4))
-        KEY_BUF(Fl) = rsMAR(Fl).Fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4))
+        KEY_BUF(Fl) = rsMAR(Fl).fields(Left(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl)), 4))
     End If
 End If
 Exit Sub
@@ -981,7 +982,7 @@ Else
     Else
         Ktrl = 0
         On Error Resume Next
-        KEY_BUF(Fl) = rsMAR(Fl).Fields(RTrim$(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl))))
+        KEY_BUF(Fl) = rsMAR(Fl).fields(RTrim$(JETTABLEUSE_INDEX(Fl, KEY_INDEX(Fl))))
     End If
 End If
 
@@ -1048,7 +1049,7 @@ On Local Error Resume Next
 T = 0
 Do While Asc(vBC(Fl, T)) <> 0
     'vBib Fl, RTrim$(ntRS(Fl).Fields(vBC(Fl, T))), vBC(Fl, T)
-    vBib Fl, RTrim$(rsMAR(Fl).Fields(vBC(Fl, T))), vBC(Fl, T)
+    vBib Fl, RTrim$(rsMAR(Fl).fields(vBC(Fl, T))), vBC(Fl, T)
     T = T + 1
 Loop
 For T = 0 To FL_NUMBEROFINDEXEN(Fl)
@@ -1068,14 +1069,14 @@ On Local Error Resume Next
 T = 0
 If Fl = TABLE_VARIOUS Then
     'TLB_RECORD(Fl) = ntRS(Fl).Fields("MEMO")
-    TLB_RECORD(Fl) = rsMAR(Fl).Fields("MEMO")
+    TLB_RECORD(Fl) = rsMAR(Fl).fields("MEMO")
 ElseIf Fl = TABLE_DUMMY Then
     'TLB_RECORD(Fl) = ntRS(Fl).Fields("MEMO")
-    TLB_RECORD(Fl) = rsMAR(Fl).Fields("MEMO")
+    TLB_RECORD(Fl) = rsMAR(Fl).fields("MEMO")
 Else
     Do While Asc(vBC(Fl, T)) <> 0
         'vBib Fl, Trim$(ntRS(Fl).Fields(vBC(Fl, T))), vBC(Fl, T)
-        vBib Fl, rsMAR(Fl).Fields(vBC(Fl, T)), vBC(Fl, T)
+        vBib Fl, rsMAR(Fl).fields(vBC(Fl, T)), vBC(Fl, T)
         T = T + 1
     Loop
 End If
@@ -1140,14 +1141,14 @@ On Local Error GoTo 0  'WatGaatErFout
 'Debug.Print vBCode
 If RTrim$(vBCode) = "MEMO" Then
     'ntRS(Fl).Fields(vBCode) = TLB_RECORD(Fl)
-    rsMAR(Fl).Fields(vBCode) = TLB_RECORD(Fl)
+    rsMAR(Fl).fields(vBCode) = TLB_RECORD(Fl)
 Else
     'ntRS(Fl).Fields(vBCode) = StringData
-    If rsMAR(Fl).Fields(vBCode) = Left(StringData, rsMAR(Fl).Fields(vBCode).DefinedSize) Then 'StringData Then
+    If rsMAR(Fl).fields(vBCode) = Left(StringData, rsMAR(Fl).fields(vBCode).DefinedSize) Then 'StringData Then
     ElseIf StringData = "" Then
     Else
     On Local Error GoTo 0  'WatGaatErFout
-        rsMAR(Fl).Fields(vBCode) = Left(StringData, rsMAR(Fl).Fields(vBCode).DefinedSize)
+        rsMAR(Fl).fields(vBCode) = Left(StringData, rsMAR(Fl).fields(vBCode).DefinedSize)
     End If
 End If
 Exit Sub

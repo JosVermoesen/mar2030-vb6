@@ -6,6 +6,7 @@
 "3   v037  ","Reeds betaald","D",10
 "7   v038  ","Betalingsstuk","A",8
 "7   v039  ","Betalingsreferte","A",12
+"7   v411  ","GuidID XML Overschrijving","A",50
 "b   v406 x","Sent Bevestigd","A",1000
 "b   v408 x","Document reacties","A",1000
 "5   vs03  ","ISO Muntcode","A",3

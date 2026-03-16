@@ -6,6 +6,7 @@
 "9   v066  ","Boekdatum","N",8
 "3   v037  ","Reeds betaald","N",10
 "7   v038  ","Betalingsstuk","A",8
+"7   v411  ","GuidID XML Overschrijving","A",50
 "7   v039  ","Betalingsreferte","N",20
 "5   vs03  ","ISO Muntcode","A",3
 "3   v249  ","Totaal document","D",10

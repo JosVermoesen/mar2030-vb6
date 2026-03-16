@@ -12,6 +12,415 @@ End Type
 Private Declare Function CoCreateGuid Lib "ole32.dll" (ByRef pguid As GUID) As Long
 Private Declare Function StringFromGUID2 Lib "ole32.dll" (ByRef rguid As GUID, ByVal lpsz As Long, ByVal cchMax As Long) As Long
 
+' Helper for safe node text extraction
+Private Function GetNodeText(parentNode As Object, xpath As String) As String
+    Dim node As Object
+    Set node = parentNode.selectSingleNode(xpath)
+    If Not node Is Nothing Then
+        GetNodeText = Trim(node.text)
+    Else
+        GetNodeText = ""
+    End If
+End Function
+
+
+Public Function GetBbaDescription(ByVal BbaCode As String) As String
+
+    Select Case BbaCode
+
+        ' --- SEPA Credit Transfers ---
+        Case "0101000"
+            GetBbaDescription = "SEPA Credit Transfer (individual payment)"
+
+        Case "0102000"
+            GetBbaDescription = "SEPA Credit Transfer (urgent)"
+
+        Case "0103000"
+            GetBbaDescription = "SEPA Credit Transfer (international)"
+
+        ' --- SEPA Direct Debits ---
+        Case "0107000"
+            GetBbaDescription = "SEPA Direct Debit (batch debit)"
+
+        Case "0108000"
+            GetBbaDescription = "SEPA Direct Debit (individual debit)"
+
+        Case "0501000"
+            GetBbaDescription = "SEPA Direct Debit CORE"
+
+        Case "0502000"
+            GetBbaDescription = "SEPA Direct Debit B2B"
+
+        ' --- Card Payments ---
+        Case "0401000"
+            GetBbaDescription = "Card Payment (Bancontact/Maestro)"
+
+        Case "0402000"
+            GetBbaDescription = "ATM Cash Withdrawal"
+
+        Case "0403000"
+            GetBbaDescription = "Credit Card Settlement"
+
+        ' --- Cheques ---
+        Case "0301000"
+            GetBbaDescription = "Cheque Deposit"
+
+        Case "0302000"
+            GetBbaDescription = "Cheque Payment"
+
+        Case "0307000"
+            GetBbaDescription = "Unpaid Cheque"
+
+        ' --- Cash / Counter ---
+        Case "0901000"
+            GetBbaDescription = "Cash Deposit"
+
+        Case "0902000"
+            GetBbaDescription = "Cash Withdrawal"
+
+        ' --- Fallback ---
+        Case Else
+            GetBbaDescription = "Unknown BBA Code (" & BbaCode & ")"
+
+    End Select
+
+End Function
+
+Public Function DetectTransactionType( _
+        ByVal BbaCode As String, _
+        ByVal SCOR As String, _
+        ByVal Ustrd As String, _
+        ByVal Creditor As String, _
+        ByVal Debtor As String) As String
+
+    ' -----------------------------
+    ' 1. BBA CODE FAMILY DETECTION
+    ' -----------------------------
+    Select Case Left$(BbaCode, 2)
+
+        Case "01"
+            If SCOR <> "" Then
+                DetectTransactionType = "SEPA Transfer with Structured Communication"
+                Exit Function
+            Else
+                DetectTransactionType = "SEPA Transfer"
+                Exit Function
+            End If
+
+        Case "04"
+            ' Card payments / ATM
+            If InStr(Ustrd, "Kaart") > 0 Then
+                DetectTransactionType = "Card Payment"
+                Exit Function
+            Else
+                DetectTransactionType = "ATM Withdrawal"
+                Exit Function
+            End If
+
+        Case "05"
+            DetectTransactionType = "Direct Debit"
+            Exit Function
+
+        Case "02"
+            DetectTransactionType = "Salary / Income / Incoming Transfer"
+            Exit Function
+
+        Case "03"
+            DetectTransactionType = "Cheque Operation"
+            Exit Function
+
+        Case "09"
+            DetectTransactionType = "Cash Operation"
+            Exit Function
+
+    End Select
+
+    ' -----------------------------
+    ' 2. FALLBACK ON CONTENT
+    ' -----------------------------
+    If SCOR <> "" Then
+        DetectTransactionType = "Structured Payment"
+        Exit Function
+    End If
+
+    If InStr(Ustrd, "Kaart") > 0 Then
+        DetectTransactionType = "Card Payment"
+        Exit Function
+    End If
+
+    If Creditor <> "" And Debtor = "" Then
+        DetectTransactionType = "Outgoing Payment"
+        Exit Function
+    End If
+
+    If Debtor <> "" And Creditor = "" Then
+        DetectTransactionType = "Incoming Payment"
+        Exit Function
+    End If
+
+    ' -----------------------------
+    ' 3. DEFAULT
+    ' -----------------------------
+    DetectTransactionType = "Unknown Transaction Type"
+
+End Function
+
+
+Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boolean) As Boolean
+
+    xdaOMS = ""
+    xdaDATA = ""
+    xdaLinesOMS = ""
+    xdaLinesDATA = ""
+    
+    On Local Error GoTo 0
+
+    Dim result As String
+    Dim xml As New MSXML2.DOMDocument60
+    Dim txt As String
+
+    ' Load file as text so we can strip namespaces
+    txt = MarReadUtf8File(filename)
+
+    ' Remove default namespace (VB6 cannot handle it)
+    txt = Replace(txt, "xmlns=""urn:iso:std:iso:20022:tech:xsd:camt.053.001.02""", "")
+
+    xml.async = False
+    xml.validateOnParse = False
+    xml.loadXML txt
+
+    If xml.parseError.errorCode <> 0 Then
+        MsgBox "XML Parse Error: " & xml.parseError.reason
+        Exit Function
+    End If
+
+    ' -----------------------------
+    ' Extract top-level information
+    ' -----------------------------
+    Dim MsgId As String
+    Dim StmtId As String
+    Dim IBAN As String
+    Dim Owner As String
+
+    MsgId = xml.selectSingleNode("//MsgId").text
+    StmtId = xml.selectSingleNode("//Stmt/Id").text
+    IBAN = xml.selectSingleNode("//Acct/Id/IBAN").text
+    Owner = xml.selectSingleNode("//Acct/Ownr/Nm").text
+
+    ' -----------------------------
+    ' Extract balances
+    ' -----------------------------
+    Dim OpeningBal As String
+    Dim ClosingBal As String
+
+    OpeningBal = xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='OPBD']/Amt").text
+    ClosingBal = xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='CLBD']/Amt").text
+
+    'Debug.Print "Message ID: " & MsgId
+    xdaOMS = xdaOMS & "MessageID" & vbTab
+    xdaDATA = xdaDATA & MsgId & vbTab
+    result = "MessageID: " & MsgId & vbCrLf
+    
+    'Debug.Print "Statement ID: " & StmtId
+    xdaOMS = xdaOMS & "StatementID" & vbTab
+    xdaDATA = xdaDATA & StmtId & vbTab
+    result = result & "StatementID: " & StmtId & vbCrLf
+    
+    'Debug.Print "IBAN: " & IBAN
+    xdaOMS = xdaOMS & "IBAN" & vbTab
+    xdaDATA = xdaDATA & IBAN & vbTab
+    result = result & "IBAN: " & IBAN & vbCrLf
+    
+    'Debug.Print "Owner: " & Owner
+    xdaOMS = xdaOMS & "Owner" & vbTab
+    xdaDATA = xdaDATA & Owner & vbTab
+    result = result & "Owner: " & Owner & vbCrLf & vbCrLf
+        
+    'Debug.Print "Opening Balance: " & OpeningBal
+    xdaOMS = xdaOMS & "OpeningBalance" & vbTab
+    xdaDATA = xdaDATA & OpeningBal & vbTab
+    result = result & "Opening Balance: " & OpeningBal & vbCrLf
+        
+    'Debug.Print "Closing Balance: " & ClosingBal
+    xdaOMS = xdaOMS & "ClosingBalance"
+    xdaDATA = xdaDATA & ClosingBal
+    result = result & "Closing Balance: " & ClosingBal & vbCrLf & vbCrLf
+        
+    ' ================================================
+    ' Loop through ALL TxDtls inside ALL Ntry elements
+    ' ================================================
+
+    Dim nEntry As MSXML2.IXMLDOMNode
+    Dim nTx As MSXML2.IXMLDOMNode
+    Dim txList As MSXML2.IXMLDOMNodeList
+    Dim nU As MSXML2.IXMLDOMNode
+
+    'Debug.Print "*** ALL TRANSACTIONS ***"
+    result = result & "*** ALL TRANSACTIONS ***" & vbCrLf
+
+    Dim whateveR As String
+    Dim skipString As String
+    skipString = " - " & vbTab & " - " & vbTab & " - " & vbTab & _
+            " - " & vbTab & " - " & vbTab & " - " & vbTab & " - " & vbTab & _
+            " - " & vbTab & " - " & vbTab & " - " & vbTab & " - "
+        
+    xdaLinesOMS = "Entry Ref" & vbTab & "Entry Amount" & vbTab & "Entry BBA Code" & vbTab
+    xdaLinesOMS = xdaLinesOMS & "Tx Ref" & vbTab & "Tx Amount" & vbTab & "Tx Creditor" & vbTab & _
+            "Tx Debtor" & vbTab & "Tx IBAN" & vbTab & "Tx BIC" & vbTab & "Tx SCOR" & vbTab & _
+            "Tx Ustrd" & vbTab & "Tx BBA Code" & vbTab & "Tx Description" & vbTab & "Tx Type"
+    
+    For Each nEntry In xml.selectNodes("//Ntry")
+    
+        whateveR = "---------------"
+        'Debug.Print whateveR
+        result = result & whateveR & vbCrLf
+        
+        whateveR = GetNodeText(nEntry, "NtryRef")
+        'Debug.Print "EntryRef: " & whateveR
+        result = result & "EntryRef: " & whateveR & vbCrLf
+        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                
+        whateveR = GetNodeText(nEntry, "Amt")
+        'Debug.Print "Entry Amount: " & whateveR
+        result = result & "Entry Amount: " & whateveR & vbCrLf
+        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                
+        whateveR = GetNodeText(nEntry, "BkTxCd/Prtry/Cd")
+        'Debug.Print "Entry BBA Code: " & whateveR
+        result = result & "Entry BBA Code: " & whateveR & vbCrLf
+        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+        
+        ' ? FIX: Get TxDtls list safely
+        Set txList = nEntry.selectNodes("NtryDtls/TxDtls")
+
+        If txList Is Nothing Then
+            xdaLinesDATA = xdaLinesDATA & skipString & vbCrLf
+            GoTo NextEntry
+        End If
+        If txList.Length = 0 Then
+            xdaLinesDATA = xdaLinesDATA & skipString & vbCrLf
+            GoTo NextEntry
+        End If
+
+        For Each nTx In txList
+
+            Dim TxCode As String
+            Dim TxDesc As String
+            Dim TxRef As String
+            Dim TxAmount As String
+            Dim TxCreditor As String
+            Dim TxDebtor As String
+            Dim TxIBAN As String
+            Dim TxBIC As String
+            Dim TxSCOR As String
+            Dim TxUstrd As String
+            Dim TxType As String
+
+            ' BBA code (TxDtls or fallback to Ntry)
+            TxCode = GetNodeText(nTx, "BkTxCd/Prtry/Cd")
+            If TxCode = "" Then
+                TxCode = GetNodeText(nEntry, "BkTxCd/Prtry/Cd")
+            End If
+            TxDesc = GetBbaDescription(TxCode)
+
+            TxRef = GetNodeText(nTx, "Refs/AcctSvcrRef")
+            TxAmount = GetNodeText(nTx, "AmtDtls/TxAmt/Amt")
+    
+            TxCreditor = GetNodeText(nTx, "RltdPties/Cdtr/Nm")
+            TxDebtor = GetNodeText(nTx, "RltdPties/Dbtr/Nm")
+
+            TxIBAN = GetNodeText(nTx, "RltdPties/CdtrAcct/Id/IBAN")
+            If TxIBAN = "" Then TxIBAN = GetNodeText(nTx, "RltdPties/DbtrAcct/Id/IBAN")
+
+            TxBIC = GetNodeText(nTx, "RltdAgts/CdtrAgt/FinInstnId/BIC")
+            If TxBIC = "" Then TxBIC = GetNodeText(nTx, "RltdAgts/DbtrAgt/FinInstnId/BIC")
+
+            TxSCOR = GetNodeText(nTx, "RmtInf/Strd/CdtrRefInf/Ref")
+
+            ' ? Collect all Ustrd lines
+            TxUstrd = ""
+            For Each nU In nTx.selectNodes("RmtInf/Ustrd")
+                If TxUstrd <> "" Then TxUstrd = TxUstrd & " | "
+                TxUstrd = TxUstrd & nU.text
+            Next nU
+
+            ' ? Automatic detection
+            TxType = DetectTransactionType(TxCode, TxSCOR, TxUstrd, TxCreditor, TxDebtor)
+
+            ' Output
+            whateveR = "--------- TxDtls ---------"
+            'Debug.Print vbCrLf & whateveR
+            result = result & whateveR & vbCrLf
+            
+            whateveR = TxRef
+            'Debug.Print "  TxRef: " & whateveR
+            result = result & " -TxRef: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxAmount
+            'Debug.Print "  TxAmount: " & whateveR
+            result = result & " -TxAmount: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxCreditor
+            'Debug.Print "  Creditor: " & TxCreditor
+            result = result & " -Creditor: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxDebtor
+            'Debug.Print "  Debtor: " & TxDebtor
+            result = result & " -Debtor: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxIBAN
+            'Debug.Print "  IBAN: " & TxIBAN
+            result = result & " -IBAN: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxBIC
+            'Debug.Print "  BIC: " & TxBIC
+            result = result & " -BIC: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxSCOR
+            'Debug.Print "  SCOR: " & TxSCOR
+            result = result & " -SCOR: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxUstrd
+            'Debug.Print "  Ustrd: " & TxUstrd
+            result = result & " -Ustrd: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxCode
+            'Debug.Print "  BBA Code: " & TxCode
+            result = result & " -BBA Code: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+           
+            whateveR = TxDesc
+            'Debug.Print "  Description: " & TxDesc
+            result = result & " -Description: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+                    
+            whateveR = TxType
+            'Debug.Print "  Tx Type: " & TxType
+            result = result & " -Tx Type: " & whateveR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & whateveR & vbCrLf
+    Next nTx
+
+NextEntry:
+    Next nEntry
+
+    If showResult Then
+        Load FormReactionsDialog
+        FormReactionsDialog.TextBoxReactions.text = result
+        FormReactionsDialog.Caption = "SEPA Vieuwer"
+        FormReactionsDialog.Show 1
+    End If
+
+End Function
+
+
 Public Function CheckforAmp(toCheck As String) As String
 
     If InStr(toCheck, "&") Then 'verbeteren voor XML bestand!!!
@@ -39,7 +448,6 @@ Public Function CreateGUID() As String
         CreateGUID = ""
     End If
 End Function
-
 
 Private Function SafeGetNodeText(parentNode As Object, xpath As String, ns As String) As String
     On Error Resume Next ' Handle errors gracefully
@@ -640,17 +1048,6 @@ Private Function NodeText(parentNode As MSXML2.IXMLDOMNode, xpath As String) As 
         NodeText = Trim(child.text)
     Else
         NodeText = ""
-    End If
-End Function
-
-' Helper for safe node text extraction
-Private Function GetNodeText(parentNode As Object, xpath As String) As String
-    Dim node As Object
-    Set node = parentNode.selectSingleNode(xpath)
-    If Not node Is Nothing Then
-        GetNodeText = Trim(node.text)
-    Else
-        GetNodeText = ""
     End If
 End Function
 

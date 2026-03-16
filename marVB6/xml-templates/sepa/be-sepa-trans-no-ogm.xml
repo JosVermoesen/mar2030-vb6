@@ -1,4 +1,3 @@
-<!-- ====== TRANSACTION — Unstructured ====== -->
 <CdtTrfTxInf>
     <PmtId>
         <InstrId>{serialNumber}</InstrId>
@@ -8,12 +7,6 @@
     <Amt>
         <InstdAmt Ccy="EUR">{amount}</InstdAmt>
     </Amt>
-
-    <!-- <CdtrAgt>
-        <FinInstnId>
-            <BIC>{creditorBIC}</BIC>
-        </FinInstnId>
-    </CdtrAgt> -->
 
     <Cdtr>
         <Nm>{creditorName}</Nm>

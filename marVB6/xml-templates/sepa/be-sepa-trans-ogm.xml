@@ -1,4 +1,3 @@
-<!-- ====== TRANSACTION — OGM ====== -->
 <CdtTrfTxInf>
     <PmtId>
         <InstrId>{serialNumber}</InstrId>
@@ -9,12 +8,6 @@
         <InstdAmt Ccy="EUR">{amount}</InstdAmt>
     </Amt>
 
-    <!-- <CdtrAgt>
-        <FinInstnId>
-            <BIC>{creditorBIC}</BIC>
-        </FinInstnId>
-    </CdtrAgt> -->
-
     <Cdtr>
         <Nm>{creditorName}</Nm>
     </Cdtr>
@@ -24,7 +17,6 @@
         </Id>
     </CdtrAcct>
 
-    <!-- Example Structured Message (OGM) -->
     <RmtInf>
         <Strd>
             <CdtrRefInf>

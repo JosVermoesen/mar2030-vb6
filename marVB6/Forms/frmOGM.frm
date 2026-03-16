@@ -29,6 +29,7 @@ Begin VB.Form frmOGM
    StartUpPosition =   1  'CenterOwner
    Begin VB.CheckBox CheckBoxForceExecutionDate 
       Caption         =   "Forceer Memodatum"
+      Enabled         =   0   'False
       Height          =   345
       Left            =   1680
       TabIndex        =   28
@@ -141,7 +142,7 @@ Begin VB.Form frmOGM
       Height          =   345
       Left            =   4140
       TabIndex        =   11
-      Top             =   5340
+      Top             =   5310
       Width           =   1515
    End
    Begin MSMask.MaskEdBox mebRekening 
@@ -321,7 +322,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   16515075
       CurrentDate     =   36327
       MinDate         =   35796
    End
@@ -344,7 +345,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   16515075
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -369,7 +370,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   16515075
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -398,7 +399,7 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8220
       TabIndex        =   22
-      Top             =   5040
+      Top             =   5340
       Width           =   495
    End
    Begin VB.Label Label2 
@@ -408,7 +409,8 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8220
       TabIndex        =   21
-      Top             =   5400
+      Top             =   5040
+      Visible         =   0   'False
       Width           =   495
    End
    Begin VB.Label lblEUR 
@@ -418,7 +420,7 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8760
       TabIndex        =   20
-      Top             =   5040
+      Top             =   5340
       Width           =   1395
    End
    Begin VB.Label lblBEF 
@@ -428,7 +430,8 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8760
       TabIndex        =   19
-      Top             =   5400
+      Top             =   5040
+      Visible         =   0   'False
       Width           =   1395
    End
    Begin VB.Label lbBank 
@@ -487,7 +490,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+DefInt A-Z
 Option Explicit
+
+Dim rsAny As ADODB.Recordset
 
 Dim psTekst(5) As String
 Dim TotaalD         As Long
@@ -496,6 +502,7 @@ Dim TotaalC         As Long
 Dim VeldTXT(17) As String
 
 Dim TLijnen             As Integer
+Dim invalidAA   As Variant
 
 'MAIN
 Dim bancGuid As String 'ok
@@ -519,28 +526,28 @@ Private Sub InitVelden()
 Dim T As Integer
 
 REPORT_FIELD(0) = "Lijn"
-    REPORT_TAB(0) = 2
+    REPORT_TAB(0) = 5
 
 REPORT_FIELD(1) = "MemoDatum"
-    REPORT_TAB(1) = 7
+    REPORT_TAB(1) = 10
 
 REPORT_FIELD(2) = "    Bedrag"
-    REPORT_TAB(2) = 18
+    REPORT_TAB(2) = 21
 
 REPORT_FIELD(3) = "Munt"
-    REPORT_TAB(3) = 29
+    REPORT_TAB(3) = 32
 
 REPORT_FIELD(4) = "Begunstigde"
-    REPORT_TAB(4) = 34
+    REPORT_TAB(4) = 37
 
 REPORT_FIELD(5) = "Rekeningnr."
-    REPORT_TAB(5) = 65
+    REPORT_TAB(5) = 68
 
 REPORT_FIELD(6) = "OGM/Referte"
-    REPORT_TAB(6) = 80
+    REPORT_TAB(6) = 87
 
 REPORT_FIELD(7) = "DocumentID"
-    REPORT_TAB(7) = 95
+    REPORT_TAB(7) = 102
 
 REPORT_TAB(8) = 0
 
@@ -575,12 +582,12 @@ If chkAfdrukInVenster Then Exit Sub
     End If
     PAGE_COUNTER = PAGE_COUNTER + 1
     Printer.CurrentY = 400
-    Printer.Print Tab(1); psTekst(2); Tab(108); "Pagina : " + Dec$((PAGE_COUNTER), "##########");
+    Printer.Print Tab(5); psTekst(2); Tab(112); "Pagina : " + Dec$((PAGE_COUNTER), "##########");
 
-    Printer.Print Tab(108); "Datum  : "; psTekst(0); vbCrLf; vbCrLf;
-    Printer.Print Tab(1); UCase$(psTekst(3));
+    Printer.Print Tab(112); "Datum  : "; psTekst(0); vbCrLf; vbCrLf;
+    Printer.Print Tab(5); UCase$(psTekst(3));
 
-Printer.Print vbCrLf; FULL_LINE
+Printer.Print vbCrLf; Tab(5); FULL_LINE
 
 Do While REPORT_TAB(T) <> 0
     Printer.Print Tab(REPORT_TAB(T));
@@ -591,7 +598,7 @@ Do While REPORT_TAB(T) <> 0
     T = T + 1
 Loop
 
-Printer.Print FULL_LINE; vbCrLf$; vbCrLf$;
+Printer.Print Tab(5); FULL_LINE; vbCrLf$; vbCrLf$;
 
 Exit Sub
 
@@ -649,35 +656,36 @@ If grdDokumentDetail.Rows = 2 Then Exit Sub
 
 If chkAfdrukInVenster Then
 Else
-    Printer.Print vbCrLf; FULL_LINE
+    Printer.Print vbCrLf; Tab(5); FULL_LINE
 End If
 For T = 0 To 6
     VeldTXT(T) = ""
 Next
 
-VeldTXT(1) = "Totaal BEF"
-VeldTXT(2) = Dec(CDbl(lblBEF), MASK_BEF)
-T = 0
-aa = ""
-Do While T < 8
-    If chkAfdrukInVenster Then
-        aa = aa + VeldTXT(T) + vbTab
-    Else
-        Printer.Print ; Tab(REPORT_TAB(T));
-        Printer.Print ; VeldTXT(T);
-    End If
-    If REPORT_TAB(T + 1) < REPORT_TAB(T) Then
-        If chkAfdrukInVenster Then
-        Else
-            Printer.Print vbCrLf;
-        End If
-    End If
-    T = T + 1
-Loop
-If chkAfdrukInVenster Then Xlog.X.AddItem aa, Xlog.X.Rows - 1
+'VeldTXT(1) = "Totaal BEF"
+'VeldTXT(2) = Dec(CDbl(lblBEF), MASK_BEF)
+'T = 0
+'aa = ""
+'Do While T < 8
+'    If chkAfdrukInVenster Then
+'        aa = aa + VeldTXT(T) + vbTab
+'    Else
+'        Printer.Print ; Tab(REPORT_TAB(T));
+'        Printer.Print ; VeldTXT(T);
+'    End If
+'    If REPORT_TAB(T + 1) < REPORT_TAB(T) Then
+'        If chkAfdrukInVenster Then
+'        Else
+'            Printer.Print vbCrLf;
+'        End If
+'    End If
+'    T = T + 1
+'Loop
+'If chkAfdrukInVenster Then Xlog.X.AddItem aa, Xlog.X.Rows - 1
 
 VeldTXT(1) = "Totaal EUR"
 VeldTXT(2) = Dec(CDbl(lblEUR), MASK_EUR)
+VeldTXT(7) = GuidLabel.Caption
 T = 0
 aa = ""
 Do While T < 8
@@ -723,112 +731,6 @@ End If
 End Sub
 
 
-Function DosOGM()
-   
-    Dim boString As String * 128
-    Dim goString1 As String * 128
-    Dim goString2 As String * 128
-    Dim eoString As String * 128
-    Dim flHier As Integer
-    
-    Dim volgNr As Integer
-    Dim bdrgTotaal As Currency
-    Dim bdrgBedrag As Currency
-    Dim rekNummer As Double
-    Dim rekNummerTotaal As Double
-    
-    boString = "": goString1 = "": goString2 = "": eoString = ""
-    Mim.Teken.InitDir = LOCATION_COMPANYDATA
-    Mim.Teken.filename = ""
-    Mim.Teken.ShowSave
-    If Mim.Teken.filename = "" Then Exit Function
-    flHier = FreeFile
-    Open Mim.Teken.filename For Output As flHier
-
-    Mid(boString, 1, 1) = "0"                       'beginopname
-    Mid(boString, 4, 2) = "00"                      'voorwerp van betaling
-    Mid(boString, 6, 6) = Format(Now, "ddmmyy")     'datum opmaak
-    Mid(boString, 12, 3) = Left(cbBank.text, 3)     'codenummer fin.instelling
-    Mid(boString, 15, 2) = "01"                     'toepassingscode 01= betaling 02=domicil 03=cheques
-    Mid(boString, 17, 6) = Mid(boString, 6, 6)      'gevraagde uitvoeringsdatum
-    Mid(boString, 24, 3) = "000"
-    Mid(boString, 27, 12) = Mid(cbBank.text, InStr(cbBank.text, "[") + 1, 12)  'rekeningnummer opdrachtgever
-    Mid(boString, 39, 26) = String99(READING, 46)      'Naam opdrachtgever
-    Mid(boString, 65, 26) = String99(READING, 47)      'Adres opdrachtgever
-    Mid(boString, 91, 4) = String99(READING, 48)       'Postnummer opdrachtgever
-    Mid(boString, 95, 22) = Mid(String99(READING, 48), 6) 'Lokaliteit opdrachtgever
-    Mid(boString, 117, 1) = "1"                     'Taalcode opdrachtgever
-    Mid(boString, 128, 1) = "5"                     'Versiecode 5=EUR, 3=BEF
-    Print #flHier, boString; vbNewLine;
-    
-    For volgNr = 1 To grdDokumentDetail.Rows - 1
-        
-        If Len(grdDokumentDetail.TextMatrix(volgNr, 3)) <> 10 Then
-            Exit For
-        End If
-        
-        'Gegevensopname 1
-        Mid(goString1, 1, 1) = "1"                       'Identificatie opname
-        Mid(goString1, 2, 4) = Format(volgNr, "0000")
-        Mid(goString1, 6, 8) = Format(grdDokumentDetail.TextMatrix(volgNr, 8), "00000000") 'Refertenummer opdrachtgever
-    
-        rekNummer = Val(grdDokumentDetail.TextMatrix(volgNr, 6))
-        rekNummerTotaal = rekNummerTotaal + rekNummer
-        Mid(goString1, 24, 12) = grdDokumentDetail.TextMatrix(volgNr, 6) 'Rekeningnummer begunstigde
-    
-        'VeldTXT(1) = grdDokumentDetail.TextMatrix(Teller, 3)
-    
-        bdrgBedrag = grdDokumentDetail.TextMatrix(volgNr, 5)
-        bdrgTotaal = bdrgTotaal + bdrgBedrag
-        Mid(goString1, 36, 12) = Format(bdrgBedrag * 100, "000000000000") 'Bedrag
-        Mid(goString1, 48, 26) = grdDokumentDetail.TextMatrix(volgNr, 1)
-        Mid(goString1, 74, 1) = "1"                     'taalcode begunstigde
-        Mid(goString1, 75, 12) = grdDokumentDetail.TextMatrix(volgNr, 7) 'Begin van de mededeling
-        Mid(goString1, 87, 41) = ""                     'eerste vervolg gewone mededeling
-        
-        If Format(Val(grdDokumentDetail.TextMatrix(volgNr, 7)), "000000000000") <> grdDokumentDetail.TextMatrix(volgNr, 7) Then
-            Mid(goString1, 128, 1) = "3" 'Aardcode 8= gestruct. mededeling anders 3
-        Else
-            If BankOk(Left(grdDokumentDetail.TextMatrix(volgNr, 7), 12)) Then
-                Mid(goString1, 128, 1) = "8" 'Aardcode 8= gestruct. mededeling anders 3
-            Else
-                Mid(goString1, 128, 1) = "3" 'Aardcode 8= gestruct. mededeling anders 3
-            End If
-        End If
-        Print #flHier, goString1; vbNewLine;
-        
-        'Gegevensopname 2
-        Mid(goString2, 1, 1) = "2"                       'Identificatie opname
-        Mid(goString2, 2, 4) = Format(volgNr, "0000")
-        Mid(goString2, 6, 1) = "0"                       'code aanspreking begunstigde
-        Mid(goString2, 7, 26) = ""                       'adres begunstigde
-        Mid(goString2, 33, 4) = ""                       'postcode begunstigde
-        Mid(goString2, 37, 22) = ""                      'Lokaliteit begunstigde
-        Mid(goString2, 59, 53) = ""                      'mededeling: tweede vervolg
-        Mid(goString2, 112, 1) = "0"                     'code chequekost 1= opdrgever, 2= begunstig.
-        Print #flHier, goString2; vbNewLine;
-        goString1 = "": goString2 = ""
-        bGet TABLE_INVOICES, 0, grdDokumentDetail.TextMatrix(volgNr, 2)
-            RecordToVeld TABLE_INVOICES
-            vBib TABLE_INVOICES, "0", "rvDM"
-            bUpdate TABLE_INVOICES, 0
-    Next
-    
-    'Eindopname
-    Mid(eoString, 1, 1) = "9"                       'Identificatie opname
-    Mid(eoString, 2, 4) = Format((volgNr - 1) * 2, "0000")
-    Mid(eoString, 6, 4) = Format((volgNr - 1), "0000")
-    Mid(eoString, 10, 12) = Format(bdrgTotaal * 100, "000000000000")  'Totaal Bedragen
-    Mid(eoString, 22, 15) = Format(rekNummerTotaal, "000000000000000")  'Totaal Rekeningnummers
-    Mid(eoString, 37, 11) = "00" & Mid(String99(READING, 51), 1, 3) & Mid(String99(READING, 51), 5, 3) & Mid(String99(READING, 51), 9, 3)       'Identificatie afgever
-    Print #flHier, eoString;
-    Close flHier
-    MsgBox Mim.Teken.filename & vbCrLf & vbCrLf & "staat klaar voor IMPORT door uw banksoftware.", vbInformation
-    
-End Function
-
-
-
 Sub Herreken()
 
 Dim TotaalBedraginBef As Currency
@@ -862,12 +764,12 @@ Function XmlOGM()
     
     If Me.CheckBoxForceExecutionDate.Value = vbChecked Then
          requestedExecutionDate = Me.DTPickerGlobalMemoDate.Year & "-"
-         requestedExecutionDate = requestedExecutionDate & Me.DTPickerGlobalMemoDate.Month & "-"
-         requestedExecutionDate = requestedExecutionDate & Me.DTPickerGlobalMemoDate.Day
+         requestedExecutionDate = requestedExecutionDate & Dec(Me.DTPickerGlobalMemoDate.Month, "00") & "-"
+         requestedExecutionDate = requestedExecutionDate & Dec(Me.DTPickerGlobalMemoDate.Day, "00")
     Else
         MsgBox "TODO: check all executiondates"
+        Exit Function
     End If
-    
     
     Dim documentTemplate As String
     
@@ -886,25 +788,105 @@ Function XmlOGM()
     documentTemplate = Replace(documentTemplate, "{debtorName}", debtorName)
     documentTemplate = Replace(documentTemplate, "{debtorIBAN}", debtorIBAN)
     documentTemplate = Replace(documentTemplate, "{debtorBIC}", debtorBIC)
+        
+    Dim templateNoOGM As String
+    Dim templateNoRef As String
+    Dim templateWithOGM As String
+                    
+    Ktrl = ScrLeesBestandAlleTekst(templateNoOGM, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-no-ogm.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
+    Ktrl = ScrLeesBestandAlleTekst(templateWithOGM, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-ogm.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
+    Ktrl = ScrLeesBestandAlleTekst(templateNoRef, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-no-ref.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
     
+    Dim listOfTransActions As String
+    Dim thisTransaction As String
     
+    Dim linePayRef As String
+    Dim lineSerialNumber As String
+    Dim lineEndToEndId As String
+    Dim lineAmount As String
+    Dim lineCreditorName As String
+    Dim lineCreditorIban As String
+    Dim lineReference As String
+       
+    Dim volgNR As Integer
+    For volgNR = 1 To grdDokumentDetail.Rows - 1
+        If Len(grdDokumentDetail.TextMatrix(volgNR, 3)) <> 10 Then
+            Exit For
+        End If
+        
+        lineSerialNumber = Mid(GuidLabel, 9) + "+" + Format(volgNR, "0000")
+        lineCreditorName = grdDokumentDetail.TextMatrix(volgNR, 1)
+        lineEndToEndId = grdDokumentDetail.TextMatrix(volgNR, 2) 'Internal A document (Seller)
+        lineAmount = Dec(grdDokumentDetail.TextMatrix(volgNR, 5), "")
+        lineCreditorIban = grdDokumentDetail.TextMatrix(volgNR, 6)
+        
+        'TODO: check betaalreferte if it is OGM
+        linePayRef = IbanCheck(grdDokumentDetail.TextMatrix(volgNR, 7), False, False)
+        If linePayRef = grdDokumentDetail.TextMatrix(volgNR, 7) Then
+            'OGM
+            thisTransaction = templateWithOGM
+            thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
+            thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
+            thisTransaction = Replace(thisTransaction, "{amount}", lineAmount)
+            thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
+            thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
+            thisTransaction = Replace(thisTransaction, "{ogmReference}", linePayRef)
+            
+            listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
+        ElseIf Trim(grdDokumentDetail.TextMatrix(volgNR, 7)) = "" Then
+            'NO REF!
+            thisTransaction = templateNoRef
+            thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
+            thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
+            thisTransaction = Replace(thisTransaction, "{amount}", lineAmount)
+            thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
+            thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
+            
+            listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
+        Else
+            'NO OGM
+            thisTransaction = templateNoOGM
+            
+            thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
+            thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
+            thisTransaction = Replace(thisTransaction, "{amount}", lineAmount)
+            thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
+            thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
+            thisTransaction = Replace(thisTransaction, "{manualReference}", Trim(grdDokumentDetail.TextMatrix(volgNR, 7)))
+            
+            listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
+        End If
+    Next
+    documentTemplate = Replace(documentTemplate, "<Vsoft>transactionsList</Vsoft>", listOfTransActions)
+
+    Dim ret As Integer
+    Dim path As String * 260
+    Dim desktopLocatie As String
     
-    MsgBox "Stop"
-    'vBib TABLE_VARIOUS, "31" + bankSettingsKey, "v005"
-    'vBib TABLE_VARIOUS, bancGuid, "v004"
-    
-    
-    'vBib TABLE_VARIOUS, Left(KeuzeInfo(0).text, 4), "A010"
-    '    vBib TABLE_VARIOUS, PolisNummer, "A000"
-    '    vBib TABLE_VARIOUS, "K" + vBibTekst(TABLE_CUSTOMERS, "#A110 #"), "v004"
-    
-    '    If fKtrl = 99 Then
-    '        bInsert TABLE_VARIOUS, 1
-    '        If Ktrl Then MsgBox "stop"
-    '    Else
-    '        bUpdate TABLE_VARIOUS, 1
-    '        If Ktrl Then MsgBox "stop"
-    '    End If
+    'Desktop lokatie
+    ret = SHGetFolderPath(0, 0, 0, 0, path)
+    desktopLocatie = Left(path, InStr(path, Chr(0)) - 1)
+       
+    Ktrl = ScrMaakTekstBestand(documentTemplate, LOCATION_COMPANYDATA + "coda\out\" + GuidLabel.Caption + ".xml")
+    If Ktrl = 0 Then
+        MsgBox "Fout bij bewaren van " + GuidLabel.Caption + ".xml", vbCritical
+    Else
+        Ktrl = ScrMaakTekstBestand(documentTemplate, desktopLocatie + "\" + GuidLabel.Caption + ".xml")
+        If Ktrl = 0 Then
+            MsgBox "Fout bij bewaren van " + GuidLabel.Caption + ".xml", vbCritical
+        End If
+        'Stop
+        'Finally important to set all documents to waiting for finished
+    End If
     
 End Function
 
@@ -964,10 +946,25 @@ End Sub
 
 Private Sub CmdEmailNBB_Click()
 
+    Dim result As Boolean
+    Dim volgNR As Integer
+
     Me.XmlOGM
-    Stop
-    'Me.DosOGM
+    MsgBox "STILL TESTING: Vlag en Guid toegevoegd voor latere opvolging.", vbExclamation
     
+    For volgNR = 1 To grdDokumentDetail.Rows - 1
+        If Len(grdDokumentDetail.TextMatrix(volgNR, 2)) = 0 Then
+            Exit For
+        End If
+        result = ADO_GET(TABLE_INVOICES, 0, "=", grdDokumentDetail.TextMatrix(volgNR, 2))
+        rsMAR(TABLE_INVOICES)("v411") = GuidLabel.Caption
+        rsMAR(TABLE_INVOICES)("rvDM") = "0"
+        rsMAR(TABLE_INVOICES)("dnnsync") = False
+        rsMAR(TABLE_INVOICES).Update
+    Next
+    Drukken_Click
+    cmdSluiten_Click
+        
 End Sub
 
 Private Sub cmdSluiten_Click()
@@ -1042,14 +1039,19 @@ Private Sub Form_Load()
     ' String99(READING, 47)      'Adres opdrachtgever
     ' String99(READING, 48)       'Postnummer opdrachtgever
     ' Mid(String99(READING, 48), 6) 'Lokaliteit opdrachtgever
-        
-    MsgBox "Deze module wordt herwerkt. Niet gebruiken a.u.b.", vbExclamation
+    
+    Msg = "Deze module werkt voorlopig enkel met éénzelfde memodatum." & vbCrLf & vbCrLf
+    Msg = Msg & "Datum + 1 of hoger (max. een toekomstige datum binnen het jaar!)"
+    MsgBox Msg, vbExclamation, "XML betaalbestand aanmaken"
+    
     
     dtpMemoDatum.MinDate = Now
     creationDateTime = GetCreationDateTime
     
     Me.DatumVerwerking.Value = MIM_GLOBAL_DATE
-
+    CheckBoxForceExecutionDate.Value = vbChecked
+    Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
+    
     TekstLijn(2).text = "0"
     TekstLijn(3).text = String$(12, "z")
     grdDokumentDetail.Rows = 2
@@ -1113,190 +1115,193 @@ End Sub
 
 
 Private Sub KTRLBalans(Fl As Integer)
-Dim Cumul       As Double
-Dim dTotaal     As Double
-Dim dBetaald    As Double
-Dim dBTW        As Double
-Dim T           As Integer
-Dim VoorLetter  As String * 1
-Dim ktrlMemoDatum As String
+    
+    Dim VoorLetter  As String * 1
+    Dim ktrlMemoDatum As String
+    Dim GeenRekening As Integer
+    Dim TeVerbeteren As Integer
+    Dim aa          As Variant
+    Dim dBetaald    As Double
+    Dim dTotaal     As Double
+    Dim checkerSEPA As String
+        
+    Set rsAny = New ADODB.Recordset
 
-Dim TeVerbeteren As Integer
-Dim GeenRekening As Integer
-Dim ZwareFout As Integer
+    invalidAA = ""
+    If Fl = TABLE_SUPPLIERS Then
+        VoorLetter = "L"
+    Else
+        VoorLetter = "K"
+    End If
 
-Dim checkerSEPA As String
-
-Dim AlgemeenTotaal As Currency
-
-Dim aa          As Variant
-
-If Fl = TABLE_SUPPLIERS Then
-    VoorLetter = "L"
-Else
-    VoorLetter = "K"
-End If
-
-ktrlMemoDatum = Format(Now + 1, "yyyymmdd")
-
-T = 0
-bGetOrGreater TABLE_INVOICES, 1, VoorLetter + TekstLijn(2)
-If Ktrl Or KEY_BUF(TABLE_INVOICES) > VoorLetter + TekstLijn(3) Then
-    Beep
-    MsgBox "Selectie buiten mogelijke documenten"
-    Exit Sub
-End If
-If VoorLetter + TekstLijn(2) = VoorLetter + TekstLijn(3) Then
-    If KEY_BUF(TABLE_INVOICES) <> VoorLetter + Trim$(TekstLijn(2)) Then
+    ktrlMemoDatum = Format(Now + 1, "yyyymmdd")
+    Screen.MousePointer = vbHourglass
+   
+    On Error Resume Next
+    Err = 0
+    rsAny.CursorLocation = adUseClient
+    
+    Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.vs03, Leveranciers.v259, "
+    Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
+    Msg = Msg & "Dokumenten.v037, Dokumenten.v039, Dokumenten.v249, "
+    Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
+    Msg = Msg & "FROM Leveranciers, Dokumenten "
+    Msg = Msg & "WHERE Left(Dokumenten.v033,2) = 'A0' "
+    Msg = Msg & "AND Leveranciers.A110 >= '" & TekstLijn(2).text + "' "
+    Msg = Msg & "AND Leveranciers.A110 <= '" & TekstLijn(3).text + "' "
+    Msg = Msg & "AND Dokumenten.v034 = 'L' + Leveranciers.A110 "
+    If Selektie(2).Value = 1 Then
+        Msg = Msg & "AND Dokumenten.v035 >= '" & Left(BOOKYEAR_FROMTO, 8) & "' "
+        Msg = Msg & "AND Dokumenten.v035 <= '" & Right(BOOKYEAR_FROMTO, 8) & "' "
+    End If
+    Msg = Msg & "ORDER BY Dokumenten.v034 "
+    'Msg = Msg & "AND Val(Dokumenten.v037) <> Val(Dokumenten.v249) "
+    SnelHelpPrint Msg, BL_LOGGING
+    Screen.MousePointer = vbHourglass
+    rsAny.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
+    Screen.MousePointer = vbNormal
+    If Err Then
+        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+    ElseIf rsAny.RecordCount = 0 Then
+        MsgBox "Geen documenten gevonden van/tot: " & TekstLijn(2) & " - " & TekstLijn(3)
+        Exit Sub
+    Else
+        If grdDokumentDetail.Rows = 2 Then
+        Else
+            KtrlBox = MsgBox("Verrichtingen reeds aanwezig behouden." & vbCrLf & "Vermijdt dubbele bewerkingen!", vbQuestion + vbYesNo + vbDefaultButton2)
+            If KtrlBox = vbNo Then
+                GridSchoon grdDokumentDetail
+            End If
+        End If
+        grdDokumentDetail.Refresh
+        rsAny.MoveFirst
+        Do While Not rsAny.EOF
+            GoSub ValidateRecord
+            rsAny.MoveNext
+        Loop
+        rsAny.Close
+        Set rsAny = Nothing
+    End If
+    Screen.MousePointer = vbNormal
+    
+    If GeenRekening Then
+        Msg = "Er zijn " & Str$(GeenRekening) & " verrichtingen zonder rekeningnummer" & vbCrLf
+        Msg = Msg & invalidAA & vbCrLf
+        MsgBox Msg, vbInformation
+        Me.CmdEmailNBB.Enabled = True
+        'KtrlBox = MsgBox(Msg, vbQuestion + vbDefaultButton2 + vbYesNo)
+        'If KtrlBox = vbYes Then
+        '    COUNT_TO = 1
+        '    CmdEmailNBB.Enabled = True
+        '    Do While COUNT_TO < grdDokumentDetail.Rows - 1
+        '        'Debug.Print grdDokumentDetail.TextMatrix(COUNT_TO, 6)
+        '        If Mid(grdDokumentDetail.TextMatrix(COUNT_TO, 6), 1, 2) = "!!" Then
+        '            grdDokumentDetail.RemoveItem COUNT_TO
+        '        Else
+        '            COUNT_TO = COUNT_TO + 1
+        '        End If
+        '    Loop
+        'End If
+    Else
+        Me.CmdEmailNBB.Enabled = True
+    End If
+    If TeVerbeteren Then
+        MsgBox "Er zijn " & Str$(TeVerbeteren) & " rekeningnummers onjuist", vbInformation
+    End If
+    
+    If aa = "" Then
         Beep
-        MsgBox "Geen documenten voor " + vBibTekst(Fl, "#A100 #")
+        MsgBox "Selectie buiten mogelijke documenten"
         Exit Sub
     End If
-End If
-    Screen.MousePointer = vbHourglass
-    If grdDokumentDetail.Rows = 2 Then
-    Else
-        KtrlBox = MsgBox("Verrichtingen reeds aanwezig behouden.", vbQuestion + vbYesNo + vbDefaultButton2)
-        If KtrlBox = vbNo Then
-            GridSchoon grdDokumentDetail
-        End If
-    End If
-    grdDokumentDetail.Refresh
-    Do
-        GoSub VolgendeLijn
-        bNext TABLE_INVOICES
-        If Ktrl Or KEY_BUF(TABLE_INVOICES) > "L" + TekstLijn(3) Then
-            Exit Do
-        End If
-    Loop
 
-Screen.MousePointer = vbNormal
-If GeenRekening Then
-    Me.CmdEmailNBB.Enabled = False
-    Msg = "Er zijn " & Str$(GeenRekening) & " verrichtingen zonder rekeningnummer" & vbCrLf
-    Msg = Msg & "Mogen deze verwijderd worden" & vbCrLf & vbCrLf
-    Msg = Msg & "(zonder verwijdering enkel afdruk op papier mogelijk)"
-    KtrlBox = MsgBox(Msg, vbQuestion + vbDefaultButton2 + vbYesNo)
-    If KtrlBox = vbYes Then
-        COUNT_TO = 1
-        CmdEmailNBB.Enabled = True
-        Do While COUNT_TO < grdDokumentDetail.Rows - 1
-            'Debug.Print grdDokumentDetail.TextMatrix(COUNT_TO, 6)
-            If Mid(grdDokumentDetail.TextMatrix(COUNT_TO, 6), 1, 2) = "!!" Then
-                grdDokumentDetail.RemoveItem COUNT_TO
-            Else
-                COUNT_TO = COUNT_TO + 1
-            End If
-        Loop
-    End If
-Else
-    Me.CmdEmailNBB.Enabled = True
-End If
-If TeVerbeteren Then
-    MsgBox "Er zijn " & Str$(TeVerbeteren) & " rekeningnummers onjuist", vbInformation
-End If
-If ZwareFout Then
-    MsgBox "Er zijn voor " & Str$(ZwareFout) & " identiteitsgegevens verdwenen", vbCritical, "Zware fout !!!"
-End If
- 
-If aa = "" Then
-    Beep
-    MsgBox "Selectie buiten mogelijke documenten"
+    'MsgBox "stop voor enkel leveranciers"
     Exit Sub
-End If
 
-'MsgBox "stop voor enkel leveranciers"
-Exit Sub
-
-VolgendeLijn:
-RecordToVeld TABLE_INVOICES
-dBetaald = Val(vBibTekst(TABLE_INVOICES, "#v037 #"))
-dTotaal = Val(vBibTekst(TABLE_INVOICES, "#v249 #"))
-If Round(dBetaald) = Round(dTotaal) Then Return
-If vBibTekst(TABLE_INVOICES, "#rvDM #") = "0" And Me.Selektie(1).Value = vbChecked Then Return
-
-'TO DO creditnota's leveranciers, facturen klanten en kwitanties klanten uitsluiten !!
-Select Case Mid(vBibTekst(TABLE_INVOICES, "#v033 #"), 1, 2)
-    Case "V0", "A1"  'Verkoopfactuur of Creditnota Aankoop
-        'If Mid(vBibTekst(TABLE_INVOICES, "#v033 #"), 2, 1) = "1" Then
-            'Return
-        'End If
-        Return
-        
-    Case "Q0" 'kwijting nog te betalen
-        If dTotaal > 0 Then Return
-    Case Else
-        'Stop
-End Select
-
-'Selektie(0) = vervaldagcontrole
-'TODO !
-
-'Selektie(2)= enkel dit boekjaar
-If Selektie(2).Value = 1 Then
-    If rsMAR(TABLE_INVOICES)("v035") >= Left(BOOKYEAR_FROMTO, 8) And rsMAR(TABLE_INVOICES)("v035") <= Right(BOOKYEAR_FROMTO, 8) Then
-    Else
+ValidateRecord:
+    dBetaald = Val(objectValue(rsAny("v037")))
+    dTotaal = Val(objectValue(rsAny("v249")))
+    If dBetaald = dTotaal Then Return
+    If objectValue(rsAny("rvDM")) = "0" And Me.Selektie(1).Value = vbChecked Then
         Return
     End If
-End If
 
-aa = vBibTekst(TABLE_INVOICES, "#v034 #") & vbTab
-bGet Fl, 0, Mid(vBibTekst(TABLE_INVOICES, "#v034 #"), 2)
-If Ktrl Then
-    aa = aa & "Is verwijderd" & vbTab
-    ZwareFout = ZwareFout + 1
-Else
-    RecordToVeld Fl
-    Select Case vBibTekst(Fl, "#vs03 #")
+    'TO DO creditnota's leveranciers, facturen klanten en kwitanties klanten uitsluiten !!
+    Select Case Mid(rsAny("v033"), 1, 2)
+        Case "V0", "A1"  'Verkoopfactuur of Creditnota Aankoop
+            'If Mid(vBibTekst(TABLE_INVOICES, "#v033 #"), 2, 1) = "1" Then
+                'Return
+            'End If
+            Return
+        
+        Case "Q0" 'kwijting nog te betalen
+            If dTotaal > 0 Then Return
+        Case Else
+            'Stop
+    End Select
+
+    'Selektie(0) = vervaldagcontrole
+    'TODO !
+
+    'Selektie(2)= enkel dit boekjaar
+    If Selektie(2).Value = 1 Then
+        If rsAny("v035") >= Left(BOOKYEAR_FROMTO, 8) And rsAny("v035") <= Right(BOOKYEAR_FROMTO, 8) Then
+        Else
+            Return
+        End If
+    End If
+
+    aa = rsAny("v034") & vbTab
+    Select Case rsAny("vs03")
         Case "EUR"
         Case Else
             Return
     End Select
-    aa = aa & oWaarde(rsMAR(Fl)("A100")) & vbTab
-End If
-aa = aa & oWaarde(rsMAR(TABLE_INVOICES)("v033")) & vbTab
-'vervaldag < memodatum?
-If ktrlMemoDatum > oWaarde(rsMAR(TABLE_INVOICES)("v036")) Then
-    aa = aa & DATE_TEXT(ktrlMemoDatum) & vbTab
-Else
-    aa = aa & DATE_TEXT(oWaarde(rsMAR(TABLE_INVOICES)("v036"))) & vbTab
-End If
-aa = aa & oWaarde(rsMAR(Fl)("vs03")) & vbTab
-If oWaarde(rsMAR(Fl)("vs03")) = "EUR" And bhEuro = False Then
-    aa = aa & Round((dTotaal - dBetaald) / EURO, 2) & vbTab
-ElseIf oWaarde(rsMAR(Fl)("vs03")) = "BEF" And bhEuro = True Then
-    aa = aa & Round((dTotaal - dBetaald) * EURO, 0) & vbTab
-ElseIf bhEuro = True Then
-    'MsgBox "kontrolestop"
-    aa = aa & Round((dTotaal - dBetaald), 2) & vbTab
-ElseIf bhEuro = False Then
-    aa = aa & Round((dTotaal - dBetaald), 0) & vbTab
-Else
-    MsgBox "onlogische situatie"
-End If
-
-If Trim(oWaarde(rsMAR(Fl)("v259"))) = "" Then
-    aa = aa & "!! ..." & vbTab
-    GeenRekening = GeenRekening + 1
-Else
-    checkerSEPA = IbanCheck(oWaarde(rsMAR(Fl)("v259")), True, False)
-    If checkerSEPA = "invalid" Then
-        aa = aa & "!!" + vBibTekst(Fl, "#v259 #") & vbTab
-        TeVerbeteren = TeVerbeteren + 1
+    aa = aa & objectValue(rsAny("A100")) & vbTab
+    aa = aa & objectValue(rsAny("v033")) & vbTab
+    'vervaldag < memodatum?
+    If ktrlMemoDatum > objectValue(rsAny("v036")) Then
+        aa = aa & DATE_TEXT(ktrlMemoDatum) & vbTab
     Else
-        aa = aa & rsMAR(Fl)("v259") & vbTab
+        aa = aa & DATE_TEXT(objectValue(rsAny("v036"))) & vbTab
     End If
-End If
-
-aa = aa & vBibTekst(TABLE_INVOICES, "#v039 #") & vbTab
-On Local Error Resume Next
-aa = aa & oWaarde(rsMAR(TABLE_INVOICES)("rvID"))
-grdDokumentDetail.AddItem aa, grdDokumentDetail.Rows - 1
+    aa = aa & objectValue(rsAny("vs03")) & vbTab
+    If objectValue(rsAny("vs03")) = "EUR" And bhEuro = False Then
+        aa = aa & Round((dTotaal - dBetaald) / EURO, 2) & vbTab
+    ElseIf objectValue(rsAny("vs03")) = "BEF" And bhEuro = True Then
+        aa = aa & Round((dTotaal - dBetaald) * EURO, 0) & vbTab
+    ElseIf bhEuro = True Then
+        'MsgBox "kontrolestop"
+        aa = aa & Round((dTotaal - dBetaald), 2) & vbTab
+    ElseIf bhEuro = False Then
+        aa = aa & Round((dTotaal - dBetaald), 0) & vbTab
+    Else
+        MsgBox "onlogische situatie"
+    End If
+    
+    If Trim(objectValue(rsAny("v259"))) = "" Then
+        aa = aa & "!! ..." & vbTab
+        GeenRekening = GeenRekening + 1
+    Else
+        checkerSEPA = IbanCheck(objectValue(rsAny("v259")), True, False)
+        If checkerSEPA = "invalid" Then
+            aa = aa & "!!" + rsAny("v259") & vbTab
+            TeVerbeteren = TeVerbeteren + 1
+        Else
+            aa = aa & rsAny("v259") & vbTab
+        End If
+    End If
+    
+    aa = aa & rsAny("v039") & vbTab
+    On Local Error Resume Next
+    aa = aa & objectValue(rsAny("rvID"))
+    
+    If Trim(objectValue(rsAny("v259"))) = "" Then
+        invalidAA = invalidAA & aa & vbCrLf
+    Else
+        grdDokumentDetail.AddItem aa, grdDokumentDetail.Rows - 1
+    End If
 Return
-
-SluitAf:
-Unload Xlog
-Exit Sub
 
 End Sub
 
@@ -1389,6 +1394,12 @@ End Sub
 
 Private Sub Samenstellen_Click()
 
+    If Trim(TekstLijn(2)) = "0" Then
+        bFirst TABLE_SUPPLIERS, 0
+        TekstLijn(2).text = KEY_BUF(TABLE_SUPPLIERS)
+        bLast TABLE_SUPPLIERS, 0
+        TekstLijn(3).text = KEY_BUF(TABLE_SUPPLIERS)
+    End If
     KTRLBalans TABLE_SUPPLIERS
 
     grdDokumentDetail.Row = 1
@@ -1418,6 +1429,7 @@ Select Case Index
     Case 2, 3
         SnelHelpPrint "Dubbelklikken of [Ctrl] voor geïndexeerd zoeken", BL_LOGGING
         Samenstellen.Default = True
+        
 End Select
 
 End Sub

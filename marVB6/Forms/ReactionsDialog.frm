@@ -1,34 +1,35 @@
 VERSION 5.00
 Begin VB.Form FormReactionsDialog 
-   BorderStyle     =   3  'Fixed Dialog
+   BorderStyle     =   5  'Sizable ToolWindow
    Caption         =   "Reacties"
    ClientHeight    =   3615
-   ClientLeft      =   2760
-   ClientTop       =   3750
-   ClientWidth     =   6375
+   ClientLeft      =   2775
+   ClientTop       =   3645
+   ClientWidth     =   6405
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   3615
-   ScaleWidth      =   6375
+   ScaleWidth      =   6405
    ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
    Begin VB.TextBox TextBoxReactions 
       Height          =   2895
-      Left            =   120
+      Left            =   100
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
       TabIndex        =   1
       Text            =   "ReactionsDialog.frx":0000
-      Top             =   120
-      Width           =   6135
+      Top             =   100
+      Width           =   6200
    End
    Begin VB.CommandButton CancelButton 
-      Caption         =   "Cancel"
+      Cancel          =   -1  'True
+      Caption         =   "Sluiten"
       Height          =   375
-      Left            =   5040
+      Left            =   240
       TabIndex        =   0
-      Top             =   3120
+      Top             =   3100
       Width           =   1215
    End
 End
@@ -47,3 +48,11 @@ Private Sub CancelButton_Click()
 End Sub
 
 
+Private Sub Form_Resize()
+    
+    On Local Error Resume Next
+    Me.TextBoxReactions.Width = Me.Width - 300
+    Me.TextBoxReactions.Height = Me.Height - 1200
+    Me.CancelButton.Top = Me.Height - 900
+
+End Sub

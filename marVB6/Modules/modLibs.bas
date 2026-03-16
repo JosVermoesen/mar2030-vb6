@@ -244,6 +244,17 @@ Public uitwisselingDATAArray() As String
 Public documentLinesOMSArray() As String
 Public documentLinesDATAArray() As String
 
+Public xdaOMS As String
+Public xdaDATA As String
+Public xdaLinesOMS As String
+Public xdaLinesDATA As String
+
+Public xdaOMSArray() As String
+Public xdaDATAArray() As String
+Public xdaLinesOMSArray() As String
+Public xdaLinesDATAArray() As String
+
+
 Public purchasePeppolTODOShowed As Boolean
 Public appTitleAndVersion As String
 

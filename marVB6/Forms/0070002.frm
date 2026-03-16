@@ -56,8 +56,8 @@ Begin VB.Form KwijtingDrukken
       TabCaption(1)   =   "Mail"
       TabPicture(1)   =   "0070002.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "MailDetail"
-      Tab(1).Control(1)=   "cbMail"
+      Tab(1).Control(0)=   "cbMail"
+      Tab(1).Control(1)=   "MailDetail"
       Tab(1).ControlCount=   2
       Begin VB.CommandButton cbMail 
          Appearance      =   0  'Flat
@@ -687,7 +687,7 @@ FlTemp = FreeFile
 
 GoSub KopBalk
 GoSub DetailLijnen
-Select Case Left(KeuzeInfo(0).Text, 1)
+Select Case Left(KeuzeInfo(0).text, 1)
     Case "1", "2", "3", "5"
         If MetOverschrijving.Value Then
             GoSub Overschrijvingsstrook
@@ -703,7 +703,7 @@ Exit Function
 KopBalk:
 pfTl = 0
 Pagina = Pagina + 1
-dokumentType = Right(KeuzeInfo(0).Text, Len(KeuzeInfo(0).Text) - 3)
+dokumentType = Right(KeuzeInfo(0).text, Len(KeuzeInfo(0).text) - 3)
 If Val(vBibTekst(TABLE_CUSTOMERS, "#A102 #")) = 0 Then
     rSip(0) = vBibTekst(TABLE_CUSTOMERS, "#A100 #") + " " + vBibTekst(TABLE_CUSTOMERS, "#A101 #")
 Else
@@ -781,7 +781,7 @@ Else
     Printer.FontBold = True
 End If
 
-If Left(KeuzeInfo(0).Text, 1) = "5" Then
+If Left(KeuzeInfo(0).text, 1) = "5" Then
     TotMax = 0
 Else
     TotMax = 3
@@ -805,13 +805,13 @@ InfoTekst:
 Printer.FontName = "Arial"
 Printer.FontSize = 9
 If DetailVeld.Visible = True And DetailVeld.Value = 1 Then
-    InsPos = InStr(TekstInfo(1).Text, "<##>")
+    InsPos = InStr(TekstInfo(1).text, "<##>")
     If InsPos Then
-        LenTekst = Len(TekstInfo(1).Text)
-        TekstInfo(1).Text = Mid(TekstInfo(1).Text, 1, InsPos - 1) + UCase$(ReferteTxt) + Right(TekstInfo(1).Text, LenTekst - (InsPos + 3))
+        LenTekst = Len(TekstInfo(1).text)
+        TekstInfo(1).text = Mid(TekstInfo(1).text, 1, InsPos - 1) + UCase$(ReferteTxt) + Right(TekstInfo(1).text, LenTekst - (InsPos + 3))
     End If
 End If
-Printer.Print TekstInfo(1).Text;
+Printer.Print TekstInfo(1).text;
 
 'If Left(KeuzeInfo(0).Text, 1) = "5" Then
 '    MsgBox "stop"
@@ -977,7 +977,7 @@ FlTemp = FreeFile
             
 GoSub KopBalk
 GoSub DetailLijnen
-Select Case Left(KeuzeInfo(0).Text, 1)
+Select Case Left(KeuzeInfo(0).text, 1)
     Case "1", "2", "3", "5"
         If MetOverschrijving.Value Then
             GoSub Overschrijvingsstrook
@@ -998,7 +998,7 @@ Exit Function
 KopBalk:
 pfTl = 0
 Pagina = Pagina + 1
-dokumentType = Right(KeuzeInfo(0).Text, Len(KeuzeInfo(0).Text) - 3)
+dokumentType = Right(KeuzeInfo(0).text, Len(KeuzeInfo(0).text) - 3)
 If Val(vBibTekst(TABLE_CUSTOMERS, "#A102 #")) = 0 Then
     rSip(0) = vBibTekst(TABLE_CUSTOMERS, "#A100 #") + " " + vBibTekst(TABLE_CUSTOMERS, "#A101 #")
 Else
@@ -1223,16 +1223,16 @@ InfoTekst:
 Mim.Report.FontName = "Arial"
 Mim.Report.FontSize = 9
 If DetailVeld.Visible = True And DetailVeld.Value = 1 Then
-    InsPos = InStr(TekstInfo(1).Text, "<##>")
+    InsPos = InStr(TekstInfo(1).text, "<##>")
     If InsPos Then
-        LenTekst = Len(TekstInfo(1).Text)
-        TekstInfo(1).Text = Mid(TekstInfo(1).Text, 1, InsPos - 1) + UCase$(ReferteTxt) + Right(TekstInfo(1).Text, LenTekst - (InsPos + 3))
+        LenTekst = Len(TekstInfo(1).text)
+        TekstInfo(1).text = Mid(TekstInfo(1).text, 1, InsPos - 1) + UCase$(ReferteTxt) + Right(TekstInfo(1).text, LenTekst - (InsPos + 3))
     End If
 End If
 
 'pdfY = pdfY + 2 '+2= 15,57398 ; +3= 16,57398
 pdfY = 15.57398
-pdfY = Mim.Report.VPEPRINT(0.6, pdfY, TekstInfo(1).Text)
+pdfY = Mim.Report.VPEPRINT(0.6, pdfY, TekstInfo(1).text)
 Return
 
 PrintKopTekst:
@@ -1350,7 +1350,7 @@ If Me.cbIBANLayout.Value = vbUnchecked Then
         
         ShowAndSaveQR.Hide
         DoEvents
-        ShowAndSaveQR.Text1.Text = serviceTagValue + versionValue + charactersetValue + identificationValue + bicValue + nameValue + ibanValue + amountValue + purposeValue + referenceValue + remittanceValue + informationValue
+        ShowAndSaveQR.Text1.text = serviceTagValue + versionValue + charactersetValue + identificationValue + bicValue + nameValue + ibanValue + amountValue + purposeValue + referenceValue + remittanceValue + informationValue
         DoEvents
         Unload ShowAndSaveQR
         DoEvents
@@ -1525,7 +1525,7 @@ Do While PsLokatie <= MaxPslokatie
     End If
     Printer.CurrentX = psX(PsLokatie)
     If psY(PsLokatie) > 10500 Then
-        If Left(KeuzeInfo(0).Text, 1) <> "4" Then
+        If Left(KeuzeInfo(0).text, 1) <> "4" Then
             Printer.CurrentY = psY(PsLokatie) - OVSStrooklijnen
         Else
             Printer.CurrentY = psY(PsLokatie)
@@ -1625,9 +1625,9 @@ KlantNummer = ""
 For T = 1 To MailDetail.Rows - 2
     MailDetail.Row = T
     MailDetail.Col = 1
-    datumVerval = MailDetail.Text
+    datumVerval = MailDetail.text
     MailDetail.Col = 0
-    PolisNummer = MailDetail.Text
+    PolisNummer = MailDetail.text
     bGet TABLE_CONTRACTS, 0, PolisNummer
     If Ktrl Then
         MsgBox "Stop"
@@ -1635,7 +1635,7 @@ For T = 1 To MailDetail.Rows - 2
         RecordToVeld TABLE_CONTRACTS
     End If
     
-    If Left(KeuzeInfo(0).Text, 1) = "1" Then
+    If Left(KeuzeInfo(0).text, 1) = "1" Then
         'If Detail.Value <> 0 Then
         '    teldetail = 0
         '    TotaalBEF = 0
@@ -1691,7 +1691,7 @@ For T = 1 To MailDetail.Rows - 2
     
     Select Case KeuzeInfo(0).ListIndex
         Case 1 To 4
-            Select Case Left(KeuzeInfo(1).Text, 1)
+            Select Case Left(KeuzeInfo(1).text, 1)
                 Case "1"
                               SDTitel = "Compagnie   " + Space$(14)
                     SDTitel = SDTitel + "Déscription " + Space$(19)
@@ -1900,7 +1900,7 @@ End With
 MaxGrens = 10
 KlantNummer = ""
 
-If Left(KeuzeInfo(0).Text, 1) = "1" Then
+If Left(KeuzeInfo(0).text, 1) = "1" Then
     FlLogBestand = FreeFile
     Err = 0
     On Error Resume Next
@@ -1912,7 +1912,7 @@ Screen.MousePointer = vbHourglass
 For T = 1 To PaperDetail.Rows - 2
     PaperDetail.Row = T
     PaperDetail.Col = 0
-    PolisNummer = PaperDetail.Text
+    PolisNummer = PaperDetail.text
     bGet TABLE_CONTRACTS, 0, PolisNummer
     If Ktrl Then
         MsgBox "Stop"
@@ -1939,7 +1939,7 @@ For T = 1 To PaperDetail.Rows - 2
     
     Select Case KeuzeInfo(0).ListIndex
         Case 1 To 4
-            Select Case Left(KeuzeInfo(1).Text, 1)
+            Select Case Left(KeuzeInfo(1).text, 1)
                 Case "1"
                               SDTitel = "Compagnie   " + Space$(14)
                     SDTitel = SDTitel + "Déscription " + Space$(19)
@@ -2050,7 +2050,7 @@ For T = 1 To PaperDetail.Rows - 2
     End If
 NextLijn:
 Next
-If Left(KeuzeInfo(0).Text, 1) = "1" Then
+If Left(KeuzeInfo(0).text, 1) = "1" Then
     'If Detail.Value <> 0 Then
     'Else
         If KlantNummer <> Space$(12) Then
@@ -2091,7 +2091,7 @@ Else
     Printer.EndDoc
 End If
 
-If Left(KeuzeInfo(0).Text, 1) = "1" Then
+If Left(KeuzeInfo(0).text, 1) = "1" Then
     Close FlLogBestand
 End If
 
@@ -2150,33 +2150,33 @@ PaperDetail.Cols = 7
 With PaperDetail
     .Col = 0
     .Row = 0
-    .Text = "Polis"
+    .text = "Polis"
     .ColWidth(0) = 1215
     
     .Col = 1
-    .Text = "Vervaldag"
+    .text = "Vervaldag"
     .ColWidth(1) = 1005
     
     .Col = 2
-    .Text = "Premie"
+    .text = "Premie"
     .ColWidth(2) = 1035
 '    .ColAlignment(2) = 1
         
     .Col = 3
-    .Text = "Taksen"
+    .text = "Taksen"
     .ColWidth(3) = 795
 '    .ColAlignment(3) = 1
     
     .Col = 4
-    .Text = "Klant (Naam 1)"
+    .text = "Klant (Naam 1)"
     .ColWidth(4) = 3945
     
     .Col = 5
-    .Text = "Com.%"
+    .text = "Com.%"
     .ColWidth(5) = 645
     
     .Col = 6
-    .Text = "TB2"
+    .text = "TB2"
     .ColWidth(5) = 645
 End With
 
@@ -2184,33 +2184,33 @@ MailDetail.Cols = 7
 With MailDetail
     .Col = 0
     .Row = 0
-    .Text = "Polis"
+    .text = "Polis"
     .ColWidth(0) = 1215
     
     .Col = 1
-    .Text = "Vervaldag"
+    .text = "Vervaldag"
     .ColWidth(1) = 1005
     
     .Col = 2
-    .Text = "Premie"
+    .text = "Premie"
     .ColWidth(2) = 1035
 '    .ColAlignment(2) = 1
         
     .Col = 3
-    .Text = "Taksen"
+    .text = "Taksen"
     .ColWidth(3) = 795
 '    .ColAlignment(3) = 1
     
     .Col = 4
-    .Text = "Klant (Naam 1)"
+    .text = "Klant (Naam 1)"
     .ColWidth(4) = 3945
     
     .Col = 5
-    .Text = "Com.%"
+    .text = "Com.%"
     .ColWidth(5) = 645
     
     .Col = 6
-    .Text = "TB2"
+    .text = "TB2"
     .ColWidth(5) = 645
 End With
 
@@ -2281,7 +2281,7 @@ Else
                     End If
                 End If
                 If KeuzeInfo(2).ListIndex <> 0 Then
-                    If Left(KeuzeInfo(2).Text, 4) = vBibTekst(TABLE_CONTRACTS, "#A010 #") Then
+                    If Left(KeuzeInfo(2).text, 4) = vBibTekst(TABLE_CONTRACTS, "#A010 #") Then
                         PaperDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00"), PaperDetail.Rows - 1
                         If mailFlag = True Then
                             MailDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00"), MailDetail.Rows - 1
@@ -2372,7 +2372,7 @@ Dim CRLFTeller As Integer
 
 Select Case Index
     Case 0
-        If Left(KeuzeInfo(0).Text, 1) = "1" Then
+        If Left(KeuzeInfo(0).text, 1) = "1" Then
             'Detail.Visible = True
             'Detail.Value = vbUnchecked
             Post.Visible = True
@@ -2383,7 +2383,7 @@ Select Case Index
             Post.Visible = False
             KeuzeInfo(2).Visible = False
         End If
-        If Left(KeuzeInfo(0).Text, 1) = "5" Then
+        If Left(KeuzeInfo(0).text, 1) = "5" Then
             LabelInfo(5).Visible = True
             LabelInfo(6).Visible = True
             TekstInfo(4).Visible = True
@@ -2400,17 +2400,17 @@ Select Case Index
         If KeuzeInfo(0).ListIndex = 0 Then
             PaperDetail.Enabled = False
             cbPrint.Enabled = False
-            TekstInfo(1).Text = ""
+            TekstInfo(1).text = ""
             TaalTekst = ""
         Else
             PaperDetail.Enabled = True
             cbPrint.Enabled = True
-            TaalTekst = Left(KeuzeInfo(1).Text, 1) + Left(KeuzeInfo(0).Text, 1)
+            TaalTekst = Left(KeuzeInfo(1).text, 1) + Left(KeuzeInfo(0).text, 1)
             If Dir$(LOCATION_COMPANYDATA + "kwijt" + TaalTekst + ".DEF") = "" Then
-                TekstInfo(1).Text = ""
+                TekstInfo(1).text = ""
             Else
                 TempoFL = FreeFile
-                TekstInfo(1).Text = ""
+                TekstInfo(1).text = ""
                 Open LOCATION_COMPANYDATA + "kwijt" + TaalTekst + ".DEF" For Input As TempoFL
                     aa = ""
                     CRLFTeller = 0
@@ -2419,7 +2419,7 @@ Select Case Index
                         aa = aa + A$ + vbCrLf
                         CRLFTeller = CRLFTeller + 1
                     Loop
-                    TekstInfo(1).Text = Left(aa, Len(aa) - 2)
+                    TekstInfo(1).text = Left(aa, Len(aa) - 2)
                     CRLFCaption.Caption = Dec$((CRLFTeller), "##0")
                 Close TempoFL
             End If
@@ -2428,13 +2428,13 @@ Select Case Index
         If TaalTekst = "  " Then
             Exit Sub
         End If
-        TaalTekst = Left(KeuzeInfo(1).Text, 1) + Left(KeuzeInfo(0).Text, 1)
+        TaalTekst = Left(KeuzeInfo(1).text, 1) + Left(KeuzeInfo(0).text, 1)
        
         If Dir$(LOCATION_COMPANYDATA + "kwijt" + TaalTekst + ".DEF") = "" Then
-            TekstInfo(1).Text = ""
+            TekstInfo(1).text = ""
         Else
             TempoFL = FreeFile
-            TekstInfo(1).Text = ""
+            TekstInfo(1).text = ""
             Open LOCATION_COMPANYDATA + "kwijt" + TaalTekst + ".DEF" For Input As TempoFL
                 aa = ""
                 CRLFTeller = 0
@@ -2443,7 +2443,7 @@ Select Case Index
                     aa = aa + A$ + vbCrLf
                     CRLFTeller = CRLFTeller + 1
                 Loop
-                TekstInfo(1).Text = Left(aa, Len(aa) - 2)
+                TekstInfo(1).text = Left(aa, Len(aa) - 2)
                 CRLFCaption.Caption = Dec$((CRLFTeller), "##0")
             Close TempoFL
         End If
@@ -2530,7 +2530,7 @@ Select Case KeyAscii
             End If
         End If
         Load KwijtingEdit
-        KwijtingEdit.Caption = Left(KeuzeInfo(0).Text, 4) + ":" + KwijtingEdit.Caption
+        KwijtingEdit.Caption = Left(KeuzeInfo(0).text, 4) + ":" + KwijtingEdit.Caption
         KwijtingEdit.Show 1
         KwijtingDrukken.SetFocus
         If KeyAscii = 43 And GridText = "ESC" Then
@@ -2609,7 +2609,7 @@ Select Case KeyAscii
             End If
         End If
         Load KwijtingEdit
-        KwijtingEdit.Caption = Left(KeuzeInfo(0).Text, 4) + ":" + KwijtingEdit.Caption
+        KwijtingEdit.Caption = Left(KeuzeInfo(0).text, 4) + ":" + KwijtingEdit.Caption
         KwijtingEdit.Show 1
         KwijtingDrukken.SetFocus
         If KeyAscii = 43 And GridText = "ESC" Then
@@ -2649,44 +2649,44 @@ With PaperDetail
     .Rows = 2
     .Row = 1
     .Col = 0
-    .Text = ""
+    .text = ""
     
     .Col = 1
-    .Text = ""
+    .text = ""
     
     .Col = 2
-    .Text = ""
+    .text = ""
     
     .Col = 3
-    .Text = ""
+    .text = ""
     
     .Col = 4
-    .Text = ""
+    .text = ""
     
     .Col = 5
-    .Text = ""
+    .text = ""
 End With
 
 With MailDetail
     .Rows = 2
     .Row = 1
     .Col = 0
-    .Text = ""
+    .text = ""
     
     .Col = 1
-    .Text = ""
+    .text = ""
     
     .Col = 2
-    .Text = ""
+    .text = ""
     
     .Col = 3
-    .Text = ""
+    .text = ""
     
     .Col = 4
-    .Text = ""
+    .text = ""
     
     .Col = 5
-    .Text = ""
+    .text = ""
 End With
 
 
@@ -2699,7 +2699,7 @@ cbPrint.Enabled = False
 cbMail.Enabled = False
 KeuzeInfo(2).Visible = False
 KeuzeInfo(2).ListIndex = 0
-TekstInfo(0).Text = MIM_GLOBAL_DATE
+TekstInfo(0).text = MIM_GLOBAL_DATE
 RasterSchoon
 KeuzeInfo(0).ListIndex = 0
 CRLFCaption.Caption = Dec$(0, "##0")
@@ -2727,8 +2727,8 @@ End Sub
 Private Sub TekstBewaren_Click()
 
 TempoFL = FreeFile
-Open LOCATION_COMPANYDATA + "kwijt" + Left(KeuzeInfo(1).Text, 1) + Left(KeuzeInfo(0).Text, 1) + ".DEF" For Output As TempoFL
-    Print #TempoFL, TekstInfo(1).Text
+Open LOCATION_COMPANYDATA + "kwijt" + Left(KeuzeInfo(1).text, 1) + Left(KeuzeInfo(0).text, 1) + ".DEF" For Output As TempoFL
+    Print #TempoFL, TekstInfo(1).text
 Close TempoFL
 
 End Sub
@@ -2748,7 +2748,7 @@ Select Case Index
                 CRLFTeller = 0
                 Start = 1
                 Do
-                    Start = InStr(Start, TekstInfo(1).Text, Search)
+                    Start = InStr(Start, TekstInfo(1).text, Search)
                     If Start = 0 Then
                         Exit Do
                     Else
@@ -2768,12 +2768,12 @@ Private Sub TekstInfo_LostFocus(Index As Integer)
 
 Select Case Index
     Case 0
-        If DATE_INVALID((TekstInfo(Index).Text)) Then
-            TekstInfo(Index).Text = MIM_GLOBAL_DATE
+        If DATE_INVALID((TekstInfo(Index).text)) Then
+            TekstInfo(Index).text = MIM_GLOBAL_DATE
             TekstInfo(Index).SetFocus
         End If
     Case 2, 3
-        TekstInfo(Index).Text = Format(Val(TekstInfo(Index).Text), "000.00")
+        TekstInfo(Index).text = Format(Val(TekstInfo(Index).text), "000.00")
     Case 4
         'TekstInfo(Index).Text = Dec$(Val(TekstInfo(Index).Text), "#######")
 End Select
@@ -2825,42 +2825,42 @@ Function wordPREMIE(strMij As String, strTaal As String, strType As String, strI
     Dim hTAB As String
     Dim BedragTxt As String
     
-    Book(1, 1) = Trim$(Mid(fmarBoxText("003", strTaal, oWaarde(rsMAR(TABLE_CUSTOMERS)("A102"))), 4, 10))
-    Book(2, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A100"))
-    Book(3, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A101"))
+    Book(1, 1) = Trim$(Mid(fmarBoxText("003", strTaal, objectValue(rsMAR(TABLE_CUSTOMERS)("A102"))), 4, 10))
+    Book(2, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A100"))
+    Book(3, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A101"))
     If Trim$(xrsMar(TABLE_CUSTOMERS, "vs01")) = "" Then
         Book(4, 1) = ""
     Else
-        Book(4, 1) = Trim$(Mid(fmarBoxText("003", strTaal, oWaarde(rsMAR(TABLE_CUSTOMERS)("vs01"))), 4, 10))
+        Book(4, 1) = Trim$(Mid(fmarBoxText("003", strTaal, objectValue(rsMAR(TABLE_CUSTOMERS)("vs01"))), 4, 10))
     End If
-    Book(5, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A125"))
-    Book(6, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A127"))
-    Book(7, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A104"))
-    Book(8, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A105"))
-    If Trim$(oWaarde(rsMAR(TABLE_CUSTOMERS)("A106"))) = "" Then
+    Book(5, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A125"))
+    Book(6, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A127"))
+    Book(7, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A104"))
+    Book(8, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A105"))
+    If Trim$(objectValue(rsMAR(TABLE_CUSTOMERS)("A106"))) = "" Then
         Book(9, 1) = ""
     Else
-        Book(9, 1) = " " & oWaarde(rsMAR(TABLE_CUSTOMERS)("A106"))
+        Book(9, 1) = " " & objectValue(rsMAR(TABLE_CUSTOMERS)("A106"))
     End If
-    Book(10, 1) = Trim$(oWaarde(rsMAR(TABLE_CUSTOMERS)("A109")))
-    Book(11, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A107"))
-    Book(12, 1) = oWaarde(rsMAR(TABLE_CUSTOMERS)("A108"))
+    Book(10, 1) = Trim$(objectValue(rsMAR(TABLE_CUSTOMERS)("A109")))
+    Book(11, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A107"))
+    Book(12, 1) = objectValue(rsMAR(TABLE_CUSTOMERS)("A108"))
     
-    Book(13, 1) = Trim$(oWaarde(rsMAR(TABLE_CONTRACTS)("A000")))
-    Book(14, 1) = oWaarde(rsMAR(TABLE_SUPPLIERS)("A100"))
-    Book(15, 1) = Trim$(oWaarde(rsMAR(TABLE_CUSTOMERS)("A110")))
+    Book(13, 1) = Trim$(objectValue(rsMAR(TABLE_CONTRACTS)("A000")))
+    Book(14, 1) = objectValue(rsMAR(TABLE_SUPPLIERS)("A100"))
+    Book(15, 1) = Trim$(objectValue(rsMAR(TABLE_CUSTOMERS)("A110")))
     Book(16, 1) = Format(TaksEnKost, "#,##0.00")
     Book(17, 1) = Format(BrutoPremie, "#,##0.00")
     
     On Local Error Resume Next
-    Book(18, 1) = Format(Val(oWaarde(rsMAR(TABLE_CONTRACTS)("e069"))), "#,##0.00")
+    Book(18, 1) = Format(Val(objectValue(rsMAR(TABLE_CONTRACTS)("e069"))), "#,##0.00")
     Book(19, 1) = IndexBM
     Book(20, 1) = "EUR " & Format(BedragEUR, "#,##0.00")
-    Book(21, 1) = oWaarde(rsMAR(TABLE_CONTRACTS)("vs98"))
-    Book(22, 1) = oWaarde(rsMAR(TABLE_CONTRACTS)("vs99"))
+    Book(21, 1) = objectValue(rsMAR(TABLE_CONTRACTS)("vs98"))
+    Book(22, 1) = objectValue(rsMAR(TABLE_CONTRACTS)("vs99"))
     Book(23, 1) = datKwijting
     Book(24, 1) = datKwijting
-    Book(25, 1) = Mid(fmarBoxText("914", Val(KeuzeInfo(1)), oWaarde(rsMAR(TABLE_CONTRACTS)("A325"))), 4)
+    Book(25, 1) = Mid(fmarBoxText("914", Val(KeuzeInfo(1)), objectValue(rsMAR(TABLE_CONTRACTS)("A325"))), 4)
     Book(26, 1) = Mid(ReferteTxt, 4, 14)
     Book(27, 1) = Mid(ReferteTxt, 4, 14)
         
