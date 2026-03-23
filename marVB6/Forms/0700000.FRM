@@ -84,34 +84,33 @@ Begin VB.Form InbrengFinancieel
       Tab(0).Control(19).Enabled=   0   'False
       Tab(0).Control(20)=   "TextBoxWarningTestCompany"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).ControlCount=   21
+      Tab(0).Control(21)=   "ButtonReadCamt053"
+      Tab(0).Control(21).Enabled=   0   'False
+      Tab(0).Control(22)=   "CheckBoxSepaViewer"
+      Tab(0).Control(22).Enabled=   0   'False
+      Tab(0).ControlCount=   23
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "mfgLijst"
-      Tab(1).Control(1)=   "cbCoda"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "KeuzeInfo(1)"
-      Tab(1).Control(3)=   "ButtonReadCamt053"
-      Tab(1).Control(4)=   "CheckBoxSepaViewer"
-      Tab(1).ControlCount=   5
+      Tab(1).ControlCount=   1
       Begin VB.CheckBox CheckBoxSepaViewer 
          Alignment       =   1  'Right Justify
-         Caption         =   "Ook Inkijken"
+         Caption         =   ".XDA Inkijken"
          Height          =   375
-         Left            =   -74760
-         TabIndex        =   26
-         Top             =   6840
+         Left            =   7320
+         TabIndex        =   24
+         Top             =   240
          Value           =   1  'Checked
-         Width           =   1695
+         Width           =   1095
       End
       Begin VB.CommandButton ButtonReadCamt053 
          Caption         =   "TESTING ReadCamt053"
-         Height          =   375
-         Left            =   -72960
-         TabIndex        =   25
-         Top             =   6840
-         Width           =   2535
+         Height          =   660
+         Left            =   7080
+         TabIndex        =   23
+         Top             =   720
+         Width           =   1335
       End
       Begin VB.TextBox TextBoxWarningTestCompany 
          BackColor       =   &H000000FF&
@@ -119,32 +118,12 @@ Begin VB.Form InbrengFinancieel
          ForeColor       =   &H00000000&
          Height          =   285
          Left            =   4200
-         TabIndex        =   24
+         TabIndex        =   22
          TabStop         =   0   'False
          Text            =   "Opgelet: Dit is een testbedrijf!"
          Top             =   7560
          Visible         =   0   'False
          Width           =   2655
-      End
-      Begin VB.ComboBox KeuzeInfo 
-         BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   315
-         Index           =   1
-         Left            =   -75000
-         Style           =   2  'Dropdown List
-         TabIndex        =   23
-         Top             =   6360
-         Width           =   7095
       End
       Begin VB.CommandButton Struktuur 
          Caption         =   "&Gestructureerde Verrichting"
@@ -159,7 +138,7 @@ Begin VB.Form InbrengFinancieel
          EndProperty
          Height          =   330
          Left            =   4080
-         TabIndex        =   10
+         TabIndex        =   9
          TabStop         =   0   'False
          Top             =   7080
          Width           =   2805
@@ -178,7 +157,7 @@ Begin VB.Form InbrengFinancieel
          EndProperty
          Height          =   330
          Left            =   6960
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   7080
          Width           =   1445
       End
@@ -212,7 +191,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   7020
+         Left            =   5460
          TabIndex        =   3
          TabStop         =   0   'False
          Top             =   1080
@@ -231,8 +210,8 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   7020
-         TabIndex        =   8
+         Left            =   5460
+         TabIndex        =   7
          TabStop         =   0   'False
          Top             =   720
          Width           =   1445
@@ -254,35 +233,17 @@ Begin VB.Form InbrengFinancieel
          Left            =   60
          Style           =   2  'Dropdown List
          TabIndex        =   0
-         Top             =   300
+         Top             =   420
          Width           =   3855
       End
-      Begin VB.CommandButton cbCoda 
-         Caption         =   "Overnemen"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   345
-         Left            =   -67800
-         TabIndex        =   7
-         TabStop         =   0   'False
-         Top             =   6360
-         Width           =   1200
-      End
       Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgLijst 
-         Height          =   6015
+         Height          =   6615
          Left            =   -74880
          TabIndex        =   6
          Top             =   120
          Width           =   8355
          _ExtentX        =   14737
-         _ExtentY        =   10610
+         _ExtentY        =   11668
          _Version        =   393216
          BackColor       =   -2147483624
          ForeColor       =   0
@@ -297,7 +258,7 @@ Begin VB.Form InbrengFinancieel
       End
       Begin MSComCtl2.DTPicker Datum 
          Height          =   315
-         Left            =   7020
+         Left            =   5460
          TabIndex        =   2
          Top             =   360
          Width           =   1455
@@ -314,7 +275,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76546051
+         Format          =   76742659
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -333,7 +294,7 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   2
          Left            =   0
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   1440
          Width           =   8475
       End
@@ -352,8 +313,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   7
          Left            =   2760
-         TabIndex        =   21
-         Top             =   960
+         TabIndex        =   20
+         Top             =   1080
          Width           =   1185
       End
       Begin VB.Label LabelInfo 
@@ -371,8 +332,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   13
          Left            =   3960
-         TabIndex        =   20
-         Top             =   960
+         TabIndex        =   19
+         Top             =   1080
          Width           =   1350
       End
       Begin VB.Label LabelInfo 
@@ -391,8 +352,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   12
          Left            =   1380
-         TabIndex        =   19
-         Top             =   960
+         TabIndex        =   18
+         Top             =   1080
          Width           =   1350
       End
       Begin VB.Label lblInfo 
@@ -410,15 +371,15 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   6
          Left            =   60
-         TabIndex        =   18
-         Top             =   960
+         TabIndex        =   17
+         Top             =   1080
          Width           =   1275
       End
       Begin VB.Label LabelInfo 
          Caption         =   "Datu&m uittreksel"
          Height          =   240
          Index           =   1
-         Left            =   7020
+         Left            =   5460
          TabIndex        =   1
          Top             =   120
          Width           =   1440
@@ -429,8 +390,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   315
          Index           =   11
          Left            =   3960
-         TabIndex        =   17
-         Top             =   300
+         TabIndex        =   16
+         Top             =   420
          Width           =   1350
       End
       Begin VB.Label LabelInfo 
@@ -438,8 +399,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   240
          Index           =   0
          Left            =   120
-         TabIndex        =   16
-         Top             =   60
+         TabIndex        =   15
+         Top             =   120
          Width           =   1800
       End
       Begin VB.Label lblInfo 
@@ -457,8 +418,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   4
          Left            =   60
-         TabIndex        =   15
-         Top             =   660
+         TabIndex        =   14
+         Top             =   780
          Width           =   1275
       End
       Begin VB.Label lblInfo 
@@ -476,8 +437,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   5
          Left            =   2760
-         TabIndex        =   14
-         Top             =   660
+         TabIndex        =   13
+         Top             =   780
          Width           =   1185
       End
       Begin VB.Label lblInfo 
@@ -495,8 +456,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   0
          Left            =   1380
-         TabIndex        =   13
-         Top             =   660
+         TabIndex        =   12
+         Top             =   780
          Width           =   1350
       End
       Begin VB.Label lblInfo 
@@ -514,8 +475,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   300
          Index           =   1
          Left            =   3960
-         TabIndex        =   12
-         Top             =   660
+         TabIndex        =   11
+         Top             =   780
          Width           =   1350
       End
       Begin VB.Label LabelInfo 
@@ -524,8 +485,8 @@ Begin VB.Form InbrengFinancieel
          Height          =   240
          Index           =   3
          Left            =   4380
-         TabIndex        =   11
-         Top             =   60
+         TabIndex        =   10
+         Top             =   120
          Width           =   900
       End
    End
@@ -718,10 +679,11 @@ Private Sub ButtonReadCamt053_Click()
 
     Dim filePath As String
     Dim actionResult As Boolean
+    Dim qualityOfBeginning As Integer
     
     On Error GoTo OnCancel
     Mim.Teken.filename = ""
-    Mim.Teken.InitDir = LOCATION_COMPANYDATA & "coda\in\"
+    Mim.Teken.InitDir = LOCATION_DESKTOP
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = "Alle bestanden (*.xda)|*.xda"
     Mim.Teken.ShowOpen
@@ -757,109 +719,34 @@ Private Sub ButtonReadCamt053_Click()
     '        Debug.Print i; "> "; T; " "; xdaLinesOMSArray(T); " "; xdaLinesDATAArray(i, T)
     '    Next
     'Next
+   
+    If xdaDATAArray(3) <> "" Then
+        'check if number of account statement
+        If Val(LabelInfo(11).Caption) = Val(xdaDATAArray(3)) Then 'ok
+            qualityOfBeginning = qualityOfBeginning + 1
+        End If
+    End If
     
+    If Val(xdaDATAArray(6)) <> Val(Dec((lblInfo(0)), "")) Then
+    Else
+        qualityOfBeginning = qualityOfBeginning + 1
+    End If
+    
+    Select Case qualityOfBeginning
+        Case 0
+            Msg = "Noch teller (niet essentiëel), noch beginsaldo (essentieel)" & vbCrLf
+            Msg = Msg + "Bij beheer van meerdere rekeningen, duidt eerst de rekening aan voor .XDA import en probeer opnieuw"
+            MsgBox Msg, vbInformation
+            Exit Sub
+        Case 1
+            SnelHelpPrint "Beginsaldo ok", BL_LOGGING
+        Case 2
+            SnelHelpPrint "Volgnummer + beginsaldo ok", BL_LOGGING
+    End Select
+    'TODO: checking results with xdaLinesData
+       
 OnCancel:
     
-End Sub
-
-Private Sub cbCoda_Click()
-
-    Dim FlFull  As Integer
-    Dim strFull As String
-    Dim Telhier As Integer
-    Dim zoekPath As String
-    Dim PathNu As String
-    Dim LijstString As Variant
-    
-    Me.fnTestBetaalopdracht
-    
-    mfgLijst.Clear
-    mfgLijst.Cols = 7
-    mfgLijst.Rows = 2
-    
-    mfgLijst.TextMatrix(0, 0) = "Rekening"
-    mfgLijst.TextMatrix(0, 1) = "Transactie"
-    mfgLijst.TextMatrix(0, 2) = "D/C"
-    mfgLijst.TextMatrix(0, 3) = "Datum"
-    mfgLijst.TextMatrix(0, 4) = "Bedrag/Saldo"
-    mfgLijst.TextMatrix(0, 5) = "Referte"
-    mfgLijst.TextMatrix(0, 6) = "Referte2"
-        
-    mfgLijst.ColWidth(0) = 1400
-    mfgLijst.ColWidth(1) = 1095
-    mfgLijst.ColWidth(2) = 540
-    mfgLijst.ColWidth(3) = 750
-    mfgLijst.ColWidth(4) = 1335
-    mfgLijst.ColWidth(5) = 690
-    mfgLijst.ColWidth(6) = 1155
-    
-    zoekPath = LOCATION_COMPANYDATA & "coda\in\*.cod"
-    PathNu = Dir(zoekPath)
-    Do While PathNu <> ""
-    
-    iOptelControle = 0
-    FlFull = FreeFile
-    Open LOCATION_COMPANYDATA & "coda\in\" & PathNu For Input As FlFull
-        Do While Not EOF(FlFull)
-            Line Input #FlFull, strFull
-            Telhier = Telhier + 1
-            Select Case Left(strFull, 1)
-                Case "0" 'Beginopname
-                    bCtrl = fnBeginOpname(strFull)
-                    If bCtrl = False Then
-                        MsgBox "Onlogische situatie", vbCritical
-                        Exit Do
-                    End If
-                Case "1" 'Oud Saldo
-                    bCtrl = fnOudSaldo(strFull)
-                    mfgLijst.TextMatrix(1, 0) = sRekeningNummer
-                    mfgLijst.TextMatrix(1, 1) = "BEGIN: " & sUittreksel
-                    mfgLijst.TextMatrix(1, 2) = ""
-                    mfgLijst.TextMatrix(1, 3) = sDatumOudSaldo
-                    mfgLijst.TextMatrix(1, 4) = cOudSaldo
-                    mfgLijst.TextMatrix(1, 5) = ""
-                    mfgLijst.TextMatrix(1, 6) = ""
-                
-                Case "2" 'Beweging
-                    bCtrl = fnBeweging(strFull)
-                    If bCtrl = False Then
-                        'MsgBox "Stop: Doe nu eerst iets met de beweging"
-                        'Doe iets met deze verrichting
-                    LijstString = "" & vbTab & _
-                                    sVerrichting & vbTab & _
-                                    sDC & vbTab & _
-                                    "" & vbTab & _
-                                    cBedrag & vbTab & _
-                                    sMDDZone1 & vbTab & _
-                                    Trim$(sMDDZone2)
-                                    
-                    mfgLijst.AddItem LijstString
-                        
-                        'Daarna opkuisen
-                        BewegingSchoon
-                    End If
-                    
-                Case "3" 'Informatieartikel
-                
-                        
-                Case "8" 'Nieuw Saldo
-                    bCtrl = fnNieuwSaldo(strFull)
-                
-                Case "9" 'Eindopname
-                    bCtrl = fnEindOpname(strFull)
-                    LijstString = sRekeningNummer & vbTab & _
-                                    "EINDE: " & sUittreksel & vbTab & _
-                                    "" & vbTab & _
-                                    sDatumNieuwSaldo & vbTab & _
-                                    cNieuwSaldo
-                    mfgLijst.AddItem LijstString
-    
-            End Select
-        Loop
-    Close FlFull
-    PathNu = Dir
-    Loop
-
 End Sub
 
 Function fnTestBetaalopdracht()
@@ -876,6 +763,8 @@ Function fnTestBetaalopdracht()
     
     
 End Function
+
+
 
 Private Sub Datum_LostFocus()
 
@@ -969,16 +858,20 @@ RekeningNummer(9) = String99(READING, 214)
 Uittreksel(9) = LTrim$(RTrim$(String99(READING, 218)))
 
 For T = 0 To 9
-    bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer(T)
-    If Ktrl Then
-        A$ = "Niet aanwezig. Installeer via Setup Boekjaar."
+    If Trim(RekeningNummer(T)) = "" Then
     Else
-        RecordToVeld TABLE_LEDGERACCOUNTS
-        A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
-    End If
-    KeuzeInfo(0).AddItem A$
-    If DefaultRekening = RekeningNummer(T) Then
-        TT = T
+    
+        bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer(T)
+        If Ktrl Then
+            A$ = "Niet aanwezig. Installeer via Setup Boekjaar."
+        Else
+            RecordToVeld TABLE_LEDGERACCOUNTS
+            A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
+        End If
+        KeuzeInfo(0).AddItem A$
+        If DefaultRekening = RekeningNummer(T) Then
+            TT = T
+        End If
     End If
 Next
 KeuzeInfo(0).ListIndex = TT

@@ -322,7 +322,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16515075
+      Format          =   77332483
       CurrentDate     =   36327
       MinDate         =   35796
    End
@@ -345,7 +345,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16515075
+      Format          =   77332483
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -370,7 +370,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16515075
+      Format          =   77332483
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -884,8 +884,11 @@ Function XmlOGM()
         If Ktrl = 0 Then
             MsgBox "Fout bij bewaren van " + GuidLabel.Caption + ".xml", vbCritical
         End If
-        'Stop
-        'Finally important to set all documents to waiting for finished
+        Msg = "Op uw bureaublad vindt U .xda bestand(en) klaar voor import in de toepassing van uw bank" & vbCrLf
+        Msg = Msg & "VERGEET DEZE NIET te verwijderen na succesvol ondertekenen in de toepassing van uw bank" & vbCrLf & vbCrLf
+        Msg = Msg & "Copijen blijven steeds behouden in uw bedrijfsinhoudsopgave"
+        MsgBox Msg, vbExclamation + vbInformation
+               
     End If
     
 End Function
@@ -950,6 +953,7 @@ Private Sub CmdEmailNBB_Click()
     Dim volgNR As Integer
 
     Me.XmlOGM
+    Drukken_Click
     MsgBox "STILL TESTING: Vlag en Guid toegevoegd voor latere opvolging.", vbExclamation
     
     For volgNR = 1 To grdDokumentDetail.Rows - 1
@@ -962,7 +966,7 @@ Private Sub CmdEmailNBB_Click()
         rsMAR(TABLE_INVOICES)("dnnsync") = False
         rsMAR(TABLE_INVOICES).Update
     Next
-    Drukken_Click
+    
     cmdSluiten_Click
         
 End Sub

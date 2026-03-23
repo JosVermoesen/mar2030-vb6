@@ -161,38 +161,42 @@ Return
 End Function
 
 
-Function ScrMaakTekstBestand(TekstZelf As Variant, Bestandsnaam As String) As Boolean
+Function ScrMaakTekstBestand(TekstZelf As String, Bestandsnaam As String) As Boolean
 
     On Error Resume Next
     Kill Bestandsnaam
-    On Error Resume Next
     
-    Dim A As TextStream
+    'On Error Resume Next
+    
+    'Dim A As TextStream
     Screen.MousePointer = vbHourglass
-    Set A = fs.CreateTextFile(Bestandsnaam, True)
-    'A.WriteLine (TekstZelf)
-    A.Write (TekstZelf)
-    A.Close
-    If Err Then
-        ScrMaakTekstBestand = False
-    Else
-        ScrMaakTekstBestand = True
-    End If
-    A = Nothing
+    'Set A = fs.CreateTextFile(Bestandsnaam, True)
+    ''A.WriteLine (TekstZelf)
+    'A.Write (TekstZelf)
+    'A.Close
+    'If Err Then
+    '    ScrMaakTekstBestand = False
+    'Else
+    '    ScrMaakTekstBestand = True
+    'End If
+    'A = Nothing
+    Call MarWriteUtf8File(Bestandsnaam, TekstZelf)
     Screen.MousePointer = vbNormal
+    ScrMaakTekstBestand = True
     
 End Function
 
-Function ScrLeesTekstBestand(TekstZelf As Variant, Bestandsnaam As String) As Boolean
+Function ScrLeesTekstBestand(TekstZelf As String, Bestandsnaam As String) As Boolean
     
     On Error Resume Next
-    Const ForReading = 1
-    Dim A As TextStream
+    'Const ForReading = 1
+    'Dim A As TextStream
     
-    Set A = fs.OpenTextFile(Bestandsnaam, ForReading, False, TristateFalse)
-    If Err Then ScrLeesTekstBestand = False: Exit Function
+    'Set A = fs.OpenTextFile(Bestandsnaam, ForReading, False, TristateFalse)
+    'If Err Then ScrLeesTekstBestand = False: Exit Function
     
-    TekstZelf = A.ReadLine
+    'TekstZelf = A.ReadLine
+    TekstZelf = MarReadUtf8File(Bestandsnaam)
     ScrLeesTekstBestand = True
         
 End Function
@@ -200,13 +204,13 @@ End Function
 Function ScrLeesBestandAlleTekst(TekstZelf As String, Bestandsnaam As String) As Boolean
     
     On Error Resume Next
-    Const ForReading = 1
-    Dim A As TextStream
+    'Const ForReading = 1
+    'Dim A As TextStream
     
-    Set A = fs.OpenTextFile(Bestandsnaam, ForReading)
-    If Err Then ScrLeesBestandAlleTekst = False: Exit Function
+    'Set A = fs.OpenTextFile(Bestandsnaam, ForReading)
+    'If Err Then ScrLeesBestandAlleTekst = False: Exit Function
     
-    TekstZelf = A.ReadAll
+    TekstZelf = MarReadUtf8File(Bestandsnaam)
     ScrLeesBestandAlleTekst = True
         
 End Function

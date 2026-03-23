@@ -74,27 +74,27 @@
 "2   s153","Rek. AankoopKOST TOT","N",7
 "&R70s289","Rek. Beheerskosten (assurfin.)","N",7
 ;Financieel en Rekeningen
-"2   s041","Rek. Financieel 1","N",7
-"5   s031","Teller Uittreksel Financieel 1","N",6
-"2   s042","Rek. Financieel 2","N",7
-"5   s032","Teller Uittreksel Financieel 2","N",6
-"2   s043","Rek. Financieel 3","N",7
-"5   s033","Teller Uittreksel Financieel 3","N",6
-"2   s044","Rek. Financieel 4","N",7
-"5   s034","Teller Uittreksel Financieel 4","N",6
-"2   s045","Rek. Financieel 5","N",7
-"5   s035","Teller Uittreksel Financieel 5","N",6
-"2   s039","Rek. Financieel 6","N",7
-"5   s038","Teller Uittreksel Financieel 6","N",6
-"2   s211","Rek. Financieel 7","N",7
-"5   s215","Teller Uittreksel Financieel 7","N",6
-"2   s212","Rek. Financieel 8","N",7
-"5   s216","Teller Uittreksel Financieel 8","N",6
-"2   s213","Rek. Financieel 9","N",7
-"5   s217","Teller Uittreksel Financieel 9","N",6
-"2   s214","Rek. Financieel 0","N",7
-"5   s218","Teller Uittreksel Financieel 0","N",6
 "5   s101","Laatste rekening gebruikt","N",7
+"2   s041","Rek. Financieel 0","N",7
+"5   s031","Teller Uittreksel Financieel 0","N",6
+"2   s042","Rek. Financieel 1","N",7
+"5   s032","Teller Uittreksel Financieel 1","N",6
+"2   s043","Rek. Financieel 2","N",7
+"5   s033","Teller Uittreksel Financieel 2","N",6
+"2   s044","Rek. Financieel 3","N",7
+"5   s034","Teller Uittreksel Financieel 3","N",6
+"2   s045","Rek. Financieel 4","N",7
+"5   s035","Teller Uittreksel Financieel 4","N",6
+"2   s039","Rek. Financieel 5","N",7
+"5   s038","Teller Uittreksel Financieel 5","N",6
+"2   s211","Rek. Financieel 6","N",7
+"5   s215","Teller Uittreksel Financieel 6","N",6
+"2   s212","Rek. Financieel 7","N",7
+"5   s216","Teller Uittreksel Financieel 7","N",6
+"2   s213","Rek. Financieel 8","N",7
+"5   s217","Teller Uittreksel Financieel 8","N",6
+"2   s214","Rek. Financieel 9","N",7
+"5   s218","Teller Uittreksel Financieel 9","N",6
 ;Bedrijfsinformatie
 "1   s046","Bedrijfsnaam (KBO)","A",30
 "1   s047","Straat en Nummer","A",30

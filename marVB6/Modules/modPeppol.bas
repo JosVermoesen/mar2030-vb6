@@ -199,11 +199,21 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
     ' -----------------------------
     Dim MsgId As String
     Dim StmtId As String
+        
+    Dim ElctrncSeqNb As String
+    Dim LglSeqNb As String
+        
     Dim IBAN As String
     Dim Owner As String
 
+    'These ones are mandatory so get them directly
     MsgId = xml.selectSingleNode("//MsgId").text
     StmtId = xml.selectSingleNode("//Stmt/Id").text
+    
+    'These are optional so get them if avaialbe with GetNodeText
+    ElctrncSeqNb = GetNodeText(xml, "//Stmt/ElctrncSeqNb")
+    LglSeqNb = GetNodeText(xml, "//Stmt/LglSeqNb")
+    
     IBAN = xml.selectSingleNode("//Acct/Id/IBAN").text
     Owner = xml.selectSingleNode("//Acct/Ownr/Nm").text
 
@@ -225,7 +235,17 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
     xdaOMS = xdaOMS & "StatementID" & vbTab
     xdaDATA = xdaDATA & StmtId & vbTab
     result = result & "StatementID: " & StmtId & vbCrLf
+        
+    'Debug.Print "Electronic Sequence: " & ElctrncSeqNb
+    xdaOMS = xdaOMS & "ElectronicSeq" & vbTab
+    xdaDATA = xdaDATA & ElctrncSeqNb & vbTab
+    result = result & "Electronic Seq: " & ElctrncSeqNb & vbCrLf
     
+    'Debug.Print "Legal Sequence: " & LglSeqNb
+    xdaOMS = xdaOMS & "LegalSeq" & vbTab
+    xdaDATA = xdaDATA & LglSeqNb & vbTab
+    result = result & "Legal Sequence: " & LglSeqNb & vbCrLf
+        
     'Debug.Print "IBAN: " & IBAN
     xdaOMS = xdaOMS & "IBAN" & vbTab
     xdaDATA = xdaDATA & IBAN & vbTab
@@ -1222,7 +1242,9 @@ End Function
 
 ' Reference: Microsoft ActiveX Data Objects 2.x Library (Project > References)
 Sub MarWriteUtf8File(filename As String, text As String)
+
     Dim stream As Object
+    On Local Error Resume Next
     Set stream = CreateObject("ADODB.Stream")
     stream.Type = 2 ' Text
     stream.Charset = "utf-8"
@@ -1231,4 +1253,6 @@ Sub MarWriteUtf8File(filename As String, text As String)
     stream.SaveToFile filename, 2 ' 2 = adSaveCreateOverWrite
     stream.Close
     Set stream = Nothing
+    On Local Error GoTo 0
+    
 End Sub

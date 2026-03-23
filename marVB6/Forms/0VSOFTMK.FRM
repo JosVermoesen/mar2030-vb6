@@ -1,11 +1,11 @@
 VERSION 5.00
 Begin VB.Form Vsoft 
    BackColor       =   &H00FFFFFF&
-   BorderStyle     =   4  'Fixed ToolWindow
+   BorderStyle     =   0  'None
    Caption         =   "Info Licentie"
-   ClientHeight    =   5265
-   ClientLeft      =   435
-   ClientTop       =   1110
+   ClientHeight    =   4455
+   ClientLeft      =   390
+   ClientTop       =   795
    ClientWidth     =   12675
    ControlBox      =   0   'False
    ForeColor       =   &H00FFFFFF&
@@ -14,9 +14,9 @@ Begin VB.Form Vsoft
    MinButton       =   0   'False
    Moveable        =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   5265
+   ScaleHeight     =   4455
    ScaleWidth      =   12675
-   StartUpPosition =   1  'CenterOwner
+   StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdLeesMij 
       BackColor       =   &H00FFFFFF&
       Caption         =   "LeesMij"
@@ -32,7 +32,7 @@ Begin VB.Form Vsoft
       Height          =   375
       Left            =   1440
       TabIndex        =   7
-      Top             =   4680
+      Top             =   3960
       Width           =   2175
    End
    Begin VB.CommandButton cmdLog 
@@ -41,7 +41,7 @@ Begin VB.Form Vsoft
       Height          =   375
       Left            =   600
       TabIndex        =   6
-      Top             =   4680
+      Top             =   3960
       Visible         =   0   'False
       Width           =   735
    End
@@ -54,7 +54,7 @@ Begin VB.Form Vsoft
       Height          =   375
       Left            =   3720
       TabIndex        =   0
-      Top             =   4680
+      Top             =   3960
       Width           =   855
    End
    Begin VB.Label AppInfo 
@@ -66,7 +66,7 @@ Begin VB.Form Vsoft
       Index           =   2
       Left            =   960
       TabIndex        =   2
-      Top             =   3120
+      Top             =   2400
       Width           =   4545
       WordWrap        =   -1  'True
    End
@@ -87,7 +87,7 @@ Begin VB.Form Vsoft
       Height          =   645
       Left            =   840
       TabIndex        =   8
-      Top             =   3840
+      Top             =   3120
       Width           =   4425
       WordWrap        =   -1  'True
    End
@@ -111,9 +111,9 @@ Begin VB.Form Vsoft
       ForeColor       =   &H00FF0000&
       Height          =   195
       Index           =   0
-      Left            =   5760
+      Left            =   4560
       TabIndex        =   3
-      Top             =   4800
+      Top             =   720
       Width           =   1170
    End
    Begin VB.Image Image1 

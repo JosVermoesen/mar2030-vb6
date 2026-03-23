@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76808195
+         Format          =   76611587
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -2066,9 +2066,15 @@ Dim Mailadres As String
 Dim Paswoord As String
 
 'Application Data lokatie ?
+path = ""
 ret = SHGetFolderPath(0, CSIDL_APPDATA, 0, 0, path)
-
 PROGRAM_LOCATION = App.path + "\"
+    
+'Desktop lokatie
+path = ""
+ret = SHGetFolderPath(0, 0, 0, 0, path)
+LOCATION_DESKTOP = Left(path, InStr(path, Chr(0)) - 1) + "\"
+
 Mim.Caption = appTitleAndVersion
 
 usrMailAdres = "demo@rv.be"
