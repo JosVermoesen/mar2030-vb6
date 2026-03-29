@@ -141,24 +141,24 @@ Public Function IbanCheck(anyRekString As String, _
 End Function
 
 Public Function Mod97(ByVal s As String) As Long
-    Dim value As Long
+    Dim Value As Long
     Dim i As Long
     Dim c As Integer
 
-    value = 0
+    Value = 0
 
     For i = 1 To Len(s)
         c = Asc(Mid$(s, i, 1)) - 48   ' convert char ? digit
-        value = (value * 10 + c) Mod 97
+        Value = (Value * 10 + c) Mod 97
     Next i
 
-    Mod97 = value
+    Mod97 = Value
 End Function
 
-Public Function FormatDummy(num As Long, size As Long) As String
+Public Function FormatDummy(num As Long, Size As Long) As String
     Dim s As String
     s = String$(9, "0") & CStr(num)
-    FormatDummy = Right$(s, size)
+    FormatDummy = Right$(s, Size)
 End Function
 
 Public Function ConvertSuppliersSEPAs()

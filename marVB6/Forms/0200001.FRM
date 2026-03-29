@@ -286,39 +286,19 @@ Begin VB.Form DirekteAankoop
          Tab(1).Control(0).Enabled=   0   'False
          Tab(1).Control(1)=   "cmdXLog"
          Tab(1).Control(1).Enabled=   0   'False
-         Tab(1).Control(2)=   "ButtonInfoPeppol"
-         Tab(1).Control(2).Enabled=   0   'False
-         Tab(1).ControlCount=   3
+         Tab(1).ControlCount=   2
          TabCaption(2)   =   "&Historiek"
          TabPicture(2)   =   "0200001.frx":0396
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "ListView1"
          Tab(2).ControlCount=   1
-         Begin VB.CommandButton ButtonInfoPeppol 
-            Caption         =   "Peppel B2B 2026 - 2030 Klik hier voor meer info"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   375
-            Left            =   120
-            TabIndex        =   48
-            TabStop         =   0   'False
-            Top             =   1440
-            Width           =   4575
-         End
          Begin VB.CommandButton cmdXLog 
-            Caption         =   "LeverancierFiche Opvragen / Wijzigen"
+            Caption         =   "Geactiveerde leverancier Inkijken / Wijzigen"
             Enabled         =   0   'False
             Height          =   495
             Left            =   120
             TabIndex        =   40
-            Top             =   360
+            Top             =   1200
             Width           =   4575
          End
          Begin MSComctlLib.ListView ListView1 
@@ -357,17 +337,17 @@ Begin VB.Form DirekteAankoop
             Caption         =   "Voor manuele verrichting activeer een leverancier via TAB 'Leverancier' of TAB 'Historiek'"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   9.75
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Height          =   375
+            Height          =   615
             Left            =   120
             TabIndex        =   42
-            Top             =   960
+            Top             =   480
             Width           =   4575
          End
          Begin VB.Label LeverancierInfo 
@@ -1433,28 +1413,6 @@ Else
     End If
 End If
 Unload Me
-
-End Sub
-
-
-Private Sub ButtonInfoPeppol_Click()
-
-    Dim peppolInfoPDF As String
-    
-    peppolInfoPDF = PROGRAM_LOCATION & "Def\B2B_Factuur_in_mail.pdf"
-    Dim lookForPDF As String
-    'look for document
-    On Error Resume Next
-    Err = 0
-    lookForPDF = Dir(peppolInfoPDF)
-    DoEvents
-    If peppolInfoPDF = "" Then
-        MsgBox "PDF niet gevonden in " & vbCrLf & peppolInfoPDF & vbCrLf & vbCrLf & "Controleer correcte installatie MarIntegraal", vbExclamation
-    Else
-        If ShellExecuteWithFallback(peppolInfoPDF) = False Then
-            MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
-        End If
-    End If
 
 End Sub
 

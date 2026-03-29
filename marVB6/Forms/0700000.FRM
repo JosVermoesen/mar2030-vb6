@@ -95,21 +95,38 @@ Begin VB.Form InbrengFinancieel
       Tab(1).Control(0)=   "mfgLijst"
       Tab(1).ControlCount=   1
       Begin VB.CheckBox CheckBoxSepaViewer 
-         Alignment       =   1  'Right Justify
          Caption         =   ".XDA Inkijken"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   375
-         Left            =   7320
+         Left            =   7080
          TabIndex        =   24
-         Top             =   240
+         Top             =   720
          Value           =   1  'Checked
          Width           =   1095
       End
       Begin VB.CommandButton ButtonReadCamt053 
-         Caption         =   "TESTING ReadCamt053"
-         Height          =   660
+         Caption         =   "ReadCamt053"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
          Left            =   7080
          TabIndex        =   23
-         Top             =   720
+         Top             =   1200
          Width           =   1335
       End
       Begin VB.TextBox TextBoxWarningTestCompany 
@@ -173,10 +190,10 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   5235
+         Height          =   5010
          Left            =   0
          TabIndex        =   4
-         Top             =   1680
+         Top             =   1800
          Width           =   8475
       End
       Begin VB.CommandButton Afsluiten 
@@ -194,7 +211,7 @@ Begin VB.Form InbrengFinancieel
          Left            =   5460
          TabIndex        =   3
          TabStop         =   0   'False
-         Top             =   1080
+         Top             =   1170
          Width           =   1445
       End
       Begin VB.CommandButton Volgende 
@@ -275,13 +292,13 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76742659
+         Format          =   76873731
          CurrentDate     =   36327
          MinDate         =   35796
       End
       Begin VB.Label LabelInfo 
          BorderStyle     =   1  'Fixed Single
-         Caption         =   " Dokument           TegenR.       Bedrag Omschrijving                  Fin.Kort."
+         Caption         =   " Document           TegenR.       Bedrag Omschrijving                  Fin.Kort."
          BeginProperty Font 
             Name            =   "Courier New"
             Size            =   9
@@ -295,7 +312,7 @@ Begin VB.Form InbrengFinancieel
          Index           =   2
          Left            =   0
          TabIndex        =   21
-         Top             =   1440
+         Top             =   1560
          Width           =   8475
       End
       Begin VB.Label lblInfo 
@@ -681,14 +698,47 @@ Private Sub ButtonReadCamt053_Click()
     Dim actionResult As Boolean
     Dim qualityOfBeginning As Integer
     
+    Dim xdaLocation As String
+    
+    xdaLocation = LCase(LaadTekst("dnnInstellingen", "CodaIOMap"))
+    If xdaLocation = "" Then
+        xdaLocation = LCase(LOCATION_DESKTOP)
+    End If
+        
     On Error GoTo OnCancel
+    
     Mim.Teken.filename = ""
-    Mim.Teken.InitDir = LOCATION_DESKTOP
+    Mim.Teken.InitDir = xdaLocation
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = "Alle bestanden (*.xda)|*.xda"
     Mim.Teken.ShowOpen
     
-    filePath = Mim.Teken.filename
+    filePath = LCase(Mim.Teken.filename)
+    
+    Dim checkDirChange As String
+    checkDirChange = LCase(Mid(Mim.Teken.filename, 1, InStr(Mim.Teken.filename, Mim.Teken.FileTitle) - 1))
+    
+    If xdaLocation <> checkDirChange Then
+        If InStr(checkDirChange, "coda\in") <> 0 Then
+            MsgBox "Inladen van verwerkte documenten is verboden", vbCritical
+            Exit Sub
+        End If
+        
+        Msg = ".XDA en .XML voor SEPA betaalbestanden locatie staat ingesteld op:" & vbCrLf
+        Msg = Msg & xdaLocation & vbCrLf & vbCrLf
+        Msg = Msg & "Mag de standaard locatie vanaf nu gewijzigd worden naar:" & vbCrLf
+        Msg = Msg & checkDirChange
+        Ktrl = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, "Uittreksel afsluiten")
+        If Ktrl = vbYes Then
+            BeWaarTekst "dnnInstellingen", "CodaIOMap", checkDirChange
+            MsgBox "Herstart het inladen van het document", vbInformation
+            Exit Sub
+        Else
+            MsgBox "Probeer opnieuw", vbExclamation
+            Exit Sub
+        End If
+    End If
+    
     If Me.CheckBoxSepaViewer.Value = vbChecked Then
         actionResult = ReadCamt053XDA(filePath, True)
     Else
@@ -703,47 +753,93 @@ Private Sub ButtonReadCamt053_Click()
     ReDim xdaLinesOMSArray(20)
     xdaLinesOMSArray() = Split(xdaLinesOMS, vbTab)
     xdaParseToArray (xdaLinesDATA)
-        
-    'For T = 0 To UBound(xdaOMSArray): Debug.Print T; " "; xdaOMSArray(T); ": "; xdaDATAArray(T): Next
-    'Debug.Print xdaLinesOMSArray(UBound(xdaLinesOMSArray))
-    'Debug.Print xdaLinesOMSArray(7); " "; xdaLinesDATAArray(0, 7)
-    'Debug.Print UBound(xdaLinesDATAArray)
-    'Debug.Print xdaLinesDATAArray(5, 0)
-    'For T = 0 To 13: Debug.Print xdaLinesDATAArray(0, counterHere) & ": " & xdaLinesDATAArray(indexHere + 1, counterHere): Next
-    'For T = 0 To UBound(xdaLinesOMSArray): Debug.Print T; " "; xdaLinesOMSArray(T); " "; xdaLinesDATAArray(0, T): Next
     
-    'For T = 0 To UBound(xdaOMSArray): Debug.Print T; " "; xdaOMSArray(T); ": "; xdaDATAArray(T): Next
-    Dim i As Integer
-    'For i = 0 To UBound(xdaLinesDATAArray) - 1
-    '    For T = 0 To UBound(xdaLinesOMSArray)
-    '        Debug.Print i; "> "; T; " "; xdaLinesOMSArray(T); " "; xdaLinesDATAArray(i, T)
-    '    Next
-    'Next
-   
+    Dim beginSaldoXDA As Double
+    Dim bedragTransactie As Double
+    Dim cumulSaldo As Double
+       
     If xdaDATAArray(3) <> "" Then
         'check if number of account statement
         If Val(LabelInfo(11).Caption) = Val(xdaDATAArray(3)) Then 'ok
             qualityOfBeginning = qualityOfBeginning + 1
+        Else
+        
         End If
     End If
     
-    If Val(xdaDATAArray(6)) <> Val(Dec((lblInfo(0)), "")) Then
+    beginSaldoXDA = Val(xdaDATAArray(6))
+    If beginSaldoXDA <> Val(Dec((lblInfo(0)), "")) Then
     Else
         qualityOfBeginning = qualityOfBeginning + 1
     End If
     
+    Dim aa As String
     Select Case qualityOfBeginning
         Case 0
             Msg = "Noch teller (niet essentiëel), noch beginsaldo (essentieel)" & vbCrLf
             Msg = Msg + "Bij beheer van meerdere rekeningen, duidt eerst de rekening aan voor .XDA import en probeer opnieuw"
             MsgBox Msg, vbInformation
-            Exit Sub
+            'Exit Sub
+            MsgBox "Should now be Exit Sub"
         Case 1
             SnelHelpPrint "Beginsaldo ok", BL_LOGGING
         Case 2
             SnelHelpPrint "Volgnummer + beginsaldo ok", BL_LOGGING
     End Select
-    'TODO: checking results with xdaLinesData
+    
+    aa = "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
+    cumulSaldo = beginSaldoXDA
+    mfgLijst.AddItem aa, mfgLijst.Rows - 1
+        
+    On Local Error GoTo 0
+    SnelHelpPrint "Preparing book list with xdaLinesData", BL_LOGGING
+    For T = 0 To UBound(xdaLinesDATAArray) - 1
+        aa = Dec(T + 1, "000") & vbTab
+        bedragTransactie = Val(xdaLinesDATAArray(T, 1))
+                
+        aa = aa & xdaLinesDATAArray(T, 2) & vbTab
+        aa = aa & bedragTransactie & vbTab
+        'TODO: Evaluate Debit or Credit
+        Select Case xdaLinesDATAArray(T, 2)
+            Case "0101000" '(5-C) SEPA Credit Transfer Type SEPA Transfer with Structured Communiaction (Creditor) (SCOR)
+                bedragTransactie = -bedragTransactie
+                
+            Case "0103000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
+                bedragTransactie = -bedragTransactie
+                
+            Case "0107000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
+                bedragTransactie = -bedragTransactie
+                
+            Case "0201000" '(5-C) Unknow BBA Type Incoming Transfer (Creditor)
+                bedragTransactie = -bedragTransactie
+                
+            Case "0402000" '(5-C) ATM Cash Withdrawal Type Card payment
+                bedragTransactie = -bedragTransactie
+                
+            Case "0501000" '(5-C) SEPA Direct Debit CORE Type Direct Debit (Creditor) (Ustrd)
+                bedragTransactie = -bedragTransactie
+                
+            Case "0150000" '(5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
+            Case "0250000" '(5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
+            Case "0254000" '(5-D) Unknown BBA Code Incoming Transfer
+            Case "0550000" '(5-D) Unknown BBA Type Direct Debit (Debtor) (Ustrd)
+                            
+            Case Else
+                MsgBox "stop: " & xdaLinesDATAArray(T, 2)
+        End Select
+        cumulSaldo = cumulSaldo + bedragTransactie
+        aa = aa & cumulSaldo
+        mfgLijst.AddItem aa, mfgLijst.Rows - 1
+    Next
+    
+    MsgBox "TODO: give chance to edit for lines not 100% sure"
+        
+    'MsgBox "TODO: book or [Esc]!"
+    'If Not CopyFile(xdaLocation, LCase(LOCATION_COMPANYDATA + "coda\in"), Mim.Teken.FileTitle) Then
+    '    MsgBox filePath & " kan niet verplaatst worden.  Probeer eventueel manueel", vbInformation
+    'Else
+    '    Kill filePath
+    'End If
        
 OnCancel:
     
@@ -761,8 +857,8 @@ Function fnTestBetaalopdracht()
     Mid(boString, 6, 6) = Format(Now, "ddmmyy")     'datum opmaak
     Mid(boString, 12, 3) = "123"                    'codenummer fin.instelling
     
-    
 End Function
+
 
 
 
@@ -793,96 +889,128 @@ End Sub
 
 Private Sub Form_Load()
 
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
-
-If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) = "\099\") Then
-    Me.TextBoxWarningTestCompany.Visible = True
-End If
-
-Dim T As Integer
-Dim TT As Integer
-
-Top = 0
-Left = 0
-
-LabelInfo(2).Caption = " dokument    " + "TegenR. " + "      Bedrag " + "Omschrijving                    " + "Fin. Kort."
-
-Datum.Value = MIM_GLOBAL_DATE
-BeginBalans = Val(String99(READING, 64))
-
-ToegestaneKorting = String99(READING, 28)
-BekomenKorting = String99(READING, 27)
-DefaultRekening = String99(READING, 101)
-
-RecNummer(0) = 31
-RekeningNummer(0) = String99(READING, 41)
-Uittreksel(0) = LTrim$(RTrim$(String99(READING, 31)))
-
-RecNummer(1) = 32
-RekeningNummer(1) = String99(READING, 42)
-Uittreksel(1) = LTrim$(RTrim$(String99(READING, 32)))
-
-RecNummer(2) = 33
-RekeningNummer(2) = String99(READING, 43)
-Uittreksel(2) = LTrim$(RTrim$(String99(READING, 33)))
-
-RecNummer(3) = 34
-RekeningNummer(3) = String99(READING, 44)
-Uittreksel(3) = LTrim$(RTrim$(String99(READING, 34)))
-
-RecNummer(4) = 35
-RekeningNummer(4) = String99(READING, 45)
-Uittreksel(4) = LTrim$(RTrim$(String99(READING, 35)))
-
-RecNummer(5) = 38
-RekeningNummer(5) = String99(READING, 39)
-Uittreksel(5) = LTrim$(RTrim$(String99(READING, 38)))
-
-RecNummer(6) = 215
-RekeningNummer(6) = String99(READING, 211)
-Uittreksel(6) = LTrim$(RTrim$(String99(READING, 215)))
-
-RecNummer(7) = 216
-RekeningNummer(7) = String99(READING, 212)
-Uittreksel(7) = LTrim$(RTrim$(String99(READING, 216)))
-
-RecNummer(8) = 217
-RekeningNummer(8) = String99(READING, 213)
-Uittreksel(8) = LTrim$(RTrim$(String99(READING, 217)))
-
-RecNummer(9) = 218
-RekeningNummer(9) = String99(READING, 214)
-Uittreksel(9) = LTrim$(RTrim$(String99(READING, 218)))
-
-For T = 0 To 9
-    If Trim(RekeningNummer(T)) = "" Then
-    Else
     
-        bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer(T)
-        If Ktrl Then
-            A$ = "Niet aanwezig. Installeer via Setup Boekjaar."
-        Else
-            RecordToVeld TABLE_LEDGERACCOUNTS
-            A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
-        End If
-        KeuzeInfo(0).AddItem A$
-        If DefaultRekening = RekeningNummer(T) Then
-            TT = T
-        End If
+    mfgLijst.Rows = 2
+    mfgLijst.Cols = 4
+    mfgLijst.Row = 0
+    
+    mfgLijst.Col = 0
+    mfgLijst.text = "Volgnr"
+    mfgLijst.ColWidth(0) = 690
+    
+    mfgLijst.Col = 1
+    mfgLijst.text = "BBA Code"
+    mfgLijst.ColWidth(1) = 1000
+    
+    mfgLijst.Col = 2
+    mfgLijst.text = "Bedrag"
+    mfgLijst.ColWidth(2) = 990
+        
+    mfgLijst.Col = 3
+    mfgLijst.text = "Cumul Saldo"
+    mfgLijst.ColWidth(3) = 1220
+            
+    If LaadTekst("dnnInstellingen", "CodaIOMap") = "" Then
+        BeWaarTekst "dnnInstellingen", "CodaIOMap", LOCATION_DESKTOP
     End If
-Next
-KeuzeInfo(0).ListIndex = TT
+    
+    If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) = "\099\") Then
+        Me.TextBoxWarningTestCompany.Visible = True
+    End If
+
+    Dim T As Integer
+    Dim TT As Integer
+
+    Top = 0
+    Left = 0
+
+    LabelInfo(2).Caption = " Document    " + "TegenR. " + "      Bedrag " + "Omschrijving                    " + "Fin. Kort."
+
+    Datum.Value = MIM_GLOBAL_DATE
+    BeginBalans = Val(String99(READING, 64))
+
+    ToegestaneKorting = String99(READING, 28)
+    BekomenKorting = String99(READING, 27)
+    DefaultRekening = String99(READING, 101)
+
+    RecNummer(0) = 31
+    RekeningNummer(0) = String99(READING, 41)
+    Uittreksel(0) = LTrim$(RTrim$(String99(READING, 31)))
+
+    RecNummer(1) = 32
+    RekeningNummer(1) = String99(READING, 42)
+    Uittreksel(1) = LTrim$(RTrim$(String99(READING, 32)))
+
+    RecNummer(2) = 33
+    RekeningNummer(2) = String99(READING, 43)
+    Uittreksel(2) = LTrim$(RTrim$(String99(READING, 33)))
+
+    RecNummer(3) = 34
+    RekeningNummer(3) = String99(READING, 44)
+    Uittreksel(3) = LTrim$(RTrim$(String99(READING, 34)))
+
+    RecNummer(4) = 35
+    RekeningNummer(4) = String99(READING, 45)
+    Uittreksel(4) = LTrim$(RTrim$(String99(READING, 35)))
+
+    RecNummer(5) = 38
+    RekeningNummer(5) = String99(READING, 39)
+    Uittreksel(5) = LTrim$(RTrim$(String99(READING, 38)))
+
+    RecNummer(6) = 215
+    RekeningNummer(6) = String99(READING, 211)
+    Uittreksel(6) = LTrim$(RTrim$(String99(READING, 215)))
+
+    RecNummer(7) = 216
+    RekeningNummer(7) = String99(READING, 212)
+    Uittreksel(7) = LTrim$(RTrim$(String99(READING, 216)))
+
+    RecNummer(8) = 217
+    RekeningNummer(8) = String99(READING, 213)
+    Uittreksel(8) = LTrim$(RTrim$(String99(READING, 217)))
+
+    RecNummer(9) = 218
+    RekeningNummer(9) = String99(READING, 214)
+    Uittreksel(9) = LTrim$(RTrim$(String99(READING, 218)))
+
+    For T = 0 To 9
+        If Trim(RekeningNummer(T)) = "" Then
+        Else
+            bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer(T)
+            If Ktrl Then
+                A$ = "Niet aanwezig. Installeer via Setup Boekjaar."
+            Else
+                RecordToVeld TABLE_LEDGERACCOUNTS
+                A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
+            End If
+            KeuzeInfo(0).AddItem A$
+            If DefaultRekening = RekeningNummer(T) Then
+                TT = T
+            End If
+        End If
+    Next
+    KeuzeInfo(0).ListIndex = TT
 
 End Sub
 
 
 Private Sub KeuzeInfo_Click(Index As Integer)
 
-Select Case Index
-    Case 0
+    Dim locationDesktop As String
+    
+    locationDesktop = LaadTekst("dnnInstellingen", "CodaIOMap")
+    
+    If Dir(locationDesktop + "*.xda") = "" Then
+        Me.ButtonReadCamt053.Enabled = False
+        Me.CheckBoxSepaViewer.Visible = False
+    Else
+        Me.ButtonReadCamt053.Enabled = True
+        Me.CheckBoxSepaViewer.Visible = True
+    End If
+
+    Select Case Index
+        Case 0
+       
         Select Case UCase$(Uittreksel(KeuzeInfo(0).ListIndex))
             Case "A" To "Z"
                 LabelInfo(11).Caption = Str$(Val(Right(Uittreksel(KeuzeInfo(0).ListIndex), 4)) + 1)

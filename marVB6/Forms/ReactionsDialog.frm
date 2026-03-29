@@ -1,17 +1,14 @@
 VERSION 5.00
 Begin VB.Form FormReactionsDialog 
-   BorderStyle     =   5  'Sizable ToolWindow
    Caption         =   "Reacties"
    ClientHeight    =   3615
    ClientLeft      =   2775
-   ClientTop       =   3645
+   ClientTop       =   3765
    ClientWidth     =   6405
+   ControlBox      =   0   'False
    LinkTopic       =   "Form1"
-   MaxButton       =   0   'False
-   MinButton       =   0   'False
    ScaleHeight     =   3615
    ScaleWidth      =   6405
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
    Begin VB.TextBox TextBoxReactions 
       Height          =   2895
@@ -53,7 +50,7 @@ Private Sub Form_Resize()
     On Local Error Resume Next
     Me.TextBoxReactions.Width = Me.Width - 300
     Me.TextBoxReactions.Height = Me.Height - 1200
-    Me.CancelButton.Top = Me.Height - 900
+    Me.CancelButton.Top = Me.Height - 1000
 
 End Sub
 

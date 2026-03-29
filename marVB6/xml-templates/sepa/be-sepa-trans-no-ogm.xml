@@ -1,4 +1,4 @@
-<CdtTrfTxInf>
+﻿<CdtTrfTxInf>
     <PmtId>
         <InstrId>{serialNumber}</InstrId>
         <EndToEndId>{endToEndId}</EndToEndId>

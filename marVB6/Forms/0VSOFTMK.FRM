@@ -111,7 +111,7 @@ Begin VB.Form Vsoft
       ForeColor       =   &H00FF0000&
       Height          =   195
       Index           =   0
-      Left            =   4560
+      Left            =   4320
       TabIndex        =   3
       Top             =   720
       Width           =   1170

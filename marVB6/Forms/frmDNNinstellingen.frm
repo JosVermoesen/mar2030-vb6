@@ -1,20 +1,41 @@
 VERSION 5.00
 Begin VB.Form frmDNNinstellingen 
    Caption         =   "DNN & Postvak Instellingen"
-   ClientHeight    =   2580
+   ClientHeight    =   3135
    ClientLeft      =   120
    ClientTop       =   420
    ClientWidth     =   9450
    LinkTopic       =   "Form3"
-   ScaleHeight     =   2580
+   ScaleHeight     =   3135
    ScaleWidth      =   9450
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton ButtonCodaIOMap 
+      Height          =   315
+      Left            =   8880
+      Picture         =   "frmDNNinstellingen.frx":0000
+      Style           =   1  'Graphical
+      TabIndex        =   18
+      TabStop         =   0   'False
+      ToolTipText     =   "Bureaublad openen"
+      Top             =   600
+      Width           =   435
+   End
+   Begin VB.TextBox txtCodaIOMap 
+      Enabled         =   0   'False
+      Height          =   285
+      Left            =   2040
+      TabIndex        =   17
+      Text            =   "Text1"
+      ToolTipText     =   "Voorbeeld: http://rvherdersem.no-ip.biz/rvdnn"
+      Top             =   600
+      Width           =   6735
+   End
    Begin VB.CommandButton ButtonToggle 
       Caption         =   "Toggle Bewerken"
       Height          =   375
       Left            =   6720
       TabIndex        =   15
-      Top             =   2040
+      Top             =   2520
       Width           =   1515
    End
    Begin VB.CommandButton ButtonDefaultResetForMapMarnt 
@@ -33,7 +54,7 @@ Begin VB.Form frmDNNinstellingen
       Left            =   2400
       TabIndex        =   14
       TabStop         =   0   'False
-      Top             =   2040
+      Top             =   2520
       Width           =   2295
    End
    Begin VB.CommandButton ButtonDefaultResetForOneDrive 
@@ -52,40 +73,40 @@ Begin VB.Form frmDNNinstellingen
       Left            =   240
       TabIndex        =   13
       TabStop         =   0   'False
-      Top             =   2040
+      Top             =   2520
       Width           =   1995
    End
    Begin VB.CommandButton ButtonCloudArchive 
       Height          =   315
       Left            =   8880
-      Picture         =   "frmDNNinstellingen.frx":0000
+      Picture         =   "frmDNNinstellingen.frx":0102
       Style           =   1  'Graphical
       TabIndex        =   12
       TabStop         =   0   'False
       ToolTipText     =   "Cloud Archief Locatie openen"
-      Top             =   1560
+      Top             =   2040
       Width           =   435
    End
    Begin VB.CommandButton ButtonCloudMario 
       Height          =   315
       Left            =   8880
-      Picture         =   "frmDNNinstellingen.frx":0102
+      Picture         =   "frmDNNinstellingen.frx":0204
       Style           =   1  'Graphical
       TabIndex        =   11
       TabStop         =   0   'False
       ToolTipText     =   "Mario Locatie openen"
-      Top             =   1080
+      Top             =   1560
       Width           =   435
    End
    Begin VB.CommandButton ButtonCloudMarnt 
       Height          =   315
       Left            =   8880
-      Picture         =   "frmDNNinstellingen.frx":0204
+      Picture         =   "frmDNNinstellingen.frx":0306
       Style           =   1  'Graphical
       TabIndex        =   10
       TabStop         =   0   'False
       ToolTipText     =   "Marnt Cloud Locatie openen"
-      Top             =   600
+      Top             =   1080
       Width           =   435
    End
    Begin VB.TextBox txtSkyDriveMap 
@@ -94,7 +115,7 @@ Begin VB.Form frmDNNinstellingen
       TabIndex        =   9
       Text            =   "Text1"
       ToolTipText     =   "Voorbeeld: c:\rvdnn\portals\0\documenten\postvak in"
-      Top             =   600
+      Top             =   1080
       Width           =   6735
    End
    Begin VB.CommandButton cmdSluiten 
@@ -103,7 +124,7 @@ Begin VB.Form frmDNNinstellingen
       Height          =   375
       Left            =   8400
       TabIndex        =   7
-      Top             =   2040
+      Top             =   2520
       Width           =   975
    End
    Begin VB.TextBox txtPDFpostvak 
@@ -112,7 +133,7 @@ Begin VB.Form frmDNNinstellingen
       TabIndex        =   5
       Text            =   "Text1"
       ToolTipText     =   "Voorbeeld: c:\rvdnn\portals\0\documenten\postvak in"
-      Top             =   1080
+      Top             =   1560
       Width           =   6735
    End
    Begin VB.CommandButton CmdBewaar 
@@ -120,7 +141,7 @@ Begin VB.Form frmDNNinstellingen
       Height          =   375
       Left            =   4920
       TabIndex        =   6
-      Top             =   2040
+      Top             =   2520
       Width           =   1635
    End
    Begin VB.TextBox txtURLwww 
@@ -138,8 +159,17 @@ Begin VB.Form frmDNNinstellingen
       TabIndex        =   1
       Text            =   "Text1"
       ToolTipText     =   "voorbeeld: http://localhost/rvdnn"
-      Top             =   1560
+      Top             =   2040
       Width           =   6735
+   End
+   Begin VB.Label Label1 
+      Caption         =   "CODA I/O MAP"
+      Height          =   255
+      Index           =   1
+      Left            =   120
+      TabIndex        =   16
+      Top             =   600
+      Width           =   1695
    End
    Begin VB.Label Label1 
       Caption         =   "CLOUD MARNT"
@@ -147,7 +177,7 @@ Begin VB.Form frmDNNinstellingen
       Index           =   0
       Left            =   120
       TabIndex        =   8
-      Top             =   600
+      Top             =   1080
       Width           =   1695
    End
    Begin VB.Label Label1 
@@ -156,7 +186,7 @@ Begin VB.Form frmDNNinstellingen
       Index           =   4
       Left            =   120
       TabIndex        =   4
-      Top             =   1080
+      Top             =   1560
       Width           =   1815
    End
    Begin VB.Label lblURLwww 
@@ -174,7 +204,7 @@ Begin VB.Form frmDNNinstellingen
       Index           =   0
       Left            =   120
       TabIndex        =   0
-      Top             =   1560
+      Top             =   2040
       Width           =   1815
    End
 End
@@ -191,7 +221,7 @@ Sub ToggleProperties(toggleSet As Boolean)
 
     ButtonDefaultResetForMapMarnt.Visible = toggleSet
     ButtonDefaultResetForOneDrive.Visible = toggleSet
-    cmdBewaar.Visible = toggleSet
+    CmdBewaar.Visible = toggleSet
     
     txtURLwww.Enabled = toggleSet
     txtSkyDriveMap.Enabled = toggleSet
@@ -222,6 +252,14 @@ Private Sub ButtonCloudMarnt_Click()
         MsgBox "Kon " & Me.txtSkyDriveMap.text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
     End If
     
+End Sub
+
+Private Sub ButtonCodaIOMap_Click()
+
+    If ShellExecuteWithFallback(Me.txtCodaIOMap.text) = False Then
+        MsgBox "Kon " & Me.txtCodaIOMap.text & " niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+    End If
+
 End Sub
 
 Private Sub ButtonDefaultResetForMapMarnt_Click()
@@ -345,6 +383,8 @@ Private Sub ButtonToggle_Click()
     
 End Sub
 
+
+
 Private Sub CmdBewaar_Click()
 
     BeWaarTekst "dnnInstellingen", "Archief", Me.txtURLlokaal.text 'archief cloud
@@ -372,6 +412,11 @@ Private Sub Form_Load()
         Me.ButtonDefaultResetForOneDrive.Enabled = True
         Me.ButtonDefaultResetForMapMarnt.Enabled = True
     End If
+    
+    If LaadTekst("dnnInstellingen", "CodaIOMap") = "" Then
+        BeWaarTekst "dnnInstellingen", "CodaIOMap", LOCATION_DESKTOP
+        Me.txtCodaIOMap.text = LaadTekst("dnnInstellingen", "CodaIOMap")
+    End If
 
     If LaadTekst("dnnInstellingen", "Cloud") = "" Then
         Dim bedrijfsLoc As String
@@ -386,6 +431,7 @@ Private Sub Form_Load()
         Me.txtURLwww.text = LaadTekst("dnnInstellingen", "URLwww")
         Me.txtSkyDriveMap.text = LaadTekst("dnnInstellingen", "Cloud")
         Me.txtPDFpostvak.text = LaadTekst("dnnInstellingen", "Mario")
+        Me.txtCodaIOMap.text = LaadTekst("dnnInstellingen", "CodaIOMap")
     End If
 
 End Sub

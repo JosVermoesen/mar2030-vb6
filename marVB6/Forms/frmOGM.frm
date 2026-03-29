@@ -32,30 +32,10 @@ Begin VB.Form frmOGM
       Enabled         =   0   'False
       Height          =   345
       Left            =   1680
-      TabIndex        =   28
+      TabIndex        =   27
       TabStop         =   0   'False
       Top             =   360
       Width           =   2115
-   End
-   Begin VB.CheckBox Selektie 
-      Caption         =   "&Verrichtingen in afwachting uitsluiten"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   240
-      Index           =   1
-      Left            =   120
-      TabIndex        =   25
-      TabStop         =   0   'False
-      Top             =   1320
-      Value           =   1  'Checked
-      Width           =   3075
    End
    Begin VB.CheckBox cbLeveranciers 
       Alignment       =   1  'Right Justify
@@ -322,14 +302,14 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   77332483
+      Format          =   16580611
       CurrentDate     =   36327
       MinDate         =   35796
    End
    Begin MSComCtl2.DTPicker DatumVerwerking 
       Height          =   315
       Left            =   120
-      TabIndex        =   27
+      TabIndex        =   26
       Top             =   360
       Width           =   1455
       _ExtentX        =   2566
@@ -345,7 +325,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   77332483
+      Format          =   16580611
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -353,7 +333,7 @@ Begin VB.Form frmOGM
    Begin MSComCtl2.DTPicker DTPickerGlobalMemoDate 
       Height          =   315
       Left            =   3840
-      TabIndex        =   29
+      TabIndex        =   28
       Top             =   360
       Visible         =   0   'False
       Width           =   1455
@@ -370,7 +350,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   77332483
+      Format          =   16580611
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -379,7 +359,7 @@ Begin VB.Form frmOGM
       Caption         =   "Groep ID"
       Height          =   240
       Left            =   8760
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   120
       Width           =   855
    End
@@ -388,7 +368,7 @@ Begin VB.Form frmOGM
       Caption         =   "GuidLabel"
       Height          =   255
       Left            =   8760
-      TabIndex        =   26
+      TabIndex        =   25
       Top             =   360
       Width           =   2535
    End
@@ -1145,7 +1125,7 @@ Private Sub KTRLBalans(Fl As Integer)
     Err = 0
     rsAny.CursorLocation = adUseClient
     
-    Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.vs03, Leveranciers.v259, "
+    Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.vs03, Leveranciers.v259, Leveranciers.e072, "
     Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
     Msg = Msg & "Dokumenten.v037, Dokumenten.v039, Dokumenten.v249, "
     Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
@@ -1226,7 +1206,10 @@ ValidateRecord:
     dBetaald = Val(objectValue(rsAny("v037")))
     dTotaal = Val(objectValue(rsAny("v249")))
     If dBetaald = dTotaal Then Return
-    If objectValue(rsAny("rvDM")) = "0" And Me.Selektie(1).Value = vbChecked Then
+    If objectValue(rsAny("rvDM")) = "0" Then
+        Return
+    End If
+    If objectValue(rsAny("e072")) = "1" Then
         Return
     End If
 
@@ -1276,6 +1259,9 @@ ValidateRecord:
         aa = aa & Round((dTotaal - dBetaald) * EURO, 0) & vbTab
     ElseIf bhEuro = True Then
         'MsgBox "kontrolestop"
+        If Round((dTotaal - dBetaald), 2) < 0 Then
+            Return
+        End If
         aa = aa & Round((dTotaal - dBetaald), 2) & vbTab
     ElseIf bhEuro = False Then
         aa = aa & Round((dTotaal - dBetaald), 0) & vbTab

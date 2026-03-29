@@ -14,6 +14,7 @@
 "    v260  ","BIC bankrekening","A",14
 " 19 v017","Aardcode gestruktureerde mededeling","N",1
 "4   vs04","Betaaltermijn","A",4
+" 19 e072","Uitsluiten voor Betaalbestand?","N",1
 "&R  v016","Koppeling 6-Kostenrekening","N",7
 "@00 v149","ISOLandNummer, SQL-opvraging","n",3
 " 94 A109 *","Landcode volgens de POST","A",3
@@ -36,5 +37,4 @@
 "3   v018","Streefomzet (surplus commissie eindejaar)","D",9
 "    v247","Opmerkingen","A",50
 "    v227","Datum laatste bezoek","N",10
-" 19 e072","Papierarm?","N",1
 "    v254","SQL aankoopverrichting","A",50
