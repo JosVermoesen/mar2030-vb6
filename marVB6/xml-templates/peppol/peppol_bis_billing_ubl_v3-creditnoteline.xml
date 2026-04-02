@@ -1,4 +1,4 @@
-<cac:CreditNoteLine>
+﻿<cac:CreditNoteLine>
        <cbc:ID>{lineCounter+1}</cbc:ID>
        <cbc:CreditedQuantity unitCode="{unitCode}">{lineQuantity}</cbc:CreditedQuantity>
        <cbc:LineExtensionAmount currencyID="{currency}">{lineExtensionAmount}</cbc:LineExtensionAmount>

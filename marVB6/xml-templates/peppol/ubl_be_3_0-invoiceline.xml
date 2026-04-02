@@ -1,4 +1,4 @@
-<cac:InvoiceLine>
+﻿<cac:InvoiceLine>
        <cbc:ID>{lineCounter+1}</cbc:ID>
        <cbc:InvoicedQuantity unitCode="{unitCode}">{lineQuantity}</cbc:InvoicedQuantity>
        <cbc:LineExtensionAmount currencyID="{currency}">{lineExtensionAmount}</cbc:LineExtensionAmount>

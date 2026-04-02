@@ -292,7 +292,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76873731
+         Format          =   78970883
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -515,10 +515,13 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 DefInt A-Z
 
+Dim rsAny As ADODB.Recordset
+
 Dim BeginBalans As Integer
 Dim dokumentSleutel As String * 8
 
-Dim DefaultRekening As String * 7
+Dim DefaultRekening As String * 7 'Leveranciers
+
 Dim RekeningNummer(9) As String * 7
 Dim Uittreksel(9) As String * 6
 Dim RecNummer(9) As Integer
@@ -579,6 +582,92 @@ Dim sDatumNieuwSaldo As String
 Dim iOptelCtrlCheckUp As Integer
 Dim cDebetSaldo As Currency
 Dim cCreditSaldo As Currency
+
+Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refString As String, IbanAccount As String, lineAmount As String) As String
+    
+    Dim VoorLetter  As String * 1
+    Dim aa          As Variant
+    Dim dBetaald    As Double
+    Dim dTotaal     As Double
+    Dim checkerSEPA As String
+    Dim clientNumber As String
+    Dim formattedAmount As String
+            
+    formattedAmount = Str(Val(lineAmount))
+    CtrlDocuments = ""
+    Set rsAny = New ADODB.Recordset
+    
+    ' v259 is banc account
+    ' v249 te betalen
+    ' refString starting with 104 is insurance
+    ' clientNumber is 6 numbers on position 4 to 7 + position 9 to 10
+    If isSeller Then
+        Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.v259, "
+        Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
+        Msg = Msg & "Dokumenten.v037, Dokumenten.v038, Dokumenten.v039, Dokumenten.v249, "
+        Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
+        Msg = Msg & "FROM Leveranciers, Dokumenten "
+        Msg = Msg & "WHERE Dokumenten.v034 = 'L' + Leveranciers.A110 "
+        Msg = Msg & "AND Dokumenten.v039 = '" + refString + "' "
+        Msg = Msg & "AND Leveranciers.v259 = '" + IbanAccount + "' "
+        Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
+        Msg = Msg & "ORDER BY Dokumenten.v037 "
+    Else
+        Msg = "SELECT Klanten.A110, Klanten.A100, Klanten.v259, "
+        Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
+        Msg = Msg & "Dokumenten.v037, Dokumenten.v038, Dokumenten.v039, Dokumenten.v249, "
+        Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
+        Msg = Msg & "FROM Klanten, Dokumenten "
+        Msg = Msg & "WHERE Dokumenten.v034 = 'K' + Klanten.A110 "
+        Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
+        If refIsCor And Mid(refString, 1, 3) = "104" Then
+            clientNumber = Mid(refString, 4, 4) + Mid(refString, 9, 2)
+            Msg = Msg & "AND Klanten.A110 = '" + clientNumber + "' "
+        End If
+        Msg = Msg & "ORDER BY Dokumenten.v037 "
+    End If
+    Screen.MousePointer = vbHourglass
+   
+    On Error Resume Next
+    Err = 0
+    rsAny.CursorLocation = adUseClient
+    
+    SnelHelpPrint Msg, BL_LOGGING
+    Screen.MousePointer = vbHourglass
+    rsAny.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
+    Screen.MousePointer = vbNormal
+    If Err Then
+        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+    ElseIf rsAny.RecordCount = 0 Then
+        MsgBox "Geen documenten gevonden"
+        Exit Function
+    ElseIf rsAny.RecordCount = 1 Then
+        rsAny.MoveFirst
+        CtrlDocuments = rsAny(3) & "|" & rsAny(1) & "|" & rsAny(0)
+        GoTo FinishFunction
+    Else
+        rsAny.MoveFirst
+        Stop
+        Do While Not rsAny.EOF
+            GoSub ValidateDocument
+            rsAny.MoveNext
+        Loop
+        rsAny.Close
+        Set rsAny = Nothing
+    End If
+    Screen.MousePointer = vbNormal
+    
+    Exit Function
+
+ValidateDocument:
+    Stop
+    Return
+    
+FinishFunction:
+    rsAny.Close
+    Set rsAny = Nothing
+    
+End Function
 
 
 Private Sub Afsluiten_Click()
@@ -753,6 +842,7 @@ Private Sub ButtonReadCamt053_Click()
     ReDim xdaLinesOMSArray(20)
     xdaLinesOMSArray() = Split(xdaLinesOMS, vbTab)
     xdaParseToArray (xdaLinesDATA)
+    'For TTT = 0 To UBound(xdaLinesOMSArray): Print TTT; " "; xdaLinesOMSArray(TTT); " => "; xdaLinesDATAArray(0, TTT): Next
     
     Dim beginSaldoXDA As Double
     Dim bedragTransactie As Double
@@ -779,50 +869,196 @@ Private Sub ButtonReadCamt053_Click()
             Msg = "Noch teller (niet essentiëel), noch beginsaldo (essentieel)" & vbCrLf
             Msg = Msg + "Bij beheer van meerdere rekeningen, duidt eerst de rekening aan voor .XDA import en probeer opnieuw"
             MsgBox Msg, vbInformation
-            'Exit Sub
-            MsgBox "Should now be Exit Sub"
+            Exit Sub
         Case 1
             SnelHelpPrint "Beginsaldo ok", BL_LOGGING
         Case 2
             SnelHelpPrint "Volgnummer + beginsaldo ok", BL_LOGGING
     End Select
     
-    aa = "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
+    aa = "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
     cumulSaldo = beginSaldoXDA
     mfgLijst.AddItem aa, mfgLijst.Rows - 1
         
     On Local Error GoTo 0
     SnelHelpPrint "Preparing book list with xdaLinesData", BL_LOGGING
+    
+    Dim resultReturn As String
+    Dim isCor As Boolean
+    Dim isSeller As Boolean
+    Dim lineReference As String
+    Dim resultArray() As String
+        
     For T = 0 To UBound(xdaLinesDATAArray) - 1
         aa = Dec(T + 1, "000") & vbTab
         bedragTransactie = Val(xdaLinesDATAArray(T, 1))
                 
         aa = aa & xdaLinesDATAArray(T, 2) & vbTab
-        aa = aa & bedragTransactie & vbTab
         'TODO: Evaluate Debit or Credit
         Select Case xdaLinesDATAArray(T, 2)
             Case "0101000" '(5-C) SEPA Credit Transfer Type SEPA Transfer with Structured Communiaction (Creditor) (SCOR)
                 bedragTransactie = -bedragTransactie
+                Stop
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
                 
             Case "0103000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
+                Stop
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = "-"
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
                 
+                'If Len(xdaLinesDATAArray(T, 5)) = 0 Then
+                '    isSeller = True
+                'ElseIf Len(xdaLinesDATAArray(T, 6)) = 0 Then
+                '    isSeller = False
+                'Else
+                '    MsgBox "stop "
+                'End If
+                    
+                ReDim resultArray(5)
+                resultReturn = CtrlDocuments(True, isCor, lineReference, xdaLinesDATAArray(T, 7), xdaLinesDATAArray(T, 1))
+                If resultReturn = "" Then
+                    MsgBox "Geen resultaat", vbExclamation
+                Else
+                    resultArray() = Split(resultReturn, "|")
+                    aa = aa & "+" & resultArray(0) & vbTab
+                    aa = aa & String99(READING, 9) & vbTab
+                    aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                    aa = aa & resultArray(1) & vbTab
+                End If
+                
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                                
             Case "0107000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
+                Stop
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = "-"
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
                 
+                'If Len(xdaLinesDATAArray(T, 5)) = 0 Then
+                '    isSeller = True
+                'ElseIf Len(xdaLinesDATAArray(T, 6)) = 0 Then
+                '    isSeller = False
+                'Else
+                '    MsgBox "stop "
+                'End If
+                    
+                ReDim resultArray(5)
+                resultReturn = CtrlDocuments(True, isCor, lineReference, xdaLinesDATAArray(T, 7), xdaLinesDATAArray(T, 1))
+                If resultReturn = "" Then
+                    MsgBox "Geen resultaat", vbExclamation
+                Else
+                    resultArray() = Split(resultReturn, "|")
+                    aa = aa & "+" & resultArray(0) & vbTab
+                    aa = aa & String99(READING, 9) & vbTab
+                    aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                    aa = aa & resultArray(1) & vbTab
+                End If
+                
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                                
             Case "0201000" '(5-C) Unknow BBA Type Incoming Transfer (Creditor)
                 bedragTransactie = -bedragTransactie
-                
+                Stop
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                                
             Case "0402000" '(5-C) ATM Cash Withdrawal Type Card payment
                 bedragTransactie = -bedragTransactie
-                
+                Stop
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                                
             Case "0501000" '(5-C) SEPA Direct Debit CORE Type Direct Debit (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
+                Stop
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                                            
+            Case "0150000", "0250000"
+                '0150000 (5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
+                '0250000 (5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = "-"
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
                 
-            Case "0150000" '(5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
-            Case "0250000" '(5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
+                'If Len(xdaLinesDATAArray(T, 5)) = 0 Then
+                '    isSeller = True
+                'ElseIf Len(xdaLinesDATAArray(T, 6)) = 0 Then
+                '    isSeller = False
+                'Else
+                '    MsgBox "stop "
+                'End If
+                    
+                ReDim resultArray(5)
+                resultReturn = CtrlDocuments(False, isCor, lineReference, xdaLinesDATAArray(T, 7), xdaLinesDATAArray(T, 1))
+                If resultReturn = "" Then
+                    MsgBox "Geen resultaat", vbExclamation
+                Else
+                    resultArray() = Split(resultReturn, "|")
+                    aa = aa & "+" & resultArray(0) & vbTab
+                    aa = aa & String99(READING, 9) & vbTab
+                    aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                    aa = aa & resultArray(1) & vbTab
+                End If
+            
             Case "0254000" '(5-D) Unknown BBA Code Incoming Transfer
+                Stop
+                aa = aa & "+" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
+                
             Case "0550000" '(5-D) Unknown BBA Type Direct Debit (Debtor) (Ustrd)
+                Stop
+                aa = aa & "+" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & "" & vbTab
                             
             Case Else
                 MsgBox "stop: " & xdaLinesDATAArray(T, 2)
@@ -834,12 +1070,13 @@ Private Sub ButtonReadCamt053_Click()
     
     MsgBox "TODO: give chance to edit for lines not 100% sure"
         
-    'MsgBox "TODO: book or [Esc]!"
-    'If Not CopyFile(xdaLocation, LCase(LOCATION_COMPANYDATA + "coda\in"), Mim.Teken.FileTitle) Then
-    '    MsgBox filePath & " kan niet verplaatst worden.  Probeer eventueel manueel", vbInformation
-    'Else
-    '    Kill filePath
-    'End If
+    MsgBox "TODO: book or [Esc]!"
+    GoTo OnCancel
+    If Not CopyFile(xdaLocation, LCase(LOCATION_COMPANYDATA + "coda\in"), Mim.Teken.FileTitle) Then
+        MsgBox filePath & " kan niet verplaatst worden.  Probeer eventueel manueel", vbInformation
+    Else
+        Kill filePath
+    End If
        
 OnCancel:
     
@@ -858,6 +1095,8 @@ Function fnTestBetaalopdracht()
     Mid(boString, 12, 3) = "123"                    'codenummer fin.instelling
     
 End Function
+
+
 
 
 
@@ -888,27 +1127,43 @@ End Sub
 
 
 Private Sub Form_Load()
-
     
     mfgLijst.Rows = 2
-    mfgLijst.Cols = 4
+    mfgLijst.Cols = 7
     mfgLijst.Row = 0
     
     mfgLijst.Col = 0
-    mfgLijst.text = "Volgnr"
-    mfgLijst.ColWidth(0) = 690
+    mfgLijst.ColAlignment(0) = flexAlignLeftCenter
+    mfgLijst.text = "Lijn"
+    mfgLijst.ColWidth(0) = 450
     
     mfgLijst.Col = 1
+    mfgLijst.ColAlignment(1) = flexAlignLeftCenter
     mfgLijst.text = "BBA Code"
-    mfgLijst.ColWidth(1) = 1000
+    mfgLijst.ColWidth(1) = 975
     
     mfgLijst.Col = 2
-    mfgLijst.text = "Bedrag"
-    mfgLijst.ColWidth(2) = 990
-        
+    mfgLijst.ColAlignment(2) = flexAlignLeftCenter
+    mfgLijst.text = "Document"
+    mfgLijst.ColWidth(2) = 1500
+    
     mfgLijst.Col = 3
+    mfgLijst.ColAlignment(3) = flexAlignLeftCenter
+    mfgLijst.text = "TegenRek."
+    mfgLijst.ColWidth(3) = 1005
+        
+    mfgLijst.Col = 4
+    mfgLijst.text = "Bedrag"
+    mfgLijst.ColWidth(4) = 990
+    
+    mfgLijst.Col = 5
+    mfgLijst.ColAlignment(5) = flexAlignLeftCenter
+    mfgLijst.text = "Omschrijving"
+    mfgLijst.ColWidth(5) = 1920
+            
+    mfgLijst.Col = 6
     mfgLijst.text = "Cumul Saldo"
-    mfgLijst.ColWidth(3) = 1220
+    mfgLijst.ColWidth(6) = 1215
             
     If LaadTekst("dnnInstellingen", "CodaIOMap") = "" Then
         BeWaarTekst "dnnInstellingen", "CodaIOMap", LOCATION_DESKTOP

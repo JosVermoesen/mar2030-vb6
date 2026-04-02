@@ -9,7 +9,7 @@ Begin VB.Form frmOGM
    ClientHeight    =   6060
    ClientLeft      =   960
    ClientTop       =   1320
-   ClientWidth     =   11730
+   ClientWidth     =   11280
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "MS Sans Serif"
@@ -25,21 +25,23 @@ Begin VB.Form frmOGM
    MinButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   6060
-   ScaleWidth      =   11730
+   ScaleWidth      =   11280
    StartUpPosition =   1  'CenterOwner
    Begin VB.CheckBox CheckBoxForceExecutionDate 
-      Caption         =   "Forceer Memodatum"
+      Alignment       =   1  'Right Justify
+      Caption         =   "Fixeer Memodatum"
       Enabled         =   0   'False
-      Height          =   345
-      Left            =   1680
+      Height          =   225
+      Left            =   120
       TabIndex        =   27
       TabStop         =   0   'False
-      Top             =   360
-      Width           =   2115
+      Top             =   960
+      Width           =   2175
    End
    Begin VB.CheckBox cbLeveranciers 
       Alignment       =   1  'Right Justify
       Caption         =   "Enkel Leveranciers"
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -49,12 +51,12 @@ Begin VB.Form frmOGM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   255
-      Left            =   5340
+      Height          =   375
+      Left            =   6300
       TabIndex        =   24
-      Top             =   1320
+      Top             =   1080
       Value           =   1  'Checked
-      Width           =   1710
+      Width           =   1590
    End
    Begin VB.CheckBox chkAfdrukInVenster 
       Caption         =   "In venster"
@@ -68,9 +70,9 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   9000
+      Left            =   8280
       TabIndex        =   23
-      Top             =   1260
+      Top             =   720
       Value           =   1  'Checked
       Width           =   1050
    End
@@ -85,20 +87,20 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   5400
+      Left            =   4680
       Style           =   2  'Dropdown List
       TabIndex        =   1
-      Top             =   360
+      Top             =   45
       Width           =   3315
    End
    Begin MSFlexGridLib.MSFlexGrid grdDokumentDetail 
-      Height          =   2835
+      Height          =   3555
       Left            =   0
       TabIndex        =   5
-      Top             =   2160
+      Top             =   1680
       Width           =   11205
       _ExtentX        =   19764
-      _ExtentY        =   5001
+      _ExtentY        =   6271
       _Version        =   393216
       FixedCols       =   0
       BackColor       =   -2147483624
@@ -122,14 +124,14 @@ Begin VB.Form frmOGM
       Height          =   345
       Left            =   4140
       TabIndex        =   11
-      Top             =   5310
+      Top             =   5610
       Width           =   1515
    End
    Begin MSMask.MaskEdBox mebRekening 
       Height          =   315
       Left            =   60
       TabIndex        =   7
-      Top             =   5340
+      Top             =   5640
       Width           =   2655
       _ExtentX        =   4683
       _ExtentY        =   556
@@ -158,12 +160,12 @@ Begin VB.Form frmOGM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1035
-      Left            =   10260
+      Height          =   795
+      Left            =   9960
       Picture         =   "frmOGM.frx":0000
       Style           =   1  'Graphical
       TabIndex        =   17
-      Top             =   900
+      Top             =   240
       Width           =   1035
    End
    Begin VB.CommandButton Samenstellen 
@@ -177,11 +179,11 @@ Begin VB.Form frmOGM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   300
-      Left            =   3780
+      Height          =   420
+      Left            =   4620
       TabIndex        =   15
       TabStop         =   0   'False
-      Top             =   1320
+      Top             =   1080
       Width           =   1125
    End
    Begin VB.TextBox TekstLijn 
@@ -189,9 +191,9 @@ Begin VB.Form frmOGM
       ForeColor       =   &H00000000&
       Height          =   285
       Index           =   2
-      Left            =   3780
+      Left            =   4620
       TabIndex        =   3
-      Top             =   960
+      Top             =   720
       Width           =   1635
    End
    Begin VB.TextBox TekstLijn 
@@ -199,12 +201,13 @@ Begin VB.Form frmOGM
       ForeColor       =   &H00000000&
       Height          =   285
       Index           =   3
-      Left            =   5460
+      Left            =   6300
       TabIndex        =   4
-      Top             =   960
+      Top             =   720
       Width           =   1635
    End
    Begin VB.CheckBox Selektie 
+      Alignment       =   1  'Right Justify
       Caption         =   "C&ontrole Vervaldag"
       Enabled         =   0   'False
       BeginProperty Font 
@@ -218,14 +221,15 @@ Begin VB.Form frmOGM
       EndProperty
       Height          =   225
       Index           =   0
-      Left            =   120
+      Left            =   2520
       TabIndex        =   13
       TabStop         =   0   'False
-      Top             =   840
+      Top             =   1290
       Value           =   1  'Checked
       Width           =   1755
    End
    Begin VB.CheckBox Selektie 
+      Alignment       =   1  'Right Justify
       Caption         =   "&Enkel dit boekjaar"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -238,12 +242,12 @@ Begin VB.Form frmOGM
       EndProperty
       Height          =   240
       Index           =   2
-      Left            =   120
+      Left            =   2520
       TabIndex        =   14
       TabStop         =   0   'False
-      Top             =   1080
+      Top             =   840
       Value           =   1  'Checked
-      Width           =   1635
+      Width           =   1755
    End
    Begin VB.CommandButton Drukken 
       Caption         =   "Af&drukken"
@@ -256,12 +260,12 @@ Begin VB.Form frmOGM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   300
-      Left            =   9000
+      Height          =   420
+      Left            =   8280
       TabIndex        =   16
       TabStop         =   0   'False
-      Top             =   900
-      Width           =   1125
+      Top             =   1140
+      Width           =   1155
    End
    Begin VB.CommandButton cmdSluiten 
       Cancel          =   -1  'True
@@ -275,18 +279,18 @@ Begin VB.Form frmOGM
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   300
-      Left            =   9000
+      Height          =   360
+      Left            =   9960
       TabIndex        =   18
       TabStop         =   0   'False
-      Top             =   1620
-      Width           =   1125
+      Top             =   1200
+      Width           =   1035
    End
    Begin MSComCtl2.DTPicker dtpMemoDatum 
       Height          =   315
       Left            =   2760
       TabIndex        =   9
-      Top             =   5340
+      Top             =   5640
       Width           =   1335
       _ExtentX        =   2355
       _ExtentY        =   556
@@ -302,15 +306,15 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   76611587
       CurrentDate     =   36327
       MinDate         =   35796
    End
    Begin MSComCtl2.DTPicker DatumVerwerking 
       Height          =   315
-      Left            =   120
+      Left            =   840
       TabIndex        =   26
-      Top             =   360
+      Top             =   480
       Width           =   1455
       _ExtentX        =   2566
       _ExtentY        =   556
@@ -325,16 +329,16 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   76611587
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
    End
    Begin MSComCtl2.DTPicker DTPickerGlobalMemoDate 
       Height          =   315
-      Left            =   3840
+      Left            =   840
       TabIndex        =   28
-      Top             =   360
+      Top             =   1200
       Visible         =   0   'False
       Width           =   1455
       _ExtentX        =   2566
@@ -350,7 +354,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   76611587
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -358,7 +362,7 @@ Begin VB.Form frmOGM
    Begin VB.Label Label1 
       Caption         =   "Groep ID"
       Height          =   240
-      Left            =   8760
+      Left            =   120
       TabIndex        =   29
       Top             =   120
       Width           =   855
@@ -367,9 +371,9 @@ Begin VB.Form frmOGM
       BorderStyle     =   1  'Fixed Single
       Caption         =   "GuidLabel"
       Height          =   255
-      Left            =   8760
+      Left            =   960
       TabIndex        =   25
-      Top             =   360
+      Top             =   105
       Width           =   2535
    End
    Begin VB.Label Label3 
@@ -379,7 +383,7 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8220
       TabIndex        =   22
-      Top             =   5340
+      Top             =   5640
       Width           =   495
    End
    Begin VB.Label Label2 
@@ -387,10 +391,9 @@ Begin VB.Form frmOGM
       BorderStyle     =   1  'Fixed Single
       Caption         =   "BEF"
       Height          =   315
-      Left            =   8220
+      Left            =   5940
       TabIndex        =   21
-      Top             =   5040
-      Visible         =   0   'False
+      Top             =   5640
       Width           =   495
    End
    Begin VB.Label lblEUR 
@@ -400,7 +403,7 @@ Begin VB.Form frmOGM
       Height          =   315
       Left            =   8760
       TabIndex        =   20
-      Top             =   5340
+      Top             =   5640
       Width           =   1395
    End
    Begin VB.Label lblBEF 
@@ -408,17 +411,16 @@ Begin VB.Form frmOGM
       BackColor       =   &H80000018&
       BorderStyle     =   1  'Fixed Single
       Height          =   315
-      Left            =   8760
+      Left            =   6480
       TabIndex        =   19
-      Top             =   5040
-      Visible         =   0   'False
+      Top             =   5640
       Width           =   1395
    End
    Begin VB.Label lbBank 
       Caption         =   "Ban&k"
       Height          =   240
       Index           =   0
-      Left            =   5400
+      Left            =   4080
       TabIndex        =   0
       Top             =   120
       Width           =   600
@@ -429,7 +431,7 @@ Begin VB.Form frmOGM
       Height          =   195
       Left            =   4800
       TabIndex        =   10
-      Top             =   5100
+      Top             =   5340
       Width           =   795
    End
    Begin VB.Label lbReferte 
@@ -437,7 +439,7 @@ Begin VB.Form frmOGM
       Height          =   195
       Left            =   120
       TabIndex        =   6
-      Top             =   5100
+      Top             =   5340
       Width           =   855
    End
    Begin VB.Label lbMemoDatum 
@@ -445,7 +447,7 @@ Begin VB.Form frmOGM
       Height          =   195
       Left            =   2820
       TabIndex        =   8
-      Top             =   5100
+      Top             =   5340
       Width           =   1155
    End
    Begin VB.Label LabelGroupDate 
@@ -453,15 +455,15 @@ Begin VB.Form frmOGM
       Height          =   240
       Left            =   120
       TabIndex        =   12
-      Top             =   120
+      Top             =   480
       Width           =   735
    End
    Begin VB.Label lbVanTot 
       Caption         =   "&Van - Tot"
-      Height          =   240
-      Left            =   3840
+      Height          =   255
+      Left            =   4680
       TabIndex        =   2
-      Top             =   720
+      Top             =   480
       Width           =   840
    End
 End
@@ -770,7 +772,6 @@ Function XmlOGM()
     documentTemplate = Replace(documentTemplate, "{debtorBIC}", debtorBIC)
         
     Dim templateNoOGM As String
-    Dim templateNoRef As String
     Dim templateWithOGM As String
                     
     Ktrl = ScrLeesBestandAlleTekst(templateNoOGM, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-no-ogm.xml")
@@ -778,10 +779,6 @@ Function XmlOGM()
         MsgBox "Onverwachte situatie", vbCritical
     End If
     Ktrl = ScrLeesBestandAlleTekst(templateWithOGM, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-ogm.xml")
-    If Ktrl = 0 Then
-        MsgBox "Onverwachte situatie", vbCritical
-    End If
-    Ktrl = ScrLeesBestandAlleTekst(templateNoRef, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-trans-no-ref.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
     End If
@@ -796,7 +793,8 @@ Function XmlOGM()
     Dim lineCreditorName As String
     Dim lineCreditorIban As String
     Dim lineReference As String
-       
+    Dim composedReference As String
+           
     Dim volgNR As Integer
     For volgNR = 1 To grdDokumentDetail.Rows - 1
         If Len(grdDokumentDetail.TextMatrix(volgNR, 3)) <> 10 Then
@@ -809,10 +807,10 @@ Function XmlOGM()
         lineAmount = Dec(grdDokumentDetail.TextMatrix(volgNR, 5), "")
         lineCreditorIban = grdDokumentDetail.TextMatrix(volgNR, 6)
         
-        'TODO: check betaalreferte if it is OGM
+        'TODO: check if it is OGM
         linePayRef = IbanCheck(grdDokumentDetail.TextMatrix(volgNR, 7), False, False)
         If linePayRef = grdDokumentDetail.TextMatrix(volgNR, 7) Then
-            'OGM
+            'AN OGM
             thisTransaction = templateWithOGM
             thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
             thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
@@ -823,25 +821,29 @@ Function XmlOGM()
             
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
         ElseIf Trim(grdDokumentDetail.TextMatrix(volgNR, 7)) = "" Then
-            'NO REF!
-            thisTransaction = templateNoRef
+            'NOTHING FOR REF!
+            thisTransaction = templateNoOGM
             thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
             thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
             thisTransaction = Replace(thisTransaction, "{amount}", lineAmount)
             thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
             thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
             
+            composedReference = "ORef: " + grdDokumentDetail.TextMatrix(volgNR, 2)
+            thisTransaction = Replace(thisTransaction, "{manualReference}", composedReference)
+                        
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
         Else
-            'NO OGM
+            'REF BUT NOT AN OGM
             thisTransaction = templateNoOGM
-            
             thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
             thisTransaction = Replace(thisTransaction, "{endToEndId}", lineEndToEndId)
             thisTransaction = Replace(thisTransaction, "{amount}", lineAmount)
             thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
             thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
-            thisTransaction = Replace(thisTransaction, "{manualReference}", Trim(grdDokumentDetail.TextMatrix(volgNR, 7)))
+            
+            composedReference = "Ref: " + Trim(grdDokumentDetail.TextMatrix(volgNR, 7)) + " ORef: " + grdDokumentDetail.TextMatrix(volgNR, 2)
+            thisTransaction = Replace(thisTransaction, "{manualReference}", composedReference)
             
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
         End If
@@ -927,6 +929,8 @@ Private Sub CheckBoxForceExecutionDate_Click()
     
 End Sub
 
+
+
 Private Sub CmdEmailNBB_Click()
 
     Dim result As Boolean
@@ -998,7 +1002,6 @@ For Teller = 1 To grdDokumentDetail.Rows - 1
     VeldTXT(4) = Left(grdDokumentDetail.TextMatrix(Teller, 1), 30)
     VeldTXT(5) = grdDokumentDetail.TextMatrix(Teller, 6)
     VeldTXT(6) = grdDokumentDetail.TextMatrix(Teller, 7)
-    VeldTXT(7) = grdDokumentDetail.TextMatrix(Teller, 8)
     PrintVelden
 Next
 PrintTotaal
@@ -1027,8 +1030,7 @@ Private Sub Form_Load()
     Msg = "Deze module werkt voorlopig enkel met éénzelfde memodatum." & vbCrLf & vbCrLf
     Msg = Msg & "Datum + 1 of hoger (max. een toekomstige datum binnen het jaar!)"
     MsgBox Msg, vbExclamation, "XML betaalbestand aanmaken"
-    
-    
+        
     dtpMemoDatum.MinDate = Now
     creationDateTime = GetCreationDateTime
     
@@ -1039,7 +1041,7 @@ Private Sub Form_Load()
     TekstLijn(2).text = "0"
     TekstLijn(3).text = String$(12, "z")
     grdDokumentDetail.Rows = 2
-    grdDokumentDetail.Cols = 9
+    grdDokumentDetail.Cols = 8
     grdDokumentDetail.Row = 0
     
     grdDokumentDetail.Col = 0
@@ -1072,12 +1074,8 @@ Private Sub Form_Load()
         
     grdDokumentDetail.Col = 7
     grdDokumentDetail.text = "Referte/OGM"
-    grdDokumentDetail.ColWidth(7) = 1380
-        
-    grdDokumentDetail.Col = 8
-    grdDokumentDetail.text = "DocID"
-    grdDokumentDetail.ColWidth(8) = 960
-        
+    grdDokumentDetail.ColWidth(7) = 2790
+            
     bGetOrGreater TABLE_VARIOUS, 1, "28"
     If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "28" Then
         MsgBox "Eerst parameters van een financiële instelling inbrengen via 'Diverse Gebruikersfiches' a.u.b.", vbInformation

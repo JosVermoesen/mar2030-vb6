@@ -358,7 +358,7 @@ Begin VB.Form DirekteVerkoop
             Name            =   "MS Sans Serif"
             Size            =   8.25
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -2196,9 +2196,16 @@ If Me.OptionPEPPOL_V3.Enabled = False Then
 End If
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoice.xml")
-    If Ktrl = 0 Then
-        MsgBox "Onverwachte situatie", vbCritical
+    If Me.Medekontraktant.Value = vbChecked Then
+        Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicecontractor.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
+    Else
+        Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoice.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
     End If
 Else
     Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-creditnote.xml")
@@ -2307,9 +2314,16 @@ globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotal
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
 
-Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicetaxline.xml")
-If Ktrl = 0 Then
-    MsgBox "Onverwachte situatie", vbCritical
+If Me.Medekontraktant.Value = vbChecked Then
+    Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicetaxlinecontractor.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
+Else
+    Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicetaxline.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
 End If
 
 '0%, 6%, 12%, 21%
@@ -2353,9 +2367,16 @@ Next
 documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoiceline.xml")
-    If Ktrl = 0 Then
-        MsgBox "Onverwachte situatie", vbCritical
+    If Me.Medekontraktant.Value = vbChecked Then
+        Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicelinecontractor.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
+    Else
+        Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoiceline.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
     End If
 Else
     Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-creditnoteline.xml")
@@ -3334,8 +3355,12 @@ Private Sub CmbExtraAfdruk_Click()
             If KtrlBox = vbNo Then
                 Exit Sub
             Else
-                MsgBox "Neem eerst contact op met Vsoft 1985", vbCritical
-                Exit Sub
+                If VSF_PRO = False Then
+                    MsgBox "Neem met ons contact op voor een code.", vbInformation
+                    Exit Sub
+                Else
+
+                End If
             End If
         End If
     End If
@@ -4924,6 +4949,9 @@ Private Sub Medekontraktant_Click()
         MsgBox Msg, vbExclamation
         LblInBtw.Visible = False
         LblIn2Btw.Visible = False
+        Me.OptionPEPPOL_V3.Value = vbChecked
+        Me.OptionUBL_BE_3_0.Enabled = False
+        
     Else
         LblInBtw.Visible = True
         LblIn2Btw.Visible = True
@@ -6066,9 +6094,16 @@ If Me.OptionUBL_BE_3_0.Enabled = False Then
 End If
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoice.xml")
-    If Ktrl = 0 Then
-        MsgBox "Onverwachte situatie", vbCritical
+    If Me.Medekontraktant.Value = vbChecked Then
+        Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicecontractor.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
+    Else
+        Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoice.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
     End If
 Else
     'ubl_be_3_0-creditnote
@@ -6188,11 +6223,17 @@ globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotal
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
 
-Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicetaxline.xml")
-If Ktrl = 0 Then
-    MsgBox "Onverwachte situatie", vbCritical
+If Me.Medekontraktant.Value = vbChecked Then
+    Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicetaxlinecontractor.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
+Else
+    Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicetaxline.xml")
+    If Ktrl = 0 Then
+        MsgBox "Onverwachte situatie", vbCritical
+    End If
 End If
-
 '0%, 6%, 12%, 21%
 For T = 0 To 3
     If BTWEuroBasis(T) <> 0 Then
@@ -6234,9 +6275,16 @@ Next
 documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
 If Left(invoiceNumber, 2) = "V0" Then
-    Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoiceline.xml")
-    If Ktrl = 0 Then
-        MsgBox "Onverwachte situatie", vbCritical
+    If Me.Medekontraktant.Value = vbChecked Then
+        Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoicelinecontractor.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
+    Else
+        Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-invoiceline.xml")
+        If Ktrl = 0 Then
+            MsgBox "Onverwachte situatie", vbCritical
+        End If
     End If
 Else
     Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\ubl_be_3_0-creditnoteline.xml")

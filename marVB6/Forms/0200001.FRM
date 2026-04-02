@@ -143,7 +143,7 @@ Begin VB.Form DirekteAankoop
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
-         Caption         =   "Check steeds Peppol"
+         Caption         =   "Check Peppol"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -154,11 +154,11 @@ Begin VB.Form DirekteAankoop
             Strikethrough   =   0   'False
          EndProperty
          Height          =   360
-         Left            =   3000
+         Left            =   3360
          TabIndex        =   47
          TabStop         =   0   'False
          Top             =   0
-         Width           =   1815
+         Width           =   1455
       End
       Begin VB.CommandButton ButtonOptimize 
          Caption         =   "Dubbels Vermijden"
@@ -199,15 +199,6 @@ Begin VB.Form DirekteAankoop
       Begin VB.CommandButton cbImportUBL 
          Caption         =   "&UBL B2B IN"
          Enabled         =   0   'False
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   315
          Left            =   5040
          TabIndex        =   0
@@ -278,6 +269,7 @@ Begin VB.Form DirekteAankoop
          TabPicture(0)   =   "0200001.frx":035E
          Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "LeverancierInfo"
+         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
@@ -291,6 +283,7 @@ Begin VB.Form DirekteAankoop
          TabPicture(2)   =   "0200001.frx":0396
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "ListView1"
+         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin VB.CommandButton cmdXLog 
             Caption         =   "Geactiveerde leverancier Inkijken / Wijzigen"
@@ -2435,9 +2428,9 @@ If Trim(TekstInfo12.text) = "" Then
 End If
 
 If Trim(TekstInfo4.text) = "" Then
-    MsgBox "BetaalReferte is verplicht", vbInformation
-    TekstInfo4.SetFocus
-    Exit Sub
+    'MsgBox "BetaalReferte is verplicht", vbInformation
+    'TekstInfo4.SetFocus
+    'Exit Sub
 End If
 
 

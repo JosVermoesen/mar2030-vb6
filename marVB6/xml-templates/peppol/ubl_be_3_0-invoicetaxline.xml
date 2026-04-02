@@ -1,4 +1,4 @@
-<cac:TaxSubtotal>
+﻿<cac:TaxSubtotal>
     <cbc:TaxableAmount currencyID="{currency}">{taxableAmount}</cbc:TaxableAmount>
     <cbc:TaxAmount currencyID="{currency}">{taxAmount}</cbc:TaxAmount>
     <cac:TaxCategory>
