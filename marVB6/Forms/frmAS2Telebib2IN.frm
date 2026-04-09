@@ -1,7 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
-Object = "{20C62CAE-15DA-101B-B9A8-444553540000}#1.1#0"; "msmapi32.ocx"
 Begin VB.Form As2TelebibIn 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Inkomende uitwisseling"
@@ -356,7 +355,6 @@ Begin VB.Form As2TelebibIn
          _ExtentX        =   16748
          _ExtentY        =   3625
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
@@ -371,7 +369,6 @@ Begin VB.Form As2TelebibIn
          _ExtentX        =   16325
          _ExtentY        =   3519
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
@@ -386,7 +383,6 @@ Begin VB.Form As2TelebibIn
          _ExtentX        =   16536
          _ExtentY        =   4260
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
@@ -401,7 +397,6 @@ Begin VB.Form As2TelebibIn
          _ExtentX        =   16748
          _ExtentY        =   4895
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
@@ -416,7 +411,6 @@ Begin VB.Form As2TelebibIn
          _ExtentX        =   16536
          _ExtentY        =   4260
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          AutoVerbMenu    =   -1  'True
@@ -477,28 +471,6 @@ Begin VB.Form As2TelebibIn
       TabStop         =   0   'False
       Top             =   1320
       Width           =   1245
-   End
-   Begin MSMAPI.MAPIMessages MPIBericht 
-      Left            =   7560
-      Top             =   720
-      _ExtentX        =   1005
-      _ExtentY        =   1005
-      _Version        =   393216
-      AddressEditFieldCount=   1
-      AddressModifiable=   0   'False
-      AddressResolveUI=   0   'False
-      FetchSorted     =   0   'False
-      FetchUnreadOnly =   0   'False
-   End
-   Begin MSMAPI.MAPISession MPISessie 
-      Left            =   6960
-      Top             =   720
-      _ExtentX        =   1005
-      _ExtentY        =   1005
-      _Version        =   393216
-      DownloadMail    =   -1  'True
-      LogonUI         =   -1  'True
-      NewSession      =   0   'False
    End
    Begin VB.Label lblAantalBerichten 
       BorderStyle     =   1  'Fixed Single
@@ -594,7 +566,7 @@ DefInt A-Z
 
 Dim pdfY As Double
 Dim tellertje As Integer
-Dim lijnTeller As Integer
+Dim LijnTeller As Integer
 Dim troelala$
 
 Dim MaandVerwerking As String
@@ -859,24 +831,24 @@ GBOeinde:
 End Sub
 
 
-Private Sub cbMailBerichten_Click()
+'Private Sub cbMailBerichten_Click()
 
-    Me.MPIBericht.MsgIndex = Me.cbMailBerichten.ListIndex
-    If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
-        If Me.MPIBericht.AttachmentCount <> 0 Then
-            Me.rtbMail.LoadFile MPIBericht.AttachmentPathName
-            Me.cbMailManueel.Enabled = True
-        Else
-            Me.rtbMail.text = "Er is geen TB2 bijlage?"
-            Me.cbMailManueel.Enabled = False
-        End If
-    Else
-        Me.rtbMail.text = Me.MPIBericht.MsgNoteText
-        Me.cbMailManueel.Enabled = False
-    End If
-    Me.cbMailBerichten.SetFocus
-    
-End Sub
+'    Me.MPIBericht.MsgIndex = Me.cbMailBerichten.ListIndex
+'    If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
+'        If Me.MPIBericht.AttachmentCount <> 0 Then
+'            Me.rtbMail.LoadFile MPIBericht.AttachmentPathName
+'            Me.cbMailManueel.Enabled = True
+'        Else
+'            Me.rtbMail.text = "Er is geen TB2 bijlage?"
+'            Me.cbMailManueel.Enabled = False
+'        End If
+'    Else
+'        Me.rtbMail.text = Me.MPIBericht.MsgNoteText
+'        Me.cbMailManueel.Enabled = False
+'    End If
+'    Me.cbMailBerichten.SetFocus
+'
+'End Sub
 
 Private Sub cbNogEens_Click()
 
@@ -1555,17 +1527,17 @@ cbAS2BerichtTypeHistoriek.AddItem "IPM.NOTE.ASSURNET: IPM Vrij Bericht Assurnet"
 
 InstallMij
 
-On Error Resume Next
-MPISessie.DownLoadMail = True
-MPISessie.SignOn
-If Err Then
-    SnelHelpPrint "GBO Services beschikbaar - AS2Dispatch niet beschikbaar", False
-    'MsgBox "GBO Services beschikbaar" & vbCrLf & "AS2Dispatch niet beschikbaar" & vbCrLf & Error, vbInformation
-    cbAS2BerichtType.Enabled = False
-Else
-    MPIBericht.SessionID = MPISessie.SessionID
-    cbAS2BerichtType.ListIndex = 0
-End If
+'On Error Resume Next
+'MPISessie.DownLoadMail = True
+'MPISessie.SignOn
+'If Err Then
+'    SnelHelpPrint "GBO Services beschikbaar - AS2Dispatch niet beschikbaar", False
+'    'MsgBox "GBO Services beschikbaar" & vbCrLf & "AS2Dispatch niet beschikbaar" & vbCrLf & Error, vbInformation
+'    cbAS2BerichtType.Enabled = False
+'Else
+'    MPIBericht.SessionID = MPISessie.SessionID
+'    cbAS2BerichtType.ListIndex = 0
+'End If
 
 On Error Resume Next
 Me.SetFocus
@@ -1576,8 +1548,8 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 
 On Error Resume Next
-Me.MPIBericht.Save
-MPISessie.SignOff
+'Me.MPIBericht.Save
+'MPISessie.SignOff
 
 End Sub
 
@@ -1790,7 +1762,7 @@ typePTY = ""
 Xarray = Split(strBericht, "'")
 XGHarray = Split(Xarray(0), "+")
 
-lijnTeller = 0
+LijnTeller = 0
 
 bGet TABLE_SUPPLIERS, 0, vSet("CO" & strMij, 12)
 If Ktrl Then
@@ -2436,94 +2408,94 @@ End Sub
 
 Function VernieuwMAPIBerichten()
 
-MPIBericht.FetchMsgType = Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1)
-MPIBericht.Fetch
+'MPIBericht.FetchMsgType = Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1)
+'MPIBericht.Fetch
 
-lblAantalBerichten.Caption = MPIBericht.MsgCount
-lbBerichten.Clear
-RichTextBox1.TextRTF = ""
-If MPIBericht.MsgCount > 0 Then
-    On Error Resume Next
-    For COUNT_TO = 0 To MPIBericht.MsgCount - 1
-        MPIBericht.MsgIndex = COUNT_TO
-        If Err Then Exit For
-        lbBerichten.AddItem Format(MPIBericht.MsgDateReceived, "yyyymmdd") & " " & MPIBericht.MsgSubject
-    Next
-    On Error GoTo 0
-    If lbBerichten.ListCount Then
-        lbBerichten.ListIndex = lbBerichten.ListCount - 1
-        On Error Resume Next
-        lbBerichten.SetFocus
-    End If
-End If
+'lblAantalBerichten.Caption = MPIBericht.MsgCount
+'lbBerichten.Clear
+'RichTextBox1.TextRTF = ""
+'If MPIBericht.MsgCount > 0 Then
+'    On Error Resume Next
+'    For COUNT_TO = 0 To MPIBericht.MsgCount - 1
+'        MPIBericht.MsgIndex = COUNT_TO
+'        If Err Then Exit For
+'        lbBerichten.AddItem Format(MPIBericht.MsgDateReceived, "yyyymmdd") & " " & MPIBericht.MsgSubject
+'    Next
+'    On Error GoTo 0
+'    If lbBerichten.ListCount Then
+'        lbBerichten.ListIndex = lbBerichten.ListCount - 1
+'        On Error Resume Next
+'        lbBerichten.SetFocus
+'    End If
+'End If'
 
-cmdEManueel.Enabled = False
-cmdPManueel.Enabled = False
-cbPrintNote.Enabled = False
-If MPIBericht.MsgCount > 0 Then
-    If Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPC.AS2.E1" Then
-        cmdEManueel.Enabled = True
-        cmdEManueel.Default = True
-    ElseIf Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPM.NOTE.ASSURNET" Then
-        cbPrintNote.Enabled = True
-        cbPrintNote.Default = True
-    Else
-        cmdPManueel.Enabled = True
-        cmdPManueel.Default = True
-    End If
-    
-End If
+'cmdEManueel.Enabled = False
+'cmdPManueel.Enabled = False
+'cbPrintNote.Enabled = False
+'If MPIBericht.MsgCount > 0 Then
+'    If Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPC.AS2.E1" Then
+'        cmdEManueel.Enabled = True
+'        cmdEManueel.Default = True
+'    ElseIf Mid(cbAS2BerichtType.text, 1, InStr(cbAS2BerichtType.text, ":") - 1) = "IPM.NOTE.ASSURNET" Then
+'        cbPrintNote.Enabled = True
+'        cbPrintNote.Default = True
+'    Else
+'        cmdPManueel.Enabled = True
+'        cmdPManueel.Default = True
+'    End If
+'
+'End If
 
 End Function
 
 Function refreshMPIBericht() As Boolean
 
 
-    MPIBericht.FetchMsgType = "IPM"
-    MPIBericht.Fetch
+    'MPIBericht.FetchMsgType = "IPM"
+    'MPIBericht.Fetch
 
-    lblAantalBerichten.Caption = MPIBericht.MsgCount
-    Me.cbMailBerichten.Clear
-    Me.rtbMail.TextRTF = ""
+    'lblAantalBerichten.Caption = MPIBericht.MsgCount
+    'Me.cbMailBerichten.Clear
+    'Me.rtbMail.TextRTF = ""
     
-    Dim aantalRB As Integer
-    Dim cbMailTekstLijn As String
+    'Dim aantalRB As Integer
+    'Dim cbMailTekstLijn As String
     
-    aantalRB = 0
-    Me.cbMailBerichten.Clear
-    If MPIBericht.MsgCount > 0 Then
-        On Error Resume Next
-        For COUNT_TO = 0 To MPIBericht.MsgCount - 1
-            MPIBericht.MsgIndex = COUNT_TO
-            ' TODO
-            ' eerst kijken of het mailadres in orde is
-            If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
-                cbMailTekstLijn = "ok RBR-mail:=" & Me.MPIBericht.RecipAddress  'MPIBericht.MsgSubject
-                'dan controleren of er attachment is met TB2
-                If Me.MPIBericht.AttachmentCount <> 0 Then
-                    aantalRB = aantalRB + 1
-                    ' ? MPIBericht.AttachmentPathName
-                    ' C:\Users\Jos\AppData\Local\Temp\BR298247.txt
-                    'me.rtbMail.LoadFile MPIBericht.AttachmentPathName
-                    cbMailTekstLijn = cbMailTekstLijn & " Bijlage Gevonden : " & Me.MPIBericht.AttachmentPathName
-               Else
-                    cbMailTekstLijn = cbMailTekstLijn & " Geen Bijlage Gevonden/Ongeldig: " & Me.MPIBericht.MsgSubject
-                End If
-            Else
-                cbMailTekstLijn = "niet ok voor RBR:=" & Me.MPIBericht.RecipAddress & " : " & MPIBericht.MsgSubject
-            End If
-    
-            If Err Then Exit For
-            Me.cbMailBerichten.AddItem cbMailTekstLijn ', Me.cbMailBerichten.ListCount - 1
-        Next
-        Me.tbTelRetours.text = Str(aantalRB)
-    On Error GoTo 0
-    If Me.cbMailBerichten.ListCount Then
-        Me.cbMailBerichten.ListIndex = 0
-        On Error Resume Next
-        Me.cbMailBerichten.SetFocus
-    End If
-End If
+    'aantalRB = 0
+    'Me.cbMailBerichten.Clear
+    'If MPIBericht.MsgCount > 0 Then
+    '    On Error Resume Next
+    '    For COUNT_TO = 0 To MPIBericht.MsgCount - 1
+    '        MPIBericht.MsgIndex = COUNT_TO
+    '        ' TODO
+    '        ' eerst kijken of het mailadres in orde is
+    '        If InStr(Me.MPIBericht.RecipAddress, Me.txtMailBox.text) Then
+    '            cbMailTekstLijn = "ok RBR-mail:=" & Me.MPIBericht.RecipAddress  'MPIBericht.MsgSubject
+    '            'dan controleren of er attachment is met TB2
+    '            If Me.MPIBericht.AttachmentCount <> 0 Then
+    '                aantalRB = aantalRB + 1
+    '                ' ? MPIBericht.AttachmentPathName
+    '                ' C:\Users\Jos\AppData\Local\Temp\BR298247.txt
+    '                'me.rtbMail.LoadFile MPIBericht.AttachmentPathName
+    '                cbMailTekstLijn = cbMailTekstLijn & " Bijlage Gevonden : " & Me.MPIBericht.AttachmentPathName
+    '           Else
+    '                cbMailTekstLijn = cbMailTekstLijn & " Geen Bijlage Gevonden/Ongeldig: " & Me.MPIBericht.MsgSubject
+    '            End If
+    '        Else
+    '            cbMailTekstLijn = "niet ok voor RBR:=" & Me.MPIBericht.RecipAddress & " : " & MPIBericht.MsgSubject
+    '        End If
+   '
+   '         If Err Then Exit For
+    '        Me.cbMailBerichten.AddItem cbMailTekstLijn ', Me.cbMailBerichten.ListCount - 1
+    '    Next
+    '    Me.tbTelRetours.text = Str(aantalRB)
+    'On Error GoTo 0
+    'If Me.cbMailBerichten.ListCount Then
+    '    Me.cbMailBerichten.ListIndex = 0
+    '    On Error Resume Next
+    '    Me.cbMailBerichten.SetFocus
+    'End If
+'End If
 
 End Function
 
@@ -2551,8 +2523,8 @@ End Sub
 
 Private Sub lbBerichten_Click()
 
-MPIBericht.MsgIndex = lbBerichten.ListIndex
-RichTextBox1.text = MPIBericht.MsgNoteText
+'MPIBericht.MsgIndex = lbBerichten.ListIndex
+'RichTextBox1.text = MPIBericht.MsgNoteText
 
 End Sub
 
@@ -2905,27 +2877,27 @@ Private Sub cbFetch_Click()
     
 ProbeerNogEens:
     DoEvents
-    Me.MPIBericht.Fetch
-    If Err = 32053 Then
-        GoSub mailLogon
-        GoTo ProbeerNogEens
-    Else
-        Me.refreshMPIBericht
-        Me.cbMailBerichten.ListIndex = 0
-    End If
-    DoEvents
-    Exit Sub
+    'Me.MPIBericht.Fetch
+    'If Err = 32053 Then
+    '    GoSub mailLogon
+    '    GoTo ProbeerNogEens
+    'Else
+    '    Me.refreshMPIBericht
+    '    Me.cbMailBerichten.ListIndex = 0
+    'End If
+    'DoEvents
+    'Exit Sub
     
 mailLogon:
-    Err = 0
-    MPISessie.DownLoadMail = True
-    MPISessie.SignOn
-    If Err Then
-        MsgBox "Mail niet beschikbaar" & vbCrLf & Error, vbInformation
-        Me.cbMailBerichten.Enabled = False
-    Else
-        MPIBericht.SessionID = MPISessie.SessionID
-    End If
-Return
+    'Err = 0
+    'MPISessie.DownLoadMail = True
+    'MPISessie.SignOn
+    'If Err Then
+    '    MsgBox "Mail niet beschikbaar" & vbCrLf & Error, vbInformation
+    '    Me.cbMailBerichten.Enabled = False
+    'Else
+    '    MPIBericht.SessionID = MPISessie.SessionID
+    'End If
+'Return
 
 End Sub

@@ -131,15 +131,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbAfbeelding"
-      Tab(1).Control(1)=   "OLE1"
+      Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(1)=   "cbAfbeelding"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obTAB(1)"
+      Tab(2).Control(0)=   "Label3"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "Label3"
+      Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -269,7 +269,6 @@ Begin VB.Form DirekteAankoop
          TabPicture(0)   =   "0200001.frx":035E
          Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "LeverancierInfo"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Bewerken"
          TabPicture(1)   =   "0200001.frx":037A
@@ -283,7 +282,6 @@ Begin VB.Form DirekteAankoop
          TabPicture(2)   =   "0200001.frx":0396
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "ListView1"
-         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin VB.CommandButton cmdXLog 
             Caption         =   "Geactiveerde leverancier Inkijken / Wijzigen"
@@ -1633,12 +1631,13 @@ Private Sub cbImportUBL_Click()
             result = CheckDocument
             Select Case uitwisselingDATAArray(4)
                 Case "071", "084"
-                    documentCode = "Debetnota (" + uitwisselingDATAArray(4) + ")"
+                    documentCode = "Debetnota" ' (" + uitwisselingDATAArray(4) + ")"
                 Case "380", "386"
-                    documentCode = "Factuur (" + uitwisselingDATAArray(4) + ")"
+                    documentCode = "Factuur" ' (" + uitwisselingDATAArray(4) + ")"
                 Case "381"
-                    documentCode = "Creditnota (" + uitwisselingDATAArray(4) + ")"
-                    
+                    documentCode = "Creditnota" ' (" + uitwisselingDATAArray(4) + ")"
+                Case "575"
+                    documentCode = "Verzekering" ' (" + uitwisselingDATAArray(4) + ")"
                 Case Else
                     documentCode = uitwisselingDATAArray(4)
             
@@ -2037,8 +2036,13 @@ Else
     TekstInfo4.ClipMode = 0
     TekstInfo4.PromptInclude = True
     TekstInfo4.Mask = ""
-    TekstInfo4.text = ""
 End If
+TekstInfo4.text = vBibTekst(TABLE_SUPPLIERS, "#v412 #")
+If Trim(TekstInfo4.text) = "" Then
+Else
+    TekstInfo4.Enabled = False
+End If
+
 If vBibTekst(TABLE_SUPPLIERS, "#v254 #") <> "" Then
     cmdSQLInfo.Visible = True
 End If
@@ -2231,14 +2235,23 @@ TekstInfo12.text = uitwisselingDATAArray(1)
 If adminNoVat Then
     TekstInfo5.text = "0"
 Else
-    TekstInfo5.text = Str((Val(uitwisselingDATAArray(21)) - Val(uitwisselingDATAArray(20))))
+    If AankoopFlg = 0 Then
+        TekstInfo5.text = Str((Val(uitwisselingDATAArray(21)) - Val(uitwisselingDATAArray(20))))
+        TekstInfo5.Enabled = True
+    Else
+        MsgBox "EU aankoopdocument. Btw automatisch op 21%. Verbeter indien nodig.", vbExclamation
+        TekstInfo5.text = Dec(Val(uitwisselingDATAArray(20)) * 21 / 100, ".##")
+        TekstInfo7.text = TekstInfo5.text
+        TekstInfo5.Enabled = True
+        TekstInfo7.Enabled = False
+    End If
 End If
 TekstInfo6.text = uitwisselingDATAArray(21)
 TekstInfo1.Enabled = False
 TekstInfo2.Enabled = False
 TekstInfo4.Enabled = False
 TekstInfo12.Enabled = False
-TekstInfo5.Enabled = False
+'TekstInfo5.Enabled = False
 TekstInfo6.Enabled = False
 TekstInfo12.Enabled = False
 

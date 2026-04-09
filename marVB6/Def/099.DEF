@@ -100,8 +100,8 @@
 "1   s047","Straat en Nummer","A",30
 "1   s048","Postkode[spatie]Woonplaats","A",30
 "1   s049","Telefoon","A",30
-"1   s292","Ondernemingsnummer (10)","A",30
-"1   s051","BTW Nummer (10)","A",30
+"1   s292","KBO Registratienummer (10)","A",30
+"1   s051","Origineel BTW Nummer (10)","A",30
 "1   s293","IBAN (16)","A",30
 "1   s294","BIC","A",30
 "1   s295","Mailadres onderneming","A",50

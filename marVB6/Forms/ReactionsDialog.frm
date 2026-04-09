@@ -5,8 +5,8 @@ Begin VB.Form FormReactionsDialog
    ClientLeft      =   2775
    ClientTop       =   3765
    ClientWidth     =   6405
-   ControlBox      =   0   'False
    LinkTopic       =   "Form1"
+   MinButton       =   0   'False
    ScaleHeight     =   3615
    ScaleWidth      =   6405
    StartUpPosition =   1  'CenterOwner

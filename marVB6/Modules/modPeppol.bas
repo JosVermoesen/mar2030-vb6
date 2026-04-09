@@ -291,28 +291,16 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
     
     For Each nEntry In xml.selectNodes("//Ntry")
     
-        whateveR = "---------------"
-        'Debug.Print whateveR
-        result = result & whateveR & vbCrLf
+        Dim EntryRef As String
+        Dim EntryAmount As String
+        Dim EntryBBACode As String
         
-        whateveR = GetNodeText(nEntry, "NtryRef")
-        'Debug.Print "EntryRef: " & whateveR
-        result = result & "EntryRef: " & whateveR & vbCrLf
-        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+        EntryRef = GetNodeText(nEntry, "NtryRef")
+        EntryAmount = GetNodeText(nEntry, "Amt")
+        EntryBBACode = GetNodeText(nEntry, "BkTxCd/Prtry/Cd")
                 
-        whateveR = GetNodeText(nEntry, "Amt")
-        'Debug.Print "Entry Amount: " & whateveR
-        result = result & "Entry Amount: " & whateveR & vbCrLf
-        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                
-        whateveR = GetNodeText(nEntry, "BkTxCd/Prtry/Cd")
-        'Debug.Print "Entry BBA Code: " & whateveR
-        result = result & "Entry BBA Code: " & whateveR & vbCrLf
-        xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-        
         ' ? FIX: Get TxDtls list safely
         Set txList = nEntry.selectNodes("NtryDtls/TxDtls")
-
         If txList Is Nothing Then
             xdaLinesDATA = xdaLinesDATA & skipString & vbCrLf
             GoTo NextEntry
@@ -336,6 +324,17 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
             Dim TxUstrd As String
             Dim TxType As String
 
+            whateveR = "---------------"
+            'Debug.Print whateveR
+            result = result & whateveR & vbCrLf
+                    
+            result = result & "EntryRef: " & EntryRef & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & EntryRef & vbTab
+            result = result & "Entry Amount: " & EntryAmount & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & EntryAmount & vbTab
+            result = result & "Entry BBA Code: " & EntryBBACode & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & EntryBBACode & vbTab
+        
             ' BBA code (TxDtls or fallback to Ntry)
             TxCode = GetNodeText(nTx, "BkTxCd/Prtry/Cd")
             If TxCode = "" Then
@@ -369,63 +368,40 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
 
             ' Output
             whateveR = "--------- TxDtls ---------"
-            'Debug.Print vbCrLf & whateveR
             result = result & whateveR & vbCrLf
+                        
+            result = result & " -TxRef: " & TxRef & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxRef & vbTab
+                        
+            result = result & " -TxAmount: " & TxAmount & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxAmount & vbTab
+                                    
+            result = result & " -Creditor: " & TxCreditor & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxCreditor & vbTab
+                        
+            result = result & " -Debtor: " & TxDebtor & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxDebtor & vbTab
+                        
+            result = result & " -IBAN: " & TxIBAN & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxIBAN & vbTab
             
-            whateveR = TxRef
-            'Debug.Print "  TxRef: " & whateveR
-            result = result & " -TxRef: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxAmount
-            'Debug.Print "  TxAmount: " & whateveR
-            result = result & " -TxAmount: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxCreditor
-            'Debug.Print "  Creditor: " & TxCreditor
-            result = result & " -Creditor: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxDebtor
-            'Debug.Print "  Debtor: " & TxDebtor
-            result = result & " -Debtor: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxIBAN
-            'Debug.Print "  IBAN: " & TxIBAN
-            result = result & " -IBAN: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxBIC
-            'Debug.Print "  BIC: " & TxBIC
-            result = result & " -BIC: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxSCOR
-            'Debug.Print "  SCOR: " & TxSCOR
-            result = result & " -SCOR: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxUstrd
-            'Debug.Print "  Ustrd: " & TxUstrd
-            result = result & " -Ustrd: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
-                    
-            whateveR = TxCode
-            'Debug.Print "  BBA Code: " & TxCode
-            result = result & " -BBA Code: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+            result = result & " -BIC: " & TxBIC & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxBIC & vbTab
+                        
+            result = result & " -SCOR: " & TxSCOR & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxSCOR & vbTab
+                        
+            result = result & " -Ustrd: " & TxUstrd & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxUstrd & vbTab
+                        
+            result = result & " -BBA Code: " & TxCode & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxCode & vbTab
            
-            whateveR = TxDesc
-            'Debug.Print "  Description: " & TxDesc
-            result = result & " -Description: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbTab
+            result = result & " -Description: " & TxDesc & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxDesc & vbTab
                     
-            whateveR = TxType
-            'Debug.Print "  Tx Type: " & TxType
-            result = result & " -Tx Type: " & whateveR & vbCrLf
-            xdaLinesDATA = xdaLinesDATA & whateveR & vbCrLf
+            result = result & " -Tx Type: " & TxType & vbCrLf
+            xdaLinesDATA = xdaLinesDATA & TxType & vbCrLf
     Next nTx
 
 NextEntry:
@@ -644,6 +620,8 @@ TRYFORCREDITNOTE:
                 isInvoiceTocheck = True
             Case "381"
                 isInvoiceTocheck = False
+            Case "575"
+                isInvoiceTocheck = True
             Case Else
                 MsgBox "Onbekende verwerkingscode " & Dec(Val(invTypeNode.text), "000") & vbCrLf & vbCrLf & "Bezorg ons het document. Dank voor medewerking", vbInformation
         End Select

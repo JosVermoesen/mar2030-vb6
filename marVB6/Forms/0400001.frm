@@ -354,15 +354,6 @@ Begin VB.Form DirekteVerkoop
       End
       Begin VB.CommandButton cbMonitortUBL 
          Caption         =   "&UBL B2B OUT"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          Height          =   315
          Left            =   5760
          TabIndex        =   65
@@ -1459,20 +1450,20 @@ Dim invoiceDueDate As String '2024-03-01
 Dim invoiceTypeCode As String '380 (see https://docs.peppol.eu/poac/pint/pint/trn-invoice/codelist/UNCL1001-inv/)
 Dim orderReference As String 'ex. 024010022505 as of +++024/0100/22505+++
 Dim supplierTaxScheme As String 'ex. VAT
+
 Dim supplierRegistrationId As String 'ex. 0423100736
-Dim supplierVatNumber As String 'ex. 0423100736 (Titeca)
+Dim supplierOriginalVatNumber As String 'ex. 0423100736 (Titeca)
+Dim supplierEUVatNumber As String 'BE0423100736
+
 Dim supplierRegistrationName As String 'Titeca Accountancy Merelbeke NV
 Dim supplierStreetName As String 'Fraterstraat 132
 Dim supplierCityName As String 'MERELBEKE
 Dim supplierPostalZone As String '9820
 Dim supplierCountryCode As String 'BE
-Dim supplierCompanyId As String '0423100736
-Dim supplierCompanyIdExtended As String 'BE0423100736
 Dim supplierTelephone As String '09 232 28 00
 Dim supplierElectronicMail As String
 
 'CUSTOMER:
-Dim customerVatNumber As String '0440058217
 Dim customerTaxScheme As String 'ex. VAT
 'if customer is VAT then else ?
 Dim customerName As String 'ex. Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
@@ -1480,8 +1471,11 @@ Dim customerStreetName As String 'Grote Baan 141
 Dim customerCityName As String 'HERDERSEM
 Dim customerPostalZone As String '9310
 Dim customerCountryCode As String 'BE
-Dim customerCompanyId As String '04400580217
-Dim customerCompanyIdExtended As String ''BE04400580217
+
+Dim customerRegistrationId As String '04400580217
+Dim customerOriginalVatNumber As String '0440058217
+Dim customerEUVatNumber As String ''BE04400580217
+
 Dim customerSchemeId As String '0208
 Dim customerRegistrationName As String 'Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
 Dim customerElectronicMail As String 'info@rv.be
@@ -1546,6 +1540,7 @@ Dim VerkoopFLG As Integer
 
 Dim AantalEx As String * 2
 Dim DefaultVerkoop As String * 7
+Dim sIsIntraFlg As String * 1
 Dim KontaktPersoon As Integer
 Dim rbtwVAK(10) As String * 7
 Dim Vr As Integer
@@ -1599,12 +1594,12 @@ Function checkForB2BInvoice() As Boolean
     
     customerCountryCode = Trim(RV(rsKlant, "v150"))
     If customerCountryCode = "BE" Then
-        If BtwKontrole(customerVatNumber, True) = customerVatNumber Then
+        If BtwKontrole(customerOriginalVatNumber, True) = customerOriginalVatNumber Then
         Else
             MsgBox "Deze klant heeft een ongeldig Belgisch Btwnummer." & vbCrLf & vbCrLf & "Klantfiche eerst bijwerken a.u.b.!", vbCritical
             Exit Function
         End If
-        If BtwKontrole(customerCompanyId, True) = customerCompanyId Then
+        If BtwKontrole(customerRegistrationId, True) = customerRegistrationId Then
         Else
             MsgBox "Deze klant heeft een ongeldig Belgisch Ondernemingsnummer." & vbCrLf & vbCrLf & "Klantfiche eerst bijwerken a.u.b.!", vbCritical
             Exit Function
@@ -1940,18 +1935,18 @@ documentTemplate = Replace(documentTemplate, "{documentDueDate}", invoiceDueDate
 documentTemplate = Replace(documentTemplate, "{documentTypeCode}", invoiceTypeCode)
 documentTemplate = Replace(documentTemplate, "{orderReference}", orderReference)
 documentTemplate = Replace(documentTemplate, "{supplierTaxScheme}", supplierTaxScheme)
-documentTemplate = Replace(documentTemplate, "{supplierVatNumber}", supplierVatNumber)
+documentTemplate = Replace(documentTemplate, "{supplierOriginalVatNumber}", supplierOriginalVatNumber)
 documentTemplate = Replace(documentTemplate, "{supplierRegistrationId}", supplierRegistrationId)
 documentTemplate = Replace(documentTemplate, "{supplierRegistrationName}", supplierRegistrationName)
 documentTemplate = Replace(documentTemplate, "{supplierStreetName}", supplierStreetName)
 documentTemplate = Replace(documentTemplate, "{supplierCityName}", supplierCityName)
 documentTemplate = Replace(documentTemplate, "{supplierPostalZone}", supplierPostalZone)
 documentTemplate = Replace(documentTemplate, "{supplierCountryCode}", supplierCountryCode)
-documentTemplate = Replace(documentTemplate, "{supplierCompanyId}", supplierCompanyId)
-documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supplierCompanyIdExtended)
+documentTemplate = Replace(documentTemplate, "{supplierRegistrationId}", supplierRegistrationId)
+documentTemplate = Replace(documentTemplate, "{supplierEUVatNumber}", supplierEUVatNumber)
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
 documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
-documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
+documentTemplate = Replace(documentTemplate, "{customerOriginalVatNumber}", customerOriginalVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerName)
 documentTemplate = Replace(documentTemplate, "{customerStreetName}", customerStreetName)
@@ -1959,8 +1954,8 @@ documentTemplate = Replace(documentTemplate, "{customerCityName}", customerCityN
 documentTemplate = Replace(documentTemplate, "{customerPostalZone}", customerPostalZone)
 documentTemplate = Replace(documentTemplate, "{customerCountryCode}", customerCountryCode)
 documentTemplate = Replace(documentTemplate, "{customerSchemeId}", customerSchemeId)
-documentTemplate = Replace(documentTemplate, "{customerCompanyId}", customerCompanyId)
-documentTemplate = Replace(documentTemplate, "{customerCompanyIdExtended}", customerCompanyIdExtended)
+documentTemplate = Replace(documentTemplate, "{customerRegistrationId}", customerRegistrationId)
+documentTemplate = Replace(documentTemplate, "{customerEUVatNumber}", customerEUVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerRegistrationName)
 documentTemplate = Replace(documentTemplate, "{customerElectronicMail}", customerElectronicMail)
 
@@ -2131,16 +2126,16 @@ invoiceCurrency = "" 'EUR
 'orderReference = "" 'ex. 024010022505 as of +++024/0100/22505+++
 'supplierTaxScheme = "" 'ex. VAT
 'supplierRegistrationId = "" 'ex. 0423100736
-'supplierVatNumber = "" 'ex. 0423100736 (Titeca)
+'supplierOriginalVatNumber = "" 'ex. 0423100736 (Titeca)
 'supplierRegistrationName = "" 'Titeca Accountancy Merelbeke NV
 'supplierStreetName = "" 'Fraterstraat 132
 'supplierCityName = "" 'MERELBEKE
 'supplierPostalZone = "" '9820
 'supplierCountryCode = "" 'BE
-'supplierCompanyId = "" 'BE0423100736
+'supplierRegistrationId = "" 'BE0423100736
 'supplierTelephone = "" '09 232 28 00
 'CUSTOMER:
-'customerVatNumber = "" '0440058217
+'customerOriginalVatNumber = "" '0440058217
 'customerTaxScheme = "" 'ex. VAT
 'if customer is VAT then else ?
 'customerName = "" 'ex. Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
@@ -2148,7 +2143,7 @@ invoiceCurrency = "" 'EUR
 'customerCityName = "" 'HERDERSEM
 'customerPostalZone = "" '9310
 'customerCountryCode = "" 'BE
-'customerCompanyId = "" 'BE04400580217
+'customerRegistrationId = "" 'BE04400580217
 'customerRegistrationName = "" 'Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
 'customerElectronicMail = "" 'info@rv.be
 'PAYMENTMEANS/TERMS
@@ -2241,8 +2236,8 @@ documentTemplate = Replace(documentTemplate, "{pdfFileName}", invoiceNumber + ".
 documentTemplate = Replace(documentTemplate, "{pdfBase64}", base64Str)
 
 documentTemplate = Replace(documentTemplate, "{supplierTaxScheme}", supplierTaxScheme)
-'supplierVatNumber = "0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierVatNumber}", supplierVatNumber)
+'supplierOriginalVatNumber = "0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierOriginalVatNumber}", supplierOriginalVatNumber)
 'tmpString = String99(READING, 46)
 'If InStr(tmpString, "&") Then 'verbeteren voor XML bestand!!!
 '    tmpString = Replace(tmpString, "&", "&amp;")
@@ -2259,10 +2254,10 @@ documentTemplate = Replace(documentTemplate, "{supplierCityName}", supplierCityN
 documentTemplate = Replace(documentTemplate, "{supplierPostalZone}", supplierPostalZone)
 'supplierCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{supplierCountryCode}", supplierCountryCode)
-'supplierCompanyId = "0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierCompanyId}", supplierCompanyId)
-'supplierCompanyIdExtended = "BE0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supplierCompanyIdExtended)
+'supplierRegistrationId = "0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierRegistrationId}", supplierRegistrationId)
+'supplierEUVatNumber = "BE0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierEUVatNumber}", supplierEUVatNumber)
 
 'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
@@ -2270,8 +2265,8 @@ documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTele
 'supplierElectronicMail
 documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
 
-'customerVatNumber = "0440058217"
-documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
+'customerOriginalVatNumber = "0440058217"
+documentTemplate = Replace(documentTemplate, "{customerOriginalVatNumber}", customerOriginalVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
 'customerName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerName)
@@ -2285,10 +2280,10 @@ documentTemplate = Replace(documentTemplate, "{customerPostalZone}", customerPos
 documentTemplate = Replace(documentTemplate, "{customerCountryCode}", customerCountryCode)
 'customerCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{customerSchemeId}", customerSchemeId)
-'customerCompanyId = "04400580217"
-documentTemplate = Replace(documentTemplate, "{customerCompanyId}", customerCompanyId)
-'customerCompanyIdExtended = "BE04400580217"
-documentTemplate = Replace(documentTemplate, "{customerCompanyIdExtended}", customerCompanyIdExtended)
+'customerRegistrationId = "04400580217"
+documentTemplate = Replace(documentTemplate, "{customerRegistrationId}", customerRegistrationId)
+'customerEUVatNumber = "BE04400580217"
+documentTemplate = Replace(documentTemplate, "{customerEUVatNumber}", customerEUVatNumber)
 
 'customerRegistrationName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerRegistrationName)
@@ -2314,7 +2309,7 @@ globalTotalAmount = Trim(Dec((Val(taxableGlobalTotalAmount) + Val(taxGlobalTotal
 documentTemplate = Replace(documentTemplate, "{taxInclusiveAmount}", globalTotalAmount)
 documentTemplate = Replace(documentTemplate, "{payableAmount}", globalTotalAmount)
 
-If Me.Medekontraktant.Value = vbChecked Then
+If Me.Medekontraktant.Value = vbChecked Or customerCountryCode <> "BE" Then
     Ktrl = ScrLeesBestandAlleTekst(invoiceTaxLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicetaxlinecontractor.xml")
     If Ktrl = 0 Then
         MsgBox "Onverwachte situatie", vbCritical
@@ -2327,47 +2322,56 @@ Else
 End If
 
 '0%, 6%, 12%, 21%
-For T = 0 To 3
-    If BTWEuroBasis(T) <> 0 Then
-        taxSubtotalLine = invoiceTaxLineTemplate
-        subTaxableAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxableAmount}", subTaxableAmount)
-                
-        If T = 0 Then
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", "0")
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "Z")
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", "00")
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", "0")
-        Else
-            subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "S")
-            subTaxCategory = Trim(Dec((T), "00"))
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
-            subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
-            taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
-        End If
 
-        subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxExclusiveAmount}", subTaxExclusiveAmount)
-        subTaxInclusiveAmount = Trim(Dec(BTWEuroBasis(T) + BTWEuroBedrag(T), MASK_EUR))
-        taxSubtotalLine = Replace(taxSubtotalLine, "{taxInclusiveAmount}", subTaxInclusiveAmount)
-        subPayableAmount = taxInclusiveAmount
-        taxSubtotalLine = Replace(taxSubtotalLine, "{payableAmount}", subPayableAmount)
-        taxSubtotalLine = Replace(taxSubtotalLine, "{currency}", invoiceCurrency)
-        taxSubtotalLine = Replace(taxSubtotalLine, "{supplierTaxScheme}", supplierTaxScheme)
+If customerCountryCode = "BE" Then
+
+    For T = 0 To 3
+        If BTWEuroBasis(T) <> 0 Then
+            taxSubtotalLine = invoiceTaxLineTemplate
+            subTaxableAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxableAmount}", subTaxableAmount)
+                
+            If T = 0 Then
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", "0")
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "Z")
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", "00")
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", "0")
+            Else
+                subTaxAmount = Trim(Dec((BTWEuroBedrag(T)), MASK_EUR))
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxAmount}", subTaxAmount)
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxIndex}", "S")
+                subTaxCategory = Trim(Dec((T), "00"))
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxCategory}", subTaxCategory)
+                subTaxPercent = Mid(fmarBoxText("002", "2", Trim(Str(T))), 4, 4)
+                taxSubtotalLine = Replace(taxSubtotalLine, "{taxPercent}", subTaxPercent)
+            End If
+
+            subTaxExclusiveAmount = Trim(Dec((BTWEuroBasis(T)), MASK_EUR))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxExclusiveAmount}", subTaxExclusiveAmount)
+            subTaxInclusiveAmount = Trim(Dec(BTWEuroBasis(T) + BTWEuroBedrag(T), MASK_EUR))
+            taxSubtotalLine = Replace(taxSubtotalLine, "{taxInclusiveAmount}", subTaxInclusiveAmount)
+            subPayableAmount = taxInclusiveAmount
+            taxSubtotalLine = Replace(taxSubtotalLine, "{payableAmount}", subPayableAmount)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{currency}", invoiceCurrency)
+            taxSubtotalLine = Replace(taxSubtotalLine, "{supplierTaxScheme}", supplierTaxScheme)
         
-        listTaxSubtotalLines = listTaxSubtotalLines + taxSubtotalLine
-        If T = 3 Then
-        Else
-            listTaxSubtotalLines = listTaxSubtotalLines + vbCrLf
+            listTaxSubtotalLines = listTaxSubtotalLines + taxSubtotalLine
+            If T = 3 Then
+            Else
+                listTaxSubtotalLines = listTaxSubtotalLines + vbCrLf
+            End If
         End If
-    End If
-Next
+    Next
+Else
+    taxSubtotalLine = invoiceTaxLineTemplate
+    taxSubtotalLine = Replace(taxSubtotalLine, "{currency}", invoiceCurrency)
+    taxSubtotalLine = Replace(taxSubtotalLine, "{taxableAmount}", taxableGlobalTotalAmount)
+    listTaxSubtotalLines = taxSubtotalLine
+End If
 documentTemplate = Replace(documentTemplate, "<Vsoft>{taxsubtotals-template}</Vsoft>", listTaxSubtotalLines)
 
 If Left(invoiceNumber, 2) = "V0" Then
-    If Me.Medekontraktant.Value = vbChecked Then
+    If Me.Medekontraktant.Value = vbChecked Or customerCountryCode <> "BE" Then
         Ktrl = ScrLeesBestandAlleTekst(invoiceLineTemplate, PROGRAM_LOCATION + "xml-templates\peppol\peppol_bis_billing_ubl_v3-invoicelinecontractor.xml")
         If Ktrl = 0 Then
             MsgBox "Onverwachte situatie", vbCritical
@@ -2637,7 +2641,7 @@ ElseIf dokumentType = "15" Then
             Exit Sub
         Else
             bEnd
-            If VerkoopFLG = 1 Then
+            If VerkoopFLG = 1 And sIsIntraFlg = "1" Then
                 Fl = TABLE_CUSTOMERS
                 aIndex = 29
                 dTTwb = Val(vBibTekst(TABLE_INVOICES, "#v060 #")) + Val(vBibTekst(TABLE_INVOICES, "#v062 #")) + Val(vBibTekst(TABLE_INVOICES, "#v089 #"))
@@ -2847,9 +2851,9 @@ Private Sub cbCheckTools_Click()
     Load ValidatingTool
 
     ValidatingTool.Caption = "Klanten Peppol Tools"
-    ValidatingTool.tbCompanyNumber = customerCompanyId
-    ValidatingTool.tbVatNumber = customerCountryCode + customerCompanyId
-    ValidatingTool.tbPeppolID = "0208:" + customerCompanyId
+    ValidatingTool.tbCompanyNumber = customerRegistrationId
+    ValidatingTool.tbVatNumber = customerCountryCode + customerRegistrationId
+    ValidatingTool.tbPeppolID = "0208:" + customerRegistrationId
     ValidatingTool.Show 1
     If Trim(ValidatingTool.TextBoxSupportedDocuments) = "" Then
     Else
@@ -3193,7 +3197,7 @@ If Not IsNull(rsMAR(TABLE_CUSTOMERS)("V224")) Then
     End If
 End If
 
-If Trim(customerVatNumber) = "" Then
+If Trim(customerOriginalVatNumber) = "" Then
 ElseIf VerkoopOptie(0).Value = True Then
     Mim.Report.WriteDoc (locPOSTVAKIN & "\" & idPdfForUbl)
     Dim peppolSuccess As Boolean
@@ -3633,7 +3637,7 @@ Private Sub CreditNota_Click()
 Dim peppolCtrl As Boolean
 
 If KlantInfo.Caption <> "" Then
-    If customerCompanyId = "" Then
+    If customerRegistrationId = "" Then
     Else
         peppolCtrl = checkForB2BInvoice()
     End If
@@ -3847,15 +3851,15 @@ pdfY = Mim.Report.VPEPRINT(8.5, pdfVsoftVanaf, dokumentSleutel & " / " & Str(Pag
 pdfY = Mim.Report.VPEPRINT(1.5, pdfY, vbCrLf)
 
 If Trim(RV(rsKlant, "A161")) = "" Then
-    customerCompanyIdExtended = ""
+    customerEUVatNumber = ""
 Else
-    customerCompanyId = Trim(RV(rsKlant, "v404"))
-    customerCompanyIdExtended = Trim(RV(rsKlant, "v150")) + customerCompanyId
-    customerVatNumber = Trim(RV(rsKlant, "A161"))
-    If customerVatNumber <> "" Then customerTaxScheme = "VAT"
+    customerRegistrationId = Trim(RV(rsKlant, "v404"))
+    customerOriginalVatNumber = Trim(RV(rsKlant, "A161"))
+    customerEUVatNumber = Trim(RV(rsKlant, "v150")) + customerOriginalVatNumber
+    If customerOriginalVatNumber <> "" Then customerTaxScheme = "VAT"
 End If
 
-pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerCompanyIdExtended, 14) & " " & TekstInfo0.text & " " & TekstInfo1.text)
+pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerEUVatNumber, 14) & " " & TekstInfo0.text & " " & TekstInfo1.text)
 pdfY = Mim.Report.VPEPRINT(1.5, pdfY, vbCrLf)
 
 If MeerLijn = 1 Then
@@ -4292,6 +4296,7 @@ End Function
 Private Sub Form_Activate()
 
 DoEvents
+On Local Error Resume Next
 DirekteVerkoop.SetFocus
 
 End Sub
@@ -4398,8 +4403,8 @@ Schoon
 
 supplierTaxScheme = ""
 supplierRegistrationId = Trim(String99(READING, 292))
-supplierVatNumber = Trim(String99(READING, 51))
-If supplierVatNumber = supplierRegistrationId Then supplierTaxScheme = "VAT"
+supplierOriginalVatNumber = Trim(String99(READING, 51))
+If supplierOriginalVatNumber = supplierRegistrationId Then supplierTaxScheme = "VAT"
 
 supplierRegistrationName = Trim(String99(READING, 46))
 supplierRegistrationName = CheckforAmp(supplierRegistrationName)
@@ -4412,6 +4417,7 @@ Else
     ForFait = 0
 End If
 KlantRekening = String99(READING, 9)
+sIsIntraFlg = Trim(String99(READING, 200))
 TekstInfo2.text = KlantRekening
 
 If String99(READING, 290) = "1" Then
@@ -4476,7 +4482,7 @@ Function checkSetUp() As Boolean
     Dim numberFalse As Integer
     
     checkSetUp = False
-    If supplierVatNumber = "" Then
+    If supplierOriginalVatNumber = "" Then
         MsgBox "controleer uw BTW taxschema a.u.b.", vbExclamation
         numberFalse = numberFalse + 1
     End If
@@ -4491,8 +4497,7 @@ Function checkSetUp() As Boolean
     supplierStreetName = CheckforAmp(supplierStreetName)
     
     supplierCountryCode = "BE"
-    supplierCompanyId = supplierRegistrationId
-    supplierCompanyIdExtended = "BE" + supplierCompanyId
+    supplierEUVatNumber = "BE" + supplierOriginalVatNumber
     
     supplierTelephone = String99(READING, 49)
     supplierIBAN = Trim(String99(READING, 293))
@@ -4538,15 +4543,15 @@ Klantje = vbCrLf & RV(rsKlant, "A100") & vbCrLf & _
         RV(rsKlant, "A109") & " " & _
         RV(rsKlant, "A107") & " " & RV(rsKlant, "A108")
 
-customerVatNumber = Trim(RV(rsKlant, "A161"))
-customerCompanyId = Trim(RV(rsKlant, "v404"))
+customerOriginalVatNumber = Trim(RV(rsKlant, "A161"))
+customerRegistrationId = Trim(RV(rsKlant, "v404"))
 customerA110 = Trim(RV(rsKlant, "A110"))
 
-If (customerVatNumber + customerCompanyId) = "" Then
+If (customerOriginalVatNumber + customerRegistrationId) = "" Then
     Me.cbCheckTools.Enabled = False
     Me.cbUncl1001.Visible = False
-ElseIf Len(customerCompanyId) > 0 And Len(customerVatNumber) = 0 Then
-    Msg = "Een Belgisch ondernemingsnummer (" & customerCompanyId & ") en geen btwnummer" & vbCrLf & vbCrLf
+ElseIf Len(customerRegistrationId) > 0 And Len(customerOriginalVatNumber) = 0 Then
+    Msg = "Een Belgisch ondernemingsnummer (" & customerRegistrationId & ") en geen btwnummer" & vbCrLf & vbCrLf
     Msg = Msg & "Overtuig U ervan dat de klant geen btw plichtige is." & vbCrLf & vbCrLf
     Msg = Msg & "Hierna wordt verder gewerkt als gewone klant relatie zonder Peppol verplichting"
     MsgBox Msg, vbExclamation
@@ -4554,7 +4559,7 @@ ElseIf Len(customerCompanyId) > 0 And Len(customerVatNumber) = 0 Then
     Me.cbUncl1001.Visible = False
 Else
     If VerkoopOptie(0).Value = True Or CreditNota.Value = True Then
-        If customerCompanyId = "" Then
+        If customerRegistrationId = "" Then
         Else
             ktrlKlant = Me.checkForB2BInvoice
             'If ktrlKlant = False Then
@@ -4565,7 +4570,7 @@ Else
     End If
 End If
 
-If customerCompanyId = "" Then
+If customerRegistrationId = "" Then
 ElseIf customerCountryCode = "BE" Then
     Dim beCustomerPeppolCheck As Boolean
     beCustomerPeppolCheck = CheckCustomerDocuments(customerA110)
@@ -4671,6 +4676,9 @@ Sjabloon.Enabled = True
         End If
         'kontroleren LU speciaal
     ElseIf InStr(SISO, RV(rsKlant, "v149")) Then
+        Me.OptionPEPPOL_V3.Value = vbChecked
+        Me.OptionUBL_BE_3_0.Enabled = False
+
         KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
         VerkoopFLG = 1
         Medekontraktant.Enabled = False
@@ -5223,7 +5231,7 @@ KlantInfo.Caption = ""
 Annuleren.Enabled = True
 Medekontraktant.Value = 0
 If VerkoopOptie(0).Enabled = True Then CreditNota.Value = 0
-customerVatNumber = ""
+customerOriginalVatNumber = ""
 
 Err = 0
 On Error Resume Next
@@ -5692,14 +5700,14 @@ Dim ktrlKlant As Boolean
 If KlantInfo.Caption <> "" Then
     Select Case Index
         Case 0
-            If customerCompanyId = "" Then
+            If customerRegistrationId = "" Then
             Else
                 ktrlKlant = Me.checkForB2BInvoice
             End If
             
         Case 1, 2
 
-            If customerCompanyId = "" Then
+            If customerRegistrationId = "" Then
             Else
                 ktrlKlant = Me.checkForB2BInvoice
             End If
@@ -6029,16 +6037,16 @@ invoiceCurrency = "" 'EUR
 'orderReference = "" 'ex. 024010022505 as of +++024/0100/22505+++
 'supplierTaxScheme = "" 'ex. VAT
 'supplierRegistrationId = "" 'ex. 0423100736
-'supplierVatNumber = "" 'ex. 0423100736 (Titeca)
+'supplierOriginalVatNumber = "" 'ex. 0423100736 (Titeca)
 'supplierRegistrationName = "" 'Titeca Accountancy Merelbeke NV
 'supplierStreetName = "" 'Fraterstraat 132
 'supplierCityName = "" 'MERELBEKE
 'supplierPostalZone = "" '9820
 'supplierCountryCode = "" 'BE
-'supplierCompanyId = "" 'BE0423100736
+'supplierRegistrationId = "" 'BE0423100736
 'supplierTelephone = "" '09 232 28 00
 'CUSTOMER:
-'customerVatNumber = "" '0440058217
+'customerOriginalVatNumber = "" '0440058217
 'customerTaxScheme = "" 'ex. VAT
 'if customer is VAT then else ?
 'customerName = "" 'ex. Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
@@ -6046,7 +6054,7 @@ invoiceCurrency = "" 'EUR
 'customerCityName = "" 'HERDERSEM
 'customerPostalZone = "" '9310
 'customerCountryCode = "" 'BE
-'customerCompanyId = "" 'BE04400580217
+'customerRegistrationId = "" 'BE04400580217
 'customerRegistrationName = "" 'Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv
 'customerElectronicMail = "" 'info@rv.be
 'PAYMENTMEANS/TERMS
@@ -6148,8 +6156,8 @@ documentTemplate = Replace(documentTemplate, "{pdfFileName}", invoiceNumber + ".
 documentTemplate = Replace(documentTemplate, "{pdfBase64}", base64Str)
 
 documentTemplate = Replace(documentTemplate, "{supplierTaxScheme}", supplierTaxScheme)
-'supplierVatNumber = "0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierVatNumber}", supplierVatNumber)
+'supplierOriginalVatNumber = "0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierOriginalVatNumber}", supplierOriginalVatNumber)
 'tmpString = String99(READING, 46)
 'If InStr(tmpString, "&") Then 'verbeteren voor XML bestand!!!
 '    tmpString = Replace(tmpString, "&", "&amp;")
@@ -6166,10 +6174,10 @@ documentTemplate = Replace(documentTemplate, "{supplierCityName}", supplierCityN
 documentTemplate = Replace(documentTemplate, "{supplierPostalZone}", supplierPostalZone)
 'supplierCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{supplierCountryCode}", supplierCountryCode)
-'supplierCompanyId = "0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierCompanyId}", supplierCompanyId)
-'supplierCompanyIdExtended = "BE0423100736"
-documentTemplate = Replace(documentTemplate, "{supplierCompanyIdExtended}", supplierCompanyIdExtended)
+'supplierRegistrationId = "0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierRegistrationId}", supplierRegistrationId)
+'supplierEUVatNumber = "BE0423100736"
+documentTemplate = Replace(documentTemplate, "{supplierEUVatNumber}", supplierEUVatNumber)
 
 'supplierTelephone = "09 232 28 00"
 documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTelephone)
@@ -6178,8 +6186,8 @@ documentTemplate = Replace(documentTemplate, "{supplierTelephone}", supplierTele
 documentTemplate = Replace(documentTemplate, "{supplierElectronicMail}", supplierElectronicMail)
                             
 
-'customerVatNumber = "0440058217"
-documentTemplate = Replace(documentTemplate, "{customerVatNumber}", customerVatNumber)
+'customerOriginalVatNumber = "0440058217"
+documentTemplate = Replace(documentTemplate, "{customerOriginalVatNumber}", customerOriginalVatNumber)
 documentTemplate = Replace(documentTemplate, "{customerTaxScheme}", customerTaxScheme)
 'customerName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerName)
@@ -6193,10 +6201,10 @@ documentTemplate = Replace(documentTemplate, "{customerPostalZone}", customerPos
 documentTemplate = Replace(documentTemplate, "{customerCountryCode}", customerCountryCode)
 'customerCountryCode = "BE"
 documentTemplate = Replace(documentTemplate, "{customerSchemeId}", customerSchemeId)
-'customerCompanyId = "04400580217"
-documentTemplate = Replace(documentTemplate, "{customerCompanyId}", customerCompanyId)
-'customerCompanyIdExtended = "BE04400580217"
-documentTemplate = Replace(documentTemplate, "{customerCompanyIdExtended}", customerCompanyIdExtended)
+'customerRegistrationId = "04400580217"
+documentTemplate = Replace(documentTemplate, "{customerRegistrationId}", customerRegistrationId)
+'customerEUVatNumber = "BE04400580217"
+documentTemplate = Replace(documentTemplate, "{customerEUVatNumber}", customerEUVatNumber)
 
 'customerRegistrationName = "Zakenkantoor Hedwig Roelandt en Jos Vermoesen bv"
 documentTemplate = Replace(documentTemplate, "{customerRegistrationName}", customerRegistrationName)

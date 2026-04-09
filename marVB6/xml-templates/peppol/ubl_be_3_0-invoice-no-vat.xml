@@ -27,7 +27,7 @@
        </cac:AdditionalDocumentReference>
        <cac:AccountingSupplierParty>
               <cac:Party>
-                     <cbc:EndpointID schemeID="0208">{supplierCompanyId}</cbc:EndpointID>
+                     <cbc:EndpointID schemeID="0208">{supplierRegistrationId}</cbc:EndpointID>
                      <cac:PartyName>
                             <cbc:Name>{supplierRegistrationName}</cbc:Name>
                      </cac:PartyName>
@@ -41,7 +41,7 @@
                      </cac:PostalAddress>
                      <cac:PartyLegalEntity>
                             <cbc:RegistrationName>{supplierRegistrationName}</cbc:RegistrationName>
-                            <cbc:CompanyID schemeID="0208">{supplierCompanyId}</cbc:CompanyID>
+                            <cbc:CompanyID schemeID="0208">{supplierRegistrationId}</cbc:CompanyID>
                      </cac:PartyLegalEntity>
 		     <cac:Contact>
                             <cbc:Telephone>{supplierTelephone}</cbc:Telephone>
@@ -51,7 +51,7 @@
        </cac:AccountingSupplierParty>
        <cac:AccountingCustomerParty>
               <cac:Party>
-                     <cbc:EndpointID schemeID="{customerSchemeId}">{customerCompanyId}</cbc:EndpointID>
+                     <cbc:EndpointID schemeID="{customerSchemeId}">{customerRegistrationId}</cbc:EndpointID>
                      <cac:PartyName>
                             <cbc:Name>{customerRegistrationName}</cbc:Name>
                      </cac:PartyName>
@@ -64,14 +64,14 @@
                             </cac:Country>
                      </cac:PostalAddress>
                      <cac:PartyTaxScheme>
-                            <cbc:CompanyID>{customerCompanyIdExtended}</cbc:CompanyID>
+                            <cbc:CompanyID>{customerEUVatNumber}</cbc:CompanyID>
                             <cac:TaxScheme>
                                    <cbc:ID>{customerTaxScheme}</cbc:ID>
                             </cac:TaxScheme>
                      </cac:PartyTaxScheme>
                      <cac:PartyLegalEntity>
                             <cbc:RegistrationName>{customerRegistrationName}</cbc:RegistrationName>
-                            <cbc:CompanyID schemeID="{customerSchemeId}">{customerCompanyId}</cbc:CompanyID>
+                            <cbc:CompanyID schemeID="{customerSchemeId}">{customerRegistrationId}</cbc:CompanyID>
                      </cac:PartyLegalEntity>
                      <cac:Contact>
                             <cbc:ElectronicMail>{customerElectronicMail}</cbc:ElectronicMail>

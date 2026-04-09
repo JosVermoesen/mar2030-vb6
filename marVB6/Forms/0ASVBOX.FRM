@@ -1,9 +1,10 @@
 VERSION 5.00
 Begin VB.Form KeuzeVSF 
+   BorderStyle     =   5  'Sizable ToolWindow
    Caption         =   "KeuzeLijst"
-   ClientHeight    =   2055
+   ClientHeight    =   3060
    ClientLeft      =   5505
-   ClientTop       =   4440
+   ClientTop       =   4320
    ClientWidth     =   4065
    ControlBox      =   0   'False
    BeginProperty Font 
@@ -19,8 +20,9 @@ Begin VB.Form KeuzeVSF
    MaxButton       =   0   'False
    MinButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   2055
+   ScaleHeight     =   3060
    ScaleWidth      =   4065
+   ShowInTaskbar   =   0   'False
    StartUpPosition =   1  'CenterOwner
    Begin VB.ListBox NTBoxLijst 
       BeginProperty Font 
@@ -32,7 +34,7 @@ Begin VB.Form KeuzeVSF
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1740
+      Height          =   2940
       Left            =   0
       TabIndex        =   0
       Top             =   0
@@ -102,7 +104,7 @@ On Local Error Resume Next
 
 Select Case KeyAscii
     Case 13
-        GridText = NTBoxLijst.Text
+        GridText = NTBoxLijst.text
         Unload Me
     Case 27
         Unload Me

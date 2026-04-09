@@ -55,14 +55,14 @@ Begin VB.Form Xlog
       TabCaption(1)   =   "Afbeelding"
       TabPicture(1)   =   "0xlog.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command4"
-      Tab(1).Control(1)=   "Command3"
-      Tab(1).Control(2)=   "Command2"
-      Tab(1).Control(3)=   "Command1"
-      Tab(1).Control(4)=   "Label3"
-      Tab(1).Control(5)=   "OLE1"
-      Tab(1).Control(6)=   "Label2"
-      Tab(1).Control(7)=   "Label1"
+      Tab(1).Control(0)=   "Label1"
+      Tab(1).Control(1)=   "Label2"
+      Tab(1).Control(2)=   "OLE1"
+      Tab(1).Control(3)=   "Label3"
+      Tab(1).Control(4)=   "Command1"
+      Tab(1).Control(5)=   "Command2"
+      Tab(1).Control(6)=   "Command3"
+      Tab(1).Control(7)=   "Command4"
       Tab(1).ControlCount=   8
       Begin VB.CommandButton Command4 
          Caption         =   "Pdf Opslaan"
@@ -408,14 +408,14 @@ Dim xPos            As Integer
 Dim xPos2           As Integer
 
 X.Col = 0
-If X.Text = "" Then
+If X.text = "" Then
     If Left(Xlog.Caption, 6) = "Schade" Then
         XLogKey = "Nieuw"
     End If
 Else
-    XLogKey = X.Text + vbCrLf
+    XLogKey = X.text + vbCrLf
     X.Col = 1
-    XLogKey = XLogKey + X.Text
+    XLogKey = XLogKey + X.text
 End If
 Xlog.Hide
 
@@ -473,18 +473,18 @@ Select Case KtrlBox
     For telrow = 1 To X.Rows - 1
         X.Row = telrow
         X.Col = 2
-        If RTrim$(X.Text) = "" Then
+        If RTrim$(X.text) = "" Then
         Else
             X.Col = 1
             Printer.FontBold = False
-            Printer.Print Tab(1); X.Text;
+            Printer.Print Tab(1); X.text;
             Printer.FontBold = True
             X.Col = 2
-            If Len(X.Text) > 40 Then
+            If Len(X.text) > 40 Then
                 Printer.Print vbCrLf;
-                Printer.Print Tab(1); X.Text;
+                Printer.Print Tab(1); X.text;
             Else
-                Printer.Print Tab(40); X.Text;
+                Printer.Print Tab(40); X.text;
             End If
             Printer.Print vbCrLf;
         End If
@@ -511,7 +511,7 @@ Dim A As String
 Dim DeString As String
 
 X.Col = 0
-DeString = X.Text
+DeString = X.text
 
 Unload InfoScherm
 Load InfoScherm
@@ -520,28 +520,28 @@ InfoScherm.X.Rows = 2
 InfoScherm.X.Cols = 8
 InfoScherm.X.Col = 0
 InfoScherm.X.Row = 0
-InfoScherm.X.Text = "Datum #v066"
+InfoScherm.X.text = "Datum #v066"
 InfoScherm.X.ColAlignment(0) = flexAlignLeftCenter
 InfoScherm.X.Col = 1
-InfoScherm.X.Text = "Rekening #v019"
+InfoScherm.X.text = "Rekening #v019"
 InfoScherm.X.ColAlignment(1) = flexAlignLeftCenter
 InfoScherm.X.Col = 2
-InfoScherm.X.Text = "Naam #v020"
+InfoScherm.X.text = "Naam #v020"
 InfoScherm.X.ColAlignment(2) = flexAlignLeftCenter
 InfoScherm.X.Col = 3
-InfoScherm.X.Text = "Bedrag #v068"
+InfoScherm.X.text = "Bedrag #v068"
 InfoScherm.X.ColAlignment(3) = flexAlignGeneral
 InfoScherm.X.Col = 4
-InfoScherm.X.Text = "Boekingsomschrijving #v067"
+InfoScherm.X.text = "Boekingsomschrijving #v067"
 InfoScherm.X.ColAlignment(4) = flexAlignLeftCenter
 InfoScherm.X.Col = 5
-InfoScherm.X.Text = "Fin. Stuk #v038"
+InfoScherm.X.text = "Fin. Stuk #v038"
 InfoScherm.X.ColAlignment(5) = flexAlignLeftCenter
 InfoScherm.X.Col = 6
-InfoScherm.X.Text = "TegenRek. #v069"
+InfoScherm.X.text = "TegenRek. #v069"
 InfoScherm.X.ColAlignment(6) = flexAlignLeftCenter
 InfoScherm.X.Col = 7
-InfoScherm.X.Text = "vsfRecord"
+InfoScherm.X.text = "vsfRecord"
 
 
 bGet TABLE_JOURNAL, 1, vSet(DeString, 11)
@@ -994,9 +994,20 @@ Else
     X.Col = 2
     ATLijn = Val(Mid(TELEBIB_CODE(X.Row - 1), 10, 1))
     If Mid(TELEBIB_CODE(X.Row - 1), 10, 1) = "x" Then
-        MsgBox rsMAR(Val(Mid(X.Text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
+        If Not IsNull(rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))) Then
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
+            If Val(Mid(X.text, 1, 2)) <= 2 Then
+                FormReactionsDialog.Caption = "Ondersteunde documenten"
+            Else
+                FormReactionsDialog.Caption = "Bevestigingen en reacties"
+            End If
+            FormReactionsDialog.Show 1
+        Else
+            MsgBox "Geen gegevens geregistreerd", vbInformation
+        End If
     Else
-        X.Text = vsfInputBox$(Msg, RTrim$(TELEBIB_TEXT(X.Row - 1)), (X.Text), "")
+        X.text = vsfInputBox$(Msg, RTrim$(TELEBIB_TEXT(X.Row - 1)), (X.text), "")
         If X.Row < X.Rows - 1 Then
             X.Row = X.Row + 1
             If X.Row > 6 Then
@@ -1046,7 +1057,7 @@ Else
     Exit Sub
 End If
 X.Col = X.Cols - 1
-DummyText = RTrim$(X.Text)
+DummyText = RTrim$(X.text)
 If Left(Caption, 3) = "Log" Then
     Select Case Mid(TELEBIB_CODE(X.Row - 1), 2, 2)
         Case "K ", "L ", "LC", "R ", "R3", "R4", "R6", "R7"
@@ -1079,9 +1090,9 @@ If Left(Caption, 3) = "Log" Then
             SqlSearch.Show 1
             If Ktrl = 0 Then
                 If SharedFl = TABLE_SUPPLIERS And Mid(TELEBIB_CODE(X.Row - 1), 3, 2) = "CO" Then
-                    X.Text = RTrim$(Mid(FVT(SharedFl, 0), 3))
+                    X.text = RTrim$(Mid(FVT(SharedFl, 0), 3))
                 Else
-                    X.Text = FVT(SharedFl, 0)
+                    X.text = FVT(SharedFl, 0)
                 End If
             End If
         Case "  "
@@ -1099,12 +1110,12 @@ If Left(Caption, 3) = "Log" Then
                         aIndex = aIndex + 1000
                     End If
                     X.Col = 2
-                    DummyText = X.Text
+                    DummyText = X.text
                     GridText = DummyText
                     KeuzeVSF.Show 1
                     If GridText <> DummyText Then
                         DummyText = GridText
-                        X.Text = DummyText
+                        X.text = DummyText
                     End If
             End Select
     End Select
@@ -1117,7 +1128,7 @@ Private Sub X_KeyPress(KeyAscii As Integer)
 Select Case KeyAscii
     Case 33 To 126
         If X.Col = 2 And Mid(X.Clip, 2, 2) = "  " Then
-            X.Text = Chr(KeyAscii) + X.Text
+            X.text = Chr(KeyAscii) + X.text
             WijzigenLijn_Click
         End If
 End Select

@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form AVBoek 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Aankoop / Verkoop"
@@ -23,6 +24,31 @@ Begin VB.Form AVBoek
    ScaleHeight     =   2595
    ScaleWidth      =   5670
    ShowInTaskbar   =   0   'False
+   Begin MSComCtl2.DTPicker DTPickerDateTo 
+      Height          =   315
+      Left            =   2880
+      TabIndex        =   18
+      Top             =   2040
+      Width           =   1455
+      _ExtentX        =   2566
+      _ExtentY        =   556
+      _Version        =   393216
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      CustomFormat    =   "dd/MM/yyyy"
+      Format          =   77135875
+      CurrentDate     =   46023
+      MaxDate         =   58862
+      MinDate         =   46023
+   End
    Begin VB.CheckBox chkAfdrukLiggend 
       Caption         =   "Liggende Printerafdruk"
       Height          =   255
@@ -123,11 +149,36 @@ Begin VB.Form AVBoek
       Top             =   60
       Width           =   1200
    End
+   Begin MSComCtl2.DTPicker DTPickerDateFrom 
+      Height          =   315
+      Left            =   2880
+      TabIndex        =   17
+      Top             =   1560
+      Width           =   1455
+      _ExtentX        =   2566
+      _ExtentY        =   556
+      _Version        =   393216
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      CustomFormat    =   "dd/MM/yyyy"
+      Format          =   77135875
+      CurrentDate     =   46023
+      MaxDate         =   58862
+      MinDate         =   46023
+   End
    Begin VB.Label TekstTot 
       BorderStyle     =   1  'Fixed Single
       Height          =   375
       Left            =   4440
-      TabIndex        =   18
+      TabIndex        =   16
       Top             =   2040
       Width           =   975
    End
@@ -135,7 +186,7 @@ Begin VB.Form AVBoek
       Caption         =   "Volgnummer Intern klassement"
       Height          =   615
       Left            =   4440
-      TabIndex        =   17
+      TabIndex        =   15
       Top             =   840
       Width           =   1035
    End
@@ -143,24 +194,8 @@ Begin VB.Form AVBoek
       Caption         =   "Boekdatum = Documentdatum (Strikt)"
       Height          =   615
       Left            =   2880
-      TabIndex        =   16
-      Top             =   840
-      Width           =   1455
-   End
-   Begin VB.Label LabelDateTo 
-      BorderStyle     =   1  'Fixed Single
-      Height          =   375
-      Left            =   2880
-      TabIndex        =   15
-      Top             =   2040
-      Width           =   1455
-   End
-   Begin VB.Label LabelDateFrom 
-      BorderStyle     =   1  'Fixed Single
-      Height          =   375
-      Left            =   2880
       TabIndex        =   14
-      Top             =   1560
+      Top             =   840
       Width           =   1455
    End
    Begin VB.Label TekstVan 
@@ -775,6 +810,10 @@ Return
 
 End Sub
 
+
+
+
+
 Private Sub FaktuurCreditNota_Click(Index As Integer)
 Dim T       As Integer
 
@@ -873,8 +912,9 @@ Select Case typeVATPeriod
         'Monthly periods shoud be (easy)
         beginPeriod = Mid(PERIOD_FROMTO, 1, 8)
         endPeriod = Mid(PERIOD_FROMTO, 9)
-        LabelDateFrom.Caption = DATE_TEXT(beginPeriod)
-        LabelDateTo.Caption = DATE_TEXT(endPeriod)
+        
+        DTPickerDateFrom.Value = DATE_TEXT(beginPeriod)
+        DTPickerDateTo.Value = DATE_TEXT(endPeriod)
     Case "2"
         'Quarter Perdiods should be
         '01/01 - 31/03
@@ -886,7 +926,7 @@ Select Case typeVATPeriod
                 beginPeriod = Mid(PERIOD_FROMTO, 1, 4) + "0101"
                 endPeriod = Mid(PERIOD_FROMTO, 9)
                 TekstLijn0 = "Kwartaal aangifte 03/" & Mid(PERIOD_FROMTO, 1, 4)
-                    
+                                    
             Case "06"
                 beginPeriod = Mid(PERIOD_FROMTO, 1, 4) + "0401"
                 endPeriod = Mid(PERIOD_FROMTO, 9)
@@ -907,8 +947,19 @@ Select Case typeVATPeriod
                 Unload Me
                 Exit Sub
         End Select
-        LabelDateFrom.Caption = DATE_TEXT(beginPeriod)
-        LabelDateTo.Caption = DATE_TEXT(endPeriod)
+        
+        DTPickerDateFrom.Value = DATE_TEXT(beginPeriod)
+        DTPickerDateTo.Value = DATE_TEXT(endPeriod)
+        If Now < DTPickerDateTo.Value + 16 Then
+            Msg = "Minder dan 16 dagen volgend op afsluitperiode." & vbCrLf
+            Msg = Msg & "Verzendt niet te vroeg de btw aangifte." & vbCrLf & vbCrLf
+            Msg = Msg & "Nog enkele dagen wachten?"
+            Ktrl = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1, "BTW Aangifte")
+            If Ktrl = vbYes Then
+                Unload Me
+                Exit Sub
+            End If
+        End If
         
     Case Else
         MsgBox "Volgens Setup BTW geen aangifteplicht. Controleer eventueel.", vbInformation
@@ -1308,3 +1359,6 @@ End Select
 
 End Sub
 
+Private Sub LabelDateTo_Click()
+
+End Sub

@@ -1070,12 +1070,14 @@ Private Sub Form_Load()
     
     grdDokumentDetail.Col = 6
     grdDokumentDetail.text = "SEPA Rekening"
-    grdDokumentDetail.ColWidth(6) = 1620
+    grdDokumentDetail.ColWidth(6) = 1875
+    grdDokumentDetail.ColAlignment(6) = flexAlignLeftCenter
         
     grdDokumentDetail.Col = 7
     grdDokumentDetail.text = "Referte/OGM"
-    grdDokumentDetail.ColWidth(7) = 2790
-            
+    grdDokumentDetail.ColWidth(7) = 2565
+    grdDokumentDetail.ColAlignment(7) = flexAlignLeftCenter
+                
     bGetOrGreater TABLE_VARIOUS, 1, "28"
     If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "28" Then
         MsgBox "Eerst parameters van een financiële instelling inbrengen via 'Diverse Gebruikersfiches' a.u.b.", vbInformation
@@ -1123,7 +1125,7 @@ Private Sub KTRLBalans(Fl As Integer)
     Err = 0
     rsAny.CursorLocation = adUseClient
     
-    Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.vs03, Leveranciers.v259, Leveranciers.e072, "
+    Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.v150, Leveranciers.vs03, Leveranciers.v259, Leveranciers.e072, "
     Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
     Msg = Msg & "Dokumenten.v037, Dokumenten.v039, Dokumenten.v249, "
     Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
@@ -1271,10 +1273,14 @@ ValidateRecord:
         aa = aa & "!! ..." & vbTab
         GeenRekening = GeenRekening + 1
     Else
-        checkerSEPA = IbanCheck(objectValue(rsAny("v259")), True, False)
-        If checkerSEPA = "invalid" Then
-            aa = aa & "!!" + rsAny("v259") & vbTab
-            TeVerbeteren = TeVerbeteren + 1
+        If rsAny("v150") = "BE" Then
+            checkerSEPA = IbanCheck(objectValue(rsAny("v259")), True, False)
+            If checkerSEPA = "invalid" Then
+                aa = aa & "!!" + rsAny("v259") & vbTab
+                TeVerbeteren = TeVerbeteren + 1
+            Else
+                aa = aa & rsAny("v259") & vbTab
+            End If
         Else
             aa = aa & rsAny("v259") & vbTab
         End If
