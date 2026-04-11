@@ -21,6 +21,10 @@
 "002 v111","Default BTW code","N",1
 "4   vs04","Betaaltermijn","A",4
 "8   vs05","Vaste korting (in %)","N",3
+"    v259  ","IBAN bankrekening","A",20
+"    v260  ","BIC bankrekening","A",14
+"    v255","Domiciliering Referte","A",12
+"    v256","Domiciliering ondertekend","A",12
 "A   v226","Mobiel Nummer","N",12
 "A   v301","Rijksregisternr. 1","N",11
 "    v254","cloudLink myDocuments","A",50
@@ -37,10 +41,6 @@
 "&R40v161","Koppeling 40-Rekening","N",7
 "&R70v225","Koppeling 70-Rekening","N",7
 "    v227","Datum laatste bezoek","N",10
-"    v259  ","IBAN bankrekening","A",20
-"    v260  ","BIC bankrekening","A",14
-"    v255","DOMIC. Referte of abonneenr.","A",12
-"    v256","Domicilieringsnummer","A",12
 "A   A10A","Vaste lijn","N",12
 "B   A170  ","Fin. belgische rekening","N",14
 "B   v251  ","Fin. rekening (partner)","N",14

@@ -2,9 +2,9 @@
 "7   v034  ","Partijcodenummer","A",13
 "9   v035  ","Documentdatum","A",8
 "9   v036  ","Vervaldatum","A",8
+"3   v249  ","Totaal document","D",10
 "3   v037  ","Reeds betaald","D",10
 "7   v038  ","Betalingsstuk","A",8
-"3   v249  ","Totaal document","D",10
 "7   v039  ","Betalingsreferte","A",12
 "b   v405 x","Send Initieel","A",1000
 "b   v406 x","Sent Bevestigd","A",1000

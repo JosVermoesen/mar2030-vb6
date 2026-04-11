@@ -335,6 +335,18 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
             result = result & "Entry BBA Code: " & EntryBBACode & vbCrLf
             xdaLinesDATA = xdaLinesDATA & EntryBBACode & vbTab
         
+            TxCode = ""
+            TxDesc = ""
+            TxRef = ""
+            TxAmount = ""
+            TxCreditor = ""
+            TxDebtor = ""
+            TxIBAN = ""
+            TxBIC = ""
+            TxSCOR = ""
+            TxUstrd = ""
+            TxType = ""
+
             ' BBA code (TxDtls or fallback to Ntry)
             TxCode = GetNodeText(nTx, "BkTxCd/Prtry/Cd")
             If TxCode = "" Then

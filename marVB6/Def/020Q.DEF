@@ -2,9 +2,9 @@
 "7   v034  ","Partijcodenummer","A",13
 "9   v035  ","Documentdatum","A",8
 "9   v036  ","Vervaldatum","A",8
+"3   v249  ","Totaal document","D",10
 "3   v037  ","Reeds betaald","D",10
 "7   v038  ","Betalingsstuk","A",8
-"3   v249  ","Totaal document","D",10
 "7   v039  ","Gestructureerde Betalingsreferte","A",12
 "5   vs03  ","ISO Muntcode","A",3
 "3   v040  ","Dagkoers van de Munt","D",15

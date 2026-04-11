@@ -30,11 +30,11 @@ Begin VB.Form DirekteVerkoop
       BackColor       =   &H000000FF&
       Enabled         =   0   'False
       Height          =   285
-      Left            =   6240
+      Left            =   2640
       TabIndex        =   64
       TabStop         =   0   'False
       Text            =   "Opgelet: Dit is een testbedrijf!"
-      Top             =   6600
+      Top             =   3360
       Visible         =   0   'False
       Width           =   2895
    End
@@ -108,7 +108,7 @@ Begin VB.Form DirekteVerkoop
       Height          =   315
       Left            =   6360
       TabIndex        =   59
-      Top             =   6960
+      Top             =   7080
       Width           =   1695
    End
    Begin VB.CheckBox cbAV 
@@ -116,7 +116,7 @@ Begin VB.Form DirekteVerkoop
       Height          =   315
       Left            =   4560
       TabIndex        =   58
-      Top             =   6960
+      Top             =   7080
       Value           =   1  'Checked
       Width           =   1695
    End
@@ -138,7 +138,7 @@ Begin VB.Form DirekteVerkoop
       Left            =   8160
       TabIndex        =   54
       TabStop         =   0   'False
-      Top             =   6960
+      Top             =   7080
       Width           =   885
    End
    Begin VB.CommandButton Schoonvegen 
@@ -163,14 +163,14 @@ Begin VB.Form DirekteVerkoop
       Width           =   885
    End
    Begin TabDlg.SSTab SSTab1 
-      Height          =   6855
+      Height          =   6975
       Left            =   120
       TabIndex        =   48
       TabStop         =   0   'False
       Top             =   0
       Width           =   9105
       _ExtentX        =   16060
-      _ExtentY        =   12091
+      _ExtentY        =   12303
       _Version        =   393216
       TabOrientation  =   1
       Style           =   1
@@ -231,77 +231,79 @@ Begin VB.Form DirekteVerkoop
       Tab(0).Control(19).Enabled=   0   'False
       Tab(0).Control(20)=   "DagKoers"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "cmdSwitch"
+      Tab(0).Control(21)=   "LabelDocumentReference"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "TekstInfo3"
+      Tab(0).Control(22)=   "cmdSwitch"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "TekstInfo0"
+      Tab(0).Control(23)=   "TekstInfo3"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "TekstInfo2"
+      Tab(0).Control(24)=   "TekstInfo0"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "TekstInfo1"
+      Tab(0).Control(25)=   "TekstInfo2"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "TekstInfo5"
+      Tab(0).Control(26)=   "TekstInfo1"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "ckEURINFO"
+      Tab(0).Control(27)=   "TekstInfo5"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "chkBTWBouw"
+      Tab(0).Control(28)=   "ckEURINFO"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "chkZonderRelatie"
+      Tab(0).Control(29)=   "chkBTWBouw"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "cmdLijst"
+      Tab(0).Control(30)=   "chkZonderRelatie"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "cmdSQLInfo"
+      Tab(0).Control(31)=   "cmdLijst"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "CmbExtraAfdruk"
+      Tab(0).Control(32)=   "cmdSQLInfo"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "CmdTekst"
+      Tab(0).Control(33)=   "CmbExtraAfdruk"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "CmdOmschrijving"
+      Tab(0).Control(34)=   "CmdTekst"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "CmdStock"
+      Tab(0).Control(35)=   "CmdOmschrijving"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "Optimaliseer"
+      Tab(0).Control(36)=   "CmdStock"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "Overschrijvingsstrook"
+      Tab(0).Control(37)=   "Optimaliseer"
       Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).Control(38)=   "Klassement"
+      Tab(0).Control(38)=   "Overschrijvingsstrook"
       Tab(0).Control(38).Enabled=   0   'False
-      Tab(0).Control(39)=   "Afsluiten"
+      Tab(0).Control(39)=   "Klassement"
       Tab(0).Control(39).Enabled=   0   'False
-      Tab(0).Control(40)=   "Medekontraktant"
+      Tab(0).Control(40)=   "Afsluiten"
       Tab(0).Control(40).Enabled=   0   'False
-      Tab(0).Control(41)=   "CreditNota"
+      Tab(0).Control(41)=   "Medekontraktant"
       Tab(0).Control(41).Enabled=   0   'False
-      Tab(0).Control(42)=   "KlantAktiveren"
+      Tab(0).Control(42)=   "CreditNota"
       Tab(0).Control(42).Enabled=   0   'False
-      Tab(0).Control(43)=   "VerkoopDetail"
+      Tab(0).Control(43)=   "KlantAktiveren"
       Tab(0).Control(43).Enabled=   0   'False
-      Tab(0).Control(44)=   "Sjabloon"
+      Tab(0).Control(44)=   "VerkoopDetail"
       Tab(0).Control(44).Enabled=   0   'False
-      Tab(0).Control(45)=   "VerkoopOptie(0)"
+      Tab(0).Control(45)=   "Sjabloon"
       Tab(0).Control(45).Enabled=   0   'False
-      Tab(0).Control(46)=   "VerkoopOptie(1)"
+      Tab(0).Control(46)=   "VerkoopOptie(0)"
       Tab(0).Control(46).Enabled=   0   'False
-      Tab(0).Control(47)=   "VerkoopOptie(2)"
+      Tab(0).Control(47)=   "VerkoopOptie(1)"
       Tab(0).Control(47).Enabled=   0   'False
-      Tab(0).Control(48)=   "sepaDOM"
+      Tab(0).Control(48)=   "VerkoopOptie(2)"
       Tab(0).Control(48).Enabled=   0   'False
-      Tab(0).Control(49)=   "cbCheckTools"
+      Tab(0).Control(49)=   "sepaDOM"
       Tab(0).Control(49).Enabled=   0   'False
-      Tab(0).Control(50)=   "cbMonitortUBL"
+      Tab(0).Control(50)=   "cbCheckTools"
       Tab(0).Control(50).Enabled=   0   'False
-      Tab(0).Control(51)=   "ButtonInfoSupported"
+      Tab(0).Control(51)=   "cbMonitortUBL"
       Tab(0).Control(51).Enabled=   0   'False
-      Tab(0).Control(52)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(52)=   "ButtonInfoSupported"
       Tab(0).Control(52).Enabled=   0   'False
-      Tab(0).ControlCount=   53
+      Tab(0).Control(53)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(53).Enabled=   0   'False
+      Tab(0).ControlCount=   54
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -962,6 +964,15 @@ Begin VB.Form DirekteVerkoop
          Visible         =   0   'False
          Width           =   1005
       End
+      Begin VB.Label LabelDocumentReference 
+         Alignment       =   1  'Right Justify
+         Caption         =   "Referte: V0202600001"
+         Height          =   255
+         Left            =   4200
+         TabIndex        =   70
+         Top             =   6720
+         Width           =   4815
+      End
       Begin VB.Label DagKoers 
          AutoSize        =   -1  'True
          BorderStyle     =   1  'Fixed Single
@@ -1382,7 +1393,7 @@ Begin VB.Form DirekteVerkoop
       Left            =   120
       TabIndex        =   56
       TabStop         =   0   'False
-      Top             =   6960
+      Top             =   7080
       Width           =   2775
    End
    Begin MSMAPI.MAPIMessages MPIBericht 
@@ -1789,6 +1800,7 @@ If InStr(ADOBIB_TEXT(rsDetail("Memo"), "#v147 #"), "V") Then
 End If
 
 dokumentSleutel = ADOBIB_TEXT(rsDetail("Memo"), "#v033 #")
+RefreshReference
 If Mid(dokumentSleutel, 2, 1) = "1" Then
     CreditNota.Value = 1
 End If
@@ -2530,6 +2542,7 @@ If Vr = 11 Or Vr = 13 Then
     Msg = Msg + "Kontroleer eerst eens vooraleer de boeking nogmaals uit te voeren a.u.b. !!!"
     MsgBox Msg
     dokumentSleutel = SleutelDok(Vr)
+    RefreshReference
     TekstInfo3 = dokumentSleutel
     DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
     Exit Sub
@@ -2813,6 +2826,7 @@ Dim sellerDocCheck As String
 sellerDocCheck = Dir(LOCATION_COMPANYDATA + "peppol\out\" + invoiceNumber + ".xml")
            
 dokumentSleutel = SleutelDok(Vr)
+RefreshReference
 TekstInfo3 = dokumentSleutel
 DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + dokumentSleutel + ")"
 SchoonVegen_Click
@@ -3650,6 +3664,7 @@ Else
     VerkoopOptie(1).Enabled = False
     VerkoopOptie(2).Enabled = False
     dokumentSleutel = SleutelDok(13)
+    RefreshReference
     TekstInfo3 = dokumentSleutel
     Vr = 13
     CreditNota.Enabled = False
@@ -4904,6 +4919,37 @@ End If
 Return
 
 End Sub
+Private Sub RefreshReference()
+    
+    Dim groupCode As String
+    
+    Select Case Left(dokumentSleutel, 2)
+        Case "V0"
+            groupCode = "8"
+        Case "V1"
+            groupCode = "7"
+        Case "B0"
+            groupCode = "6"
+        Case "F0"
+            groupCode = "5"
+    End Select
+    
+    Dim ReferteTxt As String
+    Dim dPip As Double
+    Dim recordAsString As String
+    
+    ReferteTxt = "+++" + groupCode + Mid(dokumentSleutel, 3, 2) + "/" + Mid(dokumentSleutel, 5, 4) + "/" + Mid(dokumentSleutel, 9) + "xx+++"
+        
+    dPip = Val(Mid(ReferteTxt, 4, 3) + Mid(ReferteTxt, 8, 4) + Mid(ReferteTxt, 13, 3))
+    Mid(ReferteTxt, 16, 2) = Format(dPip - Int(dPip / 97) * 97, "00")
+    If Mid(ReferteTxt, 16, 2) = "00" Then
+        Mid(ReferteTxt, 16, 2) = "97"
+    End If
+    
+    Me.LabelDocumentReference = "Referte: " & dokumentSleutel & " | " + ReferteTxt
+
+End Sub
+
 
 Private Sub MaakTotaal()
 Dim BTWIn As Double
@@ -5421,6 +5467,7 @@ Private Sub TekstInfo3_LostFocus()
     On Local Error Resume Next
 
     dokumentSleutel = TekstInfo3.text
+    RefreshReference
     DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
 
 End Sub
@@ -5743,6 +5790,7 @@ Select Case Index
         CreditNota.Value = 0
         Vr = 11
         dokumentSleutel = SleutelDok(11)
+        RefreshReference
         TekstInfo0.text = MIM_GLOBAL_DATE
         TekstInfo1.text = MIM_GLOBAL_DATE
         DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
@@ -5751,6 +5799,7 @@ Select Case Index
     Case 1
         dokumentType = "14" 'Bestelbon, Leveringsbon
         dokumentSleutel = SleutelDok(73)
+        RefreshReference
         Vr = 73
         DirekteVerkoop.Caption = vSet("Bestelling/levering", 28) + "(" + dokumentSleutel + ")"
         chkZonderRelatie.Visible = True
@@ -5758,6 +5807,7 @@ Select Case Index
     Case 2
         dokumentType = "13" 'Offerte
         dokumentSleutel = SleutelDok(59)
+        RefreshReference
         Vr = 59
         DirekteVerkoop.Caption = vSet("Offerte", 28) + "(" + dokumentSleutel + ")"
         chkZonderRelatie.Visible = True

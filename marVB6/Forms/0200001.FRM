@@ -30,11 +30,11 @@ Begin VB.Form DirekteAankoop
       Enabled         =   0   'False
       ForeColor       =   &H00000000&
       Height          =   285
-      Left            =   5280
+      Left            =   2160
       TabIndex        =   43
       TabStop         =   0   'False
       Text            =   "Opgelet: Dit is een testbedrijf!"
-      Top             =   7440
+      Top             =   3120
       Visible         =   0   'False
       Width           =   2655
    End

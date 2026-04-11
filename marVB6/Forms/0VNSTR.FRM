@@ -58,59 +58,63 @@ Begin VB.Form Venster
       Tab(0).Control(7).Enabled=   0   'False
       Tab(0).Control(8)=   "Label3"
       Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "TxtInfo(22)"
+      Tab(0).Control(9)=   "LabelA110OGM"
       Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "TxtInfo(4)"
+      Tab(0).Control(10)=   "LabelRvIdOGM"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "TxtInfo(8)"
+      Tab(0).Control(11)=   "TxtInfo(22)"
       Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "TxtInfo(0)"
+      Tab(0).Control(12)=   "TxtInfo(4)"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "TxtInfo(1)"
+      Tab(0).Control(13)=   "TxtInfo(8)"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "TxtInfo(2)"
+      Tab(0).Control(14)=   "TxtInfo(0)"
       Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "TxtInfo(3)"
+      Tab(0).Control(15)=   "TxtInfo(1)"
       Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "TxtInfo(5)"
+      Tab(0).Control(16)=   "TxtInfo(2)"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "TxtInfo(6)"
+      Tab(0).Control(17)=   "TxtInfo(3)"
       Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "TxtInfo(7)"
+      Tab(0).Control(18)=   "TxtInfo(5)"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "TxtInfo(9)"
+      Tab(0).Control(19)=   "TxtInfo(6)"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "TxtInfo(10)"
+      Tab(0).Control(20)=   "TxtInfo(7)"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "TxtInfo(11)"
+      Tab(0).Control(21)=   "TxtInfo(9)"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "TxtInfo(12)"
+      Tab(0).Control(22)=   "TxtInfo(10)"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "TxtInfo(13)"
+      Tab(0).Control(23)=   "TxtInfo(11)"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "TxtInfo(14)"
+      Tab(0).Control(24)=   "TxtInfo(12)"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "TxtInfo(15)"
+      Tab(0).Control(25)=   "TxtInfo(13)"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "TxtInfo(16)"
+      Tab(0).Control(26)=   "TxtInfo(14)"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "TxtInfo(17)"
+      Tab(0).Control(27)=   "TxtInfo(15)"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "TxtInfo(18)"
+      Tab(0).Control(28)=   "TxtInfo(16)"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "TxtInfo(19)"
+      Tab(0).Control(29)=   "TxtInfo(17)"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "TxtInfo(20)"
+      Tab(0).Control(30)=   "TxtInfo(18)"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "TxtInfo(21)"
+      Tab(0).Control(31)=   "TxtInfo(19)"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "CmbBestandsKeuze"
+      Tab(0).Control(32)=   "TxtInfo(20)"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "cmdMijnDocumentenServer"
+      Tab(0).Control(33)=   "TxtInfo(21)"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "cmdMijnDocumentenOnline"
+      Tab(0).Control(34)=   "CmbBestandsKeuze"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).ControlCount=   35
+      Tab(0).Control(35)=   "cmdMijnDocumentenServer"
+      Tab(0).Control(35).Enabled=   0   'False
+      Tab(0).Control(36)=   "cmdMijnDocumentenOnline"
+      Tab(0).Control(36).Enabled=   0   'False
+      Tab(0).ControlCount=   37
       TabCaption(1)   =   "Leveranciers"
       TabPicture(1)   =   "0VNSTR.frx":001C
       Tab(1).ControlEnabled=   0   'False
@@ -764,6 +768,44 @@ Begin VB.Form Venster
          EndProperty
          PromptChar      =   "_"
       End
+      Begin VB.Label LabelRvIdOGM 
+         Alignment       =   2  'Center
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+++000/0000/00000 +++"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   9000
+         TabIndex        =   64
+         Top             =   2880
+         Width           =   1965
+      End
+      Begin VB.Label LabelA110OGM 
+         Alignment       =   2  'Center
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "+++000/0000/00000 +++"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   6960
+         TabIndex        =   63
+         Top             =   2880
+         Width           =   1965
+      End
       Begin VB.Label Label3 
          Alignment       =   2  'Center
          BorderStyle     =   1  'Fixed Single
@@ -996,17 +1038,17 @@ Begin VB.Form Venster
       TabCaption(1)   =   "Retourblokken"
       TabPicture(1)   =   "0VNSTR.frx":0054
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbPolisHistoriek"
-      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(0)=   "cbInboeken"
       Tab(1).Control(1)=   "rtbIndentTB2"
-      Tab(1).Control(2)=   "cbInboeken"
+      Tab(1).Control(2)=   "cbPolisHistoriek"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "NoIndent"
       TabPicture(2)   =   "0VNSTR.frx":0070
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label2(1)"
+      Tab(2).Control(0)=   "cbIndent"
       Tab(2).Control(1)=   "rtbNoIndent"
-      Tab(2).Control(2)=   "cbIndent"
+      Tab(2).Control(2)=   "Label2(1)"
       Tab(2).ControlCount=   3
       Begin VB.CommandButton cbIndent 
          Caption         =   "Indent"
@@ -1231,6 +1273,7 @@ Begin VB.Form Venster
          _ExtentX        =   21828
          _ExtentY        =   8493
          _Version        =   393217
+         Enabled         =   -1  'True
          TextRTF         =   $"0VNSTR.frx":008C
       End
       Begin VB.ComboBox cbPolisHistoriek 
@@ -1277,14 +1320,14 @@ Begin VB.Form Venster
          EndProperty
       End
       Begin MSMask.MaskEdBox mebBoekDatum 
-         Height          =   255
+         Height          =   375
          Left            =   8400
          TabIndex        =   21
          Top             =   480
          Visible         =   0   'False
          Width           =   1095
          _ExtentX        =   1931
-         _ExtentY        =   450
+         _ExtentY        =   661
          _Version        =   393216
          MaxLength       =   7
          Format          =   "MM/YYYY"
@@ -1300,6 +1343,7 @@ Begin VB.Form Venster
          _ExtentX        =   21828
          _ExtentY        =   8281
          _Version        =   393217
+         Enabled         =   -1  'True
          TextRTF         =   $"0VNSTR.frx":0119
       End
       Begin VB.Label Label2 
@@ -1459,7 +1503,7 @@ End Sub
 Private Sub RefreshKlanten(Klant As String)
 
     Dim Teller As Integer
-    
+        
     bGet TABLE_CUSTOMERS, 0, vSet(Klant, 12)
     If Ktrl Then
         bFirst TABLE_CUSTOMERS, 0
@@ -1488,7 +1532,27 @@ Private Sub RefreshKlanten(Klant As String)
         Me.cmdMijnDocumentenOnline.Enabled = False
     End If
     
-
+    Dim ReferteTxt As String
+    Dim dPip As Double
+    Dim recordAsString As String
+    
+    ReferteTxt = "+++104/" + Mid(rsMAR(TABLE_CUSTOMERS)("A110"), 1, 4) + "/0" + Mid(rsMAR(TABLE_CUSTOMERS)("A110"), 5, 2) + "xx+++"
+    dPip = Val(Mid(ReferteTxt, 4, 3) + Mid(ReferteTxt, 8, 4) + Mid(ReferteTxt, 13, 3))
+    Mid(ReferteTxt, 16, 2) = Format(dPip - Int(dPip / 97) * 97, "00")
+    If Mid(ReferteTxt, 16, 2) = "00" Then
+        Mid(ReferteTxt, 16, 2) = "97"
+    End If
+    LabelA110OGM = ReferteTxt
+    
+    recordAsString = Dec(Val(rsMAR(TABLE_CUSTOMERS)("rvid")), "0000000")
+    ReferteTxt = "+++999/" + Mid(recordAsString, 1, 4) + "/" + Mid(recordAsString, 5, 3) + "xx+++"
+    dPip = Val(Mid(ReferteTxt, 4, 3) + Mid(ReferteTxt, 8, 4) + Mid(ReferteTxt, 13, 3))
+    Mid(ReferteTxt, 16, 2) = Format(dPip - Int(dPip / 97) * 97, "00")
+    If Mid(ReferteTxt, 16, 2) = "00" Then
+        Mid(ReferteTxt, 16, 2) = "97"
+    End If
+    LabelRvIdOGM = ReferteTxt
+    
 End Sub
 
 Sub SchadeLogBoek()
@@ -2069,7 +2133,7 @@ Else
     Else
         bInsert TempoFL, 0
     End If
-    cmdWijzigen.Default = True
+    CmdWijzigen.Default = True
     RefreshKlanten vBibTekst(TABLE_CONTRACTS, "#A110 #")
     ContractVensterVullen vBibTekst(TABLE_CONTRACTS, "#A110 #")
 End If
@@ -2428,7 +2492,7 @@ End Sub
 
 Private Sub TxtInfo_GotFocus(Index As Integer)
 
-If Index = 0 Then cmdWijzigen.Default = True
+If Index = 0 Then CmdWijzigen.Default = True
 
 End Sub
 
@@ -2479,7 +2543,7 @@ End Sub
 
 Private Sub X_GotFocus()
 
-cmdWijzigen.Default = True
+CmdWijzigen.Default = True
 
 End Sub
 

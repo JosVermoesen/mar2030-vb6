@@ -92,15 +92,13 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "mfgLijst"
-      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(0)=   "ButtonAssign"
       Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "ButtonAssign"
-      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(2)=   "mfgLijst"
       Tab(1).ControlCount=   3
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
+         Enabled         =   0   'False
          Height          =   495
          Left            =   -74880
          TabIndex        =   26
@@ -156,11 +154,11 @@ Begin VB.Form InbrengFinancieel
          Enabled         =   0   'False
          ForeColor       =   &H00000000&
          Height          =   285
-         Left            =   4200
+         Left            =   1800
          TabIndex        =   22
          TabStop         =   0   'False
          Text            =   "Opgelet: Dit is een testbedrijf!"
-         Top             =   7560
+         Top             =   3720
          Visible         =   0   'False
          Width           =   2655
       End
@@ -314,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16580611
+         Format          =   76873731
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -605,7 +603,7 @@ Dim iOptelCtrlCheckUp As Integer
 Dim cDebetSaldo As Currency
 Dim cCreditSaldo As Currency
 
-Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refString As String, IbanAccount As String, lineAmount As String) As String
+Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD As Boolean, refString As String, IbanAccount As String, lineAmount As String) As String
     
     Dim VoorLetter  As String * 1
     Dim aa          As Variant
@@ -615,7 +613,15 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refStri
     Dim clientNumber As String
     Dim formattedAmount As String
     Dim documentFound As String
-                        
+    
+    Dim searchOnRvId As Integer
+    searchOnRvId = 0
+    
+                            
+    'TODO:
+    'Better check for seller and buyer
+    MsgBox "Buyer should be OGM or invoice starting with 'V'"
+    
     formattedAmount = Str(Val(lineAmount))
     If InStr(refString, "ORef: ") Then
 
@@ -640,6 +646,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refStri
             Msg = Msg & "FROM Leveranciers, Dokumenten "
             Msg = Msg & "WHERE Dokumenten.v034 = 'L' + Leveranciers.A110 "
             Msg = Msg & "AND Dokumenten.v039 = '" + refString + "' "
+            'With sellers you can be sure you used the IbanAccount
             Msg = Msg & "AND Leveranciers.v259 = '" + IbanAccount + "' "
             Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
             Msg = Msg & "ORDER BY Dokumenten.v037 "
@@ -656,13 +663,28 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refStri
         Msg = "SELECT Klanten.A110, Klanten.A100, Klanten.v259, "
         Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
         Msg = Msg & "Dokumenten.v037, Dokumenten.v038, Dokumenten.v039, Dokumenten.v249, "
-        Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
+        Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID, Dokumenten.A000 "
         Msg = Msg & "FROM Klanten, Dokumenten "
         Msg = Msg & "WHERE Dokumenten.v034 = 'K' + Klanten.A110 "
         Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
         If refIsCor And Mid(refString, 1, 3) = "104" Then
+            'Search on client number
             clientNumber = Mid(refString, 4, 4) + Mid(refString, 9, 2)
             Msg = Msg & "AND Klanten.A110 = '" + clientNumber + "' "
+        ElseIf refIsCor And Mid(refString, 1, 3) = "999" Then
+            'Search on client RvId
+            MsgBox "Stop voor zoeken op RvID"
+            searchOnRvId = Val(Mid(refString, 4, 7))
+            Msg = Msg & "AND Klanten.rvID =" + Str(searchOnRvId) + " "
+        ElseIf Not refIsCor And isCDD Then
+            'Search with contract number
+            Stop
+            Msg = Msg & "AND Dokumenten.A000 = '" + refString + "' "
+        Else
+            'Other possibilities...
+            '998 as rvID of a V0 invoice
+            '997 as rvID of a Q0 premium
+            '996 as rvID of a V1 creditnote
         End If
         Msg = Msg & "ORDER BY Dokumenten.v037 "
     End If
@@ -687,7 +709,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refStri
         GoTo FinishFunction
     Else
         rsAny.MoveFirst
-        Stop
+        'Stop
         Do While Not rsAny.EOF
             GoSub ValidateDocument
             rsAny.MoveNext
@@ -700,7 +722,10 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, refStri
     Exit Function
 
 ValidateDocument:
-    Stop
+    MsgBox "Stop for validating more then one found"
+    
+    'More then one found
+    'TODO check on amount and IBAN to be sure
     Return
     
 FinishFunction:
@@ -821,7 +846,20 @@ End Sub
 
 Private Sub ButtonAssign_Click()
 
-    MsgBox "TODO: Toewijzen"
+    Dim valueToCheck As Double
+    Dim valueLineToCheck As Double
+       
+    Unload DetailInfo
+    DetailInfo.Show 1
+    If GridText <> "" Then
+        valueToCheck = Abs(Val(Mid(GridText, 22, 12)))
+        valueLineToCheck = mfgLijst.TextMatrix(mfgLijst.Row, 4)
+        If valueToCheck = valueLineToCheck Then
+            MsgBox "Ok, TODO: Isert now data in the line"
+        Else
+            MsgBox "Bedrag verrichting moet ongewijzigd blijven", vbExclamation
+        End If
+    End If
     
 End Sub
 
@@ -978,7 +1016,7 @@ Private Sub ButtonReadCamt053_Click()
                 End If
                                     
                 ReDim resultArray(5)
-                resultReturn = CtrlDocuments(True, isCor, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                 If resultReturn = "" Then
                     MsgBox "Geen resultaat", vbExclamation
                 Else
@@ -1012,7 +1050,7 @@ Private Sub ButtonReadCamt053_Click()
                 End If
                                     
                 ReDim resultArray(5)
-                resultReturn = CtrlDocuments(True, isCor, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                 If resultReturn = "" Then
                     MsgBox "Geen resultaat", vbExclamation
                     aa = aa & "-" & vbTab
@@ -1072,6 +1110,7 @@ Private Sub ButtonReadCamt053_Click()
             Case "0150000", "0250000"
                 '0150000 (5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
                 '0250000 (5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
+                MsgBox "stop "
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1092,9 +1131,13 @@ Private Sub ButtonReadCamt053_Click()
                     aa = aa & xdaLinesDATAArray(T, 6) & vbTab
                 Else
                     ReDim resultArray(5)
-                    resultReturn = CtrlDocuments(False, isCor, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                    resultReturn = CtrlDocuments(False, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                     If resultReturn = "" Then
                         MsgBox "Geen resultaat", vbExclamation
+                        aa = aa & "+" & vbTab
+                        aa = aa & "??????" & vbTab
+                        aa = aa & Val(amountToCheck) & vbTab
+                        aa = aa & xdaLinesDATAArray(T, 6) & vbTab
                     Else
                         resultArray() = Split(resultReturn, "|")
                         aa = aa & "+" & resultArray(0) & vbTab
@@ -1108,16 +1151,56 @@ Private Sub ButtonReadCamt053_Click()
                 MsgBox "Stop"
                 aa = aa & "+" & vbTab
                 aa = aa & "??????" & vbTab
-                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
+                aa = aa & Val(amountToCheck) & vbTab
                 aa = aa & "" & vbTab
                             
             Case "0550000"
-                '(5-D) Unknown BBA Type Direct Debit (Debtor) (Ustrd)
-                MsgBox "Stop"
+                '(5-D) Unknown BBA Type Direct Debit (Debtor) (Ustrd) VSOFT CDD!
+                MsgBox "Stop VSOFT CDD"
+                
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = "-"
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
+                    
+                If Len(lineReference) > 25 Then
+                    aa = aa & "+" & vbTab
+                    aa = aa & "??????" & vbTab
+                    aa = aa & Val(amountToCheck) & vbTab
+                    aa = aa & xdaLinesDATAArray(T, 6) & vbTab
+                Else
+                    ReDim resultArray(5)
+                    resultReturn = CtrlDocuments(False, isCor, True, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                    If resultReturn = "" Then
+                        MsgBox "Geen resultaat", vbExclamation
+                        aa = aa & "+" & vbTab
+                        aa = aa & "??????" & vbTab
+                        aa = aa & Val(amountToCheck) & vbTab
+                        aa = aa & xdaLinesDATAArray(T, 6) & vbTab
+                    Else
+                        resultArray() = Split(resultReturn, "|")
+                        aa = aa & "+" & resultArray(0) & vbTab
+                        aa = aa & String99(READING, 9) & vbTab
+                        aa = aa & Val(amountToCheck) & vbTab
+                        aa = aa & resultArray(1) & vbTab
+                    End If
+                End If
+                Stop
+                
+                
+                
                 aa = aa & "+" & vbTab
                 aa = aa & "??????" & vbTab
-                aa = aa & Val(xdaLinesDATAArray(T, 1)) & vbTab
-                aa = aa & "" & vbTab
+                aa = aa & Val(amountToCheck) & vbTab
+                aa = aa & xdaLinesDATAArray(T, 6) & vbTab
                             
             Case Else
                 MsgBox "BBA buiten controle: " & xdaLinesDATAArray(T, 2)
@@ -1412,6 +1495,25 @@ Else
 End If
 KeuzeInfo(0).ListIndex = TT
 
+End Sub
+
+Private Sub mfgLijst_Click()
+
+    Dim selectToEdit As String
+    
+    selectToEdit = mfgLijst.TextMatrix(mfgLijst.Row, 3)
+    If selectToEdit = "??????" Then
+        Me.ButtonAssign.Enabled = True
+    Else
+        Me.ButtonAssign.Enabled = False
+    End If
+    
+End Sub
+
+Private Sub mfgLijst_RowColChange()
+
+    mfgLijst_Click
+            
 End Sub
 
 Private Sub Struktuur_Click()
