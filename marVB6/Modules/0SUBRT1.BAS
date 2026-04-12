@@ -1,6 +1,8 @@
 Attribute VB_Name = "Module4"
 DefInt A-Z
 
+Public Const BATCH_SIZE As Long = 5000
+
 
 Function BankOk(fRekString As String) As Integer
 Dim dPip As Double
@@ -161,13 +163,140 @@ Public Function FormatDummy(num As Long, Size As Long) As String
     FormatDummy = Right$(s, Size)
 End Function
 
-Public Function ConvertSuppliersSEPAs()
+
+Public Function ConvertDocNumbersToOGM() As Boolean
+    On Error GoTo EH
+
+    ConvertDocNumbersToOGM = False
+    Screen.MousePointer = vbHourglass
+
+    Dim rs As ADODB.Recordset
+    Dim cmd As New ADODB.Command
+    Dim lastKey As String
+    Dim DocumentKey As String
+    Dim groupCode As String
+    Dim ReferteTxt As String
+    Dim ReferteTxtNoFormat As String
+    Dim dPip As Double
+    Dim chk As String
+    Dim Bezig As Long
+    Dim bTrans As Boolean
+
+    '-----------------------------------------
+    ' UPDATE-command voorbereiden
+    '-----------------------------------------
+    Set cmd.ActiveConnection = adntDB
+    cmd.CommandText = "UPDATE Dokumenten SET v413 = ? WHERE v033 = ?"
+    cmd.Parameters.Append cmd.CreateParameter("pV413", adVarChar, adParamInput, 50)
+    cmd.Parameters.Append cmd.CreateParameter("pV033", adVarChar, adParamInput, 20)
+
+    '-----------------------------------------
+    ' Startpositie
+    '-----------------------------------------
+    lastKey = ""
+
+ReopenRecordset:
+    Set rs = New ADODB.Recordset
+    rs.CursorLocation = adUseServer
+
+    Dim sql As String
+    If lastKey = "" Then
+        sql = "SELECT v033 FROM Dokumenten ORDER BY v033 DESC"
+    Else
+        sql = "SELECT v033 FROM Dokumenten WHERE v033 < '" & lastKey & "' ORDER BY v033 DESC"
+    End If
+
+    rs.Open sql, adntDB, adOpenForwardOnly, adLockReadOnly
+
+    If rs.EOF Then GoTo Finished
+
+    '-----------------------------------------
+    ' Nieuwe transactie starten
+    '-----------------------------------------
+    adntDB.BeginTrans
+    bTrans = True
+
+    '-----------------------------------------
+    ' Verwerking van deze batch
+    '-----------------------------------------
+    Do While Not rs.EOF
+        DocumentKey = rs!v033
+        lastKey = DocumentKey   ' <-- voortgang bewaren
+
+        Select Case Left$(DocumentKey, 2)
+            Case "V0": groupCode = "8"
+            Case "V1": groupCode = "7"
+            Case "B0": groupCode = "6"
+            Case "F0": groupCode = "5"
+            Case "A0": groupCode = "4"
+            Case "A1": groupCode = "3"
+            Case "Q0": groupCode = "2"
+            Case Else
+                GoTo NextRecord
+        End Select
+
+        ReferteTxtNoFormat = groupCode & Mid$(DocumentKey, 3, 2) & _
+                             Mid$(DocumentKey, 5, 4) & Mid$(DocumentKey, 9) & "xx"
+
+        ReferteTxt = "+++" & groupCode & Mid$(DocumentKey, 3, 2) & "/" & _
+                     Mid$(DocumentKey, 5, 4) & "/" & Mid$(DocumentKey, 9) & "xx+++"
+
+        dPip = Val(Mid$(ReferteTxt, 4, 3) & Mid$(ReferteTxt, 8, 4) & Mid$(ReferteTxt, 13, 3))
+        chk = Format$(dPip - Int(dPip / 97) * 97, "00")
+        If chk = "00" Then chk = "97"
+
+        Mid$(ReferteTxt, 16, 2) = chk
+        Mid$(ReferteTxtNoFormat, 11, 2) = chk
+
+        cmd.Parameters("pV413").Value = ReferteTxtNoFormat
+        cmd.Parameters("pV033").Value = DocumentKey
+        cmd.Execute
+
+        Bezig = Bezig + 1
+
+        If (Bezig Mod 100) = 0 Then
+            SnelHelpPrint "Bezig met " & Bezig, BL_LOGGING
+        End If
+
+        If (Bezig Mod BATCH_SIZE) = 0 Then
+            adntDB.CommitTrans
+            bTrans = False
+            rs.Close
+            GoTo ReopenRecordset
+        End If
+
+NextRecord:
+        rs.MoveNext
+    Loop
+
+    ' Batch klaar
+    adntDB.CommitTrans
+    bTrans = False
+    rs.Close
+    GoTo ReopenRecordset
+
+Finished:
+    MsgBox "Aantal documenten bijgewerkt: " & Bezig, vbInformation
+    ConvertDocNumbersToOGM = True
+
+CleanExit:
+    Screen.MousePointer = vbNormal
+    Exit Function
+
+EH:
+    If bTrans Then adntDB.RollbackTrans
+    MsgBox "Fout: " & Err.Number & vbCrLf & Err.Description, vbCritical
+    Resume CleanExit
+End Function
+
+Public Function ConvertSuppliersSEPAs() As Boolean
 
     Dim numberOldValid As Integer
     Dim numberNewValid As Integer
     Dim numberOldInvalid As Integer
     Dim numberNewInvalid As Integer
         
+    ConvertSuppliersSEPAs = False
     Dim rsPartners As New ADODB.Recordset
     
     Set rsPartners = New ADODB.Recordset
@@ -277,6 +406,7 @@ Public Function ConvertSuppliersSEPAs()
     Msg = "Aantal oude nummers naar SEPA: " & Trim(Str(numberOldValid)) & vbCrLf
     Msg = Msg & "Aantal geldige SEPA: " & Trim(Str(numberNewValid)) & vbCrLf
     MsgBox Msg, vbInformation, "SEPA Check Leveranciers"
+    ConvertSuppliersSEPAs = True
 
 End Function
 

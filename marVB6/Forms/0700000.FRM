@@ -92,9 +92,9 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "ButtonAssign"
+      Tab(1).Control(0)=   "mfgLijst"
       Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(2)=   "mfgLijst"
+      Tab(1).Control(2)=   "ButtonAssign"
       Tab(1).ControlCount=   3
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76873731
+         Format          =   77004803
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -678,7 +678,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Msg = Msg & "AND Klanten.rvID =" + Str(searchOnRvId) + " "
         ElseIf Not refIsCor And isCDD Then
             'Search with contract number
-            Stop
+            MsgBox "Stop search with contract number"
             Msg = Msg & "AND Dokumenten.A000 = '" + refString + "' "
         Else
             'Other possibilities...
@@ -1193,14 +1193,14 @@ Private Sub ButtonReadCamt053_Click()
                         aa = aa & resultArray(1) & vbTab
                     End If
                 End If
-                Stop
                 
                 
                 
-                aa = aa & "+" & vbTab
-                aa = aa & "??????" & vbTab
-                aa = aa & Val(amountToCheck) & vbTab
-                aa = aa & xdaLinesDATAArray(T, 6) & vbTab
+                
+                'aa = aa & "+" & vbTab
+                'aa = aa & "??????" & vbTab
+                'aa = aa & Val(amountToCheck) & vbTab
+                'aa = aa & xdaLinesDATAArray(T, 6) & vbTab
                             
             Case Else
                 MsgBox "BBA buiten controle: " & xdaLinesDATAArray(T, 2)

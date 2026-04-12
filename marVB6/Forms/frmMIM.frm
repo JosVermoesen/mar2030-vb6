@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76611587
+         Format          =   76742659
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -503,6 +503,10 @@ Begin VB.MDIForm Mim
       Begin VB.Menu Bewerken 
          Caption         =   "SEPA leveranciers controleren en converteren"
          Index           =   11
+      End
+      Begin VB.Menu Bewerken 
+         Caption         =   "Documentnummers uitbreiden naar OGM"
+         Index           =   12
       End
    End
    Begin VB.Menu MenuTitel 
@@ -1355,6 +1359,7 @@ End Sub
 Private Sub Bewerken_Click(Index As Integer)
 Dim ImportBestand As String
 Dim X As Integer
+Dim returnResult As Boolean
 
 Select Case Index
     Case 0
@@ -1400,7 +1405,20 @@ Select Case Index
         
     Case 11
         'Wissel.Show
-        Call ConvertSuppliersSEPAs
+        returnResult = ConvertSuppliersSEPAs
+        If returnResult = False Then
+            MsgBox "Er ging iets fout, probeer opnieuw", vbExclamation
+        Else
+            MsgBox "Omwerking met succes", vbInformation
+        End If
+        
+    Case 12
+        returnResult = ConvertDocNumbersToOGM
+        If returnResult = False Then
+            MsgBox "Er ging iets fout, probeer opnieuw", vbExclamation
+        Else
+            MsgBox "Omwerking met succes", vbInformation
+        End If
                        
 End Select
 

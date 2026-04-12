@@ -1,4 +1,5 @@
 "7   v033  ","Documentnummer","A",11
+"7   v413  ","Doc.nr. in OGM formaat","A",20
 "7   v034  ","Partijcodenummer","A",13
 "9   v035  ","Documentdatum","A",8
 "9   v036  ","Vervaldatum","A",8
