@@ -73,73 +73,75 @@ Begin VB.Form DirekteAankoop
       Tab(0).Control(8).Enabled=   0   'False
       Tab(0).Control(9)=   "Label1(1)"
       Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "TekstInfo12"
+      Tab(0).Control(10)=   "LabelDocumentReference"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "TekstInfo5"
+      Tab(0).Control(11)=   "TekstInfo12"
       Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "TekstInfo7"
+      Tab(0).Control(12)=   "TekstInfo5"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "TekstInfo9"
+      Tab(0).Control(13)=   "TekstInfo7"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "TekstInfo0"
+      Tab(0).Control(14)=   "TekstInfo9"
       Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "TekstInfo1"
+      Tab(0).Control(15)=   "TekstInfo0"
       Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "TekstInfo2"
+      Tab(0).Control(16)=   "TekstInfo1"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "TekstInfo10"
+      Tab(0).Control(17)=   "TekstInfo2"
       Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "TekstInfo6"
+      Tab(0).Control(18)=   "TekstInfo10"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "TekstInfo3"
+      Tab(0).Control(19)=   "TekstInfo6"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "TekstInfo4"
+      Tab(0).Control(20)=   "TekstInfo3"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "AankoopDetail"
+      Tab(0).Control(21)=   "TekstInfo4"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "AankoopOptie(2)"
+      Tab(0).Control(22)=   "AankoopDetail"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "AankoopOptie(1)"
+      Tab(0).Control(23)=   "AankoopOptie(2)"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "AankoopOptie(0)"
+      Tab(0).Control(24)=   "AankoopOptie(1)"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "cmdSQLInfo"
+      Tab(0).Control(25)=   "AankoopOptie(0)"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "StockBeheer"
+      Tab(0).Control(26)=   "cmdSQLInfo"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "Annuleren"
+      Tab(0).Control(27)=   "StockBeheer"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "Medekontraktant"
+      Tab(0).Control(28)=   "Annuleren"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "Afsluiten"
+      Tab(0).Control(29)=   "Medekontraktant"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "Kontrole"
+      Tab(0).Control(30)=   "Afsluiten"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "Schoonvegen"
+      Tab(0).Control(31)=   "Kontrole"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "SSTab1"
+      Tab(0).Control(32)=   "Schoonvegen"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "cbImportUBL"
+      Tab(0).Control(33)=   "SSTab1"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "cbCheckTools"
+      Tab(0).Control(34)=   "cbImportUBL"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "ButtonOptimize"
+      Tab(0).Control(35)=   "cbCheckTools"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(36)=   "ButtonOptimize"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).ControlCount=   37
+      Tab(0).Control(37)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(37).Enabled=   0   'False
+      Tab(0).ControlCount=   38
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "OLE1"
-      Tab(1).Control(1)=   "cbAfbeelding"
+      Tab(1).Control(0)=   "cbAfbeelding"
+      Tab(1).Control(1)=   "OLE1"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label3"
+      Tab(2).Control(0)=   "obTAB(1)"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "obTAB(1)"
+      Tab(2).Control(2)=   "Label3"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -735,6 +737,23 @@ Begin VB.Form DirekteAankoop
          AutoTab         =   -1  'True
          PromptChar      =   "_"
       End
+      Begin VB.Label LabelDocumentReference 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3600
+         TabIndex        =   48
+         Top             =   7440
+         Width           =   4335
+      End
       Begin VB.Label Label1 
          Caption         =   "DocID Leveranc."
          Height          =   240
@@ -874,6 +893,11 @@ Attribute VB_Exposed = False
 DefInt A-Z
 Option Explicit
 
+Dim documentRefIsOGM As Boolean
+Dim Document_Key As String * 11
+Dim Document_OGM As String
+Dim Document_OGM_NoFormat As String
+
 Dim adminNoVat As Boolean
 
 Dim ifSupplierInsertWarning As Boolean
@@ -887,7 +911,7 @@ Dim AankoopDetailTitel(8) As String
 Dim lvLeverancier As String
 Dim GeScanBestand As String
 
-Dim dokumentSleutel As String * 11
+
 Dim PriveRekening As String * 7
 Dim LeverancierRekening As String * 7
 Dim GrensDetail(3) As String * 14
@@ -1047,7 +1071,7 @@ Function CheckSupplier() As Boolean
     'check with supplierCompanyId OR with supplierVatNumber
     'v404 or A161
     
-    Msg = "SELECT A110, v150, A161, v404, A100 FROM Leveranciers WHERE v150 = '" & searchCountry & "' AND A161 = '" & searchOnVat & "'"
+    Msg = "SELECT A110, v150, A161, v404, A100, v259 FROM Leveranciers WHERE v150 = '" & searchCountry & "' AND A161 = '" & searchOnVat & "'"
     SnelHelpPrint Msg, BL_LOGGING
     Screen.MousePointer = vbHourglass
     rsSupplier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
@@ -1055,6 +1079,19 @@ Function CheckSupplier() As Boolean
     If Err Then
         MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
         Exit Function
+    ElseIf rsSupplier.RecordCount = 1 Then
+        '15 supplierIBANToCheck:   BE83891854037015
+        'vBib TABLE_SUPPLIERS, uitwisselingDATAArray(15), "v259"  'IBAN
+        If Trim(uitwisselingDATAArray(15)) = "" Then
+        ElseIf Trim(uitwisselingDATAArray(15)) = objectValue(rsSupplier("v259")) Then
+        Else
+            Msg = "IBAN rekening is verschillend met database." & vbCrLf & vbCrLf
+            Msg = Msg & "* Peppol document: " & uitwisselingDATAArray(15) & vbCrLf
+            Msg = Msg & "* Tabel leveranciers: " & rsSupplier("v259") & vbCrLf & vbCrLf
+            Msg = Msg & "Wijzig de leveranciersfiche manueel indien nodig."
+            MsgBox Msg, vbExclamation, "IBAN verschillend"
+        End If
+        
     ElseIf rsSupplier.RecordCount = 0 Then
         If ifSupplierInsertWarning Then
             Msg = "Geen leverancier gevonden met het ondernemingsnummer " & uitwisselingDATAArray(5) & vbCrLf & vbCrLf
@@ -1304,19 +1341,21 @@ Jumper:
 Select Case Index
     Case 0
         Ar = 1
-        dokumentSleutel = SleutelDok(Ar)
+        Document_Key = SleutelDok(Ar)
+        RefreshReference
 
     Case 1
         Ar = 3
-        dokumentSleutel = SleutelDok(Ar)
+        Document_Key = SleutelDok(Ar)
+        RefreshReference
 
     Case 2
         AankoopOptie(0).Value = True
 End Select
-DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + dokumentSleutel + ")"
-bGet TABLE_INVOICES, 0, dokumentSleutel
+DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + Document_Key + ")"
+bGet TABLE_INVOICES, 0, Document_Key
 If Ktrl = 0 Then
-    MsgBox "Document " & dokumentSleutel & " is reeds aanwezig..." & vbCr & vbCr & "Controleer eventueel uw tellerbestand voor het active boekjaar.  Indien U zopas wisselde van boekjaar met het aankoopvenster open, mag U (na controle) deze melding negeren..." & vbCr & vbCr & "NIET BOEKJAAR GEWISSELD ZOPAS ?  EERST UW TELLEBESTAND + PROEF- SALDI BALANS CONTROLEREN !!!", vbExclamation
+    MsgBox "Document " & Document_Key & " is reeds aanwezig..." & vbCr & vbCr & "Controleer eventueel uw tellerbestand voor het active boekjaar.  Indien U zopas wisselde van boekjaar met het aankoopvenster open, mag U (na controle) deze melding negeren..." & vbCr & vbCr & "NIET BOEKJAAR GEWISSELD ZOPAS ?  EERST UW TELLEBESTAND + PROEF- SALDI BALANS CONTROLEREN !!!", vbExclamation
 End If
 
 End Sub
@@ -1336,21 +1375,21 @@ If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
     Exit Sub
 End If
 
-If dokumentSleutel <> SleutelDok(Ar) Then
-    Msg = dokumentSleutel + " <> " + SleutelDok(Ar) + vbCrLf + vbCrLf
+If Document_Key <> SleutelDok(Ar) Then
+    Msg = Document_Key + " <> " + SleutelDok(Ar) + vbCrLf + vbCrLf
     Msg = Msg + "MOGELIJKHEID 1: Teller is identiek, boekjaar is hoger/lager." + vbCrLf
     Msg = Msg + "U hebt dus het actief boekjaar of periode gewijzigd tijdens de aanmaak van dit dokument.  Probeer nogmaals NA KONTROLE." + vbCrLf + vbCrLf
     Msg = Msg + "MOGELIJKHEID 2: Boekjaar is identiek, teller is hoger/lager." + vbCrLf
     Msg = Msg + "Een andere gebruiker heeft ondertussen een dokument verwerkt." + vbCrLf + vbCrLf
     Msg = Msg + "Kontroleer eerst eens vooraleer de boeking nogmaals uit te voeren a.u.b. !!!"
     MsgBox Msg
-    dokumentSleutel = SleutelDok(Ar)
-    DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + dokumentSleutel + ")"
+    Document_Key = SleutelDok(Ar)
+    DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + Document_Key + ")"
     Exit Sub
 End If
 
 Msg = "Document wegschrijven, boekhouding bijwerken."
-Ktrl = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, dokumentSleutel + " verwerken.")
+Ktrl = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, Document_Key + " verwerken.")
 Select Case Ktrl
     Case 7
         Exit Sub
@@ -1377,9 +1416,9 @@ Else
         GridText = Dec$(dTTwb, MASK_SY(0)) + vbTab
         Intrastat.Show 1
     End If
-    SS99 Right(dokumentSleutel, 5), Ar   's001 of s003
-    dokumentSleutel = SleutelDok(Ar)
-    DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + dokumentSleutel + ")"
+    SS99 Right(Document_Key, 5), Ar   's001 of s003
+    Document_Key = SleutelDok(Ar)
+    DirekteAankoop.Caption = "Direkte aankoopverrichting         (" + Document_Key + ")"
     SchoonVegen_Click
     SSTab1.SetFocus
 End If
@@ -1804,6 +1843,12 @@ purchasePeppolTODOShowed = False
 If Not Toegankelijk(Me) Then
     Unload Me
     Exit Sub
+End If
+
+If String99(READING, 100) = "1" Then
+    documentRefIsOGM = True
+Else
+    documentRefIsOGM = False
 End If
 
 If Trim(String99(READING, 20)) = "7" Then
@@ -2492,6 +2537,8 @@ End If
 End Sub
 
 
+
+
 Private Sub ListView1_Click()
     
     If ListView1.ListItems.Count Then
@@ -3090,11 +3137,12 @@ rsMAR(TABLE_INVOICES).AddNew
 vBib TABLE_JOURNAL, "L" + vBibTekst(TABLE_SUPPLIERS, "#A110 #"), "v034"
 '19
 vBib TABLE_JOURNAL, DATE_KEY((TekstInfo0.text)), "v066"
-vBib TABLE_JOURNAL, dokumentSleutel, "v033"
+vBib TABLE_JOURNAL, Document_Key, "v033"
 vBib TABLE_JOURNAL, DATE_KEY((TekstInfo1.text)), "v035"
 vBib TABLE_JOURNAL, (TekstInfo3.text), "v069"
 
-vBib TABLE_INVOICES, dokumentSleutel, "v033"
+vBib TABLE_INVOICES, Document_Key, "v033"
+vBib TABLE_INVOICES, Document_OGM_NoFormat, "v413"
 vBib TABLE_INVOICES, (TekstInfo12.text), "v409"
 vBib TABLE_INVOICES, "L" + vBibTekst(TABLE_SUPPLIERS, "#A110 #"), "v034"
 vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.text)), "v035"
@@ -3380,6 +3428,37 @@ Private Sub TekstInfo9_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 
+Private Sub RefreshReference()
+    
+    Dim groupCode As String
+    
+    Select Case Left(Document_Key, 2)
+        Case "A0": groupCode = "4"
+        Case "A1": groupCode = "3"
+    End Select
+    
+    Dim ReferteTxt As String
+    Dim ReferteTxtNoFormat As String
+    
+    Dim dPip As Double
+    Dim recordAsString As String
+    Dim chk As String
+    
+    ReferteTxtNoFormat = groupCode & Mid$(Document_Key, 3, 2) & Mid$(Document_Key, 5, 4) & Mid$(Document_Key, 9) & "xx"
+    ReferteTxt = "+++" + groupCode + Mid(Document_Key, 3, 2) + "/" + Mid(Document_Key, 5, 4) + "/" + Mid(Document_Key, 9) + "xx+++"
+        
+    dPip = Val(Mid$(ReferteTxt, 4, 3) & Mid$(ReferteTxt, 8, 4) & Mid$(ReferteTxt, 13, 3))
+    chk = Format$(dPip - Int(dPip / 97) * 97, "00")
+    If chk = "00" Then chk = "97"
+
+    Mid$(ReferteTxt, 16, 2) = chk
+    Mid$(ReferteTxtNoFormat, 11, 2) = chk
+    
+    Document_OGM = ReferteTxt
+    Document_OGM_NoFormat = ReferteTxtNoFormat
+    Me.LabelDocumentReference = "Referte: " & Document_Key & " of " + Document_OGM
+    
+End Sub
 
 
 

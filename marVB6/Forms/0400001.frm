@@ -966,7 +966,15 @@ Begin VB.Form DirekteVerkoop
       End
       Begin VB.Label LabelDocumentReference 
          Alignment       =   1  'Right Justify
-         Caption         =   "Referte: V0202600001"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   255
          Left            =   4200
          TabIndex        =   70
@@ -1427,6 +1435,12 @@ Attribute VB_Exposed = False
 Option Explicit
 DefInt A-Z
 
+Dim VerkoopDetailTitel(8) As String
+Dim documentRefIsOGM As Boolean
+Dim Document_Key As String * 11
+Dim Document_OGM As String
+Dim Document_OGM_NoFormat As String
+
 Dim rsSellerUBL As New ADODB.Recordset
 
 Dim adminNoVat As Boolean
@@ -1543,8 +1557,6 @@ Dim pdfDOKUMENTTYPE As String
 Dim dokumentHistoriek As String * 11
 Dim T As Integer
 
-Dim VerkoopDetailTitel(8) As String
-Dim dokumentSleutel As String * 11
 Dim KlantRekening As String * 7
 
 Dim VerkoopFLG As Integer
@@ -1799,20 +1811,20 @@ If InStr(ADOBIB_TEXT(rsDetail("Memo"), "#v147 #"), "V") Then
     End If
 End If
 
-dokumentSleutel = ADOBIB_TEXT(rsDetail("Memo"), "#v033 #")
+Document_Key = ADOBIB_TEXT(rsDetail("Memo"), "#v033 #")
 RefreshReference
-If Mid(dokumentSleutel, 2, 1) = "1" Then
+If Mid(Document_Key, 2, 1) = "1" Then
     CreditNota.Value = 1
 End If
 
 Dim docInEur As String
 
-TekstInfo3 = dokumentSleutel
+TekstInfo3 = Document_Key
 Medekontraktant.Value = Val(ADOBIB_TEXT(rsDetail("Memo"), "#v135 #"))
 TekstInfo0.text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v035 #"))
 TekstInfo1.text = DATE_TEXT(ADOBIB_TEXT(rsDetail("Memo"), "#v036 #"))
 TekstInfo2.text = ADOBIB_TEXT(rsDetail("Memo"), "#v136 #")
-DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + dokumentSleutel + ")"
+DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + Document_Key + ")"
 docInEur = ADOBIB_TEXT(rsDetail("Memo"), "#vEUR #")
 
 Do While Not rsDetail.EOF
@@ -1848,14 +1860,14 @@ Select Case dokumentType
 
     Case "14"
         VerkoopOptie(2).Enabled = False
-        frmDokHistoriek.lstDokHistoriek.AddItem dokumentSleutel
+        frmDokHistoriek.lstDokHistoriek.AddItem Document_Key
         If frmDokHistoriek.Visible = False Then
             frmDokHistoriek.Show
         End If
         DirekteVerkoop.SetFocus
                                     
     Case "13"
-        frmDokHistoriek.lstDokHistoriek.AddItem dokumentSleutel
+        frmDokHistoriek.lstDokHistoriek.AddItem Document_Key
         If frmDokHistoriek.Visible = False Then
             frmDokHistoriek.Show
         End If
@@ -2533,18 +2545,18 @@ Dim T As Integer
 Dim tempBDos As Integer
 
 If Vr = 11 Or Vr = 13 Then
-    If dokumentSleutel <> SleutelDok(Vr) Then
-    Msg = dokumentSleutel + " <> " + SleutelDok(Vr) + vbCrLf + vbCrLf
+    If Document_Key <> SleutelDok(Vr) Then
+    Msg = Document_Key + " <> " + SleutelDok(Vr) + vbCrLf + vbCrLf
     Msg = Msg + "MOGELIJKHEID 1: Teller is identiek, boekjaar is hoger/lager." + vbCrLf
     Msg = Msg + "U hebt dus het actief boekjaar of periode gewijzigd tijdens de aanmaak van dit dokument.  Probeer nogmaals NA KONTROLE." + vbCrLf + vbCrLf
     Msg = Msg + "MOGELIJKHEID 2: Boekjaar is identiek, teller is hoger/lager." + vbCrLf
     Msg = Msg + "Een andere gebruiker heeft ondertussen een dokument verwerkt." + vbCrLf + vbCrLf
     Msg = Msg + "Kontroleer eerst eens vooraleer de boeking nogmaals uit te voeren a.u.b. !!!"
     MsgBox Msg
-    dokumentSleutel = SleutelDok(Vr)
+    Document_Key = SleutelDok(Vr)
     RefreshReference
-    TekstInfo3 = dokumentSleutel
-    DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
+    TekstInfo3 = Document_Key
+    DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + Document_Key + ")"
     Exit Sub
     End If
 End If
@@ -2559,7 +2571,7 @@ End If
 
 Msg = "Document administratief afhandelen" + vbCrLf + vbCrLf
 Msg = Msg + "Bent U zeker ?"
-Ktrl = MsgBox(Msg$, vbYesNo + vbDefaultButton2 + vbQuestion, "Document : " + dokumentSleutel)
+Ktrl = MsgBox(Msg$, vbYesNo + vbDefaultButton2 + vbQuestion, "Document : " + Document_Key)
 Select Case Ktrl
     Case vbYes
     Case Else
@@ -2701,7 +2713,7 @@ ElseIf dokumentType = "15" Then
 End If
 If Err Then MsgBox Error
 
-bGet TABLE_VARIOUS, 1, vSet(dokumentType + dokumentSleutel, 20)
+bGet TABLE_VARIOUS, 1, vSet(dokumentType + Document_Key, 20)
 If Ktrl Then
     BestondReeds = False
 Else
@@ -2709,7 +2721,7 @@ Else
     bDelete TABLE_VARIOUS
     Do
         bNext TABLE_VARIOUS
-        If Ktrl Or vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet(dokumentType + dokumentSleutel, 20) Then
+        If Ktrl Or vSet(KEY_BUF(TABLE_VARIOUS), 20) <> vSet(dokumentType + Document_Key, 20) Then
             Exit Do
         Else
             bDelete TABLE_VARIOUS
@@ -2721,9 +2733,9 @@ tempBDos = 0
 JumpNextBlok:
 TLB_RECORD(TABLE_VARIOUS) = ""
 vBib TABLE_VARIOUS, "K" + RV(rsKlant, "A110"), "v004"
-vBib TABLE_VARIOUS, dokumentType + dokumentSleutel, "v005"
+vBib TABLE_VARIOUS, dokumentType + Document_Key, "v005"
 vBib TABLE_VARIOUS, RV(rsKlant, "A110"), "A110"
-vBib TABLE_VARIOUS, dokumentSleutel, "v033"
+vBib TABLE_VARIOUS, Document_Key, "v033"
 vBib TABLE_VARIOUS, Format(Medekontraktant.Value), "v135"
 vBib TABLE_VARIOUS, DATE_KEY((TekstInfo0.text)), "v035"
 vBib TABLE_VARIOUS, DATE_KEY((TekstInfo1.text)), "v036"
@@ -2765,7 +2777,7 @@ If BestondReeds = True Then
     GoTo Nextdokument
 End If
 
-SS99 Right(dokumentSleutel, 5), Vr
+SS99 Right(Document_Key, 5), Vr
 If BonnenString <> "" Then
     Do While BonnenString <> ""
         dokumentHistoriek = Left(BonnenString, 11)
@@ -2787,7 +2799,7 @@ If BonnenString <> "" Then
     Else
         Do
             RecordToVeld TABLE_VARIOUS
-            vBib TABLE_VARIOUS, dokumentSleutel, "v147"
+            vBib TABLE_VARIOUS, Document_Key, "v147"
             bUpdate TABLE_VARIOUS, 1
             If Ktrl Then
                 MsgBox "Stop"
@@ -2813,7 +2825,7 @@ ElseIf Trim$(dokumentHistoriek) <> "" Then
         MsgBox "Onverwachte stop dokument " + dokumentHistoriek
     Else
         RecordToVeld TABLE_VARIOUS
-        vBib TABLE_VARIOUS, dokumentSleutel, "v147"
+        vBib TABLE_VARIOUS, Document_Key, "v147"
         bUpdate TABLE_VARIOUS, 1
         If Ktrl Then
             MsgBox "Stop"
@@ -2825,10 +2837,10 @@ Nextdokument:
 Dim sellerDocCheck As String
 sellerDocCheck = Dir(LOCATION_COMPANYDATA + "peppol\out\" + invoiceNumber + ".xml")
            
-dokumentSleutel = SleutelDok(Vr)
+Document_Key = SleutelDok(Vr)
 RefreshReference
-TekstInfo3 = dokumentSleutel
-DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + dokumentSleutel + ")"
+TekstInfo3 = Document_Key
+DirekteVerkoop.Caption = Left(DirekteVerkoop.Caption, 28) + "(" + Document_Key + ")"
 SchoonVegen_Click
 KlantAktiveren.SetFocus
 If sellerDocCheck <> "" Then
@@ -3193,7 +3205,7 @@ pdfDrukAf
         
 idClient = Trim(rsMAR(TABLE_CUSTOMERS)("A110"))
 If Not IsNull(rsMAR(TABLE_CUSTOMERS)("g101")) Then voorkeurg101 = Trim(rsMAR(TABLE_CUSTOMERS)("g101"))
-idDocument = dokumentSleutel
+idDocument = Document_Key
 tmpString = DATE_KEY(TekstInfo0.text)
 invoiceDate = Mid(tmpString, 1, 4) + "-" + Mid(tmpString, 5, 2) + "-" + Mid(tmpString, 7, 2)
 tmpString = DATE_KEY(TekstInfo1.text)
@@ -3263,7 +3275,7 @@ Else
             'MPIBericht.ResolveName
         
             'Create the message
-            Me.MPIBericht.MsgSubject = pdfDOKUMENTTYPE + " " + dokumentSleutel
+            Me.MPIBericht.MsgSubject = pdfDOKUMENTTYPE + " " + Document_Key
                 
             Dim useDialogBox As Boolean
                 
@@ -3282,7 +3294,7 @@ Else
             End If
                 
             emailTemplate = Replace(emailTemplate, "{docType}", pdfDOKUMENTTYPE)
-            emailTemplate = Replace(emailTemplate, "{docNumber}", dokumentSleutel)
+            emailTemplate = Replace(emailTemplate, "{docNumber}", Document_Key)
                 
             sellerInfo = String99(READING, 52) + vbCrLf 'contact
             sellerInfo = sellerInfo + String99(READING, 46) + vbCrLf 'naam bedrijf
@@ -3663,13 +3675,13 @@ Else
     VerkoopOptie(0).Enabled = False
     VerkoopOptie(1).Enabled = False
     VerkoopOptie(2).Enabled = False
-    dokumentSleutel = SleutelDok(13)
+    Document_Key = SleutelDok(13)
     RefreshReference
-    TekstInfo3 = dokumentSleutel
+    TekstInfo3 = Document_Key
     Vr = 13
     CreditNota.Enabled = False
 End If
-DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
+DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + Document_Key + ")"
 
 End Sub
 
@@ -3857,12 +3869,16 @@ Mim.Report.PenSize = 0.01
 pdfY = Mim.Report.PrintBox(1.5, pdfVsoftVanaf, UCase(pdfDOKUMENTTYPE))
 
 invoiceCustomerNumber = Trim(RV(rsKlant, "A110"))
-invoiceNumber = Trim(dokumentSleutel) + "-" + invoiceCustomerNumber
+invoiceNumber = Trim(Document_Key) + "-" + invoiceCustomerNumber
 paymentTerms = invoiceNumber
 orderReference = invoiceNumber
-paymentID = invoiceNumber
+If documentRefIsOGM Then
+    paymentID = Document_OGM
+Else
+    paymentID = invoiceNumber
+End If
 
-pdfY = Mim.Report.VPEPRINT(8.5, pdfVsoftVanaf, dokumentSleutel & " / " & Str(Pagina))
+pdfY = Mim.Report.VPEPRINT(8.5, pdfVsoftVanaf, Document_Key & " / " & Str(Pagina))
 pdfY = Mim.Report.VPEPRINT(1.5, pdfY, vbCrLf)
 
 If Trim(RV(rsKlant, "A161")) = "" Then
@@ -4114,12 +4130,16 @@ Else
         ibanValue = sSip(0) + vbCrLf
         amountValue = "EUR" + Trim(Dec((TotaalBedrag), "#######0.00")) + vbCrLf
         purposeValue = "GDDS" + vbCrLf
-        referenceValue = dokumentSleutel + vbCrLf
+        If documentRefIsOGM = False Then
+            referenceValue = Document_Key + vbCrLf
+        Else
+            referenceValue = Document_OGM + vbCrLf
+        End If
         remittanceValue = vbCrLf
         informationValue = vbCrLf
     
         DoEvents
-        FileNameQR = dokumentSleutel
+        FileNameQR = Document_Key
         qrFileName = LOCATION_COMPANYDATA + "BMP-qr\" + FileNameQR + ".bmp"
         
         ShowAndSaveQR.Hide
@@ -4202,7 +4222,11 @@ Mim.Report.TextBold = False
         pdfY = Mim.Report.VPEPRINT(3.6, pdfY, UCase(rNTTxt2))
     Next
         
-    rNTTxt = dokumentSleutel
+    If documentRefIsOGM = False Then
+        rNTTxt = Document_Key
+    Else
+        rNTTxt = Document_OGM
+    End If
     GoSub pdfSpatieren
     Mim.Report.TextBold = True
     pdfY = Mim.Report.VPEPRINT(3.6, pdfY, rNTTxt2)
@@ -4443,6 +4467,12 @@ End If
 
 If String99(READING, 299) = "2" Then
     SS99 "1", 299
+End If
+
+If String99(READING, 100) = "1" Then
+    documentRefIsOGM = True
+Else
+    documentRefIsOGM = False
 End If
 
 Dim TempoKLS As String
@@ -4923,31 +4953,34 @@ Private Sub RefreshReference()
     
     Dim groupCode As String
     
-    Select Case Left(dokumentSleutel, 2)
-        Case "V0"
-            groupCode = "8"
-        Case "V1"
-            groupCode = "7"
-        Case "B0"
-            groupCode = "6"
-        Case "F0"
-            groupCode = "5"
+    Select Case Left(Document_Key, 2)
+        Case "V0": groupCode = "8":
+        Case "V1": groupCode = "7"
+        Case "B0": groupCode = "6"
+        Case "F0": groupCode = "5"
     End Select
     
     Dim ReferteTxt As String
+    Dim ReferteTxtNoFormat As String
+    
     Dim dPip As Double
     Dim recordAsString As String
+    Dim chk As String
     
-    ReferteTxt = "+++" + groupCode + Mid(dokumentSleutel, 3, 2) + "/" + Mid(dokumentSleutel, 5, 4) + "/" + Mid(dokumentSleutel, 9) + "xx+++"
+    ReferteTxtNoFormat = groupCode & Mid$(Document_Key, 3, 2) & Mid$(Document_Key, 5, 4) & Mid$(Document_Key, 9) & "xx"
+    ReferteTxt = "+++" + groupCode + Mid(Document_Key, 3, 2) + "/" + Mid(Document_Key, 5, 4) + "/" + Mid(Document_Key, 9) + "xx+++"
         
-    dPip = Val(Mid(ReferteTxt, 4, 3) + Mid(ReferteTxt, 8, 4) + Mid(ReferteTxt, 13, 3))
-    Mid(ReferteTxt, 16, 2) = Format(dPip - Int(dPip / 97) * 97, "00")
-    If Mid(ReferteTxt, 16, 2) = "00" Then
-        Mid(ReferteTxt, 16, 2) = "97"
-    End If
-    
-    Me.LabelDocumentReference = "Referte: " & dokumentSleutel & " | " + ReferteTxt
+    dPip = Val(Mid$(ReferteTxt, 4, 3) & Mid$(ReferteTxt, 8, 4) & Mid$(ReferteTxt, 13, 3))
+    chk = Format$(dPip - Int(dPip / 97) * 97, "00")
+    If chk = "00" Then chk = "97"
 
+    Mid$(ReferteTxt, 16, 2) = chk
+    Mid$(ReferteTxtNoFormat, 11, 2) = chk
+    
+    Document_OGM = ReferteTxt
+    Document_OGM_NoFormat = ReferteTxtNoFormat
+    Me.LabelDocumentReference = "Referte: " & Document_Key & " of " + Document_OGM
+    
 End Sub
 
 
@@ -4978,7 +5011,7 @@ If cmdSwitch.Caption = "Ingave in BEF" Then
 Else
     lblBTWBedrag1 = Format(BTWEuroBasis(1), "#,##0.00")
     lblBTWBedrag2 = Format(BTWEuroBasis(2), "#,##0.00")
-    lblBTWBedrag3 = Format(BTWEuroBasis(2), "#,##0.00")
+    lblBTWBedrag3 = Format(BTWEuroBasis(3), "#,##0.00")
 End If
 
 BTWEx = BTWEx + BTWBasis(0)
@@ -5466,9 +5499,9 @@ Private Sub TekstInfo3_LostFocus()
 
     On Local Error Resume Next
 
-    dokumentSleutel = TekstInfo3.text
+    Document_Key = TekstInfo3.text
     RefreshReference
-    DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
+    DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + Document_Key + ")"
 
 End Sub
 
@@ -5772,7 +5805,7 @@ End If
 If VerkoopDetail.ListCount Then
     If Annuleren.Enabled = False Then
         MsgBox "U gaat naar een hogere modus met ingeladen dokument(en)." + vbCrLf + vbCrLf + "Indien dit niet de bedoeling was, onmiddellijk verkoopvenster sluiten en herbeginnen a.u.b.", vbOKOnly + vbExclamation
-        dokumentHistoriek = dokumentSleutel
+        dokumentHistoriek = Document_Key
         TLB_RECORD(TABLE_VARIOUS) = ""
         Annuleren.Enabled = True
     End If
@@ -5789,31 +5822,31 @@ Select Case Index
         dokumentType = "15" 'Faktuur of creditnota
         CreditNota.Value = 0
         Vr = 11
-        dokumentSleutel = SleutelDok(11)
+        Document_Key = SleutelDok(11)
         RefreshReference
         TekstInfo0.text = MIM_GLOBAL_DATE
         TekstInfo1.text = MIM_GLOBAL_DATE
-        DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + dokumentSleutel + ")"
+        DirekteVerkoop.Caption = vSet("Verkoopverrichting", 28) + "(" + Document_Key + ")"
         chkZonderRelatie.Visible = False
         
     Case 1
         dokumentType = "14" 'Bestelbon, Leveringsbon
-        dokumentSleutel = SleutelDok(73)
+        Document_Key = SleutelDok(73)
         RefreshReference
         Vr = 73
-        DirekteVerkoop.Caption = vSet("Bestelling/levering", 28) + "(" + dokumentSleutel + ")"
+        DirekteVerkoop.Caption = vSet("Bestelling/levering", 28) + "(" + Document_Key + ")"
         chkZonderRelatie.Visible = True
         
     Case 2
         dokumentType = "13" 'Offerte
-        dokumentSleutel = SleutelDok(59)
+        Document_Key = SleutelDok(59)
         RefreshReference
         Vr = 59
-        DirekteVerkoop.Caption = vSet("Offerte", 28) + "(" + dokumentSleutel + ")"
+        DirekteVerkoop.Caption = vSet("Offerte", 28) + "(" + Document_Key + ")"
         chkZonderRelatie.Visible = True
         
 End Select
-TekstInfo3 = dokumentSleutel
+TekstInfo3 = Document_Key
 If Ktrl = 99 Then
           Msg = VerkoopOptie(Index).Caption + " actief bij andere gebruiker." + vbCrLf + vbCrLf
     Msg = Msg + "Verkoopverrichting afsluiten of andere optie selecteren a.u.b. !"
@@ -5845,7 +5878,8 @@ If rsMAR(TABLE_INVOICES).State = adStateClosed Then
 End If
 rsMAR(TABLE_INVOICES).AddNew
 
-vBib TABLE_INVOICES, dokumentSleutel, "v033"
+vBib TABLE_INVOICES, Document_Key, "v033"
+vBib TABLE_INVOICES, Document_OGM_NoFormat, "v413"
 vBib TABLE_INVOICES, "K" + RV(rsKlant, "A110"), "v034"
 vBib TABLE_INVOICES, DATE_KEY(TekstInfo0), "v035"
 vBib TABLE_INVOICES, DATE_KEY((TekstInfo1.text)), "v036"
@@ -6059,7 +6093,7 @@ rsJournaal.AddNew
 rsJournaal("v034") = "K" + RV(rsKlant, "A110")
 rsJournaal("v066") = DATE_KEY(TekstInfo0)
 rsJournaal("v035") = DATE_KEY(TekstInfo0)
-rsJournaal("v033") = dokumentSleutel
+rsJournaal("v033") = Document_Key
 rsJournaal("v069") = TekstInfo2.text
 Return
 

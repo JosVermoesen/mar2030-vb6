@@ -1305,6 +1305,35 @@ If Dir(LOCATION_COMPANYDATA + "DDEF125.TXT") = "" Then
     Next
 End If
 
+DocCheckForOGM:
+If String99(READING, 100) = "" Then
+    Msg = "Database extra veld OGM Documentnummers" & vbCrLf & vbCrLf
+    Msg = Msg & "* Alle 'A0~' en 'A1~' aankoopdocumenten," & vbCrLf
+    Msg = Msg & "* Alle 'V0~', 'V1~', 'B0~' en 'F0~' verkoopdocumenten," & vbCrLf
+    Msg = Msg & "* Alle 'Q0~' verzekeringsdocumenten" & vbCrLf & vbCrLf
+    Msg = Msg & "Er wijzigt niets aan de documentnummering" & vbCrLf
+    Msg = Msg & "Functionaliteit uitsluitend voor betaalverrichtingen" & vbCrLf & vbCrLf
+    Msg = Msg & "Hierna bijwerken, akkoord?"
+    KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
+    If KtrlBox = vbYes Then
+        Dim returnResult As Boolean
+        returnResult = ConvertDocNumbersToOGM
+        If returnResult = False Then
+            MsgBox "Er ging iets fout, probeer later opnieuw", vbExclamation
+        Else
+            Msg = "Omwerking met succes" & vbCrLf & vbCrLf
+            Msg = Msg & "Duidt nu eerst in setup uw voorkeur aan:" & vbCrLf & vbCrLf
+            Msg = Msg & "* ofwel OGM betaalreferte op basis document" & vbCrLf
+            Msg = Msg & "* ofwel verkoopdocument als betaalreferte" & vbCrLf
+            Msg = Msg & "  zoals voorheen"
+            MsgBox Msg, vbInformation
+        End If
+    Else
+        Msg = "Vergeet niet ten gepaste tijd deze functionaliteit beschikbaar te maken."
+        MsgBox Msg, vbExclamation
+    End If
+End If
+
 Screen.MousePointer = vbNormal
 Exit Sub
 
@@ -1314,11 +1343,6 @@ Resume Next
 
 End Sub
 
-Sub BeWaarTekst(Onderdeel As String, SubDeel As String, Element As String)
-
-SaveSetting App.ProductName, Onderdeel, SubDeel, Element
-
-End Sub
 
 Sub Cijfermaskers()
 
@@ -1387,33 +1411,6 @@ LOCATION_COMPANYDATA = ""
 
 End Sub
 
-Function InstellingenBewaard(frmVenster As Form) As Boolean
-
-Err = 0: InstellingenBewaard = True
-On Error Resume Next
-SaveSetting App.ProductName, frmVenster.Name, "Top", frmVenster.Top
-SaveSetting App.ProductName, frmVenster.Name, "Links", frmVenster.Left
-SaveSetting App.ProductName, frmVenster.Name, "Breedte", frmVenster.Width
-SaveSetting App.ProductName, frmVenster.Name, "Hoogte", frmVenster.Height
-If Err Then InstellingenBewaard = False
-
-End Function
-
-
-Sub LaadInstellingen(frmVenster As Form)
-
-On Local Error GoTo EenFoutBijINLaden
-
-frmVenster.Top = GetSetting(App.ProductName, frmVenster.Name, "Top")
-frmVenster.Left = GetSetting(App.ProductName, frmVenster.Name, "Links")
-frmVenster.Width = GetSetting(App.ProductName, frmVenster.Name, "Breedte")
-frmVenster.Height = GetSetting(App.ProductName, frmVenster.Name, "Hoogte")
-Exit Sub
-
-EenFoutBijINLaden:
-Exit Sub
-
-End Sub
 
 Sub CloseOpenWindows()
 
@@ -1442,20 +1439,6 @@ Unload DiversePosten
 Unload InbrengFinancieel
 
 End Sub
-
-Function LaadTekst(Onderdeel As String, SubDeel As String) As Variant
-
-On Local Error Resume Next
-If InStr(Onderdeel, ";") Then
-    LaadTekst = GetSetting(Left(Onderdeel, InStr(Onderdeel, ";") - 1), Mid(Onderdeel, InStr(Onderdeel, ";") + 1), SubDeel)
-Else
-    LaadTekst = GetSetting(App.ProductName, Onderdeel, SubDeel)
-End If
-
-EenFoutBijINLaden:
-Exit Function
-
-End Function
 
 Sub NieuwBoekjaar()
 Dim BeginEenheden As Double

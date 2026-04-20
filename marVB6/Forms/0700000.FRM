@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   77004803
+         Format          =   16580611
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -612,22 +612,17 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
     Dim checkerSEPA As String
     Dim clientNumber As String
     Dim formattedAmount As String
-    Dim documentFound As String
     
+    Dim DocumentKey As String
     Dim searchOnRvId As Integer
     searchOnRvId = 0
     
-                            
-    'TODO:
-    'Better check for seller and buyer
-    MsgBox "Buyer should be OGM or invoice starting with 'V'"
-    
     formattedAmount = Str(Val(lineAmount))
+    
     If InStr(refString, "ORef: ") Then
-
-        documentFound = Mid(refString, InStr(refString, "ORef: ") + 6)
+        DocumentKey = Mid(refString, InStr(refString, "ORef: ") + 6)
     Else
-        documentFound = ""
+        DocumentKey = ""
     End If
     
     CtrlDocuments = ""
@@ -638,7 +633,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
     ' refString starting with 104 is insurance
     ' clientNumber is 6 numbers on position 4 to 7 + position 9 to 10
     If isSeller Then
-        If documentFound = "" Then
+        If DocumentKey = "" Then
             Msg = "SELECT Leveranciers.A110, Leveranciers.A100, Leveranciers.v259, "
             Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
             Msg = Msg & "Dokumenten.v037, Dokumenten.v038, Dokumenten.v039, Dokumenten.v249, "
@@ -660,33 +655,31 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Msg = Msg & "AND Dokumenten.v033 = '" + documentFound + "' "
         End If
     Else
-        Msg = "SELECT Klanten.A110, Klanten.A100, Klanten.v259, "
+        Msg = "SELECT Klanten.A110, Klanten.A100, Klanten.v259, Klanten.rvID, "
         Msg = Msg & "Dokumenten.v033, Dokumenten.v034, Dokumenten.v035, Dokumenten.v036, "
         Msg = Msg & "Dokumenten.v037, Dokumenten.v038, Dokumenten.v039, Dokumenten.v249, "
         Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID, Dokumenten.A000 "
         Msg = Msg & "FROM Klanten, Dokumenten "
         Msg = Msg & "WHERE Dokumenten.v034 = 'K' + Klanten.A110 "
-        Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
         If refIsCor And Mid(refString, 1, 3) = "104" Then
             'Search on client number
             clientNumber = Mid(refString, 4, 4) + Mid(refString, 9, 2)
             Msg = Msg & "AND Klanten.A110 = '" + clientNumber + "' "
-        ElseIf refIsCor And Mid(refString, 1, 3) = "999" Then
-            'Search on client RvId
-            MsgBox "Stop voor zoeken op RvID"
+            Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
+        ElseIf Mid(refString, 1, 3) = "999" Then 'Search on client RvId
             searchOnRvId = Val(Mid(refString, 4, 7))
             Msg = Msg & "AND Klanten.rvID =" + Str(searchOnRvId) + " "
+            Msg = Msg & "AND Dokumenten.v249 <> Dokumenten.v037 "
         ElseIf Not refIsCor And isCDD Then
             'Search with contract number
-            MsgBox "Stop search with contract number"
+            MsgBox "Stop for not refIsCor and isCDD"
             Msg = Msg & "AND Dokumenten.A000 = '" + refString + "' "
+            Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
         Else
-            'Other possibilities...
-            '998 as rvID of a V0 invoice
-            '997 as rvID of a Q0 premium
-            '996 as rvID of a V1 creditnote
+            'TODO Other possibilities...
+            '908 on supplier RvId etc
         End If
-        Msg = Msg & "ORDER BY Dokumenten.v037 "
+        Msg = Msg & "ORDER BY Dokumenten.v035 DESC "
     End If
     Screen.MousePointer = vbHourglass
    
@@ -705,20 +698,25 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
         Exit Function
     ElseIf rsAny.RecordCount = 1 Then
         rsAny.MoveFirst
-        CtrlDocuments = rsAny(3) & "|" & rsAny(1) & "|" & rsAny(0)
+        CtrlDocuments = rsAny("v033") & "|" & rsAny("A100") & "|" & rsAny("A110")
         GoTo FinishFunction
     Else
-        rsAny.MoveFirst
-        'Stop
-        Do While Not rsAny.EOF
-            GoSub ValidateDocument
-            rsAny.MoveNext
-        Loop
+        If Mid(refString, 1, 3) = "999" Or Mid(refString, 1, 3) = "104" Then
+            'use recent document from this client
+            rsAny.MoveFirst
+            CtrlDocuments = rsAny("v033") & "|" & rsAny("A100") & "|" & rsAny("A110")
+            GoTo FinishFunction
+        Else
+            'Stop
+            Do While Not rsAny.EOF
+                GoSub ValidateDocument
+                rsAny.MoveNext
+            Loop
+        End If
         rsAny.Close
         Set rsAny = Nothing
     End If
     Screen.MousePointer = vbNormal
-    
     Exit Function
 
 ValidateDocument:
@@ -726,6 +724,7 @@ ValidateDocument:
     
     'More then one found
     'TODO check on amount and IBAN to be sure
+    
     Return
     
 FinishFunction:
@@ -1080,6 +1079,15 @@ Private Sub ButtonReadCamt053_Click()
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
                 aa = aa & xdaLinesDATAArray(T, 10) & vbTab
+                
+            Case "0404000" 'CASH afname
+                MsgBox "Cash Afname"
+                bedragTransactie = -bedragTransactie
+                aa = aa & "-" & vbTab
+                aa = aa & "??????" & vbTab
+                aa = aa & Val(amountToCheck) & vbTab
+                aa = aa & xdaLinesDATAArray(T, 10) & vbTab
+                        
                                 
             Case "0501000" '(5-C) SEPA Direct Debit CORE Type Direct Debit (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie

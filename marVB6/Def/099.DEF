@@ -18,6 +18,7 @@
 "5   s015","Nr Leveringsbons","N",5
 "5   s205","Nr Bestelbons Leveranciers","N",5
 ;Verkoopverrichtingen
+"919 s100","Documentreferte als OGM?","N",1
 "5   s011","Nr Verkoopfacturen","N",5
 "5   s012","Nr Verkoopfacturen in Verkoopboek","N",5
 "5   s013","Nr Creditnota op Verkoop","N",5

@@ -13,23 +13,6 @@ Dim CrText2                As String
 
 Dim T                       As Integer
 
-Function Dec(fGetal As Double, fMasker As String) As String
-    
-    Dim MaskerLengte As Integer
-    Dim TempoString As String
-
-    MaskerLengte = Len(fMasker)
-    TempoString = Format(fGetal, fMasker)
-    If (MaskerLengte - Len(TempoString)) > 0 Then
-        TempoString = Space$(MaskerLengte - Len(TempoString)) + TempoString
-    End If
-    If InStr(TempoString, ",") Then
-        Mid(TempoString, InStr(TempoString, ","), 1) = "."
-    End If
-    Dec = TempoString
-
-End Function
-
 
 Sub DbKontrole(StringTeZoeken As String, FlNr As Integer)
 Dim aa As Variant
@@ -171,11 +154,11 @@ Xlog.X.Cols = 3
 
 Xlog.X.Col = 0
 Xlog.X.Row = 0
-Xlog.X.Text = "vsfKode"
+Xlog.X.text = "vsfKode"
 Xlog.X.Col = 1
-Xlog.X.Text = "Veldomschrijving"
+Xlog.X.text = "Veldomschrijving"
 Xlog.X.Col = 2
-Xlog.X.Text = "Veldgegevens"
+Xlog.X.text = "Veldgegevens"
 
 If Fl = TABLE_INVOICES Then
     If VSF_PRO Then
@@ -239,7 +222,7 @@ If XLogKey <> "" Then
     Xlog.X.Col = 2
     Do While TELEBIB_CODE(T) <> Space$(10)
         Xlog.X.Row = T + 1
-        CrText2 = Xlog.X.Text
+        CrText2 = Xlog.X.text
         If Mid(TELEBIB_CODE(Xlog.X.Row - 1), 10, 1) = "*" And CrText2 = "" Then
             MsgBox "Invoer voor '" + RTrim$(TELEBIB_TEXT(T)) + "'" + vbCrLf + vbCrLf + "is verplicht !", 0, "Vervolledig a.u.b."
             GoTo XLogShow
@@ -434,16 +417,16 @@ If Mid(InfoTekst, 1, 1) = "@" Then
 Else
     ntInputbox.MedeDeling.SimpleText = GridText
 End If
-ntInputbox.TekstInfo.Text = TekstZelf
+ntInputbox.TekstInfo.text = TekstZelf
 'nTInputBox.TekstInfo.PasswordChar = Paswoord
 ntInputbox.Show 1
     
-    If ntInputbox.TekstInfo.Text = Chr$(255) Then
+    If ntInputbox.TekstInfo.text = Chr$(255) Then
     vsfInputBox = TekstZelf
 Else
     If ntInputbox.DefaultData.RecordSource = "" Then
-        vsfInputBox = ntInputbox.TekstInfo.Text
-    ElseIf Mid(InfoTekst, 1, 1) = "@" And ntInputbox.TekstInfo.Text = ntInputbox.DefaultData.Recordset(Val(Mid(ToolDef(0), 1, 2))) Then
+        vsfInputBox = ntInputbox.TekstInfo.text
+    ElseIf Mid(InfoTekst, 1, 1) = "@" And ntInputbox.TekstInfo.text = ntInputbox.DefaultData.Recordset(Val(Mid(ToolDef(0), 1, 2))) Then
         Dim AantalRijen As Integer
         Select Case Mid(InfoTekst, 2, 2)
             Case "00"
@@ -457,16 +440,16 @@ Else
             Xlog.X.Col = 0
             For TT = 1 To Xlog.X.Rows
                 Xlog.X.Row = TT
-                If Mid(Xlog.X.Text, 5, 5) = Mid(ToolDef(T), 4) Then
+                If Mid(Xlog.X.text, 5, 5) = Mid(ToolDef(T), 4) Then
                     Xlog.X.Col = 2
-                    Xlog.X.Text = ntInputbox.DefaultData.Recordset(Val(Mid(ToolDef(T), 1, 2)))
+                    Xlog.X.text = ntInputbox.DefaultData.Recordset(Val(Mid(ToolDef(T), 1, 2)))
                     Exit For
                 End If
             Next
         Next
-        vsfInputBox = ntInputbox.TekstInfo.Text
+        vsfInputBox = ntInputbox.TekstInfo.text
     Else
-        vsfInputBox = ntInputbox.TekstInfo.Text
+        vsfInputBox = ntInputbox.TekstInfo.text
     End If
 End If
 ntInputbox.DefaultData.RecordSource = ""
@@ -550,7 +533,7 @@ GelijkWelkRooster.Rows = 2
 GelijkWelkRooster.Row = 1
 For T = 0 To GelijkWelkRooster.Cols - 1
     GelijkWelkRooster.Col = T
-    GelijkWelkRooster.Text = ""
+    GelijkWelkRooster.text = ""
 Next
 
 End Sub

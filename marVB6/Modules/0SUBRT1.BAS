@@ -783,7 +783,7 @@ bGet TABLE_COUNTERS, 0, TlString
 
 If Ktrl = 99 Then
 ElseIf Ktrl Then
-    MsgBox "Tellers Stopkode " + Format(Ktrl) + ", voor setup-tellersleutel " + TlString + vbCrLf + vbCrLf + "Overloop ALLE setup instellingen vooraleer énig boekjaar op te starten !" + vbCrLf + "Wij staan tot uw beschikking om U hierbij te helpen."
+    MsgBox "Tellers Stopkode " + Format(Ktrl) + ", voor setup-tellersleutel " + TlString + vbCrLf + vbCrLf + "Controleer setup instellingen vooraleer op te starten of verder te werken!" + vbCrLf + "Wij staan tot uw beschikking om U hierbij te helpen."
 Else
     RecordToVeld TABLE_COUNTERS
     'String99 = ntRS(TABLE_COUNTERS).Fields("v217")
