@@ -300,17 +300,17 @@ Function scrExcelStartDemo()
 End Function
 
 
-Function EenLijnRekenen(Laatste As Variant) As Variant
+Function LineCalculating(StartWith As Variant) As Variant
 
-Dim laatstehier As Variant
-laatstehier = Laatste
-Dim UitKomst As Variant
+Dim StartWithHere As Variant
+Dim Resulting As Variant
+StartWithHere = StartWith
 
 JumpLijnRekenen:
-Laatste = InputBox("Rekenen met '" & Trim(laatstehier) & "'" & vbCrLf & "(voer in CLR de startgegevens te verwijderen)", "1-Lijn Rekenen")
-If InStr(UCase(Laatste), "CLR") Then Stop: laatstehier = "": GoTo JumpLijnRekenen
+StartWith = InputBox("Rekenen met '" & Trim(StartWithHere) & "'" & vbCrLf & "(voer in CLR de startgegevens te verwijderen)", "1-Lijn Rekenen")
+If InStr(UCase(StartWith), "CLR") Then Stop: StartWithHere = "": GoTo JumpLijnRekenen
 On Error Resume Next
-UitKomst = Mim.ScriptControl1.Eval(laatstehier & Laatste)
+Resulting = Mim.ScriptControl1.Eval(StartWithHere & StartWith)
 If Err Then
     Select Case Err
         Case 11
@@ -321,8 +321,8 @@ If Err Then
         Case Else
             MsgBox Error
     End Select
-ElseIf UitKomst <> "" Then
-    EenLijnRekenen = UitKomst
+ElseIf Resulting <> "" Then
+    LineCalculating = Resulting
 End If
 
 End Function

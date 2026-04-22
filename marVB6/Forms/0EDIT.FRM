@@ -297,14 +297,14 @@ Private Sub cbFiche_Click()
 
 Dim dummykey As String
 
-dummykey = TekstInfo(3).Text
-bGet TABLE_PRODUCTS, 0, vSet((TekstInfo(3).Text), 13)
+dummykey = TekstInfo(3).text
+bGet TABLE_PRODUCTS, 0, vSet((TekstInfo(3).text), 13)
 Unload frmProduktFiche
 Load frmProduktFiche
 frmProduktFiche.BorderStyle = 0
-frmProduktFiche.TxtInfo(0).Text = TekstInfo(3).Text
+frmProduktFiche.TxtInfo(0).text = TekstInfo(3).text
 frmProduktFiche.Show 1
-TekstInfo(3).Text = Trim(dummykey)
+TekstInfo(3).text = Trim(dummykey)
 TekstInfo(3).SetFocus
         
 End Sub
@@ -396,21 +396,21 @@ End If
 T = 0
 If GridText <> "" Then
     Do While GridText <> ""
-        TekstInfo(T).Text = Left(GridText, InStr(GridText, Chr$(124)) - 1)
-        GridText = Right(GridText, Len(GridText) - (Len(TekstInfo(T).Text) + 1))
+        TekstInfo(T).text = Left(GridText, InStr(GridText, Chr$(124)) - 1)
+        GridText = Right(GridText, Len(GridText) - (Len(TekstInfo(T).text) + 1))
         T = T + 1
     Loop
     
-    TekstInfo(5).Text = Dec$(Val(TekstInfo(5).Text), "#####0.000")
-    If TekstInfo(0).Text = Space$(Len(TekstInfo(0).Text)) Then
+    TekstInfo(5).text = Dec$(Val(TekstInfo(5).text), "#####0.000")
+    If TekstInfo(0).text = Space$(Len(TekstInfo(0).text)) Then
     Else
-        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(0).Text), 7)
+        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(0).text), 7)
         If Ktrl Then
             MsgBox "OnlogicaStop"
         Else
             RecordToVeld TABLE_LEDGERACCOUNTS
-            TekstInfo(0).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
-            TekstInfo(1).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+            TekstInfo(0).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+            TekstInfo(1).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
             If isB2BPeppol = False Then
                 TekstInfo(2).TabIndex = 0
             End If
@@ -425,15 +425,15 @@ End Sub
 Private Sub Ok_Click()
 Dim HetBedrag As Currency
 
-HetBedrag = Val(TekstInfo(2).Text)
+HetBedrag = Val(TekstInfo(2).text)
 
-If Val(TekstInfo(2).Text) = 0 Then
+If Val(TekstInfo(2).text) = 0 Then
     Beep
-ElseIf TekstInfo(1).Text = "" Then
+ElseIf TekstInfo(1).text = "" Then
     Beep
 Else
-    VeldRekening = TekstInfo(0).Text
-    VeldNaam = TekstInfo(1).Text
+    VeldRekening = TekstInfo(0).text
+    VeldNaam = TekstInfo(1).text
     
     
         'ingave in EUR
@@ -450,14 +450,14 @@ Else
         
     GridText = VeldRekening + Chr$(124) + VeldNaam + Chr$(124) + VeldBedrag + Chr$(124)
     If TekstInfo(3).Visible Then
-        If TekstInfo(4).Text = "" Then
+        If TekstInfo(4).text = "" Then
             Beep
-        ElseIf Val(TekstInfo(5).Text) = 0 Then
+        ElseIf Val(TekstInfo(5).text) = 0 Then
             Beep
         Else
-            VeldProdukt = TekstInfo(3).Text
-            VeldAantal = Dec$(Val(TekstInfo(5).Text), "#####0.000")
-            ProduktNaam = TekstInfo(4).Text
+            VeldProdukt = TekstInfo(3).text
+            VeldAantal = Dec$(Val(TekstInfo(5).text), "#####0.000")
+            ProduktNaam = TekstInfo(4).text
             GridText = GridText + VeldProdukt + Chr$(124) + ProduktNaam + Chr$(124) + VeldAantal + Chr$(124)
             Unload Me
         End If
@@ -477,10 +477,10 @@ Select Case Index
     Case 4
         Me.cbFiche.Visible = True
     Case 6
-        bedragA = Val(TekstInfo(6).Text)
+        bedragA = Val(TekstInfo(6).text)
         bedragB = bedragA - (bedragA * pctFilter / 100)
         If isB2BPeppol = False Then
-            TekstInfo(2).Text = Str$(bedragB)
+            TekstInfo(2).text = Str$(bedragB)
         End If
         
 End Select
@@ -489,7 +489,7 @@ End Sub
 
 Private Sub TekstInfo_GotFocus(Index As Integer)
 
-TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 iTabIndex = Index
 If Index = 0 Then Ok.Default = False: SnelHelpPrint "[Ctrl] voor geïndexeerd zoeken", BL_LOGGING
 CTRLFlag = False
@@ -522,15 +522,15 @@ Select Case KeyCode
             Case 0
                 SharedFl = TABLE_LEDGERACCOUNTS
                 aIndex = 0
-                GridText = TekstInfo(0).Text
+                GridText = TekstInfo(0).text
                 SqlSearch.Show 1
                 If Ktrl Then
-                    TekstInfo(1).Text = ""
+                    TekstInfo(1).text = ""
                     Ok.Enabled = False
                 Else
                     RecordToVeld TABLE_LEDGERACCOUNTS
-                    TekstInfo(0).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
-                    TekstInfo(1).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+                    TekstInfo(0).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                    TekstInfo(1).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
                     Ok.Enabled = True
                     If isB2BPeppol = False Then
                         TekstInfo(2).SetFocus
@@ -539,23 +539,23 @@ Select Case KeyCode
             Case 3
                 SharedFl = TABLE_PRODUCTS
                 aIndex = 0
-                GridText = TekstInfo(3).Text
+                GridText = TekstInfo(3).text
                 SqlSearch.Show 1
                 If Ktrl Then
-                    TekstInfo(4).Text = ""
+                    TekstInfo(4).text = ""
                     Ok.Enabled = False
                 Else
                     RecordToVeld TABLE_PRODUCTS
-                    TekstInfo(3).Text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
-                    TekstInfo(4).Text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
+                    TekstInfo(3).text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
+                    TekstInfo(4).text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
                     bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_PRODUCTS, "#v116 #"), 7)
                     If Ktrl Then
-                        TekstInfo(1).Text = ""
+                        TekstInfo(1).text = ""
                         Ok.Enabled = False
                     Else
                         RecordToVeld TABLE_LEDGERACCOUNTS
-                        TekstInfo(0).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
-                        TekstInfo(1).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+                        TekstInfo(0).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                        TekstInfo(1).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
                         Ok.Enabled = True
                     End If
                 End If
@@ -575,9 +575,9 @@ If Index = 2 Then
                 Exit Sub
             End If
             If isB2BPeppol = False Then
-                RekenHier = EenLijnRekenen(TekstInfo(2).Text)
+                RekenHier = LineCalculating(TekstInfo(2).text)
                 If RekenHier Then
-                    TekstInfo(2).Text = Str(Round(RekenHier, 2))
+                    TekstInfo(2).text = Str(Round(RekenHier, 2))
                 End If
             End If
     End Select
@@ -590,20 +590,20 @@ Private Sub TekstInfo_LostFocus(Index As Integer)
 Select Case Index
     Case 0
         If CTRLFlag = True Then Exit Sub
-        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(0).Text), 7)
+        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(0).text), 7)
         If Ktrl Then
-            TekstInfo(0).Text = ""
-            TekstInfo(1).Text = ""
+            TekstInfo(0).text = ""
+            TekstInfo(1).text = ""
         Else
             RecordToVeld TABLE_LEDGERACCOUNTS
-            TekstInfo(0).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
-            TekstInfo(1).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+            TekstInfo(0).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+            TekstInfo(1).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
         End If
     Case 3
         If CTRLFlag = True Then Exit Sub
-        bGet TABLE_PRODUCTS, 0, vSet((TekstInfo(3).Text), 13)
+        bGet TABLE_PRODUCTS, 0, vSet((TekstInfo(3).text), 13)
         If Ktrl Then
-            KtrlBox = MsgBox("Code " & TekstInfo(3).Text & " bestaat niet." & vbCr & "Nieuw produkt aanmaken", vbQuestion + vbYesNo + vbDefaultButton2)
+            KtrlBox = MsgBox("Code " & TekstInfo(3).text & " bestaat niet." & vbCr & "Nieuw produkt aanmaken", vbQuestion + vbYesNo + vbDefaultButton2)
             If KtrlBox = vbNo Then
                 'Annuleren_Click
                 Exit Sub
@@ -611,22 +611,22 @@ Select Case Index
                 Unload frmProduktFiche
                 Load frmProduktFiche
                 frmProduktFiche.BorderStyle = 0
-                frmProduktFiche.TxtInfo(0).Text = TekstInfo(3).Text
+                frmProduktFiche.TxtInfo(0).text = TekstInfo(3).text
                 frmProduktFiche.Show 1
                 TekstInfo(3).SetFocus
             End If
         Else
             RecordToVeld TABLE_PRODUCTS
-            TekstInfo(3).Text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
-            TekstInfo(4).Text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
+            TekstInfo(3).text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
+            TekstInfo(4).text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
             bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_PRODUCTS, "#v116 #"), 7)
             If Ktrl Then
-                TekstInfo(1).Text = ""
+                TekstInfo(1).text = ""
                 Ok.Enabled = False
             Else
                 RecordToVeld TABLE_LEDGERACCOUNTS
-                TekstInfo(0).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
-                TekstInfo(1).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+                TekstInfo(0).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                TekstInfo(1).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
                 Ok.Enabled = True
             End If
         End If
@@ -634,18 +634,18 @@ Select Case Index
         Dim tmpAantal As Single
         
         On Error Resume Next
-        If Left(cbEenheidsType.Text, 1) = "1" Then
-            tmpAantal = TekstInfo(5).Text
-        ElseIf Left(cbEenheidsType.Text, 1) = "2" Then
-            tmpAantal = Val(TekstInfo(5).Text) * Val(vBibTekst(TABLE_PRODUCTS, "#v107 #"))
-            TekstInfo(5).Text = Trim$(Dec((tmpAantal), "####.000"))
+        If Left(cbEenheidsType.text, 1) = "1" Then
+            tmpAantal = TekstInfo(5).text
+        ElseIf Left(cbEenheidsType.text, 1) = "2" Then
+            tmpAantal = Val(TekstInfo(5).text) * Val(vBibTekst(TABLE_PRODUCTS, "#v107 #"))
+            TekstInfo(5).text = Trim$(Dec((tmpAantal), "####.000"))
             cbEenheidsType.ListIndex = 0
         Else
             MsgBox "stop"
         End If
         
         If isB2BPeppol = False Then
-            TekstInfo(2).Text = Dec$(Round(Val(TekstInfo(5).Text) * Val(vBibTekst(TABLE_PRODUCTS, "#e113 #")), 2), MASK_EURBH)
+            TekstInfo(2).text = Dec$(Round(Val(TekstInfo(5).text) * Val(vBibTekst(TABLE_PRODUCTS, "#e113 #")), 2), MASK_EURBH)
             XDoEvents = DoEvents
             TekstInfo(2).SetFocus
         End If

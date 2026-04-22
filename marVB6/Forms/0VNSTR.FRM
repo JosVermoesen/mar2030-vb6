@@ -1344,7 +1344,7 @@ Begin VB.Form Venster
          _ExtentY        =   8281
          _Version        =   393217
          Enabled         =   -1  'True
-         TextRTF         =   $"0VNSTR.frx":0119
+         TextRTF         =   $"0VNSTR.frx":0177
       End
       Begin VB.Label Label2 
          Caption         =   "Nog niets voorzien !"
@@ -1387,7 +1387,7 @@ Begin VB.Form Venster
    Begin VB.Image imgPapierArm 
       Height          =   615
       Left            =   11880
-      Picture         =   "0VNSTR.frx":019D
+      Picture         =   "0VNSTR.frx":0258
       Stretch         =   -1  'True
       ToolTipText     =   "Voorkeur Papierarm Beheer"
       Top             =   720
@@ -2133,7 +2133,7 @@ Else
     Else
         bInsert TempoFL, 0
     End If
-    CmdWijzigen.Default = True
+    cmdWijzigen.Default = True
     RefreshKlanten vBibTekst(TABLE_CONTRACTS, "#A110 #")
     ContractVensterVullen vBibTekst(TABLE_CONTRACTS, "#A110 #")
 End If
@@ -2153,7 +2153,7 @@ End Sub
 
 Private Sub Form_Load()
 
-LaadInstellingen Me
+LoadFormProperties Me
 Me.SSTab1.TabVisible(1) = False
 
     Set rsTB2 = New ADODB.Recordset
@@ -2420,7 +2420,7 @@ If Ktrl Then
 Else
     RecordToVeld TABLE_CONTRACTS
 End If
-X = InstellingenBewaard(Me)
+X = SaveFormProperties(Me)
 
 End Sub
 
@@ -2492,7 +2492,7 @@ End Sub
 
 Private Sub TxtInfo_GotFocus(Index As Integer)
 
-If Index = 0 Then CmdWijzigen.Default = True
+If Index = 0 Then cmdWijzigen.Default = True
 
 End Sub
 
@@ -2543,7 +2543,7 @@ End Sub
 
 Private Sub X_GotFocus()
 
-CmdWijzigen.Default = True
+cmdWijzigen.Default = True
 
 End Sub
 

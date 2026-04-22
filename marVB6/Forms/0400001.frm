@@ -301,9 +301,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -3112,8 +3112,8 @@ End If
 If dokumentType = "15" And Annuleren.Enabled = True Then
     If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         Beep
-        BJPERDAT.WindowState = 0
-        BJPERDAT.PeriodeBoekjaar.SetFocus
+        BYPERDAT.WindowState = 0
+        BYPERDAT.PeriodeBoekjaar.SetFocus
         Exit Function
     End If
 End If
@@ -5458,8 +5458,8 @@ Private Sub TekstInfo0_LostFocus()
         TekstInfo0.SetFocus
     ElseIf Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
         If dokumentType = "15" Then
-            BJPERDAT.WindowState = 0
-            BJPERDAT.PeriodeBoekjaar.SetFocus
+            BYPERDAT.WindowState = 0
+            BYPERDAT.PeriodeBoekjaar.SetFocus
         End If
     Else
         TekstInfo1.text = VValdag((TekstInfo0.text), RV(rsKlant, "vs04"))
@@ -5992,7 +5992,7 @@ For T = 0 To VerkoopDetail.ListCount - 1
                 Exit Function
             End If
             
-            If Right(VerkoopDetail.text, 1) = "0" And BJPERDAT.Boekjaar.ListIndex = 0 Then
+            If Right(VerkoopDetail.text, 1) = "0" And BYPERDAT.Boekjaar.ListIndex = 0 Then
                 If Not ADO_GET(TABLE_PRODUCTS, 0, "=", Mid(VerkoopDetail.text, 98, 13)) Then
                     Beep
                     MsgBox "stop"

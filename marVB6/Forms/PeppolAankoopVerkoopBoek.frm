@@ -44,7 +44,7 @@ Begin VB.Form AVBoek
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   77135875
+      Format          =   76677123
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -169,7 +169,7 @@ Begin VB.Form AVBoek
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   77135875
+      Format          =   76677123
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -695,7 +695,7 @@ MsgBox "Kontroleer de printer."
 Resume
 
 BTWAangifte:
-bGet TABLE_VARIOUS, 1, vSet("17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
+bGet TABLE_VARIOUS, 1, vSet("17" + BYPERDAT.Boekjaar.text + Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
 If Ktrl Then
     MsgBox "Stop"
 Else
@@ -951,11 +951,10 @@ Select Case typeVATPeriod
         DTPickerDateFrom.Value = DATE_TEXT(beginPeriod)
         DTPickerDateTo.Value = DATE_TEXT(endPeriod)
         If Now < DTPickerDateTo.Value + 16 Then
-            Msg = "Minder dan 16 dagen volgend op afsluitperiode." & vbCrLf
-            Msg = Msg & "Verzendt niet te vroeg de btw aangifte." & vbCrLf & vbCrLf
-            Msg = Msg & "Nog enkele dagen wachten?"
-            Ktrl = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1, "BTW Aangifte")
-            If Ktrl = vbYes Then
+            Msg = "Sluit en verzendt niet te vroeg een btw aangifte." & vbCrLf & vbCrLf
+            Msg = Msg & "Alsnog de boeken afdrukken?"
+            Ktrl = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "BTW Aangifte")
+            If Ktrl = vbNo Then
                 Unload Me
                 Exit Sub
             End If
@@ -969,13 +968,13 @@ End Select
 
 Ktrl = 0
 SnelHelpPrint "Kontrole hogere periodes...", BL_LOGGING
-PeriodeMax = BJPERDAT.PeriodeBoekjaar.ListCount + 1
-Do While PeriodeMax > BJPERDAT.PeriodeBoekjaar.ListIndex + 1
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
+PeriodeMax = BYPERDAT.PeriodeBoekjaar.ListCount + 1
+Do While PeriodeMax > BYPERDAT.PeriodeBoekjaar.ListIndex + 1
+    PeriodeSleutel = "17" + BYPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
+        vBib TABLE_VARIOUS, (BYPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(PeriodeMax, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -999,12 +998,12 @@ If getal Then
     Drukken.Visible = False
     Exit Sub
 Else
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+    PeriodeSleutel = "17" + BYPERDAT.Boekjaar.text + Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
-        vBib TABLE_VARIOUS, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
+        vBib TABLE_VARIOUS, (BYPERDAT.Boekjaar.text), "v090"
+        vBib TABLE_VARIOUS, Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
         GoTo jump

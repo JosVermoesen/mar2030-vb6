@@ -7,8 +7,6 @@ Public Const MyObjectErrorN = 1234
 Public Const MyUnhandledError = 9999
 
 
-
-
 Private Function GetErrorTextFromResource(ErrorNum As Long) _
           As String
       Dim strMsg As String

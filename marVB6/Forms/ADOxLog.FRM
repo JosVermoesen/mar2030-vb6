@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmADOXlog 
    AutoRedraw      =   -1  'True
    Caption         =   "Log"
@@ -209,7 +209,7 @@ End Sub
 
 Private Sub Form_Load()
 
-    LaadInstellingen Me
+    LoadFormProperties Me
     Me.Width = 9525
     Me.Height = 6525
 
@@ -236,7 +236,7 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 Dim X As Boolean
 
-X = InstellingenBewaard(Me)
+X = SaveFormProperties(Me)
 
 End Sub
 

@@ -25,19 +25,17 @@ Begin VB.Form ntInputbox
    ScaleHeight     =   1395
    ScaleWidth      =   6930
    StartUpPosition =   1  'CenterOwner
-   Begin VB.CommandButton cmdVooruitAchteruit 
+   Begin VB.CommandButton cmdVooruit 
       Caption         =   ">"
       Height          =   255
-      Index           =   1
       Left            =   3480
       TabIndex        =   4
       Top             =   600
       Width           =   495
    End
-   Begin VB.CommandButton cmdVooruitAchteruit 
+   Begin VB.CommandButton cmdAchteruit 
       Caption         =   "<"
       Height          =   255
-      Index           =   0
       Left            =   120
       TabIndex        =   3
       Top             =   600
@@ -225,40 +223,43 @@ Sub VernieuwInfo()
     Select Case Mid(MedeDeling.SimpleText, 2, 2)
         Case "00"
             lblInfo.Caption = DefaultData.Recordset("ISOLandNummer") + ", " + DefaultData.Recordset("ISOLandkode") + ", " + DefaultData.Recordset("ISOMuntKode") + ", " + DefaultData.Recordset("LandNaam")
-            TekstInfo.Text = DefaultData.Recordset("ISOLandNummer") ''
+            TekstInfo.text = DefaultData.Recordset("ISOLandNummer") ''
             
         Case "01"
             lblInfo.Caption = DefaultData.Recordset("PostKode") + ", " + DefaultData.Recordset("Plaatsnaam")
-            TekstInfo.Text = DefaultData.Recordset("PostKode")
+            TekstInfo.text = DefaultData.Recordset("PostKode")
 
         Case "02"
             lblInfo.Caption = DefaultData.Recordset("PostKode") + ", " + DefaultData.Recordset("Plaatsnaam")
-            TekstInfo.Text = DefaultData.Recordset("PlaatsNaam")
+            TekstInfo.text = DefaultData.Recordset("PlaatsNaam")
     End Select
     
 End Sub
 
+Private Sub cmdVooruit_Click()
 
-Private Sub cmdVooruitAchteruit_Click(Index As Integer)
+    On Error Resume Next
 
-On Error Resume Next
-
-Select Case Index
-    Case 0
-        DefaultData.Recordset.MovePrevious
-        If DefaultData.Recordset.BOF Then
-            DefaultData.Recordset.MoveFirst
-        End If
-        
-    Case 1
-        DefaultData.Recordset.MoveNext
-        If DefaultData.Recordset.EOF Then
-            DefaultData.Recordset.MoveLast
-        End If
-End Select
-VernieuwInfo
+    DefaultData.Recordset.MoveNext
+    If DefaultData.Recordset.EOF Then
+        DefaultData.Recordset.MoveLast
+    End If
+    VernieuwInfo
 
 End Sub
+
+Private Sub cmdAchteruit_Click()
+
+    On Error Resume Next
+
+    DefaultData.Recordset.MovePrevious
+    If DefaultData.Recordset.BOF Then
+        DefaultData.Recordset.MoveFirst
+    End If
+    VernieuwInfo
+
+End Sub
+
 
 Private Sub Form_Activate()
 
@@ -277,7 +278,7 @@ End Sub
 
 Private Sub Hernieuw_Click()
 
-DefaultData.RecordSource = SQLBevel + RTrim$(TekstInfo.Text) + "%';"
+DefaultData.RecordSource = SQLBevel + RTrim$(TekstInfo.text) + "%';"
 MedeDeling.SimpleText = GridText + ntInputbox.DefaultData.RecordSource
 DefaultData.Refresh
 If DefaultData.Recordset.RecordCount Then
@@ -298,7 +299,7 @@ End Sub
 Private Sub sluiten_Click()
 On Local Error Resume Next
 
-TekstInfo.Text = Chr$(255)
+TekstInfo.text = Chr$(255)
 TekstInfo.SetFocus
 ntInputbox.Hide
 
@@ -306,7 +307,7 @@ End Sub
 
 Private Sub TekstInfo_GotFocus()
 
-TekstInfo.SelLength = Len(TekstInfo.Text)
+TekstInfo.SelLength = Len(TekstInfo.text)
 
 End Sub
 

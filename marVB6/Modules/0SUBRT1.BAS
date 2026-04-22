@@ -290,127 +290,155 @@ EH:
 End Function
 
 Public Function ConvertSuppliersSEPAs() As Boolean
+    On Error GoTo EH
 
-    Dim numberOldValid As Integer
-    Dim numberNewValid As Integer
-    Dim numberOldInvalid As Integer
-    Dim numberNewInvalid As Integer
-        
     ConvertSuppliersSEPAs = False
-    Dim rsPartners As New ADODB.Recordset
-    
-    Set rsPartners = New ADODB.Recordset
-            
-    On Error Resume Next
-    Err = 0
-    rsPartners.CursorLocation = adUseClient
-    Msg = "SELECT A110, v150, A161, A100, v259, A170 FROM Leveranciers WHERE v150 = 'BE' ORDER BY A110"
-
-    SnelHelpPrint Msg, BL_LOGGING
     Screen.MousePointer = vbHourglass
-    rsPartners.Open Msg, adntDB, adOpenDynamic, adLockOptimistic
-    If Err Then
-        MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
-        Screen.MousePointer = vbNormal
-        Exit Function
-    ElseIf rsPartners.RecordCount = 0 Then
-        MsgBox "Geen leveranciers.", vbInformation
-        Screen.MousePointer = vbNormal
-        Exit Function
+
+    Dim rs As ADODB.Recordset
+    Dim cmd As New ADODB.Command
+    Dim lastKey As String
+    Dim Bezig As Long
+    Dim bTrans As Boolean
+
+    Dim sepa As String
+    Dim oldAcc As String
+    Dim iban As String
+
+    Dim numberOldValid As Long
+    Dim numberNewValid As Long
+    Dim numberOldInvalid As Long
+    Dim numberNewInvalid As Long
+
+    '-----------------------------------------
+    ' UPDATE-command voorbereiden
+    '-----------------------------------------
+    Set cmd.ActiveConnection = adntDB
+    cmd.CommandText = "UPDATE Leveranciers SET v259 = ?, A170 = ? WHERE A110 = ?"
+
+    cmd.Parameters.Append cmd.CreateParameter("pV259", adVarChar, adParamInput, 50)
+    cmd.Parameters.Append cmd.CreateParameter("pA170", adVarChar, adParamInput, 50)
+    cmd.Parameters.Append cmd.CreateParameter("pA110", adVarChar, adParamInput, 20)
+
+    lastKey = ""
+
+ReopenRecordset:
+    Set rs = New ADODB.Recordset
+    rs.CursorLocation = adUseServer
+
+    Dim sql As String
+    If lastKey = "" Then
+        sql = "SELECT A110, v259, A170 FROM Leveranciers WHERE v150='BE' ORDER BY A110"
+    Else
+        sql = "SELECT A110, v259, A170 FROM Leveranciers WHERE v150='BE' AND A110 > '" & lastKey & "' ORDER BY A110"
     End If
-    
-    Dim checker As String
-        
-    rsPartners.MoveFirst
-    Do While Not rsPartners.EOF
-        On Local Error Resume Next
-        Err = 0
-        checker = Trim(rsPartners("v259")) 'is there alreade a SEPA account
-        If Err Then
-            'it is null, try to get old account number
-            On Local Error Resume Next
-            Err = 0
-            checker = Trim(rsPartners("A170"))
-            If Err Then
-                'old number also null so do nothing
+
+    rs.Open sql, adntDB, adOpenForwardOnly, adLockReadOnly
+
+    If rs.EOF Then GoTo Finished
+
+    '-----------------------------------------
+    ' Nieuwe transactie starten
+    '-----------------------------------------
+    adntDB.BeginTrans
+    bTrans = True
+
+    '-----------------------------------------
+    ' Verwerking van deze batch
+    '-----------------------------------------
+    Do While Not rs.EOF
+        Dim key As String
+        key = rs!A110
+        lastKey = key
+
+        sepa = Trim$(rs!v259 & "")
+        oldAcc = Trim$(rs!A170 & "")
+
+        '-----------------------------------------
+        ' CASE 1: SEPA bestaat al
+        '-----------------------------------------
+        If sepa <> "" Then
+            iban = IbanCheck(sepa, True, False)
+
+            If iban = "invalid" Then
+                numberNewInvalid = numberNewInvalid + 1
+                cmd.Parameters("pV259").Value = Null
+                cmd.Parameters("pA170").Value = Null
             Else
-                'check if there is an old account
-                If checker = "" Then
-                    'nothing to convert
-                Else
-                    checker = IbanCheck(checker, True, False)
-                    If checker = "invalid" Then
-                        numberOldInvalid = numberOldInvalid + 1
-                        rsPartners("v259") = ""
-                        rsPartners("A170") = ""
-                        rsPartners.Update
-                    Else
-                        numberOldValid = numberOldValid + 1
-                        numberNewValid = numberNewValid + 1
-                        'numberOldInvalid
-                        'numberNewInvalid
-                        rsPartners("v259") = checker
-                        rsPartners.Update
-                    End If
-                End If
+                numberNewValid = numberNewValid + 1
+                cmd.Parameters("pV259").Value = iban
+                cmd.Parameters("pA170").Value = IIf(oldAcc = "", Null, oldAcc)
             End If
+
         Else
-            'check validity of SEPA account
-            If Trim(checker) = "" Then
-                'Try with old account
-                On Local Error Resume Next
-                Err = 0
-                checker = Trim(rsPartners("A170"))
-                If Err Then
-                    'no use
+            '-----------------------------------------
+            ' CASE 2: Geen SEPA ? probeer oud nummer
+            '-----------------------------------------
+            If oldAcc <> "" Then
+                iban = IbanCheck(oldAcc, True, False)
+
+                If iban = "invalid" Then
+                    numberOldInvalid = numberOldInvalid + 1
+                    cmd.Parameters("pV259").Value = Null
+                    cmd.Parameters("pA170").Value = Null
                 Else
-                    checker = IbanCheck(checker, True, False)
-                    If checker = "invalid" Then
-                        numberOldInvalid = numberOldInvalid + 1
-                        rsPartners("v259") = ""
-                        rsPartners("A170") = ""
-                        rsPartners.Update
-                    Else
-                        numberOldValid = numberOldValid + 1
-                        numberNewValid = numberNewValid + 1
-                        'numberOldInvalid
-                        'numberNewInvalid
-                        rsPartners("v259") = checker
-                        rsPartners.Update
-                    End If
+                    numberOldValid = numberOldValid + 1
+                    numberNewValid = numberNewValid + 1
+                    cmd.Parameters("pV259").Value = iban
+                    cmd.Parameters("pA170").Value = oldAcc
                 End If
             Else
-                checker = IbanCheck(checker, True, False)
-                If checker = "invalid" Then
-                    numberNewInvalid = numberNewInvalid + 1
-                    rsPartners("v259") = ""
-                    rsPartners.Update
-                Else
-                    numberNewValid = numberNewValid + 1
-                    If checker = rsPartners("v259") Then
-                    Else
-                        rsPartners("v259") = checker
-                        rsPartners.Update
-                    End If
-                End If
+                GoTo NextRecord
             End If
         End If
-        '? ibancheck("891-8540319-61",false,false)
-        rsPartners.MoveNext
+
+        '-----------------------------------------
+        ' UPDATE uitvoeren
+        '-----------------------------------------
+        cmd.Parameters("pA110").Value = key
+        cmd.Execute
+
+        Bezig = Bezig + 1
+
+        If (Bezig Mod 100) = 0 Then
+            SnelHelpPrint "Bezig met " & Bezig, BL_LOGGING
+        End If
+
+        If (Bezig Mod BATCH_SIZE) = 0 Then
+            adntDB.CommitTrans
+            bTrans = False
+            rs.Close
+            GoTo ReopenRecordset
+        End If
+
+NextRecord:
+        rs.MoveNext
     Loop
-    Screen.MousePointer = vbNormal
-       
-    rsPartners.Close
-    Set rsPartners = Nothing
-    
-    Msg = "Aantal oude nummers naar SEPA: " & Trim(Str(numberOldValid)) & vbCrLf
-    Msg = Msg & "Aantal geldige SEPA: " & Trim(Str(numberNewValid)) & vbCrLf
-    MsgBox Msg, vbInformation, "SEPA Check Leveranciers"
+
+    adntDB.CommitTrans
+    bTrans = False
+    rs.Close
+    GoTo ReopenRecordset
+
+Finished:
+    MsgBox _
+        "Aantal oude nummers geldig ? SEPA: " & numberOldValid & vbCrLf & _
+        "Aantal nieuwe SEPA geldig: " & numberNewValid & vbCrLf & _
+        "Aantal oude nummers ongeldig: " & numberOldInvalid & vbCrLf & _
+        "Aantal nieuwe SEPA ongeldig: " & numberNewInvalid, _
+        vbInformation, "SEPA Check Leveranciers"
+
     ConvertSuppliersSEPAs = True
 
+CleanExit:
+    Screen.MousePointer = vbNormal
+    Exit Function
+
+EH:
+    If bTrans Then adntDB.RollbackTrans
+    MsgBox "Fout: " & Err.Number & vbCrLf & Err.Description, vbCritical
+    Resume CleanExit
 End Function
-
-
 
 Function BtwKontrole(BtwString As String, bStrip As Boolean) As String
 ReDim dPip(3) As Double

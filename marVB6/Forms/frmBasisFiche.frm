@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
-Begin VB.Form BasisFiche 
+Begin VB.Form BasicTable 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "BasisFiche"
    ClientHeight    =   1740
@@ -261,7 +261,7 @@ Begin VB.Form BasisFiche
       PromptChar      =   "_"
    End
 End
-Attribute VB_Name = "BasisFiche"
+Attribute VB_Name = "BasicTable"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -461,8 +461,8 @@ Select Case Index
             End If
         Case 10
             If INSERT_FLAG(Fl) = 0 Then
-                msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
-                KtrlBox = MsgBox(msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo(0).text)
+                Msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
+                KtrlBox = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo(0).text)
                 If KtrlBox = vbYes Then
                     bDelete Fl
                     Knop_Click 3
@@ -508,11 +508,11 @@ End If
 TekstInfo(0).text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
 XDoEvents = DoEvents
 
-msg = ""
+Msg = ""
 For T = 0 To 1
-    msg = msg + RTrim$(FVT(Fl, T)) + " "
+    Msg = Msg + RTrim$(FVT(Fl, T)) + " "
 Next
-SnelHelpPrint msg, BL_LOGGING
+SnelHelpPrint Msg, BL_LOGGING
 INSERT_FLAG(Fl) = 0
 
 End Sub

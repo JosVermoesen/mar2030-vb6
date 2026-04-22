@@ -372,8 +372,8 @@ Load ntInputbox
 ntInputbox.Caption = Titel
 If Mid(InfoTekst, 1, 1) = "@" Then
     ntInputbox.Hernieuw.Visible = True
-    ntInputbox.cmdVooruitAchteruit(0).Visible = True
-    ntInputbox.cmdVooruitAchteruit(1).Visible = True
+    ntInputbox.cmdVooruit.Visible = True
+    ntInputbox.cmdAchteruit.Visible = True
     ntInputbox.lblInfo.Visible = True
     Select Case Mid(InfoTekst, 2, 2)
         Case "00"
@@ -399,8 +399,8 @@ If Mid(InfoTekst, 1, 1) = "@" Then
     End Select
 Else
     ntInputbox.Hernieuw.Visible = False
-    ntInputbox.cmdVooruitAchteruit(0).Visible = False
-    ntInputbox.cmdVooruitAchteruit(1).Visible = False
+    ntInputbox.cmdVooruit.Visible = False
+    ntInputbox.cmdAchteruit.Visible = False
     ntInputbox.lblInfo.Visible = False
 End If
 ntInputbox.Tag = GridText

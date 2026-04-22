@@ -298,8 +298,8 @@ BeginSleutel = PlGrensVan
 EindSleutel = PlGrensTot
 
 psTekst(2) = "Algemeen Journaal (Systeem OT) " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = txtTekstLijn(1).Text
-psTekst(3) = "Boekjaar aanvang : " + Left(BOOKYEAR_FROMTO, 4) + ", " + txtTekstLijn(0).Text
+psTekst(0) = txtTekstLijn(1).text
+psTekst(3) = "Boekjaar aanvang : " + Left(BOOKYEAR_FROMTO, 4) + ", " + txtTekstLijn(0).text
     InitVelden
 
 bFirst TABLE_JOURNAL, 4
@@ -309,7 +309,7 @@ If Ktrl Then
     Exit Sub
 End If
     ProefEnSaldi.Enabled = False
-    PAGE_COUNTER = Val(TxtVolgNummer.Text)
+    PAGE_COUNTER = Val(TxtVolgNummer.text)
     If chkAfdrukInVenster = 0 Then
         If Printer.Width > 12000 Then
             Printer.FontSize = 10
@@ -418,8 +418,8 @@ BeginSleutel = vSet(txtTekstLijn(2), 7) + PlGrensVan
 EindSleutel = vSet(txtTekstLijn(3), 7) + PlGrensTot
 
 psTekst(2) = "Proef- en Saldibalans " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = txtTekstLijn(1).Text
-psTekst(3) = "Boekjaar aanvang : " + Left(BOOKYEAR_FROMTO, 4) + ", " + txtTekstLijn(0).Text
+psTekst(0) = txtTekstLijn(1).text
+psTekst(3) = "Boekjaar aanvang : " + Left(BOOKYEAR_FROMTO, 4) + ", " + txtTekstLijn(0).text
     InitVelden
 
 bFirst TABLE_JOURNAL, 0
@@ -518,9 +518,9 @@ If Left(VorigeSleutel, 7) <> Left(KEY_BUF(TABLE_JOURNAL), 7) Then
         VeldTXT(1) = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
         
         If bhEuro Then
-            rkVeldje = "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"
+            rkVeldje = "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"
         Else
-            rkVeldje = "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"
+            rkVeldje = "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"
         End If
         
         VeldTXT(2) = Str$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, rkVeldje)))
@@ -555,27 +555,27 @@ Return
 
 RekSaldoKTRL:
 If bhEuro Then
-    rkVeldje = "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"
+    rkVeldje = "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"
 Else
-    rkVeldje = "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"
+    rkVeldje = "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"
 End If
 If Abs(CumTotaalD + CumTotaalC) - Abs(Val(vBibTekst(TABLE_LEDGERACCOUNTS, rkVeldje))) = 0 Then
 Else
     Msg = "KontroleStop bijwerking rekeningsaldo !!" + vbCrLf + vbCrLf
     Msg = Msg + "Rekening : " + KEY_BUF(TABLE_LEDGERACCOUNTS) + vbCrLf
     If bhEuro Then
-        Msg = Msg + Str$(CumTotaalD + CumTotaalC) + " <> " + Str$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")))
+        Msg = Msg + Str$(CumTotaalD + CumTotaalC) + " <> " + Str$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")))
     Else
-        Msg = Msg + Str$(CumTotaalD + CumTotaalC) + " <> " + Str$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")))
+        Msg = Msg + Str$(CumTotaalD + CumTotaalC) + " <> " + Str$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")))
     End If
     MsgBox Msg & vbCrLf & vbCrLf & "Na deze P&S, nogmaals opnieuw P&S a.u.b. samenstellen", vbExclamation
                 
-    KontroleLijst = KontroleLijst + vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #") + " " + Dec$(CumTotaalD + CumTotaalC, "#########.00") + " " + Dec$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")), "#########.00") + vbCrLf
+    KontroleLijst = KontroleLijst + vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #") + " " + Dec$(CumTotaalD + CumTotaalC, "#########.00") + " " + Dec$(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#########.00") + vbCrLf
     If bhEuro Then
-        vBib TABLE_LEDGERACCOUNTS, Str$(CumTotaalD + CumTotaalC), "e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000")
-        rsMAR(TABLE_LEDGERACCOUNTS)("dece" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000")) = CumTotaalD + CumTotaalC
+        vBib TABLE_LEDGERACCOUNTS, Str$(CumTotaalD + CumTotaalC), "e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000")
+        rsMAR(TABLE_LEDGERACCOUNTS)("dece" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000")) = CumTotaalD + CumTotaalC
     Else
-        vBib TABLE_LEDGERACCOUNTS, Str$(CumTotaalD + CumTotaalC), "v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000")
+        vBib TABLE_LEDGERACCOUNTS, Str$(CumTotaalD + CumTotaalC), "v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000")
     End If
     bUpdate TABLE_LEDGERACCOUNTS, 0
 End If
@@ -691,11 +691,11 @@ Private Sub chkDetailJournaal_Click()
 If chkDetailJournaal.Value Then
     LblVolgNummer.Visible = True
     TxtVolgNummer.Visible = True
-    txtTekstLijn(0).Text = BJPERDAT!PeriodeBoekjaar.Text
+    txtTekstLijn(0).text = BYPERDAT!PeriodeBoekjaar.text
 Else
     LblVolgNummer.Visible = False
     TxtVolgNummer.Visible = False
-    txtTekstLijn(0).Text = Left(BJPERDAT!PeriodeBoekjaar.List(0), 10) + " - " + Right(BJPERDAT!PeriodeBoekjaar.List(BJPERDAT.PeriodeBoekjaar.ListCount - 1), 10)
+    txtTekstLijn(0).text = Left(BYPERDAT!PeriodeBoekjaar.List(0), 10) + " - " + Right(BYPERDAT!PeriodeBoekjaar.List(BYPERDAT.PeriodeBoekjaar.ListCount - 1), 10)
 End If
 If chkDetailJournaal.Value Then
     BeginPlaySound 9
@@ -864,10 +864,10 @@ SubTotaalC = 0
 TotaalD = 0
 TotaalC = 0
 
-txtTekstLijn(0).Text = Left(BJPERDAT.PeriodeBoekjaar.List(0), 10) + " - " + Right(BJPERDAT.PeriodeBoekjaar.List(BJPERDAT.PeriodeBoekjaar.ListCount - 1), 10)
-PlGrensVan = Mid(txtTekstLijn(0).Text, 7, 4) + Mid(txtTekstLijn(0).Text, 4, 2) + Mid(txtTekstLijn(0).Text, 1, 2)
-PlGrensTot = Mid(txtTekstLijn(0).Text, 20, 4) + Mid(txtTekstLijn(0).Text, 17, 2) + Mid(txtTekstLijn(0).Text, 14, 2)
-txtTekstLijn(1).Text = MIM_GLOBAL_DATE
+txtTekstLijn(0).text = Left(BYPERDAT.PeriodeBoekjaar.List(0), 10) + " - " + Right(BYPERDAT.PeriodeBoekjaar.List(BYPERDAT.PeriodeBoekjaar.ListCount - 1), 10)
+PlGrensVan = Mid(txtTekstLijn(0).text, 7, 4) + Mid(txtTekstLijn(0).text, 4, 2) + Mid(txtTekstLijn(0).text, 1, 2)
+PlGrensTot = Mid(txtTekstLijn(0).text, 20, 4) + Mid(txtTekstLijn(0).text, 17, 2) + Mid(txtTekstLijn(0).text, 14, 2)
+txtTekstLijn(1).text = MIM_GLOBAL_DATE
 Caption = Caption + " " + Left(BOOKYEAR_FROMTO, 4)
 
 Set Printer = Printers(LijstPrinterNr)
@@ -941,7 +941,7 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 0
     For T = 0 To 7
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -1098,30 +1098,30 @@ Private Sub txtTekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 0
-        If DATE_INVALID(Right(txtTekstLijn(0).Text, 10)) Then
+        If DATE_INVALID(Right(txtTekstLijn(0).text, 10)) Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            txtTekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            txtTekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             txtTekstLijn(0).SetFocus
             Exit Sub
-        ElseIf Len(txtTekstLijn(0).Text) <> 23 Then
+        ElseIf Len(txtTekstLijn(0).text) <> 23 Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            txtTekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            txtTekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             txtTekstLijn(0).SetFocus
             Exit Sub
         Else
-            PlGrensVan = Mid(txtTekstLijn(0).Text, 7, 4) + Mid(txtTekstLijn(0).Text, 4, 2) + Mid(txtTekstLijn(0).Text, 1, 2)
-            PlGrensTot = Mid(txtTekstLijn(0).Text, 20, 4) + Mid(txtTekstLijn(0).Text, 17, 2) + Mid(txtTekstLijn(0).Text, 14, 2)
+            PlGrensVan = Mid(txtTekstLijn(0).text, 7, 4) + Mid(txtTekstLijn(0).text, 4, 2) + Mid(txtTekstLijn(0).text, 1, 2)
+            PlGrensTot = Mid(txtTekstLijn(0).text, 20, 4) + Mid(txtTekstLijn(0).text, 17, 2) + Mid(txtTekstLijn(0).text, 14, 2)
             If PlGrensVan < Left(BOOKYEAR_FROMTO, 8) Or PlGrensTot > Right(BOOKYEAR_FROMTO, 8) Then
                 'MsgBox "Geen selectie BUITEN het boekjaar a.u.b. !"
-                'txtTekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+                'txtTekstLijn(0).Text = BYPERDAT.PeriodeBoekjaar.Text
                 'txtTekstLijn(0).SetFocus
             End If
         End If
     
     Case 1
-        If DATE_INVALID((txtTekstLijn(1).Text)) Then
+        If DATE_INVALID((txtTekstLijn(1).text)) Then
             Beep
-            txtTekstLijn(1).Text = MIM_GLOBAL_DATE
+            txtTekstLijn(1).text = MIM_GLOBAL_DATE
             txtTekstLijn(1).SetFocus
         End If
 End Select

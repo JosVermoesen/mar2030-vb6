@@ -2493,9 +2493,9 @@ End If
 
 
 If Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
-    BJPERDAT.WindowState = 0
-    BJPERDAT.SetFocus
-    BJPERDAT.PeriodeBoekjaar.SetFocus
+    BYPERDAT.WindowState = 0
+    BYPERDAT.SetFocus
+    BYPERDAT.PeriodeBoekjaar.SetFocus
     Exit Sub
 End If
 
@@ -2972,7 +2972,7 @@ Private Sub TekstInfo5_KeyUp(KeyCode As Integer, Shift As Integer)
             If Len(TekstInfo5) = 1 Then
                 Exit Sub
             End If
-            RekenHier = EenLijnRekenen(TekstInfo5.text)
+            RekenHier = LineCalculating(TekstInfo5.text)
             If RekenHier Then
                 TekstInfo5.text = Str(Round(RekenHier, 2))
             End If
@@ -2986,8 +2986,8 @@ Private Sub TekstInfo0_LostFocus()
         TekstInfo0.text = MIM_GLOBAL_DATE
         TekstInfo0.SetFocus
     ElseIf Not DATE_CHECK((TekstInfo0.text), PERIODAS_TEXT) Then
-        BJPERDAT.WindowState = 0
-        BJPERDAT.PeriodeBoekjaar.SetFocus
+        BYPERDAT.WindowState = 0
+        BYPERDAT.PeriodeBoekjaar.SetFocus
     End If
 
 End Sub

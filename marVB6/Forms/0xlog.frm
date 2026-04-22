@@ -690,7 +690,7 @@ End Sub
 
 Private Sub Form_Load()
 
-LaadInstellingen Me
+LoadFormProperties Me
 
 'Set miDoc = New MODIctl.Document
 
@@ -779,7 +779,7 @@ End Function
 Private Sub Form_Unload(Cancel As Integer)
 Dim X As Boolean
 
-X = InstellingenBewaard(Me)
+X = SaveFormProperties(Me)
 'Me.MiDocView1.filename = ""
 
 End Sub

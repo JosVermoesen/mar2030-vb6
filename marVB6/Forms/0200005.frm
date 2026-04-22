@@ -269,28 +269,28 @@ With grdDokumentDetail
     .Rows = 2
     .Row = 1
     .Col = 0
-    .Text = ""
+    .text = ""
     
     .Col = 1
-    .Text = ""
+    .text = ""
     
     .Col = 2
-    .Text = ""
+    .text = ""
     
     .Col = 3
-    .Text = ""
+    .text = ""
     
     .Col = 4
-    .Text = ""
+    .text = ""
 
     .Col = 5
-    .Text = ""
+    .text = ""
 
     .Col = 6
-    .Text = ""
+    .text = ""
 
     .Col = 7
-    .Text = ""
+    .text = ""
 
 End With
 
@@ -361,7 +361,7 @@ Else
 End If
 
 JumpNextKlant:
-bGet TABLE_CUSTOMERS, 0, vSet(Mid(grdDokumentDetail.Text, 2), 12)
+bGet TABLE_CUSTOMERS, 0, vSet(Mid(grdDokumentDetail.text, 2), 12)
 If Ktrl Then
     MsgBox "KlantFiche bestaat niet meer !"
 Else
@@ -376,7 +376,7 @@ End If
     GoSub VoetTekst
 
 grdDokumentDetail.Col = 0
-If DummyKlant <> grdDokumentDetail.Text Then
+If DummyKlant <> grdDokumentDetail.text Then
     GoTo JumpNextKlant
 Else
     Printer.EndDoc
@@ -447,7 +447,7 @@ If vBibTekst(TABLE_CUSTOMERS, "#A161 #") = "" Then
 Else
     rBTWstr = vBibTekst(TABLE_CUSTOMERS, "#v150 #") + vBibTekst(TABLE_CUSTOMERS, "#A161 #")
 End If
-Printer.Print vbCrLf; Tab(7); vSet(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), 12); " "; vSet(rBTWstr$, 14); " "; vSet(vBibTekst(TABLE_CUSTOMERS, "#vs02 #"), 12); " "; vSet((TekstLijn(1).Text), 16);
+Printer.Print vbCrLf; Tab(7); vSet(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), 12); " "; vSet(rBTWstr$, 14); " "; vSet(vBibTekst(TABLE_CUSTOMERS, "#vs02 #"), 12); " "; vSet((TekstLijn(1).text), 16);
     XTot = Printer.CurrentX
     YTot = Printer.CurrentY
 
@@ -456,7 +456,7 @@ Printer.Line (XVan - 50, YVan - 50)-(XTot + 50, YTot + 250), , B
     Printer.CurrentX = XVan     'ander geen afdruk met vb4 32bit
     Printer.CurrentY = YVan     'ander geen afdruk met vb4 32bit
     Printer.Print "KLANT        BTW NUMMER     FAX          DATUM UITTREKSEL";
-    Printer.Print vbCrLf; Tab(7); vSet(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), 12); " "; vSet(rBTWstr$, 14); " "; vSet(vBibTekst(TABLE_CUSTOMERS, "#vs02 #"), 12); " "; vSet((TekstLijn(1).Text), 16);
+    Printer.Print vbCrLf; Tab(7); vSet(vBibTekst(TABLE_CUSTOMERS, "#A110 #"), 12); " "; vSet(rBTWstr$, 14); " "; vSet(vBibTekst(TABLE_CUSTOMERS, "#vs02 #"), 12); " "; vSet((TekstLijn(1).text), 16);
     Printer.CurrentX = XTot     'ander geen afdruk met vb4 32bit
     Printer.CurrentY = YTot     'ander geen afdruk met vb4 32bit
     Printer.Print vbCrLf;        'ander geen afdruk met vb4 32bit
@@ -486,24 +486,24 @@ Return
 
 DetailLijnen:
 grdDokumentDetail.Col = 0
-DummyKlant = grdDokumentDetail.Text
+DummyKlant = grdDokumentDetail.text
 SubTotaal = 0
 Do
     grdDokumentDetail.Col = 7
-    Printer.Print Tab(7); grdDokumentDetail.Text; " ";
+    Printer.Print Tab(7); grdDokumentDetail.text; " ";
     grdDokumentDetail.Col = 1
-    Printer.Print Dec(CDbl(grdDokumentDetail.Text), MASK_EURBH); " ";
+    Printer.Print Dec(CDbl(grdDokumentDetail.text), MASK_EURBH); " ";
     grdDokumentDetail.Col = 2
-    Printer.Print grdDokumentDetail.Text; " ";
+    Printer.Print grdDokumentDetail.text; " ";
     grdDokumentDetail.Col = 3
-    Printer.Print grdDokumentDetail.Text; " ";
+    Printer.Print grdDokumentDetail.text; " ";
     grdDokumentDetail.Col = 4
-    Printer.Print Dec(CDbl(grdDokumentDetail.Text), MASK_EURBH); " ";
+    Printer.Print Dec(CDbl(grdDokumentDetail.text), MASK_EURBH); " ";
     grdDokumentDetail.Col = 5
-    Printer.Print Dec(CDbl(grdDokumentDetail.Text), MASK_EURBH); " ";
-    SubTotaal = SubTotaal + CDbl(grdDokumentDetail.Text)
+    Printer.Print Dec(CDbl(grdDokumentDetail.text), MASK_EURBH); " ";
+    SubTotaal = SubTotaal + CDbl(grdDokumentDetail.text)
     grdDokumentDetail.Col = 6
-    Printer.Print grdDokumentDetail.Text; " "; vbCrLf;
+    Printer.Print grdDokumentDetail.text; " "; vbCrLf;
     If Printer.CurrentY >= Val(VsoftTot) - 1550 - OVSStrooklijnen Then
         GoSub OnderKant
         GoSub VoetTekst
@@ -515,7 +515,7 @@ Do
         grdDokumentDetail.Row = grdDokumentDetail.Row + 1
     End If
     grdDokumentDetail.Col = 0
-    If DummyKlant <> grdDokumentDetail.Text Then
+    If DummyKlant <> grdDokumentDetail.text Then
         Exit Do
     End If
 Loop
@@ -524,7 +524,7 @@ OnderKant:
 Printer.Print vbCrLf; Tab(7); "TOTAAL IN " + Mim.SnelHelp.Panels(2) + " : "; Tab(67); Dec$((SubTotaal), MASK_EURBH); vbCrLf; vbCrLf;
 'Hier nog de tekst ook
 
-Tekst = RTrim$(TekstLijn(0).Text)
+Tekst = RTrim$(TekstLijn(0).text)
 Printer.FontName = TekstLijn(0).FontName
 Do While Tekst <> ""
     Printer.CurrentX = XVan
@@ -674,7 +674,7 @@ If Not Toegankelijk(Me) Then
     Exit Sub
 End If
 
-If BJPERDAT.Boekjaar.ListIndex <> 0 Then
+If BYPERDAT.Boekjaar.ListIndex <> 0 Then
     MsgBox "Eerst hoogste boekjaar activeren, a.u.b.", vbExclamation
     Unload Me
     Exit Sub
@@ -683,29 +683,29 @@ End If
 dttot = 0
 dtbtw = 0
 dvtot = 0
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(1).text = MIM_GLOBAL_DATE
 
-TekstLijn(2).Text = "0"
-TekstLijn(3).Text = String$(12, "z")
+TekstLijn(2).text = "0"
+TekstLijn(3).text = String$(12, "z")
 grdDokumentDetail.Rows = 2
 grdDokumentDetail.Cols = 8
 grdDokumentDetail.Col = 0
 grdDokumentDetail.Row = 0
-grdDokumentDetail.Text = "Klantkode"
+grdDokumentDetail.text = "Klantkode"
 grdDokumentDetail.Col = 1
-grdDokumentDetail.Text = "Totaal"
+grdDokumentDetail.text = "Totaal"
 grdDokumentDetail.Col = 2
-grdDokumentDetail.Text = "Datum"
+grdDokumentDetail.text = "Datum"
 grdDokumentDetail.Col = 3
-grdDokumentDetail.Text = "Vervaldag"
+grdDokumentDetail.text = "Vervaldag"
 grdDokumentDetail.Col = 4
-grdDokumentDetail.Text = "Betaald"
+grdDokumentDetail.text = "Betaald"
 grdDokumentDetail.Col = 5
-grdDokumentDetail.Text = "Rest"
+grdDokumentDetail.text = "Rest"
 grdDokumentDetail.Col = 6
-grdDokumentDetail.Text = "Fin.Stuk"
+grdDokumentDetail.text = "Fin.Stuk"
 grdDokumentDetail.Col = 7
-grdDokumentDetail.Text = "dokument"
+grdDokumentDetail.text = "dokument"
 
 grdDokumentDetail.ColWidth(0) = 1455
 grdDokumentDetail.ColWidth(1) = 1130
@@ -727,7 +727,7 @@ If Dir$(LOCATION_COMPANYDATA + "Ruit.txt") <> "" Then
         AAA = AAA + aa + vbCrLf
     Loop
     Close FlTemp
-    TekstLijn(0).Text = AAA
+    TekstLijn(0).text = AAA
 End If
 
 End Sub
@@ -762,7 +762,7 @@ Private Sub GrddokumentDetail_KeyUp(KeyCode As Integer, Shift As Integer)
 Select Case KeyCode
     Case 38, 40
         grdDokumentDetail.Col = 0
-        bGet TABLE_CUSTOMERS, 0, vSet(Mid(grdDokumentDetail.Text, 2), 12)
+        bGet TABLE_CUSTOMERS, 0, vSet(Mid(grdDokumentDetail.text, 2), 12)
         If Ktrl Then
             'MsgBox "KlantFiche bestaat niet meer !"
             SnelHelpPrint "Ogenblik..", BL_LOGGING
@@ -786,16 +786,16 @@ Dim VoorLetter  As String * 1
 
 aa = ""
 T = 0
-bGetOrGreater TABLE_INVOICES, 1, vSet("K" + TekstLijn(2).Text, 13)
-If Ktrl Or KEY_BUF(TABLE_INVOICES) > vSet("K" + TekstLijn(3).Text, 13) Then
+bGetOrGreater TABLE_INVOICES, 1, vSet("K" + TekstLijn(2).text, 13)
+If Ktrl Or KEY_BUF(TABLE_INVOICES) > vSet("K" + TekstLijn(3).text, 13) Then
     Beep
     MsgBox "Selektie buiten mogelijke dokumenten"
     Exit Sub
 Else
     RecordToVeld TABLE_INVOICES
 End If
-If vSet("K" + TekstLijn(2).Text, 13) = vSet("K" + TekstLijn(3).Text, 13) Then
-    If vSet(KEY_BUF(TABLE_INVOICES), 13) <> vSet("K" + TekstLijn(2).Text, 13) Then
+If vSet("K" + TekstLijn(2).text, 13) = vSet("K" + TekstLijn(3).text, 13) Then
+    If vSet(KEY_BUF(TABLE_INVOICES), 13) <> vSet("K" + TekstLijn(2).text, 13) Then
         Beep
         MsgBox "Geen dokumenten voor " + vBibTekst(Fl, "#A100 #")
         Exit Sub
@@ -807,7 +807,7 @@ grdDokumentDetail.Refresh
 GoSub VolgendeLijn
 Do
     bNext TABLE_INVOICES
-    If Ktrl Or KEY_BUF(TABLE_INVOICES) > vSet("K" + TekstLijn(3).Text, 13) Then
+    If Ktrl Or KEY_BUF(TABLE_INVOICES) > vSet("K" + TekstLijn(3).text, 13) Then
         Exit Do
     Else
         RecordToVeld TABLE_INVOICES
@@ -993,7 +993,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 Select Case Index
     Case 0
         Samenstellen.Default = False
@@ -1015,9 +1015,9 @@ Select Case Index
                 GridText = ""
                 SqlSearch.Show 1
                 If Ktrl = 0 Then
-                    TekstLijn(Index).Text = vBibTekst(TABLE_CUSTOMERS, "#A110 #")
+                    TekstLijn(Index).text = vBibTekst(TABLE_CUSTOMERS, "#A110 #")
                     If Index = 2 Then
-                        TekstLijn(3).Text = TekstLijn(2).Text
+                        TekstLijn(3).text = TekstLijn(2).text
                     End If
                 End If
         End Select
@@ -1033,13 +1033,13 @@ Select Case Index
         Samenstellen.Default = True
         FlTemp = FreeFile
         Open LOCATION_COMPANYDATA + "RUIT.TXT" For Output As FlTemp
-            Print #FlTemp, TekstLijn(0).Text;
+            Print #FlTemp, TekstLijn(0).text;
         Close FlTemp
     Case 1
         Samenstellen.Default = False
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
             TekstLijn(1).SetFocus
         End If
     Case 2

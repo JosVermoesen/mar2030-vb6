@@ -294,16 +294,16 @@ End If
 
 Select Case aIndex
     Case 2
-        BeginSleutel = "L" + TekstLijn(2).Text
-        EindSleutel = "L" + TekstLijn(3).Text
+        BeginSleutel = "L" + TekstLijn(2).text
+        EindSleutel = "L" + TekstLijn(3).text
     Case 1
-        BeginSleutel = "K" + TekstLijn(2).Text
-        EindSleutel = "K" + TekstLijn(3).Text
+        BeginSleutel = "K" + TekstLijn(2).text
+        EindSleutel = "K" + TekstLijn(3).text
 End Select
 
 psTekst(2) = LijstNaam + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = TekstLijn(1).Text
-psTekst(3) = TekstLijn(0).Text
+psTekst(0) = TekstLijn(1).text
+psTekst(3) = TekstLijn(0).text
     InitVelden
 
 bGetOrGreater TABLE_INVOICES, 1, BeginSleutel
@@ -605,7 +605,7 @@ Dim TempB_MODUS As Integer
 dttot = 0
 dtbtw = 0
 dvtot = 0
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(1).text = MIM_GLOBAL_DATE
 
 Select Case aIndex
     Case TABLE_CUSTOMERS
@@ -615,8 +615,8 @@ Select Case aIndex
 End Select
 
 TopDown.Caption = LijstNaam
-TekstLijn(2).Text = "0"
-TekstLijn(3).Text = String$(12, "z")
+TekstLijn(2).text = "0"
+TekstLijn(3).text = String$(12, "z")
 If Mim.AV(2).Enabled Then
     chkSelektie(2).Visible = True
 End If
@@ -629,7 +629,7 @@ If Printer.Orientation = vbPRORLandscape Then
 Else
     chkAfdrukLiggend.Value = 0
 End If
-Me.TekstLijn(4) = BJPERDAT.PeriodeBoekjaar
+Me.TekstLijn(4) = BYPERDAT.PeriodeBoekjaar
 
 End Sub
 
@@ -670,7 +670,7 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 0
     For T = 0 To 5
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -742,7 +742,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -750,9 +750,9 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
         End If
 End Select
 

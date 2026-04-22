@@ -41,7 +41,7 @@ Option Explicit
 
 Private Sub Form_Load()
 
-    LaadInstellingen Me
+    LoadFormProperties Me
  
 End Sub
 
@@ -58,6 +58,6 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 Dim X As Boolean
 
-X = InstellingenBewaard(Me)
+X = SaveFormProperties(Me)
 
 End Sub

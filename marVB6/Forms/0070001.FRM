@@ -80,10 +80,10 @@ Begin VB.Form KwijtingBoeken
       TabCaption(1)   =   "TB2"
       TabPicture(1)   =   "0070001.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "rtbIndentTB2"
+      Tab(1).Control(0)=   "cbHerboeking"
       Tab(1).Control(1)=   "cbPolisHistoriek"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "cbHerboeking"
+      Tab(1).Control(2)=   "rtbIndentTB2"
       Tab(1).ControlCount=   3
       Begin VB.CheckBox cbHerboeking 
          Alignment       =   1  'Right Justify
@@ -221,6 +221,7 @@ Begin VB.Form KwijtingBoeken
          _ExtentX        =   15055
          _ExtentY        =   7646
          _Version        =   393217
+         Enabled         =   -1  'True
          ScrollBars      =   3
          TextRTF         =   $"0070001.frx":0038
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -427,7 +428,7 @@ Else
         
     Loop
     PolisDetail.Enabled = True
-    TekstInfo(0).Text = Left(BJPERDAT.PeriodeBoekjaar.Text, 10)
+    TekstInfo(0).text = Left(BYPERDAT.PeriodeBoekjaar.text, 10)
     'TekstInfo(0).Enabled = False
     'KeuzeInfo(0).ListIndex = 0
     Afsluiten.Enabled = True
@@ -464,32 +465,32 @@ If dokumentSleutel <> SleutelDok(121) Then
     Exit Sub
 End If
 
-If Not DATE_CHECK((TekstInfo(0).Text), PERIODAS_TEXT) Then
+If Not DATE_CHECK((TekstInfo(0).text), PERIODAS_TEXT) Then
     Beep
     On Local Error Resume Next
-    BJPERDAT.WindowState = 0
-    BJPERDAT.PeriodeBoekjaar.SetFocus
+    BYPERDAT.WindowState = 0
+    BYPERDAT.PeriodeBoekjaar.SetFocus
     Exit Sub
 End If
 
 For T = 1 To PolisDetail.Rows - 2
     PolisDetail.Row = T
     PolisDetail.Col = 2
-    TotaalPremie = TotaalPremie + Val(PolisDetail.Text)
+    TotaalPremie = TotaalPremie + Val(PolisDetail.text)
     PolisDetail.Col = 3
-    TotaalLoon = TotaalLoon + Val(PolisDetail.Text)
+    TotaalLoon = TotaalLoon + Val(PolisDetail.text)
     PolisDetail.Col = 4
-    If InStr(PolisDetail.Text, "Kontroleer") Then
+    If InStr(PolisDetail.text, "Kontroleer") Then
         MsgBox "Lijn " + Format(PolisDetail.Row - 2) + " kontroleren a.u.b. !"
         Exit Sub
     End If
 Next
 
-      Msg = RTrim$(KeuzeInfo(1).Text) + " van" + vbCrLf
-Msg = Msg + RTrim$(KeuzeInfo(0).Text) + vbCrLf + vbCrLf
+      Msg = RTrim$(KeuzeInfo(1).text) + " van" + vbCrLf
+Msg = Msg + RTrim$(KeuzeInfo(0).text) + vbCrLf + vbCrLf
 Msg = Msg + "Totaal premie(s) : " + Dec$((TotaalPremie), MASK_EURBH) + vbCrLf
 Msg = Msg + "Totaal loon : " + Dec$((TotaalLoon), MASK_EURBH) + vbCrLf
-Msg = Msg + "Boekdatum : " + TekstInfo(0).Text
+Msg = Msg + "Boekdatum : " + TekstInfo(0).text
 Ktrl = MsgBox(Msg, 292, "Afboeken " + Right(dokumentSleutel, 5) + " tot " + Format(Val(Right(dokumentSleutel, 5)) + PolisDetail.Rows - 3, "00000") + " ?")
 If Ktrl = vbNo Then
     Exit Sub
@@ -549,7 +550,7 @@ Private Sub cbPolisHistoriek_Click()
     Else
         strTELEBIBIO = ""
     End If
-    Me.rtbIndentTB2.Text = tb2Indent(MAPIString)
+    Me.rtbIndentTB2.text = tb2Indent(MAPIString)
     Screen.MousePointer = vbNormal
     
 End Sub
@@ -562,7 +563,7 @@ Private Sub cbTB2ktrl_Click()
         Me.mebBoekDatum.Visible = True
         Me.mebBoekDatum.Enabled = True
         If Me.mebBoekDatum.ClipText = "" Then
-            Me.mebBoekDatum.Text = Format(Now, "mm/yyyy")
+            Me.mebBoekDatum.text = Format(Now, "mm/yyyy")
             Me.cbBoekDatum.Value = vbChecked
         End If
     Else
@@ -572,7 +573,7 @@ Private Sub cbTB2ktrl_Click()
 
 Me.cbPolisHistoriek.Clear
 SSTab2.TabCaption(1) = "&TB2= (0)"
-Me.rtbIndentTB2.Text = ""
+Me.rtbIndentTB2.text = ""
 
 Dim MsgNoZero As String
 
@@ -587,8 +588,8 @@ Select Case cbTB2ktrl.Value
         If rsTB2.State = adStateOpen Then
             rsTB2.Close
         End If
-        Msg = "SELECT * FROM TB2 WHERE memoTB2 Like '%PTY+006+" & Left(KeuzeInfo(0).Text, 4) & "+%'"
-        MsgNoZero = "SELECT * FROM TB2 WHERE memoTB2 Like '%PTY+006+" & Trim(Str(Val(Left(KeuzeInfo(0).Text, 4)))) & "+%'"
+        Msg = "SELECT * FROM TB2 WHERE memoTB2 Like '%PTY+006+" & Left(KeuzeInfo(0).text, 4) & "+%'"
+        MsgNoZero = "SELECT * FROM TB2 WHERE memoTB2 Like '%PTY+006+" & Trim(Str(Val(Left(KeuzeInfo(0).text, 4)))) & "+%'"
         'PTY+006+0739+
         If Me.cbBoekDatum.Value = vbChecked Then
             Msg = Msg & " AND memoTB2 Like '%DTM+005:" & Me.mebBoekDatum.ClipText & ":005" & "%'"
@@ -650,33 +651,33 @@ PolisDetail.Cols = 7
 With PolisDetail
     .Col = 0
     .Row = 0
-    .Text = "Polisnummer"
+    .text = "Polisnummer"
     .ColWidth(0) = 1215
     
     .Col = 1
-    .Text = "Datum"
+    .text = "Datum"
     .ColWidth(1) = 1005
     
     .Col = 2
-    .Text = "Totale premie"
+    .text = "Totale premie"
     .ColWidth(2) = 1035
     .ColAlignment(2) = 1
         
     .Col = 3
-    .Text = "Loon"
+    .text = "Loon"
     .ColWidth(3) = 795
     .ColAlignment(3) = 1
     
     .Col = 4
-    .Text = "Klant (Naam 1)"
+    .text = "Klant (Naam 1)"
     .ColWidth(4) = 1600
     
     .Col = 5
-    .Text = "XML/TLB2 Snippet"
+    .text = "XML/TLB2 Snippet"
     .ColWidth(5) = 1095
     
     .Col = 6
-    .Text = "Fee"
+    .text = "Fee"
     .ColWidth(6) = 1035
     
 End With
@@ -769,20 +770,20 @@ If GridText <> "" Then
     'LabelInfo(1).Caption = Dec$((TotaalLoon), "#########0")
     PolisDetail.Enabled = True
     If arrayGTI(2) = "Termijn" Then
-        TekstInfo(0).Text = Left(BJPERDAT.PeriodeBoekjaar.Text, 10)
+        TekstInfo(0).text = Left(BYPERDAT.PeriodeBoekjaar.text, 10)
         TekstInfo(0).Enabled = False
     ElseIf arrayGTI(2) = "Commissies" Then
-        TekstInfo(0).Text = Right(BJPERDAT.PeriodeBoekjaar.Text, 10)
+        TekstInfo(0).text = Right(BYPERDAT.PeriodeBoekjaar.text, 10)
         TekstInfo(0).Enabled = False
     Else
-        TekstInfo(0).Text = Left(BJPERDAT.PeriodeBoekjaar.Text, 10)
+        TekstInfo(0).text = Left(BYPERDAT.PeriodeBoekjaar.text, 10)
         TekstInfo(0).Enabled = True
     End If
     
     KeuzeInfo(1).Enabled = False
     KeuzeInfo(0).ListIndex = 0
-    Do While Left(KeuzeInfo(0).Text, 4) <> "9000"
-        If Mid(GridTextIs, 5, 4) = Left(KeuzeInfo(0).Text, 4) Then
+    Do While Left(KeuzeInfo(0).text, 4) <> "9000"
+        If Mid(GridTextIs, 5, 4) = Left(KeuzeInfo(0).text, 4) Then
             KeuzeInfo(0).Enabled = False
             Exit Do
         Else
@@ -802,7 +803,7 @@ End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
 
-BJPERDAT.Boekjaar.Enabled = True
+BYPERDAT.Boekjaar.Enabled = True
 GridText = ""
 
 End Sub
@@ -845,8 +846,8 @@ Dim Zoekstring As String * 24
 Dim Maatschappij As String * 4
 Dim Dummy As String * 30
 
-Zoekstring = Mid(TekstInfo(0).Text, 4, 2)
-Maatschappij = Left(KeuzeInfo(0).Text, 4)
+Zoekstring = Mid(TekstInfo(0).text, 4, 2)
+Maatschappij = Left(KeuzeInfo(0).text, 4)
 bGetOrGreater TABLE_CONTRACTS, 3, Zoekstring
 If Ktrl Or Left(KEY_BUF(TABLE_CONTRACTS), 2) <> Left(Zoekstring, 2) Then
     Beep
@@ -897,7 +898,7 @@ Dim T As Integer
 
 Select Case Index
     Case 0
-        bGet TABLE_SUPPLIERS, 0, vSet("CO" + Left(KeuzeInfo(0).Text, 4), 12)
+        bGet TABLE_SUPPLIERS, 0, vSet("CO" + Left(KeuzeInfo(0).text, 4), 12)
         If Ktrl Then
             'MsgBox "stop"
         Else
@@ -907,11 +908,11 @@ Select Case Index
         If Ktrl Then
             MsgBox "stop voor rekening aan te maken!"
             TLB_RECORD(TABLE_LEDGERACCOUNTS) = ""
-            vBib TABLE_LEDGERACCOUNTS, "700" + Left(KeuzeInfo(0).Text, 4), "v019"
+            vBib TABLE_LEDGERACCOUNTS, "700" + Left(KeuzeInfo(0).text, 4), "v019"
             vBib TABLE_LEDGERACCOUNTS, vBibTekst(TABLE_SUPPLIERS, "#A100 #"), "v020"
             bInsert TABLE_LEDGERACCOUNTS, 0
             TLB_RECORD(TABLE_LEDGERACCOUNTS) = ""
-            vBib TABLE_LEDGERACCOUNTS, "440" + Left(KeuzeInfo(0).Text, 4), "v019"
+            vBib TABLE_LEDGERACCOUNTS, "440" + Left(KeuzeInfo(0).text, 4), "v019"
             vBib TABLE_LEDGERACCOUNTS, vBibTekst(TABLE_SUPPLIERS, "#A100 #"), "v020"
             'FVT(TABLE_LEDGERACCOUNTS, 0) = "440" + Left(KeuzeInfo(0).Text, 4)
             'FVT(TABLE_LEDGERACCOUNTS, 1) = FVT(TABLE_SUPPLIERS, 1)
@@ -942,7 +943,7 @@ Private Sub KeuzeInfo_LostFocus(Index As Integer)
 Select Case Index
     Case 1
         If KeuzeInfo(1).ListIndex = 1 And PolisDetail.Rows = 2 Then
-            Msg$ = "Bestaande contracten met vervaldag voor de" + vbCrLf + Mid(TekstInfo(0).Text, 4, 2) + "e maand inladen ?"
+            Msg$ = "Bestaande contracten met vervaldag voor de" + vbCrLf + Mid(TekstInfo(0).text, 4, 2) + "e maand inladen ?"
             Ktrl = MsgBox(Msg$, 292, "Polissen Termijn inladen")
             If Ktrl = 6 Then
                 InstallPolissen
@@ -987,7 +988,7 @@ Select Case KeyAscii
             End If
         End If
         Load BoekKwijtingEdit
-        BoekKwijtingEdit.Caption = Left(KeuzeInfo(0).Text, 4) + ":" + KwijtingEdit.Caption
+        BoekKwijtingEdit.Caption = Left(KeuzeInfo(0).text, 4) + ":" + KwijtingEdit.Caption
         BoekKwijtingEdit.Show 1
         KwijtingBoeken.SetFocus
         If KeyAscii = 43 And GridText = "ESC" Then
@@ -1025,25 +1026,25 @@ With PolisDetail
     .Rows = 2
     .Row = 1
     .Col = 0
-    .Text = ""
+    .text = ""
     
     .Col = 1
-    .Text = ""
+    .text = ""
     
     .Col = 2
-    .Text = ""
+    .text = ""
     
     .Col = 3
-    .Text = ""
+    .text = ""
     
     .Col = 4
-    .Text = ""
+    .text = ""
 
     .Col = 5
-    .Text = ""
+    .text = ""
 
     .Col = 6
-    .Text = ""
+    .text = ""
 
 End With
 
@@ -1053,7 +1054,7 @@ Private Sub Schoon()
 Dim T As Integer
 
 Afsluiten.Enabled = False
-TekstInfo(0).Text = MIM_GLOBAL_DATE
+TekstInfo(0).text = MIM_GLOBAL_DATE
 RasterSchoon
 
 End Sub
@@ -1079,7 +1080,7 @@ End Sub
 Private Sub TekstInfo_GotFocus(Index As Integer)
 
 TekstInfo(Index).SelStart = 0
-TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 
 End Sub
 
@@ -1087,14 +1088,14 @@ Private Sub TekstInfo_LostFocus(Index As Integer)
 
 Select Case Index
     Case 0
-        If DATE_INVALID((TekstInfo(0).Text)) Then
-            TekstInfo(0).Text = MIM_GLOBAL_DATE
+        If DATE_INVALID((TekstInfo(0).text)) Then
+            TekstInfo(0).text = MIM_GLOBAL_DATE
             Beep
             TekstInfo(0).SetFocus
-        ElseIf Not DATE_CHECK((TekstInfo(0).Text), PERIODAS_TEXT) Then
+        ElseIf Not DATE_CHECK((TekstInfo(0).text), PERIODAS_TEXT) Then
             Beep
-            BJPERDAT.WindowState = 0
-            'BJPERDAT.PeriodeBoekjaar.SetFocus
+            BYPERDAT.WindowState = 0
+            'BYPERDAT.PeriodeBoekjaar.SetFocus
         End If
 End Select
 
@@ -1139,13 +1140,13 @@ For T = 1 To PolisDetail.Rows - 2
         vBib TABLE_INVOICES, "BEF", "vs03"
     End If
     vBib TABLE_INVOICES, "1", "v040"
-    vBib TABLE_INVOICES, Left(KeuzeInfo(1).Text, 1), "v041"
+    vBib TABLE_INVOICES, Left(KeuzeInfo(1).text, 1), "v041"
     
     PolisDetail.Row = T
     PolisDetail.Col = 0
-    bGet TABLE_CONTRACTS, 0, vSet(PolisDetail.Text, 12)
+    bGet TABLE_CONTRACTS, 0, vSet(PolisDetail.text, 12)
     If Ktrl Then
-        MsgBox "Polisnummer " + PolisDetail.Text + vbCrLf + vbCrLf + "niet te vinden !"
+        MsgBox "Polisnummer " + PolisDetail.text + vbCrLf + vbCrLf + "niet te vinden !"
         WegBoekFout = True
         dokumentSleutel = BakdokumentSleutel
         Exit Function
@@ -1160,31 +1161,31 @@ For T = 1 To PolisDetail.Rows - 2
         Else
             vBib TABLE_JOURNAL, "K" + vBibTekst(TABLE_CONTRACTS, "#A110 #"), "v034"
             vBib TABLE_INVOICES, "K" + vBibTekst(TABLE_CONTRACTS, "#A110 #"), "v034"
-            vBib TABLE_INVOICES, (PolisDetail.Text), "A000"
+            vBib TABLE_INVOICES, (PolisDetail.text), "A000"
             vBib TABLE_JOURNAL, KlantenRekening, "v019"
-            vBib TABLE_JOURNAL, DATE_KEY((TekstInfo(0).Text)), "v066"
+            vBib TABLE_JOURNAL, DATE_KEY((TekstInfo(0).text)), "v066"
             vBib TABLE_JOURNAL, dokumentSleutel, "v033"
             vBib TABLE_INVOICES, dokumentSleutel, "v033"
             PolisDetail.Col = 1
 
-            vBib TABLE_JOURNAL, DATE_KEY(PolisDetail.Text), "v035"
-            vBib TABLE_INVOICES, DATE_KEY(PolisDetail.Text), "v035"
-            vBib TABLE_INVOICES, DATE_KEY(PolisDetail.Text), "v036"
-            Select Case Left(KeuzeInfo(1).Text, 1)
+            vBib TABLE_JOURNAL, DATE_KEY(PolisDetail.text), "v035"
+            vBib TABLE_INVOICES, DATE_KEY(PolisDetail.text), "v035"
+            vBib TABLE_INVOICES, DATE_KEY(PolisDetail.text), "v036"
+            Select Case Left(KeuzeInfo(1).text, 1)
                 Case "1", "2", "6"
-                    If Left(KeuzeInfo(1).Text, 1) = "1" Then
-                        vBib TABLE_CONTRACTS, Mid(DATE_KEY(PolisDetail.Text), 5, 2), "v164"
-                        vBib TABLE_CONTRACTS, Mid(DATE_KEY(PolisDetail.Text), 7, 2), "v165"
+                    If Left(KeuzeInfo(1).text, 1) = "1" Then
+                        vBib TABLE_CONTRACTS, Mid(DATE_KEY(PolisDetail.text), 5, 2), "v164"
+                        vBib TABLE_CONTRACTS, Mid(DATE_KEY(PolisDetail.text), 7, 2), "v165"
                     End If
                     PolisDetail.Col = 4
-                    vBib TABLE_JOURNAL, PolisDetail.Text, "v067"
+                    vBib TABLE_JOURNAL, PolisDetail.text, "v067"
                     
                     'nieuw voor beheer...
                     PolisDetail.Col = 6
-                    If Trim$(PolisDetail.Text) = "" Then
+                    If Trim$(PolisDetail.text) = "" Then
                         BedragBeheer = 0
                     Else
-                        BedragBeheer = Round(Val(PolisDetail.Text), 2)
+                        BedragBeheer = Round(Val(PolisDetail.text), 2)
                     End If
                     dTotaalBKost = dTotaalBKost + BedragBeheer
                     
@@ -1193,17 +1194,17 @@ For T = 1 To PolisDetail.Rows - 2
                     
                     PolisDetail.Col = 5
                     'MsgBox "TODO: snipped document: " & PolisDetail.Text
-                    If PolisDetail.Text = "" Then
+                    If PolisDetail.text = "" Then
                         rsMAR(TABLE_INVOICES)("rvXMLTB2") = ""
                     Else
-                        rsMAR(TABLE_INVOICES)("rvXMLTB2") = PolisDetail.Text
+                        rsMAR(TABLE_INVOICES)("rvXMLTB2") = PolisDetail.text
                     End If
                     
                     PolisDetail.Col = 2
-                    BedragTotaal = BedragBeheer + Val(PolisDetail.Text)
+                    BedragTotaal = BedragBeheer + Val(PolisDetail.text)
                     vBib TABLE_JOURNAL, Str$(BedragTotaal), "v068"
-                    vBib TABLE_CONTRACTS, PolisDetail.Text, "B010"
-                    vBib TABLE_INVOICES, PolisDetail.Text, "B010"
+                    vBib TABLE_CONTRACTS, PolisDetail.text, "B010"
+                    vBib TABLE_INVOICES, PolisDetail.text, "B010"
                     vBib TABLE_INVOICES, Str$(BedragTotaal), "v249"
                                                             
                     vBib TABLE_JOURNAL, LabelInfo(2).Caption, "v069"
@@ -1216,36 +1217,36 @@ For T = 1 To PolisDetail.Rows - 2
                     vBib TABLE_JOURNAL, Temporek, "v019"
                                         
                     PolisDetail.Col = 3
-                    vBib TABLE_JOURNAL, Str$(-Val(PolisDetail.Text)), "v068"
-                    vBib TABLE_CONTRACTS, PolisDetail.Text, "B014"
-                    vBib TABLE_INVOICES, PolisDetail.Text, "B014"
-                    If Val(PolisDetail.Text) <> 0 Then
-                        If Left(KeuzeInfo(1).Text, 1) = "1" Then
-                            dTotaalLoon = dTotaalLoon - Val(PolisDetail.Text)
+                    vBib TABLE_JOURNAL, Str$(-Val(PolisDetail.text)), "v068"
+                    vBib TABLE_CONTRACTS, PolisDetail.text, "B014"
+                    vBib TABLE_INVOICES, PolisDetail.text, "B014"
+                    If Val(PolisDetail.text) <> 0 Then
+                        If Left(KeuzeInfo(1).text, 1) = "1" Then
+                            dTotaalLoon = dTotaalLoon - Val(PolisDetail.text)
                         Else
                             bInsert TABLE_JOURNAL, 0
                         End If
                     End If
                     vBib TABLE_JOURNAL, vBibTekst(TABLE_JOURNAL, "#v069 #"), "v019"
                     vBib TABLE_JOURNAL, " ", "v069"
-                    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).Text, 1), "v041"
+                    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).text, 1), "v041"
                     
                     vBib TABLE_JOURNAL, Str$(-(Val(vBibTekst(TABLE_INVOICES, "#B010 #")) - Val(vBibTekst(TABLE_INVOICES, "#B014 #")))), "v068"
                     If Val(vBibTekst(TABLE_JOURNAL, "#v068 #")) <> 0 Then
-                        If Left(KeuzeInfo(1).Text, 1) = "1" Then
+                        If Left(KeuzeInfo(1).text, 1) = "1" Then
                             dTotaalMij = dTotaalMij + Val(vBibTekst(TABLE_JOURNAL, "#v068 #"))
                         Else
                             bInsert TABLE_JOURNAL, 0
                         End If
                     End If
                     
-                    If Left(KeuzeInfo(1).Text, 1) = "1" Then
+                    If Left(KeuzeInfo(1).text, 1) = "1" Then
                         TotaalBedragBeheer = TotaalBedragBeheer + BedragBeheer
                         'MsgBox "stop"
                     Else
                         vBib TABLE_JOURNAL, vBibTekst(TABLE_JOURNAL, "#v019 #"), "v069"
                         vBib TABLE_JOURNAL, RekBeheersKost, "v019"
-                        vBib TABLE_JOURNAL, Left(KeuzeInfo(1).Text, 1), "v041"
+                        vBib TABLE_JOURNAL, Left(KeuzeInfo(1).text, 1), "v041"
                         vBib TABLE_JOURNAL, Str$(-BedragBeheer), "v068"
                         If Val(vBibTekst(TABLE_JOURNAL, "#v068 #")) <> 0 Then
                             bInsert TABLE_JOURNAL, 0
@@ -1271,13 +1272,13 @@ For T = 1 To PolisDetail.Rows - 2
 
                 Case "3", "4", "5"
                     PolisDetail.Col = 4
-                    vBib TABLE_JOURNAL, PolisDetail.Text, "v067"
+                    vBib TABLE_JOURNAL, PolisDetail.text, "v067"
                     
                     PolisDetail.Col = 6
-                    If Trim$(PolisDetail.Text) = "" Then
+                    If Trim$(PolisDetail.text) = "" Then
                         BedragBeheer = 0
                     Else
-                        BedragBeheer = PolisDetail.Text
+                        BedragBeheer = PolisDetail.text
                     End If
                     vBib TABLE_INVOICES, Str$(BedragBeheer), "e069"
                     vBib TABLE_CONTRACTS, Str$(BedragBeheer), "e069"
@@ -1285,18 +1286,18 @@ For T = 1 To PolisDetail.Rows - 2
                                         
                     PolisDetail.Col = 5
                     'MsgBox "TODO: snipped document: " & PolisDetail.Text
-                    If PolisDetail.Text = "" Then
+                    If PolisDetail.text = "" Then
                         rsMAR(TABLE_INVOICES)("rvXMLTB2") = ""
                     Else
-                        rsMAR(TABLE_INVOICES)("rvXMLTB2") = PolisDetail.Text
+                        rsMAR(TABLE_INVOICES)("rvXMLTB2") = PolisDetail.text
                     End If
                                         
                     PolisDetail.Col = 2
-                    BedragTotaal = BedragBeheer + Val(PolisDetail.Text)
+                    BedragTotaal = BedragBeheer + Val(PolisDetail.text)
                     vBib TABLE_JOURNAL, Str$(-BedragTotaal), "v068"
                     vBib TABLE_INVOICES, Str$(-BedragTotaal), "v249"
-                    vBib TABLE_CONTRACTS, PolisDetail.Text, "B090"
-                    vBib TABLE_INVOICES, PolisDetail.Text, "B090"
+                    vBib TABLE_CONTRACTS, PolisDetail.text, "B090"
+                    vBib TABLE_INVOICES, PolisDetail.text, "B090"
                     
                     vBib TABLE_JOURNAL, LabelInfo(2).Caption, "v069"
                     If BedragTotaal <> 0 Then
@@ -1308,10 +1309,10 @@ For T = 1 To PolisDetail.Rows - 2
                     vBib TABLE_JOURNAL, Temporek, "v019"
                     
                     PolisDetail.Col = 3
-                    vBib TABLE_JOURNAL, PolisDetail.Text, "v068"
-                    vBib TABLE_CONTRACTS, PolisDetail.Text, "B094"
-                    vBib TABLE_INVOICES, PolisDetail.Text, "B094"
-                    If Val(PolisDetail.Text) <> 0 Then
+                    vBib TABLE_JOURNAL, PolisDetail.text, "v068"
+                    vBib TABLE_CONTRACTS, PolisDetail.text, "B094"
+                    vBib TABLE_INVOICES, PolisDetail.text, "B094"
+                    If Val(PolisDetail.text) <> 0 Then
                         bInsert TABLE_JOURNAL, 0
                     End If
           
@@ -1324,7 +1325,7 @@ For T = 1 To PolisDetail.Rows - 2
                     
                     vBib TABLE_JOURNAL, vBibTekst(TABLE_JOURNAL, "#v019 #"), "v069"
                     vBib TABLE_JOURNAL, RekBeheersKost, "v019"
-                    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).Text, 1), "v041"
+                    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).text, 1), "v041"
                     vBib TABLE_JOURNAL, Str(BedragBeheer), "v068"
                     If Val(vBibTekst(TABLE_JOURNAL, "#v068 #")) <> 0 Then
                         bInsert TABLE_JOURNAL, 0
@@ -1353,7 +1354,7 @@ For T = 1 To PolisDetail.Rows - 2
 NextLijn:
 Next
 
-If Left(KeuzeInfo(1).Text, 1) = "1" Then
+If Left(KeuzeInfo(1).text, 1) = "1" Then
     vBib TABLE_JOURNAL, LabelInfo(2).Caption, "v019"
     TempoDokSleutel = dokumentSleutel
     Mid(TempoDokSleutel, 7, 5) = Format(Val(Right(dokumentSleutel, 5)) - 1, "00000")
@@ -1373,7 +1374,7 @@ If Left(KeuzeInfo(1).Text, 1) = "1" Then
     If TotaalBedragBeheer <> 0 Then
         vBib TABLE_JOURNAL, vBibTekst(TABLE_JOURNAL, "#v019 #"), "v069"
         vBib TABLE_JOURNAL, RekBeheersKost, "v019"
-        vBib TABLE_JOURNAL, Left(KeuzeInfo(1).Text, 1), "v041"
+        vBib TABLE_JOURNAL, Left(KeuzeInfo(1).text, 1), "v041"
         vBib TABLE_JOURNAL, Str$(-TotaalBedragBeheer), "v068"
         If Val(vBibTekst(TABLE_JOURNAL, "#v068 #")) <> 0 Then
             bInsert TABLE_JOURNAL, 0
@@ -1383,7 +1384,7 @@ If Left(KeuzeInfo(1).Text, 1) = "1" Then
 
     vBib TABLE_JOURNAL, vBibTekst(TABLE_JOURNAL, "#v019 #"), "v069"
     vBib TABLE_JOURNAL, LabelInfo(2).Caption, "v019"
-    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).Text, 1), "v041"
+    vBib TABLE_JOURNAL, Left(KeuzeInfo(1).text, 1), "v041"
     vBib TABLE_JOURNAL, Str$(dTotaalMij), "v068"
     If Val(vBibTekst(TABLE_JOURNAL, "#v068 #")) <> 0 Then
         bInsert TABLE_JOURNAL, 0
@@ -1397,7 +1398,7 @@ If DKTRL_CUMUL <> 0 Then
     frmBoeking.Show 1
     GoTo IetsGingFout
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then

@@ -218,28 +218,28 @@ InfoScherm.X.Rows = 2
 InfoScherm.X.Cols = 8
 InfoScherm.X.Col = 0
 InfoScherm.X.Row = 0
-InfoScherm.X.Text = "Datum (v066)"
+InfoScherm.X.text = "Datum (v066)"
 InfoScherm.X.ColAlignment(0) = flexAlignLeftCenter
 InfoScherm.X.Col = 1
-InfoScherm.X.Text = "Rekening (v019)"
+InfoScherm.X.text = "Rekening (v019)"
 InfoScherm.X.ColAlignment(1) = flexAlignLeftCenter
 InfoScherm.X.Col = 2
-InfoScherm.X.Text = "Naam (v020)"
+InfoScherm.X.text = "Naam (v020)"
 InfoScherm.X.ColAlignment(2) = flexAlignLeftCenter
 InfoScherm.X.Col = 3
-InfoScherm.X.Text = "Bedrag (dece068)"
+InfoScherm.X.text = "Bedrag (dece068)"
 InfoScherm.X.ColAlignment(3) = flexAlignGeneral
 InfoScherm.X.Col = 4
-InfoScherm.X.Text = "Boekingsomschrijving (v067)"
+InfoScherm.X.text = "Boekingsomschrijving (v067)"
 InfoScherm.X.ColAlignment(4) = flexAlignLeftCenter
 InfoScherm.X.Col = 5
-InfoScherm.X.Text = "AV Dokum. (v033)"
+InfoScherm.X.text = "AV Dokum. (v033)"
 InfoScherm.X.ColAlignment(5) = flexAlignLeftCenter
 InfoScherm.X.Col = 6
-InfoScherm.X.Text = "TegenRek. (v069)"
+InfoScherm.X.text = "TegenRek. (v069)"
 InfoScherm.X.ColAlignment(6) = flexAlignLeftCenter
 InfoScherm.X.Col = 7
-InfoScherm.X.Text = "vsfRecord"
+InfoScherm.X.text = "vsfRecord"
 
 bGet TABLE_JOURNAL, 2, vSet(DeString, 8)
 If Ktrl Then
@@ -288,14 +288,14 @@ Exit Sub
 
 VolgendeLijn:
 RecordToVeld TABLE_JOURNAL
-If vSet(vBibTekst(TABLE_JOURNAL, "#v019 #"), 7) = Left(KeuzeInfo(0).Text, 7) Then
+If vSet(vBibTekst(TABLE_JOURNAL, "#v019 #"), 7) = Left(KeuzeInfo(0).text, 7) Then
     Return
-ElseIf DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) <> Mid(UittrekselsLijst.Text, 12, 10) Then
+ElseIf DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) <> Mid(UittrekselsLijst.text, 12, 10) Then
     If Not JournaalManueelVlag Then
         Return
     End If
 ElseIf RTrim$(vBibTekst(TABLE_JOURNAL, "#v019 #")) <> "" Then
-    If vSet(vBibTekst(TABLE_JOURNAL, "#v069 #"), 7) <> Left(KeuzeInfo(0).Text, 7) Then
+    If vSet(vBibTekst(TABLE_JOURNAL, "#v069 #"), 7) <> Left(KeuzeInfo(0).text, 7) Then
         Return
     End If
 End If
@@ -447,8 +447,8 @@ Dim DeRekening          As String * 7
 On Local Error GoTo PrtHandler9
 
 psTekst(2) = "Financiëel Boek " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = TekstLijn(1).Text
-psTekst(3) = Right(KeuzeInfo(0).Text, 40) + " " + TekstLijn(0).Text
+psTekst(0) = TekstLijn(1).text
+psTekst(3) = Right(KeuzeInfo(0).text, 40) + " " + TekstLijn(0).text
 
 ErrorMsg = ""
 TotaalD = 0
@@ -483,15 +483,15 @@ End If
 
 For TelUittreksel = 0 To UittrekselsLijst.ListCount - 1
     UittrekselsLijst.ListIndex = TelUittreksel
-    VeldTXT(0) = Mid(UittrekselsLijst.Text, 12, 10)
-    VeldTXT(1) = Left(KeuzeInfo(0).Text, 7)
+    VeldTXT(0) = Mid(UittrekselsLijst.text, 12, 10)
+    VeldTXT(1) = Left(KeuzeInfo(0).text, 7)
     FinRekening = VeldTXT(1)
-    VeldTXT(2) = Mid(UittrekselsLijst.Text, 25, 30)
+    VeldTXT(2) = Mid(UittrekselsLijst.text, 25, 30)
     VeldTXT(3) = "DS/CS Saldo van het uittreksel"
     
-    VeldTXT(4) = Mid(UittrekselsLijst.Text, 56, 12)
-    VeldTXT(5) = Mid(UittrekselsLijst.Text, 69, 12)
-    VeldTXT(6) = Left(UittrekselsLijst.Text, 8)
+    VeldTXT(4) = Mid(UittrekselsLijst.text, 56, 12)
+    VeldTXT(5) = Mid(UittrekselsLijst.text, 69, 12)
+    VeldTXT(6) = Left(UittrekselsLijst.text, 8)
     DeRekening = VeldTXT(1)
     HetBedrag = -Val(VeldTXT(5)) + Val(VeldTXT(4))
     Select Case HetBedrag
@@ -535,8 +535,8 @@ Annuleren_Click
 Exit Sub
 
 DetailPrintJournaal:
-bGet TABLE_JOURNAL, 2, Left(UittrekselsLijst.Text, 8)
-If Ktrl Or KEY_BUF(TABLE_JOURNAL) <> Left(UittrekselsLijst.Text, 8) Then
+bGet TABLE_JOURNAL, 2, Left(UittrekselsLijst.text, 8)
+If Ktrl Or KEY_BUF(TABLE_JOURNAL) <> Left(UittrekselsLijst.text, 8) Then
     Beep
     MsgBox "onlogische situatie"
     Exit Sub
@@ -545,7 +545,7 @@ Else
 End If
 Do
     bNext TABLE_JOURNAL
-    If Ktrl Or KEY_BUF(TABLE_JOURNAL) <> Left(UittrekselsLijst.Text, 8) Then
+    If Ktrl Or KEY_BUF(TABLE_JOURNAL) <> Left(UittrekselsLijst.text, 8) Then
         Exit Do
     Else
         GoSub PrintInfo
@@ -556,12 +556,12 @@ Return
 
 PrintInfo:
 RecordToVeld TABLE_JOURNAL
-If vSet(vBibTekst(TABLE_JOURNAL, "#v019 #"), 7) = Left(KeuzeInfo(0).Text, 7) Then
+If vSet(vBibTekst(TABLE_JOURNAL, "#v019 #"), 7) = Left(KeuzeInfo(0).text, 7) Then
     Return
-ElseIf DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) <> Mid(UittrekselsLijst.Text, 12, 10) Then
+ElseIf DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) <> Mid(UittrekselsLijst.text, 12, 10) Then
     Return
 ElseIf RTrim$(vBibTekst(TABLE_JOURNAL, "#v019 #")) <> "" Then
-    If vSet(vBibTekst(TABLE_JOURNAL, "#v069 #"), 7) <> Left(KeuzeInfo(0).Text, 7) Then
+    If vSet(vBibTekst(TABLE_JOURNAL, "#v069 #"), 7) <> Left(KeuzeInfo(0).text, 7) Then
         Return
     End If
 End If
@@ -643,8 +643,8 @@ Else
 End If
 chkAfdrukLiggend_Click
 
-TekstLijn(0).Text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(0).text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+TekstLijn(1).text = MIM_GLOBAL_DATE
 PlGrensVan = Left(BOOKYEAR_FROMTO, 8)
 PlGrensTot = Right(BOOKYEAR_FROMTO, 8)
 
@@ -739,8 +739,8 @@ Select Case Index
         UittrekselsLijst.Visible = False
         UittrekselsLijst.Clear
         bFirst TABLE_JOURNAL, 0
-        bGetOrGreater TABLE_JOURNAL, 0, Left(KeuzeInfo(0).Text, 7) + PlGrensVan
-        If Ktrl Or KEY_BUF(TABLE_JOURNAL) > Left(KeuzeInfo(0).Text, 7) + PlGrensTot Then
+        bGetOrGreater TABLE_JOURNAL, 0, Left(KeuzeInfo(0).text, 7) + PlGrensVan
+        If Ktrl Or KEY_BUF(TABLE_JOURNAL) > Left(KeuzeInfo(0).text, 7) + PlGrensTot Then
             MsgBox "onlogische situatie"
             GoTo EindeClick
         Else
@@ -749,7 +749,7 @@ Select Case Index
 
         Do
             bNext TABLE_JOURNAL
-            If Ktrl Or KEY_BUF(TABLE_JOURNAL) > Left(KeuzeInfo(0).Text, 7) + PlGrensTot Then
+            If Ktrl Or KEY_BUF(TABLE_JOURNAL) > Left(KeuzeInfo(0).text, 7) + PlGrensTot Then
                 Exit Do
             Else
                 GoSub VoegErBij
@@ -888,7 +888,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -898,19 +898,19 @@ Dim A As String
 
 Select Case Index
     Case 0
-        If DATE_INVALID(Right(TekstLijn(0).Text, 10)) Then
+        If DATE_INVALID(Right(TekstLijn(0).text, 10)) Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            TekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             TekstLijn(0).SetFocus
             Exit Sub
-        ElseIf Len(TekstLijn(0).Text) <> 23 Then
+        ElseIf Len(TekstLijn(0).text) <> 23 Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).Text = BJPERDAT.PeriodeBoekjaar.Text
+            TekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             TekstLijn(0).SetFocus
             Exit Sub
         Else
-            PlGrensVan = Mid(TekstLijn(0).Text, 7, 4) + Mid(TekstLijn(0).Text, 4, 2) + Mid(TekstLijn(0).Text, 1, 2)
-            PlGrensTot = Mid(TekstLijn(0).Text, 20, 4) + Mid(TekstLijn(0).Text, 17, 2) + Mid(TekstLijn(0).Text, 14, 2)
+            PlGrensVan = Mid(TekstLijn(0).text, 7, 4) + Mid(TekstLijn(0).text, 4, 2) + Mid(TekstLijn(0).text, 1, 2)
+            PlGrensTot = Mid(TekstLijn(0).text, 20, 4) + Mid(TekstLijn(0).text, 17, 2) + Mid(TekstLijn(0).text, 14, 2)
             KeuzeInfo(0).Clear
             For T = 0 To 9
                 bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer(T)
@@ -934,13 +934,13 @@ Select Case Index
         End If
 
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
             TekstLijn(1).SetFocus
         End If
     Case 3
-        TekstLijn(3).Text = Format(Val(TekstLijn(3).Text), "00000")
+        TekstLijn(3).text = Format(Val(TekstLijn(3).text), "00000")
 End Select
 
 End Sub

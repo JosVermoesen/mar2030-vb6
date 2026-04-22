@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76546051
+         Format          =   16580611
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -1312,8 +1312,8 @@ Select Case Index
     Case 0
         SetupEnParameters.Show
     Case 1
-        BJPERDAT.WindowState = 0
-        BJPERDAT.PeriodeBoekjaar.SetFocus
+        BYPERDAT.WindowState = 0
+        BYPERDAT.PeriodeBoekjaar.SetFocus
     Case 2
         LayOutpdfDokument.Show
         
@@ -1812,7 +1812,7 @@ End Sub
 Private Sub DatumVerwerking_Change()
 
     MIM_GLOBAL_DATE = Format(DatumVerwerking.Value, "dd/mm/yyyy")
-    BJPERDAT.DatumVerwerking.Value = DatumVerwerking.Value
+    BYPERDAT.DatumVerwerking.Value = DatumVerwerking.Value
             
 End Sub
 
@@ -2105,7 +2105,7 @@ BezigAanString = "MARNT.ARC proberen uitvergroten."
 '    X = Shell("arc xw marnt.arc *.*", 1)
 '    MsgBox "Uitvergroten is beëindigd ?"
 'End If
-InitEerst
+InitFirst
 
 BezigAanString = "Vsoft licentieinfo venster openen."
 Load Vsoft
@@ -2175,7 +2175,7 @@ End If
 Mim.tbToolBar.Visible = LaadTekst(App.Title, "TaakBalkZichtbaar")
 If Mim.tbToolBar.Visible = False Then Mim.Basis(8).Checked = False
 Mim.Show
-LaadInstellingen Me
+LoadFormProperties Me
 Mim.Arrange 3
 BezigAanString = "Programmalicentie info verbergen"
 Vsoft.Hide
@@ -2276,7 +2276,7 @@ TotalClose
 If WindowState = vbMinimized Then
     WindowState = vbNormal
 End If
-X = InstellingenBewaard(Me)
+X = SaveFormProperties(Me)
 
 If LaadTekst("dnnInstellingen", "Mario") = "" Then
 Else
@@ -2350,27 +2350,27 @@ Select Case Index
         NieuwBoekjaar
         Basis_Click 0
     Case 1
-        If BJPERDAT!Boekjaar.ListIndex = 0 Then
+        If BYPERDAT!Boekjaar.ListIndex = 0 Then
             MsgBox "Journaalbestand kan nooit opgekuist worden met het hoogste boekjaar actief.  Aktiveer een lager boekjaar a.u.b. !"
-            BJPERDAT.WindowState = 0
-            BJPERDAT!Boekjaar.SetFocus
+            BYPERDAT.WindowState = 0
+            BYPERDAT!Boekjaar.SetFocus
             Exit Sub
         End If
         Msg = ""
-        If BJPERDAT!Boekjaar.ListIndex = 1 Then
+        If BYPERDAT!Boekjaar.ListIndex = 1 Then
             Msg = Msg + "OPGELET :" + vbCrLf + "Het tweede hoogste boekjaar is actief en "
-            Msg = Msg + "er zijn " + Format(BJPERDAT!Boekjaar.ListCount) + " boekjaren." + vbCrLf + vbCrLf
+            Msg = Msg + "er zijn " + Format(BYPERDAT!Boekjaar.ListCount) + " boekjaren." + vbCrLf + vbCrLf
             Msg = Msg + "ADVIES :" + vbCrLf + "Normaal gezien laat U best ook het tweedelaatste boekjaar bestaan..." + vbCrLf
             Msg = Msg + "Voor statistisch onderzoek (grafisch/cijfermatig) best niets vernietigen!!" + vbCrLf + vbCrLf
 
         End If
         Msg = Msg + "ALLE journaallijnen met datum tot en met "
-        Msg = Msg + Right(BJPERDAT!PeriodeBoekjaar.List(BJPERDAT!PeriodeBoekjaar.ListCount - 1), 10)
+        Msg = Msg + Right(BYPERDAT!PeriodeBoekjaar.List(BYPERDAT!PeriodeBoekjaar.ListCount - 1), 10)
         Msg = Msg + " vernietigen !" + vbCrLf + vbCrLf
         Msg = Msg + "Bent U zeker ?"
         Ktrl = MsgBox(Msg, vbYesNo + vbDefaultButton2, "Opkuis journaalbestanden")
         If Ktrl = vbYes Then
-            BJPERDAT!PeriodeBoekjaar.ListIndex = BJPERDAT!PeriodeBoekjaar.ListCount - 1
+            BYPERDAT!PeriodeBoekjaar.ListIndex = BYPERDAT!PeriodeBoekjaar.ListCount - 1
             bFirst TABLE_JOURNAL, 0
             If Ktrl Then
             Else
@@ -2392,7 +2392,7 @@ Select Case Index
                 Screen.MousePointer = vbNormal
                 Mim.Enabled = True
                 Msg = "ALLE aankoop- en verkoopdokumenten met datum tot en met "
-                Msg = Msg + Right(BJPERDAT!PeriodeBoekjaar.List(BJPERDAT!PeriodeBoekjaar.ListCount - 1), 10)
+                Msg = Msg + Right(BYPERDAT!PeriodeBoekjaar.List(BYPERDAT!PeriodeBoekjaar.ListCount - 1), 10)
                 Msg = Msg + " kan U hierna eveneens verwijderen door één dergelijk dokument via klanten- of leveranciersfiche ter vernietiging aan te duiden"
                 MsgBox Msg
             End If

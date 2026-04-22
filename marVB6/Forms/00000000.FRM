@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Begin VB.Form BJPERDAT 
+Begin VB.Form BYPERDAT 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Datum / Periode / Boekjaar (Ctrl+D)"
    ClientHeight    =   1155
@@ -45,7 +45,7 @@ Begin VB.Form BJPERDAT
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   76808195
       CurrentDate     =   43069
       MaxDate         =   58862
       MinDate         =   31048
@@ -164,7 +164,7 @@ Begin VB.Form BJPERDAT
       Width           =   1380
    End
 End
-Attribute VB_Name = "BJPERDAT"
+Attribute VB_Name = "BYPERDAT"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -185,7 +185,7 @@ PeriodeMeestLogisch = -1
 If ACTIVE_BOOKYEAR <> Boekjaar.ListIndex Then
     bClose 99
     TABLEDEF_ONT(TABLE_COUNTERS) = Format(Boekjaar.ListIndex, "00") + ".ONT"
-    bstNaam(TABLE_COUNTERS) = "jr" & Boekjaar.Text
+    bstNaam(TABLE_COUNTERS) = "jr" & Boekjaar.text
     CloseOpenWindows
     ACTIVE_BOOKYEAR = Boekjaar.ListIndex
     AktievePeriode = 1
@@ -196,7 +196,7 @@ If ACTIVE_BOOKYEAR <> Boekjaar.ListIndex Then
         Get FlTemp, T, A
         If A = Space$(16) Then
                 PeriodeBoekjaar.ListIndex = 0
-                YY = PeriodeBoekjaar.Text
+                YY = PeriodeBoekjaar.text
                 BOOKYEAR_FROMTO = Mid(YY, 7, 4) + Mid(YY, 4, 2) + Mid(YY, 1, 2) + Mid(XX, 20, 4) + Mid(XX, 17, 2) + Mid(XX, 14, 2)
                 Exit For
         Else
@@ -225,13 +225,13 @@ End If
 '        PeriodeBoekjaar.ListIndex = 0
 '    End If
 'End If
-XX = PeriodeBoekjaar.Text
+XX = PeriodeBoekjaar.text
 PERIOD_FROMTO = Mid(XX, 7, 4) + Mid(XX, 4, 2) + Left(XX, 2) + Right(XX, 4) + Mid(XX, 17, 2) + Mid(XX, 14, 2)
 
 XisEuroWisBEF = False
-If Mim.SnelHelp.Panels(2).Text = "---" Then
+If Mim.SnelHelp.Panels(2).text = "---" Then
 Else
-    If Mim.SnelHelp.Panels(2).Text = "EUR" Then
+    If Mim.SnelHelp.Panels(2).text = "EUR" Then
         XisEuroWisBEF = True
     End If
     If Len(String99(READING, 296)) = 0 Then
@@ -247,9 +247,9 @@ Else
     End If
     If bhEuro Then
         XisEuroWisBEF = False
-        Mim.SnelHelp.Panels(2).Text = "EUR"
+        Mim.SnelHelp.Panels(2).text = "EUR"
     Else
-        Mim.SnelHelp.Panels(2).Text = "BEF"
+        Mim.SnelHelp.Panels(2).text = "BEF"
         If XisEuroWisBEF = True And Boekjaar.ListIndex = 1 Then
         Else
             XisEuroWisBEF = False
@@ -287,25 +287,25 @@ Dim A As String
 Dim aa As String * 4
 Dim FlTemp As Integer
 
-A = PeriodeBoekjaar.Text
+A = PeriodeBoekjaar.text
 PERIOD_FROMTO = Mid(A, 7, 4) + Mid(A, 4, 2) + Left(A, 2) + Right(A, 4) + Mid(A, 17, 2) + Mid(A, 14, 2)
 
 FlTemp = FreeFile
 Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
 aa = Str$(ACTIVE_BOOKYEAR)
 Put FlTemp, 1, aa
-aa = Boekjaar.Text
+aa = Boekjaar.text
 Put FlTemp, 2, aa
 aa = Str$(PeriodeBoekjaar.ListIndex + 1)
 Put FlTemp, 3, aa
 Close FlTemp
 
-Caption = "(" + Boekjaar.Text + ") (" + Left(PeriodeBoekjaar.Text, 10) + ") BoekPeriode"
+Caption = "(" + Boekjaar.text + ") (" + Left(PeriodeBoekjaar.text, 10) + ") BoekPeriode"
 End Sub
 
 Private Sub Verkleinen_Click()
 
-BJPERDAT.WindowState = 1
+BYPERDAT.WindowState = 1
 Close FL99
 FL99 = 0
 

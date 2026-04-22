@@ -918,13 +918,13 @@ Begin VB.Form frmKassaVerkoop
             Style           =   5
             Object.Width           =   1411
             MinWidth        =   1411
-            TextSave        =   "7:00"
+            TextSave        =   "7:13"
          EndProperty
          BeginProperty Panel2 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Style           =   6
             Object.Width           =   2117
             MinWidth        =   2117
-            TextSave        =   "8/11/2025"
+            TextSave        =   "21/04/2026"
          EndProperty
          BeginProperty Panel3 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
             Object.Width           =   1587
@@ -1049,9 +1049,9 @@ For COUNT_TO = 0 To 5
         Exit For
     End If
 Next
-rsDetail("BetaaldEUR") = Val(txtOntvangenEUR.Text)
-rsDetail("BetaaldBEF") = Val(txtOntvangenBEF.Text)
-rsDetail("TerugEUR") = Val(txtTeruggaveEUR.Text)
+rsDetail("BetaaldEUR") = Val(txtOntvangenEUR.text)
+rsDetail("BetaaldBEF") = Val(txtOntvangenBEF.text)
+rsDetail("TerugEUR") = Val(txtTeruggaveEUR.text)
 
 rsDetail.Update
 WegSchrijfFout = False
@@ -1134,13 +1134,13 @@ Private Sub cbVerwerken2_Click()
         End If
     Next
     If txtTeruggaveEUR.Visible = True Then
-        If Val(txtOntvangenBEF.Text) <> 0 Then
-            Msg = Msg & "Ontvangen BEF " & txtOntvangenBEF.Text & vbCr
+        If Val(txtOntvangenBEF.text) <> 0 Then
+            Msg = Msg & "Ontvangen BEF " & txtOntvangenBEF.text & vbCr
         End If
-        If Val(txtOntvangenEUR.Text) <> 0 Then
-            Msg = Msg & "Ontvangen EUR " & txtOntvangenEUR.Text & vbCr
+        If Val(txtOntvangenEUR.text) <> 0 Then
+            Msg = Msg & "Ontvangen EUR " & txtOntvangenEUR.text & vbCr
         End If
-        Msg = Msg & "Teruggave EUR " & txtTeruggaveEUR.Text & vbCr & vbCr
+        Msg = Msg & "Teruggave EUR " & txtTeruggaveEUR.text & vbCr & vbCr
     End If
     Msg = Msg + "Bent U zeker."
     KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
@@ -1221,7 +1221,7 @@ End If
 TicketVar = vbCrLf
 
 LijnString = Format(Now, "dd/mm/yyyy hh:mm:ss")
-LijnString = LijnString + " " + StatusBar1.Panels(3).Text
+LijnString = LijnString + " " + StatusBar1.Panels(3).text
 LijnString = LijnString + " " + Trim$(KassaNaam)
 If naarPrinter Then
     Printer.Print LijnString;
@@ -1319,15 +1319,15 @@ LijnString = ""
 If SSTab1.Tab = 2 Or SSTab1.Tab = 1 Then
     For COUNT_TO = 0 To 5
         If obBetaling(COUNT_TO).Value = True Then
-            TotaalBetaaldEUR = Val(txtOntvangenEUR.Text) + Round(Val(txtOntvangenBEF.Text) / EURO, 2)
+            TotaalBetaaldEUR = Val(txtOntvangenEUR.text) + Round(Val(txtOntvangenBEF.text) / EURO, 2)
             LijnString = obBetaling(COUNT_TO).Caption & "  E U R " & Dec((TotaalBetaaldEUR), MASK_EUR)
             If naarPrinter Then
                 Printer.Print LijnString;
                 Printer.Print vbCrLf;
             End If
             TicketVar = TicketVar & LijnString & vbCrLf
-            If Val(txtTeruggaveEUR.Text) <> 0 Then
-                LijnString = "Teruggave               E U R " & Dec(Val(txtTeruggaveEUR.Text), MASK_EUR)
+            If Val(txtTeruggaveEUR.text) <> 0 Then
+                LijnString = "Teruggave               E U R " & Dec(Val(txtTeruggaveEUR.text), MASK_EUR)
                 If naarPrinter Then
                     Printer.Print LijnString;
                     Printer.Print vbCrLf; vbCrLf;
@@ -1375,7 +1375,7 @@ If naarPrinter Then
     Printer.EndDoc
 Else
     If inScherm = True Then
-        txtTicket.Text = TicketVar
+        txtTicket.text = TicketVar
         Exit Function
     End If
     If Dir("c:\kassaticket.txt") <> "" Then
@@ -1470,7 +1470,7 @@ Dim DetailS As Variant
     End If
     
     If Not DATE_CHECK(Format(Now, "dd/mm/yyyy"), PERIODAS_TEXT) Then
-        MsgBox "Kontroleer Dagdatum en actieve periode a.u.b. vooraleer verder te gaan", vbExclamation, Now & " ? " & BJPERDAT.PeriodeBoekjaar & " ?"
+        MsgBox "Kontroleer Dagdatum en actieve periode a.u.b. vooraleer verder te gaan", vbExclamation, Now & " ? " & BYPERDAT.PeriodeBoekjaar & " ?"
         Exit Sub
     End If
     dokumentSleutel = SleutelDok(11)
@@ -1644,7 +1644,7 @@ End Sub
 Private Sub cmdSnelRekenen_Click()
 Dim UitkomstHier As Variant
 
-UitkomstHier = EenLijnRekenen("")
+UitkomstHier = LineCalculating("")
 If UitkomstHier Then
     MsgBox UitkomstHier, vbInformation, "Resultaat"
 End If
@@ -2036,9 +2036,9 @@ LblEx2Btw = ""
 LblIn2Btw = ""
 LblEurCash = ""
 
-txtOntvangenBEF.Text = "0"
-txtOntvangenEUR.Text = "0.00"
-txtTeruggaveEUR.Text = "0.00"
+txtOntvangenBEF.text = "0"
+txtOntvangenEUR.text = "0.00"
+txtTeruggaveEUR.text = "0.00"
 
 RasterSchoon
 frmKassaVerkoop.SSTab1.Tab = 0
@@ -2132,7 +2132,7 @@ Select Case KeyAscii
         If dokumentType <> "15" And Annuleren.Enabled = False Then
             Annuleren.Enabled = True
         End If
-        GridText = KassaDetail.Text
+        GridText = KassaDetail.text
         If Right(GridText, 1) = "2" Then
         Else
             RefreshBTW
@@ -2340,7 +2340,7 @@ Else
         Exit Function
     End If
 End If
-StatusBar1.Panels(3).Text = Format(rsDetail.RecordCount + 1, "0000")
+StatusBar1.Panels(3).text = Format(rsDetail.RecordCount + 1, "0000")
 cmdKassaKiezen.Enabled = False
 cmdLijst.Enabled = True
 frmKassaVerkoop.SetFocus
@@ -2506,7 +2506,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     WegBoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then
@@ -2663,7 +2663,7 @@ Private Sub SSTab1_Click(PreviousTab As Integer)
 
     If SSTab1.Caption = "&Ticket" Then
         Screen.MousePointer = vbHourglass
-        txtTicket.Text = ""
+        txtTicket.text = ""
         If KassaDetail.ListCount > 0 Then
             Ktrl = PrintAf(False, True)
             txtTicket.SetFocus
@@ -2680,10 +2680,10 @@ Private Sub SSTab1_Click(PreviousTab As Integer)
         End If
         'KasTicketTotaal = CDbl(LblIn2Btw.Caption)
         KasTicketTotaal = CDbl(LblEurCash.Caption)
-        txtTicketTotaal.Text = Format(KasTicketTotaal, "€ #,##0.00")
+        txtTicketTotaal.text = Format(KasTicketTotaal, "€ #,##0.00")
         obBetaling(0).Value = True
-        txtOntvangenEUR.Text = Str$(KasTicketTotaal)
-        txtOntvangenBEF.Text = "0"
+        txtOntvangenEUR.text = Str$(KasTicketTotaal)
+        txtOntvangenBEF.text = "0"
     End If
 
 End Sub
@@ -2695,13 +2695,13 @@ Private Sub txtOntvangenBEF_Change()
     Dim HierTotaal As Currency
     
     obBetaling(5).Value = True
-    HierEUR = Val(txtOntvangenEUR.Text)
-    HierBEF = Round(Val(txtOntvangenBEF.Text) / EURO, 2)
-    If txtTicketTotaal.Text = "" Then
-        txtTicketTotaal.Text = "€ 0"
+    HierEUR = Val(txtOntvangenEUR.text)
+    HierBEF = Round(Val(txtOntvangenBEF.text) / EURO, 2)
+    If txtTicketTotaal.text = "" Then
+        txtTicketTotaal.text = "€ 0"
     End If
-    HierTotaal = CDbl(Mid(txtTicketTotaal.Text, 2)) - HierEUR - HierBEF
-    txtTeruggaveEUR.Text = Str$(-HierTotaal)
+    HierTotaal = CDbl(Mid(txtTicketTotaal.text, 2)) - HierEUR - HierBEF
+    txtTeruggaveEUR.text = Str$(-HierTotaal)
     'If HierTotaal < 0 Then
     '    txtTeruggaveEUR.BackColor = &HFF&
     'Else
@@ -2717,13 +2717,13 @@ Private Sub txtOntvangenEUR_Change()
     Dim HierTotaal As Currency
     
     obBetaling(0).Value = True
-    HierEUR = Val(txtOntvangenEUR.Text)
+    HierEUR = Val(txtOntvangenEUR.text)
     'HierBEF = Round(Val(txtOntvangenBEF.Text) / EURO, 2)
-    If txtTicketTotaal.Text = "" Then
-        txtTicketTotaal.Text = "€ 0"
+    If txtTicketTotaal.text = "" Then
+        txtTicketTotaal.text = "€ 0"
     End If
-    HierTotaal = CDbl(Mid(txtTicketTotaal.Text, 2)) - HierEUR '- HierBEF
-    txtTeruggaveEUR.Text = Str$(-HierTotaal)
+    HierTotaal = CDbl(Mid(txtTicketTotaal.text, 2)) - HierEUR '- HierBEF
+    txtTeruggaveEUR.text = Str$(-HierTotaal)
     'If HierTotaal < 0 Then
     '    Stop
     'Else
@@ -2734,7 +2734,7 @@ End Sub
 
 Private Sub txtTeruggaveEUR_Change()
 
-    txtTeruggaveBEF.Text = Format(Round(Val(txtTeruggaveEUR.Text) * EURO), "#,##0")
+    txtTeruggaveBEF.text = Format(Round(Val(txtTeruggaveEUR.text) * EURO), "#,##0")
     
 End Sub
 

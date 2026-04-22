@@ -92,10 +92,11 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "mfgLijst"
-      Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(2)=   "ButtonAssign"
-      Tab(1).ControlCount=   3
+      Tab(1).Control(0)=   "LabelCounter"
+      Tab(1).Control(1)=   "mfgLijst"
+      Tab(1).Control(2)=   "ButtonTransfer"
+      Tab(1).Control(3)=   "ButtonAssign"
+      Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
          Enabled         =   0   'False
@@ -312,9 +313,17 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16580611
+         Format          =   76808195
          CurrentDate     =   36327
          MinDate         =   35796
+      End
+      Begin VB.Label LabelCounter 
+         Alignment       =   1  'Right Justify
+         Height          =   255
+         Left            =   -73200
+         TabIndex        =   28
+         Top             =   6960
+         Width           =   1215
       End
       Begin VB.Label LabelInfo 
          BorderStyle     =   1  'Fixed Single
@@ -527,6 +536,14 @@ Begin VB.Form InbrengFinancieel
          Width           =   900
       End
    End
+   Begin VB.Label Label1 
+      Caption         =   "Label1"
+      Height          =   495
+      Left            =   3720
+      TabIndex        =   27
+      Top             =   3720
+      Width           =   1215
+   End
 End
 Attribute VB_Name = "InbrengFinancieel"
 Attribute VB_GlobalNameSpace = False
@@ -734,6 +751,29 @@ FinishFunction:
 End Function
 
 
+Function ListIsReady() As Boolean
+
+    Dim tHere As Integer
+    Dim tCount As Integer
+    
+    ListIsReady = True
+    
+    For tHere = 2 To Me.mfgLijst.Rows - 1
+        If mfgLijst.TextMatrix(tHere, 3) = "??????" Then
+            tCount = tCount + 1
+            ListIsReady = False
+        End If
+    Next
+    If tCount = 0 Then
+        ButtonTransfer.Enabled = True
+        ButtonAssign.Visible = False
+        LabelCounter = ""
+    Else
+        LabelCounter = tCount
+    End If
+        
+End Function
+
 Private Sub Afsluiten_Click()
 Dim T               As Integer
 Dim TempoTekst      As String
@@ -847,16 +887,26 @@ Private Sub ButtonAssign_Click()
 
     Dim valueToCheck As Double
     Dim valueLineToCheck As Double
-       
+    Dim resultArray() As String
+    ReDim resultArray(5)
+    
     Unload DetailInfo
+    GridText = ""
     DetailInfo.Show 1
     If GridText <> "" Then
         valueToCheck = Abs(Val(Mid(GridText, 22, 12)))
         valueLineToCheck = mfgLijst.TextMatrix(mfgLijst.Row, 4)
         If valueToCheck = valueLineToCheck Then
-            MsgBox "Ok, TODO: Isert now data in the line"
+            resultArray() = Split(GridText, "|")
+            mfgLijst.TextMatrix(mfgLijst.Row, 2) = resultArray(0)
+            mfgLijst.TextMatrix(mfgLijst.Row, 3) = resultArray(1)
+            mfgLijst.TextMatrix(mfgLijst.Row, 4) = Val(resultArray(2))
+            mfgLijst.TextMatrix(mfgLijst.Row, 5) = resultArray(3)
+            ListIsReady
         Else
-            MsgBox "Bedrag verrichting moet ongewijzigd blijven", vbExclamation
+            Msg = "Bedrag van de verrichting mag niet gewijzigd worden." & vbCrLf
+            Msg = Msg & "Herstart de toewijzing"
+            MsgBox Msg, vbExclamation
         End If
     End If
     
@@ -1221,6 +1271,8 @@ Private Sub ButtonReadCamt053_Click()
     MsgBox "TODO: give chance to edit for lines not 100% sure"
         
     MsgBox "TODO: book or [Esc]!"
+    ListIsReady
+    
     GoTo OnCancel
     If Not CopyFile(xdaLocation, LCase(LOCATION_COMPANYDATA + "coda\in"), Mim.Teken.FileTitle) Then
         MsgBox filePath & " kan niet verplaatst worden.  Probeer eventueel manueel", vbInformation
@@ -1265,8 +1317,8 @@ Select Case Index
     Case 0
         If DATE_CHECK(Format(Datum.Value, "dd/mm/yyyy"), PERIODAS_TEXT) Then
         Else
-            BJPERDAT.WindowState = 0
-            BJPERDAT.PeriodeBoekjaar.SetFocus
+            BYPERDAT.WindowState = 0
+            BYPERDAT.PeriodeBoekjaar.SetFocus
         End If
 End Select
         
@@ -1434,18 +1486,18 @@ Private Sub KeuzeInfo_Click(Index As Integer)
             RecordToVeld TABLE_LEDGERACCOUNTS
             If BeginBalans = 1 Then
                 If bhEuro Then
-                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
                     LabelInfo(12).Caption = Format(CDbl(lblInfo(0).Caption) * EURO, "#,##0.00")
                 Else
-                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
                     lblInfo(0).Caption = Format(CDbl(LabelInfo(12)) / EURO, "#,##0.00")
                 End If
             Else
                 If bhEuro Then
-                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(23 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
                     LabelInfo(12).Caption = Format(Round(CDbl(lblInfo(0).Caption) * EURO), "#,##0.00")
                 Else
-                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(23 + BJPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
                     lblInfo(0).Caption = Format(CDbl(LabelInfo(12)) / EURO, "#,##0.00")
                 End If
             End If
@@ -1512,6 +1564,8 @@ Private Sub mfgLijst_Click()
     selectToEdit = mfgLijst.TextMatrix(mfgLijst.Row, 3)
     If selectToEdit = "??????" Then
         Me.ButtonAssign.Enabled = True
+        Me.ButtonAssign.Default = True
+        Me.ButtonAssign.SetFocus
     Else
         Me.ButtonAssign.Enabled = False
     End If
@@ -1522,6 +1576,24 @@ Private Sub mfgLijst_RowColChange()
 
     mfgLijst_Click
             
+End Sub
+
+Private Sub SSTab1_Click(PreviousTab As Integer)
+
+    Select Case PreviousTab
+        Case 0
+            Me.Volgende.Enabled = False
+        
+        Case 1
+            Me.Volgende.Enabled = True
+            Me.Volgende.Default = True
+            Me.Volgende.SetFocus
+        
+        Case Else
+            MsgBox "Stop"
+    
+    End Select
+    
 End Sub
 
 Private Sub Struktuur_Click()

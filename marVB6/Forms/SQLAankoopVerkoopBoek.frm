@@ -612,7 +612,7 @@ MsgBox "Kontroleer de printer."
 Resume
 
 BTWAangifte:
-bGet TABLE_VARIOUS, 1, vSet("17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
+bGet TABLE_VARIOUS, 1, vSet("17" + BYPERDAT.Boekjaar.text + Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), 20)
 If Ktrl Then
     MsgBox "Stop"
 Else
@@ -827,13 +827,13 @@ AVBoekPrePeppol.Caption = LijstNaam
 
 Ktrl = 0
 SnelHelpPrint "Kontrole hogere periodes...", BL_LOGGING
-PeriodeMax = BJPERDAT.PeriodeBoekjaar.ListCount + 1
-Do While PeriodeMax > BJPERDAT.PeriodeBoekjaar.ListIndex + 1
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
+PeriodeMax = BYPERDAT.PeriodeBoekjaar.ListCount + 1
+Do While PeriodeMax > BYPERDAT.PeriodeBoekjaar.ListIndex + 1
+    PeriodeSleutel = "17" + BYPERDAT.Boekjaar.text + Format(PeriodeMax, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
+        vBib TABLE_VARIOUS, (BYPERDAT.Boekjaar.text), "v090"
         vBib TABLE_VARIOUS, Format(PeriodeMax, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
@@ -857,12 +857,12 @@ If getal Then
     Drukken.Visible = False
     Exit Sub
 Else
-    PeriodeSleutel = "17" + BJPERDAT.Boekjaar.text + Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
+    PeriodeSleutel = "17" + BYPERDAT.Boekjaar.text + Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00")
     bGet TABLE_VARIOUS, 1, PeriodeSleutel
     If Ktrl Then
         TLB_RECORD(TABLE_VARIOUS) = ""
-        vBib TABLE_VARIOUS, (BJPERDAT.Boekjaar.text), "v090"
-        vBib TABLE_VARIOUS, Format(BJPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
+        vBib TABLE_VARIOUS, (BYPERDAT.Boekjaar.text), "v090"
+        vBib TABLE_VARIOUS, Format(BYPERDAT.PeriodeBoekjaar.ListIndex + 1, "00"), "v091"
         vBib TABLE_VARIOUS, "17" + vBibTekst(TABLE_VARIOUS, "#v090 #") + vBibTekst(TABLE_VARIOUS, "#v091 #"), "v005"
         bInsert TABLE_VARIOUS, 1
         GoTo jump

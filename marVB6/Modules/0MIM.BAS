@@ -640,10 +640,10 @@ For T = 1 To 4
 Next
 Mim.Basis(11).Enabled = True
 
-BJPERDAT.Hide
-BJPERDAT.DatumVerwerking.Value = MIM_GLOBAL_DATE
+BYPERDAT.Hide
+BYPERDAT.DatumVerwerking.Value = MIM_GLOBAL_DATE
 Mim.DatumVerwerking.Value = MIM_GLOBAL_DATE
-BJPERDAT.PeriodeBoekjaar.Clear
+BYPERDAT.PeriodeBoekjaar.Clear
 
 Ktrl = netVoorbereiden
 If Ktrl = True Then
@@ -662,38 +662,38 @@ Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
                 Get FlTemp2, 1, A
                 XX = Left(A, 4)
             Close FlTemp2
-            BJPERDAT.Boekjaar.AddItem XX, 0
+            BYPERDAT.Boekjaar.AddItem XX, 0
         End If
     Next
     Get FlTemp, 3, aa
     AktievePeriode = Val(aa)
 Close FlTemp
-BJPERDAT.Boekjaar.ListIndex = ACTIVE_BOOKYEAR
-bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.text
+BYPERDAT.Boekjaar.ListIndex = ACTIVE_BOOKYEAR
+bstNaam(TABLE_COUNTERS) = "jr" & BYPERDAT.Boekjaar.text
 
 FlTemp = FreeFile
 Open LOCATION_COMPANYDATA + "DEF" + Format(ACTIVE_BOOKYEAR, "00") + ".OCT" For Random As FlTemp Len = 16
     For T = 1 To 99
         Get FlTemp, T, A
         If A = Space$(16) Then
-            BJPERDAT.PeriodeBoekjaar.ListIndex = 0
-            YY = BJPERDAT.PeriodeBoekjaar.text
+            BYPERDAT.PeriodeBoekjaar.ListIndex = 0
+            YY = BYPERDAT.PeriodeBoekjaar.text
             BOOKYEAR_FROMTO = Mid(YY, 7, 4) + Mid(YY, 4, 2) + Mid(YY, 1, 2) + Mid(XX, 20, 4) + Mid(XX, 17, 2) + Mid(XX, 14, 2)
             Exit For
         Else
             XX = Mid(A, 7, 2) + "/" + Mid(A, 5, 2) + "/" + Left(A, 4) + " - " + Right(A, 2) + "/" + Mid(A, 13, 2) + "/" + Mid(A, 9, 4)
-            BJPERDAT.PeriodeBoekjaar.AddItem XX
+            BYPERDAT.PeriodeBoekjaar.AddItem XX
         End If
     Next T
-    If AktievePeriode - 1 > BJPERDAT.PeriodeBoekjaar.ListCount Then
+    If AktievePeriode - 1 > BYPERDAT.PeriodeBoekjaar.ListCount Then
         MsgBox "Het hoogste boekjaar wordt automatisch ingeladen.  Laatste bewerking gebeurde in een boekjaar met meer periodes dan nu mogelijk.  De eerste periode van het hoogste boekjaar wordt hierna automatisch geaktiveerd"
         AktievePeriode = 1
     End If
-    BJPERDAT.PeriodeBoekjaar.ListIndex = AktievePeriode - 1
-    AT = BJPERDAT.PeriodeBoekjaar.text
+    BYPERDAT.PeriodeBoekjaar.ListIndex = AktievePeriode - 1
+    AT = BYPERDAT.PeriodeBoekjaar.text
     PERIOD_FROMTO = Mid(AT, 7, 4) + Mid(AT, 4, 2) + Left(AT, 2) + Right(AT, 4) + Mid(AT, 17, 2) + Mid(AT, 14, 2)
 Close FlTemp
-BJPERDAT.Show
+BYPERDAT.Show
 
 Mim.Basis(3).Enabled = True
 'Mim.Basis(3).Caption = "Bedrijf Sluiten en MarSync Openen"
@@ -1074,10 +1074,10 @@ Select Case Left(String99(READING, 20), 1)
     Case "0", "M"
         VsoftLog = 0
     Case ""
-        If BJPERDAT.Boekjaar.ListIndex <> 0 Then MsgBox "Draai de Light versie enkel voor het hoogste boekjaar a.u.b. !"
+        If BYPERDAT.Boekjaar.ListIndex <> 0 Then MsgBox "Draai de Light versie enkel voor het hoogste boekjaar a.u.b. !"
         VsoftLog = 0
     Case "1"
-        If BJPERDAT.Boekjaar.ListIndex <> 0 Then MsgBox "Draai de Light versie enkel voor het hoogste boekjaar a.u.b. !"
+        If BYPERDAT.Boekjaar.ListIndex <> 0 Then MsgBox "Draai de Light versie enkel voor het hoogste boekjaar a.u.b. !"
         VsoftLog = 1
         SetMenuOptions 1
     Case "2"
@@ -1370,7 +1370,7 @@ Dim LastUsed As String
 
 Screen.MousePointer = vbHourglass
 Ktrl = 100
-Unload BJPERDAT
+Unload BYPERDAT
 CloseOpenWindows
 
 '2. Tabellen sluiten
@@ -1554,7 +1554,7 @@ Dim Idx As New ADOX.Index
 
 'Open the catalog.
 cat.ActiveConnection = jetConnect
-bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.text) + 1, "0000")
+bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BYPERDAT.Boekjaar.text) + 1, "0000")
 tbl.Name = bstNaam(TABLE_COUNTERS)
     tbl.Columns.Append "v071", adVarWChar, 5
     tbl.Columns.Append "v217", adVarWChar, 30
@@ -1632,7 +1632,7 @@ bClose TABLE_COUNTERS
 rsTempo.Close
 Set rsTempo = Nothing
 
-bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BJPERDAT.Boekjaar.text) + 1, "0000")
+bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BYPERDAT.Boekjaar.text) + 1, "0000")
 FL99_RECORD = "0"
 
 'status boekjaar
@@ -1683,14 +1683,14 @@ SetString99 218
 
 TotSlot:
 'PeriodeDefinitiebestand DEF00.OCT bijwerken
-If BJPERDAT!PeriodeBoekjaar.ListCount - 1 > 12 Then
-    MsgBox "Boekjaar bestaande uit " + Format(BJPERDAT!PeriodeBoekjaar.ListCount) + " periodes wordt hierna tot 12 periodes gebracht.  Kontroleer na installatie a.u.b. !"
+If BYPERDAT!PeriodeBoekjaar.ListCount - 1 > 12 Then
+    MsgBox "Boekjaar bestaande uit " + Format(BYPERDAT!PeriodeBoekjaar.ListCount) + " periodes wordt hierna tot 12 periodes gebracht.  Kontroleer na installatie a.u.b. !"
     Fl = FreeFile
     recNr = 0
     Open LOCATION_COMPANYDATA + "DEF00.OCT" For Random As Fl Len = 16
-    For COUNT_TO = BJPERDAT!PeriodeBoekjaar.ListCount - 12 To BJPERDAT!PeriodeBoekjaar.ListCount - 1
+    For COUNT_TO = BYPERDAT!PeriodeBoekjaar.ListCount - 12 To BYPERDAT!PeriodeBoekjaar.ListCount - 1
          recNr = recNr + 1
-         BJPERDAT!PeriodeBoekjaar.ListIndex = COUNT_TO
+         BYPERDAT!PeriodeBoekjaar.ListIndex = COUNT_TO
          SnelHelpPrint PERIOD_FROMTO, BL_LOGGING
          bString = PERIOD_FROMTO
          Mid(bString, 1, 4) = Format(Val(Mid(bString, 1, 4)) + 1, "0000")
@@ -1859,8 +1859,8 @@ If AavntalOptiesMogelijk > 10 Then
     MsgBox "NT Light menudefinitie geeft toegang tot " + Format(AantalOptiesMogelijk) + " menuopties.  Indien U toegang wenst tot meer dan 10 menuopties, schaf U de volledige versie van het pakket aan a.u.b. !"
     End
 End If
-If BJPERDAT.Boekjaar.ListIndex = 0 Then
-    BJPERDAT.Boekjaar.Enabled = False
+If BYPERDAT.Boekjaar.ListIndex = 0 Then
+    BYPERDAT.Boekjaar.Enabled = False
 Else
     MsgBox "Een logbestand aanmaken is enkel voor het hoogste boekjaar toegestaan.  Hoogste boekjaar met PROSERV licentie aanduiden en daarna bedrijf opnieuw openen a.u.b. !"
     VsoftLog = 0

@@ -192,8 +192,8 @@ Else
 End If
 
 psTekst(2) = "Rapportage " + UCase(Mid(Mim.Caption, InStr(Mim.Caption, "[")))
-psTekst(0) = TekstLijn(1).Text
-psTekst(3) = smg(9) + " Boekjaar " + BJPERDAT.Boekjaar.Text
+psTekst(0) = TekstLijn(1).text
+psTekst(3) = smg(9) + " Boekjaar " + BYPERDAT.Boekjaar.text
 
 While Not EOF(FlTemp)
     lijntel = lijntel + 1
@@ -338,11 +338,11 @@ MsgBox "stop na DO-LOOP"
 
 TelOp:
 If bhEuro Then
-    dbdhbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"))
-    dbdvbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BJPERDAT.Boekjaar.ListIndex + 1, "000") + " #"))
+    dbdhbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"))
+    dbdvbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex + 1, "000") + " #"))
 Else
-    dbdhbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex, "000") + " #"))
-    dbdvbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BJPERDAT.Boekjaar.ListIndex + 1, "000") + " #"))
+    dbdhbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #"))
+    dbdvbj = Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex + 1, "000") + " #"))
 End If
 dTOT = dTOT + dbdhbj
 dvtot = dvtot + dbdvbj
@@ -454,8 +454,8 @@ Dim TempB_MODUS As Integer
 
 Move (Screen.Width - Width) \ 2, (Screen.Height - Height) \ 2
 
-TekstLijn(1).Text = MIM_GLOBAL_DATE
-Caption = Caption + " " + BJPERDAT.Boekjaar.Text
+TekstLijn(1).text = MIM_GLOBAL_DATE
+Caption = Caption + " " + BYPERDAT.Boekjaar.text
 
 i = 0
 Bedrijf = Dir$(PROGRAM_LOCATION + "Def\" + "99MAR*.SRN")
@@ -519,9 +519,9 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
             TekstLijn(1).SetFocus
         End If
 End Select

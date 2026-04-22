@@ -57,13 +57,12 @@ Begin VB.Form Vsoft
       Top             =   3960
       Width           =   855
    End
-   Begin VB.Label AppInfo 
+   Begin VB.Label AppInfo2 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "Label5"
       ForeColor       =   &H00FF0000&
       Height          =   645
-      Index           =   2
       Left            =   960
       TabIndex        =   2
       Top             =   2400
@@ -91,26 +90,24 @@ Begin VB.Form Vsoft
       Width           =   4425
       WordWrap        =   -1  'True
    End
-   Begin VB.Label AppInfo 
+   Begin VB.Label AppInfo1 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "Label4"
       ForeColor       =   &H00FF0000&
       Height          =   945
-      Index           =   1
       Left            =   960
       TabIndex        =   1
       Top             =   2040
       Width           =   4455
       WordWrap        =   -1  'True
    End
-   Begin VB.Label AppInfo 
+   Begin VB.Label AppInfo0 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "Label2"
       ForeColor       =   &H00FF0000&
       Height          =   195
-      Index           =   0
       Left            =   4320
       TabIndex        =   3
       Top             =   720
@@ -124,7 +121,7 @@ Begin VB.Form Vsoft
       Top             =   0
       Width           =   6825
    End
-   Begin VB.Label LabelInfo 
+   Begin VB.Label LabelInfo0 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "Produktnaam"
@@ -139,13 +136,12 @@ Begin VB.Form Vsoft
       EndProperty
       ForeColor       =   &H00FF0000&
       Height          =   675
-      Index           =   0
       Left            =   120
       TabIndex        =   4
       Top             =   240
       Width           =   5625
    End
-   Begin VB.Label LabelInfo 
+   Begin VB.Label LabelInfo2 
       Alignment       =   2  'Center
       BackColor       =   &H00FFFFFF&
       Caption         =   "-"
@@ -160,7 +156,6 @@ Begin VB.Form Vsoft
       EndProperty
       ForeColor       =   &H00FF0000&
       Height          =   1035
-      Index           =   2
       Left            =   720
       TabIndex        =   5
       Top             =   840
@@ -280,10 +275,10 @@ Dim XX As Integer
 Dim cnnLic As ADODB.Connection
 Dim rsLic As ADODB.Recordset
 
-LabelInfo(0).Caption = App.ProductName & "-{LocalFirst}"
-AppInfo(1).Caption = App.LegalCopyright
-AppInfo(2).Caption = App.FileDescription
-AppInfo(0).Caption = Mid(appTitleAndVersion, InStr(appTitleAndVersion, "v.")) '"Versie " + Format(App.major) + "." + Format(App.minor) + "." + Format(App.Revision)
+LabelInfo0.Caption = App.ProductName & "-{LocalFirst}"
+AppInfo1.Caption = App.LegalCopyright
+AppInfo2.Caption = App.FileDescription
+AppInfo0.Caption = Mid(appTitleAndVersion, InStr(appTitleAndVersion, "v.")) '"Versie " + Format(App.major) + "." + Format(App.minor) + "." + Format(App.Revision)
 
 MousePointer = vbHourglass
 Set NTRuimte = Workspaces(0)
@@ -326,7 +321,7 @@ Else
     
     Msg = Msg + "(Geldig van/tot)" + vbCrLf + sVar5
         
-    LabelInfo(2).Caption = Msg
+    LabelInfo2.Caption = Msg
 End If
 
 GeldigVanTot = Left(sVar5, 10)

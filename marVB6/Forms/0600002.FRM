@@ -41,7 +41,7 @@ Begin VB.Form DiversePosten
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76808195
+      Format          =   76546051
       CurrentDate     =   36328
       MinDate         =   35796
    End
@@ -408,7 +408,7 @@ Else
     Loop
     If Succes Then
         Afsluiten.Enabled = True
-        Omschrijving.Text = SoortBoeking.Text
+        Omschrijving.text = SoortBoeking.text
         SoortBoeking.Enabled = False
         Afsluiten.SetFocus
     End If
@@ -505,7 +505,7 @@ End Sub
 
 Private Sub Afsluiten_Click()
 
-If Trim$(Omschrijving.Text) = "" Then
+If Trim$(Omschrijving.text) = "" Then
     MsgBox "Omschrijving mag niet leeg zijn, ook géén spaties...", vbInformation
     Omschrijving.SetFocus
     Exit Sub
@@ -528,7 +528,7 @@ If Ktrl = 6 Then
         bAbort
         Me.SetFocus
     Else
-        Select Case Left(SoortBoeking.Text, 1)
+        Select Case Left(SoortBoeking.text, 1)
             Case "1"
                 EindeAfschrijving
             Case "2"
@@ -548,7 +548,7 @@ End Sub
 
 Private Sub Bedrag_Change()
 
-If Bedrag.Text <> "" Then
+If Bedrag.text <> "" Then
     VolgendeLijn.Enabled = True
     VolgendeLijn.Default = True
 Else
@@ -721,7 +721,7 @@ ElseIf Left(KEY_BUF(TABLE_LEDGERACCOUNTS), 1) < "6" Then
     Loop
 End If
 Afsluiten.Enabled = True
-Omschrijving.Text = SoortBoeking.Text
+Omschrijving.text = SoortBoeking.text
 Afsluiten.SetFocus
 '
 'If Verwittigen Then
@@ -734,7 +734,7 @@ Afsluiten.SetFocus
 '    TRvlag.Enabled = False
 'End If
 BoekBeginBalans = True
-BJPERDAT.PeriodeBoekjaar.ListIndex = 0
+BYPERDAT.PeriodeBoekjaar.ListIndex = 0
 
 End Function
 
@@ -794,7 +794,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     BoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.Text, 1)
+    Select Case Left(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then
@@ -822,8 +822,8 @@ End Sub
 Private Sub Datum_LostFocus()
 
 If Not DATE_CHECK(Format(Datum.Value, "dd/mm/yyyy"), PERIODAS_TEXT) Then
-    BJPERDAT.WindowState = 0
-    BJPERDAT.PeriodeBoekjaar.SetFocus
+    BYPERDAT.WindowState = 0
+    BYPERDAT.PeriodeBoekjaar.SetFocus
 End If
 
 End Sub
@@ -944,10 +944,10 @@ Private Sub OpKuisVolgendeLijn()
 
 TRvlag.Value = 0
 TRaanUit
-RekeningNummer.Text = ""
+RekeningNummer.text = ""
 NaamRekening.Caption = ""
-Bedrag.Text = ""
-Tegenrekening.Text = ""
+Bedrag.text = ""
+Tegenrekening.text = ""
 NaamTegenRekening.Caption = ""
 DCkeuze(0).Value = True
 VolgendeLijn.Enabled = False
@@ -972,7 +972,7 @@ End Sub
 
 Private Sub Omschrijving_LostFocus()
 
-    If Trim$(Omschrijving.Text) = "" Then
+    If Trim$(Omschrijving.text) = "" Then
         MsgBox "Omschrijving mag niet leeg zijn, ook géén spaties...", vbInformation
     End If
     
@@ -1007,12 +1007,12 @@ Select Case KeyCode
     Case 17
         SharedFl = TABLE_LEDGERACCOUNTS
         aIndex = 0
-        GridText = Me.RekeningNummer.Text
+        GridText = Me.RekeningNummer.text
         SqlSearch.Show 1
         If Ktrl Then
             Me.NaamRekening.Caption = ""
         Else
-            Me.RekeningNummer.Text = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v019")
+            Me.RekeningNummer.text = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v019")
             Me.NaamRekening.Caption = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v020")
         End If
 End Select
@@ -1049,7 +1049,7 @@ On Local Error Resume Next
 
 OpKuisVolgendeLijn
 Afsluiten.Enabled = False
-Omschrijving.Text = ""
+Omschrijving.text = ""
 Saldo.Caption = "0"
 JournaalPost.Clear
 SoortBoeking.Enabled = True
@@ -1080,14 +1080,14 @@ End Sub
 
 Private Sub SoortBoeking_Click()
 
-Select Case Left(SoortBoeking.Text, 1)
+Select Case Left(SoortBoeking.text, 1)
     Case "0"
     Case Else
-               Msg = SoortBoeking.Text + " aktiveren !" + vbCrLf + vbCrLf
+               Msg = SoortBoeking.text + " aktiveren !" + vbCrLf + vbCrLf
         Msg = Msg + "Bent U zeker ?"
         Ktrl = MsgBox(Msg, 292)
         If Ktrl = 6 Then
-            Select Case Left(SoortBoeking.Text, 1)
+            Select Case Left(SoortBoeking.text, 1)
                 Case "1"
                     If AfschrijfBoeking() Then
                     Else
@@ -1145,12 +1145,12 @@ Select Case KeyCode
     Case 17
         SharedFl = TABLE_LEDGERACCOUNTS
         aIndex = 0
-        GridText = Me.Tegenrekening.Text
+        GridText = Me.Tegenrekening.text
         SqlSearch.Show 1
         If Ktrl Then
             Me.NaamTegenRekening.Caption = ""
         Else
-            Me.Tegenrekening.Text = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v019")
+            Me.Tegenrekening.text = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v019")
             Me.NaamTegenRekening.Caption = RV(rsMAR(TABLE_LEDGERACCOUNTS), "v020")
         End If
 End Select
@@ -1207,23 +1207,23 @@ Private Sub VolgendeLijn_Click()
 Dim LijnBedrag As Double
 Dim LijnText As String
 
-If RTrim$(RekeningNummer.Text) = "" Then
+If RTrim$(RekeningNummer.text) = "" Then
     Beep
     RekeningNummer.SetFocus
     Exit Sub
-ElseIf Val(Bedrag.Text) = 0 Then
+ElseIf Val(Bedrag.text) = 0 Then
     Beep
     Bedrag.SetFocus
     Exit Sub
 ElseIf TRvlag.Value Then
-    If RTrim$(Tegenrekening.Text) = "" Then
+    If RTrim$(Tegenrekening.text) = "" Then
         Beep
         Tegenrekening.SetFocus
         Exit Sub
     End If
 End If
 
-LijnBedrag = Val(Bedrag.Text)
+LijnBedrag = Val(Bedrag.text)
 If DCkeuze(0).Value Then
 Else
     LijnBedrag = -LijnBedrag
@@ -1233,9 +1233,9 @@ If TRvlag.Value Then
     Saldo.Caption = Format(CDbl(Saldo.Caption) - LijnBedrag, "#,##0.00")
 End If
 
-LijnText = vSet((RekeningNummer.Text), 7) + " " + vSet((NaamRekening.Caption), 40) + " " + Dec$((LijnBedrag), MASK_EURBH) + " "
+LijnText = vSet((RekeningNummer.text), 7) + " " + vSet((NaamRekening.Caption), 40) + " " + Dec$((LijnBedrag), MASK_EURBH) + " "
 If TRvlag.Value Then
-    LijnText = LijnText + vSet((Tegenrekening.Text), 7)
+    LijnText = LijnText + vSet((Tegenrekening.text), 7)
 Else
     LijnText = LijnText + Space$(7)
 End If

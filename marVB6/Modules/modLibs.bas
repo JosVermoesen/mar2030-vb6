@@ -202,8 +202,8 @@ Public LijstPrinterNr As Integer
 Public dokumentPrinterNr As Integer
 Public KassaPrinterNr As Integer
 
-Public FormReference As BasisFiche
-Public BasisB(1 To 3) As New BasisFiche
+Public FormReference As BasicTable
+Public BasisB(1 To 3) As New BasicTable
 Public JumpVenster As Variant
 
 Public fs As FileSystemObject

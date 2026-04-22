@@ -208,8 +208,8 @@ TLijnen = 0
 Lijn = 0
 
     psTekst(2) = "Lijst Intrastat " + IntraType + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-    psTekst(0) = TekstLijn(1).Text
-    psTekst(3) = TekstLijn(0).Text
+    psTekst(0) = TekstLijn(1).text
+    psTekst(3) = TekstLijn(0).text
 
 InitVelden
 bGetOrGreater TABLE_VARIOUS, 1, vSet(IntraType, 20)
@@ -312,8 +312,8 @@ Totaal10 = 0
 IntraType = Format(aIndex)
 Caption = Caption + " " + IntraType
 
-TekstLijn(0).Text = "Periode : " + BJPERDAT.PeriodeBoekjaar.Text
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(0).text = "Periode : " + BYPERDAT.PeriodeBoekjaar.text
+TekstLijn(1).text = MIM_GLOBAL_DATE
 
 
 End Sub
@@ -378,7 +378,7 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 0
     For T = 0 To 10
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -505,7 +505,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -513,13 +513,13 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
             TekstLijn(1).SetFocus
         End If
     Case 3
-        TekstLijn(3).Text = Format(Val(TekstLijn(3).Text), "00000")
+        TekstLijn(3).text = Format(Val(TekstLijn(3).text), "00000")
 End Select
 
 End Sub

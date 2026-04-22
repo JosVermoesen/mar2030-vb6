@@ -855,16 +855,16 @@ Dim KtrlFlag As Integer
 
 If GridText = "" Then
 Else
-    BJPERDAT!Boekjaar.ListIndex = 0
+    BYPERDAT!Boekjaar.ListIndex = 0
     PeriodeVoor = BoekjaarKontrole + MaandVerwerking
     If PeriodeVoor < Left$(BOOKYEAR_FROMTO, 6) Then
-        If BJPERDAT!Boekjaar.ListCount > 1 Then
-            BJPERDAT!Boekjaar.ListIndex = 1
+        If BYPERDAT!Boekjaar.ListCount > 1 Then
+            BYPERDAT!Boekjaar.ListIndex = 1
         End If
     End If
     KtrlFlag = False
-    For Tel = 0 To BJPERDAT!PeriodeBoekjaar.ListCount - 1
-        BJPERDAT!PeriodeBoekjaar.ListIndex = Tel
+    For Tel = 0 To BYPERDAT!PeriodeBoekjaar.ListCount - 1
+        BYPERDAT!PeriodeBoekjaar.ListIndex = Tel
         If PeriodeVoor >= Left$(PERIOD_FROMTO, 6) And PeriodeVoor <= Mid$(PERIOD_FROMTO, 9, 6) Then
             'bClose 99
             Unload KwijtingBoeken
@@ -1138,16 +1138,16 @@ MaandVerwerking = Mid(BoekDatum, 3, 2)
 
 If GridText = "" Then
 Else
-    BJPERDAT!Boekjaar.ListIndex = 0
+    BYPERDAT!Boekjaar.ListIndex = 0
     PeriodeVoor = BoekjaarKontrole + MaandVerwerking
     If PeriodeVoor < Left(BOOKYEAR_FROMTO, 6) Then
-        If BJPERDAT!Boekjaar.ListCount > 1 Then
-            BJPERDAT!Boekjaar.ListIndex = 1
+        If BYPERDAT!Boekjaar.ListCount > 1 Then
+            BYPERDAT!Boekjaar.ListIndex = 1
         End If
     End If
     KtrlFlag = False
-    For Tel = 0 To BJPERDAT!PeriodeBoekjaar.ListCount - 1
-        BJPERDAT!PeriodeBoekjaar.ListIndex = Tel
+    For Tel = 0 To BYPERDAT!PeriodeBoekjaar.ListCount - 1
+        BYPERDAT!PeriodeBoekjaar.ListIndex = Tel
         If PeriodeVoor >= Left(PERIOD_FROMTO, 6) And PeriodeVoor <= Mid(PERIOD_FROMTO, 9, 6) Then
             'bClose 99
             Unload KwijtingBoeken
@@ -1333,18 +1333,18 @@ End If
 If GridText = "" Then
     SnelHelpPrint "Er zijn geen commissielonen te boeken", BL_LOGGING
 Else
-    'BJPERDAT!Boekjaar.ListIndex = 0
+    'BYPERDAT!Boekjaar.ListIndex = 0
     PeriodeVoor = BoekjaarKontrole + MaandVerwerking
     'If PeriodeVoor < Left(BOOKYEAR_FROMTO, 6) Then
-    '    If BJPERDAT!Boekjaar.ListCount > 1 Then
-    '        BJPERDAT!Boekjaar.ListIndex = 1
+    '    If BYPERDAT!Boekjaar.ListCount > 1 Then
+    '        BYPERDAT!Boekjaar.ListIndex = 1
     '    End If
     'End If
     KtrlFlag = False
     For Teljaar = 0 To 1
-        BJPERDAT!Boekjaar.ListIndex = Teljaar
-        For Tel = 0 To BJPERDAT!PeriodeBoekjaar.ListCount - 1
-            BJPERDAT!PeriodeBoekjaar.ListIndex = Tel
+        BYPERDAT!Boekjaar.ListIndex = Teljaar
+        For Tel = 0 To BYPERDAT!PeriodeBoekjaar.ListCount - 1
+            BYPERDAT!PeriodeBoekjaar.ListIndex = Tel
             If PeriodeVoor >= Left(PERIOD_FROMTO, 6) And PeriodeVoor <= Mid(PERIOD_FROMTO, 9, 6) Then
                 'bClose 99
                 Unload KwijtingBoeken
@@ -1687,7 +1687,7 @@ Dim KtrlFlag As Integer
 
 If GridText = "" Then
 Else
-    BJPERDAT!Boekjaar.ListIndex = 0
+    BYPERDAT!Boekjaar.ListIndex = 0
     If BoekjaarKontroleTermijn < "86" Then
         PeriodeVoor = "20" + BoekjaarKontroleTermijn + Format(MaandVerwerkingTermijn, "00")
     Else
@@ -1695,13 +1695,13 @@ Else
         PeriodeVoor = "19" + BoekjaarKontroleTermijn + Format(MaandVerwerkingTermijn, "00")
     End If
     If PeriodeVoor < Left(BOOKYEAR_FROMTO, 6) Then
-        If BJPERDAT!Boekjaar.ListCount > 1 Then
-            BJPERDAT!Boekjaar.ListIndex = 1
+        If BYPERDAT!Boekjaar.ListCount > 1 Then
+            BYPERDAT!Boekjaar.ListIndex = 1
         End If
     End If
     KtrlFlag = False
-    For Tel = 0 To BJPERDAT!PeriodeBoekjaar.ListCount - 1
-        BJPERDAT!PeriodeBoekjaar.ListIndex = Tel
+    For Tel = 0 To BYPERDAT!PeriodeBoekjaar.ListCount - 1
+        BYPERDAT!PeriodeBoekjaar.ListIndex = Tel
         If PeriodeVoor >= Left(PERIOD_FROMTO, 6) And PeriodeVoor <= Mid(PERIOD_FROMTO, 9, 6) Then
             'bClose 99
             Unload KwijtingBoeken

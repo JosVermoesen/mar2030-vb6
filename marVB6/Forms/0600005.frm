@@ -379,7 +379,7 @@ Dim TempB_MODUS As Integer
 TotaalD = 0
 TotaalC = 0
 
-TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
+TekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
 TekstLijn(1).text = MIM_GLOBAL_DATE
 
 PlGrensVan = Left(PERIOD_FROMTO, 8)
@@ -565,11 +565,11 @@ Select Case Index
     Case 0
         If DATE_INVALID(Right(TekstLijn(0).text, 10)) Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
+            TekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             Exit Sub
         ElseIf Len(TekstLijn(0).text) <> 23 Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(0).text = BJPERDAT.PeriodeBoekjaar.text
+            TekstLijn(0).text = BYPERDAT.PeriodeBoekjaar.text
             Exit Sub
         Else
             PlGrensVan = Mid(TekstLijn(0).text, 7, 4) + Mid(TekstLijn(0).text, 4, 2) + Mid(TekstLijn(0).text, 1, 2)

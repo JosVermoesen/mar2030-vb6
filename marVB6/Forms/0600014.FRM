@@ -611,9 +611,9 @@ End If
 
 Dim TempB_MODUS As Integer
 
-For COUNT_TO = 0 To BJPERDAT.PeriodeBoekjaar.ListCount
-    If Mid(BJPERDAT.PeriodeBoekjaar.List(COUNT_TO), 14, 5) = "31/12" Then
-        Datum.Value = Mid(BJPERDAT.PeriodeBoekjaar.List(COUNT_TO), 14)
+For COUNT_TO = 0 To BYPERDAT.PeriodeBoekjaar.ListCount
+    If Mid(BYPERDAT.PeriodeBoekjaar.List(COUNT_TO), 14, 5) = "31/12" Then
+        Datum.Value = Mid(BYPERDAT.PeriodeBoekjaar.List(COUNT_TO), 14)
         Datum.Enabled = False
         Exit For
     End If
@@ -837,7 +837,7 @@ If Right(BOOKYEAR_FROMTO, 4) <> "1231" Then
         'eventjes kijken naar vorig jaar
         bClose TABLE_COUNTERS
         tempoBoekjaar = bstNaam(TABLE_COUNTERS)
-        bstNaam(TABLE_COUNTERS) = "jr" & BJPERDAT.Boekjaar.text - 1
+        bstNaam(TABLE_COUNTERS) = "jr" & BYPERDAT.Boekjaar.text - 1
         If String99(READING, 296) <> "EUR" Then
             'extra controle nodig...
             EurBefJaar = True
