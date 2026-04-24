@@ -313,7 +313,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76808195
+         Format          =   76939267
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -552,6 +552,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 DefInt A-Z
 
+Dim xdaLineCounter As Integer
 Dim rsAny As ADODB.Recordset
 
 Dim BeginBalans As Integer
@@ -694,7 +695,30 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
         Else
             'TODO Other possibilities...
-            '908 on supplier RvId etc
+                        
+            Dim groupCode As String
+            groupCode = ""
+    
+            Select Case Left(refString, 1)
+                Case "8": groupCode = "V0"
+                Case "7": groupCode = "V1"
+                Case "6": groupCode = "B0"
+                Case "5": groupCode = "F0"
+                Case "2": groupCode = "Q0"
+                Case Else
+                    MsgBox "onbekende OGM voor klanten?"
+            End Select
+                            
+            Dim ReferteTxtNoFormat As String
+            If groupCode = "" Then
+                MsgBox "onbekende OGM voor klanten proberen met IBAN van de klant"
+                'try to search with IBAN of the client
+                Msg = Msg & "AND Klanten.v259 = '" & IbanAccount & "' "
+            Else
+                Stop
+                ReferteTxtNoFormat = groupCode & Mid(refString, 2, 6)
+                
+            End If
         End If
         Msg = Msg & "ORDER BY Dokumenten.v035 DESC "
     End If
@@ -737,12 +761,8 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
     Exit Function
 
 ValidateDocument:
-    MsgBox "Stop for validating more then one found"
-    
-    'More then one found
-    'TODO check on amount and IBAN to be sure
-    
-    Return
+    CtrlDocuments = rsAny("v033") & "|" & rsAny("A100") & "|" & rsAny("A110")
+    MsgBox "Stop try to validate with first document found" & vbCrLf & vbCrLf & CtrlDocuments, vbInformation
     
 FinishFunction:
     rsAny.Close
@@ -999,6 +1019,12 @@ Private Sub ButtonReadCamt053_Click()
     Dim aa As String
     Select Case qualityOfBeginning
         Case 0
+            ' If already lines in mfg then check startAmount of extra .XDA
+            ' should be endAmount in mfg list
+            If beginSaldoXDA = Me.mfgLijst.TextMatrix(Me.mfgLijst.Rows - 2, 6) Then
+                cumulSaldo = beginSaldoXDA
+                GoTo AddingLines
+            End If
             Msg = "Noch teller (niet essentiëel), noch beginsaldo (essentieel)" & vbCrLf
             Msg = Msg + "Bij beheer van meerdere rekeningen, duidt eerst de rekening aan voor .XDA import en probeer opnieuw"
             MsgBox Msg, vbInformation
@@ -1015,16 +1041,19 @@ Private Sub ButtonReadCamt053_Click()
         
     On Local Error GoTo 0
     SnelHelpPrint "Preparing book list with xdaLinesData", BL_LOGGING
-    
+                
+AddingLines:
+
     Dim resultReturn As String
     Dim isCor As Boolean
     Dim isSeller As Boolean
     Dim lineReference As String
     Dim resultArray() As String
     Dim amountToCheck As String
-            
+    
     For T = 0 To UBound(xdaLinesDATAArray) - 1
-        aa = Dec(T + 1, "000") & vbTab
+        xdaLineCounter = xdaLineCounter + 1
+        aa = Dec((xdaLineCounter), "000") & vbTab
         If Trim(xdaLinesDATAArray(T, 4)) = "" Then
             bedragTransactie = Val(xdaLinesDATAArray(T, 1))
             amountToCheck = xdaLinesDATAArray(T, 1)
@@ -1251,17 +1280,9 @@ Private Sub ButtonReadCamt053_Click()
                         aa = aa & resultArray(1) & vbTab
                     End If
                 End If
-                
-                
-                
-                
-                'aa = aa & "+" & vbTab
-                'aa = aa & "??????" & vbTab
-                'aa = aa & Val(amountToCheck) & vbTab
-                'aa = aa & xdaLinesDATAArray(T, 6) & vbTab
                             
             Case Else
-                MsgBox "BBA buiten controle: " & xdaLinesDATAArray(T, 2)
+                MsgBox "BBA buiten controle: " & xdaLinesDATAArray(T, 2), vbCritical
         End Select
         cumulSaldo = cumulSaldo + bedragTransactie
         aa = aa & cumulSaldo
@@ -1336,6 +1357,7 @@ End Sub
 
 Private Sub Form_Load()
     
+    xdaLineCounter = 0
     mfgLijst.Rows = 2
     mfgLijst.Cols = 7
     mfgLijst.Row = 0
@@ -1565,6 +1587,7 @@ Private Sub mfgLijst_Click()
     If selectToEdit = "??????" Then
         Me.ButtonAssign.Enabled = True
         Me.ButtonAssign.Default = True
+        Me.ButtonAssign.Visible = True
         Me.ButtonAssign.SetFocus
     Else
         Me.ButtonAssign.Enabled = False

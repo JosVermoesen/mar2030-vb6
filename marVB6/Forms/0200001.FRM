@@ -133,15 +133,15 @@ Begin VB.Form DirekteAankoop
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbAfbeelding"
-      Tab(1).Control(1)=   "OLE1"
+      Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(1)=   "cbAfbeelding"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "obTAB(1)"
+      Tab(2).Control(0)=   "Label3"
       Tab(2).Control(1)=   "obTAB(0)"
-      Tab(2).Control(2)=   "Label3"
+      Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
@@ -1082,10 +1082,16 @@ Function CheckSupplier() As Boolean
     ElseIf rsSupplier.RecordCount = 1 Then
         '15 supplierIBANToCheck:   BE83891854037015
         'vBib TABLE_SUPPLIERS, uitwisselingDATAArray(15), "v259"  'IBAN
+        Dim checkDbIBAN As String
+        Dim checkUblIBAN As String
+        
+        checkUblIBAN = Trim(Replace(uitwisselingDATAArray(15), " ", ""))
+        checkDbIBAN = Trim(Replace(objectValue(rsSupplier("v259")), " ", ""))
         If Trim(uitwisselingDATAArray(15)) = "" Then
-        ElseIf Trim(uitwisselingDATAArray(15)) = objectValue(rsSupplier("v259")) Then
+        ElseIf checkUblIBAN = checkDbIBAN Then
         Else
             Msg = "IBAN rekening is verschillend met database." & vbCrLf & vbCrLf
+            Msg = Msg & uitwisselingDATAArray(7) & vbCrLf & vbCrLf
             Msg = Msg & "* Peppol document: " & uitwisselingDATAArray(15) & vbCrLf
             Msg = Msg & "* Tabel leveranciers: " & rsSupplier("v259") & vbCrLf & vbCrLf
             Msg = Msg & "Wijzig de leveranciersfiche manueel indien nodig."
@@ -1095,7 +1101,7 @@ Function CheckSupplier() As Boolean
     ElseIf rsSupplier.RecordCount = 0 Then
         If ifSupplierInsertWarning Then
             Msg = "Geen leverancier gevonden met het ondernemingsnummer " & uitwisselingDATAArray(5) & vbCrLf & vbCrLf
-            Msg = Msg & "Naam: " & uitwisselingDATAArray(7) & vbCrLf
+            Msg = Msg & "Naam: " & uitwisselingDATAArray(7) & vbCrLf & vbCrLf
             Msg = Msg & "Straat: " & uitwisselingDATAArray(8) & vbCrLf
             Msg = Msg & "Plaatsnaam: " & uitwisselingDATAArray(9) & vbCrLf & vbCrLf
             Msg = Msg & "Controleer eerst of voeg een nieuwe leverancier toe" & vbCrLf & vbCrLf

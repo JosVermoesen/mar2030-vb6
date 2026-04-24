@@ -301,9 +301,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -3890,7 +3890,7 @@ Else
     If customerOriginalVatNumber <> "" Then customerTaxScheme = "VAT"
 End If
 
-pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerEUVatNumber, 14) & " " & TekstInfo0.text & " " & TekstInfo1.text)
+pdfY = Mim.Report.PrintBox(1.5, pdfY, rft(1) & vbCrLf & vSet(RV(rsKlant, "A110"), 12) & " " & vSet(customerEUVatNumber, 14) & " " & TekstInfo0.text & " " & TekstInfo1.text & " " & paymentID)
 pdfY = Mim.Report.VPEPRINT(1.5, pdfY, vbCrLf)
 
 If MeerLijn = 1 Then
