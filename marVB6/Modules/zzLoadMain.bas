@@ -9,7 +9,7 @@ Public strLogFile As String
 
 Public Sub Main()
 
-MAR_VERSION = App.major & "." & App.minor & "." & App.Revision & "c"
+MAR_VERSION = App.major & "." & App.minor & "." & App.Revision & "d"
 BeWaarTekst "marIntegraal", "Version", MAR_VERSION
 appTitleAndVersion = App.Title & " v." & MAR_VERSION '& "b"
 PeppolFlag = False

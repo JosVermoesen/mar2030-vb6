@@ -2288,7 +2288,7 @@ If adminNoVat Then
 Else
     If AankoopFlg = 0 Then
         TekstInfo5.text = Str((Val(uitwisselingDATAArray(21)) - Val(uitwisselingDATAArray(20))))
-        TekstInfo5.Enabled = True
+        TekstInfo5.Enabled = False
     Else
         MsgBox "EU aankoopdocument. Btw automatisch op 21%. Verbeter indien nodig.", vbExclamation
         TekstInfo5.text = Dec(Val(uitwisselingDATAArray(20)) * 21 / 100, ".##")

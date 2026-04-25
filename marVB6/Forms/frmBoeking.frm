@@ -116,8 +116,8 @@ If DKTRL_EUR <> 0 Or DKTRL_BEF <> 0 Then
     
         Dim TempoRij
         TempoRij = mshfBoekLijst.Rows - 1
-        mshfBoekLijst.TextMatrix(TempoRij, 0) = "Opgelet!"
-        mshfBoekLijst.TextMatrix(TempoRij, 1) = "Rekenenverschillen"
+        'mshfBoekLijst.TextMatrix(TempoRij, 0) = "Ter info"
+        mshfBoekLijst.TextMatrix(TempoRij, 1) = "Ter info BEF Rekenenverschil"
         If DKTRL_BEF Then
             If DKTRL_BEF < 0 Then
                 mshfBoekLijst.TextMatrix(TempoRij, 4) = Format(-DKTRL_BEF, "#,##0.00")

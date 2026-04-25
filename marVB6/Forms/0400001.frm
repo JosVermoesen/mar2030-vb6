@@ -301,9 +301,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1444,6 +1444,8 @@ Dim Document_OGM_NoFormat As String
 Dim rsSellerUBL As New ADODB.Recordset
 
 Dim adminNoVat As Boolean
+Dim adminNoPeppol As Boolean
+
 Dim orderMarReferences As String
 
 Dim idPdfForUbl As String
@@ -1769,6 +1771,11 @@ Function checkForB2BInvoice() As Boolean
         Me.cbUncl1001.ListIndex = 0
     End If
     checkForB2BInvoice = True
+    
+    If adminNoPeppol = True Then
+        Me.FramePeppol.Visible = False
+    End If
+    
     
 End Function
 
@@ -4443,6 +4450,11 @@ Schoon
 supplierTaxScheme = ""
 supplierRegistrationId = Trim(String99(READING, 292))
 supplierOriginalVatNumber = Trim(String99(READING, 51))
+If supplierRegistrationId = "0000000000" Then
+    adminNoPeppol = True
+    adminNoVat = True
+    Me.cbMonitortUBL.Visible = False
+End If
 If supplierOriginalVatNumber = supplierRegistrationId Then supplierTaxScheme = "VAT"
 
 supplierRegistrationName = Trim(String99(READING, 46))

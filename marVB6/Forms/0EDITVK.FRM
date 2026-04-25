@@ -512,6 +512,11 @@ Else
     Keuze(1).ListIndex = Val(DefaultKode) - 1
 End If
 
+If adminNoVat = True Then
+    Keuze(1).ListIndex = 3
+    Keuze(1).Enabled = False
+End If
+
 If GridText <> "" Then
     LijnType = Right(GridText, 1)
     Select Case LijnType
@@ -519,15 +524,15 @@ If GridText <> "" Then
             Ok.Enabled = True
             TekstInfo(6).TabIndex = 0
             TekstInfo(1).MaxLength = 40
-            TekstInfo(1).Text = RTrim$(Left(GridText, 40))
+            TekstInfo(1).text = RTrim$(Left(GridText, 40))
             GridText = Right(GridText, Len(GridText) - 41)
-            TekstInfo(4).Text = Left(GridText, 11)
+            TekstInfo(4).text = Left(GridText, 11)
             GridText = Right(GridText, Len(GridText) - 12)
-            TekstInfo(6).Text = Left(GridText, 7)
+            TekstInfo(6).text = Left(GridText, 7)
             GridText = Right(GridText, Len(GridText) - 8)
-            TekstInfo(7).Text = Left(GridText, 12)
+            TekstInfo(7).text = Left(GridText, 12)
             GridText = Right(GridText, Len(GridText) - 13)
-            TekstInfo(2).Text = Left(GridText, 6)
+            TekstInfo(2).text = Left(GridText, 6)
             GridText = Right(GridText, Len(GridText) - 7)
             For T = 0 To Keuze(0).ListCount - 1
                 If Left(Keuze(0).List(T), 1) = Left(GridText, 1) Then
@@ -536,7 +541,7 @@ If GridText <> "" Then
                 End If
             Next
             GridText = Right(GridText, Len(GridText) - 2)
-            TekstInfo(5).Text = Left(GridText, 3)
+            TekstInfo(5).text = Left(GridText, 3)
             GridText = Right(GridText, Len(GridText) - 4)
             If Val(Left(GridText, 1)) = 6 Then
                 Keuze(1).ListIndex = Keuze(1).ListCount - 1
@@ -544,20 +549,20 @@ If GridText <> "" Then
                 Keuze(1).ListIndex = Val(Left(GridText, 1)) - 1
             End If
             GridText = Right(GridText, Len(GridText) - 2)
-            TekstInfo(3).Text = Left(GridText, 7)
+            TekstInfo(3).text = Left(GridText, 7)
             GridText = Right(GridText, Len(GridText) - 8)
-            TekstInfo(0).Text = Left(GridText, 13)
+            TekstInfo(0).text = Left(GridText, 13)
             GridText = Right(GridText, Len(GridText) - 14)
             GridText = ""
         Case "2"
             Ok.Enabled = True
             TekstInfo(1).MaxLength = 75
-            TekstInfo(1).Text = RTrim$(Left(GridText, 75))
+            TekstInfo(1).text = RTrim$(Left(GridText, 75))
         Case Else
             MsgBox "Stop"
     End Select
 Else
-    TekstInfo(3).Text = OpbrengstDefault
+    TekstInfo(3).text = OpbrengstDefault
     LijnType = Format(aIndex)
 End If
 
@@ -574,8 +579,8 @@ Select Case LijnType
         
         MaakTotaal
     Case "1"
-        TekstInfo(0).Text = "OMSCHRIJVING"
-        TekstInfo(2).Text = Dec$(1, "###0.0")
+        TekstInfo(0).text = "OMSCHRIJVING"
+        TekstInfo(2).text = Dec$(1, "###0.0")
         Keuze(0).ListIndex = 9
         
         ProduktLabel(0).Visible = False
@@ -605,9 +610,9 @@ Select Case LijnType
         TekstInfo(1).Visible = True
         Ok.Enabled = True
 End Select
-If Len(TekstInfo(6).Text) Then
+If Len(TekstInfo(6).text) Then
 Else
-    TekstInfo(6).Text = "1"
+    TekstInfo(6).text = "1"
 End If
 
 If XLogKassa = "" Then
@@ -637,15 +642,15 @@ End Sub
 
 Private Sub MaakTotaal()
 
-nVol = Val(TekstInfo(2).Text)
-dHg = Val(TekstInfo(4).Text)
-nAnt = Val(TekstInfo(6).Text)
+nVol = Val(TekstInfo(2).text)
+dHg = Val(TekstInfo(4).text)
+nAnt = Val(TekstInfo(6).text)
 
-SubEx = (dHg * nAnt) - ((dHg * nAnt) * Val(TekstInfo(5).Text) / 100)
-SubIn = SubEx + (SubEx * Val(Mid(Keuze(1).Text, 4, 4)) / 100)
-TekstInfo(7).Text = Dec$((SubEx), "#######0.000")
-TekstInfo(8).Text = Dec$((SubIn), "#######0.000")
-TekstInfo(9).Text = TekstInfo(4).Text
+SubEx = (dHg * nAnt) - ((dHg * nAnt) * Val(TekstInfo(5).text) / 100)
+SubIn = SubEx + (SubEx * Val(Mid(Keuze(1).text, 4, 4)) / 100)
+TekstInfo(7).text = Dec$((SubEx), "#######0.000")
+TekstInfo(8).text = Dec$((SubIn), "#######0.000")
+TekstInfo(9).text = TekstInfo(4).text
 
 End Sub
 
@@ -655,13 +660,13 @@ If TekstInfo(6) = "*" Then Exit Sub
 
 Select Case LijnType
     Case "0", "1"
-        TekstInfo(0).Text = vSet((TekstInfo(0).Text), 13) 'ProduktNummer
-        TekstInfo(1).Text = vSet((TekstInfo(1).Text), 40) 'Omschrijving
-        TekstInfo(2).Text = Dec$(Val(TekstInfo(2).Text), "###0.0") 'Verpakking
-        TekstInfo(3).Text = vSet((TekstInfo(3).Text), 7) 'Boekhoudingrekening
-        TekstInfo(4).Text = Dec$(Val(TekstInfo(4).Text), "######0.000") 'Verkoopprijs
-        TekstInfo(5).Text = Dec$(Val(TekstInfo(5).Text), "##0") 'Korting
-        TekstInfo(6).Text = Dec$(Val(TekstInfo(6).Text), vkMaskAantal) 'Aantal
+        TekstInfo(0).text = vSet((TekstInfo(0).text), 13) 'ProduktNummer
+        TekstInfo(1).text = vSet((TekstInfo(1).text), 40) 'Omschrijving
+        TekstInfo(2).text = Dec$(Val(TekstInfo(2).text), "###0.0") 'Verpakking
+        TekstInfo(3).text = vSet((TekstInfo(3).text), 7) 'Boekhoudingrekening
+        TekstInfo(4).text = Dec$(Val(TekstInfo(4).text), "######0.000") 'Verkoopprijs
+        TekstInfo(5).text = Dec$(Val(TekstInfo(5).text), "##0") 'Korting
+        TekstInfo(6).text = Dec$(Val(TekstInfo(6).text), vkMaskAantal) 'Aantal
         MaakTotaal
         
         'controle voor mileulijn!!
@@ -688,17 +693,17 @@ Select Case LijnType
                 Next
             End If
         End If
-        If TekstInfo(1).Text = Space$(Len(TekstInfo(1).Text)) Or TekstInfo(3).Text = Space$(Len(TekstInfo(3).Text)) Then
-            TekstInfo(1).Text = ""
+        If TekstInfo(1).text = Space$(Len(TekstInfo(1).text)) Or TekstInfo(3).text = Space$(Len(TekstInfo(3).text)) Then
+            TekstInfo(1).text = ""
         Else
-            GridText = TekstInfo(1).Text + Chr$(124) + TekstInfo(4).Text + Chr$(124) + TekstInfo(6).Text + Chr$(124) + TekstInfo(7).Text + Chr$(124) + TekstInfo(2).Text + Chr$(124)
-            GridText = GridText + Left(Keuze(0).Text, 1) + Chr$(124) + TekstInfo(5).Text + Chr$(124) + Left(Keuze(1).Text, 1) + Chr$(124) + TekstInfo(3).Text + Chr$(124) + TekstInfo(0).Text + Chr$(124) + LijnType
+            GridText = TekstInfo(1).text + Chr$(124) + TekstInfo(4).text + Chr$(124) + TekstInfo(6).text + Chr$(124) + TekstInfo(7).text + Chr$(124) + TekstInfo(2).text + Chr$(124)
+            GridText = GridText + Left(Keuze(0).text, 1) + Chr$(124) + TekstInfo(5).text + Chr$(124) + Left(Keuze(1).text, 1) + Chr$(124) + TekstInfo(3).text + Chr$(124) + TekstInfo(0).text + Chr$(124) + LijnType
             WijzigenVerkoop.Hide
         End If
         
     Case "2"
-        TekstInfo(1).Text = vSet((TekstInfo(1).Text), 75)
-        GridText = TekstInfo(1).Text + Chr$(124) + LijnType
+        TekstInfo(1).text = vSet((TekstInfo(1).text), 75)
+        GridText = TekstInfo(1).text + Chr$(124) + LijnType
         WijzigenVerkoop.Hide
 End Select
 
@@ -715,9 +720,9 @@ Else
 End If
 blMilieu = Me.lbMilieu.Visible
 
-TekstInfo(0).Text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
-TekstInfo(1).Text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
-TekstInfo(5).Text = vBibTekst(TABLE_PRODUCTS, "#v300 #")
+TekstInfo(0).text = vBibTekst(TABLE_PRODUCTS, "#v102 #")
+TekstInfo(1).text = vBibTekst(TABLE_PRODUCTS, "#v105 #")
+TekstInfo(5).text = vBibTekst(TABLE_PRODUCTS, "#v300 #")
 
 For T = 0 To Keuze(0).ListCount - 1
     If Left(Keuze(0).List(T), 1) = vBibTekst(TABLE_PRODUCTS, "#v106 #") Then
@@ -735,20 +740,20 @@ Else
 End If
 
 nVol = Val(vBibTekst(TABLE_PRODUCTS, "#v107 #"))
-TekstInfo(2).Text = Dec$((nVol), "###0.0")
+TekstInfo(2).text = Dec$((nVol), "###0.0")
 If InStr(DIRECTSELL_STRING, "EUR") Then
-    TekstInfo(4).Text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#e112 #")) * nVol, "######0.000")
+    TekstInfo(4).text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#e112 #")) * nVol, "######0.000")
 Else
-    TekstInfo(4).Text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#v112 #")) * nVol, "######0.000")
+    TekstInfo(4).text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#v112 #")) * nVol, "######0.000")
 End If
-TekstInfo(9).Text = TekstInfo(4).Text
+TekstInfo(9).text = TekstInfo(4).text
 
-dHg = Val(TekstInfo(4).Text)
-If Val(TekstInfo(5).Text) <> 0 Then
+dHg = Val(TekstInfo(4).text)
+If Val(TekstInfo(5).text) <> 0 Then
 Else
-    TekstInfo(5).Text = Dec$(Val(vBibTekst(TABLE_CUSTOMERS, "#vs05 #")), "##0")
+    TekstInfo(5).text = Dec$(Val(vBibTekst(TABLE_CUSTOMERS, "#vs05 #")), "##0")
 End If
-TekstInfo(6).Text = Dec$(1, vkMaskAantal)
+TekstInfo(6).text = Dec$(1, vkMaskAantal)
 nAnt = 1
 
 HuidigeStock = Val(vBibTekst(TABLE_PRODUCTS, "#v114 #")) + Val(vBibTekst(TABLE_PRODUCTS, "#v119 #")) - Val(vBibTekst(TABLE_PRODUCTS, "#v120 #"))
@@ -783,12 +788,12 @@ End Sub
 Private Sub TekstInfo_GotFocus(Index As Integer)
 
 TekstInfo(Index).SelStart = 0
-TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 Select Case Index
     Case 0, 3
         SnelHelpPrint "Dubbelklikken of [Ctrl] voor geïndexeerd zoeken", BL_LOGGING
-        If TekstInfo(3).Text <> "" Then
-            bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(3).Text), 7)
+        If TekstInfo(3).text <> "" Then
+            bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(3).text), 7)
             If Ktrl Then
             Else
                 RecordToVeld TABLE_LEDGERACCOUNTS
@@ -799,8 +804,8 @@ Select Case Index
        Ok.Default = True
                     
     Case 6
-        If Val(TekstInfo(Index).Text) = 0 Then
-            TekstInfo(Index).Text = Dec$(1, "###.000")
+        If Val(TekstInfo(Index).text) = 0 Then
+            TekstInfo(Index).text = Dec$(1, "###.000")
         End If
 End Select
 
@@ -808,7 +813,7 @@ Select Case Index
     Case 1
         TekstInfo(1).SelLength = 0
     Case Else
-        TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+        TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 End Select
 
 End Sub
@@ -831,25 +836,25 @@ Select Case KeyCode
                 SharedFl = TABLE_PRODUCTS
                 aIndex = Val(Left(cmbSortering, 2))
                 FVT(TABLE_PRODUCTS, 0) = String$(13, 0)
-                GridText = TekstInfo(0).Text
+                GridText = TekstInfo(0).text
                 SqlSearch.Show 1
                 If Ktrl Then
-                    TekstInfo(0).Text = ""
+                    TekstInfo(0).text = ""
                     TekstInfo(0).SetFocus: Exit Sub
                 Else
                     RecordToVeld TABLE_PRODUCTS
                     ProdukTekstInfo
                     bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_PRODUCTS, "#v117 #"), 7)
                     If Ktrl Then
-                        TekstInfo(3).Text = ""
+                        TekstInfo(3).text = ""
                         TekstInfo(0).SetFocus: Exit Sub
                     ElseIf Val(vBibTekst(TABLE_PRODUCTS, "#e113 #")) <= 0 Then
                         MsgBox "Aankoopprijs is onbekend.  Geef de inkoopprijs in van dit artikel a.u.b. via de produktfiche !"
-                        TekstInfo(0).Text = ""
+                        TekstInfo(0).text = ""
                         TekstInfo(0).SetFocus: Exit Sub
                     Else
                         RecordToVeld TABLE_LEDGERACCOUNTS
-                        TekstInfo(3).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                        TekstInfo(3).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
                         SnelHelpPrint vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), BL_LOGGING
                         Ok.Enabled = True
                     End If
@@ -858,15 +863,15 @@ Select Case KeyCode
                 SharedFl = TABLE_LEDGERACCOUNTS
                 aIndex = 0
                 FVT(TABLE_LEDGERACCOUNTS, 0) = String$(7, 0)
-                GridText = TekstInfo(3).Text
+                GridText = TekstInfo(3).text
                 SqlSearch.Show 1
                 If Ktrl Then
-                    TekstInfo(1).Text = ""
+                    TekstInfo(1).text = ""
                     FVT(TABLE_LEDGERACCOUNTS, 0) = ""
                     Ok.Enabled = False
                 Else
                     RecordToVeld TABLE_LEDGERACCOUNTS
-                    TekstInfo(3).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                    TekstInfo(3).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
                     Ok.Enabled = True
                 End If
         End Select
@@ -878,7 +883,7 @@ Private Sub TekstInfo_KeyPress(Index As Integer, KeyAscii As Integer)
 
 Select Case Index
     Case 4
-        TekstInfo(9).Text = ""
+        TekstInfo(9).text = ""
 End Select
 
 End Sub
@@ -893,9 +898,9 @@ Select Case Index
         Ok.Enabled = True
         If Trim$(TekstInfo(0)) = "" Then
         Else
-            bGet TABLE_PRODUCTS, 0, Trim$(TekstInfo(0).Text)
+            bGet TABLE_PRODUCTS, 0, Trim$(TekstInfo(0).text)
             If Ktrl Then
-                TekstInfo(0).Text = ""
+                TekstInfo(0).text = ""
                 TekstInfo(0).SetFocus: Exit Sub
             Else
                 RecordToVeld TABLE_PRODUCTS
@@ -906,7 +911,7 @@ Select Case Index
                     TekstInfo(0).SetFocus: Exit Sub
                 Else
                     RecordToVeld TABLE_LEDGERACCOUNTS
-                    TekstInfo(3).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+                    TekstInfo(3).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
                     SnelHelpPrint vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), BL_LOGGING
                     Ok.Enabled = True
                 End If
@@ -915,72 +920,72 @@ Select Case Index
         End If
         
     Case 2
-        nVol = Val(TekstInfo(2).Text)
-        TekstInfo(2).Text = Dec$((nVol), "###0.0")
+        nVol = Val(TekstInfo(2).text)
+        TekstInfo(2).text = Dec$((nVol), "###0.0")
         If InStr(DIRECTSELL_STRING, "EUR") Then
-            TekstInfo(4).Text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#e112 #")) * nVol, "######0.000")
+            TekstInfo(4).text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#e112 #")) * nVol, "######0.000")
         Else
-            TekstInfo(4).Text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#v112 #")) * nVol, "######0.000")
+            TekstInfo(4).text = Dec$(Val(vBibTekst(TABLE_PRODUCTS, "#v112 #")) * nVol, "######0.000")
         End If
-        TekstInfo(9).Text = TekstInfo(4).Text
+        TekstInfo(9).text = TekstInfo(4).text
 
     Case 3
-        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(3).Text), 7)
+        bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo(3).text), 7)
         If Ktrl Then
             If FVT(TABLE_LEDGERACCOUNTS, 0) = String$(7, 0) Then
                 Exit Sub
             Else
-                TekstInfo(3).Text = OpbrengstDefault
+                TekstInfo(3).text = OpbrengstDefault
                 TekstInfo(3).SetFocus
             End If
         Else
             RecordToVeld TABLE_LEDGERACCOUNTS
-            TekstInfo(3).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+            TekstInfo(3).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
             SnelHelpPrint vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), BL_LOGGING
         End If
 
     Case 4
-        If TekstInfo(4).Text = TekstInfo(9).Text Then
+        If TekstInfo(4).text = TekstInfo(9).text Then
         ElseIf BTWType.Value Then
-            dHg = Val(TekstInfo(4).Text)
-            TempPCT = Val(Mid(Keuze(1).Text, 4, 4))
+            dHg = Val(TekstInfo(4).text)
+            TempPCT = Val(Mid(Keuze(1).text, 4, 4))
             dHg = dHg * 100 / (100 + TempPCT)
-            TekstInfo(4).Text = Dec$((dHg), "######0.000")
+            TekstInfo(4).text = Dec$((dHg), "######0.000")
             MaakTotaal
             Ok.Enabled = True
         Else
-            TekstInfo(4).Text = Dec$(Val(TekstInfo(4).Text), "######0.000")
+            TekstInfo(4).text = Dec$(Val(TekstInfo(4).text), "######0.000")
             MaakTotaal
             Ok.Enabled = True
         End If
         
     Case 5
         If TekstInfo(0).Visible = True Then
-            If (Val(TekstInfo(4).Text) / Val(TekstInfo(2).Text)) / (1 + (Val(TekstInfo(5).Text) / 100)) < Val(vBibTekst(TABLE_PRODUCTS, "#e113 #")) Then
+            If (Val(TekstInfo(4).text) / Val(TekstInfo(2).text)) / (1 + (Val(TekstInfo(5).text) / 100)) < Val(vBibTekst(TABLE_PRODUCTS, "#e113 #")) Then
                 Msg = "Uw verkoopprijs wordt kleiner dan uw aankoopprijs !  Is dit de bedoeling ?"
                 KtrlBox = MsgBox(Msg, 292)
                 If KtrlBox = 6 Then
                 Else
-                    TekstInfo(5).Text = "0"
+                    TekstInfo(5).text = "0"
                 End If
             End If
         End If
-        TekstInfo(5).Text = Dec$(Val(TekstInfo(5).Text), "##0")
+        TekstInfo(5).text = Dec$(Val(TekstInfo(5).text), "##0")
 
     Case 6
-        If TekstInfo(6).Text = "*" Then
+        If TekstInfo(6).text = "*" Then
             If Keuze(0).Visible = True Then
                 If Mid(WijzigenVerkoop.Keuze(0), 1, 1) = "5" Or Mid(WijzigenVerkoop.Keuze(0), 1, 1) = "3" Then
                     frmVanGucht.Show 1
                 Else
-                    TekstInfo(6).Text = Dec$(1, vkMaskAantal)
+                    TekstInfo(6).text = Dec$(1, vkMaskAantal)
                 End If
             Else
-                TekstInfo(6).Text = Dec$(1, vkMaskAantal)
+                TekstInfo(6).text = Dec$(1, vkMaskAantal)
             End If
         End If
-        nAnt = Val(TekstInfo(6).Text)
-        TekstInfo(6).Text = Dec$((nAnt), vkMaskAantal)
+        nAnt = Val(TekstInfo(6).text)
+        TekstInfo(6).text = Dec$((nAnt), vkMaskAantal)
         'If Ok.Enabled = True Then Ok.SetFocus
     End Select
 MaakTotaal
