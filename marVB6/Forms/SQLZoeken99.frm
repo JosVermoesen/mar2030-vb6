@@ -54,6 +54,7 @@ Begin VB.Form SqlSearch
       _ExtentY        =   1508
       _Version        =   393217
       BackColor       =   16777215
+      Enabled         =   -1  'True
       TextRTF         =   $"SQLZoeken99.frx":0000
    End
    Begin VB.CommandButton cmdZoeken 
@@ -311,7 +312,7 @@ End Sub
 Private Sub cmbExterneDatabase_Click()
 
 cmdZoeken.Caption = "Zoeken"
-SQLVernieuwTekst cmbExternedatabase.Text
+SQLVernieuwTekst cmbExternedatabase.text
 Schoon
 'txtTeZoeken.SetFocus
 
@@ -321,9 +322,9 @@ Private Sub CmdBewaar_Click()
 Dim Sleuteltje As String
 
 If chkExterneDatabase.Value = 0 Then
-    Sleuteltje = "marSQL" + Format(SharedFl, "00") + Left(Sortering.Text, InStr(Sortering.Text, ";") - 1)
+    Sleuteltje = "marSQL" + Format(SharedFl, "00") + Left(Sortering.text, InStr(Sortering.text, ";") - 1)
 Else
-    Sleuteltje = "marEDB" + Format(SharedFl, "00") + Left(cmbExternedatabase.Text, InStr(cmbExternedatabase.Text, ";") - 1)
+    Sleuteltje = "marEDB" + Format(SharedFl, "00") + Left(cmbExternedatabase.text, InStr(cmbExternedatabase.text, ";") - 1)
 End If
 
 bGet TABLE_VARIOUS, 1, "29" + Sleuteltje
@@ -333,7 +334,7 @@ If Ktrl Then
         Msg = Msg + Format(mfgLijst.ColWidth(COUNT_TO)) + vbTab
     Next
     Msg = "[Colwidth]" + Msg
-    Msg = rtbSQLTekst.Text + Msg
+    Msg = rtbSQLTekst.text + Msg
     
     'Als nieuw bijvoegen
     TLB_RECORD(TABLE_VARIOUS) = ""
@@ -348,7 +349,7 @@ ElseIf MsgBox("Bestaande definitie '" + Sleuteltje + "' overschrijven ?", vbQues
         Msg = Msg + Format(mfgLijst.ColWidth(COUNT_TO)) + vbTab
     Next
     Msg = "[Colwidth]" + Msg
-    Msg = rtbSQLTekst.Text + Msg
+    Msg = rtbSQLTekst.text + Msg
     vBib TABLE_VARIOUS, Msg, "v132"
     vBib TABLE_VARIOUS, Sleuteltje, "v250"
     vBib TABLE_VARIOUS, "29" + Sleuteltje, "v005"
@@ -377,13 +378,13 @@ Caption = Caption + ": " + bstNaam(SharedFl)
 VulcmbSortering
 
 If InStr(GridText, "@Beperk@") Then
-    txtTeZoeken.Text = Left(GridText, 2) + "%"
+    txtTeZoeken.text = Left(GridText, 2) + "%"
     cmdZoeken_Click
 ElseIf GridText <> "" Then
-    txtTeZoeken.Text = GridText + "%"
+    txtTeZoeken.text = GridText + "%"
     cmdZoeken_Click
 Else
-    txtTeZoeken.Text = "%"
+    txtTeZoeken.text = "%"
 End If
 
 End Sub
@@ -394,7 +395,7 @@ Private Sub mfgLijst_Click()
 On Error Resume Next
 datPrimaryRS.MoveFirst
 datPrimaryRS.Move mfgLijst.Row - 1
-txtTeZoeken.Text = datPrimaryRS(Mid(Sortering, InStr(Sortering, ";") + 2))
+txtTeZoeken.text = datPrimaryRS(Mid(Sortering, InStr(Sortering, ";") + 2))
 If Err Then
     SnelHelpPrint Mid(Sortering, InStr(Sortering, ";") + 2) + " ontbreekt in SELECT !!", False
 End If
@@ -435,7 +436,7 @@ Private Sub SorTering_Click()
 
 On Error Resume Next
 cmdZoeken.Caption = "Zoeken"
-SQLVernieuwTekst Sortering.Text
+SQLVernieuwTekst Sortering.text
 txtTeZoeken = "%"
 Schoon
 'txtTeZoeken.SetFocus
@@ -499,7 +500,7 @@ If cmdZoeken.Caption = "Ok" Then
     If Sortering.Visible = True Then
         mfgLijst.Col = 0
         XLogKey = mfgLijst
-        bGet SharedFl, 0, mfgLijst.Text
+        bGet SharedFl, 0, mfgLijst.text
         If Ktrl Then
             Beep
             txtTeZoeken.SetFocus
@@ -513,7 +514,7 @@ If cmdZoeken.Caption = "Ok" Then
             RijInteVoegen = mfgLijst.Row
             GoSub VoegExterneLijnErBij
             chkExterneDatabase.Value = 0
-            txtTeZoeken.Text = ""
+            txtTeZoeken.text = ""
             txtTeZoeken.SetFocus
             Exit Sub
         ElseIf KtrlBox = vbNo Then
@@ -522,7 +523,7 @@ If cmdZoeken.Caption = "Ok" Then
                 RijInteVoegen = -1
                 GoSub VoegExterneLijnErBij
                 chkExterneDatabase.Value = 0
-                txtTeZoeken.Text = ""
+                txtTeZoeken.text = ""
                 txtTeZoeken.SetFocus
                 Exit Sub
             End If
@@ -533,14 +534,14 @@ If cmdZoeken.Caption = "Ok" Then
     Unload Me
 Else
     If chkExterneDatabase.Value = 0 Then
-        SQLVernieuwTekst Sortering.Text
+        SQLVernieuwTekst Sortering.text
     Else
-        SQLVernieuwTekst cmbExternedatabase.Text
+        SQLVernieuwTekst cmbExternedatabase.text
     End If
     Me.MousePointer = vbHourglass
     
     Dim sSQL As String
-    sSQL = rtbSQLTekst.Text
+    sSQL = rtbSQLTekst.text
     
     ' Create a recordset using the provided collection
     Set datPrimaryRS = New ADODB.Recordset
@@ -636,7 +637,7 @@ End Sub
 
 Private Sub VulcmbSortering()
 
-ToonIndexen bstNaam(SharedFl), Sortering
+GetAllIndexes bstNaam(SharedFl), Sortering
 For T = 0 To Sortering.ListCount - 1
     If Mid(Sortering.List(T), InStr(Sortering.List(T), ";") + 2) = FLINDEX_CAPTION(SharedFl, aIndex) Then
         IndexNR = T

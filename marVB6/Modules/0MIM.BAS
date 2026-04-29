@@ -802,7 +802,7 @@ Else
         Dim TQString As String
         Dim sTBLName As String
         
-        TQString = OpenSchemaString("TABLE")
+        TQString = OpenSchemeAsString("TABLE")
         
         'add the Tables
         Do While TQString <> ""
@@ -2011,7 +2011,7 @@ Function AutoBackupOK() As Boolean
         Exit Function
     End If
     
-    TQString = OpenSchemaString("TABLE")
+    TQString = OpenSchemeAsString("TABLE")
     Do While TQString <> ""
         sTBLName = Mid(TQString, 1, InStr(TQString, vbCr) - 1)
         TQString = Mid(TQString, InStr(TQString, vbCr) + 1)

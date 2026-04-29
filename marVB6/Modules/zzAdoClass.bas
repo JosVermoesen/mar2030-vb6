@@ -1,7 +1,6 @@
-Attribute VB_Name = "thisAdoClass"
+Attribute VB_Name = "thisAdoToolsClass"
 DefInt A-Z
 Option Explicit
-
 
 Function ADOBIB_TEXT(adoField As ADODB.Field, TBS As String) As String
 

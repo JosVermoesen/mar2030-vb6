@@ -88,7 +88,7 @@ SQLPopUp = True
 
 End Function
 
-Public Function OpenSchemaString(tbType As String) As Variant
+Public Function OpenSchemeAsString(tbType As String) As Variant
 
    Dim rstSchema As ADODB.Recordset
    Dim strCnn As String
@@ -106,12 +106,12 @@ Public Function OpenSchemaString(tbType As String) As Variant
    Loop
    rstSchema.Close
    Set rstSchema = Nothing
-   OpenSchemaString = retString
+   OpenSchemeAsString = retString
         
 End Function
 
 
-Public Sub ToonIndexen(tbNaam As String, obObject As Object)
+Public Sub GetAllIndexes(tbNaam As String, obObject As Object)
 
    Dim rstSchema As ADODB.Recordset
        

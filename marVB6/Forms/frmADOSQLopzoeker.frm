@@ -317,7 +317,7 @@ End Sub
 Private Sub cbSQLBevel_Click()
 
     If cbSQLBevel.ListIndex <> 0 Then
-        Msg = cbSQLBevel.Text & " opdracht." & vbCr & vbCr & _
+        Msg = cbSQLBevel.text & " opdracht." & vbCr & vbCr & _
             "Het is ten zeerste aan te raden om dergelijke" & vbCr & _
             "opdrachten BINNENIN een TRANSACTIE uit te voeren" & vbCr & vbCr & vbCr & _
             "BEGIN WORK start een transactie" & vbCr & vbCr & _
@@ -328,7 +328,7 @@ Private Sub cbSQLBevel_Click()
             "opdrachten doorgaan." & vbCr & vbCr & _
             "BEGIN WORK wordt hierna voorgesteld als instructie.  Druk Alt+E om te activeren"
             MsgBox Msg, vbExclamation
-            txtSQL.Text = "BEGIN WORK"
+            txtSQL.text = "BEGIN WORK"
     Else
         queryPLUS
         queryChange
@@ -345,14 +345,14 @@ End Sub
 
 Private Sub cmbSelect_Click()
 
-bGet TABLE_VARIOUS, 1, "29" + cmbSelect.Text
+bGet TABLE_VARIOUS, 1, "29" + cmbSelect.text
 If Ktrl Then
 Else
     RecordToVeld TABLE_VARIOUS
     If InStr(vBibTekst(TABLE_VARIOUS, "#v132 #"), "[Colwidth]") Then
-        txtSQL.Text = Left(vBibTekst(TABLE_VARIOUS, "#v132 #"), InStr(vBibTekst(TABLE_VARIOUS, "#v132 #"), "[Colwidth]") - 1)
+        txtSQL.text = Left(vBibTekst(TABLE_VARIOUS, "#v132 #"), InStr(vBibTekst(TABLE_VARIOUS, "#v132 #"), "[Colwidth]") - 1)
     Else
-        txtSQL.Text = vBibTekst(TABLE_VARIOUS, "#v132 #")
+        txtSQL.text = vBibTekst(TABLE_VARIOUS, "#v132 #")
     End If
     
     On Error Resume Next
@@ -380,9 +380,9 @@ End Sub
 Private Sub cmbSelect_KeyDown(KeyCode As Integer, Shift As Integer)
 
 If KeyCode = 46 Then
-    bGet TABLE_VARIOUS, 1, "29" + cmbSelect.Text
+    bGet TABLE_VARIOUS, 1, "29" + cmbSelect.text
     If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "29" Then
-    ElseIf MsgBox("Bestaande definitie '" + cmbSelect.Text + "' verwijderen ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbYes Then
+    ElseIf MsgBox("Bestaande definitie '" + cmbSelect.text + "' verwijderen ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbYes Then
         RecordToVeld TABLE_VARIOUS
         bDelete TABLE_VARIOUS
         SelectComboVullen
@@ -435,7 +435,7 @@ Private Sub cmdBackup_Click()
         MsgBox "Stop" & vbCr & Error
     End If
     
-    TQString = OpenSchemaString("TABLE")
+    TQString = OpenSchemeAsString("TABLE")
     Do While TQString <> ""
         sTBLName = Mid(TQString, 1, InStr(TQString, vbCr) - 1)
         TQString = Mid(TQString, InStr(TQString, vbCr) + 1)
@@ -468,12 +468,12 @@ On Error Resume Next
 Screen.MousePointer = vbHourglass
 
 Err = 0
-adntDB.Execute txtSQL.Text, recAantal
+adntDB.Execute txtSQL.text, recAantal
 Screen.MousePointer = vbNormal
 If Err Then
     MsgBox "Foutmelding bron: " & Err.Source & vbCrLf & "Foutkodenummer: " & Err.Number & vbCrLf & vbCrLf & "Foutmelding omschrijving:" & vbCrLf & Err.Description
 Else
-    MsgBox txtSQL.Text & vbCr & vbCr & "met succes uitgevoerd." & vbCr & vbCr & recAantal & " records met wijzigingen.", vbInformation
+    MsgBox txtSQL.text & vbCr & vbCr & "met succes uitgevoerd." & vbCr & vbCr & recAantal & " records met wijzigingen.", vbInformation
 End If
 'adoLoadDatabase
 
@@ -549,7 +549,7 @@ End Sub
 
 Private Sub cmdSelectWegschrijven_Click()
 
-bGet TABLE_VARIOUS, 1, "29" + cmbSelect.Text
+bGet TABLE_VARIOUS, 1, "29" + cmbSelect.text
 If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "29" Then
     'Als nieuw bijvoegen
     TLB_RECORD(TABLE_VARIOUS) = ""
@@ -558,22 +558,22 @@ If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "29" Then
         Msg = Msg + Format(msfSQL.ColWidth(COUNT_TO)) + vbTab
     Next
     Msg = "[Colwidth]" + Msg
-    Msg = txtSQL.Text + Msg
+    Msg = txtSQL.text + Msg
     vBib TABLE_VARIOUS, Msg, "v132"
-    vBib TABLE_VARIOUS, cmbSelect.Text, "v250"
+    vBib TABLE_VARIOUS, cmbSelect.text, "v250"
     vBib TABLE_VARIOUS, "29" + vBibTekst(TABLE_VARIOUS, "#v250 #"), "v005"
     bInsert TABLE_VARIOUS, 1
-ElseIf MsgBox("Bestaande definitie '" + cmbSelect.Text + "' overschrijven ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbYes Then
+ElseIf MsgBox("Bestaande definitie '" + cmbSelect.text + "' overschrijven ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbYes Then
     RecordToVeld TABLE_VARIOUS
     Msg = ""
     For COUNT_TO = 0 To msfSQL.Cols - 1
         Msg = Msg + Format(msfSQL.ColWidth(COUNT_TO)) + vbTab
     Next
     Msg = "[Colwidth]" + Msg
-    Msg = txtSQL.Text + Msg
+    Msg = txtSQL.text + Msg
        
     vBib TABLE_VARIOUS, Msg, "v132"
-    vBib TABLE_VARIOUS, cmbSelect.Text, "v250"
+    vBib TABLE_VARIOUS, cmbSelect.text, "v250"
     vBib TABLE_VARIOUS, "29" + vBibTekst(TABLE_VARIOUS, "#v250 #"), "v005"
     bUpdate TABLE_VARIOUS, 1
 Else
@@ -724,8 +724,8 @@ cbSQLBevel.ListIndex = 0
 
 cbVelden.Enabled = True
 cbVelden.Clear
-For COUNT_TO = 0 To datPrimaryRS.Fields.Count - 1
-    cbVelden.AddItem datPrimaryRS.Fields(COUNT_TO).Name
+For COUNT_TO = 0 To datPrimaryRS.fields.Count - 1
+    cbVelden.AddItem datPrimaryRS.fields(COUNT_TO).Name
 Next
 If cbVelden.ListCount Then
     cbVelden.ListIndex = 0
@@ -734,7 +734,7 @@ End If
 cbOperatie.Enabled = True
 cbOperatie.ListIndex = 0
 txtWaarde.Enabled = True
-txtWaarde.Text = "'%'"
+txtWaarde.text = "'%'"
 txtWaarde.SetFocus
 
 End Sub
@@ -769,7 +769,7 @@ Public Sub adoLoadDatabase()
     Dim sTBLName    As String
     
     lvDatabase.ListItems.Clear
-    TQString = OpenSchemaString("TABLE")
+    TQString = OpenSchemeAsString("TABLE")
 
     'add the Tables
     Do While TQString <> ""
@@ -790,7 +790,7 @@ Function adoRECORDset() As Boolean
     
     datPrimaryRS.Close
     On Error Resume Next
-    datPrimaryRS.Open txtSQL.Text, adntDB
+    datPrimaryRS.Open txtSQL.text, adntDB
     If Err Then
         MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
         msfSQL.Refresh
@@ -818,8 +818,8 @@ End Sub
 
 Function queryChange()
 
-querySQL = cbSQLBevel.Text & " " & txtPLUS.Text & " " & cbVelden.Text & " " & cbOperatie.Text & " " & txtWaarde.Text
-txtSQL.Text = querySQL
+querySQL = cbSQLBevel.text & " " & txtPLUS.text & " " & cbVelden.text & " " & cbOperatie.text & " " & txtWaarde.text
+txtSQL.text = querySQL
 
 End Function
 
@@ -827,20 +827,20 @@ Function queryPLUS()
 
 Select Case cbSQLBevel.ListIndex
     Case 0
-        txtPLUS.Text = " * FROM " & lvDatabase.SelectedItem & " WHERE "
+        txtPLUS.text = " * FROM " & lvDatabase.SelectedItem & " WHERE "
         txtPLUS.Enabled = False
     
     Case 1
-        txtPLUS.Text = " FROM " & lvDatabase.SelectedItem & " WHERE "
+        txtPLUS.text = " FROM " & lvDatabase.SelectedItem & " WHERE "
         txtPLUS.Enabled = False
     
     Case 2
-        txtPLUS.Text = " " & lvDatabase.SelectedItem & " SET " & cbVelden.Text & " = ??? WHERE "
+        txtPLUS.text = " " & lvDatabase.SelectedItem & " SET " & cbVelden.text & " = ??? WHERE "
         txtPLUS.Enabled = True
         
     Case Else
-        MsgBox cbSQLBevel.Text & " nog niet beschikbaar via snelinstructies", vbInformation
-        txtSQL.Text = ""
+        MsgBox cbSQLBevel.text & " nog niet beschikbaar via snelinstructies", vbInformation
+        txtSQL.text = ""
         Exit Function
 End Select
 

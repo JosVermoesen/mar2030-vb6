@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16580611
+         Format          =   76677123
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -2583,7 +2583,7 @@ Dim strAdress As String
 Err = 0
 On Error Resume Next
      
-    Select Case Button.Key
+    Select Case Button.key
         Case "Open"
            Basis_Click 0
         
@@ -2646,7 +2646,7 @@ On Error Resume Next
             'SEPA.Show
                    
         Case Else
-            MsgBox Button.Key + " niet toegankelijk"
+            MsgBox Button.key + " niet toegankelijk"
         End Select
     
 End Sub

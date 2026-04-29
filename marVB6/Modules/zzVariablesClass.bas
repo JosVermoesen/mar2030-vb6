@@ -1,4 +1,4 @@
-Attribute VB_Name = "thisVariablesClass"
+Attribute VB_Name = "thisTextToolsClass"
 DefInt A-Z
 Option Explicit
 
@@ -18,4 +18,35 @@ Function Dec(fGetal As Double, fMasker As String) As String
     Dec = TempoString
 
 End Function
+
+
+Function ScrMaakTekstBestand(TekstZelf As String, Bestandsnaam As String) As Boolean
+
+    On Error Resume Next
+    Kill Bestandsnaam
+    
+    Screen.MousePointer = vbHourglass
+    Call MarWriteUtf8File(Bestandsnaam, TekstZelf)
+    Screen.MousePointer = vbNormal
+    ScrMaakTekstBestand = True
+    
+End Function
+
+Function ScrLeesTekstBestand(TekstZelf As String, Bestandsnaam As String) As Boolean
+    
+    On Error Resume Next
+    TekstZelf = MarReadUtf8File(Bestandsnaam)
+    ScrLeesTekstBestand = True
+        
+End Function
+
+Function ScrLeesBestandAlleTekst(TekstZelf As String, Bestandsnaam As String) As Boolean
+    
+    On Error Resume Next
+    
+    TekstZelf = MarReadUtf8File(Bestandsnaam)
+    ScrLeesBestandAlleTekst = True
+        
+End Function
+
 

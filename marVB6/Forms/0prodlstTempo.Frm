@@ -254,9 +254,9 @@ Lijn = 0
 BeginSleutel = TekstInfo(0)
 EindSleutel = TekstInfo(1)
 
-    psTekst(2) = CmbLijstType.Text + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-    psTekst(0) = TekstLijn(1).Text
-    psTekst(3) = TekstLijn(0).Text
+    psTekst(2) = CmbLijstType.text + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
+    psTekst(0) = TekstLijn(1).text
+    psTekst(3) = TekstLijn(0).text
 
 InitVelden
 bClose TABLE_PRODUCTS
@@ -368,8 +368,8 @@ Dim T As Integer
 Dim TempB_MODUS As Integer
 Dim SorteringTel As Integer
 
-TekstLijn(0).Text = ""
-TekstLijn(1).Text = MIM_GLOBAL_DATE
+TekstLijn(0).text = ""
+TekstLijn(1).text = MIM_GLOBAL_DATE
 
 Set Printer = Printers(LijstPrinterNr)
 On Error Resume Next
@@ -387,7 +387,7 @@ CmbLijstType.AddItem "Lijst Aankoop stockwaarde"
 CmbLijstType.ListIndex = 0
 
 SorteringTel = -1
-ToonIndexen bstNaam(TABLE_PRODUCTS), Sortering
+GetAllIndexes bstNaam(TABLE_PRODUCTS), Sortering
 For T = 0 To Sortering.ListCount - 1
     If InStr(Sortering.List(T), FLINDEX_CAPTION(TABLE_PRODUCTS, 0)) Then
         Sortering.ListIndex = T
@@ -473,12 +473,12 @@ If chkAfdrukInVenster Then
     Me.Hide
     Unload Xlog
     Xlog.Hide
-    Xlog.Caption = CmbLijstType.Text
+    Xlog.Caption = CmbLijstType.text
     Xlog.X.Cols = tMaxVeld + 1
     Xlog.X.Row = 0
     For T = 0 To tMaxVeld
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -645,7 +645,7 @@ Dim T As Integer
 
 IndexNR = -1
 For T = 0 To Sortering.ListCount - 1
-    If InStr(Sortering.Text, FLINDEX_CAPTION(TABLE_PRODUCTS, T)) Then
+    If InStr(Sortering.text, FLINDEX_CAPTION(TABLE_PRODUCTS, T)) Then
         IndexNR = T
         Exit For
     End If
@@ -659,7 +659,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -667,9 +667,9 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
         End If
 End Select
 

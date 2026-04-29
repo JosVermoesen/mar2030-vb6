@@ -14,6 +14,7 @@ Begin VB.Form frmDokHistoriek
    ScaleHeight     =   4425
    ScaleWidth      =   2550
    ShowInTaskbar   =   0   'False
+   Visible         =   0   'False
    Begin VB.ListBox lstDokHistoriek 
       BeginProperty Font 
          Name            =   "Courier New"

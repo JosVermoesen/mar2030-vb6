@@ -26,6 +26,7 @@ Begin VB.Form DirekteVerkoop
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   7470
    ScaleWidth      =   9360
+   Visible         =   0   'False
    Begin VB.TextBox TextBoxWarningTestCompany 
       BackColor       =   &H000000FF&
       Enabled         =   0   'False
@@ -301,9 +302,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1868,16 +1869,24 @@ Select Case dokumentType
     Case "14"
         VerkoopOptie(2).Enabled = False
         frmDokHistoriek.lstDokHistoriek.AddItem Document_Key
-        If frmDokHistoriek.Visible = False Then
-            frmDokHistoriek.Show
-        End If
+        'If frmDokHistoriek.Visible = False Then
+        '    frmDokHistoriek.Show
+        'End If
+        frmDokHistoriek.Top = Me.Top
+        frmDokHistoriek.Left = Me.Left + Me.Width
+        frmDokHistoriek.Width = 2610
+        frmDokHistoriek.Height = 5895
         DirekteVerkoop.SetFocus
                                     
     Case "13"
         frmDokHistoriek.lstDokHistoriek.AddItem Document_Key
-        If frmDokHistoriek.Visible = False Then
-            frmDokHistoriek.Show
-        End If
+        'If frmDokHistoriek.Visible = False Then
+        '    frmDokHistoriek.Show
+        'End If
+        frmDokHistoriek.Top = Me.Top
+        frmDokHistoriek.Left = Me.Left + Me.Width
+        frmDokHistoriek.Width = 2610
+        frmDokHistoriek.Height = 5895
         DirekteVerkoop.SetFocus
           
 End Select
@@ -2639,7 +2648,7 @@ ElseIf dokumentType = "15" Then
             BonnenString = BonnenString + frmDokHistoriek.lstDokHistoriek.List(T) + ";"
         Next
     End If
-    frmDokHistoriek.Hide
+    'frmDokHistoriek.Hide
     Msg = "Factuur of Creditnota !" + vbCrLf + vbCrLf + "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
     Ktrl = MsgBox(Msg$, 292, "Boekhouding bijwerken")
     If Ktrl = 6 Then
@@ -3261,7 +3270,7 @@ ElseIf VerkoopOptie(0).Value = True Then
 If useEmail = False Then
     mailAddressV224 = ""
     If String99(READING, 306) = "2" Then
-        Msg = "Kopij van verkoopdocument staat eveneens klaar in de map Manueel voor afdruk."
+        Msg = "Een Pdf van het verkoopdocument staat klaar in de map Manueel voor afdruk en verder beheer."
         MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
     Else
         Mim.Report.Preview
@@ -3353,8 +3362,8 @@ Else
         
     Else
         If String99(READING, 306) = "2" Then
-            'Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
-            'MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
+            Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
+            MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
         Else
             Mim.Report.Preview
         End If
@@ -4524,7 +4533,7 @@ If String99(READING, 21) = "1" Then
         SnelHelpPrint "E-mail sessie met succes opgestart. IDkode :" + Format(Me.MPISessie.SessionID), BL_LOGGING
     End If
 End If
-    
+
 On Error Resume Next
 DirekteVerkoop.SetFocus
 
@@ -4832,14 +4841,18 @@ Else
     End If
 End If
 
-frmDokHistoriek.lstDokHistoriek.Clear
-frmDokHistoriek.Hide
 If bhEuro Then
     DIRECTSELL_STRING = "Ingave in EUR"
 Else
     DIRECTSELL_STRING = "Ingave in BEF"
 End If
-    
+
+On Local Error GoTo jumpError
+'frmDokHistoriek.lstDokHistoriek.Clear
+'frmDokHistoriek.Hide
+Unload frmDokHistoriek
+
+jumpError:
 End Sub
 
 Private Sub KlantAktiveren_Click()
@@ -5038,6 +5051,7 @@ LblEx2Btw = Format(BtwEuroEx, "#,##0.00") 'masker voor EURO
 LblIn2Btw = Format(BtwEuroIn, "#,##0.00")  'masker voor EURO
 
 End Sub
+
 
 Private Sub Medekontraktant_Click()
 
@@ -5344,7 +5358,7 @@ If Me.lstKopiePlak.ListCount Then
             frmDokHistoriek.lstDokHistoriek.Clear
     End Select
 End If
-frmDokHistoriek.Hide
+'frmDokHistoriek.Hide
            
 RasterSchoon
 'VerkoopOptie(0).Value = 1
@@ -5387,6 +5401,7 @@ End Function
 Private Sub SchoonVegen_Click()
 
 Schoon
+Unload frmDokHistoriek
 
 End Sub
 

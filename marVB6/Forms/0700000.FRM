@@ -313,7 +313,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76939267
+         Format          =   76546051
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1021,10 +1021,13 @@ Private Sub ButtonReadCamt053_Click()
         Case 0
             ' If already lines in mfg then check startAmount of extra .XDA
             ' should be endAmount in mfg list
-            If beginSaldoXDA = Me.mfgLijst.TextMatrix(Me.mfgLijst.Rows - 2, 6) Then
+            If Me.mfgLijst.Rows = 2 Then
+            ElseIf beginSaldoXDA = Me.mfgLijst.TextMatrix(Me.mfgLijst.Rows - 2, 6) Then
                 cumulSaldo = beginSaldoXDA
                 GoTo AddingLines
             End If
+                
+            
             Msg = "Noch teller (niet essentiëel), noch beginsaldo (essentieel)" & vbCrLf
             Msg = Msg + "Bij beheer van meerdere rekeningen, duidt eerst de rekening aan voor .XDA import en probeer opnieuw"
             MsgBox Msg, vbInformation
@@ -1035,7 +1038,9 @@ Private Sub ButtonReadCamt053_Click()
             SnelHelpPrint "Volgnummer + beginsaldo ok", BL_LOGGING
     End Select
     
-    aa = "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
+    If Me.mfgLijst.Rows = 2 Then
+        aa = "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
+    End If
     cumulSaldo = beginSaldoXDA
     mfgLijst.AddItem aa, mfgLijst.Rows - 1
         
@@ -1087,7 +1092,7 @@ AddingLines:
                     isCor = False
                     If Len(xdaLinesDATAArray(T, 10)) = 0 Then
                         MsgBox "Empty Ustrd, Logic?"
-                        lineReference = "-"
+                        lineReference = xdaLinesDATAArray(T, 5)
                     Else
                         lineReference = xdaLinesDATAArray(T, 10)
                     End If
@@ -1096,7 +1101,11 @@ AddingLines:
                 ReDim resultArray(5)
                 resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                 If resultReturn = "" Then
-                    MsgBox "Geen resultaat", vbExclamation
+                    'MsgBox "Geen resultaat", vbExclamation
+                    aa = aa & "-" & vbTab
+                    aa = aa & "??????" & vbTab
+                    aa = aa & Val(amountToCheck) & vbTab
+                    aa = aa & lineReference & vbTab
                 Else
                     resultArray() = Split(resultReturn, "|")
                     aa = aa & "+" & resultArray(0) & vbTab
@@ -1105,10 +1114,6 @@ AddingLines:
                     aa = aa & resultArray(1) & vbTab
                 End If
                 
-                aa = aa & "-" & vbTab
-                aa = aa & "??????" & vbTab
-                aa = aa & Val(amountToCheck) & vbTab
-                aa = aa & "" & vbTab
                                 
             Case "0107000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
                                 
@@ -1197,7 +1202,7 @@ AddingLines:
             Case "0150000", "0250000"
                 '0150000 (5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
                 '0250000 (5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
-                MsgBox "stop "
+                MsgBox "stop"
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1205,7 +1210,7 @@ AddingLines:
                     isCor = False
                     If Len(xdaLinesDATAArray(T, 10)) = 0 Then
                         MsgBox "Empty Ustrd, Logic?"
-                        lineReference = "-"
+                        lineReference = xdaLinesDATAArray(T, 6)
                     Else
                         lineReference = xdaLinesDATAArray(T, 10)
                     End If
