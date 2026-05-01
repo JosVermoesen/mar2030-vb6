@@ -1,6 +1,6 @@
 ;Boekingen en algemene instellingen
 "919 s299","VPE/PDF Afdrukmodus","N",1
-"919 s306","Verkoop voorbeeldvenster tonen?","N",1
+"919 s306","Verkoop voorbeeld PDF tonen?","N",1
 "899 s020","Bedrijfstype","N",1
 "028 s304","Brokerstype","A",1
 "029 s305","Fee %","A",2

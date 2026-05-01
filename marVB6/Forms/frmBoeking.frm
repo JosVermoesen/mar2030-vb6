@@ -14,7 +14,7 @@ Begin VB.Form frmBoeking
    MinButton       =   0   'False
    ScaleHeight     =   3450
    ScaleWidth      =   8280
-   StartUpPosition =   2  'CenterScreen
+   StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton cmdNegeren 
       Cancel          =   -1  'True
       Caption         =   "Boeking Terugzetten"

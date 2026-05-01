@@ -302,9 +302,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -1438,6 +1438,8 @@ DefInt A-Z
 
 Dim VerkoopDetailTitel(8) As String
 Dim documentRefIsOGM As Boolean
+Dim ordersAdded As Boolean
+
 Dim Document_Key As String * 11
 Dim Document_OGM As String
 Dim Document_OGM_NoFormat As String
@@ -2642,16 +2644,21 @@ On Local Error Resume Next
 If Annuleren.Enabled = False Then
     GoTo Nextdokument
 ElseIf dokumentType = "15" Then
-    If frmDokHistoriek.lstDokHistoriek.ListCount <> 0 Then
-        BonnenString = ""
-        For T = 0 To frmDokHistoriek.lstDokHistoriek.ListCount - 1
-            BonnenString = BonnenString + frmDokHistoriek.lstDokHistoriek.List(T) + ";"
-        Next
+    If ordersAdded = True Then
+        If frmDokHistoriek.lstDokHistoriek.ListCount <> 0 Then
+            BonnenString = ""
+            For T = 0 To frmDokHistoriek.lstDokHistoriek.ListCount - 1
+                BonnenString = BonnenString + frmDokHistoriek.lstDokHistoriek.List(T) + ";"
+            Next
+        End If
     End If
     'frmDokHistoriek.Hide
-    Msg = "Factuur of Creditnota !" + vbCrLf + vbCrLf + "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
-    Ktrl = MsgBox(Msg$, 292, "Boekhouding bijwerken")
-    If Ktrl = 6 Then
+    If Left(Mim.cmdWegBoekModus, 1) = "2" Then
+    Else
+        Msg = "Factuur of Creditnota !" + vbCrLf + vbCrLf + "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
+        Ktrl = MsgBox(Msg$, 292, "Boekhouding bijwerken")
+    End If
+    If Ktrl = 6 Or Left(Mim.cmdWegBoekModus, 1) = "2" Then
         Ktrl = bOpen(TABLE_LEDGERACCOUNTS)
         Ktrl = bOpen(TABLE_JOURNAL)
         Ktrl = bOpen(TABLE_INVOICES)
@@ -3117,7 +3124,7 @@ Dim BestondReeds    As Integer
 Dim T As Integer
 
 ' REFRESH CLIENT FIRST!!
-XLogKey = Trim(Left(KlantInfo.Caption, 12))
+XLogKey = Trim(Left(Klantinfo.Caption, 12))
 bGet TABLE_CUSTOMERS, 0, XLogKey
 If Ktrl Then
     MsgBox "error"
@@ -3136,29 +3143,32 @@ End If
 
 orderMarReferences = ""
 If dokumentType = "15" Then
-    If frmDokHistoriek.lstDokHistoriek.ListCount <> 0 Then
-        Msg = ""
-        refID = "RF:"
-        For T = 0 To frmDokHistoriek.lstDokHistoriek.ListCount - 1
-            Msg = Msg + frmDokHistoriek.lstDokHistoriek.List(T) + " "
-        Next
-        KtrlBox = MsgBox("Bons als referte opnemen." & vbCr & vbCr & refID & Msg, vbYesNo + vbQuestion + vbDefaultButton1)
-        If KtrlBox = vbYes Then
-            refString = String(75, " ") + "|2"
-            VerkoopDetail.AddItem refString
-            Do While Msg <> ""
+    If ordersAdded = True Then
+    
+        If frmDokHistoriek.lstDokHistoriek.ListCount <> 0 Then
+            Msg = ""
+            refID = "RF:"
+            For T = 0 To frmDokHistoriek.lstDokHistoriek.ListCount - 1
+                Msg = Msg + frmDokHistoriek.lstDokHistoriek.List(T) + " "
+            Next
+            KtrlBox = MsgBox("Bons als referte opnemen." & vbCr & vbCr & refID & Msg, vbYesNo + vbQuestion + vbDefaultButton1)
+            If KtrlBox = vbYes Then
                 refString = String(75, " ") + "|2"
-                Mid(refString, 1) = refID + Left(Msg, 72)
-                If Len(Msg) > 72 Then
-                    Msg = Mid(Msg, 73)
-                Else
-                    Msg = ""
-                End If
                 VerkoopDetail.AddItem refString
-            Loop
-            orderMarReferences = Trim(frmDokHistoriek.lstDokHistoriek.List(0))
-        Else
-            orderMarReferences = ""
+                Do While Msg <> ""
+                    refString = String(75, " ") + "|2"
+                    Mid(refString, 1) = refID + Left(Msg, 72)
+                    If Len(Msg) > 72 Then
+                        Msg = Mid(Msg, 73)
+                    Else
+                        Msg = ""
+                    End If
+                    VerkoopDetail.AddItem refString
+                Loop
+                orderMarReferences = Trim(frmDokHistoriek.lstDokHistoriek.List(0))
+            Else
+                orderMarReferences = ""
+            End If
         End If
     End If
 End If
@@ -3271,9 +3281,10 @@ If useEmail = False Then
     mailAddressV224 = ""
     If String99(READING, 306) = "2" Then
         Msg = "Een Pdf van het verkoopdocument staat klaar in de map Manueel voor afdruk en verder beheer."
-        MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
+        MsgBox Msg, vbInformation, "PDF voorbeeld is uitgeschakeld in Setup"
     Else
-        Mim.Report.Preview
+        'Mim.Report.Preview
+        GeneratePdf
     End If
 Else
     If useEmail And customerPrefersEmail Then
@@ -3344,7 +3355,8 @@ Else
                 Else
                     Kill (locPOSTVAKIN & "\" & idPdfForUbl)
                 End If
-                Mim.Report.Preview
+                'Mim.Report.Preview
+                GeneratePdf
             Else
                 SnelHelpPrint "E-mail met succes verzonden.", BL_LOGGING
                 'MsgBox "E-mail met succes.", vbInformation
@@ -3356,16 +3368,18 @@ Else
             End If
         Else
             MsgBox "Uw E-mail systeem is niet geactiveerd in setup en de klant verkiest documenten via email.  Contacteer uw systeembeheerder voor bijkomende inlichtingen.", vbExclamation
-            Mim.Report.Preview
+            'Mim.Report.Preview
+            GeneratePdf
         End If
         Screen.MousePointer = vbNormal
         
     Else
         If String99(READING, 306) = "2" Then
-            Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
-            MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
+            'Msg = "Kopij van dit verkoopdocument staat klaar in de map Manueel voor afdruk."
+            'MsgBox Msg, vbInformation, "Preview uitgeschakeld in Setup"
         Else
-            Mim.Report.Preview
+            'Mim.Report.Preview
+            GeneratePdf
         End If
     End If
 End If
@@ -3380,7 +3394,8 @@ If Dir(locPOSTVAKIN & "\" & idPdfForUbl) = "" Then
 Else
     Kill (locPOSTVAKIN & "\" & idPdfForUbl)
 End If
-Mim.Report.Preview
+'Mim.Report.Preview
+GeneratePdf
 
 End Function
 
@@ -3678,7 +3693,7 @@ Private Sub CreditNota_Click()
 
 Dim peppolCtrl As Boolean
 
-If KlantInfo.Caption <> "" Then
+If Klantinfo.Caption <> "" Then
     If customerRegistrationId = "" Then
     Else
         peppolCtrl = checkForB2BInvoice()
@@ -4728,7 +4743,7 @@ Sjabloon.Enabled = True
         MsgBox "Landnummer is verplicht !"
         Exit Sub
     ElseIf RV(rsKlant, "v149") = "002" Then
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
         VerkoopFLG = 0
         Medekontraktant.Enabled = True
         Dim btwBE As String
@@ -4745,15 +4760,15 @@ Sjabloon.Enabled = True
         Me.OptionPEPPOL_V3.Value = vbChecked
         Me.OptionUBL_BE_3_0.Enabled = False
 
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
         VerkoopFLG = 1
         Medekontraktant.Enabled = False
         If vSet(RV(rsKlant, "A161"), 12) = Space$(12) Then
-            KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
+            Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
             VerkoopFLG = 0
         End If
     Else
-        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
+        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
         VerkoopFLG = 2
         Medekontraktant.Enabled = False
     End If
@@ -4888,7 +4903,7 @@ Dim T As Integer
 Dim LaatsteWAS As String
 Dim TotaalEX As Currency
 
-If KlantInfo.Caption = "" Then Exit Sub
+If Klantinfo.Caption = "" Then Exit Sub
 Unload Xlog
 Xlog.X.Rows = 1
 Xlog.X.Cols = 5
@@ -5310,6 +5325,7 @@ Private Function Schoon()
 
 Dim T As Integer
 
+ordersAdded = False
 orderMarReferences = ""
 Me.ButtonInfoSupported.Enabled = False
 Me.ButtonInfoSupported.Visible = False
@@ -5332,7 +5348,7 @@ Klassement.Enabled = False
 Klassement.FontBold = False
 chkBTWBouw.Value = 0
 VAT_BOBTHEBUILDERS = False
-KlantInfo.Caption = ""
+Klantinfo.Caption = ""
 Annuleren.Enabled = True
 Medekontraktant.Value = 0
 If VerkoopOptie(0).Enabled = True Then CreditNota.Value = 0
@@ -5804,7 +5820,7 @@ Private Sub VerkoopOptie_Click(Index As Integer)
 
 Dim ktrlKlant As Boolean
 
-If KlantInfo.Caption <> "" Then
+If Klantinfo.Caption <> "" Then
     Select Case Index
         Case 0
             If customerRegistrationId = "" Then
@@ -6685,3 +6701,14 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
     
 End Function
 
+Function GeneratePdf()
+
+    On Local Error Resume Next
+
+    Mim.Report.WriteDoc (LOCATION_COMPANYDATA & "sjb\" & idPdfForUbl)
+    DoEvents
+    If ShellExecuteWithFallback(LOCATION_COMPANYDATA & "sjb\" & idPdfForUbl) = False Then
+        MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+    End If
+
+End Function

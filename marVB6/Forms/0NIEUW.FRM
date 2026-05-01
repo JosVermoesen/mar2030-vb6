@@ -282,11 +282,11 @@ Private Function InstallTellers()
 
 'Boekingen en algemene instellingen
 SS99 "EUR", 296
-SS99 Left(CmbBedrijfsType.Text, 1), 20
+SS99 Left(CmbBedrijfsType.text, 1), 20
 SS99 "1", 299
-SS99 "2", 306
-SS99 "1", 21
-SS99 "1", 291
+SS99 "1", 306
+SS99 "2", 21
+SS99 "2", 291
 SS99 "2", 290
 
 SS99 "3", 183
@@ -369,14 +369,14 @@ SS99 "553000", 45
 SS99 " 0", 35
 SS99 "582000", 39
 SS99 " 0", 38
-SS99 "5540000", 211
-SS99 " 0", 215
-SS99 "5550000", 212
-SS99 " 0", 216
-SS99 "5560000", 213
-SS99 " 0", 217
-SS99 "5570000", 214
-SS99 " 0", 218
+'SS99 "5540000", 211
+'SS99 " 0", 215
+'SS99 "5550000", 212
+'SS99 " 0", 216
+'SS99 "5560000", 213
+'SS99 " 0", 217
+'SS99 "5570000", 214
+'SS99 " 0", 218
 SS99 "551000", 101
 
 'Bedrijfsinformatie
@@ -406,10 +406,10 @@ End Function
 
 Private Sub Boekjaar_LostFocus()
 
-If Val(Boekjaar.Text) < 2027 And Val(Boekjaar.Text) > 2024 Then
+If Val(Boekjaar.text) < 2027 And Val(Boekjaar.text) > 2024 Then
     'ok
 Else
-    Boekjaar.Text = Right(MIM_GLOBAL_DATE, 4)
+    Boekjaar.text = Right(MIM_GLOBAL_DATE, 4)
     Boekjaar.SetFocus
     Beep
 End If
@@ -448,7 +448,7 @@ Top = 0
 Left = 0
 
 Unload BedrijfOpenen
-Boekjaar.Text = Right(MIM_GLOBAL_DATE, 4)
+Boekjaar.text = Right(MIM_GLOBAL_DATE, 4)
 StatusPosition = 0
 
 BedrijfsNummer = VolgendBedrijf()
@@ -466,7 +466,7 @@ CmbBedrijfsType.AddItem "9: Gezinshuishouding"
 CmbBedrijfsType.ListIndex = 0
 
 TABLEDEF_ONT(TABLE_COUNTERS) = "00.ONT"                '09
-bstNaam(TABLE_COUNTERS) = "jr" & NieuwBedrijf.Boekjaar.Text
+bstNaam(TABLE_COUNTERS) = "jr" & NieuwBedrijf.Boekjaar.text
 
 End Sub
 
@@ -477,8 +477,8 @@ Dim TotalNeeded As Long
 Dim A As String
 
 BAModus = 1
-Van = Me.txtStartMaand + "/" + Boekjaar.Text
-A = "Installatie Bedrijf " + BedrijfsNummer + " voor :" + vbCrLf + vbCrLf + BedrijfsNaam.Text + vbCrLf + vbCrLf + Format(Val(Maanden.Text), "00") + " maanden vanaf : " + Van
+Van = Me.txtStartMaand + "/" + Boekjaar.text
+A = "Installatie Bedrijf " + BedrijfsNummer + " voor :" + vbCrLf + vbCrLf + BedrijfsNaam.text + vbCrLf + vbCrLf + Format(Val(Maanden.text), "00") + " maanden vanaf : " + Van
 If Makelaar.Value Then
     A = A + vbCrLf + vbCrLf + "Met programmakeuze voor makelaars !"
 End If
@@ -524,7 +524,7 @@ Dim Idx As New ADOX.Index
 
 'Open the catalog.
 cat.ActiveConnection = jetConnect
-bstNaam(TABLE_COUNTERS) = "jr" & NieuwBedrijf.Boekjaar.Text
+bstNaam(TABLE_COUNTERS) = "jr" & NieuwBedrijf.Boekjaar.text
 
 tbl.Name = bstNaam(TABLE_COUNTERS)
     tbl.Columns.Append "v071", adVarWChar, 5
@@ -573,7 +573,7 @@ Private Sub LabelMaken()
 
 FlN = FreeFile
 Open LOCATION_ + BedrijfsNummer + "/marnt.txt" For Output As FlN
-    Print #FlN, BedrijfsNaam.Text
+    Print #FlN, BedrijfsNaam.text
 Close FlN
 
 End Sub
@@ -591,7 +591,7 @@ Dim b As String * 16
 Dim A As String * 4
 Dim T As Integer
 
-aantalmaanden% = Val(Maanden.Text)
+aantalmaanden% = Val(Maanden.text)
 VanafMaand% = Val(Mid(Van, 4, 2))
 VanafJaar% = Val(Right(Van, 4))
 
@@ -651,10 +651,10 @@ End Function
 
 Private Sub txtStartMaand_LostFocus()
 
-    If Len(txtStartMaand) <> 5 Then MsgBox "Enkel formaat dd/mm gebruiken a.u.b.": Me.txtStartMaand.Text = "01/04": Me.txtStartMaand.SetFocus: Exit Sub
+    If Len(txtStartMaand) <> 5 Then MsgBox "Enkel formaat dd/mm gebruiken a.u.b.": Me.txtStartMaand.text = "01/04": Me.txtStartMaand.SetFocus: Exit Sub
     If Mid(txtStartMaand, 3, 1) = "/" Then
     Else
-        MsgBox "Enkel formaat dd/mm gebruiken a.u.b.": Me.txtStartMaand.Text = "01/04": Me.txtStartMaand.SetFocus: Exit Sub
+        MsgBox "Enkel formaat dd/mm gebruiken a.u.b.": Me.txtStartMaand.text = "01/04": Me.txtStartMaand.SetFocus: Exit Sub
     End If
     
 End Sub
@@ -672,7 +672,7 @@ Private Sub TypeBoekjaar_Click(Index As Integer)
                 Me.txtStartMaand = "01/10"
                 Me.txtStartMaand.Enabled = False
             Case 3
-                Van = "01/04/" + Boekjaar.Text
+                Van = "01/04/" + Boekjaar.text
                 Me.txtStartMaand = "01/04"
                 Me.txtStartMaand.Enabled = True
                 Me.txtStartMaand.SetFocus
