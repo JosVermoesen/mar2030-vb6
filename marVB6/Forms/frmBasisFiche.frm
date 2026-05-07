@@ -214,7 +214,7 @@ Begin VB.Form BasicTable
       Width           =   1095
    End
    Begin VB.CommandButton Knop 
-      Caption         =   "&Relaties"
+      Caption         =   "&Journaal"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
