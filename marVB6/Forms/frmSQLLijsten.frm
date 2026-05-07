@@ -496,7 +496,7 @@ End Sub
 Function sqlSELECTLijst() As String
 Dim IndexeerVeld As String
 
-IndexeerVeld = Trim$(JETTABLEUSE_INDEX(Val(Mid(Tabel.Text, 1, 1)), Val(Mid(Me.Sortering, 1, 2))))
+IndexeerVeld = Trim$(JETTABLEUSE_INDEX(Val(Mid(Tabel.text, 1, 1)), Val(Mid(Me.Sortering, 1, 2))))
 
 Msg = "SELECT"
 For COUNT_TO = 0 To Me.RapportVelden.ListCount - 1
@@ -527,11 +527,11 @@ Dim XX              As Integer
 aa = ""
 TLijnen = 0
 Lijn = 0
-BeginSleutel = TekstInfo(0).Text
-EindSleutel = TekstInfo(1).Text
+BeginSleutel = TekstInfo(0).text
+EindSleutel = TekstInfo(1).text
 
 HoofdTitel = Mid(Mim.Caption, InStr(Mim.Caption, "["))
-OnderTitel = TekstInfo(2).Text
+OnderTitel = TekstInfo(2).text
     
 SQLRefresh
 If rsLijst.RecordCount = 0 Then
@@ -599,10 +599,10 @@ End Sub
 
 Private Sub cmdSQLOvername_Click()
 
-frmADOSQLOpzoeker.Hide
-frmADOSQLOpzoeker.txtSQL = rsLijst.Source
-frmADOSQLOpzoeker.Show
-frmADOSQLOpzoeker.txtSQL.SetFocus
+FormSQLOperations.Hide
+FormSQLOperations.txtSQL = rsLijst.Source
+FormSQLOperations.Show
+FormSQLOperations.txtSQL.SetFocus
 SendKeys "{ENTER}"
 
 End Sub
@@ -632,7 +632,7 @@ Select Case Index
         Next i
     Case 1
         If RapportVelden.ListIndex < 0 Then Beep: Exit Sub
-        TekstInfo(3).Text = Mid(RapportVelden.Text, 22)
+        TekstInfo(3).text = Mid(RapportVelden.text, 22)
         TekstInfo(3).Visible = True
         TekstInfo(3).SetFocus
 
@@ -640,7 +640,7 @@ Select Case Index
         If RapportVelden.ListIndex < 0 Then Beep: Exit Sub
         For T = 0 To Formattering.ListCount - 1
             Formattering.ListIndex = T
-            If Mid(RapportVelden.Text, 20, 1) = Left(Formattering.Text, 1) Then
+            If Mid(RapportVelden.text, 20, 1) = Left(Formattering.text, 1) Then
                 Exit For
             End If
         Next
@@ -649,7 +649,7 @@ Select Case Index
     
     Case 3
         If RapportVelden.ListIndex < 0 Then Beep: Exit Sub
-        TekstInfo(4).Text = Mid(RapportVelden.Text, 12, 3)
+        TekstInfo(4).text = Mid(RapportVelden.text, 12, 3)
         TekstInfo(4).Visible = True
         TekstInfo(4).SetFocus
 
@@ -660,7 +660,7 @@ End Sub
 Private Sub Definitie_Click()
 
 If Afdrukken.Enabled = True Then
-    If TLBPag2(Format(Val(Left(Tabel.Text, 1)), "000")) Then
+    If TLBPag2(Format(Val(Left(Tabel.text, 1)), "000")) Then
         T = 0
         TabelVelden.Clear
         Do While TELEBIB_CODE(T) <> Space$(10)
@@ -696,13 +696,13 @@ Else
     Dim FlTemp As Integer
     FlTemp = FreeFile
     VolgNummer% = RapportDefinitie.ListCount
-    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.Text, 1)), "000") + Format(VolgNummer%, "00") + ".PRD" For Output As FlTemp
-    Print #FlTemp, (TekstInfo(2).Text)
+    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Format(VolgNummer%, "00") + ".PRD" For Output As FlTemp
+    Print #FlTemp, (TekstInfo(2).text)
     For T = 0 To RapportVelden.ListCount - 1
         Print #FlTemp, (RapportVelden.List(T))
     Next
     Close FlTemp
-    RapportDefinitie.AddItem Format(VolgNummer%, "00") + ": " + TekstInfo(2).Text
+    RapportDefinitie.AddItem Format(VolgNummer%, "00") + ": " + TekstInfo(2).text
     RapportDefinitie.ListIndex = RapportDefinitie.ListCount - 1
 End If
 
@@ -759,8 +759,8 @@ End Sub
 Private Sub Formattering_LostFocus()
 
 Positie = RapportVelden.ListIndex
-TempoString$ = RapportVelden.Text
-Mid(TempoString$, 20, 1) = Left(Formattering.Text, 1)
+TempoString$ = RapportVelden.text
+Mid(TempoString$, 20, 1) = Left(Formattering.text, 1)
 RapportVelden.RemoveItem Positie
 RapportVelden.AddItem TempoString$, Positie
 RapportVelden.SetFocus
@@ -774,7 +774,7 @@ Private Sub PrintEinde()
 On Local Error Resume Next
 
 If chkAfdrukInVenster Then
-    Xlog.Caption = TekstInfo(2).Text
+    Xlog.Caption = TekstInfo(2).text
     Xlog!Kopie(1).Checked = True
     Xlog.X.Row = 1
     Xlog.X.Col = 0
@@ -807,9 +807,9 @@ If chkAfdrukInVenster = 1 And PAGE_COUNTER = 0 Then
     Xlog.X.Row = 0
     For T = 0 To RapportVelden.ListCount - 1
         RapportVelden.ListIndex = T
-        REPORT_TAB(T) = Val(Mid(RapportVelden.Text, 12, 3))
+        REPORT_TAB(T) = Val(Mid(RapportVelden.text, 12, 3))
         Xlog.X.Col = T
-        Xlog.X.Text = RTrim$(Mid(RapportVelden.Text, 22))
+        Xlog.X.text = RTrim$(Mid(RapportVelden.text, 22))
         Xlog.X.ColWidth(T) = 1860
     Next
     Me.Show
@@ -832,8 +832,8 @@ Printer.Print vbCrLf; FULL_LINE
 
     For T = 0 To RapportVelden.ListCount - 1
         RapportVelden.ListIndex = T
-        TabNu = Val(Mid(RapportVelden.Text, 12, 3))
-        Printer.Print Tab(TabNu); Mid(RapportVelden.Text, 22);
+        TabNu = Val(Mid(RapportVelden.text, 12, 3))
+        Printer.Print Tab(TabNu); Mid(RapportVelden.text, 22);
     Next
 
 Printer.Print vbCrLf; FULL_LINE; vbCrLf; vbCrLf;
@@ -848,7 +848,7 @@ Dim VeldInfoSh As String
 aa = ""
 For T = 0 To RapportVelden.ListCount - 1
     On Error Resume Next
-    VeldInfo = rsLijst.Fields(Mid(RapportVelden.List(T), 22))
+    VeldInfo = rsLijst.fields(Mid(RapportVelden.List(T), 22))
     If Err Then VeldInfo = ""
     VeldInfoSh = Mid(RapportVelden.List(T), 20, 1)
     Select Case VeldInfoSh
@@ -897,14 +897,14 @@ On Local Error Resume Next
     Dim FlTemp As Integer
     FlTemp = FreeFile
     
-    If Dir(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.Text, 1)), "000") + Left(RapportDefinitie.Text, 2) + ".PRD") = "" Then
-        MsgBox Format(Val(Left(Tabel.Text, 1)), "000") + Left(RapportDefinitie.Text, 2) + ".PRD" + " bestaat niet meer..."
+    If Dir(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD") = "" Then
+        MsgBox Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD" + " bestaat niet meer..."
         Exit Sub
     End If
     
-    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.Text, 1)), "000") + Left(RapportDefinitie.Text, 2) + ".PRD" For Input As FlTemp
+    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD" For Input As FlTemp
     Line Input #FlTemp, RapportTekst$
-    TekstInfo(2).Text = RapportTekst$
+    TekstInfo(2).text = RapportTekst$
     RapportVelden.Clear
     Do While Not EOF(FlTemp)
         Line Input #FlTemp, RapportTekst$
@@ -920,10 +920,10 @@ Private Sub RapportDefinitie_KeyDown(KeyCode As Integer, Shift As Integer)
 
 Select Case KeyCode
     Case 46
-        Msg = "Rapportdefinitie " + vbCrLf + vbCrLf + RapportDefinitie.Text + vbCrLf + vbCrLf + "verwijderen.  Bent U zeker ?"
+        Msg = "Rapportdefinitie " + vbCrLf + vbCrLf + RapportDefinitie.text + vbCrLf + vbCrLf + "verwijderen.  Bent U zeker ?"
         KtrlBox = MsgBox(Msg, 292)
         If KtrlBox = 6 Then
-            Kill PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.Text, 1)), "000") + Left(RapportDefinitie.Text, 2) + ".PRD"
+            Kill PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD"
             RapportDefinitie.RemoveItem RapportDefinitie.ListIndex
             
         End If
@@ -967,10 +967,10 @@ End Sub
 
 Private Sub SorTering_Click()
 
-IndexKeuze = Val(Left(Sortering.Text, 2))
-TekstInfo(5).Text = Str$(FLINDEX_LEN(FlKeuze, IndexKeuze))
-TekstInfo(0).Text = "0"
-TekstInfo(1).Text = String$(Val(TekstInfo(5).Text), "z")
+IndexKeuze = Val(Left(Sortering.text, 2))
+TekstInfo(5).text = Str$(FLINDEX_LEN(FlKeuze, IndexKeuze))
+TekstInfo(0).text = "0"
+TekstInfo(1).text = String$(Val(TekstInfo(5).text), "z")
 
 End Sub
 
@@ -980,13 +980,13 @@ Dim T As Integer
 Dim FlL As Integer
 
 Sortering.Clear
-FlKeuze = Val(Left(Tabel.Text, 1))
+FlKeuze = Val(Left(Tabel.text, 1))
 For T = 0 To FL_NUMBEROFINDEXEN(FlKeuze)
     Sortering.AddItem Format(T, "00") + ":" + FLINDEX_CAPTION(FlKeuze, T)
 Next
 Sortering.ListIndex = 0
 RapportDefinitie.Clear
-X$ = Dir$(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.Text, 1)), "000") + "??.PRD")
+X$ = Dir$(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + "??.PRD")
 If X$ = "" Then
     Exit Sub
 Else
@@ -1007,7 +1007,7 @@ End Sub
 
 Private Sub TabelVelden_Click()
 
-SnelHelpPrint (TabelVelden.Text), BL_LOGGING
+SnelHelpPrint (TabelVelden.text), BL_LOGGING
 
 End Sub
 
@@ -1022,7 +1022,7 @@ End Sub
 
 Private Sub TekstInfo_GotFocus(Index As Integer)
 
-TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 
 End Sub
 
@@ -1033,7 +1033,7 @@ Select Case Index
         Select Case KeyCode
             Case 13
                 Positie = RapportVelden.ListIndex
-                TempoString$ = Left(RapportVelden.Text, 21) + TekstInfo(3).Text
+                TempoString$ = Left(RapportVelden.text, 21) + TekstInfo(3).text
                 RapportVelden.RemoveItem Positie
                 RapportVelden.AddItem TempoString$, Positie
                 RapportVelden.SetFocus
@@ -1043,8 +1043,8 @@ Select Case Index
         Select Case KeyCode
             Case 13
                 Positie = RapportVelden.ListIndex
-                TempoString$ = RapportVelden.Text
-                Mid(TempoString$, 12, 3) = Format(Val(TekstInfo(4).Text), "000")
+                TempoString$ = RapportVelden.text
+                Mid(TempoString$, 12, 3) = Format(Val(TekstInfo(4).text), "000")
                 RapportVelden.RemoveItem Positie
                 RapportVelden.AddItem TempoString$, Positie
                 RapportVelden.SetFocus
@@ -1060,9 +1060,9 @@ Select Case Index
     Case 3, 4
         TekstInfo(Index).Visible = False
     Case 5
-        If Val(TekstInfo(5).Text) < 1 Or Val(TekstInfo(5).Text) > FLINDEX_LEN(FlKeuze, IndexKeuze) Then
+        If Val(TekstInfo(5).text) < 1 Or Val(TekstInfo(5).text) > FLINDEX_LEN(FlKeuze, IndexKeuze) Then
             Beep
-            TekstInfo(Index).Text = Str$(FLINDEX_LEN(FlKeuze, IndexKeuze))
+            TekstInfo(Index).text = Str$(FLINDEX_LEN(FlKeuze, IndexKeuze))
             TekstInfo(Index).SetFocus
         End If
 End Select

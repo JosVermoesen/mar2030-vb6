@@ -2,6 +2,40 @@ Attribute VB_Name = "thisTextToolsClass"
 DefInt A-Z
 Option Explicit
 
+Sub Cijfermaskers()
+
+If bhEuro Then
+    MASK_2002 = MASK_EUR
+Else
+    MASK_2002 = MASK_BEF
+End If
+
+MASK_SY(0) = "#########"
+MASK_SY(1) = "###0"
+MASK_SY(2) = "######0.00"
+MASK_SY(3) = "##0.00000000"
+MASK_SY(4) = "#######0.00"
+MASK_SY(5) = "##0"
+MASK_SY(6) = "#0"
+MASK_SY(7) = "#####0.0"
+MASK_SY(8) = "#######0"
+
+End Sub
+
+Public Function IsValidEmail(ByVal sEmail As String) As Boolean
+    Dim oReg As Object
+    Set oReg = CreateObject("VBScript.RegExp")
+
+    With oReg
+        .Pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+        .IgnoreCase = True
+        .Global = False
+    End With
+
+    IsValidEmail = oReg.Test(Trim$(sEmail))
+End Function
+
+
 Function Dec(fGetal As Double, fMasker As String) As String
     
     Dim MaskerLengte As Integer

@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
-Begin VB.Form frmADOSQLOpzoeker 
+Begin VB.Form FormSQLOperations 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "ANSI-92 SQL Database Beheer"
    ClientHeight    =   5010
@@ -294,7 +294,7 @@ Begin VB.Form frmADOSQLOpzoeker
       Width           =   1185
    End
 End
-Attribute VB_Name = "frmADOSQLOpzoeker"
+Attribute VB_Name = "FormSQLOperations"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

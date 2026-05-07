@@ -12,7 +12,6 @@ Private Declare Function ShellExecute _
                             ByVal nShowCmd As Long) _
                             As Long
 
-
 Function scrFolderBestaat(Folder As String) As Boolean
 
     scrFolderBestaat = fs.FolderExists(Folder)
@@ -45,18 +44,5 @@ ElseIf Resulting <> "" Then
     LineCalculating = Resulting
 End If
 
-End Function
-
-Public Function IsValidEmail(ByVal sEmail As String) As Boolean
-    Dim oReg As Object
-    Set oReg = CreateObject("VBScript.RegExp")
-
-    With oReg
-        .Pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
-        .IgnoreCase = True
-        .Global = False
-    End With
-
-    IsValidEmail = oReg.Test(Trim$(sEmail))
 End Function
 

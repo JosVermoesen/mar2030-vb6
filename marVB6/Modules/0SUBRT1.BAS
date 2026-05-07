@@ -303,7 +303,7 @@ Public Function ConvertSuppliersSEPAs() As Boolean
 
     Dim sepa As String
     Dim oldAcc As String
-    Dim iban As String
+    Dim IBAN As String
 
     Dim numberOldValid As Long
     Dim numberNewValid As Long
@@ -358,15 +358,15 @@ ReopenRecordset:
         ' CASE 1: SEPA bestaat al
         '-----------------------------------------
         If sepa <> "" Then
-            iban = IbanCheck(sepa, True, False)
+            IBAN = IbanCheck(sepa, True, False)
 
-            If iban = "invalid" Then
+            If IBAN = "invalid" Then
                 numberNewInvalid = numberNewInvalid + 1
                 cmd.Parameters("pV259").Value = Null
                 cmd.Parameters("pA170").Value = Null
             Else
                 numberNewValid = numberNewValid + 1
-                cmd.Parameters("pV259").Value = iban
+                cmd.Parameters("pV259").Value = IBAN
                 cmd.Parameters("pA170").Value = IIf(oldAcc = "", Null, oldAcc)
             End If
 
@@ -375,16 +375,16 @@ ReopenRecordset:
             ' CASE 2: Geen SEPA ? probeer oud nummer
             '-----------------------------------------
             If oldAcc <> "" Then
-                iban = IbanCheck(oldAcc, True, False)
+                IBAN = IbanCheck(oldAcc, True, False)
 
-                If iban = "invalid" Then
+                If IBAN = "invalid" Then
                     numberOldInvalid = numberOldInvalid + 1
                     cmd.Parameters("pV259").Value = Null
                     cmd.Parameters("pA170").Value = Null
                 Else
                     numberOldValid = numberOldValid + 1
                     numberNewValid = numberNewValid + 1
-                    cmd.Parameters("pV259").Value = iban
+                    cmd.Parameters("pV259").Value = IBAN
                     cmd.Parameters("pA170").Value = oldAcc
                 End If
             Else
@@ -724,28 +724,6 @@ Dim X As Integer
 
 End Function
 
-Function fmarBoxText(marBoxNumber As String, Taal As String, marBoxOption As String) As String
-Dim FlTemp As Integer
-Dim OptieLen As Integer
-Dim ListOptie As String
-Dim ZoekTekst As String
-
-If Len(marBoxNumber) = 2 Then
-    ZoekTekst = "NTKB" + Taal + "9"
-ElseIf Len(marBoxNumber) = 3 Then
-    ZoekTekst = "NTKB" + Taal
-ElseIf Len(marBoxNumber) = 4 Then
-    MsgBox "Stop"
-    ZoekTekst = "NT"
-Else
-    MsgBox "fmarBoxText fout"
-    Exit Function
-End If
-ZoekTekst = ZoekTekst + marBoxNumber
-fmarBoxText = ZoekEnPlaats(KeuzeVSF.NTBoxLijst, ZoekTekst, 0, 0, marBoxOption)
-
-End Function
-
 '------------------------
 ' Get the size of the file
 '------------------------
@@ -796,34 +774,6 @@ End Select
 SleutelDok = VoorLetter + Mid(PERIOD_FROMTO, 1, 4) + Format(Val(FL99_RECORD) + 1, "00000")
 
 End Function
-
-
-Function String99(LockModus As Integer, SZNummer As Integer) As String
-Dim TlString As String * 5
-
-TlString = "s" + Format(SZNummer, "000")
-If LockModus = READING Then
-    LockHold = False
-Else
-    LockHold = True
-End If
-bGet TABLE_COUNTERS, 0, TlString
-
-If Ktrl = 99 Then
-ElseIf Ktrl Then
-    MsgBox "Tellers Stopkode " + Format(Ktrl) + ", voor setup-tellersleutel " + TlString + vbCrLf + vbCrLf + "Controleer setup instellingen vooraleer op te starten of verder te werken!" + vbCrLf + "Wij staan tot uw beschikking om U hierbij te helpen."
-Else
-    RecordToVeld TABLE_COUNTERS
-    'String99 = ntRS(TABLE_COUNTERS).Fields("v217")
-    On Error Resume Next
-    Err = 0
-    String99 = rsMAR(TABLE_COUNTERS).fields("v217")
-    If Err Then MsgBox Error
-End If
-bClose TABLE_COUNTERS
-
-End Function
-
 
 
 Function VValdag(rDat1 As String, rvv As String) As String

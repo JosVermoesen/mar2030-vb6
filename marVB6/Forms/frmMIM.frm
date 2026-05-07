@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76677123
+         Format          =   76611587
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -1342,7 +1342,7 @@ Select Case Index
     
     Case 5
         On Error Resume Next
-        frmADOSQLOpzoeker.Show
+        FormSQLOperations.Show
             
     Case 6
         'frmMarNtInetUpgrade.Show
@@ -2592,7 +2592,7 @@ On Error Resume Next
             If Err Then
                 Beep
             Else
-                frmADOSQLOpzoeker.Show
+                FormSQLOperations.Show
                 'frmOntwerpSQLVenster.Show
             End If
                 

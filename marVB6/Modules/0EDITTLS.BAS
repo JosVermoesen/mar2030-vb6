@@ -1,5 +1,4 @@
 Attribute VB_Name = "Module3"
-
 DefInt A-Z
 
 Option Explicit
@@ -462,57 +461,6 @@ Exit Function
 
 End Function
 
-Function ZoekEnPlaats(DeKontrol As Control, ZoekTekst As String, ALijnen As Integer, OptieNr As Integer, OptieTxt As String) As String
-Dim OptieLen As Integer
-'Dim CRLFLokatie As Integer
-Dim PuntKommaLokatie As Integer
-Dim TeDoorZoeken As String
-Dim DeString As String
-Dim joinStringHier As String
-Dim reeksHier() As String
-
-ZoekEnPlaats = ""
-adKBTable.Seek ZoekTekst, adSeekFirstEQ
-If adKBTable.EOF Then
-    MsgBox "Stop !  Keuzebox " + ZoekTekst + " niet te vinden..."
-    Exit Function
-Else
-    'adKBTable.Fields("BestandsNaam")
-    joinStringHier = adKBTable.fields("splitDefinitie")
-End If
-
-If Right(joinStringHier, 1) = ";" Then
-Else
-    joinStringHier = joinStringHier + ";"
-End If
-
-PuntKommaLokatie = 1
-ALijnen = 0
-OptieNr = 0
-OptieLen = Len(OptieTxt)
-DeKontrol.Clear
-
-'Dim stringArray() As String
-'Dim counter As Integer
-'stringArray = Split(joinStringHier, ";")
-'For counter = 0 To UBound(stringArray)
-'    DeKontrol.AddItem stringArray(counter)
-'Next
-
-Do While InStr(PuntKommaLokatie, joinStringHier, ";")
-    ALijnen = ALijnen + 1
-    DeString = Mid(joinStringHier, PuntKommaLokatie, InStr(PuntKommaLokatie, joinStringHier, ";") - PuntKommaLokatie)
-    'KeuzeVSF.NTBoxLijst.AddItem DeString
-    DeKontrol.AddItem DeString
-    If Mid(joinStringHier, PuntKommaLokatie, OptieLen) = OptieTxt Then
-        OptieNr = ALijnen - 1
-        ZoekEnPlaats = DeString
-    End If
-    PuntKommaLokatie = InStr(PuntKommaLokatie, joinStringHier, ";") + 1
-Loop
-If Len(OptieTxt) = 0 Then OptieNr = 0
-
-End Function
 Function Toegankelijk(frmHier As Form) As Boolean
 
 'If objUsers.CheckRights(Left(frmHier.Name, 20), 1) Then
