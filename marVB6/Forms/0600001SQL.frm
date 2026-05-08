@@ -333,7 +333,7 @@ Private Sub CmdHoger_Click()
 bNext TABLE_LEDGERACCOUNTS
 If Ktrl Then
 Else
-    Rekening.Text = KEY_BUF(TABLE_LEDGERACCOUNTS)
+    Rekening.text = KEY_BUF(TABLE_LEDGERACCOUNTS)
     Zoeken_Click
 End If
 
@@ -345,7 +345,7 @@ Private Sub CmdLager_Click()
 bPrev TABLE_LEDGERACCOUNTS
 If Ktrl Then
 Else
-    Rekening.Text = KEY_BUF(TABLE_LEDGERACCOUNTS)
+    Rekening.text = KEY_BUF(TABLE_LEDGERACCOUNTS)
     Zoeken_Click
 End If
 
@@ -354,64 +354,59 @@ End Sub
 
 Private Sub Form_Load()
 
-'If Not Toegankelijk(Me) Then
-'    Unload Me
-'    Exit Sub
-'End If
+    Dim T As Integer
 
-Dim T As Integer
+    Top = 0
+    Left = 0
 
-Top = 0
-Left = 0
+    TxtLijnen = LaadTekst("HistoriekInScherm", "MaxLijnen")
+    TekstLijn = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
 
-TxtLijnen = LaadTekst("HistoriekInScherm", "MaxLijnen")
-TekstLijn = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+    Rekening.text = BasisB(TABLE_LEDGERACCOUNTS).TekstInfo
+    HistoriekSQL.Caption = "Historiek (" + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")) + ")"
 
-Rekening.Text = BasisB(TABLE_LEDGERACCOUNTS).TekstInfo(0)
-HistoriekSQL.Caption = "Historiek (" + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")) + ")"
-
-With grdJournaalDetail
-    .Cols = 7
-    .Row = 0
+    With grdJournaalDetail
+        .Cols = 7
+        .Row = 0
     
-    .Col = 0
-    .Text = "document"
-    .Col = 1
-    .Text = "Datum Doc."
-    .Col = 2
-    .Text = "Fin.stuk"
-    .Col = 3
-    .Text = "Omschrijving"
-    .Col = 4
-    If bhEuro Then
-        .Text = "EUR"
-    Else
-        .Text = "BEF"
-    End If
-    .Col = 5
-    If bhEuro Then
-        .Text = "BEF"
-    Else
-        .Text = "EUR"
-    End If
-    .Col = 6
-    .Text = "T.Rek."
-End With
-
-grdJournaalDetail.ColWidth(0) = 1140
-grdJournaalDetail.ColWidth(1) = 1020
-grdJournaalDetail.ColWidth(2) = 930
-grdJournaalDetail.ColWidth(3) = 1755
-grdJournaalDetail.ColWidth(4) = 870
-grdJournaalDetail.ColWidth(5) = 975
-grdJournaalDetail.ColWidth(6) = 735
-For COUNT_TO = 0 To grdJournaalDetail.Cols - 1
-    grdJournaalDetail.ColAlignment(COUNT_TO) = flexAlignLeftCenter
-Next
-grdJournaalDetail.ColAlignment(4) = flexAlignRightCenter
-grdJournaalDetail.ColAlignment(5) = flexAlignRightCenter
-Zoeken_Click
-
+        .Col = 0
+        .text = "document"
+        .Col = 1
+        .text = "Datum Doc."
+        .Col = 2
+        .text = "Fin.stuk"
+        .Col = 3
+        .text = "Omschrijving"
+        .Col = 4
+        If bhEuro Then
+            .text = "EUR"
+        Else
+            .text = "BEF"
+        End If
+        .Col = 5
+        If bhEuro Then
+            .text = "BEF"
+        Else
+            .text = "EUR"
+        End If
+        .Col = 6
+        .text = "T.Rek."
+    End With
+    
+    grdJournaalDetail.ColWidth(0) = 1140
+    grdJournaalDetail.ColWidth(1) = 1020
+    grdJournaalDetail.ColWidth(2) = 930
+    grdJournaalDetail.ColWidth(3) = 1755
+    grdJournaalDetail.ColWidth(4) = 870
+    grdJournaalDetail.ColWidth(5) = 975
+    grdJournaalDetail.ColWidth(6) = 735
+    For COUNT_TO = 0 To grdJournaalDetail.Cols - 1
+        grdJournaalDetail.ColAlignment(COUNT_TO) = flexAlignLeftCenter
+    Next
+    grdJournaalDetail.ColAlignment(4) = flexAlignRightCenter
+    grdJournaalDetail.ColAlignment(5) = flexAlignRightCenter
+    Zoeken_Click
+    
 End Sub
 
 
@@ -436,7 +431,7 @@ End Sub
 
 Private Sub Rekening_GotFocus()
 
-Rekening.SelLength = Len(Rekening.Text)
+Rekening.SelLength = Len(Rekening.text)
 SnelHelpPrint "Dubbelklikken of [Ctrl] voor geïndexeerd zoeken", BL_LOGGING
 
 End Sub
@@ -447,10 +442,10 @@ Select Case KeyCode
     Case 17
         aIndex = 0
         SharedFl = TABLE_LEDGERACCOUNTS
-        GridText = Rekening.Text
+        GridText = Rekening.text
         SqlSearch.Show 1
         If Ktrl = 0 Then
-            Rekening.Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+            Rekening.text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
             Zoeken_Click
         End If
 End Select
@@ -459,7 +454,7 @@ End Sub
 
 Private Sub Rekening_LostFocus()
 
-RekeningNummer = Rekening.Text
+RekeningNummer = Rekening.text
 bGet TABLE_LEDGERACCOUNTS, 0, RekeningNummer
 If Ktrl Then
     HistoriekSQL.Caption = "Historiek"
@@ -523,7 +518,7 @@ If Err Then
     TxtLijnen = 300
     maxLijn = TxtLijnen + 2
 End If
-RekeningNummer = Rekening.Text
+RekeningNummer = Rekening.text
 Van = RekeningNummer + Mid(TekstLijn, 7, 4) + Mid(TekstLijn, 4, 2) + Mid(TekstLijn, 1, 2)
 Tot = RekeningNummer + Mid(TekstLijn, 20, 4) + Mid(TekstLijn, 17, 2) + Mid(TekstLijn, 14, 2)
 
@@ -570,7 +565,7 @@ If rsJourHier.RecordCount < 1 Then
     GoTo JournaalJump
 Else
     'RecordToVeld TABLE_JOURNAL
-    Rekening.Text = rsJourHier("v019")
+    Rekening.text = rsJourHier("v019")
     Mid(Van, 1, 7) = Mid(rsJourHier("v070"), 1, 7)
     Mid(Tot, 1, 7) = Mid(rsJourHier("v070"), 1, 7)
     bGet TABLE_LEDGERACCOUNTS, 0, rsJourHier("v019")

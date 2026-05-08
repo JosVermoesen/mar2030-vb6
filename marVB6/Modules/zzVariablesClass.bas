@@ -2,6 +2,15 @@ Attribute VB_Name = "thisTextToolsClass"
 DefInt A-Z
 Option Explicit
 
+Function vSet(fTekst As String, fLengte As Integer) As String
+Dim b As String
+
+b = Left(fTekst, fLengte)
+vSet = b + Space$(fLengte - Len(b))
+
+End Function
+
+
 Sub Cijfermaskers()
 
 If bhEuro Then

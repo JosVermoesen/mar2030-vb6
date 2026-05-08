@@ -5,6 +5,97 @@ Option Explicit
 Dim X As Integer
 Public Const BATCH_SIZE As Long = 5000
 
+Dim DataPos                As Integer
+Dim DataLen                As Integer
+Dim OptieTxt               As String
+Dim TempoTxt               As String
+Dim CrText                 As String
+Dim CrText2                As String
+Dim T                       As Integer
+
+Function daoBlankoRecord(Fl As Integer) As Boolean
+
+TLB_RECORD(Fl) = ""
+Select Case Fl
+    Case TABLE_CUSTOMERS, TABLE_SUPPLIERS
+        vBib Fl, "2", "A10C"    'Taalkode
+        vBib Fl, "002", "v149"  'Landnummer  ISO kode
+        vBib Fl, "B  ", "A109"  'Landkode Postkantoor
+        vBib Fl, "BE", "v150"   'Landkode    ISO kode
+        If bhEuro Then
+            vBib Fl, "EUR", "vs03"  'Munteenheid ISO kode
+        Else
+            vBib Fl, "BEF", "vs03"  'Munteenheid ISO kode
+        End If
+        vBib Fl, "1", "vs07"    'exemplaren dokumenten
+    Case TABLE_LEDGERACCOUNTS
+        vBib Fl, "O", "v032"    'Budgetcode
+    Case TABLE_PRODUCTS
+        vBib Fl, fmarBoxText("004", "2", "0"), "v106"
+        vBib Fl, Dec$(1, "#####.00"), "v107"
+        vBib Fl, fmarBoxText("022", "2", "N"), "v108"
+        vBib Fl, fmarBoxText("002", "2", String99(READING, 183)), "v111"
+        vBib Fl, String99(READING, 77), "v116"
+        vBib Fl, String99(READING, 78), "v117"
+        vBib Fl, String99(READING, 79), "v118"
+End Select
+
+End Function
+
+
+Sub DbKontrole(StringTeZoeken As String, FlNr As Integer)
+Dim aa As Variant
+
+Dim Teller As Integer
+
+Select Case FlNr
+    Case TABLE_LEDGERACCOUNTS
+        Dim rsKBRecord As ADODB.Recordset
+        Set rsKBRecord = New ADODB.Recordset
+        rsKBRecord.CursorLocation = adUseServer
+        rsKBRecord.Open "MinimumIndeling", adKBDB, adOpenKeyset, adLockOptimistic, adCmdTableDirect
+        rsKBRecord.Index = "RekeningNummer"
+        aa = ""
+       
+        rsKBRecord.Seek StringTeZoeken, adSeekBeforeEQ
+        If rsKBRecord.BOF Then
+            If rsKBRecord.EOF Then
+                rsKBRecord.MoveFirst
+            End If
+            aa = rsKBRecord.fields(0) & " " + rsKBRecord.fields(1) & vbCrLf & aa
+            Teller = 0
+            rsKBRecord.MovePrevious
+            Do While Not rsKBRecord.BOF
+                Teller = Teller + 1
+                rsKBRecord.MovePrevious
+                aa = rsKBRecord.fields(0) & " " & rsKBRecord.fields(1) & vbCrLf & aa
+                If Teller >= 10 Then Exit Do
+            Loop
+        End If
+        
+        Teller = 0
+        rsKBRecord.Seek StringTeZoeken, adSeekAfterEQ
+        If rsKBRecord.EOF Then
+        Else
+            rsKBRecord.MoveNext
+            Do While Not rsKBRecord.EOF
+                Teller = Teller + 1
+                aa = aa & rsKBRecord.fields(0) & " " & rsKBRecord.fields(1) & vbCrLf
+                If Teller >= 15 Then Exit Do
+                rsKBRecord.MoveNext
+            Loop
+        End If
+        Mim.InfoData.Visible = True
+        Mim.InfoData.Cls
+        Mim.InfoData.Print aa
+        rsKBRecord.Close
+        Set rsKBRecord = Nothing
+                
+    Case Else
+        MsgBox "stop"
+End Select
+
+End Sub
 
 Sub ClearFlDummy()
 
@@ -81,7 +172,6 @@ Select Case Ktrl
 End Select
 
 End Function
-
 
 Sub bAbort()
 

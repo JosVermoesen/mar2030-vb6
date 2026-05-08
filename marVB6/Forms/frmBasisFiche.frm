@@ -29,8 +29,8 @@ Begin VB.Form BasicTable
    ScaleWidth      =   4230
    ShowInTaskbar   =   0   'False
    WindowState     =   1  'Minimized
-   Begin VB.CommandButton Knop 
-      Caption         =   "&Hoger"
+   Begin VB.CommandButton ButtonNext 
+      Caption         =   "&Volgende"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -41,16 +41,15 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   7
       Left            =   1920
       TabIndex        =   10
       TabStop         =   0   'False
       ToolTipText     =   "Volgende"
       Top             =   900
-      Width           =   735
+      Width           =   975
    End
-   Begin VB.CommandButton Knop 
-      Caption         =   "&Lager"
+   Begin VB.CommandButton ButtonPrevious 
+      Caption         =   "&Vorige"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -61,15 +60,14 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   6
       Left            =   1920
       TabIndex        =   9
       TabStop         =   0   'False
       ToolTipText     =   "Vorige"
       Top             =   540
-      Width           =   735
+      Width           =   975
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonFirst 
       Caption         =   "&Top"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -81,7 +79,6 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   0
       Left            =   1140
       TabIndex        =   8
       TabStop         =   0   'False
@@ -89,7 +86,7 @@ Begin VB.Form BasicTable
       Top             =   540
       Width           =   735
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonLast 
       Caption         =   "B&odem"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -101,7 +98,6 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   9
       Left            =   1140
       TabIndex        =   7
       TabStop         =   0   'False
@@ -109,8 +105,8 @@ Begin VB.Form BasicTable
       Top             =   900
       Width           =   735
    End
-   Begin VB.CommandButton Knop 
-      Caption         =   "&Verwijderen"
+   Begin VB.CommandButton ButtonRemove 
+      Caption         =   "Verwijderen"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -121,7 +117,6 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   10
       Left            =   -60
       TabIndex        =   6
       TabStop         =   0   'False
@@ -146,7 +141,7 @@ Begin VB.Form BasicTable
       Top             =   1260
       Width           =   2955
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonEdit 
       Caption         =   "B&ewerken"
       Default         =   -1  'True
       Enabled         =   0   'False
@@ -161,7 +156,6 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30040
-      Index           =   5
       Left            =   -60
       TabIndex        =   0
       TabStop         =   0   'False
@@ -169,7 +163,7 @@ Begin VB.Form BasicTable
       Top             =   120
       Width           =   1125
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonSearchOn 
       Caption         =   "&Zoeken op..."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -182,7 +176,6 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30030
-      Index           =   2
       Left            =   -60
       TabIndex        =   2
       TabStop         =   0   'False
@@ -190,7 +183,7 @@ Begin VB.Form BasicTable
       Top             =   1260
       Width           =   1125
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonMinimize 
       Appearance      =   0  'Flat
       BackColor       =   &H00C0C0C0&
       Cancel          =   -1  'True
@@ -205,7 +198,6 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Index           =   8
       Left            =   3000
       TabIndex        =   4
       TabStop         =   0   'False
@@ -213,7 +205,7 @@ Begin VB.Form BasicTable
       Top             =   900
       Width           =   1095
    End
-   Begin VB.CommandButton Knop 
+   Begin VB.CommandButton ButtonJournal 
       Caption         =   "&Journaal"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -226,7 +218,6 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30060
-      Index           =   4
       Left            =   3000
       TabIndex        =   5
       TabStop         =   0   'False
@@ -236,7 +227,6 @@ Begin VB.Form BasicTable
    End
    Begin MSMask.MaskEdBox TekstInfo 
       Height          =   315
-      Index           =   0
       Left            =   1140
       TabIndex        =   1
       ToolTipText     =   "Breng hier fiche UNIEKE ID-kode in !"
@@ -272,23 +262,229 @@ Option Explicit
 Dim T                                   As Integer
 Dim Voorkeurquick(10, 10)               As String * 5
 
-
 Private Sub FicheNaarRecord(Fl As Integer)
 
-bGet Fl, 0, vSet(TekstInfo(0).text, FLINDEX_LEN(Fl, 0))
-If Ktrl = 0 Then
-    bUpdate Fl, 0
-Else
-    bInsert Fl, 0
-End If
-Knop_Click 3
+    bGet Fl, 0, vSet(TekstInfo.text, FLINDEX_LEN(Fl, 0))
+    If Ktrl = 0 Then
+        bUpdate Fl, 0
+    Else
+        bInsert Fl, 0
+    End If
+    'Knop_Click 3 was for new Record
 
 End Sub
 
 
+Private Sub ButtonEdit_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+
+    'EDIT
+    If PeppolFlag And Fl = TABLE_SUPPLIERS Then
+        vBib TABLE_SUPPLIERS, TekstInfo.text, "A110"   'Uniek Codenummer
+    Else
+        TeZoeken = Trim$(TekstInfo)
+        If TeZoeken = "" Then Beep: Exit Sub
+        bGet Fl, 0, TekstInfo
+        If Ktrl = 0 Then
+            INSERT_FLAG(Fl) = 0
+            RecordNaarFiche Fl
+            ButtonEdit.Enabled = True
+        Else
+            NieuweFiche Fl
+            TekstInfo = TeZoeken
+        End If
+        If Fl = TABLE_LEDGERACCOUNTS Then DbKontrole (TekstInfo.text), TABLE_LEDGERACCOUNTS
+            
+        If INSERT_FLAG(Fl) = 1 Then
+            Select Case Fl
+                Case TABLE_CUSTOMERS, TABLE_SUPPLIERS
+                    vBib Fl, (TekstInfo.text), "A110"   'Klant/Levnummer
+                Case TABLE_LEDGERACCOUNTS
+                    vBib Fl, (TekstInfo.text), "v019"   'Rekeningnummer
+                Case Else
+                    MsgBox "Stop"
+            End Select
+        End If
+    End If
+            
+    If TeleBibClick(Fl) = False Then
+    Else
+        FicheNaarRecord Fl
+    End If
+    Mim.InfoData.Visible = False
+    INSERT_FLAG(Fl) = 0
+    RecordNaarFiche Fl
+    ButtonEdit.Enabled = True
+        
+End Sub
+
+Private Sub ButtonFirst_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+        
+    'Move First
+    bFirst Fl, 0
+    If Ktrl Then
+        Beep
+        ButtonEdit.Enabled = False
+    Else
+        INSERT_FLAG(Fl) = 0
+        RecordNaarFiche Fl
+        ButtonEdit.Enabled = True
+    End If
+    
+End Sub
+
+Private Sub ButtonJournal_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+        
+    'Ledger or balance buyer and seller
+    Select Case Fl
+        Case TABLE_CUSTOMERS To TABLE_SUPPLIERS
+            'BalansKontrole Fl
+            'Stop
+            BalansKontroleWithRecordSet Fl
+                    
+        Case TABLE_LEDGERACCOUNTS
+            HistoriekSQL.Show
+        Case Else
+            MsgBox "boekhoudkontrole (nog) niet aanwezig"
+    End Select
+    INSERT_FLAG(Fl) = 0
+    RecordNaarFiche Fl
+    ButtonEdit.Enabled = True
+        
+End Sub
+
+Private Sub ButtonLast_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+
+    'Move Last
+    bLast Fl, 0
+    If Ktrl Then
+        Beep
+        ButtonEdit.Enabled = False
+    Else
+        INSERT_FLAG(Fl) = 0
+        RecordNaarFiche Fl
+        ButtonEdit.Enabled = True
+    End If
+    
+End Sub
+
+Private Sub ButtonMinimize_Click()
+
+    WindowState = 1
+
+End Sub
+
+Private Sub ButtonNext_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+    
+    'Move Next
+    bNext Fl
+    If Ktrl = 9 Then
+        bLast Fl, 0
+        If Ktrl Then
+            Beep
+            ButtonEdit.Enabled = False
+        End If
+    End If
+    If Ktrl Then
+    Else
+        INSERT_FLAG(Fl) = 0
+        RecordNaarFiche Fl
+        ButtonEdit.Enabled = True
+    End If
+
+End Sub
+
+Private Sub ButtonPrevious_Click()
+
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Mim.InfoData.Visible = False
+        
+    'Move Previous
+    bPrev Fl
+    If Ktrl = 9 Then
+        bFirst Fl, 0
+        If Ktrl Then
+            Beep
+            ButtonEdit.Enabled = False
+        End If
+    End If
+    If Ktrl Then
+    Else
+        INSERT_FLAG(Fl) = 0
+        RecordNaarFiche Fl
+        ButtonEdit.Enabled = True
+    End If
+    
+End Sub
+
+Private Sub ButtonRemove_Click()
+
+    If INSERT_FLAG(Fl) = 0 Then
+        Msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
+        KtrlBox = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo.text)
+        If KtrlBox = vbYes Then
+            bDelete Fl
+            'Knop_Click 3 was for new Record
+        End If
+    End If
+    
+End Sub
+
+Private Sub ButtonSearchOn_Click()
+    Dim TeZoeken As String
+
+    Fl = Val(Me.Tag)
+    Select Case Fl
+        Case TABLE_CONTRACTS
+            Venster.Show 1
+        Case Else
+            SharedFl = Fl
+            aIndex = Val(Left(cmbSortering.text, 2))
+            GridText = TekstInfo.text
+            SqlSearch.Show 1
+    End Select
+    If Ktrl = 0 Then
+        TekstInfo.text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
+        INSERT_FLAG(Fl) = 0
+        RecordNaarFiche Fl
+        ButtonEdit.Enabled = True
+    Else
+        ButtonEdit.Enabled = False
+        TekstInfo.text = ""
+        INSERT_FLAG(Fl) = 1
+    End If
+        
+End Sub
+
 Private Sub cmbSortering_GotFocus()
 
-    Knop(2).Default = True
+    ButtonSearchOn.Default = True
 
 End Sub
 
@@ -315,240 +511,79 @@ End If
 
 End Sub
 
-Private Sub Knop_Click(Index As Integer)
-Dim TeZoeken As String
-
-Fl = Val(Me.Tag)
-Mim.InfoData.Visible = False
-Select Case Index
-        Case 0  'Eerste record
-            bFirst Fl, 0
-            If Ktrl Then
-                Beep
-                Knop(5).Enabled = False
-            Else
-                INSERT_FLAG(Fl) = 0
-                RecordNaarFiche Fl
-                Knop(5).Enabled = True
-            End If
-                
-        Case 2  'GeSELECTeerd Zoeken
-        Select Case Fl
-            Case TABLE_CONTRACTS
-                Venster.Show 1
-            Case Else
-                SharedFl = Fl
-                aIndex = Val(Left(cmbSortering.text, 2))
-                GridText = TekstInfo(0).text
-                SqlSearch.Show 1
-        End Select
-        If Ktrl = 0 Then
-            TekstInfo(0).text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
-            INSERT_FLAG(Fl) = 0
-            RecordNaarFiche Fl
-            Knop(5).Enabled = True
-        Else
-            Knop(5).Enabled = False
-            TekstInfo(0).text = ""
-            INSERT_FLAG(Fl) = 1
-        End If
-        
-        Case 3  'Nieuwe Fiche
-            'NieuweFiche Fl
-            
-        Case 4  'Boekhouding
-            Select Case Fl
-                Case TABLE_CUSTOMERS To TABLE_SUPPLIERS
-                    'BalansKontrole Fl
-                    'Stop
-                    BalansKontroleWithRecordSet Fl
-                    
-                Case TABLE_LEDGERACCOUNTS
-                    HistoriekSQL.Show
-                Case Else
-                    MsgBox "boekhoudkontrole (nog) niet aanwezig"
-            End Select
-            INSERT_FLAG(Fl) = 0
-            RecordNaarFiche Fl
-            Knop(5).Enabled = True
-        
-        Case 5  'Fiche EDITEREN
-            If PeppolFlag Then
-                vBib TABLE_SUPPLIERS, Me.TekstInfo(0).text, "A110"   'Uniek Codenummer
-            Else
-                TeZoeken = Trim$(TekstInfo(0))
-                If TeZoeken = "" Then Beep: Exit Sub
-                    bGet Fl, 0, TekstInfo(0)
-                    If Ktrl = 0 Then
-                        INSERT_FLAG(Fl) = 0
-                        RecordNaarFiche Fl
-                        Knop(5).Enabled = True
-                    Else
-                        NieuweFiche Fl
-                        TekstInfo(0) = TeZoeken
-                    End If
-                    If Fl = TABLE_LEDGERACCOUNTS Then DbKontrole (TekstInfo(0).text), TABLE_LEDGERACCOUNTS
-            
-                    If INSERT_FLAG(Fl) = 1 Then
-                    Select Case Fl
-                        Case TABLE_CUSTOMERS, TABLE_SUPPLIERS
-                            vBib Fl, (TekstInfo(0).text), "A110"   'Klant/Levnummer
-                        Case TABLE_LEDGERACCOUNTS
-                            vBib Fl, (TekstInfo(0).text), "v019"   'Rekeningnummer
-                        Case Else
-                            MsgBox "Stop"
-                    End Select
-                End If
-            End If
-            
-            If TeleBibClick(Fl) = False Then
-                'Knop(1).Enabled = False
-            Else
-                'Knop(1).Enabled = True
-                'Knop(1).SetFocus
-                FicheNaarRecord Fl
-            End If
-            Mim.InfoData.Visible = False
-            'Knop_Click 3
-            INSERT_FLAG(Fl) = 0
-            RecordNaarFiche Fl
-            Knop(5).Enabled = True
-                            
-        Case 6  'Fiche Lager
-            bPrev Fl
-            If Ktrl = 9 Then
-                bFirst Fl, 0
-                If Ktrl Then
-                    Beep
-                    Knop(5).Enabled = False
-                End If
-            End If
-            If Ktrl Then
-            Else
-                INSERT_FLAG(Fl) = 0
-                RecordNaarFiche Fl
-                Knop(5).Enabled = True
-            End If
-      
-        Case 7  'fiche hoger
-            bNext Fl
-            If Ktrl = 9 Then
-                bLast Fl, 0
-                If Ktrl Then
-                    Beep
-                    Knop(5).Enabled = False
-                End If
-            End If
-            If Ktrl Then
-            Else
-                INSERT_FLAG(Fl) = 0
-                RecordNaarFiche Fl
-                Knop(5).Enabled = True
-            End If
-
-        Case 8 'verbergen
-            WindowState = 1
-
-        Case 9
-            bLast Fl, 0
-            If Ktrl Then
-                Beep
-                Knop(5).Enabled = False
-            Else
-                INSERT_FLAG(Fl) = 0
-                RecordNaarFiche Fl
-                Knop(5).Enabled = True
-            End If
-        Case 10
-            If INSERT_FLAG(Fl) = 0 Then
-                Msg = "Bestaande fiche " + Caption + " verwijderen.  Bent U zeker ?"
-                KtrlBox = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, TekstInfo(0).text)
-                If KtrlBox = vbYes Then
-                    bDelete Fl
-                    Knop_Click 3
-                End If
-            End If
-        
-        Case Else
-End Select
-
-End Sub
-
-
 Private Sub NieuweFiche(Fl As Integer)
 
-Dim xTMP As Integer
+    Dim xTMP As Integer
 
-If PeppolFlag Then
-Else
-    xTMP = daoBlankoRecord(Fl)
+    If PeppolFlag Then
+    Else
+        xTMP = daoBlankoRecord(Fl)
 
-    TekstInfo(0).text = ""
-    INSERT_FLAG(Fl) = 1
-    Knop(5).Enabled = False
-    Knop(5).Default = True
-    TekstInfo(0).Enabled = True
+        TekstInfo.text = ""
+        INSERT_FLAG(Fl) = 1
+        ButtonEdit.Enabled = False
+        ButtonEdit.Default = True
+        TekstInfo.Enabled = True
 
-    On Error Resume Next
-    TekstInfo(0).SetFocus
-End If
+        On Error Resume Next
+        TekstInfo.SetFocus
+    End If
 
 End Sub
 
 Private Sub RecordNaarFiche(Fl)
 
-On Error Resume Next
+    On Error Resume Next
 
-TLB_RECORD(Fl) = ""
-If Ktrl Then
-    'MsgBox "stop"
-Else
-    RecordToVeld Fl
-End If
-TekstInfo(0).text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
-XDoEvents = DoEvents
+    TLB_RECORD(Fl) = ""
+    If Ktrl Then
+    Else
+        RecordToVeld Fl
+    End If
+    TekstInfo.text = vBibTekst(Fl, "#" + JETTABLEUSE_INDEX(Fl, 0) + "#")
+    XDoEvents = DoEvents
 
-Msg = ""
-For T = 0 To 1
-    Msg = Msg + RTrim$(FVT(Fl, T)) + " "
-Next
-SnelHelpPrint Msg, BL_LOGGING
-INSERT_FLAG(Fl) = 0
-
-End Sub
-
-Private Sub TekstInfo_Change(Index As Integer)
-
-If TekstInfo(0).text = "" Then
-    INSERT_FLAG(Fl) = 1
-    Knop(5).Enabled = False
-Else
-    Knop(5).Enabled = True
-End If
+    Msg = ""
+    For T = 0 To 1
+        Msg = Msg + RTrim$(FVT(Fl, T)) + " "
+    Next
+    SnelHelpPrint Msg, BL_LOGGING
+    INSERT_FLAG(Fl) = 0
 
 End Sub
 
-Private Sub TekstInfo_GotFocus(Index As Integer)
+Private Sub TekstInfo_Change()
 
-SnelHelpPrint TekstInfo(0).ToolTipText & ", " & "[Ctrl] voor geSELECTeerd zoeken !", BL_LOGGING
-
-Knop(5).Default = True
-TekstInfo(0).SelLength = Len(TekstInfo(0).text)
+    If TekstInfo.text = "" Then
+        INSERT_FLAG(Fl) = 1
+        ButtonEdit.Enabled = False
+    Else
+        ButtonEdit.Enabled = True
+    End If
 
 End Sub
 
-Private Sub TekstInfo_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+Private Sub TekstInfo_GotFocus()
+
+    SnelHelpPrint TekstInfo.ToolTipText & ", " & "[Ctrl] voor geSELECTeerd zoeken !", BL_LOGGING
+
+    ButtonEdit.Default = True
+    TekstInfo.SelLength = Len(TekstInfo.text)
+
+End Sub
+
+Private Sub TekstInfo_KeyDown(KeyCode As Integer, Shift As Integer)
 
 Select Case KeyCode
     Case 17
         aIndex = Val(Left(cmbSortering.text, 2))
         SharedFl = Fl
-        GridText = TekstInfo(0).text
+        GridText = TekstInfo.text
         SqlSearch.Show 1
         If Ktrl = 0 Then
             INSERT_FLAG(Fl) = 0
             RecordNaarFiche Fl
-            Knop(5).Enabled = True
+            ButtonEdit.Enabled = True
         End If
 End Select
 

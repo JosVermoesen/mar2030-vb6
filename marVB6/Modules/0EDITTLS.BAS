@@ -1,6 +1,5 @@
 Attribute VB_Name = "Module3"
 DefInt A-Z
-
 Option Explicit
 
 Dim DataPos                As Integer
@@ -9,63 +8,8 @@ Dim OptieTxt               As String
 Dim TempoTxt               As String
 Dim CrText                 As String
 Dim CrText2                As String
-
 Dim T                       As Integer
 
-
-Sub DbKontrole(StringTeZoeken As String, FlNr As Integer)
-Dim aa As Variant
-
-Dim Teller As Integer
-
-Select Case FlNr
-    Case TABLE_LEDGERACCOUNTS
-        Dim rsKBRecord As ADODB.Recordset
-        Set rsKBRecord = New ADODB.Recordset
-        rsKBRecord.CursorLocation = adUseServer
-        rsKBRecord.Open "MinimumIndeling", adKBDB, adOpenKeyset, adLockOptimistic, adCmdTableDirect
-        rsKBRecord.Index = "RekeningNummer"
-        aa = ""
-       
-        rsKBRecord.Seek StringTeZoeken, adSeekBeforeEQ
-        If rsKBRecord.BOF Then
-            If rsKBRecord.EOF Then
-                rsKBRecord.MoveFirst
-            End If
-            aa = rsKBRecord.fields(0) & " " + rsKBRecord.fields(1) & vbCrLf & aa
-            Teller = 0
-            rsKBRecord.MovePrevious
-            Do While Not rsKBRecord.BOF
-                Teller = Teller + 1
-                rsKBRecord.MovePrevious
-                aa = rsKBRecord.fields(0) & " " & rsKBRecord.fields(1) & vbCrLf & aa
-                If Teller >= 10 Then Exit Do
-            Loop
-        End If
-        
-        Teller = 0
-        rsKBRecord.Seek StringTeZoeken, adSeekAfterEQ
-        If rsKBRecord.EOF Then
-        Else
-            rsKBRecord.MoveNext
-            Do While Not rsKBRecord.EOF
-                Teller = Teller + 1
-                aa = aa & rsKBRecord.fields(0) & " " & rsKBRecord.fields(1) & vbCrLf
-                If Teller >= 15 Then Exit Do
-                rsKBRecord.MoveNext
-            Loop
-        End If
-        Mim.InfoData.Visible = True
-        Mim.InfoData.Cls
-        Mim.InfoData.Print aa
-        rsKBRecord.Close
-        Set rsKBRecord = Nothing
-                
-    Case Else
-        MsgBox "stop"
-End Select
-
-End Sub
 
 Function TeleBibClick(Fl As Integer) As Integer
 Dim PositieX       As Integer

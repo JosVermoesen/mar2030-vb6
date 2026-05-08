@@ -55,14 +55,14 @@ Begin VB.Form Xlog
       TabCaption(1)   =   "Afbeelding"
       TabPicture(1)   =   "0xlog.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label1"
-      Tab(1).Control(1)=   "Label2"
-      Tab(1).Control(2)=   "OLE1"
-      Tab(1).Control(3)=   "Label3"
-      Tab(1).Control(4)=   "Command1"
-      Tab(1).Control(5)=   "Command2"
-      Tab(1).Control(6)=   "Command3"
-      Tab(1).Control(7)=   "Command4"
+      Tab(1).Control(0)=   "Command4"
+      Tab(1).Control(1)=   "Command3"
+      Tab(1).Control(2)=   "Command2"
+      Tab(1).Control(3)=   "Command1"
+      Tab(1).Control(4)=   "Label3"
+      Tab(1).Control(5)=   "OLE1"
+      Tab(1).Control(6)=   "Label2"
+      Tab(1).Control(7)=   "Label1"
       Tab(1).ControlCount=   8
       Begin VB.CommandButton Command4 
          Caption         =   "Pdf Opslaan"

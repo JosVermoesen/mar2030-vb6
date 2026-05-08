@@ -2,6 +2,146 @@ Attribute VB_Name = "thisMimEnvironmentClass"
 Option Explicit
 DefInt A-Z
 
+Function TeleBibPagina(Fl As Integer)
+Dim FlInput As Integer
+Dim FFDefinitie As String
+Dim DummyString As String
+Dim DummYtje As String
+Dim KtrlAantal As Long
+
+Dim CurBedrag As Currency
+Dim T As Integer
+
+TeleBibPagina = False
+
+On Local Error GoTo TeleBibError
+
+'code= 1 - 1 : Poliskontrole 1 = ON
+'      2 - 3 : Selektiekeuze waarde (ListIDX)
+'      4 - 4 :
+'      5 - 8 : TeleBib
+'      9 - 9 : Volgnummer eventueel 1 tot 9
+'      10    : * voor verplichte invulling
+'Inlaadvolgorde 1 : 000     'hoofddefinitie (VSOFT)
+'               2 : xxxG    'uitbreiding gebruiker
+'               2 : xxxM    'uitbreiding makelaar
+
+Dim LokaalBestand As String
+
+If Fl <> TABLE_COUNTERS Then
+    LokaalBestand = Left(TABLEDEF_ONT(Fl), 3)
+Else
+    LokaalBestand = "00"
+End If
+
+If Dir$(PROGRAM_LOCATION + "Def\" + LokaalBestand + ".Def") = "" Then
+    MsgBox "Geen VsoftBib definitie " + LokaalBestand + ".Def"
+    Exit Function
+End If
+
+EerstEnVooral:
+If Dir$(PROGRAM_LOCATION + "Def\" + LokaalBestand + "U.Def") = "" Then
+    GoTo GeenUserVoorkeur
+Else
+    T = 0
+    FlInput = FreeFile
+    Open PROGRAM_LOCATION + "Def\" + LokaalBestand + "U.Def" For Input As FlInput
+    Do While Not EOF(FlInput)
+            Input #FlInput, TELEBIB_CODE(T), TELEBIB_TEXT(T), TELEBIB_TYPE(T), TELEBIB_LENGTH(T)
+            vBC(Fl, T) = Mid(TELEBIB_CODE(T), 5, 4)
+            If TELEBIB_TYPE(T) = "D" And DecimalKTRL = True Then
+                GoSub JumpToTheBEAT
+            End If
+            T = T + 1
+    Loop
+    Close FlInput
+    TELEBIB_CODE(T) = ""
+    TELEBIB_LAST = T - 1
+    TeleBibPagina = True
+    Exit Function
+End If
+
+GeenUserVoorkeur:
+FlInput = FreeFile
+Open PROGRAM_LOCATION + "Def\" + LokaalBestand + ".Def" For Input As FlInput
+T = 0
+Do While Not EOF(FlInput)
+    Input #FlInput, TELEBIB_CODE(T), TELEBIB_TEXT(T), TELEBIB_TYPE(T), TELEBIB_LENGTH(T)
+    vBC(Fl, T) = Mid(TELEBIB_CODE(T), 5, 4)
+    If TELEBIB_TYPE(T) = "D" And DecimalKTRL = True Then
+        GoSub JumpToTheBEAT
+    End If
+    T = T + 1
+Loop
+Close FlInput
+TELEBIB_LAST = T - 1
+TELEBIB_CODE(T) = ""
+TeleBibPagina = True
+
+MakelaarIn:
+If ProducentNummer = Space$(8) Then
+ElseIf Dir(PROGRAM_LOCATION + "Def\" + LokaalBestand + "M.Def") = "" Then
+Else
+    FlInput = FreeFile
+    Open PROGRAM_LOCATION + "Def\" + LokaalBestand + "M.Def" For Input As FlInput
+    Do While Not EOF(FlInput)
+            Input #FlInput, TELEBIB_CODE(T), TELEBIB_TEXT(T), TELEBIB_TYPE(T), TELEBIB_LENGTH(T)
+            vBC(Fl, T) = Mid(TELEBIB_CODE(T), 5, 4)
+            If TELEBIB_TYPE(T) = "D" And DecimalKTRL = True Then
+                GoSub JumpToTheBEAT
+            End If
+            T = T + 1
+    Loop
+    Close FlInput
+    TELEBIB_LAST = T - 1
+    TELEBIB_CODE(T) = ""
+End If
+Exit Function
+
+JumpToTheBEAT:
+On Error Resume Next
+Err = 0
+DummYtje = rsMAR(Fl)("dec" & vBC(Fl, T)).Name
+If Err Then
+    bClose Fl
+    If adxKolom(bstNaam(Fl), "dec" & vBC(Fl, T), adCurrency, 0) Then
+        SnelHelpPrint "Extra SQL Server compatibel Decimal veld : " & "dec" & vBC(Fl, T) & " met succes bijgevoegd in tabel : " & bstNaam(Fl), BL_LOGGING
+        Msg = "UPDATE " & bstNaam(Fl) & " SET " & "dec" & vBC(Fl, T) & "=val(" & vBC(Fl, T) & ")"
+        SnelHelpPrint "Cijfers van " & vBC(Fl, T) & " worden overgedragen naar dec" & vBC(Fl, T) & Msg, BL_LOGGING
+        GoSub DoeDeUpdate
+    End If
+Else
+    DecimalKTRL = False
+End If
+Return
+
+DoeDeUpdate:
+bFirst Fl, 0
+Do While Ktrl = 0
+    On Error Resume Next
+    Err = 0
+    CurBedrag = 0
+    CurBedrag = Val(rsMAR(Fl)(vBC(Fl, T)))
+    If Err Then
+        SnelHelpPrint Error & " ter hoogte van " & rsMAR(Fl)(0) & " in bestand " & bstNaam(Fl), BL_LOGGING
+    End If
+    rsMAR(Fl)("dec" & vBC(Fl, T)) = CurBedrag
+    SnelHelpPrint rsMAR(Fl)(0) & " " & (CurBedrag), BL_LOGGING
+    rsMAR(Fl).Update
+    bNext Fl
+Loop
+Return
+
+TeleBibError:
+MsgBox "Telebibinlaadfout" + Str$(T) + " error:" + Error$
+Close FlInput
+TeleBibPagina = False
+Exit Function
+Resume
+
+End Function
+
+
 Sub AutoUnloadBedrijf()
 Dim T           As Integer
 Dim LastUsed As String

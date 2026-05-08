@@ -1144,11 +1144,11 @@ Function CheckSupplier() As Boolean
 
             BasisB(TABLE_SUPPLIERS).WindowState = 0
             BasisB(TABLE_SUPPLIERS).SetFocus
-            BasisB(TABLE_SUPPLIERS).TekstInfo(0).text = uitwisselingDATAArray(5)
-            BasisB(TABLE_SUPPLIERS).Knop(5).Enabled = True
-            BasisB(TABLE_SUPPLIERS).Knop(5).Default = True
-            BasisB(TABLE_SUPPLIERS).TekstInfo(0).Enabled = True
-            BasisB(TABLE_SUPPLIERS).TekstInfo(0).SetFocus
+            BasisB(TABLE_SUPPLIERS).TekstInfo.text = uitwisselingDATAArray(5)
+            BasisB(TABLE_SUPPLIERS).ButtonEdit.Enabled = True
+            BasisB(TABLE_SUPPLIERS).ButtonEdit.Default = True
+            BasisB(TABLE_SUPPLIERS).TekstInfo.Enabled = True
+            BasisB(TABLE_SUPPLIERS).TekstInfo.SetFocus
             Exit Function
         End If
     ElseIf rsSupplier.RecordCount > 1 Then
