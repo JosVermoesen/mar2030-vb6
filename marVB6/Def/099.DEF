@@ -13,7 +13,7 @@
 ;Aankoopverrichtingen
 "5   s001","Nr Aankoopfacturen","N",5
 "5   s002","Nr Facturen in Aankoopboek","N",5
-"5   s003","Nr Creditnota's Aankoop,"N",5
+"5   s003","Nr Creditnota's Aankoop","N",5
 "5   s004","Nr Creditnota's in Aankoopboek","N",5
 "5   s015","Nr Leveringsbons","N",5
 "5   s205","Nr Bestelbons Leveranciers","N",5
@@ -23,7 +23,7 @@
 "5   s012","Nr Verkoopfacturen in Verkoopboek","N",5
 "5   s013","Nr Creditnota op Verkoop","N",5
 "5   s014","Nr Creditnota in Verkoopboek","N",5
-"5   s073","Volgnummer bestelbons klanten",N",5
+"5   s073","Volgnummer bestelbons klanten","N",5
 "5   s059","Volgnummer offertes klanten","N",5
 "5   s121","Volgnummer kwijtingen","N",5
 "5   s288","Default Beheerskost","N",5
@@ -70,7 +70,7 @@
 "2   s148","Rek. Investeringen VAN","N",7
 "2   s149","Rek. Investeringen TOT","N",7
 "2   s150","Rek. Handelsgoed/Stof VAN","N",7
-"2   s151","Rek. Handelsgoed/Stof TOT",N",7
+"2   s151","Rek. Handelsgoed/Stof TOT","N",7
 "2   s152","Rek. AankoopKOST VAN","N",7
 "2   s153","Rek. AankoopKOST TOT","N",7
 "&R70s289","Rek. Beheerskosten (assurfin.)","N",7

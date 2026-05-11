@@ -302,9 +302,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -357,6 +357,7 @@ Begin VB.Form DirekteVerkoop
       End
       Begin VB.CommandButton cbMonitortUBL 
          Caption         =   "&UBL B2B OUT"
+         Enabled         =   0   'False
          Height          =   315
          Left            =   5760
          TabIndex        =   65
@@ -3124,7 +3125,7 @@ Dim BestondReeds    As Integer
 Dim T As Integer
 
 ' REFRESH CLIENT FIRST!!
-XLogKey = Trim(Left(Klantinfo.Caption, 12))
+XLogKey = Trim(Left(KlantInfo.Caption, 12))
 bGet TABLE_CUSTOMERS, 0, XLogKey
 If Ktrl Then
     MsgBox "error"
@@ -3693,7 +3694,7 @@ Private Sub CreditNota_Click()
 
 Dim peppolCtrl As Boolean
 
-If Klantinfo.Caption <> "" Then
+If KlantInfo.Caption <> "" Then
     If customerRegistrationId = "" Then
     Else
         peppolCtrl = checkForB2BInvoice()
@@ -4373,13 +4374,14 @@ End Sub
 
 Private Sub Form_Load()
 
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
-
 If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) = "\099\") Then
     Me.TextBoxWarningTestCompany.Visible = True
+End If
+
+If CheckAvailableUBL Then
+    Me.cbMonitortUBL.Enabled = True
+Else
+    Me.cbMonitortUBL.Enabled = False
 End If
 
 'supplierElectronicMail
@@ -4743,7 +4745,7 @@ Sjabloon.Enabled = True
         MsgBox "Landnummer is verplicht !"
         Exit Sub
     ElseIf RV(rsKlant, "v149") = "002" Then
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Binnenland * " + Klantje
         VerkoopFLG = 0
         Medekontraktant.Enabled = True
         Dim btwBE As String
@@ -4760,15 +4762,15 @@ Sjabloon.Enabled = True
         Me.OptionPEPPOL_V3.Value = vbChecked
         Me.OptionUBL_BE_3_0.Enabled = False
 
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. mét Btw-nummer * " + Klantje
         VerkoopFLG = 1
         Medekontraktant.Enabled = False
         If vSet(RV(rsKlant, "A161"), 12) = Space$(12) Then
-            Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
+            KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* E.U. geen Btw-nummer * " + Klantje
             VerkoopFLG = 0
         End If
     Else
-        Klantinfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
+        KlantInfo.Caption = vSet(RV(rsKlant, "A110"), 12) + "* Uitvoer buiten E.U. *" + Klantje
         VerkoopFLG = 2
         Medekontraktant.Enabled = False
     End If
@@ -4903,7 +4905,7 @@ Dim T As Integer
 Dim LaatsteWAS As String
 Dim TotaalEX As Currency
 
-If Klantinfo.Caption = "" Then Exit Sub
+If KlantInfo.Caption = "" Then Exit Sub
 Unload Xlog
 Xlog.X.Rows = 1
 Xlog.X.Cols = 5
@@ -5348,7 +5350,7 @@ Klassement.Enabled = False
 Klassement.FontBold = False
 chkBTWBouw.Value = 0
 VAT_BOBTHEBUILDERS = False
-Klantinfo.Caption = ""
+KlantInfo.Caption = ""
 Annuleren.Enabled = True
 Medekontraktant.Value = 0
 If VerkoopOptie(0).Enabled = True Then CreditNota.Value = 0
@@ -5820,7 +5822,7 @@ Private Sub VerkoopOptie_Click(Index As Integer)
 
 Dim ktrlKlant As Boolean
 
-If Klantinfo.Caption <> "" Then
+If KlantInfo.Caption <> "" Then
     Select Case Index
         Case 0
             If customerRegistrationId = "" Then
@@ -6711,4 +6713,21 @@ Function GeneratePdf()
         MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
     End If
 
+End Function
+
+Function CheckAvailableUBL() As Boolean
+
+    Dim sPath As String
+    Dim sFile As String
+    
+    sPath = LOCATION_COMPANYDATA & "peppol\out\"
+    If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
+    
+    sFile = Dir$(sPath & "*.xml")          ' first match
+    If sFile = "" Then
+        CheckAvailableUBL = False
+    Else
+        CheckAvailableUBL = True
+    End If
+    
 End Function

@@ -1846,11 +1846,6 @@ Private Sub Form_Load()
 
 purchasePeppolTODOShowed = False
 
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
-
 If String99(READING, 100) = "1" Then
     documentRefIsOGM = True
 Else
@@ -1868,7 +1863,7 @@ If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) =
 End If
 
 SSTab1.Tab = 1
-Me.cbImportUBL.Enabled = True
+'Me.cbImportUBL.Enabled = True
 'rsMAR(TABLE_INVOICES).Close
 Ktrl = ktrlBLOBRecord
 If Ktrl = False Then
@@ -1942,6 +1937,12 @@ Screen.MousePointer = vbNormal
 If Not purchasePeppolTODOShowed Then
     cbImportUBL_Click
 End If
+
+'If CheckAvailableUBL Then
+'    Me.cbImportUBL = True
+'Else
+'    Me.cbImportUBL = False
+'End If
 
 End Sub
 
@@ -3467,4 +3468,20 @@ Private Sub RefreshReference()
 End Sub
 
 
+Function CheckAvailableUBL() As Boolean
+
+    Dim sPath As String
+    Dim sFile As String
+    
+    sPath = LOCATION_COMPANYDATA & "peppol\in\"
+    If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
+    
+    sFile = Dir$(sPath & "*.xml")          ' first match
+    If sFile = "" Then
+        CheckAvailableUBL = False
+    Else
+        CheckAvailableUBL = True
+    End If
+    
+End Function
 
