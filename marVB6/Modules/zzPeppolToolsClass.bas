@@ -1,4 +1,4 @@
-Attribute VB_Name = "modPeppol"
+Attribute VB_Name = "thisPeppolTools"
 Option Explicit
 DefInt A-Z
 
@@ -166,7 +166,7 @@ Public Function DetectTransactionType( _
 End Function
 
 
-Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boolean) As Boolean
+Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boolean) As Boolean
 
     xdaOMS = ""
     xdaDATA = ""
@@ -180,7 +180,7 @@ Public Function ReadCamt053XDA(ByVal filename As String, ByVal showResult As Boo
     Dim txt As String
 
     ' Load file as text so we can strip namespaces
-    txt = MarReadUtf8File(filename)
+    txt = MarReadUtf8File(fileName)
 
     ' Remove default namespace (VB6 cannot handle it)
     txt = Replace(txt, "xmlns=""urn:iso:std:iso:20022:tech:xsd:camt.053.001.02""", "")
@@ -1133,10 +1133,10 @@ Public Sub ExtractPdfAttachments(ByVal ublFilePath As String, ByVal xmlLocation 
     Dim node As MSXML2.IXMLDOMNode
     For Each node In nodes
 
-        Dim filename As String
+        Dim fileName As String
         Dim mime As String
 
-        filename = node.Attributes.getNamedItem("filename").text
+        fileName = node.Attributes.getNamedItem("filename").text
         mime = node.Attributes.getNamedItem("mimeCode").text
 
         If LCase$(mime) <> "application/pdf" Then GoTo NextNode
@@ -1148,7 +1148,7 @@ Public Sub ExtractPdfAttachments(ByVal ublFilePath As String, ByVal xmlLocation 
         bytes = Base64Decode(base64)
 
         Dim pdfPath As String
-        pdfPath = Left$(ublFilePath, Len(ublFilePath) - 4) & "_" & filename
+        pdfPath = Left$(ublFilePath, Len(ublFilePath) - 4) & "_" & fileName
 
         SaveBinary pdfPath, bytes
         DoEvents
@@ -1208,10 +1208,10 @@ End Sub
 
 
 ' Reference: Microsoft ActiveX Data Objects 2.x Library
-Function MarReadUtf8File(filename As String) As String
+Function MarReadUtf8File(fileName As String) As String
     
     Dim available As String
-    available = Dir(filename)
+    available = Dir(fileName)
     If available = "" Then
         MarReadUtf8File = ""
         Exit Function
@@ -1223,7 +1223,7 @@ Function MarReadUtf8File(filename As String) As String
     stream.Charset = "utf-8"
     On Error Resume Next
     stream.Open
-    stream.LoadFromFile filename
+    stream.LoadFromFile fileName
     
     MarReadUtf8File = stream.ReadText
     stream.Close
@@ -1231,7 +1231,7 @@ Function MarReadUtf8File(filename As String) As String
 End Function
 
 ' Reference: Microsoft ActiveX Data Objects 2.x Library (Project > References)
-Sub MarWriteUtf8File(filename As String, text As String)
+Sub MarWriteUtf8File(fileName As String, text As String)
 
     Dim stream As Object
     On Local Error Resume Next
@@ -1240,7 +1240,7 @@ Sub MarWriteUtf8File(filename As String, text As String)
     stream.Charset = "utf-8"
     stream.Open
     stream.WriteText text
-    stream.SaveToFile filename, 2 ' 2 = adSaveCreateOverWrite
+    stream.SaveToFile fileName, 2 ' 2 = adSaveCreateOverWrite
     stream.Close
     Set stream = Nothing
     On Local Error GoTo 0

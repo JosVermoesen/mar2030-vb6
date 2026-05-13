@@ -1,4 +1,4 @@
-Attribute VB_Name = "mdQRCodegen"
+Attribute VB_Name = "thisQRCodegen"
 '=========================================================================
 '
 ' QR Code generator library (VB6/VBA)

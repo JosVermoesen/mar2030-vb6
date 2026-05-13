@@ -306,7 +306,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76611587
+      Format          =   76939267
       CurrentDate     =   36327
       MinDate         =   35796
    End
@@ -329,7 +329,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76611587
+      Format          =   76939267
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -354,7 +354,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76611587
+      Format          =   76939267
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -764,6 +764,7 @@ Function XmlOGM()
     documentTemplate = Replace(documentTemplate, "{creationDateTime}", creationDateTime)
     documentTemplate = Replace(documentTemplate, "{numberOfTransactions}", numberOfTransactions)
     documentTemplate = Replace(documentTemplate, "{controlSum}", controlSum)
+    initiatingPartyName = CheckforAmp(initiatingPartyName)
     documentTemplate = Replace(documentTemplate, "{initiatingPartyName}", initiatingPartyName)
     documentTemplate = Replace(documentTemplate, "{paymentInformationId}", paymentInformationId)
     documentTemplate = Replace(documentTemplate, "{requestedExecutionDate}", requestedExecutionDate)
@@ -803,6 +804,7 @@ Function XmlOGM()
         
         lineSerialNumber = Mid(GuidLabel, 9) + "+" + Format(volgNR, "0000")
         lineCreditorName = grdDokumentDetail.TextMatrix(volgNR, 1)
+        lineCreditorName = CheckforAmp(lineCreditorName)
         lineEndToEndId = grdDokumentDetail.TextMatrix(volgNR, 2) 'Internal A document (Seller)
         lineAmount = Dec(grdDokumentDetail.TextMatrix(volgNR, 5), "")
         lineCreditorIban = grdDokumentDetail.TextMatrix(volgNR, 6)

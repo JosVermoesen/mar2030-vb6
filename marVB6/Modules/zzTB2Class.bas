@@ -1,22 +1,5 @@
-Attribute VB_Name = "modTB2"
+Attribute VB_Name = "thisTB2Class"
 Option Explicit
-
-Private Declare Function GetVersion Lib "kernel32" () As Long
-
-Public Function IsXP() As Boolean
-
-    Dim v As Long
-    v = GetVersion()
-    
-    Dim major As Long
-    Dim minor As Long
-    
-    major = v And &HFF
-    minor = (v And &HFF00&) \ &H100
-    
-    IsXP = (major = 5 And minor = 1)
-
-End Function
 
 
 Function tb2Indent(MAPIString As String) As String

@@ -1,5 +1,4 @@
-Attribute VB_Name = "modMakelaars"
-
+Attribute VB_Name = "thisBrokerTools"
 DefInt A-Z
 
 Dim TeleBibRC As String
