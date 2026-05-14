@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "LabelCounter"
-      Tab(1).Control(1)=   "mfgLijst"
-      Tab(1).Control(2)=   "ButtonTransfer"
-      Tab(1).Control(3)=   "ButtonAssign"
+      Tab(1).Control(0)=   "ButtonAssign"
+      Tab(1).Control(1)=   "ButtonTransfer"
+      Tab(1).Control(2)=   "mfgLijst"
+      Tab(1).Control(3)=   "LabelCounter"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -313,7 +313,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76546051
+         Format          =   16515075
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -670,7 +670,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID "
             Msg = Msg & "FROM Leveranciers, Dokumenten "
             Msg = Msg & "WHERE Dokumenten.v034 = 'L' + Leveranciers.A110 "
-            Msg = Msg & "AND Dokumenten.v033 = '" + documentFound + "' "
+            Msg = Msg & "AND Dokumenten.v033 = '" + DocumentKey + "' "
         End If
     Else
         Msg = "SELECT Klanten.A110, Klanten.A100, Klanten.v259, Klanten.rvID, "
@@ -949,16 +949,16 @@ Private Sub ButtonReadCamt053_Click()
         
     On Error GoTo OnCancel
     
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.InitDir = xdaLocation
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = "Alle bestanden (*.xda)|*.xda"
     Mim.Teken.ShowOpen
     
-    filePath = LCase(Mim.Teken.filename)
+    filePath = LCase(Mim.Teken.fileName)
     
     Dim checkDirChange As String
-    checkDirChange = LCase(Mid(Mim.Teken.filename, 1, InStr(Mim.Teken.filename, Mim.Teken.FileTitle) - 1))
+    checkDirChange = LCase(Mid(Mim.Teken.fileName, 1, InStr(Mim.Teken.fileName, Mim.Teken.FileTitle) - 1))
     
     If xdaLocation <> checkDirChange Then
         If InStr(checkDirChange, "coda\in") <> 0 Then

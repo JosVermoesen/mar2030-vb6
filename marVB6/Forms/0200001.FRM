@@ -75,61 +75,67 @@ Begin VB.Form DirekteAankoop
       Tab(0).Control(9).Enabled=   0   'False
       Tab(0).Control(10)=   "LabelDocumentReference"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "TekstInfo12"
+      Tab(0).Control(11)=   "Label1(0)"
       Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "TekstInfo5"
+      Tab(0).Control(12)=   "SSTab1"
       Tab(0).Control(12).Enabled=   0   'False
-      Tab(0).Control(13)=   "TekstInfo7"
+      Tab(0).Control(13)=   "TextInfoSellersIBAN"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "TekstInfo9"
+      Tab(0).Control(14)=   "TekstInfo12"
       Tab(0).Control(14).Enabled=   0   'False
-      Tab(0).Control(15)=   "TekstInfo0"
+      Tab(0).Control(15)=   "TekstInfo5"
       Tab(0).Control(15).Enabled=   0   'False
-      Tab(0).Control(16)=   "TekstInfo1"
+      Tab(0).Control(16)=   "TekstInfo7"
       Tab(0).Control(16).Enabled=   0   'False
-      Tab(0).Control(17)=   "TekstInfo2"
+      Tab(0).Control(17)=   "TekstInfo9"
       Tab(0).Control(17).Enabled=   0   'False
-      Tab(0).Control(18)=   "TekstInfo10"
+      Tab(0).Control(18)=   "TekstInfo0"
       Tab(0).Control(18).Enabled=   0   'False
-      Tab(0).Control(19)=   "TekstInfo6"
+      Tab(0).Control(19)=   "TekstInfo1"
       Tab(0).Control(19).Enabled=   0   'False
-      Tab(0).Control(20)=   "TekstInfo3"
+      Tab(0).Control(20)=   "TekstInfo2"
       Tab(0).Control(20).Enabled=   0   'False
-      Tab(0).Control(21)=   "TekstInfo4"
+      Tab(0).Control(21)=   "TekstInfo10"
       Tab(0).Control(21).Enabled=   0   'False
-      Tab(0).Control(22)=   "AankoopDetail"
+      Tab(0).Control(22)=   "TekstInfo6"
       Tab(0).Control(22).Enabled=   0   'False
-      Tab(0).Control(23)=   "AankoopOptie(2)"
+      Tab(0).Control(23)=   "TekstInfo3"
       Tab(0).Control(23).Enabled=   0   'False
-      Tab(0).Control(24)=   "AankoopOptie(1)"
+      Tab(0).Control(24)=   "TekstInfo4"
       Tab(0).Control(24).Enabled=   0   'False
-      Tab(0).Control(25)=   "AankoopOptie(0)"
+      Tab(0).Control(25)=   "AankoopDetail"
       Tab(0).Control(25).Enabled=   0   'False
-      Tab(0).Control(26)=   "cmdSQLInfo"
+      Tab(0).Control(26)=   "AankoopOptie(2)"
       Tab(0).Control(26).Enabled=   0   'False
-      Tab(0).Control(27)=   "StockBeheer"
+      Tab(0).Control(27)=   "AankoopOptie(1)"
       Tab(0).Control(27).Enabled=   0   'False
-      Tab(0).Control(28)=   "Annuleren"
+      Tab(0).Control(28)=   "AankoopOptie(0)"
       Tab(0).Control(28).Enabled=   0   'False
-      Tab(0).Control(29)=   "Medekontraktant"
+      Tab(0).Control(29)=   "cmdSQLInfo"
       Tab(0).Control(29).Enabled=   0   'False
-      Tab(0).Control(30)=   "Afsluiten"
+      Tab(0).Control(30)=   "StockBeheer"
       Tab(0).Control(30).Enabled=   0   'False
-      Tab(0).Control(31)=   "Kontrole"
+      Tab(0).Control(31)=   "Annuleren"
       Tab(0).Control(31).Enabled=   0   'False
-      Tab(0).Control(32)=   "Schoonvegen"
+      Tab(0).Control(32)=   "Medekontraktant"
       Tab(0).Control(32).Enabled=   0   'False
-      Tab(0).Control(33)=   "SSTab1"
+      Tab(0).Control(33)=   "Afsluiten"
       Tab(0).Control(33).Enabled=   0   'False
-      Tab(0).Control(34)=   "cbImportUBL"
+      Tab(0).Control(34)=   "Kontrole"
       Tab(0).Control(34).Enabled=   0   'False
-      Tab(0).Control(35)=   "cbCheckTools"
+      Tab(0).Control(35)=   "Schoonvegen"
       Tab(0).Control(35).Enabled=   0   'False
-      Tab(0).Control(36)=   "ButtonOptimize"
+      Tab(0).Control(36)=   "cbImportUBL"
       Tab(0).Control(36).Enabled=   0   'False
-      Tab(0).Control(37)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(37)=   "cbCheckTools"
       Tab(0).Control(37).Enabled=   0   'False
-      Tab(0).ControlCount=   38
+      Tab(0).Control(38)=   "ButtonOptimize"
+      Tab(0).Control(38).Enabled=   0   'False
+      Tab(0).Control(39)=   "CheckBoxAlwaysPeppolRefresh"
+      Tab(0).Control(39).Enabled=   0   'False
+      Tab(0).Control(40)=   "TextWarningIBAN"
+      Tab(0).Control(40).Enabled=   0   'False
+      Tab(0).ControlCount=   41
       TabCaption(1)   =   "Bijlage"
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
@@ -143,6 +149,28 @@ Begin VB.Form DirekteAankoop
       Tab(2).Control(1)=   "obTAB(0)"
       Tab(2).Control(2)=   "obTAB(1)"
       Tab(2).ControlCount=   3
+      Begin VB.TextBox TextWarningIBAN 
+         BackColor       =   &H000080FF&
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   13.5
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   480
+         Left            =   6000
+         TabIndex        =   51
+         TabStop         =   0   'False
+         Text            =   "!"
+         Top             =   6840
+         Visible         =   0   'False
+         Width           =   270
+      End
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
          Caption         =   "Check Peppol"
@@ -244,123 +272,6 @@ Begin VB.Form DirekteAankoop
          TabIndex        =   37
          Top             =   480
          Width           =   1575
-      End
-      Begin TabDlg.SSTab SSTab1 
-         Height          =   1875
-         Left            =   120
-         TabIndex        =   1
-         TabStop         =   0   'False
-         Top             =   0
-         Width           =   4815
-         _ExtentX        =   8493
-         _ExtentY        =   3307
-         _Version        =   393216
-         Style           =   1
-         Tab             =   1
-         TabHeight       =   494
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         TabCaption(0)   =   "&Leverancier"
-         TabPicture(0)   =   "0200001.frx":035E
-         Tab(0).ControlEnabled=   0   'False
-         Tab(0).Control(0)=   "LeverancierInfo"
-         Tab(0).ControlCount=   1
-         TabCaption(1)   =   "Bewerken"
-         TabPicture(1)   =   "0200001.frx":037A
-         Tab(1).ControlEnabled=   -1  'True
-         Tab(1).Control(0)=   "LabelInfoXlog"
-         Tab(1).Control(0).Enabled=   0   'False
-         Tab(1).Control(1)=   "cmdXLog"
-         Tab(1).Control(1).Enabled=   0   'False
-         Tab(1).ControlCount=   2
-         TabCaption(2)   =   "&Historiek"
-         TabPicture(2)   =   "0200001.frx":0396
-         Tab(2).ControlEnabled=   0   'False
-         Tab(2).Control(0)=   "ListView1"
-         Tab(2).ControlCount=   1
-         Begin VB.CommandButton cmdXLog 
-            Caption         =   "Geactiveerde leverancier Inkijken / Wijzigen"
-            Enabled         =   0   'False
-            Height          =   495
-            Left            =   120
-            TabIndex        =   40
-            Top             =   1200
-            Width           =   4575
-         End
-         Begin MSComctlLib.ListView ListView1 
-            Height          =   1395
-            Left            =   -74880
-            TabIndex        =   41
-            Top             =   360
-            Width           =   4575
-            _ExtentX        =   8070
-            _ExtentY        =   2461
-            View            =   3
-            LabelEdit       =   1
-            Sorted          =   -1  'True
-            LabelWrap       =   -1  'True
-            HideSelection   =   0   'False
-            FullRowSelect   =   -1  'True
-            HotTracking     =   -1  'True
-            _Version        =   393217
-            ForeColor       =   -2147483625
-            BackColor       =   -2147483624
-            BorderStyle     =   1
-            Appearance      =   1
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            NumItems        =   0
-         End
-         Begin VB.Label LabelInfoXlog 
-            Alignment       =   2  'Center
-            Caption         =   "Voor manuele verrichting activeer een leverancier via TAB 'Leverancier' of TAB 'Historiek'"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   615
-            Left            =   120
-            TabIndex        =   42
-            Top             =   480
-            Width           =   4575
-         End
-         Begin VB.Label LeverancierInfo 
-            BackColor       =   &H80000018&
-            BorderStyle     =   1  'Fixed Single
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   1395
-            Left            =   -74880
-            TabIndex        =   30
-            Top             =   360
-            Width           =   4575
-         End
       End
       Begin VB.CommandButton cbAfbeelding 
          Caption         =   "Openen"
@@ -578,7 +489,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   1680
          TabIndex        =   11
-         Top             =   6840
+         Top             =   6480
          Width           =   4245
          _ExtentX        =   7488
          _ExtentY        =   556
@@ -609,7 +520,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   4560
          TabIndex        =   17
-         Top             =   5880
+         Top             =   5760
          Width           =   1425
          _ExtentX        =   2514
          _ExtentY        =   556
@@ -635,7 +546,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   1680
          TabIndex        =   9
-         Top             =   5880
+         Top             =   5760
          Width           =   1155
          _ExtentX        =   2037
          _ExtentY        =   556
@@ -651,7 +562,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   1680
          TabIndex        =   7
-         Top             =   5160
+         Top             =   5040
          Width           =   1155
          _ExtentX        =   2037
          _ExtentY        =   556
@@ -667,7 +578,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   1680
          TabIndex        =   8
-         Top             =   5520
+         Top             =   5400
          Width           =   1155
          _ExtentX        =   2037
          _ExtentY        =   556
@@ -684,7 +595,7 @@ Begin VB.Form DirekteAankoop
          Left            =   6360
          TabIndex        =   44
          TabStop         =   0   'False
-         Top             =   6840
+         Top             =   6930
          Visible         =   0   'False
          Width           =   1425
          _ExtentX        =   2514
@@ -698,7 +609,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   4560
          TabIndex        =   20
-         Top             =   5520
+         Top             =   5400
          Visible         =   0   'False
          Width           =   1425
          _ExtentX        =   2514
@@ -712,7 +623,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   4560
          TabIndex        =   14
-         Top             =   5160
+         Top             =   5040
          Width           =   1425
          _ExtentX        =   2514
          _ExtentY        =   556
@@ -725,7 +636,7 @@ Begin VB.Form DirekteAankoop
          Height          =   315
          Left            =   1680
          TabIndex        =   10
-         Top             =   6360
+         Top             =   6120
          Width           =   2445
          _ExtentX        =   4313
          _ExtentY        =   556
@@ -736,6 +647,158 @@ Begin VB.Form DirekteAankoop
          PromptInclude   =   0   'False
          AutoTab         =   -1  'True
          PromptChar      =   "_"
+      End
+      Begin MSMask.MaskEdBox TextInfoSellersIBAN 
+         Height          =   315
+         Left            =   1680
+         TabIndex        =   49
+         Top             =   6930
+         Width           =   4245
+         _ExtentX        =   7488
+         _ExtentY        =   556
+         _Version        =   393216
+         ClipMode        =   1
+         BackColor       =   -2147483624
+         ForeColor       =   0
+         PromptInclude   =   0   'False
+         AutoTab         =   -1  'True
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         PromptChar      =   "_"
+      End
+      Begin TabDlg.SSTab SSTab1 
+         Height          =   1875
+         Left            =   120
+         TabIndex        =   1
+         TabStop         =   0   'False
+         Top             =   0
+         Width           =   4815
+         _ExtentX        =   8493
+         _ExtentY        =   3307
+         _Version        =   393216
+         Style           =   1
+         Tab             =   1
+         TabHeight       =   494
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         TabCaption(0)   =   "&Leverancier"
+         TabPicture(0)   =   "0200001.frx":035E
+         Tab(0).ControlEnabled=   0   'False
+         Tab(0).Control(0)=   "LeverancierInfo"
+         Tab(0).ControlCount=   1
+         TabCaption(1)   =   "Bewerken"
+         TabPicture(1)   =   "0200001.frx":037A
+         Tab(1).ControlEnabled=   -1  'True
+         Tab(1).Control(0)=   "LabelInfoXlog"
+         Tab(1).Control(0).Enabled=   0   'False
+         Tab(1).Control(1)=   "cmdXLog"
+         Tab(1).Control(1).Enabled=   0   'False
+         Tab(1).ControlCount=   2
+         TabCaption(2)   =   "&Historiek"
+         TabPicture(2)   =   "0200001.frx":0396
+         Tab(2).ControlEnabled=   0   'False
+         Tab(2).Control(0)=   "ListView1"
+         Tab(2).ControlCount=   1
+         Begin VB.CommandButton cmdXLog 
+            Caption         =   "Geactiveerde leverancier Inkijken / Wijzigen"
+            Enabled         =   0   'False
+            Height          =   495
+            Left            =   120
+            TabIndex        =   40
+            Top             =   1200
+            Width           =   4575
+         End
+         Begin MSComctlLib.ListView ListView1 
+            Height          =   1395
+            Left            =   -74880
+            TabIndex        =   41
+            Top             =   360
+            Width           =   4575
+            _ExtentX        =   8070
+            _ExtentY        =   2461
+            View            =   3
+            LabelEdit       =   1
+            Sorted          =   -1  'True
+            LabelWrap       =   -1  'True
+            HideSelection   =   0   'False
+            FullRowSelect   =   -1  'True
+            HotTracking     =   -1  'True
+            _Version        =   393217
+            ForeColor       =   -2147483625
+            BackColor       =   -2147483624
+            BorderStyle     =   1
+            Appearance      =   1
+            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            NumItems        =   0
+         End
+         Begin VB.Label LabelInfoXlog 
+            Alignment       =   2  'Center
+            Caption         =   "Voor manuele verrichting activeer een leverancier via TAB 'Leverancier' of TAB 'Historiek'"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   615
+            Left            =   120
+            TabIndex        =   42
+            Top             =   480
+            Width           =   4575
+         End
+         Begin VB.Label LeverancierInfo 
+            BackColor       =   &H80000018&
+            BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   1395
+            Left            =   -74880
+            TabIndex        =   30
+            Top             =   360
+            Width           =   4575
+         End
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Betaalrekening"
+         Height          =   240
+         Index           =   0
+         Left            =   120
+         TabIndex        =   50
+         Top             =   7005
+         Width           =   1395
       End
       Begin VB.Label LabelDocumentReference 
          Alignment       =   1  'Right Justify
@@ -760,7 +823,7 @@ Begin VB.Form DirekteAankoop
          Index           =   1
          Left            =   120
          TabIndex        =   45
-         Top             =   6435
+         Top             =   6195
          Width           =   1515
       End
       Begin VB.Label Label3 
@@ -783,12 +846,12 @@ Begin VB.Form DirekteAankoop
       End
       Begin VB.Label Label1 
          Caption         =   "Totaal"
-         Height          =   195
+         Height          =   255
          Index           =   11
          Left            =   3000
          TabIndex        =   16
-         Top             =   6000
-         Width           =   1395
+         Top             =   5820
+         Width           =   1035
       End
       Begin VB.Label Label1 
          Caption         =   "Btw Verschuldigd"
@@ -796,7 +859,7 @@ Begin VB.Form DirekteAankoop
          Index           =   12
          Left            =   3000
          TabIndex        =   15
-         Top             =   5595
+         Top             =   5475
          Visible         =   0   'False
          Width           =   1515
       End
@@ -806,7 +869,7 @@ Begin VB.Form DirekteAankoop
          Index           =   8
          Left            =   3000
          TabIndex        =   13
-         Top             =   5235
+         Top             =   5115
          Width           =   1455
       End
       Begin VB.Label Label1 
@@ -815,7 +878,7 @@ Begin VB.Form DirekteAankoop
          Index           =   14
          Left            =   120
          TabIndex        =   12
-         Top             =   6840
+         Top             =   6555
          Width           =   1395
       End
       Begin VB.Label Label1 
@@ -843,7 +906,7 @@ Begin VB.Form DirekteAankoop
          Index           =   5
          Left            =   120
          TabIndex        =   33
-         Top             =   5955
+         Top             =   5835
          Width           =   1035
       End
       Begin VB.Label OMSLabel 
@@ -868,9 +931,9 @@ Begin VB.Form DirekteAankoop
          Caption         =   "Koers"
          Height          =   240
          Index           =   3
-         Left            =   6480
+         Left            =   6360
          TabIndex        =   31
-         Top             =   6480
+         Top             =   6600
          Visible         =   0   'False
          Width           =   525
       End
@@ -880,7 +943,7 @@ Begin VB.Form DirekteAankoop
          Height          =   675
          Left            =   120
          TabIndex        =   6
-         Top             =   5160
+         Top             =   5040
          Width           =   1485
       End
    End
@@ -949,7 +1012,7 @@ Function CheckDocument() As String
     
     payRefClean = Replace(uitwisselingDATAArray(14), "/", "")
     payRefClean = Replace(payRefClean, "+", "")
-    
+        
     'If payRefClean = "" Then
     '    payRefClean = uitwisselingDATAArray(1)
     'End If
@@ -1092,8 +1155,8 @@ Function CheckSupplier() As Boolean
         Else
             Msg = "IBAN rekening is verschillend met database." & vbCrLf & vbCrLf
             Msg = Msg & uitwisselingDATAArray(7) & vbCrLf & vbCrLf
-            Msg = Msg & "* Peppol document: " & uitwisselingDATAArray(15) & vbCrLf
-            Msg = Msg & "* Tabel leveranciers: " & rsSupplier("v259") & vbCrLf & vbCrLf
+            Msg = Msg & "* Peppol document: " & checkUblIBAN & vbCrLf
+            Msg = Msg & "* Tabel leveranciers: " & checkDbIBAN & vbCrLf & vbCrLf
             Msg = Msg & "Wijzig de leveranciersfiche manueel indien nodig."
             MsgBox Msg, vbExclamation, "IBAN verschillend"
         End If
@@ -1513,9 +1576,9 @@ Private Sub cbAfbeelding_Click()
         Mim.Teken.InitDir = LaadTekst("dnnInstellingen", "Mario")
     End If
     Mim.Teken.Filter = "Acrobat bestanden (*.pdf)|*.pdf"
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.ShowOpen
-    BestandHier = LCase(Mim.Teken.filename)
+    BestandHier = LCase(Mim.Teken.fileName)
     If BestandHier = "" Then
         Exit Sub
     Else
@@ -1524,7 +1587,7 @@ Private Sub cbAfbeelding_Click()
             Exit Sub
         End If
     End If
-    GeScanBestand = Mim.Teken.filename
+    GeScanBestand = Mim.Teken.fileName
     Screen.MousePointer = vbHourglass
     On Local Error Resume Next
     OLE1.CreateEmbed GeScanBestand
@@ -1967,6 +2030,20 @@ Me.cbImportUBL.Enabled = False
 AankoopDetail.Enabled = True
 'InvoerLijn.Enabled = True
 
+Dim ibanField As String
+
+ibanField = Trim(vBibTekst(TABLE_SUPPLIERS, "#v259 #"))
+If ibanField = "" Then
+    TextInfoSellersIBAN.text = ""
+Else
+    ibanField = Replace(ibanField, " ", "")
+    If Len(ibanField) = 16 Then
+        TextInfoSellersIBAN.text = Mid(ibanField, 1, 4) & " " & Mid(ibanField, 5, 4) & " " & Mid(ibanField, 9, 4) & " " & Mid(ibanField, 13, 4)
+    Else
+        TextInfoSellersIBAN.text = ibanField
+    End If
+End If
+
 supplierA110 = Trim(vBibTekst(TABLE_SUPPLIERS, "#A110 #"))
 
 Lever = vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A100 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A125 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A104 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A109 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A107 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A108 #")
@@ -2307,6 +2384,24 @@ TekstInfo12.Enabled = False
 TekstInfo6.Enabled = False
 TekstInfo12.Enabled = False
 
+Dim ibanField As String
+Dim ibanFieldCheck As String
+
+ibanField = Trim(vBibTekst(TABLE_SUPPLIERS, "#v259 #"))
+ibanField = Replace(ibanField, " ", "")
+
+ibanFieldCheck = uitwisselingDATAArray(15)
+ibanFieldCheck = Replace(ibanFieldCheck, " ", "")
+
+If Len(ibanFieldCheck) = 16 Then
+    TextInfoSellersIBAN.text = Mid(ibanFieldCheck, 1, 4) & " " & Mid(ibanFieldCheck, 5, 4) & " " & Mid(ibanFieldCheck, 9, 4) & " " & Mid(ibanFieldCheck, 13, 4)
+    
+    If ibanField = ibanFieldCheck Then
+    Else
+        Me.TextWarningIBAN.Visible = True
+    End If
+End If
+
     ReDim documentLinesOMSArray(20)
     documentLinesOMSArray() = Split(documentLinesOMS, vbTab)
     ParseToArray (documentLinesDATA)
@@ -2628,6 +2723,9 @@ End Function
 Private Sub Schoon()
 
     Dim T As Integer
+    
+    TextInfoSellersIBAN.text = ""
+    TextWarningIBAN.Visible = False
     
     Kontrole.Enabled = False
     uitwisselingOMS = ""
