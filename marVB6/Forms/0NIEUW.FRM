@@ -266,6 +266,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 DefInt A-Z
+Option Explicit
 
 Dim BedrijfsNummer As String
 Dim Van As String
@@ -449,7 +450,6 @@ Left = 0
 
 Unload BedrijfOpenen
 Boekjaar.text = Right(MIM_GLOBAL_DATE, 4)
-StatusPosition = 0
 
 BedrijfsNummer = VolgendBedrijf()
 NieuwBedrijf.Caption = "Nieuw Bedrijf (" + BedrijfsNummer + ")"
@@ -489,25 +489,27 @@ If Not Ktrl = 6 Then
 End If
     
 TotalNeeded = 38024
-destpath$ = LOCATION_ + BedrijfsNummer
-If Not CreatePath(destpath$) Then
-    MsgBox "foutmelding bij aanmaak " + destpath$
+Dim DestPath As String
+
+DestPath = LOCATION_ + BedrijfsNummer
+If Not CreatePath(DestPath) Then
+    MsgBox "foutmelding bij aanmaak " + DestPath
 End If
     
 LOCATION_COMPANYDATA = LOCATION_ + BedrijfsNummer + "\"
 
 PeriodesMaken
 LabelMaken
-If Not CopyFile(App.path & "\Def", destpath$, "LICMARNT.###") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK11.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK12.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK13.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK14.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK21.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK22.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK23.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path & "\Def", destpath$, "DOK24.TXT") Then GoTo ErrorSetup
-If Not CopyFile(App.path, destpath$, "MARNT.MDV") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "LICMARNT.###") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK11.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK12.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK13.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK14.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK21.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK22.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK23.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path & "\Def", DestPath, "DOK24.TXT") Then GoTo ErrorSetup
+If Not CopyFile(App.path, DestPath, "MARNT.MDV") Then GoTo ErrorSetup
 
 
 jetConnect = ADOJET_PROVIDER & _
@@ -563,7 +565,7 @@ ExitSetup:
     Exit Sub
 
 ErrorSetup:
-    MsgBox "Installatie nieuw bedrijf zonder succes.  Raadpleeg R&&VSOFT.", 48, dialogCaption$
+    MsgBox "Installatie nieuw bedrijf zonder succes.  Raadpleeg R&&VSOFT.", 48
     Unload Me
     Exit Sub
 
@@ -591,12 +593,16 @@ Dim b As String * 16
 Dim A As String * 4
 Dim T As Integer
 
-aantalmaanden% = Val(Maanden.text)
-VanafMaand% = Val(Mid(Van, 4, 2))
-VanafJaar% = Val(Right(Van, 4))
+Dim aantalMaanden As Integer
+Dim vanafMaand As Integer
+Dim vanafJaar As Integer
+
+aantalMaanden = Val(Maanden.text)
+vanafMaand = Val(Mid(Van, 4, 2))
+vanafJaar = Val(Right(Van, 4))
 
 Fl = FreeFile
-Open PROGRAM_LOCATION + "9999.oct" For Random As Fl Len = 4
+Open LOCATION_COMPANYDATA + "9999.oct" For Random As Fl Len = 4
     A = "0"
         Put Fl, 1, A
     A = Right(Van, 4)
@@ -607,22 +613,24 @@ Close Fl
 
 Fl = FreeFile
 Open LOCATION_ + BedrijfsNummer + "/def00.oct" For Random As Fl Len = 16
-For T = 1 To aantalmaanden%
-    b = Format(VanafJaar%, "0000") + Format(VanafMaand%, "00") + "01" + Format(VanafJaar%, "0000") + Format(VanafMaand%, "00") + Format(DAYS_IN_MONTH(VanafMaand%), "00")
-    If VanafMaand% = 12 And T < aantalmaanden% Then
-        VanafMaand% = 1
-        VanafJaar% = VanafJaar% + 1
+For T = 1 To aantalMaanden
+    b = Format(vanafJaar, "0000") + Format(vanafMaand, "00") + "01" + Format(vanafJaar, "0000") + Format(vanafMaand, "00") + Format(DAYS_IN_MONTH(vanafMaand), "00")
+    If vanafMaand = 12 And T < aantalMaanden Then
+        vanafMaand = 1
+        vanafJaar = vanafJaar + 1
     Else
-        VanafMaand% = VanafMaand% + 1
+        vanafMaand = vanafMaand + 1
     End If
     Put Fl, T, b
 Next T
 b = ""
 
-For t2% = T To 99
-    Put Fl, t2%, b
+Dim t2 As Integer
+
+For t2 = T To 99
+    Put Fl, t2, b
 Next
-b = Format(VanafJaar%, "0000") + Format(VanafMaand% - 1, "00") + Format(DAYS_IN_MONTH(VanafMaand% - 1), "00") + Format(VanafJaar%, "0000") + Format(VanafMaand% - 1, "00") + Format(DAYS_IN_MONTH(VanafMaand% - 1), "00")
+b = Format(vanafJaar, "0000") + Format(vanafMaand - 1, "00") + Format(DAYS_IN_MONTH(vanafMaand - 1), "00") + Format(vanafJaar, "0000") + Format(vanafMaand - 1, "00") + Format(DAYS_IN_MONTH(vanafMaand - 1), "00")
 Put Fl, 99, b
 Close Fl
 

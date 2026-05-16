@@ -313,7 +313,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16515075
+         Format          =   76480515
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -679,8 +679,9 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
         Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID, Dokumenten.A000 "
         Msg = Msg & "FROM Klanten, Dokumenten "
         Msg = Msg & "WHERE Dokumenten.v034 = 'K' + Klanten.A110 "
-        If refIsCor And Mid(refString, 1, 3) = "104" Then
-            'Search on client number
+        If refIsCor And Mid(refString, 1, 1) = "1" Then
+            'Insurance renewings before july 2026 only: Search on client number
+            'Position 2-3 being month of the contrat renewing
             clientNumber = Mid(refString, 4, 4) + Mid(refString, 9, 2)
             Msg = Msg & "AND Klanten.A110 = '" + clientNumber + "' "
             Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "

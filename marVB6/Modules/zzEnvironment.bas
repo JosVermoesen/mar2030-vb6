@@ -1025,11 +1025,21 @@ BYPERDAT.PeriodeBoekjaar.Clear
 
 Ktrl = netVoorbereiden
 If Ktrl = True Then
-    MsgBox LOCATION_COMPANYDATA & "is voorbereid voor MarIntegraal 2026"
+    MsgBox LOCATION_COMPANYDATA & " is voorbereid voor MarIntegraal 2027"
+End If
+
+' TODO after VB6 version running: check if there is "9999.OCT" found in company data location
+Dim dest9999 As String
+Dim sFile As String
+dest9999 = LOCATION_COMPANYDATA + "9999.OCT"
+
+sFile = Dir$(dest9999)
+If sFile = "" Then
+    Call CopyFile(PROGRAM_LOCATION, LOCATION_COMPANYDATA, "9999.OCT")
 End If
 
 FlTemp = FreeFile
-Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
+Open LOCATION_COMPANYDATA + "9999.OCT" For Random As FlTemp Len = 4
     Get FlTemp, 1, aa
     ACTIVE_BOOKYEAR = 0
     Get FlTemp, 2, aa

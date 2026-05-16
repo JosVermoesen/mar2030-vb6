@@ -45,7 +45,7 @@ Begin VB.Form BYPERDAT
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76808195
+      Format          =   76611587
       CurrentDate     =   43069
       MaxDate         =   58862
       MinDate         =   31048
@@ -291,7 +291,9 @@ A = PeriodeBoekjaar.text
 PERIOD_FROMTO = Mid(A, 7, 4) + Mid(A, 4, 2) + Left(A, 2) + Right(A, 4) + Mid(A, 17, 2) + Mid(A, 14, 2)
 
 FlTemp = FreeFile
-Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
+'Open PROGRAM_LOCATION + "9999.OCT" For Random As FlTemp Len = 4
+Open LOCATION_COMPANYDATA + "9999.OCT" For Random As FlTemp Len = 4
+
 aa = Str$(ACTIVE_BOOKYEAR)
 Put FlTemp, 1, aa
 aa = Boekjaar.text

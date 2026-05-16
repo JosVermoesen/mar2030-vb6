@@ -49,6 +49,244 @@ Public Const MyUnhandledError = 9999
 
 Public Const BATCH_SIZE As Long = 5000
 
+Sub BalansKontrole(Fl As Integer)
+Dim Cumul As Currency
+Dim dTotaal As Currency
+Dim dBetaald As Currency
+Dim A As String
+Dim T As Integer
+Dim Teller As Integer
+Dim VoorLetter As String * 1
+Dim EnkelOpenstaand As Integer
+Dim KontroleString As String
+
+Unload Xlog
+Load Xlog
+On Local Error Resume Next
+Xlog.Caption = "Balans voor : " & objectValue(rsMAR(Fl)("A100"))
+Xlog.Caption = Xlog.Caption & " " & objectValue(rsMAR(Fl)("A101"))
+SharedScanFl = TABLE_INVOICES
+
+Xlog.X.Rows = 2
+Xlog.X.Cols = 7
+Xlog.X.Col = 0
+Xlog.X.Row = 0
+Xlog.X.text = "Document"
+Xlog.X.Col = 1
+Xlog.X.text = "Totaal"
+Xlog.X.Col = 2
+Xlog.X.text = "Datum"
+Xlog.X.Col = 3
+Xlog.X.text = "Fin.Stuk"
+Xlog.X.Col = 4
+Xlog.X.text = "Betaald"
+Xlog.X.Col = 5
+Xlog.X.text = "CumulRest"
+Xlog.X.Col = 6
+Xlog.X.text = "Referte"
+
+Xlog.X.ColWidth(0) = 1150
+Xlog.X.ColWidth(1) = 1110
+Xlog.X.ColWidth(2) = 980
+Xlog.X.ColWidth(3) = 1005
+Xlog.X.ColWidth(4) = 975
+Xlog.X.ColWidth(5) = 1185
+Xlog.X.ColWidth(6) = 2200
+
+Xlog.X.ColAlignment(0) = flexAlignLeftTop
+Xlog.X.ColAlignment(1) = flexAlignRightTop
+Xlog.X.ColAlignment(2) = flexAlignLeftTop
+Xlog.X.ColAlignment(3) = flexAlignLeftTop
+Xlog.X.ColAlignment(4) = flexAlignRightTop
+Xlog.X.ColAlignment(5) = flexAlignRightTop
+Xlog.X.ColAlignment(6) = flexAlignLeftTop
+
+Opnieuw:
+EnkelOpenstaand = False
+Select Case Fl
+    Case TABLE_CUSTOMERS
+        VoorLetter = "K"
+    Case TABLE_SUPPLIERS
+        VoorLetter = "L"
+End Select
+
+On Local Error GoTo ErrorOpvang
+
+bClose TABLE_INVOICES
+T = 0
+bGetOrGreater TABLE_INVOICES, 1, vSet(VoorLetter + vBibTekst(Fl, "#A110 #"), FLINDEX_LEN(TABLE_INVOICES, 1))
+If Ktrl Then
+    Beep
+    Exit Sub
+Else
+    RecordToVeld TABLE_INVOICES
+End If
+If RTrim$(KEY_BUF(TABLE_INVOICES)) <> RTrim$(VoorLetter + vBibTekst(Fl, "#A110 #")) Then
+    Exit Sub
+Else
+    Screen.MousePointer = vbHourglass
+    GoSub VolgendeLijn
+    Do
+        bNext TABLE_INVOICES
+        If Ktrl Or RTrim$(KEY_BUF(TABLE_INVOICES)) <> RTrim$(VoorLetter + vBibTekst(Fl, "#A110 #")) Then
+            Exit Do
+        Else
+            RecordToVeld TABLE_INVOICES
+            GoSub VolgendeLijn
+        End If
+    Loop
+End If
+Screen.MousePointer = vbNormal
+
+OpHetScherm:
+Xlog.X.Row = 1
+Xlog.X.Col = 0
+
+XLogShow:
+Xlog.CmdDetailJournaal.Visible = True
+Xlog.WijzigenLijn.Visible = False
+Xlog.Afsluiten.TabStop = False
+Xlog.cbAfbeelding.Visible = False
+Xlog.SSTab1.TabVisible(1) = True
+XLogKey = ""
+Xlog.Show 1
+Unload Xlog
+SharedScanFl = 0
+If XLogKey <> "" Then
+    bGet TABLE_INVOICES, 0, Left(XLogKey, 11)
+    RecordToVeld TABLE_INVOICES
+    T = TeleBibClick(TABLE_INVOICES)
+    If XLogKey <> "" Then
+        If VSF_PRO Then
+        Else
+            'bFirst TABLE_JOURNAL, 1
+            bGet TABLE_JOURNAL, 1, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#")
+            If Ktrl Then
+                      Msg = "Ja = alle TYPE-dokumenten DAT jaar vernietigen !" + vbCrLf
+                Msg = Msg + "Nee = enkel DIT dokument verwijderen."
+                Ktrl = MsgBox(Msg$, 19 + 512, vBibTekst(TABLE_INVOICES, "#" + JETTABLEUSE_INDEX(TABLE_INVOICES, 0) + "#") + ": dokument vernietigen !")
+                    Select Case Ktrl
+                    Case 2
+                        'niks
+                    Case 6
+                        RecordToVeld TABLE_INVOICES
+                        KontroleString = Left(vBibTekst(TABLE_INVOICES, "#v035 #"), 4)
+                        
+                        Msg = "Onvoorwaardelijk meerdere dokumenten in reeks vernietigen van jaar " + KontroleString + vbCrLf + vbCrLf
+                        Msg = Msg + "Bent U zeker ?"
+                        Ktrl = MsgBox(Msg, vbYesNo + vbDefaultButton2, "Opkuis dokumenten jaar " + KontroleString)
+                        If Ktrl = vbYes Then
+                            bFirst TABLE_INVOICES, 0
+                            If Ktrl Then
+                            Else
+                                Screen.MousePointer = vbHourglass
+                                bBegin
+                                Do
+                                    If Mid(KEY_BUF(TABLE_INVOICES), 3, 1) = Right(KontroleString, 1) Then
+                                        RecordToVeld TABLE_INVOICES
+                                        If KontroleString = Left(vBibTekst(TABLE_INVOICES, "#v035 #"), 4) Then
+                                            SnelHelpPrint KEY_BUF(TABLE_INVOICES), BL_LOGGING
+                                            bDelete TABLE_INVOICES
+                                        End If
+                                    End If
+                                    bNext TABLE_INVOICES
+                                    If Ktrl Then
+                                        Exit Do
+                                    End If
+                                Loop
+                                bEnd
+                                Screen.MousePointer = vbNormal
+                            End If
+                        End If
+                                               
+                    Case 7
+                        bDelete TABLE_INVOICES
+                        If Ktrl Then
+                            MsgBox "stop"
+                        End If
+                End Select
+            Else
+                MsgBox "Er zijn nog journaallijnen van het boekjaar desbetreffend dokument beschikbaar !  Verwijderen via menuoptie 'opkuis bestanden' a.u.b."
+            End If
+        End If
+    End If
+End If
+Exit Sub
+
+VolgendeLijn:
+T = T + 1
+Select Case Fl
+    Case TABLE_CUSTOMERS
+        A = vBibTekst(TABLE_INVOICES, "#v033 #") & vbTab
+        dBetaald = Val(vBibTekst(TABLE_INVOICES, "#v037 #"))
+        Select Case Left(vBibTekst(TABLE_INVOICES, "#v033 #"), 1)
+            Case "V"
+                'dTotaal = 0
+                'For Teller = 55 To 64
+                '    dTotaal = dTotaal + Val(vBibTekst(TABLE_INVOICES, "#v" + Format(Teller, "000") + " #"))
+                'Next
+                dTotaal = Val(vBibTekst(TABLE_INVOICES, "#v249 #"))
+                If Mid(vBibTekst(TABLE_INVOICES, "#v033 #"), 2, 1) = "1" Then
+                    dTotaal = -dTotaal
+                    dBetaald = -dBetaald
+                End If
+            Case "Q"
+                'dTotaal = Val(vBibTekst(TABLE_INVOICES, "#B010 #")) - Val(vBibTekst(TABLE_INVOICES, "#B090 #"))
+                dTotaal = Val(vBibTekst(TABLE_INVOICES, "#v249 #"))
+        End Select
+        A = A & Format(dTotaal, "#,##0.00") & vbTab
+        Cumul = Cumul + dTotaal - dBetaald
+        A = A & DATE_TEXT(vBibTekst(TABLE_INVOICES, "#v035 #")) & vbTab
+        A = A & vBibTekst(TABLE_INVOICES, "#v038 #") & vbTab
+        A = A & Format(dBetaald, "#,##0.00") & vbTab
+        A = A & Format(Cumul, "#,##0.00") & vbTab
+        If Trim$(vBibTekst(TABLE_INVOICES, "#A000 #")) <> "" Then
+            A = A & vBibTekst(TABLE_INVOICES, "#A000 #")
+        Else
+            A = A & vBibTekst(TABLE_INVOICES, "#v039 #")
+        End If
+        
+    Case TABLE_SUPPLIERS
+        A = vBibTekst(TABLE_INVOICES, "#v033 #") & vbTab
+        dBetaald = Val(vBibTekst(TABLE_INVOICES, "#v037 #"))
+        'dTotaal = Val(vBibTekst(TABLE_INVOICES, "#v048 #")) + Val(vBibTekst(TABLE_INVOICES, "#v049 #")) + Val(vBibTekst(TABLE_INVOICES, "#v047 #")) + Val(vBibTekst(TABLE_INVOICES, "#v046 #")) - Val(vBibTekst(TABLE_INVOICES, "#v044 #")) - Val(vBibTekst(TABLE_INVOICES, "#v043 #")) + Val(vBibTekst(TABLE_INVOICES, "#v045 #"))
+        dTotaal = Val(vBibTekst(TABLE_INVOICES, "#v249 #"))
+        If Left(vBibTekst(TABLE_INVOICES, "#v033 #"), 2) = "A1" Then
+            dTotaal = -dTotaal
+            dBetaald = -dBetaald
+        End If
+
+        A = A & Format(dTotaal, "#,##0.00") & vbTab
+        Cumul = Cumul + dTotaal - dBetaald
+        A = A & DATE_TEXT(vBibTekst(TABLE_INVOICES, "#v035 #")) & vbTab
+        A = A & vBibTekst(TABLE_INVOICES, "#v038 #") & vbTab
+        A = A & Format(dBetaald, "#,##0.00") & vbTab
+        A = A & Format(Cumul, "#,##0.00") & vbTab
+        A = A & vBibTekst(TABLE_INVOICES, "#v039 #")
+
+End Select
+If EnkelOpenstaand Then
+    If dBetaald = dTotaal Then
+        Return
+    End If
+End If
+Xlog.X.AddItem A, Xlog.X.Rows - 1
+Return
+
+ErrorOpvang:
+Screen.MousePointer = vbNormal
+Msg = "Er zijn reeds" + Str$(T) + " dokumenten !  Teveel voor het geheugen.  Alleen de openstaande dokumenten weergeven ?"
+KtrlBox = MsgBox(Msg, 292)
+If KtrlBox = 6 Then
+    EnkelOpenstaand = True
+    Resume Opnieuw
+Else
+    Resume OpHetScherm
+End If
+
+End Sub
+
+
 Public Function ConvertSuppliersSEPAs() As Boolean
     On Error GoTo EH
 
