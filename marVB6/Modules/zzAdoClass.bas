@@ -14,7 +14,7 @@ Dim CrText2                As String
 Dim T                       As Integer
 
 
-Sub NieuwBoekjaar()
+Function NieuwBoekjaar() As Boolean
 Dim BeginEenheden As Double
 Dim BeginBedrag As Currency
 Dim Vroeger1 As String
@@ -25,12 +25,13 @@ Dim bString As String * 16
 Dim recNr As Integer
 Dim eenSaldo As Currency
 
+NieuwBoekjaar = False
 'MsgBox "Tijdelijk niet beschikbaar"
 'Exit Sub
 
 If ACTIVE_BOOKYEAR Then
     MsgBox "Enkel logisch met hoogste boekjaar actief !  Probeer opnieuw..."
-    Exit Sub
+    Exit Function
 End If
 
 Dim TempoBestand As String
@@ -48,7 +49,7 @@ Else
         MsgBox "Eerst vorig boekjaar in orde brengen !"
         bClose TABLE_COUNTERS
         TABLEDEF_ONT(TABLE_COUNTERS) = TempoBestand
-        Exit Sub
+        Exit Function
     End If
     
     If Val(String99(READING, 62)) <> 1 Then
@@ -58,7 +59,7 @@ Else
         Else
             bClose TABLE_COUNTERS
             TABLEDEF_ONT(TABLE_COUNTERS) = TempoBestand
-            Exit Sub
+            Exit Function
         End If
     End If
 End If
@@ -69,7 +70,7 @@ Msg = "Een nieuw boekjaar wordt geïnstalleerd hierna !  Bent U zeker ?"
 KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
 If KtrlBox = vbYes Then
 Else
-    Exit Sub
+    Exit Function
 End If
 
 'Overdracht rekeningsaldo's
@@ -78,7 +79,7 @@ bFirst TABLE_LEDGERACCOUNTS, 0
 If Ktrl Then
     Beep
     MsgBox "Voortijdige stop..."
-    Exit Sub
+    Exit Function
 Else
     MsgBox "De lijst algemene rekeningen wordt hersamengesteld."
     bBegin
@@ -298,11 +299,12 @@ If Dir$(LOCATION_COMPANYDATA + "DEF*.OXT") = "" Then
 Else
     Kill LOCATION_COMPANYDATA + "DEF*.OXT"
 End If
+NieuwBoekjaar = True
 
 Outchecken:
 Ktrl = 100
 AutoUnloadBedrijf
-Exit Sub
+Exit Function
 
 InstelSaldos:
 RecordToVeld TABLE_LEDGERACCOUNTS
@@ -352,7 +354,7 @@ SnelHelpPrint vBibTekst(TABLE_PRODUCTS, "#v102 #") + ", " + vBibTekst(TABLE_PROD
 bUpdate TABLE_PRODUCTS, 0
 Return
 
-End Sub
+End Function
 
 
 Function adxMaakDatabase(dbNaam As String, dbPath As String) As Boolean

@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76611587
+         Format          =   76742659
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -480,7 +480,7 @@ Begin VB.MDIForm Mim
          Index           =   7
       End
       Begin VB.Menu Bewerken 
-         Caption         =   "Controle Data"
+         Caption         =   "Naam Bedrijf wijzigen"
          Index           =   8
       End
       Begin VB.Menu Bewerken 
@@ -1322,11 +1322,11 @@ Select Case Index
 
         On Local Error GoTo ErrorJump
 
-        Mim.Teken.filename = "NTImport.Log"
+        Mim.Teken.fileName = "NTImport.Log"
         Mim.Teken.Filter = "Enkel (NTImport.Log)|NTImport.Log"
         Mim.Teken.CancelError = True
         Mim.Teken.Action = 1
-        ImportBestand = Mim.Teken.filename + " "
+        ImportBestand = Mim.Teken.fileName + " "
         If Dir$(ImportBestand) = "" Then Exit Sub
 
         On Local Error GoTo 0
@@ -1349,6 +1349,37 @@ Select Case Index
         
     Case 8
         'X = KontroleerDatabase()
+        
+        Dim FlTemp As Integer
+        Dim Naam As String
+        
+        On Error Resume Next
+        Err = 0
+        FlTemp = FreeFile
+        Open LOCATION_COMPANYDATA + "\marnt.txt" For Input As FlTemp
+        If Err Then
+        Else
+            Line Input #FlTemp, Naam
+            Close FlTemp
+        End If
+        
+        Load ntInputbox
+        ntInputbox.TekstInfo.text = Naam
+        ntInputbox.Hernieuw.Visible = False
+        ntInputbox.cmdVooruit.Visible = False
+        ntInputbox.cmdAchteruit.Visible = False
+        ntInputbox.lblInfo.Visible = False
+        ntInputbox.Show 1
+        If ntInputbox.TekstInfo.text = Chr$(255) Then
+        Else
+            On Error Resume Next
+            Err = 0
+            Open LOCATION_COMPANYDATA + "\marnt.txt" For Output As FlTemp
+                Print #FlTemp, ntInputbox.TekstInfo.text
+            Close FlTemp
+            Mim.Caption = appTitleAndVersion & " - [" & Trim$(ntInputbox.TekstInfo.text) & "]"
+        End If
+        Unload ntInputbox
         
     Case 11
         'Wissel.Show
@@ -2347,8 +2378,10 @@ Dim XX As Integer
 
 Select Case Index
     Case 0
-        NieuwBoekjaar
-        Basis_Click 0
+        If NieuwBoekjaar Then
+            Basis_Click 0
+        End If
+        
     Case 1
         If BYPERDAT!Boekjaar.ListIndex = 0 Then
             MsgBox "Journaalbestand kan nooit opgekuist worden met het hoogste boekjaar actief.  Aktiveer een lager boekjaar a.u.b. !"

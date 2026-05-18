@@ -129,6 +129,7 @@ Begin VB.Form BedrijfOpenen
       Width           =   7275
       _ExtentX        =   12832
       _ExtentY        =   2990
+      SortKey         =   1
       View            =   3
       LabelEdit       =   1
       Sorted          =   -1  'True
@@ -149,7 +150,16 @@ Begin VB.Form BedrijfOpenen
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      NumItems        =   0
+      NumItems        =   2
+      BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         Text            =   "Benaming"
+         Object.Width           =   11192
+      EndProperty
+      BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+         SubItemIndex    =   1
+         Text            =   "Map"
+         Object.Width           =   1005
+      EndProperty
    End
    Begin VB.CommandButton CmbCompactDatabase 
       Caption         =   "Database &Vernieuwen"
@@ -410,8 +420,8 @@ Left = 0
 ' Add ColumnHeaders. The width of the columns is
 ' the width of the control divided by the number of
 ' ColumnHeader objects.
-ListView1.ColumnHeaders.Add , , "Benaming", 6345
-ListView1.ColumnHeaders.Add , , "Map", 570
+'ListView1.ColumnHeaders.Add , , "Benaming", 6345
+'ListView1.ColumnHeaders.Add , , "Map", 570
   
 ' Set View property to Report.
 ListView1.View = lvwReport
