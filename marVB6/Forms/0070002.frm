@@ -1125,6 +1125,9 @@ Else
             pdfY = Mim.Report.PrintBox(12.8, pdfY, tmpMsg)
 
             tmpMsg = "Totaal factuur:                  " + Dec(TotaalEUR, Mid(MASK_EUR, 3)) + vbCrLf
+            tmpMsg = tmpMsg + vSet(Mid(fmarBoxText("914", Val(KeuzeInfo(1)), vBibTekst(TABLE_CONTRACTS, "#A325 #")), 4), 14)
+            tmpMsg = tmpMsg + vbCrLf
+            
             Mim.Report.TextBold = True
             pdfY = Mim.Report.PrintBox(12.8, pdfY, tmpMsg)
 
@@ -1157,6 +1160,9 @@ Else
             pdfY = Mim.Report.PrintBox(12.8, pdfY, tmpMsg)
 
             tmpMsg = "Totaal factuur:                  " + Dec(TotaalEUR, Mid(MASK_EUR, 3)) + vbCrLf
+            tmpMsg = tmpMsg + vSet(Mid(fmarBoxText("914", Val(KeuzeInfo(1)), vBibTekst(TABLE_CONTRACTS, "#A325 #")), 4), 14)
+            tmpMsg = tmpMsg + vbCrLf
+            
             Mim.Report.TextBold = True
             pdfY = Mim.Report.PrintBox(12.8, pdfY, tmpMsg)
 
