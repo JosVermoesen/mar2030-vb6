@@ -205,7 +205,9 @@ Function GenerateVpeDoc(location As String, docName As String) As Boolean
     Dim fileName$
       
     Dim COUNT_TO As Integer
-                            
+                          
+    
+    
 VPE_ADD:
 If Dir(location & docName) = "" Then
     Beep
