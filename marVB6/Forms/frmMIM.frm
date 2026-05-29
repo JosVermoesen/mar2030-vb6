@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76742659
+         Format          =   76546051
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -2797,10 +2797,11 @@ Private Sub MDIForm_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     
     If LOCATION_COMPANYDATA = "" Then
     Else
+        'clean up peppol\in and out of .pdf files
         sPath = LOCATION_COMPANYDATA & "peppol\in\"
         If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
     
-        sFile = Dir$(sPath & "*.pdf")          ' first match
+        sFile = Dir$(sPath & "*.pdf")          ' pdf first match
         Do While sFile <> ""
             Err = 0
             On Local Error Resume Next
@@ -2808,18 +2809,47 @@ Private Sub MDIForm_QueryUnload(Cancel As Integer, UnloadMode As Integer)
         sFile = Dir$() ' subsequent matches
         Loop
 
-        sPath = LOCATION_COMPANYDATA & "peppol\out\"
-        If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
-    
-        sFile = Dir$(sPath & "*.pdf")          ' first match
+        sFile = Dir$(sPath & "invoiceNoPdf.*") ' html first match
         Do While sFile <> ""
             Err = 0
             On Local Error Resume Next
             Kill sPath & sFile
         sFile = Dir$() ' subsequent matches
         Loop
-    End If
+
+
+        sPath = LOCATION_COMPANYDATA & "peppol\out\"
+        If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
     
+        sFile = Dir$(sPath & "*.pdf")          ' pdf first match
+        Do While sFile <> ""
+            Err = 0
+            On Local Error Resume Next
+            Kill sPath & sFile
+        sFile = Dir$() ' subsequent matches
+        Loop
+        
+        sFile = Dir$(sPath & "invoiceNoPdf.*") ' html first match
+        Do While sFile <> ""
+            Err = 0
+            On Local Error Resume Next
+            Kill sPath & sFile
+        sFile = Dir$() ' subsequent matches
+        Loop
+    
+    'clean up qrcode map of .bmp files
+    sPath = LOCATION_COMPANYDATA & "BMP-qr\"
+    If Right$(sPath, 1) <> "\" Then sPath = sPath & "\"
+    
+    sFile = Dir$(sPath & "*.bmp")          ' first match
+    Do While sFile <> ""
+        Err = 0
+        On Local Error Resume Next
+        Kill sPath & sFile
+    sFile = Dir$() ' subsequent matches
+    Loop
+End If
+
 End Sub
 
 Private Sub DetectClickOnceShortcut()

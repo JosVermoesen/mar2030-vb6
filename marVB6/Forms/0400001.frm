@@ -302,9 +302,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lvDetail"
+      Tab(1).Control(0)=   "cbFactureren"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "cbFactureren"
+      Tab(1).Control(2)=   "lvDetail"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -3593,11 +3593,10 @@ End Sub
 
 Private Sub CmdStock_Click()
 
-If VerkoopDetail.ListCount = 1 And adminNoVat = True Then
-    MsgBox "Facturatie via omschrijving, bedrag geen BTW van toepassing", vbExclamation, "BTW Vrijstelling"
-    Exit Sub
-End If
-
+'If VerkoopDetail.ListCount = 1 And adminNoVat = True Then
+'    MsgBox "Facturatie via omschrijving, bedrag geen BTW van toepassing", vbExclamation, "BTW Vrijstelling"
+'    Exit Sub
+'End If
     
 CmdStock.Default = True
 If VerkoopDetail.Enabled Then
