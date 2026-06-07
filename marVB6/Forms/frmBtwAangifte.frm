@@ -91,115 +91,115 @@ Begin VB.Form frmBTWAangifte
       TabCaption(0)   =   "Model 2003"
       TabPicture(0)   =   "frmBtwAangifte.frx":0884
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "lblInfoTekst"
-      Tab(0).Control(1)=   "Frame1"
+      Tab(0).Control(0)=   "Frame1"
+      Tab(0).Control(1)=   "lblInfoTekst"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Model 1999"
       TabPicture(1)   =   "frmBtwAangifte.frx":08A0
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "lblBEF(3)"
-      Tab(1).Control(1)=   "lblEURVak(91)"
-      Tab(1).Control(2)=   "lblEURVak(72)"
-      Tab(1).Control(3)=   "lblEURVak(71)"
-      Tab(1).Control(4)=   "lblEURVakYY(0)"
-      Tab(1).Control(5)=   "lblEURVak(66)"
-      Tab(1).Control(6)=   "lblEURVak(64)"
-      Tab(1).Control(7)=   "lblEURVak(59)"
-      Tab(1).Control(8)=   "lblEURVakXX(0)"
-      Tab(1).Control(9)=   "lblEURVak(65)"
-      Tab(1).Control(10)=   "lblEURVak(63)"
-      Tab(1).Control(11)=   "lblEURVak(61)"
-      Tab(1).Control(12)=   "lblEURVak(57)"
-      Tab(1).Control(13)=   "lblEURVak(56)"
-      Tab(1).Control(14)=   "lblEURVak(55)"
-      Tab(1).Control(15)=   "lblEURVak(54)"
-      Tab(1).Control(16)=   "Line1"
-      Tab(1).Control(17)=   "lblEURVak(87)"
-      Tab(1).Control(18)=   "lblEURVak(86)"
-      Tab(1).Control(19)=   "lblEURVak(85)"
-      Tab(1).Control(20)=   "lblEURVak(84)"
-      Tab(1).Control(21)=   "lblEURVak(83)"
-      Tab(1).Control(22)=   "lblEURVak(82)"
-      Tab(1).Control(23)=   "lblEURVak(81)"
-      Tab(1).Control(24)=   "lblEURVak(49)"
-      Tab(1).Control(25)=   "lblEURVak(48)"
-      Tab(1).Control(26)=   "lblEURVak(47)"
-      Tab(1).Control(27)=   "lblEURVak(46)"
-      Tab(1).Control(28)=   "lblEURVak(45)"
-      Tab(1).Control(29)=   "lblEURVak(3)"
-      Tab(1).Control(30)=   "lblEURVak(2)"
-      Tab(1).Control(31)=   "lblEURVak(1)"
-      Tab(1).Control(32)=   "lblBEF(2)"
-      Tab(1).Control(33)=   "lblEURVak(0)"
-      Tab(1).Control(34)=   "lblVakCaption(91)"
-      Tab(1).Control(35)=   "lblVakCaption(72)"
-      Tab(1).Control(36)=   "lblVakCaption(71)"
-      Tab(1).Control(37)=   "lblBEFVak(91)"
-      Tab(1).Control(38)=   "lblBEFVak(72)"
-      Tab(1).Control(39)=   "lblBEFVak(71)"
-      Tab(1).Control(40)=   "lblBEF(1)"
-      Tab(1).Control(41)=   "lblBEF(0)"
-      Tab(1).Control(42)=   "lblVakYYCaption(0)"
-      Tab(1).Control(43)=   "lblBEFVakYY(0)"
-      Tab(1).Control(44)=   "lblVakCaption(66)"
-      Tab(1).Control(45)=   "lblBEFVak(66)"
-      Tab(1).Control(46)=   "lblVakCaption(62)"
-      Tab(1).Control(47)=   "lblBEFVak(62)"
-      Tab(1).Control(48)=   "lblVakXXCaption(0)"
-      Tab(1).Control(49)=   "lblBEFVakXX(0)"
-      Tab(1).Control(50)=   "lblBEFVak(65)"
+      Tab(1).Control(0)=   "lblEURVak(62)"
+      Tab(1).Control(1)=   "Label1(23)"
+      Tab(1).Control(2)=   "lblVakCaption(87)"
+      Tab(1).Control(3)=   "lblVakCaption(86)"
+      Tab(1).Control(4)=   "lblVakCaption(85)"
+      Tab(1).Control(5)=   "lblVakCaption(84)"
+      Tab(1).Control(6)=   "lblVakCaption(83)"
+      Tab(1).Control(7)=   "lblVakCaption(82)"
+      Tab(1).Control(8)=   "lblVakCaption(81)"
+      Tab(1).Control(9)=   "lblVakCaption(64)"
+      Tab(1).Control(10)=   "lblVakCaption(63)"
+      Tab(1).Control(11)=   "lblVakCaption(59)"
+      Tab(1).Control(12)=   "lblVakCaption(57)"
+      Tab(1).Control(13)=   "lblVakCaption(56)"
+      Tab(1).Control(14)=   "lblVakCaption(55)"
+      Tab(1).Control(15)=   "lblVakCaption(54)"
+      Tab(1).Control(16)=   "lblVakCaption(49)"
+      Tab(1).Control(17)=   "lblVakCaption(48)"
+      Tab(1).Control(18)=   "lblVakCaption(47)"
+      Tab(1).Control(19)=   "lblVakCaption(46)"
+      Tab(1).Control(20)=   "lblVakCaption(45)"
+      Tab(1).Control(21)=   "lblVakCaption(3)"
+      Tab(1).Control(22)=   "lblVakCaption(2)"
+      Tab(1).Control(23)=   "lblVakCaption(1)"
+      Tab(1).Control(24)=   "lblVakCaption(0)"
+      Tab(1).Control(25)=   "lblBEFVak(0)"
+      Tab(1).Control(26)=   "lblBEFVak(1)"
+      Tab(1).Control(27)=   "lblBEFVak(2)"
+      Tab(1).Control(28)=   "lblBEFVak(3)"
+      Tab(1).Control(29)=   "lblBEFVak(45)"
+      Tab(1).Control(30)=   "lblBEFVak(46)"
+      Tab(1).Control(31)=   "lblBEFVak(47)"
+      Tab(1).Control(32)=   "lblBEFVak(48)"
+      Tab(1).Control(33)=   "lblBEFVak(49)"
+      Tab(1).Control(34)=   "lblBEFVak(54)"
+      Tab(1).Control(35)=   "lblBEFVak(55)"
+      Tab(1).Control(36)=   "lblBEFVak(56)"
+      Tab(1).Control(37)=   "lblBEFVak(57)"
+      Tab(1).Control(38)=   "lblBEFVak(59)"
+      Tab(1).Control(39)=   "lblBEFVak(63)"
+      Tab(1).Control(40)=   "lblBEFVak(64)"
+      Tab(1).Control(41)=   "lblBEFVak(81)"
+      Tab(1).Control(42)=   "lblBEFVak(82)"
+      Tab(1).Control(43)=   "lblBEFVak(83)"
+      Tab(1).Control(44)=   "lblBEFVak(84)"
+      Tab(1).Control(45)=   "lblBEFVak(85)"
+      Tab(1).Control(46)=   "lblBEFVak(86)"
+      Tab(1).Control(47)=   "lblBEFVak(87)"
+      Tab(1).Control(48)=   "lblBEFVak(88)"
+      Tab(1).Control(49)=   "lblVakCaption(61)"
+      Tab(1).Control(50)=   "lblBEFVak(61)"
       Tab(1).Control(51)=   "lblVakCaption(65)"
-      Tab(1).Control(52)=   "lblBEFVak(61)"
-      Tab(1).Control(53)=   "lblVakCaption(61)"
-      Tab(1).Control(54)=   "lblBEFVak(88)"
-      Tab(1).Control(55)=   "lblBEFVak(87)"
-      Tab(1).Control(56)=   "lblBEFVak(86)"
-      Tab(1).Control(57)=   "lblBEFVak(85)"
-      Tab(1).Control(58)=   "lblBEFVak(84)"
-      Tab(1).Control(59)=   "lblBEFVak(83)"
-      Tab(1).Control(60)=   "lblBEFVak(82)"
-      Tab(1).Control(61)=   "lblBEFVak(81)"
-      Tab(1).Control(62)=   "lblBEFVak(64)"
-      Tab(1).Control(63)=   "lblBEFVak(63)"
-      Tab(1).Control(64)=   "lblBEFVak(59)"
-      Tab(1).Control(65)=   "lblBEFVak(57)"
-      Tab(1).Control(66)=   "lblBEFVak(56)"
-      Tab(1).Control(67)=   "lblBEFVak(55)"
-      Tab(1).Control(68)=   "lblBEFVak(54)"
-      Tab(1).Control(69)=   "lblBEFVak(49)"
-      Tab(1).Control(70)=   "lblBEFVak(48)"
-      Tab(1).Control(71)=   "lblBEFVak(47)"
-      Tab(1).Control(72)=   "lblBEFVak(46)"
-      Tab(1).Control(73)=   "lblBEFVak(45)"
-      Tab(1).Control(74)=   "lblBEFVak(3)"
-      Tab(1).Control(75)=   "lblBEFVak(2)"
-      Tab(1).Control(76)=   "lblBEFVak(1)"
-      Tab(1).Control(77)=   "lblBEFVak(0)"
-      Tab(1).Control(78)=   "lblVakCaption(0)"
-      Tab(1).Control(79)=   "lblVakCaption(1)"
-      Tab(1).Control(80)=   "lblVakCaption(2)"
-      Tab(1).Control(81)=   "lblVakCaption(3)"
-      Tab(1).Control(82)=   "lblVakCaption(45)"
-      Tab(1).Control(83)=   "lblVakCaption(46)"
-      Tab(1).Control(84)=   "lblVakCaption(47)"
-      Tab(1).Control(85)=   "lblVakCaption(48)"
-      Tab(1).Control(86)=   "lblVakCaption(49)"
-      Tab(1).Control(87)=   "lblVakCaption(54)"
-      Tab(1).Control(88)=   "lblVakCaption(55)"
-      Tab(1).Control(89)=   "lblVakCaption(56)"
-      Tab(1).Control(90)=   "lblVakCaption(57)"
-      Tab(1).Control(91)=   "lblVakCaption(59)"
-      Tab(1).Control(92)=   "lblVakCaption(63)"
-      Tab(1).Control(93)=   "lblVakCaption(64)"
-      Tab(1).Control(94)=   "lblVakCaption(81)"
-      Tab(1).Control(95)=   "lblVakCaption(82)"
-      Tab(1).Control(96)=   "lblVakCaption(83)"
-      Tab(1).Control(97)=   "lblVakCaption(84)"
-      Tab(1).Control(98)=   "lblVakCaption(85)"
-      Tab(1).Control(99)=   "lblVakCaption(86)"
-      Tab(1).Control(100)=   "lblVakCaption(87)"
-      Tab(1).Control(101)=   "Label1(23)"
-      Tab(1).Control(102)=   "lblEURVak(62)"
+      Tab(1).Control(52)=   "lblBEFVak(65)"
+      Tab(1).Control(53)=   "lblBEFVakXX(0)"
+      Tab(1).Control(54)=   "lblVakXXCaption(0)"
+      Tab(1).Control(55)=   "lblBEFVak(62)"
+      Tab(1).Control(56)=   "lblVakCaption(62)"
+      Tab(1).Control(57)=   "lblBEFVak(66)"
+      Tab(1).Control(58)=   "lblVakCaption(66)"
+      Tab(1).Control(59)=   "lblBEFVakYY(0)"
+      Tab(1).Control(60)=   "lblVakYYCaption(0)"
+      Tab(1).Control(61)=   "lblBEF(0)"
+      Tab(1).Control(62)=   "lblBEF(1)"
+      Tab(1).Control(63)=   "lblBEFVak(71)"
+      Tab(1).Control(64)=   "lblBEFVak(72)"
+      Tab(1).Control(65)=   "lblBEFVak(91)"
+      Tab(1).Control(66)=   "lblVakCaption(71)"
+      Tab(1).Control(67)=   "lblVakCaption(72)"
+      Tab(1).Control(68)=   "lblVakCaption(91)"
+      Tab(1).Control(69)=   "lblEURVak(0)"
+      Tab(1).Control(70)=   "lblBEF(2)"
+      Tab(1).Control(71)=   "lblEURVak(1)"
+      Tab(1).Control(72)=   "lblEURVak(2)"
+      Tab(1).Control(73)=   "lblEURVak(3)"
+      Tab(1).Control(74)=   "lblEURVak(45)"
+      Tab(1).Control(75)=   "lblEURVak(46)"
+      Tab(1).Control(76)=   "lblEURVak(47)"
+      Tab(1).Control(77)=   "lblEURVak(48)"
+      Tab(1).Control(78)=   "lblEURVak(49)"
+      Tab(1).Control(79)=   "lblEURVak(81)"
+      Tab(1).Control(80)=   "lblEURVak(82)"
+      Tab(1).Control(81)=   "lblEURVak(83)"
+      Tab(1).Control(82)=   "lblEURVak(84)"
+      Tab(1).Control(83)=   "lblEURVak(85)"
+      Tab(1).Control(84)=   "lblEURVak(86)"
+      Tab(1).Control(85)=   "lblEURVak(87)"
+      Tab(1).Control(86)=   "Line1"
+      Tab(1).Control(87)=   "lblEURVak(54)"
+      Tab(1).Control(88)=   "lblEURVak(55)"
+      Tab(1).Control(89)=   "lblEURVak(56)"
+      Tab(1).Control(90)=   "lblEURVak(57)"
+      Tab(1).Control(91)=   "lblEURVak(61)"
+      Tab(1).Control(92)=   "lblEURVak(63)"
+      Tab(1).Control(93)=   "lblEURVak(65)"
+      Tab(1).Control(94)=   "lblEURVakXX(0)"
+      Tab(1).Control(95)=   "lblEURVak(59)"
+      Tab(1).Control(96)=   "lblEURVak(64)"
+      Tab(1).Control(97)=   "lblEURVak(66)"
+      Tab(1).Control(98)=   "lblEURVakYY(0)"
+      Tab(1).Control(99)=   "lblEURVak(71)"
+      Tab(1).Control(100)=   "lblEURVak(72)"
+      Tab(1).Control(101)=   "lblEURVak(91)"
+      Tab(1).Control(102)=   "lblBEF(3)"
       Tab(1).ControlCount=   103
       TabCaption(2)   =   "Intervat 2008"
       TabPicture(2)   =   "frmBtwAangifte.frx":08BC
@@ -218,10 +218,10 @@ Begin VB.Form frmBTWAangifte
       TabCaption(3)   =   "Intervat 2025"
       TabPicture(3)   =   "frmBtwAangifte.frx":08D8
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "RichTextBox2"
-      Tab(3).Control(1)=   "cbRestitution2025"
-      Tab(3).Control(2)=   "cbPayment2025"
-      Tab(3).Control(3)=   "cbXml2025"
+      Tab(3).Control(0)=   "cbXml2025"
+      Tab(3).Control(1)=   "cbPayment2025"
+      Tab(3).Control(2)=   "cbRestitution2025"
+      Tab(3).Control(3)=   "RichTextBox2"
       Tab(3).ControlCount=   4
       Begin VB.CommandButton cbXml2025 
          Caption         =   "XML Bestand"
@@ -294,7 +294,6 @@ Begin VB.Form frmBTWAangifte
          _ExtentX        =   14208
          _ExtentY        =   10186
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          TextRTF         =   $"frmBtwAangifte.frx":08F4
@@ -1758,7 +1757,6 @@ Begin VB.Form frmBTWAangifte
          _ExtentX        =   14208
          _ExtentY        =   8916
          _Version        =   393217
-         Enabled         =   -1  'True
          ReadOnly        =   -1  'True
          ScrollBars      =   3
          TextRTF         =   $"frmBtwAangifte.frx":0981
@@ -4076,12 +4074,12 @@ Private Sub cbXml2025_Click()
     vatFileName = myVatNumber + " " + Trim(Str(yearFromRecord)) + Dec((periodeFromRecord), "00") + ".xml"
 
     Mim.Teken.InitDir = ""
-    Mim.Teken.filename = vatFileName
+    Mim.Teken.fileName = vatFileName
     Mim.Teken.ShowSave
-    If Mim.Teken.filename = "" Then Exit Sub
+    If Mim.Teken.fileName = "" Then Exit Sub
     Dim tmpXMLHier As String
     tmpXMLHier = Me.RichTextBox2.text
-    Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.filename)
+    Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.fileName)
 
 End Sub
 
@@ -4158,12 +4156,12 @@ End Sub
 Private Sub Command1_Click()
 
     Mim.Teken.InitDir = ""
-    Mim.Teken.filename = "btw.xml"
+    Mim.Teken.fileName = "btw.xml"
     Mim.Teken.ShowSave
-    If Mim.Teken.filename = "" Then Exit Sub
+    If Mim.Teken.fileName = "" Then Exit Sub
     Dim tmpXMLHier As String
     tmpXMLHier = Me.RichTextBox1.text
-    Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.filename)
+    Ktrl = ScrMaakTekstBestand(tmpXMLHier, Mim.Teken.fileName)
     
 End Sub
 
@@ -4300,11 +4298,6 @@ End Function
 
 
 Private Sub Form_Load()
-
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
 
 lblInfoTekst = "Vak 54 t.e.m. Vak 72 geeft de som weer resulterende uit afdruk van aankoop- en verkoopboeken (werkwijze 1985 - 2003)." & _
                 "rVak 54 t.e.m. rVak 72 geeft som van de cijfers teruggevonden op de boekhoudrekeningen voor Vak54 tot Vak72 !" & vbCrLf & vbCrLf & _

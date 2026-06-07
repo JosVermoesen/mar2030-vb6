@@ -306,7 +306,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76939267
+      Format          =   76742659
       CurrentDate     =   36327
       MinDate         =   35796
    End
@@ -329,7 +329,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76939267
+      Format          =   76742659
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -354,7 +354,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76939267
+      Format          =   76742659
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -697,9 +697,16 @@ If chkAfdrukInVenster Then
     Xlog.X.ColWidth(4) = 2370
     Xlog.X.ColWidth(5) = 1275
     Xlog.X.ColWidth(6) = 1410
-    Xlog.WindowState = 2
+    Xlog.WindowState = 0
     
     Screen.MousePointer = vbNormal
+    '---------------------------------------------------
+    'TODO everywhere when choosen show print in a window
+    Xlog.WindowState = vbNormal
+    Xlog.statusForm = ""
+    Xlog.Width = 8865
+    '---------------------------------------------------
+        
     Xlog.WijzigenLijn.Visible = False
     Xlog.Afsluiten.Enabled = False
     Xlog.Afsluiten.TabStop = False

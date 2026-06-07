@@ -132,7 +132,7 @@ cat.ActiveConnection = jetConnect
 bstNaam(TABLE_COUNTERS) = "jr" & Format(Val(BYPERDAT.Boekjaar.text) + 1, "0000")
 tbl.Name = bstNaam(TABLE_COUNTERS)
     tbl.Columns.Append "v071", adVarWChar, 5
-    tbl.Columns.Append "v217", adVarWChar, 30
+    tbl.Columns.Append "v217", adVarWChar, 50
 
 ' Define an index
 With Idx

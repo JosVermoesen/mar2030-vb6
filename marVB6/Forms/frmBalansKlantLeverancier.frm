@@ -625,14 +625,14 @@ Private Sub CmdStandaard_Click()
 Selektie(0) = 0
 PlGrensVan = Left(BOOKYEAR_FROMTO, 8)
 PlGrensTot = Right(BOOKYEAR_FROMTO, 8)
-TekstLijn(4).Text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+TekstLijn(4).text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
 Selektie(2) = 1
 
 Selektie(1) = 1
 Selektie(3) = 1
 ChkFinancieelDetail = 1
 Selektie(5) = 1
-TekstLijn(0).Text = "Boekhoudcontrole " & TekstLijn(4).Text
+TekstLijn(0).text = "Boekhoudcontrole " & TekstLijn(4).text
 
 End Sub
 
@@ -645,7 +645,7 @@ Selektie(1) = 0
 Selektie(3) = 1
 ChkFinancieelDetail = 0
 TekstLijn(1) = MIM_GLOBAL_DATE
-TekstLijn(0).Text = "Betalingscontrole"
+TekstLijn(0).text = "Betalingscontrole"
 
 End Sub
 
@@ -693,18 +693,18 @@ BetalingenVoorNa(3).Clear
 
 Select Case FlPartij
     Case TABLE_SUPPLIERS
-        BeginSleutel = "L" + TekstLijn(2).Text
-        EindSleutel = "L" + TekstLijn(3).Text
+        BeginSleutel = "L" + TekstLijn(2).text
+        EindSleutel = "L" + TekstLijn(3).text
     Case TABLE_CUSTOMERS
-        BeginSleutel = "K" + TekstLijn(2).Text
-        EindSleutel = "K" + TekstLijn(3).Text
+        BeginSleutel = "K" + TekstLijn(2).text
+        EindSleutel = "K" + TekstLijn(3).text
 End Select
 
-rdtemp = DATE_KEY((TekstLijn(1).Text))
+rdtemp = DATE_KEY((TekstLijn(1).text))
 
 psTekst(2) = BalansKL.Caption + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
-psTekst(0) = TekstLijn(1).Text
-psTekst(3) = TekstLijn(0).Text
+psTekst(0) = TekstLijn(1).text
+psTekst(3) = TekstLijn(0).text
     InitVelden
 
 TDS = "Geen journalen voor : " + vbCrLf
@@ -1451,6 +1451,12 @@ If chkAfdrukInVenster Then
     mdiXlog.X.ColAlignment(10) = flexAlignRightTop
     
     Screen.MousePointer = vbNormal
+    '---------------------------------------------------
+    'TODO everywhere when choosen show print in a window
+    mdiXlog.WindowState = vbNormal
+    'mdiXlog.statusForm = ""
+    mdiXlog.Width = 11745
+    '---------------------------------------------------
         
     mdiXlog.Show '1
     mdiXlog.WindowState = 0
@@ -1506,8 +1512,8 @@ Else
     ChkFinancieelDetail = LaadTekst("dokumentenBalans", "FinancieelDetailViaJournaal")
     chkAfdrukInVenster = LaadTekst("dokumentenBalans", "AfdrukInRooster")
 End If
-TekstLijn(1).Text = MIM_GLOBAL_DATE
-TekstLijn(4).Text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+TekstLijn(1).text = MIM_GLOBAL_DATE
+TekstLijn(4).text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
 
 Select Case aIndex
     Case TABLE_SUPPLIERS
@@ -1525,8 +1531,8 @@ If XisEuroWisBEF = True Then
 End If
 BalansKL.Caption = LijstNaam
 
-TekstLijn(2).Text = "0"
-TekstLijn(3).Text = String$(12, "z")
+TekstLijn(2).text = "0"
+TekstLijn(3).text = String$(12, "z")
 
 End Sub
 
@@ -1603,7 +1609,7 @@ If chkAfdrukInVenster Then
     mdiXlog.X.Row = 0
     For T = 0 To 10
         mdiXlog.X.Col = T
-        mdiXlog.X.Text = REPORT_FIELD(T)
+        mdiXlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If
@@ -1696,7 +1702,7 @@ End Sub
 
 Private Sub TekstLijn_GotFocus(Index As Integer)
 
-TekstLijn(Index).SelLength = Len(TekstLijn(Index).Text)
+TekstLijn(Index).SelLength = Len(TekstLijn(Index).text)
 
 End Sub
 
@@ -1704,24 +1710,24 @@ Private Sub TekstLijn_LostFocus(Index As Integer)
 
 Select Case Index
     Case 1
-        If DATE_INVALID((TekstLijn(1).Text)) Then
+        If DATE_INVALID((TekstLijn(1).text)) Then
             Beep
-            TekstLijn(1).Text = MIM_GLOBAL_DATE
+            TekstLijn(1).text = MIM_GLOBAL_DATE
         End If
     Case 4
-        If DATE_INVALID(Right(TekstLijn(4).Text, 10)) Then
+        If DATE_INVALID(Right(TekstLijn(4).text, 10)) Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(4).Text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+            TekstLijn(4).text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
             TekstLijn(4).SetFocus
             Exit Sub
-        ElseIf Len(TekstLijn(4).Text) <> 23 Then
+        ElseIf Len(TekstLijn(4).text) <> 23 Then
             MsgBox "Respecteer : " + vbCrLf + vbCrLf + "DD/MM/EEJJ - DD/MM/EEJJ a.u.b. !"
-            TekstLijn(4).Text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
+            TekstLijn(4).text = DATE_TEXT(Left(BOOKYEAR_FROMTO, 8)) + " - " + DATE_TEXT(Right(BOOKYEAR_FROMTO, 8))
             TekstLijn(4).SetFocus
             Exit Sub
         Else
-            PlGrensVan = Mid(TekstLijn(4).Text, 7, 4) + Mid(TekstLijn(4).Text, 4, 2) + Mid(TekstLijn(4).Text, 1, 2)
-            PlGrensTot = Mid(TekstLijn(4).Text, 20, 4) + Mid(TekstLijn(4).Text, 17, 2) + Mid(TekstLijn(4).Text, 14, 2)
+            PlGrensVan = Mid(TekstLijn(4).text, 7, 4) + Mid(TekstLijn(4).text, 4, 2) + Mid(TekstLijn(4).text, 1, 2)
+            PlGrensTot = Mid(TekstLijn(4).text, 20, 4) + Mid(TekstLijn(4).text, 17, 2) + Mid(TekstLijn(4).text, 14, 2)
             If BOOKYEAR_FROMTO = PlGrensVan + PlGrensTot Then
                 Selektie(5) = 1
                 Selektie(5).Visible = True

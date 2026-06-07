@@ -652,16 +652,16 @@ MsgBox "Er zijn " & lblRecordCount & " journaallijnen", vbInformation
 Screen.MousePointer = vbNormal
 
 On Error GoTo CancelError
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = "Alle bestanden (*.xml)|*.xml"
     Mim.Teken.ShowSave
     Dim BestandHier As String
-    BestandHier = Mim.Teken.filename
+    BestandHier = Mim.Teken.fileName
     If Not Dir(BestandHier) = "" Then
         Kill BestandHier
     End If
-    datPrimaryRS.Save Mim.Teken.filename, adPersistXML
+    datPrimaryRS.Save Mim.Teken.fileName, adPersistXML
     MsgBox "Klaar!" & vbCrLf & "Start uw spreadsheet programmma (bvb Excel) en open het xml bestand (of sleep het in een leeg werkblad)." & vbCrLf & vbCrLf & "Aanvaardt het voorstel van het spreadsheet programma om automatisch een schema aan te maken.", vbInformation
     
     
@@ -819,10 +819,14 @@ If chkAfdrukInVenster Then
             .ColWidth(7) = 1200
             .ColAlignment(7) = flexAlignRightTop
         End With
-        Xlog.WindowState = 2
     End If
     Screen.MousePointer = vbNormal
-    
+    '---------------------------------------------------
+    'TODO everywhere when choosen show print in a window
+    Xlog.WindowState = vbNormal
+    Xlog.statusForm = ""
+    Xlog.Width = 11160
+    '---------------------------------------------------
     Xlog.WijzigenLijn.Visible = False
     Xlog.Afsluiten.Enabled = False
     Xlog.Afsluiten.TabStop = False

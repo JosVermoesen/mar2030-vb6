@@ -225,7 +225,7 @@ If chkAfdrukInVenster Then
         'Xlog.X.ColWidth(7) = 945
         'Xlog.X.ColWidth(8) = 900
         'Xlog.X.ColWidth(9) = 1425
-        Xlog.WindowState = 2
+        Xlog.WindowState = 0
 
         Xlog.X.ColAlignment(2) = flexAlignRightTop
         Xlog.X.ColAlignment(4) = flexAlignRightTop
@@ -234,6 +234,13 @@ If chkAfdrukInVenster Then
         Xlog.X.ColAlignment(8) = flexAlignRightTop
             
     Screen.MousePointer = vbNormal
+    '---------------------------------------------------
+    'TODO everywhere when choosen show print in a window
+    Xlog.WindowState = vbNormal
+    Xlog.statusForm = ""
+    Xlog.Width = 11130
+    '---------------------------------------------------
+        
     Xlog.WijzigenLijn.Visible = False
     Xlog.Afsluiten.TabStop = False
     'Xlog.cbAfbeelding.Visible = False
@@ -324,7 +331,7 @@ End Sub
 
 Private Sub cmbdokumentType_Click()
 
-TekstInfo(0).Text = ""
+TekstInfo(0).text = ""
 Knop(5).Enabled = False
 
 End Sub
@@ -336,22 +343,22 @@ If Ktrl = 0 Then
     Msg = "Gegevens bestaande fiche wijzigen.  Bent U zeker ?"
     KtrlBox = MsgBox(Msg, 292)
     If KtrlBox = 6 Then
-        Select Case Left(cmbDokumentType.Text, 2)
+        Select Case Left(cmbDokumentType.text, 2)
             Case "10"
-                vBib TABLE_VARIOUS, (TekstInfo(0).Text), "vs03"
-                vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#vs03 #"), "v005"
+                vBib TABLE_VARIOUS, (TekstInfo(0).text), "vs03"
+                vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#vs03 #"), "v005"
             Case "12"
-                vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v152"
-                vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v152 #"), "v005"
+                vBib TABLE_VARIOUS, (TekstInfo(0).text), "v152"
+                vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v152 #"), "v005"
             Case "18"
-                vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v087"
-                vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v087 #"), "v005"
+                vBib TABLE_VARIOUS, (TekstInfo(0).text), "v087"
+                vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v087 #"), "v005"
             Case "21"
-                vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v216"
-                vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v216 #"), "v005"
+                vBib TABLE_VARIOUS, (TekstInfo(0).text), "v216"
+                vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v216 #"), "v005"
             Case "28"
-                vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v231"
-                vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v231 #"), "v005"
+                vBib TABLE_VARIOUS, (TekstInfo(0).text), "v231"
+                vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v231 #"), "v005"
             Case Else
                 MsgBox "stop"
         End Select
@@ -367,7 +374,7 @@ End Sub
 
 Private Sub Form_Activate()
 
-TekstInfo(0).Text = ""  'Right(FVT(TABLE_VARIOUS, 1), 18)
+TekstInfo(0).text = ""  'Right(FVT(TABLE_VARIOUS, 1), 18)
 
 End Sub
 
@@ -399,7 +406,7 @@ Select Case Index
             Knop_Click 3
                 
         Case 2  'Alle fiches afdrukken
-            Select Case Left(cmbDokumentType.Text, 2)
+            Select Case Left(cmbDokumentType.text, 2)
                 Case "18"
                     If AfschrijvingenLijstOk Then
                         XLogKey = "SchrijfAF!"
@@ -407,7 +414,7 @@ Select Case Index
                         DiversePosten.Show
                     End If
                 Case Else
-                    MsgBox "Nog geen afdrukdefinitie beschikbaar voor " + Mid(cmbDokumentType.Text, 4)
+                    MsgBox "Nog geen afdrukdefinitie beschikbaar voor " + Mid(cmbDokumentType.text, 4)
             End Select
         
         Case 3  'Nieuwe Fiche
@@ -415,7 +422,7 @@ Select Case Index
             TekstInfo(0).SetFocus
         
         Case 5  'Fiche EDITEREN
-            If TeleBibClick(Val(Left(cmbDokumentType.Text, 2))) = False Then
+            If TeleBibClick(Val(Left(cmbDokumentType.text, 2))) = False Then
                 Knop(1).Enabled = False
             Else
                 Knop(1).Enabled = True
@@ -431,7 +438,7 @@ Select Case Index
                     Beep
                     Knop(5).Enabled = False
                 End If
-            ElseIf Left(cmbDokumentType.Text, 2) = Left(KEY_BUF(TABLE_VARIOUS), 2) Then
+            ElseIf Left(cmbDokumentType.text, 2) = Left(KEY_BUF(TABLE_VARIOUS), 2) Then
                 INSERT_FLAG(TABLE_VARIOUS) = 0
                 RecordNaarFiche
                 Knop(5).Enabled = True
@@ -439,8 +446,8 @@ Select Case Index
             End If
             If Ktrl Then
             Else
-                bGetOrGreater TABLE_VARIOUS, 1, vSet(Left(cmbDokumentType.Text, 2), 20)
-                If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> Left(cmbDokumentType.Text, 2) Then
+                bGetOrGreater TABLE_VARIOUS, 1, vSet(Left(cmbDokumentType.text, 2), 20)
+                If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> Left(cmbDokumentType.text, 2) Then
                 Else
                     INSERT_FLAG(TABLE_VARIOUS) = 0
                     RecordNaarFiche
@@ -457,7 +464,7 @@ Select Case Index
                     Knop(5).Enabled = False
                 End If
             Else
-                If Left(KEY_BUF(TABLE_VARIOUS), 2) <> Left(cmbDokumentType.Text, 2) Then
+                If Left(KEY_BUF(TABLE_VARIOUS), 2) <> Left(cmbDokumentType.text, 2) Then
                 Else
                     INSERT_FLAG(TABLE_VARIOUS) = 0
                     RecordNaarFiche
@@ -502,7 +509,7 @@ End Sub
 
 Private Sub NieuweFiche()
 
-TekstInfo(0).Text = ""
+TekstInfo(0).text = ""
 TLB_RECORD(TABLE_VARIOUS) = ""
 
 INSERT_FLAG(TABLE_VARIOUS) = 1
@@ -520,7 +527,7 @@ If Ktrl Then
 Else
     RecordToVeld TABLE_VARIOUS
 End If
-TekstInfo(0).Text = Mid(vBibTekst(TABLE_VARIOUS, "#v005 #"), 3)
+TekstInfo(0).text = Mid(vBibTekst(TABLE_VARIOUS, "#v005 #"), 3)
 INSERT_FLAG(TABLE_VARIOUS) = 0
 
 End Sub
@@ -537,8 +544,8 @@ On Local Error GoTo LostFocusError
 
 Select Case Index
     Case 0
-        If TekstInfo(0).Text = Space$(Len(TekstInfo(0).Text)) Then Exit Sub
-        bGet TABLE_VARIOUS, 1, Left(cmbDokumentType.Text, 2) + vSet((TekstInfo(0).Text), 18)
+        If TekstInfo(0).text = Space$(Len(TekstInfo(0).text)) Then Exit Sub
+        bGet TABLE_VARIOUS, 1, Left(cmbDokumentType.text, 2) + vSet((TekstInfo(0).text), 18)
         If Ktrl = 0 Then
             RecordNaarFiche
             INSERT_FLAG(TABLE_VARIOUS) = 0
@@ -548,22 +555,22 @@ Select Case Index
             Knop(1).Enabled = False
         End If
         If INSERT_FLAG(TABLE_VARIOUS) = 1 Then
-            Select Case Left(cmbDokumentType.Text, 2)
+            Select Case Left(cmbDokumentType.text, 2)
                 Case "10"
-                    vBib TABLE_VARIOUS, (TekstInfo(0).Text), "vs03"
-                    vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#vs03 #"), "v005"
+                    vBib TABLE_VARIOUS, (TekstInfo(0).text), "vs03"
+                    vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#vs03 #"), "v005"
                 Case "12"
-                    vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v152"
-                    vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v152 #"), "v005"
+                    vBib TABLE_VARIOUS, (TekstInfo(0).text), "v152"
+                    vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v152 #"), "v005"
                 Case "18"
-                    vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v087"
-                    vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v087 #"), "v005"
+                    vBib TABLE_VARIOUS, (TekstInfo(0).text), "v087"
+                    vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v087 #"), "v005"
                 Case "21"
-                    vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v216"
-                    vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v216 #"), "v005"
+                    vBib TABLE_VARIOUS, (TekstInfo(0).text), "v216"
+                    vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v216 #"), "v005"
                 Case "28"
-                    vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v231"
-                    vBib TABLE_VARIOUS, Left(cmbDokumentType.Text, 2) + vBibTekst(TABLE_VARIOUS, "#v231 #"), "v005"
+                    vBib TABLE_VARIOUS, (TekstInfo(0).text), "v231"
+                    vBib TABLE_VARIOUS, Left(cmbDokumentType.text, 2) + vBibTekst(TABLE_VARIOUS, "#v231 #"), "v005"
                     
                 Case Else
                     MsgBox "stop"
@@ -650,7 +657,7 @@ Else
         End If
     End If
     psTekst(0) = MIM_GLOBAL_DATE
-    psTekst(2) = Mid(cmbDokumentType.Text, 4) + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
+    psTekst(2) = Mid(cmbDokumentType.text, 4) + " " + Mid(Mim.Caption, InStr(Mim.Caption, "["))
     InitVelden
     PrintTitel
     GoSub AfschrijvingsLijnErBij
@@ -807,7 +814,7 @@ End Function
 Private Sub InitVelden()
 Dim T As Integer
 
-Select Case Left(cmbDokumentType.Text, 2)
+Select Case Left(cmbDokumentType.text, 2)
     Case "18"
         REPORT_FIELD(0) = "Investeringsrekening"
         REPORT_TAB(0) = 2
@@ -850,12 +857,12 @@ If chkAfdrukInVenster Then
     Me.Hide
     Unload Xlog
     Xlog.Hide
-    Xlog.Caption = cmbDokumentType.Text
+    Xlog.Caption = cmbDokumentType.text
     Xlog.X.Cols = tMaxVeld + 1
     Xlog.X.Row = 0
     For T = 0 To tMaxVeld
         Xlog.X.Col = T
-        Xlog.X.Text = REPORT_FIELD(T)
+        Xlog.X.text = REPORT_FIELD(T)
     Next
     Me.Show
 End If

@@ -545,7 +545,7 @@ rsJourHier.CursorLocation = adUseClient
 
 Msg = "SELECT * FROM Journalen WHERE v070 >='" & _
     Van & "' AND v070 <= '" & _
-    Tot & "'"
+    Tot & "' ORDER BY v035"
 
 rsJourHier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
 If Err Then

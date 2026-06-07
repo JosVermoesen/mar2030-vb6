@@ -5,8 +5,8 @@ Begin VB.Form Xlog
    AutoRedraw      =   -1  'True
    Caption         =   "Log"
    ClientHeight    =   5325
-   ClientLeft      =   2880
-   ClientTop       =   660
+   ClientLeft      =   165
+   ClientTop       =   555
    ClientWidth     =   6690
    ControlBox      =   0   'False
    BeginProperty Font 
@@ -24,6 +24,7 @@ Begin VB.Form Xlog
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   5325
    ScaleWidth      =   6690
+   StartUpPosition =   2  'CenterScreen
    Begin TabDlg.SSTab SSTab1 
       Height          =   4815
       Left            =   0
@@ -55,14 +56,14 @@ Begin VB.Form Xlog
       TabCaption(1)   =   "Afbeelding"
       TabPicture(1)   =   "0xlog.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command4"
-      Tab(1).Control(1)=   "Command3"
-      Tab(1).Control(2)=   "Command2"
-      Tab(1).Control(3)=   "Command1"
-      Tab(1).Control(4)=   "Label3"
-      Tab(1).Control(5)=   "OLE1"
-      Tab(1).Control(6)=   "Label2"
-      Tab(1).Control(7)=   "Label1"
+      Tab(1).Control(0)=   "Label1"
+      Tab(1).Control(1)=   "Label2"
+      Tab(1).Control(2)=   "OLE1"
+      Tab(1).Control(3)=   "Label3"
+      Tab(1).Control(4)=   "Command1"
+      Tab(1).Control(5)=   "Command2"
+      Tab(1).Control(6)=   "Command3"
+      Tab(1).Control(7)=   "Command4"
       Tab(1).ControlCount=   8
       Begin VB.CommandButton Command4 
          Caption         =   "Pdf Opslaan"
@@ -347,6 +348,8 @@ Attribute VB_Exposed = False
 DefInt A-Z
 Option Explicit
 
+Public statusForm As String
+
 'Dim miDoc As MODIctl.Document
 Dim bstPDFofTIF As String
 
@@ -375,13 +378,13 @@ End If
 Screen.MousePointer = vbHourglass
 
 On Local Error GoTo CancelError
-Mim.Teken.filename = ""
+Mim.Teken.fileName = ""
 Mim.Teken.CancelError = True
 Mim.Teken.Filter = "Alle bestanden (*.*)|*.*"
 Mim.Teken.ShowSave
 
 FlTempBewaar = FreeFile
-Open Mim.Teken.filename For Output As FlTempBewaar
+Open Mim.Teken.fileName For Output As FlTempBewaar
 
 For Tel = 1 To X.Rows - 1
     X.Row = Tel
@@ -633,16 +636,16 @@ Private Sub Command1_Click()
             Mim.Teken.InitDir = LaadTekst("dnnInstellingen", "Mario")
         End If
         Mim.Teken.Filter = "Acrobat PDF bestand (*.pdf)|*.pdf"
-        Mim.Teken.filename = ""
+        Mim.Teken.fileName = ""
         Mim.Teken.ShowOpen
-        bstPDFofTIF = LCase(Mim.Teken.filename)
+        bstPDFofTIF = LCase(Mim.Teken.fileName)
         If bstPDFofTIF = "" Then
             Exit Sub
         ElseIf Right(bstPDFofTIF, 3) <> "pdf" Then
             MsgBox "Uitsluitend Pdf bestanden selecteren a.u.b.", vbExclamation
             'Exit Sub
         End If
-        bstPDFofTIF = Mim.Teken.filename
+        bstPDFofTIF = Mim.Teken.fileName
         Label2.Caption = bstPDFofTIF
         Screen.MousePointer = vbHourglass
         On Local Error Resume Next
@@ -690,9 +693,8 @@ End Sub
 
 Private Sub Form_Load()
 
-LoadFormProperties Me
-
-'Set miDoc = New MODIctl.Document
+'LoadFormProperties Me
+Me.Width = 9180
 
 End Sub
 
@@ -701,6 +703,8 @@ Private Sub Form_LostFocus()
 'Stop
 
 End Sub
+
+
 
 Private Sub Form_Resize()
 
@@ -774,13 +778,14 @@ End If
 End Function
 
 
-
-
 Private Sub Form_Unload(Cancel As Integer)
 Dim X As Boolean
 
-X = SaveFormProperties(Me)
-'Me.MiDocView1.filename = ""
+If statusForm = "" Then
+Else
+    'Stop
+    'X = SaveFormProperties(Me)
+End If
 
 End Sub
 
@@ -1170,7 +1175,7 @@ Private Sub X_RowColChange()
 End Sub
 
 ' Copy a BLOB field's contents to a binary file.
-Function BlobToFile(fld As ADODB.Field, filename As String, _
+Function BlobToFile(fld As ADODB.Field, fileName As String, _
     Optional ChunkSize As Long = 8192)
     Dim fnum As Integer, bytesLeft As Long, bytes As Long
     Dim tmp() As Byte
@@ -1181,10 +1186,10 @@ Function BlobToFile(fld As ADODB.Field, filename As String, _
     End If
     ' Open the file;, delete it firstoverwrite it if necessary.' Delete the
     ' file if it exists already, then create a new one.
-    If Dir$(filename) <> "" Then Kill filename
+    If Dir$(fileName) <> "" Then Kill fileName
     
     fnum = FreeFile
-    Open filename For Binary As fnum
+    Open fileName For Binary As fnum
     ' Read the field's contents, and write it the data to the file.
     bytesLeft = fld.ActualSize
     
@@ -1202,7 +1207,7 @@ End Function
 
 
 ' Copy a file's contents into a BLOB field.
-Function FileToBlob(fld As ADODB.Field, filename As String, _
+Function FileToBlob(fld As ADODB.Field, fileName As String, _
     Optional ChunkSize As Long = 8192)
     
     Dim fnum As Integer, bytesLeft As Long, bytes As Long
@@ -1213,10 +1218,10 @@ Function FileToBlob(fld As ADODB.Field, filename As String, _
         Err.Raise 1001, , "Field doesn't support the GetChunk method."
     End If
     ' Open the file; raise an error if the file doesn't exist.
-    If Dir$(filename) = "" Then Err.Raise 53, , "File not found"
+    If Dir$(fileName) = "" Then Err.Raise 53, , "File not found"
     
     fnum = FreeFile
-    Open filename For Binary As fnum
+    Open fileName For Binary As fnum
     ' Read the file in chunks, and append data to the field.
     bytesLeft = LOF(fnum)
     Do While bytesLeft

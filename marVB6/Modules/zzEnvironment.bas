@@ -335,8 +335,10 @@ Select Case Fl
         LogTekst = " BIB Allerlei"
 End Select
 
+Xlog.statusForm = ""
 Unload Xlog
 Load Xlog
+Xlog.statusForm = "CanBeSavedNow"
 Xlog.Caption = Xlog.Caption + LogTekst
 Xlog.Height = Xlog.Height + 3
 Xlog.X.Rows = 1

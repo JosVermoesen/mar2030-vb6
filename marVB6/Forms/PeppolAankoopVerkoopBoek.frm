@@ -1274,9 +1274,22 @@ If chkAfdrukInVenster Then
     Xlog.X.Row = 1
     Xlog.X.Col = 0
     Xlog.X.ColWidth(0) = 1140
-    Xlog.WindowState = 2
+    Xlog.WindowState = 0
     'Xlog.X.ColAlignment(2) = flexAlignRightTop
     Screen.MousePointer = vbNormal
+    
+    '---------------------------------------------------
+    'TODO everywhere when choosen show print in a window
+    Xlog.WindowState = vbNormal
+    Xlog.statusForm = ""
+    
+    If aIndex = TABLE_SUPPLIERS Then
+        Xlog.Width = 17055
+    ElseIf aIndex = TABLE_CUSTOMERS Then
+        Xlog.Width = 13320
+    End If
+    '---------------------------------------------------
+        
     Xlog.WijzigenLijn.Visible = False
     Xlog.Afsluiten.Enabled = False
     Xlog.Afsluiten.TabStop = False

@@ -16,7 +16,7 @@ Begin VB.Form SqlSearch
    ScaleHeight     =   4455
    ScaleWidth      =   7740
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   1  'CenterOwner
+   StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.StatusBar stbSnelHelp 
       Align           =   2  'Align Bottom
       Height          =   375
@@ -54,7 +54,6 @@ Begin VB.Form SqlSearch
       _ExtentY        =   1508
       _Version        =   393217
       BackColor       =   16777215
-      Enabled         =   -1  'True
       TextRTF         =   $"SQLZoeken99.frx":0000
    End
    Begin VB.CommandButton cmdZoeken 
