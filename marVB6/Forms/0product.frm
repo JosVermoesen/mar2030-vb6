@@ -225,11 +225,15 @@ Begin VB.Form frmProduktFiche
       TabPicture(1)   =   "0product.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lblRecordCount"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "msfSQL"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "txtSQL"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "cmdSQL"
       Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "cmdKopij"
+      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).ControlCount=   5
       TabCaption(2)   =   "eCommerce FTP"
       TabPicture(2)   =   "0product.frx":0038
@@ -239,6 +243,7 @@ Begin VB.Form frmProduktFiche
       TabPicture(3)   =   "0product.frx":0054
       Tab(3).ControlEnabled=   0   'False
       Tab(3).Control(0)=   "msfJournaal"
+      Tab(3).Control(0).Enabled=   0   'False
       Tab(3).ControlCount=   1
       Begin VB.CommandButton cmdRBAcontrole 
          Caption         =   "&Controle"
@@ -2099,7 +2104,7 @@ Option Explicit
 Private Declare Function ShellExecute _
                             Lib "shell32.dll" _
                             Alias "ShellExecuteA" ( _
-                            ByVal HWND As Long, _
+                            ByVal hwnd As Long, _
                             ByVal lpOperation As String, _
                             ByVal lpFile As String, _
                             ByVal lpParameters As String, _
@@ -2131,11 +2136,11 @@ Do
         If InStr(TxtInfo(TempoTel).Tag, "|") <> 0 Then
             If InStr(cmdSwitch.Caption, "BEF") Then
                 vBibDef = Left(TxtInfo(TempoTel).Tag, 4)
-                vBib TABLE_PRODUCTS, Dec(Val(TxtInfo(TempoTel).Text) / EURO, MASK_EURX), vBibDef
+                vBib TABLE_PRODUCTS, Dec(Val(TxtInfo(TempoTel).text) / EURO, MASK_EURX), vBibDef
                 vBibDef = Right(TxtInfo(TempoTel).Tag, 4)
             Else
                 vBibDef = Right(TxtInfo(TempoTel).Tag, 4)
-                vBib TABLE_PRODUCTS, Dec(Val(TxtInfo(TempoTel).Text) * EURO, MASK_EURX), vBibDef
+                vBib TABLE_PRODUCTS, Dec(Val(TxtInfo(TempoTel).text) * EURO, MASK_EURX), vBibDef
                 vBibDef = Left(TxtInfo(TempoTel).Tag, 4)
             End If
         ElseIf InStr(TxtInfo(TempoTel).Tag, ";") <> 0 Then
@@ -2143,22 +2148,22 @@ Do
         Else
             vBibDef = TxtInfo(TempoTel).Tag
         End If
-        vBib TABLE_PRODUCTS, TxtInfo(TempoTel).Text, vBibDef
+        vBib TABLE_PRODUCTS, TxtInfo(TempoTel).text, vBibDef
     End If
     TempoTel = TempoTel + 1
     SnelHelpPrint TxtInfo(TempoTel).Tag, BL_LOGGING
     If Err Then Exit Do
 Loop
-vBib TABLE_PRODUCTS, Me.txtLink.Text, "v002"
-vBib TABLE_PRODUCTS, Me.txtMilieu.Text, "v261"
-vBib TABLE_PRODUCTS, Me.txtEindeReeks.Text, "v300"
+vBib TABLE_PRODUCTS, Me.txtLink.text, "v002"
+vBib TABLE_PRODUCTS, Me.txtMilieu.text, "v261"
+vBib TABLE_PRODUCTS, Me.txtEindeReeks.text, "v300"
 If Me.cbCategorie.ListIndex >= 0 Then
-    vBib TABLE_PRODUCTS, Me.cbCategorie.Text, "v221"
+    vBib TABLE_PRODUCTS, Me.cbCategorie.text, "v221"
 Else
     vBib TABLE_PRODUCTS, " ", "v221"
 End If
 If Me.cbMerk.ListIndex >= 0 Then
-    vBib TABLE_PRODUCTS, Me.cbMerk.Text, "v001"
+    vBib TABLE_PRODUCTS, Me.cbMerk.text, "v001"
 Else
     vBib TABLE_PRODUCTS, " ", "v001"
 End If
@@ -2174,8 +2179,8 @@ Do While TempoTel > -1
     TxtInfo(TempoTel) = ""
     TempoTel = TempoTel - 1
 Loop
-Me.txtLink.Text = ""
-Me.txtMilieu.Text = ""
+Me.txtLink.text = ""
+Me.txtMilieu.text = ""
 frmProduktFiche.Caption = "ProduktFiche :"
 
 'v106
@@ -2242,7 +2247,7 @@ Sub VernieuwTicketPrijs()
 
 'maskerEur
 If InStr(cmdSwitch.Caption, "EUR") Then
-    BedragEurExcl = Val(TxtInfo(3).Text) * Val(TxtInfo(8).Text)
+    BedragEurExcl = Val(TxtInfo(3).text) * Val(TxtInfo(8).text)
     BedragBefExcl = BedragEurExcl * EURO
     
     bedragEurBtw = BedragEurExcl * Val(Mid(TxtInfo(7), InStr(TxtInfo(7), ":") + 1)) / 100
@@ -2253,7 +2258,7 @@ If InStr(cmdSwitch.Caption, "EUR") Then
     LblCijfers(4) = Format(BedragEurExcl + bedragEurBtw, "#,##0.00")
     LblCijfers(2) = Format(BedragBefExcl + BedragBefBtw, "#,##0")
 Else
-    BedragBefExcl = Val(TxtInfo(3).Text) * Val(TxtInfo(8).Text)
+    BedragBefExcl = Val(TxtInfo(3).text) * Val(TxtInfo(8).text)
     BedragEurExcl = BedragBefExcl / EURO
     
     BedragBefBtw = CDbl(BedragBefExcl * Val(Mid(TxtInfo(7), InStr(TxtInfo(7), ":") + 1)) / 100)
@@ -2272,7 +2277,7 @@ Private Sub Alfa_Click()
 SharedFl = TABLE_PRODUCTS
 
 aIndex = 1
-GridText = TxtInfo(1).Text
+GridText = TxtInfo(1).text
 SqlSearch.Show 1
 If Ktrl Then
 Else
@@ -2342,16 +2347,16 @@ ElseIf KtrlBox = vbNo Then
     Exit Sub
 Else
     On Error GoTo CancelError
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = "Alle bestanden (*.xml)|*.xml"
     Mim.Teken.ShowSave
     Dim BestandHier As String
-    BestandHier = Mim.Teken.filename
+    BestandHier = Mim.Teken.fileName
     If Not Dir(BestandHier) = "" Then
         Kill BestandHier
     End If
-    rsSQLQuery.Save Mim.Teken.filename, adPersistXML
+    rsSQLQuery.Save Mim.Teken.fileName, adPersistXML
 End If
 
 CancelError:
@@ -2381,10 +2386,10 @@ Dim tempo() As String
 Dim COUNT_TO As Integer
 Dim TelOK As Integer
 
-TempoMilieu = txtMilieu.Text
+TempoMilieu = txtMilieu.text
 TelOK = -1
 
-tempo = Split(txtMilieu.Text, ";")
+tempo = Split(txtMilieu.text, ";")
 For COUNT_TO = 0 To UBound(tempo)
     bGet TABLE_PRODUCTS, 0, tempo(COUNT_TO)
     If Ktrl = 0 Then
@@ -2430,7 +2435,7 @@ End If
 
 If TempoMilieu = "" Then
 Else
-    txtMilieu.Text = TempoMilieu
+    txtMilieu.text = TempoMilieu
     TempoMilieu = ""
 End If
 Msg = "Gegevens bestaande '" + bstNaam(TABLE_PRODUCTS) + "'-fiche wijzigen.  Bent U zeker ?"
@@ -2499,36 +2504,36 @@ For TempoTel = 0 To TxtInfo.UBound
                 'boekhoudcijfers in EUR
                 vBibDef = Left(TxtInfo(TempoTel).Tag, 4)
                 If InStr(cmdSwitch.Caption, "EUR") Then
-                    TxtInfo(TempoTel).Text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")), "#######0.0000")
+                    TxtInfo(TempoTel).text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")), "#######0.0000")
                 Else
-                    TxtInfo(TempoTel).Text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")) * EURO, "#######0.0000")
+                    TxtInfo(TempoTel).text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")) * EURO, "#######0.0000")
                 End If
             Else
                 'boekhoudcijfers in BEF
                 vBibDef = Right(TxtInfo(TempoTel).Tag, 4)
                 If InStr(cmdSwitch.Caption, "BEF") Then
-                    TxtInfo(TempoTel).Text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")), "#######0.0000")
+                    TxtInfo(TempoTel).text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")), "#######0.0000")
                 Else
-                    TxtInfo(TempoTel).Text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")) / EURO, "#######0.0000")
+                    TxtInfo(TempoTel).text = Dec(Val(vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")) / EURO, "#######0.0000")
                 End If
             End If
         ElseIf InStr(TxtInfo(TempoTel).Tag, ";") <> 0 Then
             vBibDef = Left(TxtInfo(TempoTel).Tag, InStr(TxtInfo(TempoTel).Tag, ";") - 1)
             If InStr(TxtInfo(TempoTel).Tag, "&") Then
-                TxtInfo(TempoTel).Text = vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")
+                TxtInfo(TempoTel).text = vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")
             Else
-                TxtInfo(TempoTel).Text = fmarBoxText(Mid(TxtInfo(TempoTel).Tag, InStr(TxtInfo(TempoTel).Tag, ";") + 1), "2", vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #"))
+                TxtInfo(TempoTel).text = fmarBoxText(Mid(TxtInfo(TempoTel).Tag, InStr(TxtInfo(TempoTel).Tag, ";") + 1), "2", vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #"))
             End If
         Else
             vBibDef = TxtInfo(TempoTel).Tag
-            TxtInfo(TempoTel).Text = vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")
+            TxtInfo(TempoTel).text = vBibTekst(TABLE_PRODUCTS, "#" + vBibDef + " #")
         End If
     End If
     'If TempoTel = 16 Then Stop
 Next
-Me.txtLink.Text = vBibTekst(TABLE_PRODUCTS, "#v002 #")
-Me.txtEindeReeks.Text = Str(Val(vBibTekst(TABLE_PRODUCTS, "#v300 #")))
-Me.txtMilieu.Text = vBibTekst(TABLE_PRODUCTS, "#v261 #")
+Me.txtLink.text = vBibTekst(TABLE_PRODUCTS, "#v002 #")
+Me.txtEindeReeks.text = Str(Val(vBibTekst(TABLE_PRODUCTS, "#v300 #")))
+Me.txtMilieu.text = vBibTekst(TABLE_PRODUCTS, "#v261 #")
 Dim tmpCategorie As String
 Dim tmpMerk As String
 Dim COUNT_TOHier As Integer
@@ -2581,7 +2586,7 @@ Function adoRECORDset() As Boolean
     
     rsSQLQuery.Close
     On Error Resume Next
-    rsSQLQuery.Open txtSQL.Text, adntDB
+    rsSQLQuery.Open txtSQL.text, adntDB
     If Err Then
         MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
         msfSQL.Refresh
@@ -2603,7 +2608,7 @@ If cmdSwitch.Caption = "Ingave in EUR" Then
     On Local Error Resume Next
     For TempoTel = 0 To TxtInfo.UBound
         If InStr(TxtInfo(TempoTel).Tag, "|") <> 0 Then
-            TxtInfo(TempoTel).Text = Dec(Val(TxtInfo(TempoTel).Text) * EURO, "#######0.0000")
+            TxtInfo(TempoTel).text = Dec(Val(TxtInfo(TempoTel).text) * EURO, "#######0.0000")
         End If
     Next
 Else
@@ -2612,7 +2617,7 @@ Else
     On Local Error Resume Next
     For TempoTel = 0 To TxtInfo.UBound
         If InStr(TxtInfo(TempoTel).Tag, "|") <> 0 Then
-            TxtInfo(TempoTel).Text = Dec(Val(TxtInfo(TempoTel).Text) / EURO, "#######0.0000")
+            TxtInfo(TempoTel).text = Dec(Val(TxtInfo(TempoTel).text) / EURO, "#######0.0000")
         End If
     Next
 End If
@@ -2623,7 +2628,7 @@ End Sub
 
 Private Sub cmdTonen_Click()
 
-If Trim$(txtLink.Text) = "" Then
+If Trim$(txtLink.text) = "" Then
     Exit Sub
 End If
 
@@ -2632,7 +2637,7 @@ Dim r As Long
 
 If Err Then MsgBox Error: Exit Sub
 Dim strAdress As String
-strAdress = txtLink.Text
+strAdress = txtLink.text
 r = ShellExecute(0, "open", strAdress, 0, 0, 1)
         
 'frmB.WindowState = vbNormal
@@ -2726,12 +2731,12 @@ Private Sub TxtInfo_GotFocus(Index As Integer)
 
 IsGewijzigd = False
 TxtInfo(Index).SelStart = 0
-TxtInfo(Index).SelLength = Len(TxtInfo(Index).Text)
+TxtInfo(Index).SelLength = Len(TxtInfo(Index).text)
 iTabIndex = Index
 
 TxtInfo(Index).BackColor = &HFFFF80
 If InStr(TxtInfo(Index).Tag, ";") Then
-    If RTrim$(TxtInfo(Index).Text) = "" Then
+    If RTrim$(TxtInfo(Index).text) = "" Then
         SnelHelpPrint "Druk [Ctrl] om te kiezen", BL_LOGGING
     ElseIf InStr(TxtInfo(Index).Tag, "&") Then
         Select Case Mid(TxtInfo(Index).Tag, InStr(TxtInfo(Index).Tag, "&") + 1, 1)
@@ -2744,9 +2749,9 @@ If InStr(TxtInfo(Index).Tag, ";") Then
             Case Else
                 MsgBox "nog niks"
         End Select
-        bGet SharedFl, 0, TxtInfo(Index).Text
+        bGet SharedFl, 0, TxtInfo(Index).text
         If Ktrl Then
-            MsgBox TxtInfo(Index).Text + " bestaat niet (meer) !"
+            MsgBox TxtInfo(Index).text + " bestaat niet (meer) !"
         Else
             RecordToVeld SharedFl
             SnelHelpPrint FVT(SharedFl, 1) + " Druk [Ctrl] om te wijzigen", BL_LOGGING
@@ -2775,20 +2780,20 @@ If InStr(TxtInfo(Index).Tag, "&") Then
         Case Else
             MsgBox "nog niks"
     End Select
-    GridText = TxtInfo(Index).Text
+    GridText = TxtInfo(Index).text
     SqlSearch.Show 1
     If Ktrl = 0 Then
-        TxtInfo(Index).Text = FVT(SharedFl, 0)
+        TxtInfo(Index).text = FVT(SharedFl, 0)
     End If
 ElseIf InStr(TxtInfo(Index).Tag, ";") Then
     aIndex = Val(Mid(TxtInfo(Index).Tag, InStr(TxtInfo(Index).Tag, ";") + 1))
     aIndex = aIndex + 1000
-    DummyText = TxtInfo(Index).Text
+    DummyText = TxtInfo(Index).text
     GridText = DummyText
     KeuzeVSF.Show 1
     If GridText <> DummyText Then
         DummyText = GridText
-        TxtInfo(Index).Text = DummyText
+        TxtInfo(Index).text = DummyText
         VernieuwTicketPrijs
     End If
 End If
@@ -2812,12 +2817,12 @@ Dim Sleuteltje As String
 TxtInfo(Index).BackColor = &HFFFFFF
 Select Case Index
     Case 0
-        bGet TABLE_PRODUCTS, 0, TxtInfo(0).Text
+        bGet TABLE_PRODUCTS, 0, TxtInfo(0).text
         If Ktrl Then
-            Sleuteltje = TxtInfo(0).Text
+            Sleuteltje = TxtInfo(0).text
             Schoon
             FicheIsNieuw = True
-            TxtInfo(0).Text = Sleuteltje
+            TxtInfo(0).text = Sleuteltje
         Else
             VensterVullen
         End If
@@ -2959,7 +2964,7 @@ Private Sub groepenVullen()
         MsgBox "Gelieve de groepen te initialiseren a.u.b."
     Else
         'lijstje samenstellen
-        splitstring = Split(rsGroepenHier.Fields("GroepItems"), ";")
+        splitstring = Split(rsGroepenHier.fields("GroepItems"), ";")
         For COUNT_TOHier = 0 To UBound(splitstring)
             Me.cbCategorie.AddItem splitstring(COUNT_TOHier)
         Next
@@ -2971,7 +2976,7 @@ Private Sub groepenVullen()
         MsgBox "Gelieve de groepen te initialiseren a.u.b."
     Else
         'lijstje samenstellen
-        splitstring = Split(rsGroepenHier.Fields("GroepItems"), ";")
+        splitstring = Split(rsGroepenHier.fields("GroepItems"), ";")
         For COUNT_TOHier = 0 To UBound(splitstring)
             Me.cbMerk.AddItem splitstring(COUNT_TOHier)
         Next
