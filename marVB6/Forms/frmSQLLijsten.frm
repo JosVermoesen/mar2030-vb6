@@ -696,7 +696,7 @@ Else
     Dim FlTemp As Integer
     FlTemp = FreeFile
     VolgNummer% = RapportDefinitie.ListCount
-    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Format(VolgNummer%, "00") + ".PRD" For Output As FlTemp
+    Open PROGRAM_LOCATION + "prd\" + Format(Val(Left(Tabel.text, 1)), "000") + Format(VolgNummer%, "00") + ".PRD" For Output As FlTemp
     Print #FlTemp, (TekstInfo(2).text)
     For T = 0 To RapportVelden.ListCount - 1
         Print #FlTemp, (RapportVelden.List(T))
@@ -709,11 +709,6 @@ End If
 End Sub
 
 Private Sub Form_Load()
-
-If Not Toegankelijk(Me) Then
-    Unload Me
-    Exit Sub
-End If
 
 Set Printer = Printers(LijstPrinterNr)
 On Error Resume Next
@@ -743,16 +738,6 @@ Formattering.AddItem "6: Bedrag met masker #0"
 Formattering.AddItem "7: Bedrag met masker #####0.0"
 Formattering.AddItem "Z: Rekenformule */+-() via Titel!"
 Tabel.ListIndex = 0
-
-'ADO TEST
-'Dim cnn As adodb.Connection
-'Dim rs As adodb.Recordset
-
-'Set cnn = New adodb.Connection
-'Set rs = New adodb.Recordset
-
-'cnn.Open adojetprovider & "Data Source=C:\marnt\data\001\marnt.mdv;"
-'rs.Open "SELECT * FROM Klanten", cnn, adOpenStatic, adLockOptimistic
 
 End Sub
 
@@ -897,12 +882,12 @@ On Local Error Resume Next
     Dim FlTemp As Integer
     FlTemp = FreeFile
     
-    If Dir(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD") = "" Then
+    If Dir(PROGRAM_LOCATION + "prd\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD") = "" Then
         MsgBox Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD" + " bestaat niet meer..."
         Exit Sub
     End If
     
-    Open PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD" For Input As FlTemp
+    Open PROGRAM_LOCATION + "prd\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD" For Input As FlTemp
     Line Input #FlTemp, RapportTekst$
     TekstInfo(2).text = RapportTekst$
     RapportVelden.Clear
@@ -923,7 +908,7 @@ Select Case KeyCode
         Msg = "Rapportdefinitie " + vbCrLf + vbCrLf + RapportDefinitie.text + vbCrLf + vbCrLf + "verwijderen.  Bent U zeker ?"
         KtrlBox = MsgBox(Msg, 292)
         If KtrlBox = 6 Then
-            Kill PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD"
+            Kill PROGRAM_LOCATION + "prd\" + Format(Val(Left(Tabel.text, 1)), "000") + Left(RapportDefinitie.text, 2) + ".PRD"
             RapportDefinitie.RemoveItem RapportDefinitie.ListIndex
             
         End If
@@ -986,13 +971,13 @@ For T = 0 To FL_NUMBEROFINDEXEN(FlKeuze)
 Next
 Sortering.ListIndex = 0
 RapportDefinitie.Clear
-X$ = Dir$(PROGRAM_LOCATION + "Def\" + Format(Val(Left(Tabel.text, 1)), "000") + "??.PRD")
+X$ = Dir$(PROGRAM_LOCATION + "prd\" + Format(Val(Left(Tabel.text, 1)), "000") + "??.PRD")
 If X$ = "" Then
     Exit Sub
 Else
     FlL = FreeFile
     Do While X$ <> ""
-        Open PROGRAM_LOCATION + "Def\" + X$ For Input As FlL
+        Open PROGRAM_LOCATION + "prd\" + X$ For Input As FlL
             Line Input #FlL, TekstLijn$
         Close FlL
         RapportDefinitie.AddItem Mid(X$, 4, 2) + ": " + TekstLijn$
