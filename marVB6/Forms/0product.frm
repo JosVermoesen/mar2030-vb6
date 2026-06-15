@@ -225,15 +225,11 @@ Begin VB.Form frmProduktFiche
       TabPicture(1)   =   "0product.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "lblRecordCount"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "msfSQL"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "txtSQL"
-      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "cmdSQL"
       Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "cmdKopij"
-      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).ControlCount=   5
       TabCaption(2)   =   "eCommerce FTP"
       TabPicture(2)   =   "0product.frx":0038
@@ -243,7 +239,6 @@ Begin VB.Form frmProduktFiche
       TabPicture(3)   =   "0product.frx":0054
       Tab(3).ControlEnabled=   0   'False
       Tab(3).Control(0)=   "msfJournaal"
-      Tab(3).Control(0).Enabled=   0   'False
       Tab(3).ControlCount=   1
       Begin VB.CommandButton cmdRBAcontrole 
          Caption         =   "&Controle"
@@ -2907,8 +2902,13 @@ If v.Caption = "Journaal" Then
     Screen.MousePointer = vbHourglass
     
     Dim msgQuery As String
-
-    msgQuery = "SELECT * FROM Journalen WHERE v102 ='" & vBibTekst(TABLE_PRODUCTS, "v102") & "' and v019 >'5'"
+    
+    msgQuery = "SELECT * FROM Journalen "
+    msgQuery = msgQuery & "WHERE v102 ='" & vBibTekst(TABLE_PRODUCTS, "v102") & "' "
+    msgQuery = msgQuery & "AND v066 >= '" & Mid(BOOKYEAR_FROMTO, 1, 8) & "' "
+    msgQuery = msgQuery & "AND v066<= '" & Mid(BOOKYEAR_FROMTO, 9) & "' "
+    msgQuery = msgQuery & "AND v019 >'5' "
+    msgQuery = msgQuery & "ORDER BY v066"
     On Error Resume Next
     msfJournaal.Recordset = Nothing
     rsJourQuery.Close
