@@ -41,7 +41,7 @@ Begin VB.Form FormB2BAMonitor
       Width           =   2535
    End
    Begin VB.CommandButton ButtonSentReceiptSeller 
-      Caption         =   "Verzendbewijs"
+      Caption         =   "Ontvangstbewijs"
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"

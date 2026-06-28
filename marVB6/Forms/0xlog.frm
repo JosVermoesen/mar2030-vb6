@@ -426,10 +426,9 @@ End Sub
 
 Private Sub Annuleren_Click()
 
-XLogKey = ""
-GridText = ""
-Xlog.WindowState = 0
-Xlog.Hide
+    XLogKey = ""
+    GridText = ""
+    Xlog.Hide
 
 End Sub
 
@@ -694,15 +693,11 @@ End Sub
 Private Sub Form_Load()
 
 'LoadFormProperties Me
-Me.Width = 9180
+'Me.Width = 9180
 
 End Sub
 
-Private Sub Form_LostFocus()
 
-'Stop
-
-End Sub
 
 
 
@@ -778,16 +773,6 @@ End If
 End Function
 
 
-Private Sub Form_Unload(Cancel As Integer)
-Dim X As Boolean
-
-If statusForm = "" Then
-Else
-    'Stop
-    'X = SaveFormProperties(Me)
-End If
-
-End Sub
 
 Private Sub Kopie_Click(Index As Integer)
 

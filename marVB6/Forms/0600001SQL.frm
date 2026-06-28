@@ -545,7 +545,12 @@ rsJourHier.CursorLocation = adUseClient
 
 Msg = "SELECT * FROM Journalen WHERE v070 >='" & _
     Van & "' AND v070 <= '" & _
-    Tot & "' ORDER BY v035"
+    Tot & "' ORDER BY v066"
+    
+If BasisB(3).CheckBoxSorting.Value = vbChecked Then
+    Msg = Msg & " DESC"
+End If
+
 
 rsJourHier.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
 If Err Then

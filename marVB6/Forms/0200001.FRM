@@ -140,14 +140,19 @@ Begin VB.Form DirekteAankoop
       TabPicture(1)   =   "0200001.frx":0326
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "OLE1"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "cbAfbeelding"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       TabCaption(2)   =   "Voorkeurinstellingen"
       TabPicture(2)   =   "0200001.frx":0342
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Label3"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "obTAB(0)"
+      Tab(2).Control(1).Enabled=   0   'False
       Tab(2).Control(2)=   "obTAB(1)"
+      Tab(2).Control(2).Enabled=   0   'False
       Tab(2).ControlCount=   3
       Begin VB.TextBox TextWarningIBAN 
          BackColor       =   &H000080FF&

@@ -604,6 +604,8 @@ Xlog.X.ColAlignment(4) = flexAlignRightTop
 Xlog.X.ColAlignment(5) = flexAlignRightTop
 Xlog.X.ColAlignment(6) = flexAlignLeftTop
 
+If Mim.MenuTitel(6).Enabled Then Xlog.Width = 8965
+
 Opnieuw:
 EnkelOpenstaand = False
 Select Case Fl
@@ -626,7 +628,10 @@ rsLocalAV.CursorLocation = adUseClient
 
 Msg = "SELECT * FROM Dokumenten "
 Msg = Msg & "WHERE v034 = '" & VoorLetter & Trim(vBibTekst(Fl, "#A110 #")) & "' "
-Msg = Msg & "ORDER BY v035 DESC"
+Msg = Msg & "ORDER BY v035" 'TODO: give choise also to DESC"
+If BasisB(Fl).CheckBoxSorting.Value = vbChecked Then
+    Msg = Msg & " DESC"
+End If
 
 SnelHelpPrint Msg, BL_LOGGING
 rsLocalAV.Open Msg, adntDB, adOpenForwardOnly, adLockReadOnly
@@ -1485,7 +1490,7 @@ Select Case Left(String99(READING, 20), 1)
     Case Else
         'MsgBox "Stop"
 End Select
-If ProducentNummer <> Space$(8) Then
+If Trim(ProducentNummer) <> "" Then
     ProducentKopij = ProducentNummer
     Mim.MenuTitel(6).Enabled = True
 Else

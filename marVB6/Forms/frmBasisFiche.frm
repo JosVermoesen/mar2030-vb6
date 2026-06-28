@@ -3,10 +3,10 @@ Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form BasicTable 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "BasisFiche"
-   ClientHeight    =   1740
+   ClientHeight    =   2730
    ClientLeft      =   1005
    ClientTop       =   1125
-   ClientWidth     =   4230
+   ClientWidth     =   4770
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "MS Sans Serif"
@@ -25,12 +25,31 @@ Begin VB.Form BasicTable
    MinButton       =   0   'False
    NegotiateMenus  =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   1740
-   ScaleWidth      =   4230
+   ScaleHeight     =   2730
+   ScaleWidth      =   4770
    ShowInTaskbar   =   0   'False
    WindowState     =   1  'Minimized
-   Begin VB.CommandButton ButtonNext 
-      Caption         =   "&Volgende"
+   Begin VB.CheckBox CheckBoxSorting 
+      Alignment       =   1  'Right Justify
+      Caption         =   "Dalend Sorteren"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   2760
+      TabIndex        =   12
+      TabStop         =   0   'False
+      Top             =   1320
+      Value           =   1  'Checked
+      Width           =   1815
+   End
+   Begin VB.ComboBox ComboBoxTemplate 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -41,15 +60,33 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   1920
+      Left            =   180
+      Style           =   2  'Dropdown List
+      TabIndex        =   11
+      Top             =   2280
+      Width           =   4395
+   End
+   Begin VB.CommandButton ButtonNext 
+      Caption         =   "&Hoger"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Left            =   960
       TabIndex        =   10
       TabStop         =   0   'False
       ToolTipText     =   "Volgende"
-      Top             =   900
+      Top             =   1380
       Width           =   975
    End
    Begin VB.CommandButton ButtonPrevious 
-      Caption         =   "&Vorige"
+      Caption         =   "&Lager"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -60,11 +97,11 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   1920
+      Left            =   960
       TabIndex        =   9
       TabStop         =   0   'False
       ToolTipText     =   "Vorige"
-      Top             =   540
+      Top             =   960
       Width           =   975
    End
    Begin VB.CommandButton ButtonFirst 
@@ -79,11 +116,11 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   1140
+      Left            =   180
       TabIndex        =   8
       TabStop         =   0   'False
       ToolTipText     =   "Eerste fiche in rij"
-      Top             =   540
+      Top             =   960
       Width           =   735
    End
    Begin VB.CommandButton ButtonLast 
@@ -98,15 +135,16 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   1140
+      Left            =   180
       TabIndex        =   7
       TabStop         =   0   'False
       ToolTipText     =   "Laatste fiche in rij"
-      Top             =   900
+      Top             =   1380
       Width           =   735
    End
    Begin VB.CommandButton ButtonRemove 
       Caption         =   "Verwijderen"
+      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -117,12 +155,12 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   -60
+      Left            =   180
       TabIndex        =   6
       TabStop         =   0   'False
       ToolTipText     =   "Aktieve fiche verwijderen"
-      Top             =   900
-      Width           =   1125
+      Top             =   1800
+      Width           =   1725
    End
    Begin VB.ComboBox cmbSortering 
       BeginProperty Font 
@@ -135,11 +173,11 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   1140
+      Left            =   1380
       Style           =   2  'Dropdown List
       TabIndex        =   3
-      Top             =   1260
-      Width           =   2955
+      Top             =   540
+      Width           =   3195
    End
    Begin VB.CommandButton ButtonEdit 
       Caption         =   "B&ewerken"
@@ -156,7 +194,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30040
-      Left            =   -60
+      Left            =   180
       TabIndex        =   0
       TabStop         =   0   'False
       ToolTipText     =   "Aktieve fiche wijzigen en/of in detail bekijken"
@@ -176,11 +214,11 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30030
-      Left            =   -60
+      Left            =   180
       TabIndex        =   2
       TabStop         =   0   'False
       ToolTipText     =   "GeSELECTeerd zoeken (ANSI-92 SQL)"
-      Top             =   1260
+      Top             =   540
       Width           =   1125
    End
    Begin VB.CommandButton ButtonMinimize 
@@ -198,15 +236,15 @@ Begin VB.Form BasicTable
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   3000
+      Left            =   2040
       TabIndex        =   4
       TabStop         =   0   'False
       ToolTipText     =   "Venster minimaliseren"
-      Top             =   900
-      Width           =   1095
+      Top             =   1800
+      Width           =   2535
    End
    Begin VB.CommandButton ButtonJournal 
-      Caption         =   "&Journaal"
+      Caption         =   "&Relaties"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -218,21 +256,20 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       HelpContextID   =   30060
-      Left            =   3000
+      Left            =   2040
       TabIndex        =   5
-      TabStop         =   0   'False
       ToolTipText     =   "Dokumenten en journaaldetail"
-      Top             =   540
-      Width           =   1095
+      Top             =   960
+      Width           =   2535
    End
    Begin MSMask.MaskEdBox TekstInfo 
       Height          =   315
-      Left            =   1140
+      Left            =   1380
       TabIndex        =   1
       ToolTipText     =   "Breng hier fiche UNIEKE ID-kode in !"
       Top             =   120
-      Width           =   2955
-      _ExtentX        =   5212
+      Width           =   3195
+      _ExtentX        =   5636
       _ExtentY        =   556
       _Version        =   393216
       ClipMode        =   1
@@ -353,7 +390,6 @@ Private Sub ButtonJournal_Click()
     Select Case Fl
         Case TABLE_CUSTOMERS To TABLE_SUPPLIERS
             'BalansKontrole Fl
-            'Stop
             BalansKontroleWithRecordSet Fl
                     
         Case TABLE_LEDGERACCOUNTS
@@ -482,34 +518,15 @@ Private Sub ButtonSearchOn_Click()
         
 End Sub
 
+
+
 Private Sub cmbSortering_GotFocus()
 
     ButtonSearchOn.Default = True
 
 End Sub
 
-Private Sub Form_Activate()
 
-On Local Error Resume Next
-Fl = Val(Me.Tag)
-
-If LOCATION_COMPANYDATA = "" Then
-    Exit Sub
-Else
-    If cmbSortering.ListCount Then
-    Else
-        For T = 0 To FL_NUMBEROFINDEXEN(Fl)
-            cmbSortering.AddItem Format(T, "00") + ":" + FLINDEX_CAPTION(Fl, T) + " (" + Trim$(JETTABLEUSE_INDEX(Fl, T)) + ")"
-        Next
-        Err = 0
-        On Error Resume Next
-        cmbSortering = LaadTekst(Me.Name, "ProduktSortering")
-        If Err Then cmbSortering.ListIndex = 1
-    End If
-    NieuweFiche Fl
-End If
-
-End Sub
 
 Private Sub NieuweFiche(Fl As Integer)
 
@@ -549,6 +566,45 @@ Private Sub RecordNaarFiche(Fl)
     Next
     SnelHelpPrint Msg, BL_LOGGING
     INSERT_FLAG(Fl) = 0
+
+End Sub
+
+
+Private Sub Form_Activate()
+
+On Local Error Resume Next
+    Fl = Val(Me.Tag)
+
+    If LOCATION_COMPANYDATA = "" Then
+        Exit Sub
+    Else
+        If cmbSortering.ListCount Then
+        Else
+            For T = 0 To FL_NUMBEROFINDEXEN(Fl)
+                cmbSortering.AddItem Format(T, "00") + ":" + FLINDEX_CAPTION(Fl, T) + " (" + Trim$(JETTABLEUSE_INDEX(Fl, T)) + ")"
+            Next
+            Err = 0
+            On Error Resume Next
+            cmbSortering = LaadTekst(Me.Name, "ProduktSortering")
+            If Err Then cmbSortering.ListIndex = 1
+        End If
+        NieuweFiche Fl
+        If ComboBoxTemplate.ListCount Then
+        Else
+            Select Case Fl
+                Case 1
+                    ComboBoxTemplate.AddItem "001.DEF: Alle velden klantfiche"
+                
+                Case 2
+                    ComboBoxTemplate.AddItem "002.DEF: Alle velden leveranciersfiche"
+                
+                Case 3
+                    ComboBoxTemplate.AddItem "003.DEF: Alle velden rekeningfiche"
+            End Select
+            ComboBoxTemplate.ListIndex = 0
+            ComboBoxTemplate.Enabled = False
+        End If
+    End If
 
 End Sub
 
