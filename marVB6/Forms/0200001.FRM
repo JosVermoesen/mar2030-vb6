@@ -1012,16 +1012,7 @@ Function CheckDocument() As String
     On Error Resume Next
     Err = 0
     rsDocuments.CursorLocation = adUseClient
-    
-    Dim payRefClean As String
-    
-    payRefClean = Replace(uitwisselingDATAArray(14), "/", "")
-    payRefClean = Replace(payRefClean, "+", "")
-        
-    'If payRefClean = "" Then
-    '    payRefClean = uitwisselingDATAArray(1)
-    'End If
-            
+                    
     Dim sSQL As String
     sSQL = "SELECT "
     sSQL = sSQL + "Leveranciers.A110, Leveranciers.v404, "
@@ -1030,7 +1021,7 @@ Function CheckDocument() As String
     sSQL = sSQL + "WHERE Leveranciers.v404 = '" + uitwisselingDATAArray(5) + "' "
     sSQL = sSQL + "AND Dokumenten.v034 = 'L'+Leveranciers.A110 "
     sSQL = sSQL + "AND Dokumenten.v409 = '" + uitwisselingDATAArray(1) + "' "
-    sSQL = sSQL + "AND Dokumenten.v039 = '" + payRefClean + "'"
+    sSQL = sSQL + "AND Dokumenten.v039 = '" + uitwisselingDATAArray(14) + "'"
     
     SnelHelpPrint Msg, BL_LOGGING
     Screen.MousePointer = vbHourglass
@@ -1045,7 +1036,7 @@ Function CheckDocument() As String
     ElseIf rsDocuments.RecordCount = 1 Then
         'check if already booked
         XLogKey = ""
-        If (Val(rsDocuments("v249")) = Val(uitwisselingDATAArray(21))) And (payRefClean = Trim(rsDocuments("v039"))) And (Replace(uitwisselingDATAArray(2), "-", "") = rsDocuments("v035")) Then
+        If (Val(rsDocuments("v249")) = Val(uitwisselingDATAArray(21))) And (uitwisselingDATAArray(14) = Trim(rsDocuments("v039"))) And (Replace(uitwisselingDATAArray(2), "-", "") = rsDocuments("v035")) Then
             'Msg = "Dit aankoopdocument is reeds ingeboekt." & vbCrLf & vbCrLf
             'Msg = Msg & "Document ID Leverancier: " & documentIdToCheck & vbCrLf & vbCrLf
             'Msg = Msg & "Betaalreferte : " & payReferenceToCheck & vbCrLf
@@ -1174,6 +1165,7 @@ Function CheckSupplier() As Boolean
             Msg = Msg & "Plaatsnaam: " & uitwisselingDATAArray(9) & vbCrLf & vbCrLf
             Msg = Msg & "Controleer eerst of voeg een nieuwe leverancier toe" & vbCrLf & vbCrLf
             Msg = Msg & "Hierna wordt voorgesteld een nieuwe leverancier aan te maken" & vbCrLf & "met gegevens uit het UBL document en ondernemingsnummer als codenummer." & vbCrLf & "Wijzig het codenummer indien nodig en druk enter om de fiche te controleren, te vervolledigen." & vbCrLf & vbCrLf
+            Msg = Msg & "TIP: Vergeet niet de leverancier te koppelen aan een vaste kostenrekening!"
             
             MsgBox Msg, vbInformation, "KBO nummer: " & uitwisselingDATAArray(5)
                

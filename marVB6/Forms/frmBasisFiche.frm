@@ -43,7 +43,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   375
       Left            =   2760
-      TabIndex        =   12
+      TabIndex        =   11
       TabStop         =   0   'False
       Top             =   1320
       Value           =   1  'Checked
@@ -62,7 +62,7 @@ Begin VB.Form BasicTable
       Height          =   315
       Left            =   180
       Style           =   2  'Dropdown List
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   2280
       Width           =   4395
    End
@@ -79,7 +79,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       Left            =   960
-      TabIndex        =   10
+      TabIndex        =   9
       TabStop         =   0   'False
       ToolTipText     =   "Volgende"
       Top             =   1380
@@ -98,7 +98,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       Left            =   960
-      TabIndex        =   9
+      TabIndex        =   8
       TabStop         =   0   'False
       ToolTipText     =   "Vorige"
       Top             =   960
@@ -117,7 +117,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       Left            =   180
-      TabIndex        =   8
+      TabIndex        =   7
       TabStop         =   0   'False
       ToolTipText     =   "Eerste fiche in rij"
       Top             =   960
@@ -136,7 +136,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       Left            =   180
-      TabIndex        =   7
+      TabIndex        =   6
       TabStop         =   0   'False
       ToolTipText     =   "Laatste fiche in rij"
       Top             =   1380
@@ -144,7 +144,6 @@ Begin VB.Form BasicTable
    End
    Begin VB.CommandButton ButtonRemove 
       Caption         =   "Verwijderen"
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -156,7 +155,7 @@ Begin VB.Form BasicTable
       EndProperty
       Height          =   315
       Left            =   180
-      TabIndex        =   6
+      TabIndex        =   12
       TabStop         =   0   'False
       ToolTipText     =   "Aktieve fiche verwijderen"
       Top             =   1800

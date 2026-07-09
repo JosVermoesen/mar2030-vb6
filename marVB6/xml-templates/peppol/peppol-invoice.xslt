@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -243,27 +243,96 @@
           <h2>Samenvatting</h2>
           <table class="summary-table">
             <tr>
-              <td class="label">Subtotaal excl. BTW</td>
+              <td class="label">Subtotaal lijnen excl. BTW</td>
               <td class="value">
                 <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:LineExtensionAmount"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
               </td>
             </tr>
+
+            <!-- Show allowances (discounts) if present -->
+            <xsl:if test="//cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount">
+              <tr>
+                <td class="label">Kortingen</td>
+                <td class="value">
+                  <xsl:text>-</xsl:text>
+                  <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
+                </td>
+              </tr>
+            </xsl:if>
+
+            <!-- Show charges (additional fees like delivery) if present -->
+            <xsl:if test="//cac:LegalMonetaryTotal/cbc:ChargeTotalAmount">
+              <tr>
+                <td class="label">Toeslagen (levering, verzending, ...)</td>
+                <td class="value">
+                  <xsl:text>+</xsl:text>
+                  <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
+                </td>
+              </tr>
+            </xsl:if>
+
+            <!-- Tax Exclusive Amount (after allowances/charges, before VAT) -->
+            <xsl:if test="//cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount">
+              <tr>
+                <td class="label">Totaal excl. BTW</td>
+                <td class="value">
+                  <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
+                </td>
+              </tr>
+            </xsl:if>
+
             <tr>
-              <td class="label">Totaal BTW</td>
+              <td class="label">BTW</td>
               <td class="value">
                 <xsl:value-of select="//cac:TaxTotal/cbc:TaxAmount"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
               </td>
             </tr>
+
+            <!-- Tax Inclusive Amount -->
+            <xsl:if test="//cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount">
+              <tr>
+                <td class="label">
+                  <b>Totaal incl. BTW</b>
+                </td>
+                <td class="value">
+                  <b>
+                    <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
+                  </b>
+                </td>
+              </tr>
+            </xsl:if>
+
+            <!-- Prepaid Amount if present -->
+            <xsl:if test="//cac:LegalMonetaryTotal/cbc:PrepaidAmount">
+              <tr>
+                <td class="label">Reeds betaald</td>
+                <td class="value">
+                  <xsl:text>-</xsl:text>
+                  <xsl:value-of select="//cac:LegalMonetaryTotal/cbc:PrepaidAmount"/>
+                  <xsl:text> </xsl:text>
+                  <xsl:value-of select="//cbc:DocumentCurrencyCode"/>
+                </td>
+              </tr>
+            </xsl:if>
+
             <tr>
               <td class="label">
                 <b>
                   <xsl:choose>
-                    <xsl:when test="$isCredit = 'true'">Totaal credit incl. BTW</xsl:when>
-                    <xsl:otherwise>Totaal incl. BTW</xsl:otherwise>
+                    <xsl:when test="$isCredit = 'true'">Te crediteren</xsl:when>
+                    <xsl:otherwise>Te betalen</xsl:otherwise>
                   </xsl:choose>
                 </b>
               </td>

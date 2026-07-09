@@ -748,9 +748,10 @@ TRYFORCREDITNOTE:
             If valueToUse = "" Then
                 valueToUse = documentId
             End If
-            If InStr(valueToUse, "+") Or InStr(valueToUse, "/") Then
+            If InStr(valueToUse, "+") Or InStr(valueToUse, "/") Or InStr(valueToUse, " ") Then
                 valueToUse = Replace(valueToUse, "+", "")
                 valueToUse = Replace(valueToUse, "/", "")
+                valueToUse = Replace(valueToUse, " ", "")
             End If
             '2
             uitwisselingOMS = uitwisselingOMS & vbTab & "payReferenceToCheck"
