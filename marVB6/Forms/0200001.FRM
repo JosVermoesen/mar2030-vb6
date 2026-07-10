@@ -2433,15 +2433,21 @@ End If
             Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
             Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
             Msg = Msg & "en totaal incl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(21)) & vbCrLf & vbCrLf
-            Msg = Msg & "Administratie zonder BTW plicht" & vbCrLf
+            Msg = Msg & "Administratie zonder BTW plicht" & vbCrLf & vbCrLf
             Msg = Msg & "Verschil wordt verrekend in eerste lijn."
             MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
         Else
             Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
             Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
             Msg = Msg & "en totaal excl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(20)) & vbCrLf & vbCrLf
-            Msg = Msg & "Administratie met BTW plicht"
-            Msg = Msg & "Verschil wordt verrekend in eerste lijn."
+            Msg = Msg & "Administratie met BTW plicht" & vbCrLf & vbCrLf
+            If squareDifference > 0.9 Then
+                Msg = Msg & "Het rekenverschil is meer dan een afrondingsverschil." & vbCrLf & vbCrLf
+                Msg = Msg & "Mogelijk: globale korting, globale verzendkost e.d." & vbCrLf
+                Msg = Msg & "Keer terug en klik [XML Tonen] voor inzage." & vbCrLf & vbCrLf
+                Msg = Msg & "Boeken op aparte rekeningen? Contacteer ons!" & vbCrLf & vbCrLf
+            End If
+            Msg = Msg & "Het verschil wordt nu verrekend in de (eerste) kostenpost."
             MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
         End If
     End If
