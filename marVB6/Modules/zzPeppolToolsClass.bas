@@ -562,7 +562,7 @@ Public Function PeppolHasPdfAttachment(xmlPath As String) As Boolean
 End Function
 
 ' Add reference to Microsoft XML, v6.0 (Project > References)
-Public Sub ReadUblDocument(filePath As String, showMessageBox As Boolean)
+Public Sub ReadUblDocument(filePath As String, showMessageBox As Boolean, forBooking As Boolean)
     
     Dim Msg As String
     Dim valueToUse As String
@@ -600,15 +600,18 @@ Public Sub ReadUblDocument(filePath As String, showMessageBox As Boolean)
     uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
     sb = sb & "Document ID: " & valueToUse & vbCrLf
 
+    Dim issueDate As String
+    
     ' IssueDate
-    valueToUse = GetNodeText(xmlDoc, "//cbc:IssueDate")
+    issueDate = GetNodeText(xmlDoc, "//cbc:IssueDate")
     '3
     uitwisselingOMS = uitwisselingOMS & vbTab & "dateSellerDocumentToCheck"
-    uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
-    sb = sb & "IssueDate: " & valueToUse & vbCrLf
+    uitwisselingDATA = uitwisselingDATA & vbTab & issueDate
+    sb = sb & "IssueDate: " & issueDate & vbCrLf
 
     ' DueDate
     valueToUse = GetNodeText(xmlDoc, "//cbc:DueDate")
+    If valueToUse = "" Then valueToUse = issueDate
     '4
     uitwisselingOMS = uitwisselingOMS & vbTab & "dateExpiringDocumentToCheck"
     uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
@@ -672,7 +675,10 @@ TRYFORCREDITNOTE:
     If showMessageBox Then
         MsgBox sb, vbInformation, "Testing UBL DATA versie 0.01"
     End If
-
+    
+    Dim tmpSupplierId As String
+    Dim tmpSupplierName As String
+    
     ' Supplier info
     Dim supplierNode As Object
     Set supplierNode = xmlDoc.selectSingleNode("//cac:AccountingSupplierParty/cac:Party")
@@ -683,6 +689,7 @@ TRYFORCREDITNOTE:
         If (Len(valueToUse) = 12 And InStr(valueToUse, "BE")) Then
             valueToUse = Mid(valueToUse, 3)
         End If
+        tmpSupplierId = valueToUse
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierCompanyIdToCheck"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
         Msg = Msg & "endpointOndernemingsnummer " & valueToUse & vbCrLf
@@ -690,11 +697,9 @@ TRYFORCREDITNOTE:
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierID"
         uitwisselingDATA = uitwisselingDATA & vbTab & GetNodeText(supplierNode, "cac:PartyIdentification/cbc:ID")
         Msg = Msg & "supplierID: " & GetNodeText(supplierNode, "cac:PartyIdentification/cbc:ID") & vbCrLf
-        
-        'valueToUse = GetNodeText(supplierNode, "cac:PartyName/cbc:Name")
-        'If valueToUse = "" Then
-            valueToUse = GetNodeText(supplierNode, "cac:PartyLegalEntity/cbc:RegistrationName")
-        'End If
+               
+        valueToUse = GetNodeText(supplierNode, "cac:PartyLegalEntity/cbc:RegistrationName")
+        tmpSupplierName = valueToUse
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierNameToCheck"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
         Msg = Msg & "tradingName: " & valueToUse & vbCrLf
@@ -868,25 +873,78 @@ TRYFORCREDITNOTE:
 
     ' LegalMonetaryTotal
     Dim msgMoney As String
+    Dim allowanceChargeCheck As Boolean
+    allowanceChargeCheck = False
+    
     msgMoney = "LegalMonetaryTotal" & vbCrLf & "------------------" & vbCrLf
     Dim moneyTotalEl As Object
     Set moneyTotalEl = xmlDoc.selectSingleNode("//cac:LegalMonetaryTotal")
     If Not moneyTotalEl Is Nothing Then
+        '1
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:LineExtensionAmount")
+        legalMonetaryTotalOMS = "LineExtensionAmount"
+        legalMonetaryTotalDATA = valueToUse
         msgMoney = msgMoney & "LineExtensionAmount: " & GetNodeText(moneyTotalEl, "cbc:LineExtensionAmount") & vbCrLf
-                    
+        
+        '2
         valueToUse = GetNodeText(moneyTotalEl, "cbc:TaxExclusiveAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "TaxExclusiveAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+        
         uitwisselingOMS = uitwisselingOMS & vbTab & "totalExclusiveVAT"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
         msgMoney = msgMoney & "TaxExclusiveAmount: " & valueToUse & vbCrLf
         
+        '3
         valueToUse = GetNodeText(moneyTotalEl, "cbc:TaxInclusiveAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "TaxInclusiveAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+                
         uitwisselingOMS = uitwisselingOMS & vbTab & "totalInclusiveVAT"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
         msgMoney = msgMoney & "TaxInclusiveAmount: " & valueToUse & vbCrLf
         
-        msgMoney = msgMoney & "PayableAmount: " & GetNodeText(moneyTotalEl, "cbc:PayableAmount") & " (" & currencyID & ")" & vbCrLf
+        '4
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:AllowanceTotalAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "AllowanceTotalAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+        
+        '5
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:ChargeTotalAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "ChargeTotalAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+        
+        '6
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:PrepaidAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "PrepaidAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+        
+        '7
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:PayableAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "PayableAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+        
+        msgMoney = msgMoney & "PayableAmount: " & valueToUse & " (" & currencyID & ")" & vbCrLf
         If showMessageBox Then
             MsgBox msgMoney, vbInformation, "Testing UBL DATA versie 0.01"
+        End If
+        
+        '8
+        valueToUse = GetNodeText(moneyTotalEl, "cbc:PayableRoundingAmount")
+        legalMonetaryTotalOMS = legalMonetaryTotalOMS & vbTab & "PayableRoundingAmount"
+        legalMonetaryTotalDATA = legalMonetaryTotalDATA & vbTab & valueToUse
+                
+        legalMonetaryTotalOMSArray() = Split(legalMonetaryTotalOMS, vbTab)
+        legalMonetaryTotalDATAArray() = Split(legalMonetaryTotalDATA, vbTab)
+        'TODO Set a flag for extra allowanceCharge data
+        '     Is there a value for AllowanceTotalAmount?
+        '     Is there a value for ChargeTotalAmount?
+        
+        Dim allowanceChargeAmount As Double
+        allowanceChargeAmount = Val(legalMonetaryTotalDATAArray(3)) + Val(legalMonetaryTotalDATAArray(4)) + Val(legalMonetaryTotalDATAArray(7))
+        If allowanceChargeAmount = 0 Then
+        Else
+            allowanceChargeCheck = True
         End If
     End If
     
@@ -1027,7 +1085,26 @@ TRYFORCREDITNOTE:
             End If
         End If
     End If
+    If allowanceChargeCheck = True And forBooking = True Then
+        'For the moment only mentioning amount in + and - including rounding
+        'For T = 0 To UBound(legalMonetaryTotalOMSArray()): Print legalMonetaryTotalOMSArray(T); " "; Val(legalMonetaryTotalDATAArray(T)): Next
+        Msg = "Aankoopdocument met globale kosten en/of kortingen" & vbCrLf & vbCrLf
+        Msg = Msg & "KBO Nummer: " & tmpSupplierId & vbCrLf
+        Msg = Msg & "Bedrijf   : " & tmpSupplierName & vbCrLf & vbCrLf
+        
+        If Val(legalMonetaryTotalDATAArray(3)) <> 0 Then
+            Msg = Msg & "Globale korting: " & Dec(Val(legalMonetaryTotalDATAArray(3)), "#######.##") & vbCrLf
+        End If
+        If Val(legalMonetaryTotalDATAArray(4)) <> 0 Then
+            Msg = Msg & "Globale kosten : " & Dec(Val(legalMonetaryTotalDATAArray(4)), "#######.##") & vbCrLf
+        End If
+        Msg = Msg & vbCrLf
+        Msg = Msg & "Bij inboeking worden de bedrag(en) toegevoegd aan het bedrag van de eerste factuurlijn." & vbCrLf
+        MsgBox Msg, vbInformation
+    End If
     documentLinesDATA = documentLinesOMS & vbCrLf & documentLinesDATA
+    
+    
     '? invoicelinesdata
     
 End Sub

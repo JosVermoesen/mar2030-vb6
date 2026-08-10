@@ -1691,7 +1691,7 @@ Private Sub cbImportUBL_Click()
     sFile = Dir$(sPath & "*.xml")          ' first match
     Do While sFile <> ""
         On Local Error Resume Next
-        Call ReadUblDocument(sPath & sFile, False)
+        Call ReadUblDocument(sPath & sFile, False, False)
         
         If CheckSupplier Then
             'For T = 0 To UBound(uitwisselingOMSArray): Print T; " "; uitwisselingOMSArray(T); ": "; uitwisselingDATAArray(T): Next
@@ -1821,7 +1821,7 @@ Private Sub cbImportUBL_Click()
     Screen.MousePointer = vbHourglass
     On Local Error Resume Next
     
-    Call ReadUblDocument(ublFileUrl, False)
+    Call ReadUblDocument(ublFileUrl, False, True)
     
     ReDim uitwisselingOMSArray(50)
     ReDim uitwisselingDATAArray(50)
@@ -2430,25 +2430,25 @@ End If
     If squareDifference = 0 Then
     Else
         If adminNoVat Then
-            Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
-            Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
-            Msg = Msg & "en totaal incl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(21)) & vbCrLf & vbCrLf
-            Msg = Msg & "Administratie zonder BTW plicht" & vbCrLf & vbCrLf
-            Msg = Msg & "Verschil wordt verrekend in eerste lijn."
-            MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
+            'Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
+            'Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
+            'Msg = Msg & "en totaal incl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(21)) & vbCrLf & vbCrLf
+            'Msg = Msg & "Administratie zonder BTW plicht" & vbCrLf & vbCrLf
+            'Msg = Msg & "Verschil wordt verrekend in eerste lijn."
+            'MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
         Else
-            Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
-            Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
-            Msg = Msg & "en totaal excl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(20)) & vbCrLf & vbCrLf
-            Msg = Msg & "Administratie met BTW plicht" & vbCrLf & vbCrLf
-            If squareDifference > 0.9 Then
-                Msg = Msg & "Het rekenverschil is meer dan een afrondingsverschil." & vbCrLf & vbCrLf
-                Msg = Msg & "Mogelijk: globale korting, globale verzendkost e.d." & vbCrLf
-                Msg = Msg & "Keer terug en klik [XML Tonen] voor inzage." & vbCrLf & vbCrLf
-                Msg = Msg & "Boeken op aparte rekeningen? Contacteer ons!" & vbCrLf & vbCrLf
-            End If
-            Msg = Msg & "Het verschil wordt nu verrekend in de (eerste) kostenpost."
-            MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
+            'Msg = "Rekenverschil bij vierkantscontrole" & vbCrLf & vbCrLf
+            'Msg = Msg & "Controle der lijnen geeft: " & squareCtrl & vbCrLf
+            'Msg = Msg & "en totaal excl. BTW in UBL document geeft: " & Val(uitwisselingDATAArray(20)) & vbCrLf & vbCrLf
+            'Msg = Msg & "Administratie met BTW plicht" & vbCrLf & vbCrLf
+            'If squareDifference > 0.01 Then
+            '    Msg = Msg & "Het rekenverschil is meer dan een afrondingsverschil." & vbCrLf & vbCrLf
+            '    Msg = Msg & "Mogelijk: globale korting, globale verzendkost e.d." & vbCrLf
+            '    Msg = Msg & "Keer terug en klik [XML Tonen] voor inzage." & vbCrLf & vbCrLf
+            '    Msg = Msg & "Boeken op aparte rekeningen? Contacteer ons!" & vbCrLf & vbCrLf
+            'End If
+            'Msg = Msg & "Het verschil wordt nu verrekend in de (eerste) kostenpost."
+            'MsgBox Msg, vbExclamation, "Vierkantscontrole der lijnen"
         End If
     End If
     

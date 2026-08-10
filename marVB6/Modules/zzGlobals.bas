@@ -245,6 +245,19 @@ Public uitwisselingDATAArray() As String
 Public documentLinesOMSArray() As String
 Public documentLinesDATAArray() As String
 
+' LegalMonetaryTotal
+Public legalMonetaryTotalOMS As String
+Public legalMonetaryTotalDATA As String
+Public legalMonetaryTotalOMSArray() As String
+Public legalMonetaryTotalDATAArray() As String
+
+' AllowanceCharge
+' TODO: Later extending in VB6 and .NET
+Public allowanceChargeOMS As String
+Public allowanceChargeDATA As String
+Public allowanceChargeOMSArray() As String
+Public allowanceChargeDATAArray() As String
+
 Public xdaOMS As String
 Public xdaDATA As String
 Public xdaLinesOMS As String

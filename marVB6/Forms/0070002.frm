@@ -56,8 +56,8 @@ Begin VB.Form KwijtingDrukken
       TabCaption(1)   =   "Mail"
       TabPicture(1)   =   "0070002.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbMail"
-      Tab(1).Control(1)=   "MailDetail"
+      Tab(1).Control(0)=   "MailDetail"
+      Tab(1).Control(1)=   "cbMail"
       Tab(1).ControlCount=   2
       Begin VB.CommandButton cbMail 
          Appearance      =   0  'Flat
@@ -1088,7 +1088,7 @@ Else
         handelsPremie = Dec(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")) - Val(vBibTekst(TABLE_CONTRACTS, "#B014 #")), Mid(MASK_EUR, 3))
         splitsingsKost = Dec(0, Mid(MASK_EUR, 4))
         verzekeringsTaks = Dec(Val(vBibTekst(TABLE_CONTRACTS, "#B014 #")), Mid(MASK_EUR, 3))
-        feeMakelaar = (Val(vBibTekst(TABLE_CONTRACTS, "#e069 #"))) * 100 / 109.25
+        feeMakelaar = (Val(vBibTekst(TABLE_CONTRACTS, "#e069 #"))) * 100 / 109.6
         aquisitieKost = verzekeringsTaks
         administratieKost = 0
         splitsingsKost = 0
@@ -1098,10 +1098,10 @@ Else
         aquisitieKost = Dec(Val(vBibTekst(TABLE_VARIOUS, "#v401 #")), Mid(MASK_EUR, 4))
         administratieKost = Dec(Val(vBibTekst(TABLE_VARIOUS, "#v402 #")), Mid(MASK_EUR, 4))
         splitsingsKost = Dec(Val(vBibTekst(TABLE_VARIOUS, "#v400 #")), Mid(MASK_EUR, 4))
-        feeMakelaar = (TotaalEUR - Val(vBibTekst(TABLE_VARIOUS, "#B010 #"))) * 100 / 109.25
+        feeMakelaar = (TotaalEUR - Val(vBibTekst(TABLE_VARIOUS, "#B010 #"))) * 100 / 109.6
         verzekeringsTaks = Dec(Val(vBibTekst(TABLE_VARIOUS, "#B011 #")), Mid(MASK_EUR, 3))
     End If
-    taksOpFee = feeMakelaar * 9.25 / 100
+    taksOpFee = feeMakelaar * 9.6 / 100
         
     Select Case KeuzeInfo(0).ListIndex
         Case 1, 3
@@ -1147,8 +1147,8 @@ Else
             tmpMsg = tmpMsg + " > acquisitiekost niet meegedeeld" + vbCrLf + " > administratiekost niet meegedeeld" + vbCrLf
             tmpMsg = tmpMsg + " > Splitsingskost" + Dec(0, Mid(MASK_EUR, 4)) + vbCrLf
                                     
-            feeMakelaar = (Val(vBibTekst(TABLE_CONTRACTS, "#e069 #"))) * 100 / 109.25
-            taksOpFee = feeMakelaar * 9.25 / 100
+            feeMakelaar = (Val(vBibTekst(TABLE_CONTRACTS, "#e069 #"))) * 100 / 109.6
+            taksOpFee = feeMakelaar * 9.6 / 100
         
             tmpMsg = tmpMsg + "Fee Makelaar                     " + Dec(feeMakelaar, Mid(MASK_EUR, 3)) + vbCrLf
             

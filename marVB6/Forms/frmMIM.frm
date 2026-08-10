@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76546051
+         Format          =   74055683
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -908,7 +908,7 @@ Begin VB.MDIForm Mim
          Caption         =   "Plesk Hosting"
          Index           =   0
          Begin VB.Menu Hosting 
-            Caption         =   "Obsidian v18.0.65"
+            Caption         =   "Obsidian v18.0.79"
             Index           =   0
          End
          Begin VB.Menu Hosting 
@@ -957,6 +957,14 @@ Begin VB.MDIForm Mim
             Caption         =   "ClickOnce MarSync"
             Index           =   2
          End
+      End
+      Begin VB.Menu Info 
+         Caption         =   "MarIntegraal 2028"
+         Index           =   8
+      End
+      Begin VB.Menu Info 
+         Caption         =   "Github Pagina"
+         Index           =   9
       End
    End
 End
@@ -1985,6 +1993,16 @@ Select Case Index
     'Case 7
         'QR.Show
         'ShowAndSaveQR.Show
+        
+    Case 8
+        If ShellExecuteWithFallback("https://clickonce.vsoft.be/marVSS2028/publish.htm") = False Then
+            MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+        End If
+                   
+    Case 9
+        If ShellExecuteWithFallback("https://github.com/josvermoesen") = False Then
+            MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+        End If
                    
 End Select
 

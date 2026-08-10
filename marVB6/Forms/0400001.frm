@@ -1653,7 +1653,7 @@ Function checkForB2BInvoice() As Boolean
             'urn:UBL.BE:1.0.0.20180214::2.1
             If InStr(RV(rsKlant, "v407"), "urn:UBL.BE:1.0.0.20180214::2.1") Then
                 Me.OptionUBL_BE_3_0.Enabled = True
-                Me.OptionUBL_BE_3_0.Value = vbChecked
+                'Me.OptionUBL_BE_3_0.Value = vbChecked
             Else
                 Me.OptionUBL_BE_3_0.Enabled = False
             End If
@@ -1768,6 +1768,7 @@ Function checkForB2BInvoice() As Boolean
         Me.OptionUBL_BE_3_0.Visible = False
         Me.OptionUBL_BE_3_0.Value = False
     End If
+    
     'check invoice or creditnote
     If Me.CreditNota.Value Then
         Me.cbUncl1001.ListIndex = 1
