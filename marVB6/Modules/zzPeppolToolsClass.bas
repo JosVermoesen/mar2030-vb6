@@ -1099,7 +1099,7 @@ TRYFORCREDITNOTE:
             Msg = Msg & "Globale kosten : " & Dec(Val(legalMonetaryTotalDATAArray(4)), "#######.##") & vbCrLf
         End If
         Msg = Msg & vbCrLf
-        Msg = Msg & "Bij inboeking worden de bedrag(en) toegevoegd aan het bedrag van de eerste factuurlijn." & vbCrLf
+        Msg = Msg & "Bij inboeking wordt bedrag toegevoegd aan de eerste factuurlijn." & vbCrLf
         MsgBox Msg, vbInformation
     End If
     documentLinesDATA = documentLinesOMS & vbCrLf & documentLinesDATA
