@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74055683
+         Format          =   74252291
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -963,7 +963,7 @@ Begin VB.MDIForm Mim
          Index           =   8
       End
       Begin VB.Menu Info 
-         Caption         =   "Github Pagina"
+         Caption         =   "Vsoft 1985 Github Pagina"
          Index           =   9
       End
    End

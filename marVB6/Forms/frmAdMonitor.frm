@@ -233,6 +233,7 @@ Private Sub ButtonResponsesToSeller_Click()
         Else
             Load FormReactionsDialog
             FormReactionsDialog.TextBoxReactions.text = result
+            FormReactionsDialog.Caption = "Reacties aan leverancier"
             FormReactionsDialog.Show 1
         End If
     End If
@@ -252,7 +253,12 @@ Private Sub ButtonSentReceiptSeller_Click()
         If InStr(result, """count""" + ": 0") Then
             MsgBox "Nog te bevestigen. Vernieuw met MarSync", vbInformation
         Else
-            MsgBox result, vbInformation
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = result
+            FormReactionsDialog.Caption = "Ontvangstbewijs"
+            FormReactionsDialog.Show 1
+            
+            
         End If
     End If
 

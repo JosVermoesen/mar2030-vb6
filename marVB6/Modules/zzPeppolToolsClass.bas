@@ -1158,6 +1158,7 @@ Public Function CheckPeppolRegistration(peppolID As String) As String
     Err = 0
 
     Screen.MousePointer = vbHourglass
+    SnelHelpPrint "Bezig online opvragen ondersteunde documenten voor " & peppolID, False
     DoEvents
     
     Set http = CreateObject("MSXML2.XMLHTTP")
@@ -1178,7 +1179,11 @@ Public Function CheckPeppolRegistration(peppolID As String) As String
     Set docNodes = Nothing
     Set docNode = Nothing
     Set entityNode = Nothing
-    CheckPeppolRegistration = responseText
+    If responseText = "" Then
+        CheckPeppolRegistration = "empty"
+    Else
+        CheckPeppolRegistration = responseText
+    End If
 
 End Function
 

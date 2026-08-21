@@ -13,6 +13,37 @@ Private Declare Function ShellExecute _
                             ByVal nShowCmd As Long) _
                             As Long
 
+Function PartRight(theString As String, theLength As Integer) As String
+
+    Dim stringLength As Long
+    stringLength = Len(theString)
+
+    On Error Resume Next
+
+    PartRight = Mid(theString, stringLength - theLength + 1, theLength)
+    If Err Then PartRight = ""
+
+End Function
+
+
+Function PartLeft(theString As String, theLength As Integer) As String
+
+    On Error Resume Next
+
+    PartLeft = Mid(theString, 1, theLength)
+    If Err Then PartLeft = ""
+
+End Function
+
+
+Function PartMid(theString As String, thePosition As Integer, theLength As Integer) As String
+
+    On Error Resume Next
+
+    PartMid = Mid(theString, thePosition, theLength)
+    If Err Then PartMid = ""
+
+End Function
 
 Function BankOk(fRekString As String) As Integer
 Dim dPip As Double

@@ -42,35 +42,35 @@ Begin VB.Form InbrengFinancieel
       TabCaption(0)   =   "Manueel"
       TabPicture(0)   =   "0700000.frx":0000
       Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "LabelInfo(3)"
+      Tab(0).Control(0)=   "LabelInfo3"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "lblInfo(1)"
+      Tab(0).Control(1)=   "lblInfo1"
       Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "lblInfo(0)"
+      Tab(0).Control(2)=   "lblInfo0"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "lblInfo(5)"
+      Tab(0).Control(3)=   "lblInfo5"
       Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "lblInfo(4)"
+      Tab(0).Control(4)=   "LabelInfo0"
       Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "LabelInfo(0)"
+      Tab(0).Control(5)=   "LabelInfo11"
       Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "LabelInfo(11)"
+      Tab(0).Control(6)=   "LabelInfo1"
       Tab(0).Control(6).Enabled=   0   'False
-      Tab(0).Control(7)=   "LabelInfo(1)"
+      Tab(0).Control(7)=   "lblInfo6"
       Tab(0).Control(7).Enabled=   0   'False
-      Tab(0).Control(8)=   "lblInfo(6)"
+      Tab(0).Control(8)=   "LabelInfo12"
       Tab(0).Control(8).Enabled=   0   'False
-      Tab(0).Control(9)=   "LabelInfo(12)"
+      Tab(0).Control(9)=   "LabelInfo13"
       Tab(0).Control(9).Enabled=   0   'False
-      Tab(0).Control(10)=   "LabelInfo(13)"
+      Tab(0).Control(10)=   "lblInfo7"
       Tab(0).Control(10).Enabled=   0   'False
-      Tab(0).Control(11)=   "lblInfo(7)"
+      Tab(0).Control(11)=   "LabelInfo2"
       Tab(0).Control(11).Enabled=   0   'False
-      Tab(0).Control(12)=   "LabelInfo(2)"
+      Tab(0).Control(12)=   "lblInfo4"
       Tab(0).Control(12).Enabled=   0   'False
       Tab(0).Control(13)=   "Datum"
       Tab(0).Control(13).Enabled=   0   'False
-      Tab(0).Control(14)=   "KeuzeInfo(0)"
+      Tab(0).Control(14)=   "KeuzeInfo0"
       Tab(0).Control(14).Enabled=   0   'False
       Tab(0).Control(15)=   "Volgende"
       Tab(0).Control(15).Enabled=   0   'False
@@ -102,7 +102,7 @@ Begin VB.Form InbrengFinancieel
          Enabled         =   0   'False
          Height          =   495
          Left            =   -74880
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   6840
          Width           =   1575
       End
@@ -111,7 +111,7 @@ Begin VB.Form InbrengFinancieel
          Enabled         =   0   'False
          Height          =   495
          Left            =   -68160
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   6840
          Width           =   1575
       End
@@ -128,7 +128,7 @@ Begin VB.Form InbrengFinancieel
          EndProperty
          Height          =   375
          Left            =   7080
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   720
          Value           =   1  'Checked
          Width           =   1095
@@ -146,7 +146,7 @@ Begin VB.Form InbrengFinancieel
          EndProperty
          Height          =   300
          Left            =   7080
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   1200
          Width           =   1335
       End
@@ -156,7 +156,7 @@ Begin VB.Form InbrengFinancieel
          ForeColor       =   &H00000000&
          Height          =   285
          Left            =   1800
-         TabIndex        =   22
+         TabIndex        =   21
          TabStop         =   0   'False
          Text            =   "Opgelet: Dit is een testbedrijf!"
          Top             =   3720
@@ -254,7 +254,7 @@ Begin VB.Form InbrengFinancieel
          Top             =   720
          Width           =   1445
       End
-      Begin VB.ComboBox KeuzeInfo 
+      Begin VB.ComboBox KeuzeInfo0 
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
@@ -267,7 +267,6 @@ Begin VB.Form InbrengFinancieel
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   315
-         Index           =   0
          Left            =   60
          Style           =   2  'Dropdown List
          TabIndex        =   0
@@ -313,19 +312,37 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   76480515
+         Format          =   74383363
          CurrentDate     =   36327
          MinDate         =   35796
+      End
+      Begin VB.Label lblInfo4 
+         BorderStyle     =   1  'Fixed Single
+         Caption         =   "BeginSaldo EUR"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   60
+         TabIndex        =   28
+         Top             =   780
+         Width           =   1275
       End
       Begin VB.Label LabelCounter 
          Alignment       =   1  'Right Justify
          Height          =   255
          Left            =   -73200
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   6960
          Width           =   1215
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo2 
          BorderStyle     =   1  'Fixed Single
          Caption         =   " Document           TegenR.       Bedrag Omschrijving                  Fin.Kort."
          BeginProperty Font 
@@ -338,13 +355,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   2
          Left            =   0
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   1560
          Width           =   8475
       End
-      Begin VB.Label lblInfo 
+      Begin VB.Label lblInfo7 
          BorderStyle     =   1  'Fixed Single
          Caption         =   "EindSaldo BEF"
          BeginProperty Font 
@@ -357,13 +373,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   7
          Left            =   2760
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   1080
          Width           =   1185
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo13 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
@@ -376,13 +391,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   13
          Left            =   3960
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   1080
          Width           =   1350
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo12 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00C0C0C0&
          BorderStyle     =   1  'Fixed Single
@@ -396,13 +410,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   12
          Left            =   1380
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   1080
          Width           =   1350
       End
-      Begin VB.Label lblInfo 
+      Begin VB.Label lblInfo6 
          BorderStyle     =   1  'Fixed Single
          Caption         =   "BeginSaldo BEF"
          BeginProperty Font 
@@ -415,60 +428,37 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   6
          Left            =   60
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   1080
          Width           =   1275
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo1 
          Caption         =   "Datu&m uittreksel"
          Height          =   240
-         Index           =   1
          Left            =   5460
          TabIndex        =   1
          Top             =   120
          Width           =   1440
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo11 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
          Height          =   315
-         Index           =   11
          Left            =   3960
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   420
          Width           =   1350
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo0 
          Caption         =   "Financiële &Rekening"
          Height          =   240
-         Index           =   0
          Left            =   120
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   120
          Width           =   1800
       End
-      Begin VB.Label lblInfo 
-         BorderStyle     =   1  'Fixed Single
-         Caption         =   "BeginSaldo EUR"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   300
-         Index           =   4
-         Left            =   60
-         TabIndex        =   14
-         Top             =   780
-         Width           =   1275
-      End
-      Begin VB.Label lblInfo 
+      Begin VB.Label lblInfo5 
          BorderStyle     =   1  'Fixed Single
          Caption         =   "Eindsaldo EUR"
          BeginProperty Font 
@@ -481,13 +471,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   5
          Left            =   2760
          TabIndex        =   13
          Top             =   780
          Width           =   1185
       End
-      Begin VB.Label lblInfo 
+      Begin VB.Label lblInfo0 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
@@ -500,13 +489,12 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   0
          Left            =   1380
          TabIndex        =   12
          Top             =   780
          Width           =   1350
       End
-      Begin VB.Label lblInfo 
+      Begin VB.Label lblInfo1 
          Alignment       =   1  'Right Justify
          BorderStyle     =   1  'Fixed Single
          BeginProperty Font 
@@ -519,17 +507,15 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Index           =   1
          Left            =   3960
          TabIndex        =   11
          Top             =   780
          Width           =   1350
       End
-      Begin VB.Label LabelInfo 
+      Begin VB.Label LabelInfo3 
          Alignment       =   1  'Right Justify
          Caption         =   "Uittreksel"
          Height          =   240
-         Index           =   3
          Left            =   4380
          TabIndex        =   10
          Top             =   120
@@ -540,7 +526,7 @@ Begin VB.Form InbrengFinancieel
       Caption         =   "Label1"
       Height          =   495
       Left            =   3720
-      TabIndex        =   27
+      TabIndex        =   26
       Top             =   3720
       Width           =   1215
    End
@@ -679,14 +665,14 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
         Msg = Msg & "Dokumenten.v411, Dokumenten.rvDM, Dokumenten.rvID, Dokumenten.A000 "
         Msg = Msg & "FROM Klanten, Dokumenten "
         Msg = Msg & "WHERE Dokumenten.v034 = 'K' + Klanten.A110 "
-        If refIsCor And Mid(refString, 1, 1) = "1" Then
+        If refIsCor And PartLeft(refString, 1) = "1" Then
             'Insurance renewings before july 2026 only: Search on client number
             'Position 2-3 being month of the contrat renewing
-            clientNumber = Mid(refString, 4, 4) + Mid(refString, 9, 2)
+            clientNumber = PartMid(refString, 4, 4) + PartMid(refString, 9, 2)
             Msg = Msg & "AND Klanten.A110 = '" + clientNumber + "' "
             Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
-        ElseIf Mid(refString, 1, 3) = "999" Then 'Search on client RvId
-            searchOnRvId = Val(Mid(refString, 4, 7))
+        ElseIf PartMid(refString, 1, 3) = "999" Then 'Search on client RvId
+            searchOnRvId = Val(PartMid(refString, 4, 7))
             Msg = Msg & "AND Klanten.rvID =" + Str(searchOnRvId) + " "
             Msg = Msg & "AND Dokumenten.v249 <> Dokumenten.v037 "
         ElseIf Not refIsCor And isCDD Then
@@ -700,7 +686,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Dim groupCode As String
             groupCode = ""
     
-            Select Case Left(refString, 1)
+            Select Case PartLeft(refString, 1)
                 Case "8": groupCode = "V0"
                 Case "7": groupCode = "V1"
                 Case "6": groupCode = "B0"
@@ -717,7 +703,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
                 Msg = Msg & "AND Klanten.v259 = '" & IbanAccount & "' "
             Else
                 Stop
-                ReferteTxtNoFormat = groupCode & Mid(refString, 2, 6)
+                ReferteTxtNoFormat = groupCode & PartMid(refString, 2, 6)
                 
             End If
         End If
@@ -743,7 +729,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
         CtrlDocuments = rsAny("v033") & "|" & rsAny("A100") & "|" & rsAny("A110")
         GoTo FinishFunction
     Else
-        If Mid(refString, 1, 3) = "999" Or Mid(refString, 1, 3) = "104" Then
+        If PartLeft(refString, 3) = "999" Or PartLeft(refString, 3) = "104" Then
             'use recent document from this client
             rsAny.MoveFirst
             CtrlDocuments = rsAny("v033") & "|" & rsAny("A100") & "|" & rsAny("A110")
@@ -810,21 +796,21 @@ ElseIf FinancieelDetail.ListCount = 0 Then
     Exit Sub
 End If
 
-bGet TABLE_LEDGERACCOUNTS, 0, Left(KeuzeInfo(0), 7)
+bGet TABLE_LEDGERACCOUNTS, 0, PartLeft(KeuzeInfo0, 7)
 If Ktrl Then
     MsgBox "onlogische situatie"
     Exit Sub
 Else
     RecordToVeld TABLE_LEDGERACCOUNTS
 End If
-bGet TABLE_JOURNAL, 2, UCase(Left(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + Right(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo(11).Caption) - 1, "0000")
+bGet TABLE_JOURNAL, 2, UCase(PartLeft(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + PartRight(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo11.Caption) - 1, "0000")
 If Ktrl Then
     MsgBox "Dit zou het eerste uittreksel binnen het WERKELIJK jaar moeten zijn...  Kontroleer eventueel"
 Else
     RecordToVeld TABLE_JOURNAL
     If vBibTekst(TABLE_JOURNAL, "#v066 #") > Format(Datum.Value, "yyyymmdd") Then
         Msg = "Er zijn reeds uittreksels met een hogere datum !" + vbCrLf + vbCrLf
-        Msg = Msg + "Laatste uittreksel nr. " + UCase$(Left(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + Right(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo(11).Caption) - 1, "0000") + " dateert van : " + DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) + vbCrLf + vbCrLf
+        Msg = Msg + "Laatste uittreksel nr. " + UCase$(PartLeft(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + PartRight(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo11.Caption) - 1, "0000") + " dateert van : " + DATE_TEXT(vBibTekst(TABLE_JOURNAL, "#v066 #")) + vbCrLf + vbCrLf
         Msg = Msg + "Vervolg.  Bent U zeker ?"
         Ktrl = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, "Uittreksel afsluiten")
         If Ktrl = vbNo Then
@@ -834,11 +820,11 @@ Else
 End If
 
 If bhEuro Then
-    Msg = "Datum uittreksel " & Datum.Value & " en bekomen eindsaldo EUR " & lblInfo(1).Caption & vbCrLf & vbCrLf & "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
+    Msg = "Datum uittreksel " & Datum.Value & " en bekomen eindsaldo EUR " & lblInfo1.Caption & vbCrLf & vbCrLf & "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
 Else
-    Msg = "Datum uittreksel " & Datum.Value & " en bekomen eindsaldo BEF " & LabelInfo(13).Caption & vbCrLf & vbCrLf & "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
+    Msg = "Datum uittreksel " & Datum.Value & " en bekomen eindsaldo BEF " & LabelInfo13.Caption & vbCrLf & vbCrLf & "Hierna wordt de boekhouding bijgewerkt.  Bent U zeker ?"
 End If
-Ktrl = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, "Uittreksel : " + UCase$(Left(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + Right(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo(11).Caption), "0000"))
+Ktrl = MsgBox(Msg, vbYesNo + vbQuestion + vbDefaultButton2, "Uittreksel : " + UCase(PartLeft(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + PartRight(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo11.Caption), "0000"))
 If Ktrl = vbYes Then
     bBegin
     If WegBoekFout() Then
@@ -846,13 +832,13 @@ If Ktrl = vbYes Then
         Exit Sub
     Else
         bEnd
-        DummySleutel = "s" + Format(RecNummer(KeuzeInfo(0).ListIndex), "000")
+        DummySleutel = "s" + Format(RecNummer(KeuzeInfo0.ListIndex), "000")
         bGet TABLE_COUNTERS, 0, DummySleutel
         If Ktrl Then
             MsgBox "TellerStop " & DummySleutel & ".  kontakteer R&&Vsoft"
         Else
             RecordToVeld TABLE_COUNTERS
-            FL99_RECORD = Str$(Val(LabelInfo(11).Caption))
+            FL99_RECORD = Str$(Val(LabelInfo11.Caption))
             If BAModus = 1 Then
                 vBib TABLE_COUNTERS, FL99_RECORD, "v217 "
             Else
@@ -860,7 +846,7 @@ If Ktrl = vbYes Then
             End If
             bUpdate TABLE_COUNTERS, 0
             If Ktrl Then
-                MsgBox "Update TellerStop " & DummySleutel & ".  kontakteer R&&Vsoft"
+                MsgBox "Update TellerStop " & DummySleutel & ".  contacteer Vsoft 1985"
             End If
         End If
         
@@ -870,7 +856,7 @@ If Ktrl = vbYes Then
             MsgBox "TellerStop.  Versiekonflikt !  Kontakteer R&&Vsoft"
         Else
             RecordToVeld TABLE_COUNTERS
-            FL99_RECORD = Left(KeuzeInfo(0).text, 7)
+            FL99_RECORD = PartLeft(KeuzeInfo0.text, 7)
             If BAModus = 1 Then
                 vBib TABLE_COUNTERS, FL99_RECORD, "v217 "
             Else
@@ -915,7 +901,7 @@ Private Sub ButtonAssign_Click()
     GridText = ""
     DetailInfo.Show 1
     If GridText <> "" Then
-        valueToCheck = Abs(Val(Mid(GridText, 22, 12)))
+        valueToCheck = Abs(Val(PartMid(GridText, 22, 12)))
         valueLineToCheck = mfgLijst.TextMatrix(mfgLijst.Row, 4)
         If valueToCheck = valueLineToCheck Then
             resultArray() = Split(GridText, "|")
@@ -959,7 +945,7 @@ Private Sub ButtonReadCamt053_Click()
     filePath = LCase(Mim.Teken.fileName)
     
     Dim checkDirChange As String
-    checkDirChange = LCase(Mid(Mim.Teken.fileName, 1, InStr(Mim.Teken.fileName, Mim.Teken.FileTitle) - 1))
+    checkDirChange = LCase(PartLeft(Mim.Teken.fileName, InStr(Mim.Teken.fileName, Mim.Teken.FileTitle) - 1))
     
     If xdaLocation <> checkDirChange Then
         If InStr(checkDirChange, "coda\in") <> 0 Then
@@ -1004,7 +990,7 @@ Private Sub ButtonReadCamt053_Click()
            
     If xdaDATAArray(3) <> "" Then
         'check if number of account statement
-        If Val(LabelInfo(11).Caption) = Val(xdaDATAArray(3)) Then 'ok
+        If Val(LabelInfo11.Caption) = Val(xdaDATAArray(3)) Then 'ok
             qualityOfBeginning = qualityOfBeginning + 1
         Else
         
@@ -1012,7 +998,7 @@ Private Sub ButtonReadCamt053_Click()
     End If
     
     beginSaldoXDA = Val(xdaDATAArray(6))
-    If beginSaldoXDA <> Val(Dec((lblInfo(0)), "")) Then
+    If beginSaldoXDA <> Val(Dec((lblInfo0), "")) Then
     Else
         qualityOfBeginning = qualityOfBeginning + 1
     End If
@@ -1405,7 +1391,7 @@ Private Sub Form_Load()
         BeWaarTekst "dnnInstellingen", "CodaIOMap", LOCATION_DESKTOP
     End If
     
-    If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) = "\099\") Then
+    If (PartRight(LOCATION_COMPANYDATA, 5) = "\098\" Or PartRight(LOCATION_COMPANYDATA, 5) = "\099\") Then
         Me.TextBoxWarningTestCompany.Visible = True
     End If
 
@@ -1415,7 +1401,7 @@ Private Sub Form_Load()
     Top = 0
     Left = 0
 
-    LabelInfo(2).Caption = " Document    " + "TegenR. " + "      Bedrag " + "Omschrijving                    " + "Fin. Kort."
+    LabelInfo2.Caption = " Document    " + "TegenR. " + "      Bedrag " + "Omschrijving                    " + "Fin. Kort."
 
     Datum.Value = MIM_GLOBAL_DATE
     BeginBalans = Val(String99(READING, 64))
@@ -1474,18 +1460,18 @@ Private Sub Form_Load()
                 RecordToVeld TABLE_LEDGERACCOUNTS
                 A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
             End If
-            KeuzeInfo(0).AddItem A$
+            KeuzeInfo0.AddItem A$
             If DefaultRekening = RekeningNummer(T) Then
                 TT = T
             End If
         End If
     Next
-    KeuzeInfo(0).ListIndex = TT
+    KeuzeInfo0.ListIndex = TT
 
 End Sub
 
 
-Private Sub KeuzeInfo_Click(Index As Integer)
+Private Sub KeuzeInfo0_Click()
 
     Dim locationDesktop As String
     
@@ -1499,71 +1485,78 @@ Private Sub KeuzeInfo_Click(Index As Integer)
         Me.CheckBoxSepaViewer.Visible = True
     End If
 
-    Select Case Index
-        Case 0
-       
-        Select Case UCase$(Uittreksel(KeuzeInfo(0).ListIndex))
-            Case "A" To "Z"
-                LabelInfo(11).Caption = Str$(Val(Right(Uittreksel(KeuzeInfo(0).ListIndex), 4)) + 1)
-            Case Else
-                LabelInfo(11).Caption = Str$(Val(Uittreksel(KeuzeInfo(0).ListIndex)) + 1)
-        End Select
-        bGet TABLE_LEDGERACCOUNTS, 0, vSet((KeuzeInfo(0).text), 7)
-        If Ktrl Then
-        Else
-            RecordToVeld TABLE_LEDGERACCOUNTS
-            If BeginBalans = 1 Then
-                If bhEuro Then
-                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
-                    LabelInfo(12).Caption = Format(CDbl(lblInfo(0).Caption) * EURO, "#,##0.00")
-                Else
-                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
-                    lblInfo(0).Caption = Format(CDbl(LabelInfo(12)) / EURO, "#,##0.00")
-                End If
+    Select Case UCase$(Uittreksel(KeuzeInfo0.ListIndex))
+        Case "A" To "Z"
+            LabelInfo11.Caption = Str$(Val(PartRight(Uittreksel(KeuzeInfo0.ListIndex), 4)) + 1)
+        Case Else
+            LabelInfo11.Caption = Str$(Val(Uittreksel(KeuzeInfo0.ListIndex)) + 1)
+    End Select
+    
+    bGet TABLE_LEDGERACCOUNTS, 0, vSet((KeuzeInfo0.text), 7)
+    If Ktrl Then
+    Else
+        RecordToVeld TABLE_LEDGERACCOUNTS
+        If BeginBalans = 1 Then
+            If bhEuro Then
+                lblInfo0.Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                LabelInfo12.Caption = Format(CDbl(lblInfo0.Caption) * EURO, "#,##0.00")
             Else
-                If bhEuro Then
-                    lblInfo(0).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
-                    LabelInfo(12).Caption = Format(Round(CDbl(lblInfo(0).Caption) * EURO), "#,##0.00")
-                Else
-                    LabelInfo(12).Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
-                    lblInfo(0).Caption = Format(CDbl(LabelInfo(12)) / EURO, "#,##0.00")
-                End If
+                LabelInfo12.Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                lblInfo0.Caption = Format(CDbl(LabelInfo12) / EURO, "#,##0.00")
             End If
-            LabelInfo(13).Caption = LabelInfo(12).Caption
-            lblInfo(1).Caption = lblInfo(0).Caption
+        Else
+            If bhEuro Then
+                lblInfo0.Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#e" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                LabelInfo12.Caption = Format(Round(CDbl(lblInfo0.Caption) * EURO), "#,##0.00")
+            Else
+                LabelInfo12.Caption = Format(Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(22 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")) + Val(vBibTekst(TABLE_LEDGERACCOUNTS, "#v" + Format(23 + BYPERDAT.Boekjaar.ListIndex, "000") + " #")), "#,##0.00")
+                lblInfo0.Caption = Format(CDbl(LabelInfo12) / EURO, "#,##0.00")
+            End If
         End If
-End Select
+        LabelInfo13.Caption = LabelInfo12.Caption
+        lblInfo1.Caption = lblInfo0.Caption
+    End If
 
 End Sub
 
-Private Sub KeuzeInfo_LostFocus(Index As Integer)
+Private Sub KeuzeInfo0_LostFocus()
 
-Select Case Index
-    Case 0
-        If KeuzeInfo(0).text = "" Then
-            Beep
-            KeuzeInfo(0).SetFocus
-        End If
-End Select
+    If KeuzeInfo0.text = "" Then
+        Beep
+        KeuzeInfo0.SetFocus
+    End If
 
 End Sub
 
-Private Sub LabelInfo_Change(Index As Integer)
+Private Sub LabelInfo12_Change()
 
-Select Case Index
-    Case 12, 13
-        Select Case CDbl(LabelInfo(Index).Caption)
+        Select Case CDbl(LabelInfo12.Caption)
             Case 0
-                LabelInfo(Index).BackColor = &HC0C0C0
-                lblInfo(Index - 12).BackColor = &HC0C0C0
+                LabelInfo12.BackColor = &HC0C0C0
+                lblInfo0.BackColor = &HC0C0C0
             Case Is > 0
-                LabelInfo(Index).BackColor = &H80FF80
-                lblInfo(Index - 12).BackColor = &H80FF80
+                LabelInfo12.BackColor = &H80FF80
+                lblInfo0.BackColor = &H80FF80
             Case Is < 0
-                LabelInfo(Index).BackColor = &H80FFFF
-                lblInfo(Index - 12).BackColor = &H80FFFF
+                LabelInfo12.BackColor = &H80FFFF
+                lblInfo0.BackColor = &H80FFFF
         End Select
-End Select
+
+End Sub
+
+Private Sub LabelInfo13_Change()
+
+        Select Case CDbl(LabelInfo13.Caption)
+            Case 0
+                LabelInfo13.BackColor = &HC0C0C0
+                lblInfo1.BackColor = &HC0C0C0
+            Case Is > 0
+                LabelInfo13.BackColor = &H80FF80
+                lblInfo1.BackColor = &H80FF80
+            Case Is < 0
+                LabelInfo13.BackColor = &H80FFFF
+                lblInfo1.BackColor = &H80FFFF
+        End Select
 
 End Sub
 
@@ -1574,14 +1567,14 @@ Do While FinancieelDetail.ListCount
     FinancieelDetail.RemoveItem 0
 Loop
 
-KeuzeInfo(0).Enabled = True
-TT = KeuzeInfo(0).ListIndex
+KeuzeInfo0.Enabled = True
+TT = KeuzeInfo0.ListIndex
 If TT = 9 Then
-    KeuzeInfo(0).ListIndex = 0
+    KeuzeInfo0.ListIndex = 0
 Else
-    KeuzeInfo(0).ListIndex = TT + 1
+    KeuzeInfo0.ListIndex = TT + 1
 End If
-KeuzeInfo(0).ListIndex = TT
+KeuzeInfo0.ListIndex = TT
 
 End Sub
 
@@ -1649,11 +1642,11 @@ ReferteTxt = InputBox(Msg, "Gestruktureerde betaling")
 If ReferteTxt = "" Then
     Exit Sub
 Else
-    dPip = Val(Left(ReferteTxt, 10))
+    dPip = Val(Mid(ReferteTxt, 10))
     sPip = Format(dPip - Int(dPip / 97) * 97, "00")
     If sPip = "00" Then sPip = "97"
-    If sPip <> Right(ReferteTxt, 2) Then
-        MsgBox "Ongeldige invoer" + vbCrLf + vbCrLf + sPip + " <> " + Right(ReferteTxt, 2) + vbCrLf + vbCrLf + "Een gestructureerde referte heeft een kontrolesysteem.  Uw invoer is ongeldig!", 0, "Gebruikersfout"
+    If sPip <> PartRight(ReferteTxt, 2) Then
+        MsgBox "Ongeldige invoer" + vbCrLf + vbCrLf + sPip + " <> " + PartRight(ReferteTxt, 2) + vbCrLf + vbCrLf + "Een gestructureerde referte heeft een kontrolesysteem.  Uw invoer is ongeldig!", 0, "Gebruikersfout"
         Exit Sub
     End If
 End If
@@ -1662,15 +1655,15 @@ End If
 '123-4567890-12
 'positie 8 moet altijd '0' zijn voor klanten
 
-Select Case Mid(ReferteTxt, 8, 1)
+Select Case PartMid(ReferteTxt, 8, 1)
     Case "0"
-        bGet TABLE_CUSTOMERS, 0, Mid(ReferteTxt, 4, 4) + Mid(ReferteTxt, 9, 2)
+        bGet TABLE_CUSTOMERS, 0, PartMid(ReferteTxt, 4, 4) + PartMid(ReferteTxt, 9, 2)
         If Ktrl Then
             'het is geen klant, probeer als leveranciersreferte...
         Else
             RecordToVeld TABLE_CUSTOMERS
                   Msg = "Breng bedrag in voor" & vbCr
-            Msg = Msg & "totaal van " & Left(ReferteTxt, 1) & " kwijtingen" & vbCr & vbCr
+            Msg = Msg & "totaal van " & PartLeft(ReferteTxt, 1) & " kwijtingen" & vbCr & vbCr
             Msg = Msg & "klant :" & vbCr & vbCr & RTrim$(vBibTekst(TABLE_CUSTOMERS, "#A100 #") & " " & vBibTekst(TABLE_CUSTOMERS, "#A101 #")) & " " & RTrim$(vBibTekst(TABLE_CUSTOMERS, "#A125 #") & " " & vBibTekst(TABLE_CUSTOMERS, "#A127 #")) & vbCr
             Msg = Msg & "Rekeningen:" & vBibTekst(TABLE_CUSTOMERS, "#A170 #") & " " & vBibTekst(TABLE_CUSTOMERS, "#v251 #")
             dBedragTekst = Val(InputBox(Msg, "Totaal betaling"))
@@ -1709,19 +1702,19 @@ Else
     Loop
     If dBedragKtrl = dBedragTekst Then
         Do While DummyText <> ""
-            If Mid(DummyText, 13, 12) = Space(12) Then
+            If PartMid(DummyText, 13, 12) = Space(12) Then
             Else
-                GridText = "+" + Left(DummyText, 11) + Chr(124) + DefaultKlanten + Chr(124) + Mid(DummyText, 13, 12) + Chr(124) + vSet(vBibTekst(TABLE_CUSTOMERS, "#A100 #"), 29) + Chr(124) + Space(12)
+                GridText = "+" + PartLeft(DummyText, 11) + Chr(124) + DefaultKlanten + Chr(124) + PartMid(DummyText, 13, 12) + Chr(124) + vSet(vBibTekst(TABLE_CUSTOMERS, "#A100 #"), 29) + Chr(124) + Space(12)
                 FinancieelDetail.AddItem GridText, FinancieelDetail.ListCount
                 If bhEuro Then
-                    lblInfo(1).Caption = Format(CDbl(lblInfo(1).Caption) + Val(Mid(GridText, 22, 12)), "#,##0.00")
-                    LabelInfo(13).Caption = Format(Round(CDbl(lblInfo(1).Caption) * EURO), "#,##0.00")
+                    lblInfo1.Caption = Format(CDbl(lblInfo1.Caption) + Val(PartMid(GridText, 22, 12)), "#,##0.00")
+                    LabelInfo13.Caption = Format(Round(CDbl(lblInfo1.Caption) * EURO), "#,##0.00")
                 Else
-                    LabelInfo(13).Caption = Format(CDbl(LabelInfo(13).Caption) + Val(Mid(GridText, 22, 12)), "#,##0.00")
-                    lblInfo(1).Caption = Format(CDbl(LabelInfo(13).Caption) / EURO, "#,##0.00")
+                    LabelInfo13.Caption = Format(CDbl(LabelInfo13.Caption) + Val(PartMid(GridText, 22, 12)), "#,##0.00")
+                    lblInfo1.Caption = Format(CDbl(LabelInfo13.Caption) / EURO, "#,##0.00")
                 End If
             End If
-            DummyText = Right(DummyText, Len(DummyText) - 26)
+            DummyText = PartRight(DummyText, Len(DummyText) - 26)
         Loop
         SnelHelpPrint GridText + " met succes bijgevoegd !", BL_LOGGING
         Exit Sub
@@ -1737,7 +1730,7 @@ If dBedragKtrl = dBedragTekst Then  'totaal al betaald
     Return
 ElseIf Val(vBibTekst(TABLE_INVOICES, "#v037 #")) = Val(vBibTekst(TABLE_INVOICES, "#v249")) Then   'reeds VOLLEDIG betaald
     Return
-ElseIf Left(vBibTekst(TABLE_INVOICES, "#v033 #"), 1) <> "Q" Then    'voorlopig enkel kwitanties
+ElseIf PartLeft(vBibTekst(TABLE_INVOICES, "#v033 #"), 1) <> "Q" Then    'voorlopig enkel kwitanties
     Return
 ElseIf dBedragTekst = Val(rsMAR(TABLE_INVOICES)("v249")) Then
     DummyText = DummyText + vBibTekst(TABLE_INVOICES, "#v033 #") + Chr(124)
@@ -1758,24 +1751,24 @@ Dim Bedrag As Double
 Unload DetailInfo
 DetailInfo.Show 1
 If GridText <> "" Then
-    KeuzeInfo(0).Enabled = False
+    KeuzeInfo0.Enabled = False
     FinancieelDetail.AddItem GridText, FinancieelDetail.ListCount
-    Bedrag = Val(Mid(GridText, 22, 12))
-    If Left(GridText, 1) = "+" Then
+    Bedrag = Val(PartMid(GridText, 22, 12))
+    If PartLeft(GridText, 1) = "+" Then
         If bhEuro Then
-            lblInfo(1).Caption = Format(CDbl(lblInfo(1).Caption) + Bedrag, "#,##0.00")
-            LabelInfo(13).Caption = Format(Round(CDbl(lblInfo(1).Caption) * EURO), "#,##0.00")
+            lblInfo1.Caption = Format(CDbl(lblInfo1.Caption) + Bedrag, "#,##0.00")
+            LabelInfo13.Caption = Format(Round(CDbl(lblInfo1.Caption) * EURO), "#,##0.00")
         Else
-            LabelInfo(13).Caption = Format(CDbl(LabelInfo(13).Caption) + Bedrag, "#,##0.00")
-            lblInfo(1).Caption = Format(CDbl(LabelInfo(13).Caption) / EURO, "#,##0.00")
+            LabelInfo13.Caption = Format(CDbl(LabelInfo13.Caption) + Bedrag, "#,##0.00")
+            lblInfo1.Caption = Format(CDbl(LabelInfo13.Caption) / EURO, "#,##0.00")
         End If
     Else
         If bhEuro Then
-            lblInfo(1).Caption = Format(CDbl(lblInfo(1).Caption) - Bedrag, "#,##0.00")
-            LabelInfo(13).Caption = Format(Round(CDbl(lblInfo(1).Caption) * EURO), "#,##0.00")
+            lblInfo1.Caption = Format(CDbl(lblInfo1.Caption) - Bedrag, "#,##0.00")
+            LabelInfo13.Caption = Format(Round(CDbl(lblInfo1.Caption) * EURO), "#,##0.00")
         Else
-            LabelInfo(13).Caption = Format(CDbl(LabelInfo(13).Caption) - Bedrag, "#,##0.00")
-            lblInfo(1).Caption = Format(CDbl(LabelInfo(13).Caption) / EURO, "#,##0.00")
+            LabelInfo13.Caption = Format(CDbl(LabelInfo13.Caption) - Bedrag, "#,##0.00")
+            lblInfo1.Caption = Format(CDbl(LabelInfo13.Caption) / EURO, "#,##0.00")
         End If
     End If
 End If
@@ -1798,44 +1791,44 @@ Unload frmBoeking
 frmBoeking.Hide
 
 TLB_RECORD(TABLE_JOURNAL) = ""
-vBib TABLE_JOURNAL, Left(KeuzeInfo(0).text, 7), "v019"
+vBib TABLE_JOURNAL, PartLeft(KeuzeInfo0.text, 7), "v019"
 vBib TABLE_JOURNAL, Format(Datum.Value, "yyyymmdd"), "v066"
 vBib TABLE_JOURNAL, Format(Datum.Value, "yyyymmdd"), "v035"
 
-bGet TABLE_LEDGERACCOUNTS, 0, Left(KeuzeInfo(0).text, 7)
+bGet TABLE_LEDGERACCOUNTS, 0, PartLeft(KeuzeInfo0.text, 7)
 If Ktrl Then
     Exit Function
 Else
     RecordToVeld TABLE_LEDGERACCOUNTS
-    dokumentSleutel = UCase$(Left(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + Right(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo(11).Caption), "0000")
+    dokumentSleutel = UCase(PartLeft(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"), 2)) + PartRight(Format(Datum.Value, "dd/mm/yyyy"), 2) + Format(Val(LabelInfo11.Caption), "0000")
 End If
 vBib TABLE_JOURNAL, dokumentSleutel, "v038"
 If bhEuro Then
-    BeginSaldo = CDbl(lblInfo(0).Caption)
-    EindSaldo = CDbl(lblInfo(1).Caption)
+    BeginSaldo = CDbl(lblInfo0.Caption)
+    EindSaldo = CDbl(lblInfo1.Caption)
     VerschilSaldo = EindSaldo - BeginSaldo
-    vBib TABLE_JOURNAL, "Sld:" + Dec(CDbl(lblInfo(0).Caption), MASK_EURBH) + "/" + Dec(CDbl(lblInfo(1).Caption), MASK_EURBH), "v067"
+    vBib TABLE_JOURNAL, "Sld:" + Dec(CDbl(lblInfo0.Caption), MASK_EURBH) + "/" + Dec(CDbl(lblInfo1.Caption), MASK_EURBH), "v067"
     vBib TABLE_JOURNAL, Dec((VerschilSaldo), MASK_SY(2)), "v068"
 Else
-    vBib TABLE_JOURNAL, "Sld : " + Dec(CDbl(LabelInfo(12).Caption), MASK_SY(0)) + " - " + Dec(CDbl(LabelInfo(13).Caption), MASK_SY(0)), "v067"
-    vBib TABLE_JOURNAL, Dec$(CDbl(LabelInfo(13).Caption) - CDbl(LabelInfo(12).Caption), MASK_SY(0)), "v068"
+    vBib TABLE_JOURNAL, "Sld : " + Dec(CDbl(LabelInfo12.Caption), MASK_SY(0)) + " - " + Dec(CDbl(LabelInfo13.Caption), MASK_SY(0)), "v067"
+    vBib TABLE_JOURNAL, Dec$(CDbl(LabelInfo13.Caption) - CDbl(LabelInfo12.Caption), MASK_SY(0)), "v068"
 End If
 bInsert TABLE_JOURNAL, 2
 If Ktrl Then Exit Function
 
-vBib TABLE_JOURNAL, Left(KeuzeInfo(0).text, 7), "v069"
+vBib TABLE_JOURNAL, PartLeft(KeuzeInfo0.text, 7), "v069"
 For T = 1 To FinancieelDetail.ListCount
     FinancieelDetail.ListIndex = T - 1
-    If Left(FinancieelDetail.text, 1) = "+" Then
+    If PartLeft(FinancieelDetail.text, 1) = "+" Then
         Ontvangst = True
     Else
         Ontvangst = False
     End If
-    If Mid(FinancieelDetail.text, 2, 11) = Space$(11) Then
+    If PartMid(FinancieelDetail.text, 2, 11) = Space$(11) Then
         vBib TABLE_JOURNAL, " ", "v033"
         vBib TABLE_JOURNAL, " ", "v034"
     Else
-        bGet TABLE_INVOICES, 0, Mid(FinancieelDetail.text, 2, 11)
+        bGet TABLE_INVOICES, 0, PartMid(FinancieelDetail.text, 2, 11)
         If Ktrl Then
             Exit Function
         Else
@@ -1845,10 +1838,10 @@ For T = 1 To FinancieelDetail.ListCount
         End If
     End If
     
-    TotaalBedrag = Val(Mid(FinancieelDetail.text, 22, 12))
-    vBib TABLE_JOURNAL, Trim$(Mid(FinancieelDetail.text, 35, 29)), "v067"
-    If Val(Mid(FinancieelDetail.text, 65, 12)) <> 0 Then
-        FinKort = Val(Mid(FinancieelDetail.text, 65, 12))
+    TotaalBedrag = Val(PartMid(FinancieelDetail.text, 22, 12))
+    vBib TABLE_JOURNAL, Trim(PartMid(FinancieelDetail.text, 35, 29)), "v067"
+    If Val(PartMid(FinancieelDetail.text, 65, 12)) <> 0 Then
+        FinKort = Val(PartMid(FinancieelDetail.text, 65, 12))
         TotaalBedrag = TotaalBedrag + FinKort
         Select Case Ontvangst
             Case True
@@ -1865,12 +1858,12 @@ For T = 1 To FinancieelDetail.ListCount
         If Ktrl Then Exit Function
     End If
     
-    vBib TABLE_JOURNAL, Mid(FinancieelDetail.text, 14, 7), "v019"
+    vBib TABLE_JOURNAL, PartMid(FinancieelDetail.text, 14, 7), "v019"
     Select Case Ontvangst
         Case True
-            vBib TABLE_JOURNAL, Str$(-TotaalBedrag), "v068"
+            vBib TABLE_JOURNAL, Str(-TotaalBedrag), "v068"
         Case False
-            vBib TABLE_JOURNAL, Str$(TotaalBedrag), "v068"
+            vBib TABLE_JOURNAL, Str(TotaalBedrag), "v068"
         Case Else
             MsgBox "Stop"
             Exit Function
@@ -1901,7 +1894,7 @@ ElseIf JournaalLocked = True Then
     frmBoeking.Show 1
     WegBoekFout = True
 Else
-    Select Case Left(Mim.cmdWegBoekModus.text, 1)
+    Select Case PartLeft(Mim.cmdWegBoekModus.text, 1)
         Case "0"
         Case "1"
             If DKTRL_BEF Or DKTRL_EUR Then
@@ -1921,9 +1914,9 @@ End Function
 
 Function fnBeginOpname(DeString As String) As Boolean
     
-    sDatumAanmaak = Mid(DeString, 6, 6)
-    sToepassingsCode = Mid(DeString, 15, 2)
-    sNaamBestemmeling = Mid(DeString, 35, 26)
+    sDatumAanmaak = PartMid(DeString, 6, 6)
+    sToepassingsCode = PartMid(DeString, 15, 2)
+    sNaamBestemmeling = PartMid(DeString, 35, 26)
     If sToepassingsCode = "05" Then
         fnBeginOpname = True
     Else
@@ -1935,12 +1928,12 @@ End Function
 
 Function fnOudSaldo(DeString As String) As Boolean
 
-    sRekeningNummer = Mid(DeString, 6, 16)
-    sUittreksel = Mid(DeString, 3, 3)   '?
-    cOudSaldo = Val(Mid(DeString, 44, 15)) / 1000
-    sDatumOudSaldo = Mid(DeString, 59, 6)
-    sNaamRekeninghouder = Mid(DeString, 65, 26)
-    sOmschrijvingRekening = Mid(DeString, 91, 35)
+    sRekeningNummer = PartMid(DeString, 6, 16)
+    sUittreksel = PartMid(DeString, 3, 3)   '?
+    cOudSaldo = Val(PartMid(DeString, 44, 15)) / 1000
+    sDatumOudSaldo = PartMid(DeString, 59, 6)
+    sNaamRekeninghouder = PartMid(DeString, 65, 26)
+    sOmschrijvingRekening = PartMid(DeString, 91, 35)
     fnOudSaldo = True
     iOptelControle = iOptelControle + 1
     
@@ -1949,10 +1942,10 @@ End Function
 
 Function fnNieuwSaldo(DeString As String) As Boolean
 
-    sRekeningNummer2 = Mid(DeString, 5, 12)
-    sUittreksel2 = Mid(DeString, 2, 3)   '?
-    cNieuwSaldo = Val(Mid(DeString, 43, 15)) / 1000
-    sDatumNieuwSaldo = Mid(DeString, 58, 6)
+    sRekeningNummer2 = PartMid(DeString, 5, 12)
+    sUittreksel2 = PartMid(DeString, 2, 3)   '?
+    cNieuwSaldo = Val(PartMid(DeString, 43, 15)) / 1000
+    sDatumNieuwSaldo = PartMid(DeString, 58, 6)
     fnNieuwSaldo = True
     iOptelControle = iOptelControle + 1
     
@@ -1961,13 +1954,13 @@ End Function
 
 Function fnEindOpname(DeString As String) As Boolean
 
-    iOptelCtrlCheckUp = Val(Mid(DeString, 17, 6))
+    iOptelCtrlCheckUp = Val(PartMid(DeString, 17, 6))
     If iOptelCtrlCheckUp <> iOptelControle Then
         SnelHelpPrint "Onlogische situatie", False
     End If
-    cDebetSaldo = Val(Mid(DeString, 23, 15)) / 1000
-    cCreditSaldo = Val(Mid(DeString, 38, 15)) / 1000
-    If Mid(DeString, 128, 1) = "1" Then
+    cDebetSaldo = Val(PartMid(DeString, 23, 15)) / 1000
+    cCreditSaldo = Val(PartMid(DeString, 38, 15)) / 1000
+    If PartMid(DeString, 128, 1) = "1" Then
         fnEindOpname = False
     Else
         fnEindOpname = True
@@ -1978,52 +1971,52 @@ End Function
 Function fnBeweging(DeString As String) As Boolean
 
     iOptelControle = iOptelControle + 1
-    Select Case Mid(DeString, 2, 1)
+    Select Case PartMid(DeString, 2, 1)
         Case "1" 'Deel 1
-            sRefFinInstelling = Mid(DeString, 11, 21)
-            sDC = Mid(DeString, 32, 1) '"0" = credit "1" = debet
-            cBedrag = Val(Mid(DeString, 33, 15)) / 1000
-            sValutadatum = Mid(DeString, 48, 6)
+            sRefFinInstelling = PartMid(DeString, 11, 21)
+            sDC = PartMid(DeString, 32, 1) '"0" = credit "1" = debet
+            cBedrag = Val(PartMid(DeString, 33, 15)) / 1000
+            sValutadatum = PartMid(DeString, 48, 6)
             
             '01 tot 39 : binnenlandse-lokale/SEPA verrichtingen 41 tot 79 : buitenlandse/non-SEPA verrichtingen 80 tot 89 : andere families
-            sVerrichting = Mid(DeString, 54, 8) '01xx OVERSCHRIJVINGEN (C)
+            sVerrichting = PartMid(DeString, 54, 8) '01xx OVERSCHRIJVINGEN (C)
                                                 '0301 CHEQUE UW BETALING (D)
                                                 '03xx CHEQUE ONTVANGEN (C)
                                                 '0503 ONBETAALDE INVORDERING (D)
                                                 '0556 ONUITVOERBARE TERUGBETALING (C)
                                                 '09xx STORTINGEN (C)
-            sMededeling = Mid(DeString, 62, 1)  '"1" = gestructureerd
+            sMededeling = PartMid(DeString, 62, 1)  '"1" = gestructureerd
             If sMededeling <> "1" Then
                 'verwittiging nog geven voor manuele verwerking
             End If
-            sMDDZone1 = Mid(DeString, 63, 3)    '
-            sMDDZone2 = Mid(DeString, 66, 50)
-            sBoekDatum = Mid(DeString, 116, 6)
-            sDagAfschriftVolgNummer = Mid(DeString, 122, 3)
+            sMDDZone1 = PartMid(DeString, 63, 3)    '
+            sMDDZone2 = PartMid(DeString, 66, 50)
+            sBoekDatum = PartMid(DeString, 116, 6)
+            sDagAfschriftVolgNummer = PartMid(DeString, 122, 3)
     
         Case "2" 'Deel 2
-            sMededeling2 = Mid(DeString, 11, 53)
+            sMededeling2 = PartMid(DeString, 11, 53)
             MsgBox "todo"
             'For COUNT_TO = 0 To 1
-            '    sRefKlant(COUNT_TO) = Mid(DeString, 64 + (COUNT_TO * 13), 13)
+            '    sRefKlant(COUNT_TO) = partMid(DeString, 64 + (COUNT_TO * 13), 13)
             'Next
-            'sMuntVerrichting = Mid(DeString, 90, 3)
-            'cBedragMunt = Val(Mid(DeString, 93, 15)) / 1000
+            'sMuntVerrichting = partMid(DeString, 90, 3)
+            'cBedragMunt = Val(partMid(DeString, 93, 15)) / 1000
         
         Case "3" 'Deel 3
-            sRekeningTP = Mid(DeString, 11, 37)
+            sRekeningTP = PartMid(DeString, 11, 37)
             MsgBox "todo"
-            'sITcodesTP = Mid(DeString, 23, 10)
-            'sRekeningTPextra = Mid(DeString, 33, 15)
+            'sITcodesTP = partMid(DeString, 23, 10)
+            'sRekeningTPextra = partMid(DeString, 33, 15)
             
-            sNaamEnAdres(0) = Mid(DeString, 48, 35)
+            sNaamEnAdres(0) = PartMid(DeString, 48, 35)
             
         
         Case Else
             MsgBox "Onlogische situatie", vbCritical
     
     End Select
-    If Mid(DeString, 126, 1) = "0" Then 'er is géén vervolg !
+    If PartMid(DeString, 126, 1) = "0" Then 'er is géén vervolg !
         fnBeweging = False
     Else
         fnBeweging = True

@@ -423,7 +423,7 @@ Begin VB.Form frmGroeneKaart
          _ExtentX        =   6535
          _ExtentY        =   503
          _Version        =   393216
-         Format          =   16580608
+         Format          =   73990144
          UpDown          =   -1  'True
          CurrentDate     =   43800
          MaxDate         =   47512
@@ -510,11 +510,11 @@ Begin VB.Form frmGroeneKaart
          _ExtentX        =   6535
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   16580608
+         Format          =   73990144
          UpDown          =   -1  'True
-         CurrentDate     =   40695
-         MaxDate         =   44196
-         MinDate         =   40695
+         CurrentDate     =   45444
+         MaxDate         =   47848
+         MinDate         =   45444
       End
       Begin MSMask.MaskEdBox mebXYPositie 
          Height          =   285
@@ -1008,27 +1008,27 @@ Private Sub cbLeaseConnect_Click()
 
     Dim strTB2() As String
     Dim strData() As String
-    Dim FlHier As Integer
+    Dim flHier As Integer
     Dim COUNT_TO As Integer
     Dim strEenString As String
             
     On Error GoTo CancelError
     Mim.Teken.InitDir = App.path
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = _
         "Lease Connect bestanden (IMAT*.csv)|IMAT*.csv"
         
     Mim.Teken.ShowOpen
-    FlHier = FreeFile
+    flHier = FreeFile
     Err = 0
     On Error Resume Next
-    Open Mim.Teken.filename For Input As FlHier
-        Line Input #FlHier, strEenString
+    Open Mim.Teken.fileName For Input As flHier
+        Line Input #flHier, strEenString
         strTB2 = Split(strEenString, ";")
-        Line Input #FlHier, strEenString
+        Line Input #flHier, strEenString
         strData = Split(strEenString, ";")
-    Close FlHier
+    Close flHier
     If Err Then MsgBox Error, vbExclamation, "Foutopvang bestandsysteem": Exit Sub
     If UBound(strTB2) <> 42 Then MsgBox "Andere versie Layout retourblok.  Installeer recente versie van GroeneKaart a.u.b.", vbExclamation: Exit Sub
     If UBound(strData) <> 42 Then MsgBox "Andere versie Layout retourblok.  Installeer recente versie van GroeneKaart a.u.b.", vbExclamation: Exit Sub
@@ -1040,27 +1040,27 @@ Private Sub cbLeaseConnect_Click()
     
     'Polisnummer
     If Mid(Me.mfgLijst.TextMatrix(2, 0), 1, 7) = "RFF+001" Then
-        Me.mebTekstinfo(3).Text = Me.mfgLijst.TextMatrix(2, 1)
+        Me.mebTekstinfo(3).text = Me.mfgLijst.TextMatrix(2, 1)
     End If
     
     'Naam Verzekeringsnemer
     If Mid(Me.mfgLijst.TextMatrix(5, 0), 1, 7) = "PTY+003" Then
-        Me.mebTekstinfo(0).Text = Me.mfgLijst.TextMatrix(5, 1)
+        Me.mebTekstinfo(0).text = Me.mfgLijst.TextMatrix(5, 1)
     End If
 
     'Straat en nr.
     If Mid(Me.mfgLijst.TextMatrix(7, 0), 1, 7) = "ADR+002" Then
-        Me.mebTekstinfo(1).Text = Me.mfgLijst.TextMatrix(7, 1)
+        Me.mebTekstinfo(1).text = Me.mfgLijst.TextMatrix(7, 1)
     End If
 
     'Plaat
     If Mid(Me.mfgLijst.TextMatrix(14, 0), 1, 7) = "RFF+010" Then
-        Me.mebTekstinfo(4).Text = Me.mfgLijst.TextMatrix(14, 1)
+        Me.mebTekstinfo(4).text = Me.mfgLijst.TextMatrix(14, 1)
     End If
 
     'Merk en type
     If Mid(Me.mfgLijst.TextMatrix(10, 0), 1, 7) = "ROD+001" Then
-        Me.mebTekstinfo(5).Text = Me.mfgLijst.TextMatrix(10, 1)
+        Me.mebTekstinfo(5).text = Me.mfgLijst.TextMatrix(10, 1)
     End If
     
     Dim Mij As String
@@ -1097,7 +1097,7 @@ Private Sub cbSchoon_Click()
     Me.mfgLijst.ColWidth(1) = 2475
     Me.cmbMaatschappij.ListIndex = 0
     For COUNT_TO = 0 To 5
-        Me.mebTekstinfo(COUNT_TO).Text = ""
+        Me.mebTekstinfo(COUNT_TO).text = ""
     Next
     Set imgFiguur.Picture = Nothing
     
@@ -1134,7 +1134,7 @@ Private Sub cmbMaatschappij_Click()
     Dim COUNT_TO As Integer
 
     For COUNT_TO = 0 To mebXYPositie.UBound
-        mebXYPositie(COUNT_TO).Text = "000/000"
+        mebXYPositie(COUNT_TO).text = "000/000"
         mebXYPositie(COUNT_TO).Enabled = False
     Next
     cmbFormaatVan.Enabled = False
@@ -1147,7 +1147,7 @@ Private Sub cmbMaatschappij_Click()
     Else
         'inladen van gegevens proberen
         'indien mogelijk dan afdruk mogelijk maken
-        If LaadMijInfo(cmbMaatschappij.Text) Then
+        If LaadMijInfo(cmbMaatschappij.text) Then
             cmdAfdrukken.Enabled = True
             KtrlBox = grafischGKOphalen
         Else
@@ -1186,7 +1186,7 @@ End Sub
 Private Sub cmdBewaren_Click()
 
     Me.MousePointer = vbHourglass
-    BewaarMijInfo cmbMaatschappij.Text
+    BewaarMijInfo cmbMaatschappij.text
     Me.MousePointer = vbNormal
 
 End Sub
@@ -1211,7 +1211,7 @@ Private Sub cmdUpdate_Click()
     Dim slHier As String
     Dim SQLstring As String
     
-    slHier = tbGK(0).Text
+    slHier = tbGK(0).text
     If rs.State Then
         rs.Close
     End If
@@ -1220,7 +1220,7 @@ Private Sub cmdUpdate_Click()
     If rs.RecordCount = 1 Then
         'ok
         For COUNT_TO = 1 To 2
-            rs(tbGK(COUNT_TO).Tag).Value = tbGK(COUNT_TO).Text
+            rs(tbGK(COUNT_TO).Tag).Value = tbGK(COUNT_TO).text
         Next
         rs.Update
      Else
@@ -1250,7 +1250,7 @@ End Sub
 
 Private Sub Form_Load()
 
-    Dim FlHier As Integer
+    Dim flHier As Integer
     Dim Zoekstring As String
 
     cbDocumentPrinterHier.Clear
@@ -1272,15 +1272,15 @@ Private Sub Form_Load()
     Else
         cmbMaatschappij.Clear
         cmbMaatschappij.AddItem "Eerst maatschapij kiezen a.u.b. !"
-        FlHier = FreeFile
-        Open LOCATION_COMPANYDATA & "\gkauto.600" For Input As FlHier
-        Do While Not EOF(FlHier)
-            Line Input #FlHier, Zoekstring
+        flHier = FreeFile
+        Open LOCATION_COMPANYDATA & "\gkauto.600" For Input As flHier
+        Do While Not EOF(flHier)
+            Line Input #flHier, Zoekstring
             If Left(Zoekstring, 4) = "IDK:" Then
                 cmbMaatschappij.AddItem Mid(Zoekstring, 5), cmbMaatschappij.ListCount
             End If
         Loop
-        Close FlHier
+        Close flHier
     End If
     cmbMaatschappij.ListIndex = 0
     cbSchoon_Click
@@ -1313,7 +1313,7 @@ End Sub
 
 Function LaadMijInfo(Sleutel As String) As Integer
 
-    Dim FlHier As Integer
+    Dim flHier As Integer
     Dim COUNT_TO As Integer
     Dim Zoekstring As String
 
@@ -1322,24 +1322,24 @@ Function LaadMijInfo(Sleutel As String) As Integer
         MsgBox LOCATION_COMPANYDATA & "\gkauto.600" + vbCrLf + vbCrLf + "is nog niet aanwezig."
         Exit Function
     Else
-        FlHier = FreeFile
-        Open LOCATION_COMPANYDATA & "\gkauto.600" For Input As FlHier
-        Do While Not EOF(FlHier)
-            Line Input #FlHier, Zoekstring
+        flHier = FreeFile
+        Open LOCATION_COMPANYDATA & "\gkauto.600" For Input As flHier
+        Do While Not EOF(flHier)
+            Line Input #flHier, Zoekstring
             If Zoekstring = "IDK:" + Sleutel Then
                 For COUNT_TO = 0 To mebXYPositie.UBound
-                    Line Input #FlHier, Zoekstring
-                    mebXYPositie(COUNT_TO).Text = Zoekstring
+                    Line Input #flHier, Zoekstring
+                    mebXYPositie(COUNT_TO).text = Zoekstring
                 Next
                 LaadMijInfo = True
                 Exit Do
             End If
         Loop
-        Line Input #FlHier, Zoekstring
+        Line Input #flHier, Zoekstring
             cmbFormaatVan.ListIndex = Val(Zoekstring)
-        Line Input #FlHier, Zoekstring
+        Line Input #flHier, Zoekstring
             cmbFormaatTot.ListIndex = Val(Zoekstring)
-        Close FlHier
+        Close flHier
     End If
 
 End Function
@@ -1347,39 +1347,39 @@ End Function
 
 Sub BewaarMijInfo(Sleutel As String)
 
-    Dim FlHier As Integer
+    Dim flHier As Integer
     Dim COUNT_TO As Integer
     Dim FlBackup As Integer
     Dim Zoekstring As String
 
-    FlHier = FreeFile
+    flHier = FreeFile
     If Dir(App.path + "\gkauto.600") = "" Then
     Else
         'Eerst vorige definitie zoeken en verwijderen
-        Open App.path + "\gkauto.600" For Input As FlHier
+        Open App.path + "\gkauto.600" For Input As flHier
         FlBackup = FreeFile
         Open App.path + "\gkauto.$$$" For Output As FlBackup
-        Do While Not EOF(FlHier)
-            Line Input #FlHier, Zoekstring
+        Do While Not EOF(flHier)
+            Line Input #flHier, Zoekstring
             If Zoekstring = "IDK:" + Sleutel Then
                 For COUNT_TO = 0 To mebXYPositie.UBound
-                    Line Input #FlHier, Zoekstring
+                    Line Input #flHier, Zoekstring
                 Next
-                Line Input #FlHier, Zoekstring 'formaatvan
-                Line Input #FlHier, Zoekstring 'formaattot
+                Line Input #flHier, Zoekstring 'formaatvan
+                Line Input #flHier, Zoekstring 'formaattot
             Else
                 Print #FlBackup, Zoekstring + vbCrLf;
                 For COUNT_TO = 0 To mebXYPositie.UBound
-                    Line Input #FlHier, Zoekstring
+                    Line Input #flHier, Zoekstring
                     Print #FlBackup, Zoekstring + vbCrLf;
                 Next
-                Line Input #FlHier, Zoekstring  'formaatvan
+                Line Input #flHier, Zoekstring  'formaatvan
                 Print #FlBackup, Zoekstring + vbCrLf;
-                Line Input #FlHier, Zoekstring  'formaattot
+                Line Input #flHier, Zoekstring  'formaattot
                 Print #FlBackup, Zoekstring + vbCrLf;
             End If
         Loop
-        Close FlHier
+        Close flHier
         Close FlBackup
         Kill App.path + "\gkauto.600"
         If Dir(App.path + "\gkauto.$$$") = "" Then
@@ -1388,14 +1388,14 @@ Sub BewaarMijInfo(Sleutel As String)
         End If
     End If
 
-    Open App.path + "\gkauto.600" For Append As FlHier
-    Print #FlHier, "IDK:" + Sleutel + vbCrLf;
+    Open App.path + "\gkauto.600" For Append As flHier
+    Print #flHier, "IDK:" + Sleutel + vbCrLf;
     For COUNT_TO = 0 To mebXYPositie.UBound
-        Print #FlHier, mebXYPositie(COUNT_TO).Text + vbCrLf;
+        Print #flHier, mebXYPositie(COUNT_TO).text + vbCrLf;
     Next
-    Print #FlHier, Format(cmbFormaatVan.ListIndex) + vbCrLf;
-    Print #FlHier, Format(cmbFormaatTot.ListIndex) + vbCrLf;
-    Close FlHier
+    Print #flHier, Format(cmbFormaatVan.ListIndex) + vbCrLf;
+    Print #flHier, Format(cmbFormaatTot.ListIndex) + vbCrLf;
+    Close flHier
 
 End Sub
 
@@ -1409,7 +1409,7 @@ Private Sub cmdAfdruk_Click()
     For COUNT_TO = 0 To 5
         If COUNT_TO = 2 Then
         Else
-            If Me.mebTekstinfo(COUNT_TO).Text = "" Then MsgBox "Eerst vervolledigen a.u.b.", vbInformation: Exit For
+            If Me.mebTekstinfo(COUNT_TO).text = "" Then MsgBox "Eerst vervolledigen a.u.b.", vbInformation: Exit For
         End If
     Next
     KtrlBox = MsgBox("Sommige verzekeraars gaan mogelijk niet akkoord met deze werkwijze.  U dient dit zelf onder controle te houden onder eigen verantwoordelijkheid." & vbCrLf & vbCrLf & "Vervolg met afdrukken ?", vbDefaultButton2 + vbYesNo + vbQuestion)
@@ -1423,7 +1423,7 @@ End Sub
 Private Sub cmdBestand_Click()
    
     On Error GoTo CancelError
-    Mim.Teken.filename = ""
+    Mim.Teken.fileName = ""
     Mim.Teken.CancelError = True
     Mim.Teken.Filter = _
         "Alle Figuurbestanden|*.bmp;*.dib;*.gif;*.jpg;*.wmf;*.emf;*.ico;*.cur;*.tif" & _
@@ -1434,10 +1434,10 @@ Private Sub cmdBestand_Click()
         "|CURSOR bestanden (*.ico, *.cur)|*.ico;*.cur"
                 
     Mim.Teken.ShowOpen
-    imgFiguur.Picture = LoadPicture(Mim.Teken.filename)
+    imgFiguur.Picture = LoadPicture(Mim.Teken.fileName)
     cmdBewaar.Enabled = True
     cmdBewaar.SetFocus
-    BestandsNaamFiguur = Mim.Teken.filename
+    BestandsNaamFiguur = Mim.Teken.fileName
     Exit Sub
     
 CancelError:
@@ -1464,7 +1464,7 @@ BewaarAfbeelding:
         rs.AddNew
     End If
     For COUNT_TO = 0 To 2
-        rs(tbGK(COUNT_TO).Tag).Value = tbGK(COUNT_TO).Text
+        rs(tbGK(COUNT_TO).Tag).Value = tbGK(COUNT_TO).text
     Next
     DoEvents
     FileToBlob rs("tbobject"), BestandsNaamFiguur
@@ -1570,7 +1570,7 @@ Private Sub cmdTop_Click()
     rs.MoveFirst
     BlobToFile rs("tbobject"), App.path & "\marscan.jpg"
     For COUNT_TO = 0 To 2
-        tbGK(COUNT_TO).Text = rs(tbGK(COUNT_TO).Tag).Value
+        tbGK(COUNT_TO).text = rs(tbGK(COUNT_TO).Tag).Value
     Next
     On Error Resume Next
     imgFiguur.Picture = LoadPicture(App.path & "\marscan.jpg")
@@ -1653,7 +1653,7 @@ End Function
 
 
 ' Copy a BLOB field's contents to a binary file.
-Function BlobToFile(fld As ADODB.Field, filename As String, _
+Function BlobToFile(fld As ADODB.Field, fileName As String, _
     Optional ChunkSize As Long = 8192)
     Dim fnum As Integer, bytesLeft As Long, bytes As Long
     Dim tmp() As Byte
@@ -1664,10 +1664,10 @@ Function BlobToFile(fld As ADODB.Field, filename As String, _
     End If
     ' Open the file;, delete it firstoverwrite it if necessary.' Delete the
     ' file if it exists already, then create a new one.
-    If Dir$(filename) <> "" Then Kill filename
+    If Dir$(fileName) <> "" Then Kill fileName
     
     fnum = FreeFile
-    Open filename For Binary As fnum
+    Open fileName For Binary As fnum
     ' Read the field's contents, and write it the data to the file.
     bytesLeft = fld.ActualSize
     
@@ -1684,7 +1684,7 @@ End Function
 
 
 ' Copy a file's contents into a BLOB field.
-Function FileToBlob(fld As ADODB.Field, filename As String, _
+Function FileToBlob(fld As ADODB.Field, fileName As String, _
     Optional ChunkSize As Long = 8192)
     
     Dim fnum As Integer, bytesLeft As Long, bytes As Long
@@ -1695,10 +1695,10 @@ Function FileToBlob(fld As ADODB.Field, filename As String, _
         Err.Raise 1001, , "Field doesn't support the GetChunk method."
     End If
     ' Open the file; raise an error if the file doesn't exist.
-    If Dir$(filename) = "" Then Err.Raise 53, , "File not found"
+    If Dir$(fileName) = "" Then Err.Raise 53, , "File not found"
     
     fnum = FreeFile
-    Open filename For Binary As fnum
+    Open fileName For Binary As fnum
     ' Read the file in chunks, and append data to the field.
     bytesLeft = LOF(fnum)
     Do While bytesLeft
@@ -1749,7 +1749,7 @@ Sub PrintAnywhere(Src As Object, Dest As Object)
         DoEvents
         Printer.PaintPicture Src.Picture, 0, 0, Printer.Width - 500, Printer.Height - 500
         DoEvents
-        If Left(cmbMaatschappij.Text, 4) = tbGK(0).Text Then
+        If Left(cmbMaatschappij.text, 4) = tbGK(0).text Then
             DrukTekstAf
         End If
         Printer.EndDoc
@@ -1781,7 +1781,7 @@ End Sub
 Sub Schoon()
 
     For COUNT_TO = 0 To 2
-        tbGK(COUNT_TO).Text = ""
+        tbGK(COUNT_TO).text = ""
     Next
     Me.Refresh
     
@@ -1792,7 +1792,7 @@ Function grafischGKOphalen() As Boolean
     Dim SQLstring As String
 
         cbKwaliteit.ListIndex = 2
-        slHier = Left(cmbMaatschappij.Text, 4)
+        slHier = Left(cmbMaatschappij.text, 4)
         If UCase(slHier) = "EERS" Then Exit Function
         If rs.State Then
             rs.Close
@@ -1816,7 +1816,7 @@ Function GKOphalen()
     Screen.MousePointer = vbHourglass
     BlobToFile rs("tbobject"), App.path & "\marscan.jpg"
     For COUNT_TO = 0 To 2
-        tbGK(COUNT_TO).Text = rs(tbGK(COUNT_TO).Tag).Value
+        tbGK(COUNT_TO).text = rs(tbGK(COUNT_TO).Tag).Value
     Next
     On Error Resume Next
     imgFiguur.Picture = LoadPicture(App.path & "\marscan.jpg")
@@ -1833,13 +1833,13 @@ Function DrukTekstAf()
     Dim xVerlies As Single
     Dim yVerlies As Single
     Dim COUNT_TO As Integer
-    Dim FlHier As Integer
+    Dim flHier As Integer
 
     On Local Error GoTo TEKSTERROR
     
     Me.MousePointer = vbHourglass
-    FlHier = FreeFile
-    Open LOCATION_COMPANYDATA & "gkauto.log" For Append As FlHier
+    flHier = FreeFile
+    Open LOCATION_COMPANYDATA & "gkauto.log" For Append As flHier
 
     xVerlies = Left(mebXYPositie(9), 3)   'Horizontaal
     yVerlies = Right(mebXYPositie(9), 3)  'Vertikaal
@@ -1847,36 +1847,36 @@ Function DrukTekstAf()
     Printer.FontName = "Arial"
     Printer.FontSize = 10
     
-    Print #FlHier, vbCrLf; "Voorlopige groene kaart, " + cmbMaatschappij.Text + " op " + Format(Now) + vbCrLf;
+    Print #flHier, vbCrLf; "Voorlopige groene kaart, " + cmbMaatschappij.text + " op " + Format(Now) + vbCrLf;
     For COUNT_TO = 0 To 5
         Printer.CurrentX = Left(mebXYPositie(COUNT_TO), 3) - xVerlies 'Horizontaal
         Printer.CurrentY = Right(mebXYPositie(COUNT_TO), 3) - yVerlies 'Vertikaal
         Printer.Print mebTekstinfo(COUNT_TO);
-        Print #FlHier, mebTekstinfo(COUNT_TO); vbCrLf;
+        Print #flHier, mebTekstinfo(COUNT_TO); vbCrLf;
     Next
     
-    Printer.CurrentX = Left(mebXYPositie(6).Text, 3) - xVerlies 'Horizontaal
-    Printer.CurrentY = Right(mebXYPositie(6).Text, 3) - yVerlies 'Vertikaal
-    Printer.Print Left(cmbSoort.Text, 1);
-    Print #FlHier, cmbSoort; vbCrLf;
+    Printer.CurrentX = Left(mebXYPositie(6).text, 3) - xVerlies 'Horizontaal
+    Printer.CurrentY = Right(mebXYPositie(6).text, 3) - yVerlies 'Vertikaal
+    Printer.Print Left(cmbSoort.text, 1);
+    Print #flHier, cmbSoort; vbCrLf;
     
-    Printer.CurrentX = Left(mebXYPositie(7).Text, 3) - xVerlies 'Horizontaal
-    Printer.CurrentY = Right(mebXYPositie(7).Text, 3) - yVerlies 'Vertikaal
+    Printer.CurrentX = Left(mebXYPositie(7).text, 3) - xVerlies 'Horizontaal
+    Printer.CurrentY = Right(mebXYPositie(7).text, 3) - yVerlies 'Vertikaal
     Printer.Print Format(dtpVan, cmbFormaatVan);
-    Print #FlHier, Format(dtpVan, cmbFormaatVan); vbCrLf;
+    Print #flHier, Format(dtpVan, cmbFormaatVan); vbCrLf;
     
-    Printer.CurrentX = Left(mebXYPositie(8).Text, 3) - xVerlies 'Horizontaal
-    Printer.CurrentY = Right(mebXYPositie(8).Text, 3) - yVerlies 'Vertikaal
+    Printer.CurrentX = Left(mebXYPositie(8).text, 3) - xVerlies 'Horizontaal
+    Printer.CurrentY = Right(mebXYPositie(8).text, 3) - yVerlies 'Vertikaal
     Printer.Print Format(dtpTot, cmbFormaatTot);
-    Print #FlHier, Format(dtpTot, cmbFormaatTot); vbCrLf;
-    Close FlHier
+    Print #flHier, Format(dtpTot, cmbFormaatTot); vbCrLf;
+    Close flHier
     
 TEKSTERROR:
 If Err Then
     MsgBox Err.Description
-    Close FlHier
+    Close flHier
 Else
-    Close FlHier
+    Close flHier
     
 End If
 Me.MousePointer = vbNormal

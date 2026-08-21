@@ -302,9 +302,9 @@ Begin VB.Form DirekteVerkoop
       TabCaption(1)   =   "Kettingfacturatie"
       TabPicture(1)   =   "0400001.frx":0326
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cbFactureren"
+      Tab(1).Control(0)=   "lvDetail"
       Tab(1).Control(1)=   "cbSelect"
-      Tab(1).Control(2)=   "lvDetail"
+      Tab(1).Control(2)=   "cbFactureren"
       Tab(1).ControlCount=   3
       TabCaption(2)   =   "Im- en Export"
       TabPicture(2)   =   "0400001.frx":0342
@@ -319,6 +319,7 @@ Begin VB.Form DirekteVerkoop
       Begin VB.CheckBox CheckBoxAlwaysPeppolRefresh 
          Alignment       =   1  'Right Justify
          Caption         =   "Check Peppol Docs"
+         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -333,6 +334,7 @@ Begin VB.Form DirekteVerkoop
          TabIndex        =   69
          TabStop         =   0   'False
          Top             =   1200
+         Value           =   1  'Checked
          Width           =   1815
       End
       Begin VB.CommandButton ButtonInfoSupported 
@@ -1636,9 +1638,9 @@ Function checkForB2BInvoice() As Boolean
         
         If Trim(RV(rsKlant, "v407")) = "" Then
             Msg = "Geen Peppol ondersteunde documenten gevonden in deze klant zijn fiche" & vbCrLf & vbCrLf
-            Msg = Msg & "Is marIntegraal reeds geactiveerd voor Peppol uitwisseling?" & vbCrLf
-            Msg = Msg & "Vernieuw dan met MarSync eerst uw klantenfiches a.u.b." & vbCrLf & vbCrLf
-            Msg = Msg & "Hierna wordt op klassieke wijze verder gewerkt." & vbCrLf & vbCrLf
+            'Msg = Msg & "Is marIntegraal reeds geactiveerd voor Peppol uitwisseling?" & vbCrLf
+            'Msg = Msg & "Vernieuw dan met MarSync eerst uw klantenfiches a.u.b." & vbCrLf & vbCrLf
+            Msg = Msg & "Hierna wordt online ondersteunde documenten opgevraagd." & vbCrLf & vbCrLf
             Msg = Msg & "Na 29/12/2025 zijn voor uw Belgische B2B klanten enkel nog verzendingen Peppol factuur of creditnota mogelijk"
             MsgBox Msg, vbInformation
             Exit Function
@@ -3079,6 +3081,7 @@ Me.cbUncl1001.Enabled = Not Me.cbUncl1001.Enabled
 
 
 End Sub
+
 
 Private Sub chkBTWBouw_Click()
 Dim Telhier As Integer
@@ -6622,7 +6625,10 @@ End Function
 
 Function CheckCustomerDocuments(customerCode As String) As Boolean
        
-    Dim valueInRecordV407 As String
+    Dim valueInRecordOnlineV407 As String
+    Dim valueAlreadyInDatabaseV407 As String
+    valueAlreadyInDatabaseV407 = RV(rsKlant, "v407")
+    
     Dim checkWithVatNumber As String
     
     CheckCustomerDocuments = False
@@ -6645,20 +6651,19 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
         If IsNull(rsAny("v407")) Or rsAny("v407").Value = "" Then
             'First check with 0208:"
             checkWithVatNumber = "0208:" + rsAny("V404")
-            valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
-            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
-            'TODO: definitly to check for Peppol readiness
-            If Len(valueInRecordV407) < 300 Then
+            valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
+            
+            If Len(valueInRecordOnlineV407) < 300 Then
                 Msg = "Gecontroleerd met code: "
                 Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
                 Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
                 Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
                 MsgBox Msg, vbInformation
                 checkWithVatNumber = "9925:BE" + rsAny("V404")
-                valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+                valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
                 'MsgBox "lengte: " + Str(Len(valueInRecordV410))
                 'TODO: definitly to check for Peppol readiness
-                If Len(valueInRecordV407) < 300 Then
+                If Len(valueInRecordOnlineV407) < 300 Then
                     CheckCustomerDocuments = False
                 Else
                     CheckCustomerDocuments = True
@@ -6666,36 +6671,75 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
             Else
                 CheckCustomerDocuments = True
             End If
-            rsAny("v407") = valueInRecordV407
-            rsAny.Update
+            
+            If valueInRecordOnlineV407 = "Empty" Then
+            Else
+                If Abs((Len(valueAlreadyInDatabaseV407) - Len(valueInRecordOnlineV407))) < 6 Then
+                    'Nothing
+                Else
+                    rsAny("v407") = valueInRecordOnlineV407
+                    rsAny.Update
+                    
+                    Msg = "Ondersteunde documenten voor deze klant zijn bijgewerkt." & vbCrLf & vbCrLf
+                    Msg = Msg & "Online:" & Str(Len(valueInRecordOnlineV407)) & vbCrLf & valueInRecordOnlineV407 & vbCrLf & vbCrLf
+                    Msg = Msg & "Voorheen in database:" & Str(Len(valueAlreadyInDatabaseV407)) & vbCrLf & valueAlreadyInDatabaseV407
+                        
+                    Load FormReactionsDialog
+                    FormReactionsDialog.TextBoxReactions.text = Msg
+                        
+                    FormReactionsDialog.Show 1
+                    MsgBox "Gelieve de klantfiche opnieuw te activeren a.u.b.", vbExclamation
+                    Schoon
+                End If
+            End If
         ElseIf Len(rsAny("v407")) > 500 And Me.CheckBoxAlwaysPeppolRefresh.Value = vbUnchecked Then
             CheckCustomerDocuments = True
-        ElseIf Me.CheckBoxAlwaysPeppolRefresh.Value = vbChecked Then 'always refresh!
-            'First check with 0208:"
-            checkWithVatNumber = "0208:" + rsAny("V404")
-            valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
-            'MsgBox "lengte: " + Str(Len(valueInRecordV410))
-            'TODO: definitly to check for Peppol readiness
-            If Len(valueInRecordV407) < 300 Then
-                Msg = "Gecontroleerd met code: "
-                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
-                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
-                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
-                MsgBox Msg, vbInformation
-                checkWithVatNumber = "9925:BE" + rsAny("V404")
-                valueInRecordV407 = CheckPeppolRegistration(checkWithVatNumber)
+        Else
+            If Me.CheckBoxAlwaysPeppolRefresh.Value = vbChecked Then 'always refresh!
+                'First check with 0208:"
+                checkWithVatNumber = "0208:" + rsAny("V404")
+                valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
                 'MsgBox "lengte: " + Str(Len(valueInRecordV410))
                 'TODO: definitly to check for Peppol readiness
-                If Len(valueInRecordV407) < 300 Then
-                    CheckCustomerDocuments = False
+                If Len(valueInRecordOnlineV407) < 300 Then
+                    Msg = "Gecontroleerd met code: "
+                    Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
+                    Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
+                    Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
+                    MsgBox Msg, vbInformation
+                    checkWithVatNumber = "9925:BE" + rsAny("V404")
+                    valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
+                    'MsgBox "lengte: " + Str(Len(valueInRecordV410))
+                    'TODO: definitly to check for Peppol readiness
+                    If Len(valueInRecordOnlineV407) < 300 Then
+                        CheckCustomerDocuments = False
+                    Else
+                        CheckCustomerDocuments = True
+                    End If
                 Else
                     CheckCustomerDocuments = True
                 End If
-            Else
-                CheckCustomerDocuments = True
+               
+            
+                If Abs((Len(valueAlreadyInDatabaseV407) - Len(valueInRecordOnlineV407))) < 6 Then
+                    'Nothing
+                Else
+                    rsAny("v407") = valueInRecordOnlineV407
+                    rsAny.Update
+                        
+                    Msg = "Ondersteunde documenten voor deze klant zijn bijgewerkt." & vbCrLf & vbCrLf
+                    Msg = Msg & "Online:" & Str(Len(valueInRecordOnlineV407)) & vbCrLf & valueInRecordOnlineV407 & vbCrLf & vbCrLf
+                    Msg = Msg & "Voorheen in database:" & Str(Len(valueAlreadyInDatabaseV407)) & vbCrLf & valueAlreadyInDatabaseV407
+                        
+                    Load FormReactionsDialog
+                    FormReactionsDialog.TextBoxReactions.text = Msg
+                        
+                    FormReactionsDialog.Show 1
+                    MsgBox "Gelieve de klantfiche opnieuw te activeren a.u.b.", vbExclamation
+                    Schoon
+                End If
+                    
             End If
-            rsAny("v407") = valueInRecordV407
-            rsAny.Update
         End If
         rsAny.Close
     End If

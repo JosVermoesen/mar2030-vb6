@@ -268,7 +268,6 @@ Public xdaDATAArray() As String
 Public xdaLinesOMSArray() As String
 Public xdaLinesDATAArray() As String
 
-
 Public purchasePeppolTODOShowed As Boolean
 Public appTitleAndVersion As String
 
