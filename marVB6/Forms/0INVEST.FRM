@@ -7,6 +7,7 @@ Begin VB.Form InvesteringsFiche
    ClientLeft      =   1065
    ClientTop       =   1875
    ClientWidth     =   6090
+   ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "MS Sans Serif"
       Size            =   8.25
@@ -22,6 +23,7 @@ Begin VB.Form InvesteringsFiche
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   2715
    ScaleWidth      =   6090
+   StartUpPosition =   1  'CenterOwner
    Begin VB.CheckBox Versneld 
       Caption         =   "Versneld Afschrijven"
       Height          =   240
@@ -281,8 +283,9 @@ Dim NietAanwezig As Integer
 
 Private Sub Annuleren_Click()
 
-Msg = "InvesteringFiche negeren !  Bent U zeker ?"
-Ktrl = MsgBox(Msg, 292, "Investeringsfiche overslaan")
+Msg = "InvesteringFiche negeren !  Bent U zeker ?" & vbCrLf & vbCrLf
+Msg = Msg & "Opgelet: U dient dan alle lijnen voor dit document over te slaan."
+Ktrl = MsgBox(Msg, vbExclamation + vbYesNo + vbDefaultButton2, "Investeringsfiche overslaan")
 If Ktrl = 6 Then
     Unload Me
 End If
@@ -296,73 +299,65 @@ Dim RekeningTest As String * 7
 Dim RekeningNaam As String * 40
 Dim RekeningTest2 As String
 
-TekstInfo(3).Text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
+TekstInfo(3).text = vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #")
 RekeningTest2 = RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v019 #"))
-TekstInfo(0).Text = Mid(GridText, 1, 10)
-TekstInfo(1).Text = Dec$(Val(Mid(GridText, 11, 12)), MASK_EURBH)
+TekstInfo(0).text = Mid(GridText, 1, 10)
+TekstInfo(1).text = Dec$(Val(Mid(GridText, 11, 12)), MASK_EURBH)
 TLB_RECORD(TABLE_VARIOUS) = ""
 
-Teller = Len(RekeningTest2)
-Do While Teller >= 0
-    If Mid(RekeningTest2, Teller, 1) = "0" Then
-        Mid(RekeningTest2, Teller, 1) = "9"
-        Exit Do
-    Else
-        Teller = Teller - 1
-    End If
-Loop
-If Teller = 0 Then
-    MsgBox "Onlogika in investeringsrekening !"
-    Ok.Enabled = False
-Else
-    RekeningTest = RekeningTest2
-    TekstInfo(4).Text = RekeningTest
-    bGet TABLE_LEDGERACCOUNTS, 0, RekeningTest
-    If Ktrl Then
-        RekeningNaam = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
-              Msg = "Afschrijving op " + RTrim$(RekeningNaam) + vbCrLf
-        Msg = Msg + "Rekeningnr. : " + RekeningTest + " bestaat nog niet." + vbCrLf + vbCrLf
-        Msg = Msg + "Wordt hierna automatisch aangemaakt..."
-        MsgBox Msg, 0, "Aanmaak afschrijfrekening"
+'PartRight(RekeningTest2, 1) = "9"
+RekeningTest2 = PartLeft(RekeningTest2, Len(RekeningTest2) - 1) + "9"
+RekeningTest = vSet(RekeningTest2, 7)
+TekstInfo(4).text = RekeningTest
+bGet TABLE_LEDGERACCOUNTS, 0, RekeningTest
+If Ktrl Then
+    RekeningNaam = vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #")
+        Msg = "Afschrijving op " + RTrim$(RekeningNaam) + vbCrLf
+    Msg = Msg + "Rekeningnr. : " + RekeningTest + " bestaat nog niet." + vbCrLf + vbCrLf
+    Msg = Msg + "Wordt hierna automatisch aangemaakt..."
+    MsgBox Msg, 0, "Aanmaak afschrijfrekening"
         
-        TLB_RECORD(TABLE_LEDGERACCOUNTS) = ""
-        vBib TABLE_LEDGERACCOUNTS, RekeningTest, "v019"
-        vBib TABLE_LEDGERACCOUNTS, "Afschrijving op " + RTrim$(RekeningNaam), "v020"
-        vBib TABLE_LEDGERACCOUNTS, "O", "v032"
-        bInsert TABLE_LEDGERACCOUNTS, 0
+    TLB_RECORD(TABLE_LEDGERACCOUNTS) = ""
+    vBib TABLE_LEDGERACCOUNTS, RekeningTest, "v019"
+    vBib TABLE_LEDGERACCOUNTS, "Afschrijving op " + RTrim$(RekeningNaam), "v020"
+    vBib TABLE_LEDGERACCOUNTS, "O", "v032"
+    bInsert TABLE_LEDGERACCOUNTS, 0
+    If Ktrl <> 0 Then
+        MsgBox "Fout bij invoegen afschrijvingsrekening"
     End If
 End If
 
 bGet TABLE_VARIOUS, 1, vSet("18" + RekeningTest, 20)
 NietAanwezig = Ktrl
-If Ktrl Then
-    TekstInfo(6).Text = ""
+If Ktrl = 4 Then
+    TekstInfo(6).text = ""
     For T = 7 To 8
-        TekstInfo(T).Text = Dec$(0, MASK_EURBH)
+        TekstInfo(T).text = Dec$(0, MASK_EURBH)
     Next
-    TekstInfo(2).Text = Dec$(5, "###")
-    TekstInfo(5).Text = "6300000"
+    TekstInfo(2).text = Dec$(5, "###")
+    TekstInfo(5).text = "6300000"
     Versneld.Value = 1
 Else
     RecordToVeld TABLE_VARIOUS
-    TekstInfo(2).Text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v082 #")), "###") 'lineair over aantal jaar
-    TekstInfo(6).Text = (vBibTekst(TABLE_VARIOUS, "#v083 #"))    'datum vorige bewerking
-    TekstInfo(7).Text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v084 #")), MASK_EURBH)   'totaal vorige bewerkingen
-    TekstInfo(8).Text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v085 #")), MASK_EURBH)  'reeds afgeschreven
+    TekstInfo(2).text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v082 #")), "###") 'lineair over aantal jaar
+    TekstInfo(6).text = (vBibTekst(TABLE_VARIOUS, "#v083 #"))    'datum vorige bewerking
+    TekstInfo(7).text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v084 #")), MASK_EURBH)   'totaal vorige bewerkingen
+    TekstInfo(8).text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v085 #")), MASK_EURBH)  'reeds afgeschreven
     Versneld.Value = Val(vBibTekst(TABLE_VARIOUS, "#v086 #"))     'versnelde afschrijving
-    TekstInfo(4).Text = vBibTekst(TABLE_VARIOUS, "#v087 #")
-    TekstInfo(5).Text = vBibTekst(TABLE_VARIOUS, "#v088 #")
-    If TekstInfo(6).Text = TekstInfo(0).Text Then
-              Msg = "Opgelet, laatste bijwerking op dezelfde dag" + vbCrLf
-        Msg = Msg + "reeds aanwezig.  Vermijdt dubbele optellingen !" + vbCrLf + vbCrLf
+    TekstInfo(4).text = vBibTekst(TABLE_VARIOUS, "#v087 #")
+    TekstInfo(5).text = vBibTekst(TABLE_VARIOUS, "#v088 #")
+    If TekstInfo(6).text = TekstInfo(0).text And Val(vBibTekst(TABLE_VARIOUS, "#v084 #")) = Val(Mid(GridText, 11, 12)) Then
+              Msg = "Opgelet, laatste bijwerking dezelfde dag én zelfde bedrag" & vbCrLf
+        Msg = Msg + "reeds aanwezig.  Vermijdt dubbele verrichtingen." & vbCrLf & vbCrLf
         Msg = Msg + "Kies Sluiten indien U zopas de fiche reeds bijgewerkt hebt."
         MsgBox Msg, 48, "Investeringsfiche éénzelfde datum"
-    ElseIf Not DATE_CHECK((TekstInfo(6).Text), BOOKYEARAS_TEXT) Then
+    ElseIf Not DATE_CHECK((TekstInfo(6).text), BOOKYEARAS_TEXT) Then
               Msg = "Opgelet, U probeert een investeringsfiche" + vbCrLf
         Msg = Msg + "van een ander boekjaar bij te werken !" + vbCrLf + vbCrLf
-        Msg = Msg + "Kies Sluiten en neem de juiste rekening."
-        MsgBox Msg, 16, "Gebruikersfout !"
-        Ok.Enabled = False
+        Msg = Msg + "Duidt EERST in de fiche van de leverancier een investeringsrekening aan geldig voor dit boekjaar en probeer daarna opnieuw."
+        MsgBox Msg, 16, "Boekhoudkundige Gebruikersfout"
+        investWarning = True
+        Unload Me
     End If
 End If
 
@@ -378,19 +373,19 @@ Private Sub Ok_Click()
 Dim TempoTel As Integer
 Dim Ktrl2 As Integer
 
-vBib TABLE_VARIOUS, (TekstInfo(3).Text), "v019"
-vBib TABLE_VARIOUS, (TekstInfo(2).Text), "v082"
-vBib TABLE_VARIOUS, (TekstInfo(0).Text), "v083"
-vBib TABLE_VARIOUS, Dec$(Val(TekstInfo(1).Text) + Val(TekstInfo(7).Text), MASK_EURBH), "v084"
+vBib TABLE_VARIOUS, (TekstInfo(3).text), "v019"
+vBib TABLE_VARIOUS, (TekstInfo(2).text), "v082"
+vBib TABLE_VARIOUS, (TekstInfo(0).text), "v083"
+vBib TABLE_VARIOUS, Dec$(Val(TekstInfo(1).text) + Val(TekstInfo(7).text), MASK_EURBH), "v084"
 'v085 TekstInfo(8).Text reeds afgeschreven mag niet gewijzigd worden
 vBib TABLE_VARIOUS, Format(Versneld.Value, "0"), "v086"
-vBib TABLE_VARIOUS, (TekstInfo(4).Text), "v087"
-vBib TABLE_VARIOUS, (TekstInfo(5).Text), "v088"
+vBib TABLE_VARIOUS, (TekstInfo(4).text), "v087"
+vBib TABLE_VARIOUS, (TekstInfo(5).text), "v088"
 vBib TABLE_VARIOUS, "18" + vBibTekst(TABLE_VARIOUS, "#v087 #"), "v005"
       Msg = "Informatielijn opslaan..." + vbCrLf
 Msg = Msg + "Bent U zeker ?"
-Ktrl2 = MsgBox(Msg, 292, "Fiche bijwerken/wegschrijven")
-If Ktrl2 = 6 Then
+Ktrl2 = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton1, "Fiche bijwerken/wegschrijven")
+If Ktrl2 = vbYes Then
     If NietAanwezig Then
         bInsert TABLE_VARIOUS, 1
     Else
@@ -403,7 +398,7 @@ End Sub
 
 Private Sub TekstInfo_GotFocus(Index As Integer)
 
-TekstInfo(Index).SelLength = Len(TekstInfo(Index).Text)
+TekstInfo(Index).SelLength = Len(TekstInfo(Index).text)
 
 End Sub
 
@@ -412,23 +407,23 @@ Dim TempoBdrg As Long
 
 Select Case Index
     Case 0
-        If DATE_INVALID((TekstInfo(Index).Text)) Then
-            TekstInfo(Index).Text = Mid(GridText, 1, 10)
+        If DATE_INVALID((TekstInfo(Index).text)) Then
+            TekstInfo(Index).text = Mid(GridText, 1, 10)
             Beep
         End If
     Case 1, 8
-        TekstInfo(Index).Text = Dec$(Val(TekstInfo(Index).Text), MASK_EURBH)
+        TekstInfo(Index).text = Dec$(Val(TekstInfo(Index).text), MASK_EURBH)
     Case 2
-        TempoBdrg = Val(TekstInfo(Index).Text)
+        TempoBdrg = Val(TekstInfo(Index).text)
         If TempoBdrg < 1 Or TempoBdrg > 50 Then
             Beep
             TempoBdrg = 5
         End If
-        TekstInfo(Index).Text = Dec$((TempoBdrg), "##0")
+        TekstInfo(Index).text = Dec$((TempoBdrg), "##0")
     Case 5
-        If Left(TekstInfo(Index).Text, 3) <> "630" Then
+        If Left(TekstInfo(Index).text, 3) <> "630" Then
             Beep
-            TekstInfo(Index).Text = "6300000"
+            TekstInfo(Index).text = "6300000"
             TekstInfo(Index).SetFocus
             Exit Sub
         End If

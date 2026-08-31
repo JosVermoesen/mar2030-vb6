@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74383363
+         Format          =   73990147
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1025,11 +1025,11 @@ Private Sub ButtonReadCamt053_Click()
             SnelHelpPrint "Volgnummer + beginsaldo ok", BL_LOGGING
     End Select
     
-    If Me.mfgLijst.Rows = 2 Then
-        aa = "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & "" & vbTab & beginSaldoXDA
-    End If
     cumulSaldo = beginSaldoXDA
-    mfgLijst.AddItem aa, mfgLijst.Rows - 1
+    If Me.mfgLijst.Rows = 2 Then 'Starting with endsolde previous state
+        mfgLijst.TextMatrix(1, 5) = "Beginsaldo"
+        mfgLijst.TextMatrix(1, 6) = beginSaldoXDA
+    End If
         
     On Local Error GoTo 0
     SnelHelpPrint "Preparing book list with xdaLinesData", BL_LOGGING
@@ -1278,7 +1278,7 @@ AddingLines:
         End Select
         cumulSaldo = cumulSaldo + bedragTransactie
         aa = aa & cumulSaldo
-        mfgLijst.AddItem aa, mfgLijst.Rows - 1
+        mfgLijst.AddItem aa, mfgLijst.Rows
     Next
     
     MsgBox "TODO: give chance to edit for lines not 100% sure"

@@ -1349,8 +1349,15 @@ Select Case KeyCode
         If GridText = "" Then
         Else
             If RekeningOK(Left(GridText, 7)) Then
-                AankoopDetail.AddItem GridText, Positie + 1
+                Dim GridTextTmp As String
+                GridTextTmp = GridText
                 X = InvestKtrl()
+                If investWarning Then
+                    investWarning = False
+                    Exit Sub
+                End If
+                GridText = GridTextTmp
+                AankoopDetail.AddItem GridText, Positie + 1
             End If
         End If
     Case 46
@@ -1385,9 +1392,17 @@ Select Case KeyAscii
         If GridText = "" Then
         Else
             If RekeningOK(Left(GridText, 7)) Then
+                Dim GridTextTmp As String
+                GridTextTmp = GridText
+                X = InvestKtrl()
+                If investWarning Then
+                    investWarning = False
+                    Exit Sub
+                End If
+                GridText = GridTextTmp
                 AankoopDetail.RemoveItem Positie
                 AankoopDetail.AddItem GridText, Positie
-                X = InvestKtrl()
+                
                 AankoopDetail.ListIndex = Positie
             End If
         End If
@@ -2018,175 +2033,181 @@ End Sub
 
 
 Private Sub InstalLeverancier()
-Dim Lever As String
-Dim T       As Integer
-Dim X       As Integer
+    Dim Lever As String
+    Dim T       As Integer
+    Dim X       As Integer
 
-Me.cbImportUBL.Enabled = False
+    Me.cbImportUBL.Enabled = False
 
-AankoopDetail.Enabled = True
-'InvoerLijn.Enabled = True
+    AankoopDetail.Enabled = True
+    'InvoerLijn.Enabled = True
 
-Dim ibanField As String
+    Dim ibanField As String
 
-ibanField = Trim(vBibTekst(TABLE_SUPPLIERS, "#v259 #"))
-If ibanField = "" Then
-    TextInfoSellersIBAN.text = ""
-Else
-    ibanField = Replace(ibanField, " ", "")
-    If Len(ibanField) = 16 Then
-        TextInfoSellersIBAN.text = Mid(ibanField, 1, 4) & " " & Mid(ibanField, 5, 4) & " " & Mid(ibanField, 9, 4) & " " & Mid(ibanField, 13, 4)
+    ibanField = Trim(vBibTekst(TABLE_SUPPLIERS, "#v259 #"))
+    If ibanField = "" Then
+        TextInfoSellersIBAN.text = ""
     Else
-        TextInfoSellersIBAN.text = ibanField
-    End If
-End If
-
-supplierA110 = Trim(vBibTekst(TABLE_SUPPLIERS, "#A110 #"))
-
-Lever = vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A100 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A125 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A104 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A109 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A107 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A108 #")
-Schoonvegen.Enabled = True
-'ReturnRooster.Enabled = True
-
-If vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "" Then
-    MsgBox "Landnummer is verplicht !"
-    Exit Sub
-ElseIf vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "002" Then
-    LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Binnenland * " + Lever
-    AankoopFlg = 0
-    Medekontraktant.Enabled = True
-    TekstInfo7.Visible = False
-    TekstInfo7.text = TekstInfo5.text
-    Label1(12).Visible = False
-ElseIf InStr(SISO, vBibTekst(TABLE_SUPPLIERS, "#v149 #")) Then
-    LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* E.U. Verschuldigde BTW * " + Lever
-    AankoopFlg = 1
-    Medekontraktant.Enabled = False
-    TekstInfo7.Visible = True
-    TekstInfo7.text = "0"
-    Label1(12).Visible = True
-Else
-    LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Niet E.U. + BTW ! *" + Lever
-    AankoopFlg = 2
-    Medekontraktant.Enabled = False
-    TekstInfo7.Visible = True
-    TekstInfo7.text = "0"
-    Label1(12).Visible = True
-End If
-
-If Trim(vBibTekst(TABLE_SUPPLIERS, "#A161 #")) <> "" Then
-    supplierCompanyId = Trim(vBibTekst(TABLE_SUPPLIERS, "#v404 #"))
-    supplierCountryCode = Trim(vBibTekst(TABLE_SUPPLIERS, "#v150 #"))
-    supplierVatNumber = Trim(vBibTekst(TABLE_SUPPLIERS, "#A161 #"))
-    
-End If
-
-TekstInfo0.Enabled = True
-TekstInfo1.Enabled = True
-TekstInfo2.Enabled = True
-TekstInfo3.Enabled = True
-TekstInfo4.Enabled = True
-TekstInfo12.Enabled = True
-TekstInfo5.Enabled = True
-TekstInfo6.Enabled = True
-TekstInfo7.Enabled = True
-
-sMuntLever = UCase(vBibTekst(TABLE_SUPPLIERS, "#vs03 #"))
-bGet TABLE_VARIOUS, 1, vSet("10" + sMuntLever, 20)
-If Ktrl Then
-    MsgBox "Dagkoers voor muntkode " & sMuntLever & " niet te vinden !  Eerst aanmaken via gebruikersfiches a.u.b."
-    If bhEuro Then
-        sMuntLever = "EUR"
-    Else
-        sMuntLever = "BEF"
-    End If
-    TekstInfo9.text = Dec$(1, "###.########")
-Else
-    RecordToVeld TABLE_VARIOUS
-    TekstInfo9.text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
-End If
-
-TekstInfo9.text = Dec$(1, "##0.########")
-dMuntL = Val(TekstInfo9.text)
-
-If vBibTekst(TABLE_SUPPLIERS, "#v151 #") = "1" Then
-    Medekontraktant.Value = 1
-Else
-    Medekontraktant.Value = 0
-End If
-If vBibTekst(TABLE_SUPPLIERS, "#v163 #") = "1" Then
-    StockBeheer.Value = 1
-Else
-    StockBeheer.Value = 0
-End If
-
-Err = 0
-On Local Error Resume Next
-
-If vSet(vBibTekst(TABLE_SUPPLIERS, "#v016 #"), 7) <> Space$(7) Then
-    If AankoopDetail.ListCount = 0 Then
-    RasterSchoon
-    VeldRekening = vBibTekst(TABLE_SUPPLIERS, "#v016 #")
-    VeldNaam = ""
-    VeldBedrag = ""
-    GridText = VeldRekening + Chr$(124) + VeldNaam + Chr$(124) + VeldBedrag + Chr$(124)
-    Wijzigen.Show 1
-    If GridText = "" Then
-    Else
-        If RekeningOK(Left(GridText, 7)) Then
-            AankoopDetail.AddItem GridText
-            X = InvestKtrl()
+        ibanField = Replace(ibanField, " ", "")
+        If Len(ibanField) = 16 Then
+            TextInfoSellersIBAN.text = Mid(ibanField, 1, 4) & " " & Mid(ibanField, 5, 4) & " " & Mid(ibanField, 9, 4) & " " & Mid(ibanField, 13, 4)
+        Else
+            TextInfoSellersIBAN.text = ibanField
         End If
     End If
-    End If
-End If
 
-If Left(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 3) = "440" Then
-    TekstInfo3.text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
-    bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 7)
+    supplierA110 = Trim(vBibTekst(TABLE_SUPPLIERS, "#A110 #"))
+
+    Lever = vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A100 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A125 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A104 #") + vbCrLf + vBibTekst(TABLE_SUPPLIERS, "#A109 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A107 #") + " " + vBibTekst(TABLE_SUPPLIERS, "#A108 #")
+    Schoonvegen.Enabled = True
+    'ReturnRooster.Enabled = True
+
+    If vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "" Then
+        MsgBox "Landnummer is verplicht !"
+        Exit Sub
+    ElseIf vBibTekst(TABLE_SUPPLIERS, "#v149 #") = "002" Then
+        LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Binnenland * " + Lever
+        AankoopFlg = 0
+        Medekontraktant.Enabled = True
+        TekstInfo7.Visible = False
+        TekstInfo7.text = TekstInfo5.text
+        Label1(12).Visible = False
+    ElseIf InStr(SISO, vBibTekst(TABLE_SUPPLIERS, "#v149 #")) Then
+        LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* E.U. Verschuldigde BTW * " + Lever
+        AankoopFlg = 1
+        Medekontraktant.Enabled = False
+        TekstInfo7.Visible = True
+        TekstInfo7.text = "0"
+        Label1(12).Visible = True
+    Else
+        LeverancierInfo.Caption = vSet(vBibTekst(TABLE_SUPPLIERS, "#A110 #"), 12) + "* Niet E.U. + BTW ! *" + Lever
+        AankoopFlg = 2
+        Medekontraktant.Enabled = False
+        TekstInfo7.Visible = True
+        TekstInfo7.text = "0"
+        Label1(12).Visible = True
+    End If
+    
+    If Trim(vBibTekst(TABLE_SUPPLIERS, "#A161 #")) <> "" Then
+        supplierCompanyId = Trim(vBibTekst(TABLE_SUPPLIERS, "#v404 #"))
+        supplierCountryCode = Trim(vBibTekst(TABLE_SUPPLIERS, "#v150 #"))
+        supplierVatNumber = Trim(vBibTekst(TABLE_SUPPLIERS, "#A161 #"))
+    End If
+
+    TekstInfo0.Enabled = True
+    TekstInfo1.Enabled = True
+    TekstInfo2.Enabled = True
+    TekstInfo3.Enabled = True
+    TekstInfo4.Enabled = True
+    TekstInfo12.Enabled = True
+    TekstInfo5.Enabled = True
+    TekstInfo6.Enabled = True
+    TekstInfo7.Enabled = True
+
+    sMuntLever = UCase(vBibTekst(TABLE_SUPPLIERS, "#vs03 #"))
+    bGet TABLE_VARIOUS, 1, vSet("10" + sMuntLever, 20)
     If Ktrl Then
+        MsgBox "Dagkoers voor muntkode " & sMuntLever & " niet te vinden !  Eerst aanmaken via gebruikersfiches a.u.b."
+        If bhEuro Then
+            sMuntLever = "EUR"
+        Else
+            sMuntLever = "BEF"
+        End If
+        TekstInfo9.text = Dec$(1, "###.########")
+    Else
+        RecordToVeld TABLE_VARIOUS
+        TekstInfo9.text = Dec$(Val(vBibTekst(TABLE_VARIOUS, "#v040 #")), "###.########")
+    End If
+
+    TekstInfo9.text = Dec$(1, "##0.########")
+    dMuntL = Val(TekstInfo9.text)
+
+    If vBibTekst(TABLE_SUPPLIERS, "#v151 #") = "1" Then
+        Medekontraktant.Value = 1
+    Else
+        Medekontraktant.Value = 0
+    End If
+    If vBibTekst(TABLE_SUPPLIERS, "#v163 #") = "1" Then
+        StockBeheer.Value = 1
+    Else
+        StockBeheer.Value = 0
+    End If
+
+    Err = 0
+    On Local Error Resume Next
+
+    If vSet(vBibTekst(TABLE_SUPPLIERS, "#v016 #"), 7) <> Space$(7) Then
+        If AankoopDetail.ListCount = 0 Then
+            RasterSchoon
+            VeldRekening = vBibTekst(TABLE_SUPPLIERS, "#v016 #")
+            VeldNaam = ""
+            VeldBedrag = ""
+            GridText = VeldRekening + Chr$(124) + VeldNaam + Chr$(124) + VeldBedrag + Chr$(124)
+            Wijzigen.Show 1
+            If GridText = "" Then
+            Else
+                Dim GridTextTmp As String
+                GridTextTmp = GridText
+                X = InvestKtrl()
+                If investWarning Then
+                    investWarning = False
+                    Exit Sub
+                End If
+                If RekeningOK(vSet(VeldRekening, 7)) Then
+                    GridText = GridTextTmp
+                    AankoopDetail.AddItem GridText
+                End If
+            End If
+        End If
+    End If
+
+    If Left(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 3) = "440" Then
+        TekstInfo3.text = vBibTekst(TABLE_SUPPLIERS, "#v162 #")
+        bGet TABLE_LEDGERACCOUNTS, 0, vSet(vBibTekst(TABLE_SUPPLIERS, "#v162 #"), 7)
+        If Ktrl Then
+            TekstInfo3.text = LeverancierRekening
+        End If
+    Else
         TekstInfo3.text = LeverancierRekening
     End If
-Else
-    TekstInfo3.text = LeverancierRekening
-End If
-TekstInfo10.Enabled = True
+    TekstInfo10.Enabled = True
 
-TekstInfo2.text = VValdag((TekstInfo0.text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
-If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
-    TekstInfo4.AutoTab = True
-    TekstInfo4.ClipMode = 1
-    TekstInfo4.PromptInclude = False
-    TekstInfo4.Mask = "+++###/####/#####+++"
-Else
-    TekstInfo4.AutoTab = False
-    TekstInfo4.ClipMode = 0
-    TekstInfo4.PromptInclude = True
-    TekstInfo4.Mask = ""
-End If
-TekstInfo4.text = vBibTekst(TABLE_SUPPLIERS, "#v412 #")
-If Trim(TekstInfo4.text) = "" Then
-Else
-    TekstInfo4.Enabled = False
-End If
-
-If vBibTekst(TABLE_SUPPLIERS, "#v254 #") <> "" Then
-    cmdSQLInfo.Visible = True
-End If
-Me.cmdXLog.Enabled = True
-Me.LabelInfoXlog.Visible = False
-SSTab1.Tab = 0
-
-If supplierCompanyId = "" Then
-ElseIf supplierCountryCode = "BE" Then
-    Dim beSupplierPeppolCheck As Boolean
-    beSupplierPeppolCheck = CheckSupplierDocuments(supplierA110)
-    If beSupplierPeppolCheck = False Then
-        MsgBox "Deze BE Leverancier dient via Peppol te werken" & vbCrLf & vbCrLf & "In principe mag je geen aankoopdocumenten MANUEEL inbrengen", vbExclamation
+    TekstInfo2.text = VValdag((TekstInfo0.text), vBibTekst(TABLE_SUPPLIERS, "#vs04 #"))
+    If vBibTekst(TABLE_SUPPLIERS, "#v017 #") = "1" Then
+        TekstInfo4.AutoTab = True
+        TekstInfo4.ClipMode = 1
+        TekstInfo4.PromptInclude = False
+        TekstInfo4.Mask = "+++###/####/#####+++"
+    Else
+        TekstInfo4.AutoTab = False
+        TekstInfo4.ClipMode = 0
+        TekstInfo4.PromptInclude = True
+        TekstInfo4.Mask = ""
     End If
-End If
+    TekstInfo4.text = vBibTekst(TABLE_SUPPLIERS, "#v412 #")
+    If Trim(TekstInfo4.text) = "" Then
+    Else
+        TekstInfo4.Enabled = False
+    End If
 
-Kontrole.Enabled = True
-DirekteAankoop.AankoopDetail.SetFocus
+    If vBibTekst(TABLE_SUPPLIERS, "#v254 #") <> "" Then
+        cmdSQLInfo.Visible = True
+    End If
+    Me.cmdXLog.Enabled = True
+    Me.LabelInfoXlog.Visible = False
+    SSTab1.Tab = 0
+
+    If supplierCompanyId = "" Then
+    ElseIf supplierCountryCode = "BE" Then
+        Dim beSupplierPeppolCheck As Boolean
+        beSupplierPeppolCheck = CheckSupplierDocuments(supplierA110)
+        If beSupplierPeppolCheck = False Then
+            MsgBox "Deze BE Leverancier dient via Peppol te werken" & vbCrLf & vbCrLf & "In principe mag je geen aankoopdocumenten MANUEEL inbrengen", vbExclamation
+        End If
+    End If
+
+    Kontrole.Enabled = True
+    DirekteAankoop.AankoopDetail.SetFocus
 
 End Sub
 
@@ -2456,6 +2477,15 @@ End If
         If AankoopDetail.ListCount = 0 Then
             RasterSchoon
             VeldRekening = vBibTekst(TABLE_SUPPLIERS, "#v016 #")
+            bGet TABLE_LEDGERACCOUNTS, 0, vSet(VeldRekening, 7)
+            If Ktrl = 0 Then
+                RecordToVeld TABLE_LEDGERACCOUNTS
+            Else
+                Msg = "(Nog) geen standaard rekening leveranciers." & vbCrLf & vbCrLf
+                Msg = Msg & "Koppel eerst een kosten-, investerings- of balansrekening aan deze leverancier"
+                MsgBox Msg, vbInformation, "Gekoppelde rekening niet gevonden"
+                Exit Sub
+            End If
             For i = LBound(documentLinesDATAArray, 1) + 1 To UBound(documentLinesDATAArray, 1) - 1
                 If adminNoVat Then
                     lineValue = Val(Dec(((Val(documentLinesDATAArray(i, 7)) * (1 + Val(documentLinesDATAArray(i, 8)) / 100))), MASK_EUR + "00"))
@@ -2474,8 +2504,15 @@ End If
                 End If
                 GridText = VeldRekening + Chr$(124) + VeldNaam + Chr$(124) + lineStringValue + Chr$(124)
                 If RekeningOK(Left(GridText, 7)) Then
-                    AankoopDetail.AddItem GridText
+                    Dim GridTextTmp As String
+                    GridTextTmp = GridText
                     X = InvestKtrl()
+                    If investWarning Then
+                        investWarning = False
+                        Exit Sub
+                    End If
+                    GridText = GridTextTmp
+                    AankoopDetail.AddItem GridText
                 End If
             Next i
         End If
@@ -2501,8 +2538,15 @@ End If
                 End If
                 GridText = VeldRekening + Chr$(124) + VeldNaam + Chr$(124) + lineStringValue + Chr$(124)
                 If RekeningOK(Left(GridText, 7)) Then
-                    AankoopDetail.AddItem GridText
+                    Dim GridTextTmp2 As String
+                    GridTextTmp2 = GridText
                     X = InvestKtrl()
+                    If investWarning Then
+                        investWarning = False
+                        Exit Sub
+                    End If
+                    GridText = GridTextTmp2
+                    AankoopDetail.AddItem GridText
                 End If
             Next i
         End If
@@ -2558,11 +2602,18 @@ End Sub
 Private Function InvestKtrl() As Integer
 Dim fRekNum As String * 7
 
-fRekNum = Left(GridText, 7)
-If fRekNum < Left(GrensDetail(0), 7) Or fRekNum > Right(GrensDetail(0), 7) Then
+fRekNum = PartLeft(GridText, 7)
+If fRekNum < PartLeft(GrensDetail(0), 7) Or fRekNum > PartRight(GrensDetail(0), 7) Then
 Else
-    GridText = TekstInfo0.text + Dec$(Val(Mid(GridText, 50, 12)), MASK_EURBH)
+    GridText = TekstInfo0.text + Dec$(Val(PartMid(GridText, 50, 12)), MASK_EURBH)
+    On Local Error Resume Next
     InvesteringsFiche.Show 1
+    bGet TABLE_LEDGERACCOUNTS, 0, fRekNum
+    If Ktrl Then
+        MsgBox "fout"
+    Else
+        RecordToVeld TABLE_LEDGERACCOUNTS
+    End If
 End If
 
 End Function

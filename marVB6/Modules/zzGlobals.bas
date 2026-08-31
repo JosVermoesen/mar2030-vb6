@@ -271,3 +271,4 @@ Public xdaLinesDATAArray() As String
 Public purchasePeppolTODOShowed As Boolean
 Public appTitleAndVersion As String
 
+Public investWarning As Boolean
