@@ -2488,7 +2488,7 @@ For T = 0 To VerkoopDetail.ListCount - 1
         GridText = Right(GridText, Len(GridText) - 8)
         VeldUblInfo(0) = Left(GridText, 13)                'product reference id or description
                 
-        linePriceAmount = Trim(Dec((dVeldUblInfo(7) / dVeldUblInfo(6)), MASK_EUR))
+        linePriceAmount = Trim(Dec((dVeldUblInfo(7) / dVeldUblInfo(6)), MASK_EUR + "00"))
         thisInvoiceLine = Replace(thisInvoiceLine, "{linePriceAmount}", linePriceAmount)
                         
         lineQuantity = Trim(Dec(dVeldUblInfo(6), MASK_EUR))
@@ -3077,10 +3077,10 @@ End Sub
 
 Private Sub cbUncl1001Toggle_Click()
 
-Me.cbUncl1001.Enabled = Not Me.cbUncl1001.Enabled
-
+    Me.cbUncl1001.Enabled = Not Me.cbUncl1001.Enabled
 
 End Sub
+
 
 
 Private Sub chkBTWBouw_Click()
