@@ -6627,11 +6627,17 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
        
     Dim valueInRecordOnlineV407 As String
     Dim valueAlreadyInDatabaseV407 As String
+    
     valueAlreadyInDatabaseV407 = RV(rsKlant, "v407")
     
     Dim checkWithVatNumber As String
     
-    CheckCustomerDocuments = False
+    If Len(valueAlreadyInDatabaseV407) > 500 Then
+        CheckCustomerDocuments = True
+        Exit Function
+    Else
+        CheckCustomerDocuments = False
+    End If
     
     Dim rsAny As ADODB.Recordset
     Set rsAny = New ADODB.Recordset
@@ -6654,15 +6660,8 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
             valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
             
             If Len(valueInRecordOnlineV407) < 300 Then
-                Msg = "Gecontroleerd met code: "
-                Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
-                Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
-                Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
-                MsgBox Msg, vbInformation
                 checkWithVatNumber = "9925:BE" + rsAny("V404")
                 valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
-                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
-                'TODO: definitly to check for Peppol readiness
                 If Len(valueInRecordOnlineV407) < 300 Then
                     CheckCustomerDocuments = False
                 Else
@@ -6671,75 +6670,18 @@ Function CheckCustomerDocuments(customerCode As String) As Boolean
             Else
                 CheckCustomerDocuments = True
             End If
-            
-            If valueInRecordOnlineV407 = "Empty" Then
-            Else
-                If Abs((Len(valueAlreadyInDatabaseV407) - Len(valueInRecordOnlineV407))) < 6 Then
-                    'Nothing
-                Else
-                    rsAny("v407") = valueInRecordOnlineV407
-                    rsAny.Update
+            rsAny("v407") = valueInRecordOnlineV407
+            rsAny.Update
                     
-                    Msg = "Ondersteunde documenten voor deze klant zijn bijgewerkt." & vbCrLf & vbCrLf
-                    Msg = Msg & "Online:" & Str(Len(valueInRecordOnlineV407)) & vbCrLf & valueInRecordOnlineV407 & vbCrLf & vbCrLf
-                    Msg = Msg & "Voorheen in database:" & Str(Len(valueAlreadyInDatabaseV407)) & vbCrLf & valueAlreadyInDatabaseV407
+            Msg = "Ondersteunde documenten voor deze klant zijn bijgewerkt." & vbCrLf & vbCrLf
+            Msg = Msg & "Online:" & Str(Len(valueInRecordOnlineV407)) & vbCrLf & valueInRecordOnlineV407 & vbCrLf & vbCrLf
+            Msg = Msg & "Voorheen in database:" & Str(Len(valueAlreadyInDatabaseV407)) & vbCrLf & valueAlreadyInDatabaseV407
                         
-                    Load FormReactionsDialog
-                    FormReactionsDialog.TextBoxReactions.text = Msg
-                        
-                    FormReactionsDialog.Show 1
-                    MsgBox "Gelieve de klantfiche opnieuw te activeren a.u.b.", vbExclamation
-                    Schoon
-                End If
-            End If
-        ElseIf Len(rsAny("v407")) > 500 And Me.CheckBoxAlwaysPeppolRefresh.Value = vbUnchecked Then
-            CheckCustomerDocuments = True
-        Else
-            If Me.CheckBoxAlwaysPeppolRefresh.Value = vbChecked Then 'always refresh!
-                'First check with 0208:"
-                checkWithVatNumber = "0208:" + rsAny("V404")
-                valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
-                'MsgBox "lengte: " + Str(Len(valueInRecordV410))
-                'TODO: definitly to check for Peppol readiness
-                If Len(valueInRecordOnlineV407) < 300 Then
-                    Msg = "Gecontroleerd met code: "
-                    Msg = Msg & checkWithVatNumber & vbCrLf & vbCrLf
-                    Msg = Msg & "Mogelijk geen Peppol Registratie" & vbCrLf & vbCrLf
-                    Msg = Msg & "Tot slot controleren met verouderde 9925:BE"
-                    MsgBox Msg, vbInformation
-                    checkWithVatNumber = "9925:BE" + rsAny("V404")
-                    valueInRecordOnlineV407 = CheckPeppolRegistration(checkWithVatNumber)
-                    'MsgBox "lengte: " + Str(Len(valueInRecordV410))
-                    'TODO: definitly to check for Peppol readiness
-                    If Len(valueInRecordOnlineV407) < 300 Then
-                        CheckCustomerDocuments = False
-                    Else
-                        CheckCustomerDocuments = True
-                    End If
-                Else
-                    CheckCustomerDocuments = True
-                End If
-               
-            
-                If Abs((Len(valueAlreadyInDatabaseV407) - Len(valueInRecordOnlineV407))) < 6 Then
-                    'Nothing
-                Else
-                    rsAny("v407") = valueInRecordOnlineV407
-                    rsAny.Update
-                        
-                    Msg = "Ondersteunde documenten voor deze klant zijn bijgewerkt." & vbCrLf & vbCrLf
-                    Msg = Msg & "Online:" & Str(Len(valueInRecordOnlineV407)) & vbCrLf & valueInRecordOnlineV407 & vbCrLf & vbCrLf
-                    Msg = Msg & "Voorheen in database:" & Str(Len(valueAlreadyInDatabaseV407)) & vbCrLf & valueAlreadyInDatabaseV407
-                        
-                    Load FormReactionsDialog
-                    FormReactionsDialog.TextBoxReactions.text = Msg
-                        
-                    FormReactionsDialog.Show 1
-                    MsgBox "Gelieve de klantfiche opnieuw te activeren a.u.b.", vbExclamation
-                    Schoon
-                End If
-                    
-            End If
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = Msg
+            FormReactionsDialog.Show 1
+            MsgBox "Gelieve de klantfiche opnieuw te activeren a.u.b.", vbExclamation
+            Schoon
         End If
         rsAny.Close
     End If
