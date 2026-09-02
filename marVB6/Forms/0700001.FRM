@@ -514,10 +514,10 @@ If XLogKey <> "" Then
         Bewerking.Enabled = False
         Dokument.Enabled = False
         Partij.Enabled = False
-        If OK.Enabled = False Then
-            OK.Enabled = True
+        If Ok.Enabled = False Then
+            Ok.Enabled = True
         End If
-        OK.SetFocus
+        Ok.SetFocus
     End If
 End If
 Exit Sub
@@ -735,7 +735,7 @@ End Sub
 Private Sub TekstInfo3_KeyDown(KeyCode As Integer, Shift As Integer)
 
     If KeyCode = 13 Then
-        OK.SetFocus
+        Ok.SetFocus
     End If
 
 End Sub
@@ -768,7 +768,7 @@ Private Sub TekstInfo5_KeyPress(KeyAscii As Integer)
     Kontrole = "*.0123456789" + Chr$(8)
 
     If InStr(Kontrole, Chr$(KeyAscii)) Then
-        OK.Enabled = False
+        Ok.Enabled = False
     Else
         KeyAscii = 0
         Msg = "Syntax : [*] . xxxxx . [eejj]" + vbCrLf + vbCrLf
@@ -797,6 +797,19 @@ Private Sub TekstInfo0_LostFocus()
 
     If TekstInfo0.text = "" Then
     Else
+        Dim ttR As Integer
+        ttR = 0
+        Do While bankNumberArray(ttR) <> ""
+            If Trim(TekstInfo0.text) = bankNumberArray(ttR) Then
+                Msg = "Een actieve bankrekening als tegenrekening is niet toegelaten" & vbCrLf & vbCrLf
+                Msg = Msg & "Voor transferten gebruik de tussenrekening 580000 Geldbewegingen"
+                MsgBox Msg, vbExclamation, "Boekhoudbeginselen"
+                TekstInfo0.SetFocus
+                Exit Sub
+            End If
+            ttR = ttR + 1
+        Loop
+        
         bGet TABLE_LEDGERACCOUNTS, 0, vSet((TekstInfo0.text), 7)
         If Ktrl Then
             Beep
@@ -955,8 +968,8 @@ TekstInfo5.text = FVT(TABLE_INVOICES, 0)
 Bewerking.Enabled = False
 Dokument.Enabled = False
 Partij.Enabled = False
-OK.Enabled = True
-OK.SetFocus
+Ok.Enabled = True
+Ok.SetFocus
 
 End Sub
 

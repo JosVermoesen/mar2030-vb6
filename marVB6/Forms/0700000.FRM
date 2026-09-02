@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "ButtonAssign"
-      Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(2)=   "mfgLijst"
-      Tab(1).Control(3)=   "LabelCounter"
+      Tab(1).Control(0)=   "LabelCounter"
+      Tab(1).Control(1)=   "mfgLijst"
+      Tab(1).Control(2)=   "ButtonTransfer"
+      Tab(1).Control(3)=   "ButtonAssign"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   73990147
+         Format          =   74121219
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1348,7 +1348,7 @@ End Sub
 
 
 Private Sub Form_Load()
-    
+
     xdaLineCounter = 0
     mfgLijst.Rows = 2
     mfgLijst.Cols = 7
@@ -1450,6 +1450,9 @@ Private Sub Form_Load()
     RekeningNummer(9) = String99(READING, 214)
     Uittreksel(9) = LTrim$(RTrim$(String99(READING, 218)))
 
+    ReDim bankNumberArray(9)
+    Dim ttR As Integer
+    TTT = 0
     For T = 0 To 9
         If Trim(RekeningNummer(T)) = "" Then
         Else
@@ -1458,6 +1461,8 @@ Private Sub Form_Load()
                 A$ = "Niet aanwezig. Installeer via Setup Boekjaar."
             Else
                 RecordToVeld TABLE_LEDGERACCOUNTS
+                bankNumberArray(ttR) = Trim(RekeningNummer(T))
+                ttR = ttR + 1
                 A$ = RekeningNummer(T) + Chr(124) + RTrim$(vBibTekst(TABLE_LEDGERACCOUNTS, "#v020 #"))
             End If
             KeuzeInfo0.AddItem A$

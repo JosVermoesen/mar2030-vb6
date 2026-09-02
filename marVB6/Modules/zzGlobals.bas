@@ -272,3 +272,5 @@ Public purchasePeppolTODOShowed As Boolean
 Public appTitleAndVersion As String
 
 Public investWarning As Boolean
+Public bankNumberArray() As String
+
