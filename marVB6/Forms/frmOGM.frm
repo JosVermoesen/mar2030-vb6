@@ -6,10 +6,10 @@ Begin VB.Form frmOGM
    Appearance      =   0  'Flat
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Betalingen/Overschrijvingen"
-   ClientHeight    =   6510
+   ClientHeight    =   6570
    ClientLeft      =   960
    ClientTop       =   1320
-   ClientWidth     =   11295
+   ClientWidth     =   11415
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "MS Sans Serif"
@@ -24,14 +24,32 @@ Begin VB.Form frmOGM
    MaxButton       =   0   'False
    MinButton       =   0   'False
    PaletteMode     =   1  'UseZOrder
-   ScaleHeight     =   6510
-   ScaleWidth      =   11295
+   ScaleHeight     =   6570
+   ScaleWidth      =   11415
    StartUpPosition =   1  'CenterOwner
+   Begin VB.ComboBox ComboGuidLabel 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Left            =   1080
+      Sorted          =   -1  'True
+      Style           =   2  'Dropdown List
+      TabIndex        =   27
+      Top             =   60
+      Width           =   3795
+   End
    Begin VB.Frame FrameChangeMemoDate 
       Caption         =   "Controle op Memodatum"
       Height          =   1155
       Left            =   60
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   5280
       Width           =   8055
       Begin VB.TextBox TbBedrag 
@@ -41,14 +59,14 @@ Begin VB.Form frmOGM
          ForeColor       =   &H00000000&
          Height          =   345
          Left            =   4140
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   630
          Width           =   1515
       End
       Begin MSMask.MaskEdBox MebRekening 
          Height          =   315
          Left            =   60
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   660
          Width           =   2655
          _ExtentX        =   4683
@@ -69,7 +87,7 @@ Begin VB.Form frmOGM
       Begin MSComCtl2.DTPicker dtpMemoDatum 
          Height          =   315
          Left            =   2760
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   660
          Width           =   1335
          _ExtentX        =   2355
@@ -86,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16515075
+         Format          =   16580611
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -95,7 +113,7 @@ Begin VB.Form frmOGM
          Caption         =   "&Memodatum"
          Height          =   195
          Left            =   2820
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   360
          Width           =   1155
       End
@@ -103,7 +121,7 @@ Begin VB.Form frmOGM
          Caption         =   "&Referte"
          Height          =   195
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   360
          Width           =   855
       End
@@ -112,7 +130,7 @@ Begin VB.Form frmOGM
          Caption         =   "&Bedrag"
          Height          =   195
          Left            =   4800
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   360
          Width           =   795
       End
@@ -122,7 +140,7 @@ Begin VB.Form frmOGM
       Caption         =   "Enkel actief boekjaar"
       Height          =   225
       Left            =   120
-      TabIndex        =   18
+      TabIndex        =   17
       TabStop         =   0   'False
       Top             =   1320
       Value           =   1  'Checked
@@ -133,9 +151,10 @@ Begin VB.Form frmOGM
       Caption         =   "Fixeer Memodatum"
       Height          =   225
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   14
       TabStop         =   0   'False
       Top             =   960
+      Value           =   1  'Checked
       Width           =   2175
    End
    Begin VB.CheckBox cbLeveranciers 
@@ -188,17 +207,17 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   4680
+      Left            =   7680
       Style           =   2  'Dropdown List
       TabIndex        =   1
-      Top             =   45
+      Top             =   60
       Width           =   3315
    End
-   Begin MSFlexGridLib.MSFlexGrid grdDokumentDetail 
+   Begin MSFlexGridLib.MSFlexGrid FlexGridPayments 
       Height          =   3555
-      Left            =   0
+      Left            =   120
       TabIndex        =   5
-      Top             =   1680
+      Top             =   1620
       Width           =   11205
       _ExtentX        =   19764
       _ExtentY        =   6271
@@ -307,21 +326,22 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   8220
+      Left            =   9720
       TabIndex        =   10
       TabStop         =   0   'False
       Top             =   6000
-      Width           =   2895
+      Width           =   1395
    End
    Begin MSComCtl2.DTPicker DatumVerwerking 
       Height          =   315
-      Left            =   840
-      TabIndex        =   14
+      Left            =   2400
+      TabIndex        =   13
       Top             =   480
       Width           =   1455
       _ExtentX        =   2566
       _ExtentY        =   556
       _Version        =   393216
+      Enabled         =   0   'False
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -332,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16515075
+      Format          =   16580611
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -340,9 +360,8 @@ Begin VB.Form frmOGM
    Begin MSComCtl2.DTPicker DTPickerGlobalMemoDate 
       Height          =   315
       Left            =   2400
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   900
-      Visible         =   0   'False
       Width           =   1455
       _ExtentX        =   2566
       _ExtentY        =   556
@@ -357,10 +376,52 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16515075
+      Format          =   16580611
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
+   End
+   Begin MSFlexGridLib.MSFlexGrid FlexGridGhost 
+      Height          =   2895
+      Left            =   360
+      TabIndex        =   30
+      Top             =   1920
+      Width           =   10665
+      _ExtentX        =   18812
+      _ExtentY        =   5106
+      _Version        =   393216
+      FixedCols       =   0
+      BackColor       =   -2147483624
+      SelectionMode   =   1
+      AllowUserResizing=   1
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.Label LabelMemoGroups 
+      Alignment       =   1  'Right Justify
+      BackStyle       =   0  'Transparent
+      BorderStyle     =   1  'Fixed Single
+      Caption         =   "0"
+      Height          =   240
+      Left            =   6360
+      TabIndex        =   29
+      Top             =   120
+      Width           =   435
+   End
+   Begin VB.Label Label2 
+      Caption         =   "Memogroepen:"
+      Height          =   240
+      Left            =   4920
+      TabIndex        =   28
+      Top             =   120
+      Width           =   1335
    End
    Begin VB.Label Label3 
       Alignment       =   2  'Center
@@ -368,7 +429,7 @@ Begin VB.Form frmOGM
       Caption         =   "EUR Totaal"
       Height          =   315
       Left            =   8220
-      TabIndex        =   27
+      TabIndex        =   26
       Top             =   5340
       Width           =   1335
    End
@@ -378,7 +439,7 @@ Begin VB.Form frmOGM
       BorderStyle     =   1  'Fixed Single
       Height          =   315
       Left            =   9660
-      TabIndex        =   26
+      TabIndex        =   25
       Top             =   5340
       Width           =   1395
    End
@@ -386,35 +447,26 @@ Begin VB.Form frmOGM
       Caption         =   "Groep ID"
       Height          =   240
       Left            =   120
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   120
       Width           =   855
-   End
-   Begin VB.Label GuidLabel 
-      BorderStyle     =   1  'Fixed Single
-      Caption         =   "GuidLabel"
-      Height          =   255
-      Left            =   960
-      TabIndex        =   13
-      Top             =   105
-      Width           =   2535
    End
    Begin VB.Label lbBank 
       Caption         =   "Ban&k"
       Height          =   240
       Index           =   0
-      Left            =   4080
+      Left            =   7020
       TabIndex        =   0
       Top             =   120
       Width           =   600
    End
    Begin VB.Label LabelGroupDate 
-      Caption         =   "Datu&m"
+      Caption         =   "Datu&m van verwerking"
       Height          =   240
       Left            =   120
       TabIndex        =   6
       Top             =   480
-      Width           =   735
+      Width           =   1935
    End
    Begin VB.Label lbVanTot 
       Caption         =   "&Van - Tot"
@@ -461,6 +513,51 @@ Dim debtorName As String 'ok
 Dim debtorIBAN As String 'ok
 Dim debtorBIC As String 'ok
 Dim transactionsList As String
+
+Dim manyMemoDates As String
+Dim memoGroupCounter As Integer
+
+Sub GhostRefresh(comboValue As String)
+    
+    Dim totalAmount As Currency
+    
+    Dim rowCounter As Integer
+    Dim columnCounter As Integer
+    Dim aa As String
+    Dim groupValue As String
+    
+    groupValue = PartLeft(comboValue, 10)
+    totalAmount = 0
+        
+    FlexGridGhost.Clear
+    FlexGridGhost.Rows = 2
+    For rowCounter = 1 To FlexGridPayments.Rows - 2
+        If Me.ComboGuidLabel.ListCount > 1 Then
+            If groupValue = FlexGridPayments.TextMatrix(rowCounter, 3) Then
+                totalAmount = totalAmount + (FlexGridPayments.TextMatrix(rowCounter, 5))
+                aa = ""
+                For columnCounter = 0 To 7
+                    aa = aa & FlexGridPayments.TextMatrix(rowCounter, columnCounter) & vbTab
+                Next
+                FlexGridGhost.AddItem aa, FlexGridGhost.Rows - 1
+            End If
+        Else
+            aa = FlexGridPayments.TextMatrix(rowCounter, 0) & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 1) & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 2) & vbTab
+            aa = aa & groupValue & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 4) & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 5) & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 6) & vbTab
+            aa = aa & FlexGridPayments.TextMatrix(rowCounter, 7)
+            FlexGridGhost.AddItem aa, FlexGridGhost.Rows - 1
+        End If
+    Next
+    If Me.ComboGuidLabel.ListCount > 1 Then
+        lblEUR.Caption = Format(Round(totalAmount, 2), "#,###.00")
+    End If
+    
+End Sub
 
 Private Sub InitVelden()
 Dim T As Integer
@@ -592,7 +689,7 @@ Private Sub PrintTotaal()
 Dim T As Integer
 Dim aa As Variant
 
-If grdDokumentDetail.Rows = 2 Then Exit Sub
+If FlexGridPayments.Rows = 2 Then Exit Sub
 
 If chkAfdrukInVenster Then
 Else
@@ -625,7 +722,7 @@ Next
 
 VeldTXT(1) = "Totaal EUR"
 VeldTXT(2) = Dec(CDbl(lblEUR), MASK_EUR)
-VeldTXT(7) = GuidLabel.Caption
+VeldTXT(7) = Me.ComboGuidLabel.text
 T = 0
 aa = ""
 Do While T < 8
@@ -678,47 +775,93 @@ End If
 End Sub
 
 
-Sub Herreken()
+Sub MemoRefresh()
 
-Dim TotaalBedraginBef As Currency
+Dim totalAmount As Currency
 Dim Teller As Integer
 
-TotaalBedraginBef = 0
-For Teller = 1 To grdDokumentDetail.Rows - 1
-    If grdDokumentDetail.TextMatrix(Teller, 4) = "EUR" Then
-        TotaalBedraginBef = TotaalBedraginBef + (grdDokumentDetail.TextMatrix(Teller, 5) * EURO)
-    ElseIf grdDokumentDetail.TextMatrix(Teller, 4) = "BEF" Then
-        TotaalBedraginBef = TotaalBedraginBef + grdDokumentDetail.TextMatrix(Teller, 5)
+manyMemoDates = ""
+
+Dim groupValue As String
+memoGroupCounter = 0
+
+totalAmount = 0
+For Teller = 1 To FlexGridPayments.Rows - 2
+    groupValue = FlexGridPayments.TextMatrix(Teller, 3) + "#"
+    If InStr(manyMemoDates, groupValue) Then
     Else
-        'Stop
+        memoGroupCounter = memoGroupCounter + 1
+        manyMemoDates = manyMemoDates + groupValue
     End If
+    totalAmount = totalAmount + (FlexGridPayments.TextMatrix(Teller, 5))
 Next
-'lblBEF = Format(Round(TotaalBedraginBef, 0), "#,###")
-lblEUR = Format(Round(TotaalBedraginBef / EURO, 2), "#,###.00")
+lblEUR.Caption = Format(Round(totalAmount, 2), "#,###.00")
+
+'CheckBoxForceExecutionDate_Click
+Me.ComboGuidLabel.Clear
+If CheckBoxForceExecutionDate.Value = vbChecked Then
+    Me.LabelMemoGroups.Caption = "1"
+Else
+    Me.LabelMemoGroups.Caption = Trim(Str(memoGroupCounter))
+End If
+RefreshGroupIds
     
 End Sub
 
-Function XmlOGM()
+Sub RefreshGroupIds()
 
     Dim bankSettingsKey As String
-    bankSettingsKey = Trim("31" + Mid(cbBank.text, 1, 3))
+    bankSettingsKey = Trim("28" + Mid(cbBank.text, 1, 3))
     
-    guidId = Me.GuidLabel.Caption
+    bGetOrGreater TABLE_VARIOUS, 1, bankSettingsKey
     
-    controlSum = Dec(lblEUR, ".00")
-    numberOfTransactions = Trim(Str(grdDokumentDetail.Rows - 2))
-    paymentInformationId = Mid(CreateGUID(), 2, 13)
-    
-    If Me.CheckBoxForceExecutionDate.Value = vbChecked Then
-         requestedExecutionDate = Me.DTPickerGlobalMemoDate.Year & "-"
-         requestedExecutionDate = requestedExecutionDate & Dec(Me.DTPickerGlobalMemoDate.Month, "00") & "-"
-         requestedExecutionDate = requestedExecutionDate & Dec(Me.DTPickerGlobalMemoDate.Day, "00")
+    If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 5) <> Trim(bankSettingsKey) Then
+        MsgBox "Eerst financiële instelling parameters inbrengen via 'Diverse Gebruikersfiches' a.u.b.", vbInformation
+        Unload Me
+        Exit Sub
     Else
-        MsgBox "TODO: check all executiondates"
-        Exit Function
+        RecordToVeld TABLE_VARIOUS
+        debtorIBAN = Trim(vBibTekst(TABLE_VARIOUS, "#v259 #"))
+        debtorBIC = Trim(vBibTekst(TABLE_VARIOUS, "#v260 #"))
     End If
     
+    Dim memoArray() As String
+    memoArray = Split(manyMemoDates, "#")
+        
+    Dim T As Integer
+    If Me.LabelMemoGroups.Caption = "1" Then
+        bancGuid = Mid(CreateGUID(), 2, 13)
+        Me.ComboGuidLabel.AddItem (DTPickerGlobalMemoDate.Value & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
+    Else
+        For T = 1 To memoGroupCounter
+            bancGuid = Mid(CreateGUID(), 2, 13)
+            Me.ComboGuidLabel.AddItem (memoArray(T - 1) & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
+        Next
+    End If
+    Me.ComboGuidLabel.ListIndex = 0
+
+End Sub
+
+
+
+Function XmlOGM(comboValue As String)
+
+    Dim ghostDate As String
     Dim documentTemplate As String
+    Dim bankSettingsKey As String
+    
+    bankSettingsKey = Trim("31" + Mid(cbBank.text, 1, 3))
+        
+    guidId = PartRight(comboValue, 21) 'Me.ComboGuidLabel.text
+    ghostDate = PartLeft(comboValue, 10)
+    
+    controlSum = Dec(lblEUR, ".00")
+    numberOfTransactions = Trim(Str(FlexGridGhost.Rows - 2))
+    paymentInformationId = Mid(CreateGUID(), 2, 13)
+    
+    requestedExecutionDate = PartRight(ghostDate, 4) & "-"
+    requestedExecutionDate = requestedExecutionDate & PartMid(ghostDate, 4, 2) & "-"
+    requestedExecutionDate = requestedExecutionDate & PartLeft(ghostDate, 2)
     
     Ktrl = ScrLeesBestandAlleTekst(documentTemplate, PROGRAM_LOCATION + "xml-templates\sepa\be-sepa-main.xml")
     If Ktrl = 0 Then
@@ -762,21 +905,18 @@ Function XmlOGM()
     Dim composedReference As String
            
     Dim volgNR As Integer
-    For volgNR = 1 To grdDokumentDetail.Rows - 1
-        If Len(grdDokumentDetail.TextMatrix(volgNR, 3)) <> 10 Then
-            Exit For
-        End If
-        
-        lineSerialNumber = Mid(GuidLabel, 9) + "+" + Format(volgNR, "0000")
-        lineCreditorName = grdDokumentDetail.TextMatrix(volgNR, 1)
+    For volgNR = 1 To FlexGridGhost.Rows - 2
+    
+        lineSerialNumber = PartRight(guidId, 13) + "+" + Format(volgNR, "0000")
+        lineCreditorName = FlexGridGhost.TextMatrix(volgNR, 1)
         lineCreditorName = CheckforAmp(lineCreditorName)
-        lineEndToEndId = grdDokumentDetail.TextMatrix(volgNR, 2) 'Internal A document (Seller)
-        lineAmount = Dec(grdDokumentDetail.TextMatrix(volgNR, 5), "")
-        lineCreditorIban = grdDokumentDetail.TextMatrix(volgNR, 6)
+        lineEndToEndId = FlexGridGhost.TextMatrix(volgNR, 2) 'Internal A document (Seller)
+        lineAmount = Dec(FlexGridGhost.TextMatrix(volgNR, 5), "")
+        lineCreditorIban = FlexGridGhost.TextMatrix(volgNR, 6)
         
         'TODO: check if it is OGM
-        linePayRef = IbanCheck(grdDokumentDetail.TextMatrix(volgNR, 7), False, False)
-        If linePayRef = grdDokumentDetail.TextMatrix(volgNR, 7) Then
+        linePayRef = IbanCheck(FlexGridGhost.TextMatrix(volgNR, 7), False, False)
+        If linePayRef = FlexGridGhost.TextMatrix(volgNR, 7) Then
             'AN OGM
             thisTransaction = templateWithOGM
             thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
@@ -787,7 +927,7 @@ Function XmlOGM()
             thisTransaction = Replace(thisTransaction, "{ogmReference}", linePayRef)
             
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
-        ElseIf Trim(grdDokumentDetail.TextMatrix(volgNR, 7)) = "" Then
+        ElseIf Trim(FlexGridGhost.TextMatrix(volgNR, 7)) = "" Then
             'NOTHING FOR REF!
             thisTransaction = templateNoOGM
             thisTransaction = Replace(thisTransaction, "{serialNumber}", lineSerialNumber)
@@ -796,7 +936,7 @@ Function XmlOGM()
             thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
             thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
             
-            composedReference = "ORef: " + grdDokumentDetail.TextMatrix(volgNR, 2)
+            composedReference = "ORef: " + FlexGridGhost.TextMatrix(volgNR, 2)
             thisTransaction = Replace(thisTransaction, "{manualReference}", composedReference)
                         
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
@@ -809,7 +949,7 @@ Function XmlOGM()
             thisTransaction = Replace(thisTransaction, "{creditorName}", lineCreditorName)
             thisTransaction = Replace(thisTransaction, "{creditorIBAN}", lineCreditorIban)
             
-            composedReference = "Ref: " + Trim(grdDokumentDetail.TextMatrix(volgNR, 7)) + " ORef: " + grdDokumentDetail.TextMatrix(volgNR, 2)
+            composedReference = "Ref: " + Trim(FlexGridGhost.TextMatrix(volgNR, 7)) + " ORef: " + FlexGridGhost.TextMatrix(volgNR, 2)
             thisTransaction = Replace(thisTransaction, "{manualReference}", composedReference)
             
             listOfTransActions = listOfTransActions & thisTransaction & vbCrLf
@@ -825,67 +965,33 @@ Function XmlOGM()
     ret = SHGetFolderPath(0, 0, 0, 0, path)
     desktopLocatie = Left(path, InStr(path, Chr(0)) - 1)
        
-    Ktrl = ScrMaakTekstBestand(documentTemplate, LOCATION_COMPANYDATA + "coda\out\" + GuidLabel.Caption + ".xml")
+    Ktrl = ScrMaakTekstBestand(documentTemplate, LOCATION_COMPANYDATA + "coda\out\" + guidId + ".xml")
     If Ktrl = 0 Then
-        MsgBox "Fout bij bewaren van " + GuidLabel.Caption + ".xml", vbCritical
+        MsgBox "Fout bij bewaren van " + guidId + ".xml", vbCritical
     Else
-        Ktrl = ScrMaakTekstBestand(documentTemplate, desktopLocatie + "\" + GuidLabel.Caption + ".xml")
+        Dim marioLocation As String
+        marioLocation = LaadTekst("dnnInstellingen", "Mario")
+        Ktrl = ScrMaakTekstBestand(documentTemplate, marioLocation + "\" + guidId + ".xml")
         If Ktrl = 0 Then
-            MsgBox "Fout bij bewaren van " + GuidLabel.Caption + ".xml", vbCritical
+            MsgBox "Fout bij bewaren van " + guidId + ".xml", vbCritical
         End If
-        Msg = "Op uw bureaublad vindt U .xda bestand(en) klaar voor import in de toepassing van uw bank" & vbCrLf
-        Msg = Msg & "VERGEET DEZE NIET te verwijderen na succesvol ondertekenen in de toepassing van uw bank" & vbCrLf & vbCrLf
-        Msg = Msg & "Copijen blijven steeds behouden in uw bedrijfsinhoudsopgave"
-        MsgBox Msg, vbExclamation + vbInformation
-               
     End If
     
 End Function
 
 Private Sub cbBank_Change()
 
-    Dim bankSettingsKey As String
-    bankSettingsKey = Trim("28" + Mid(cbBank.text, 1, 3))
+    RefreshGroupIds
     
-    bGetOrGreater TABLE_VARIOUS, 1, bankSettingsKey
-    
-    If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 5) <> Trim(bankSettingsKey) Then
-        MsgBox "Eerst financiële instelling parameters inbrengen via 'Diverse Gebruikersfiches' a.u.b.", vbInformation
-        Unload Me
-        Exit Sub
-    Else
-        RecordToVeld TABLE_VARIOUS
-        bancGuid = Mid(CreateGUID(), 2, 13)
-        debtorIBAN = Trim(vBibTekst(TABLE_VARIOUS, "#v259 #"))
-        debtorBIC = Trim(vBibTekst(TABLE_VARIOUS, "#v260 #"))
-        Me.GuidLabel.Caption = Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid
-    End If
-
 End Sub
 
-Private Sub cbBank_GotFocus()
 
-    Dim bankSettingsKey As String
-    bankSettingsKey = Trim("28" + Mid(cbBank.text, 1, 3))
-    
-    bGetOrGreater TABLE_VARIOUS, 1, bankSettingsKey
-    
-    If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 5) <> Trim(bankSettingsKey) Then
-        MsgBox "Eerst financiële instelling parameters inbrengen via 'Diverse Gebruikersfiches' a.u.b.", vbInformation
-        Unload Me
-        Exit Sub
-    Else
-        RecordToVeld TABLE_VARIOUS
-        bancGuid = Mid(CreateGUID(), 2, 13)
-        debtorIBAN = Trim(vBibTekst(TABLE_VARIOUS, "#v259 #"))
-        debtorBIC = Trim(vBibTekst(TABLE_VARIOUS, "#v260 #"))
-        Me.GuidLabel.Caption = Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid
-    End If
-
-End Sub
 
 
 Private Sub CheckBoxForceExecutionDate_Click()
+
+    If Me.FlexGridPayments.Rows = 2 Then Exit Sub
+    CheckBoxForceExecutionDate.Visible = True
 
     If CheckBoxForceExecutionDate.Value = vbChecked Then
         Me.DTPickerGlobalMemoDate.Visible = True
@@ -894,11 +1000,12 @@ Private Sub CheckBoxForceExecutionDate_Click()
     Else
         Me.DTPickerGlobalMemoDate.Visible = False
         Me.FrameChangeMemoDate.Visible = True
-        MsgBox "In deze versie is enkel fixeer memodatum mogelijk", vbInformation
-        CheckBoxForceExecutionDate.Value = vbChecked
-        Me.DTPickerGlobalMemoDate.Visible = True
-        Me.FrameChangeMemoDate.Visible = False
+        'MsgBox "In deze versie is enkel fixeer memodatum mogelijk", vbInformation
+        'CheckBoxForceExecutionDate.Value = vbChecked
+        Me.DTPickerGlobalMemoDate.Visible = False
+        Me.FrameChangeMemoDate.Visible = True
     End If
+    MemoRefresh
     
 End Sub
 
@@ -909,21 +1016,30 @@ Private Sub CmdEmailNBB_Click()
     Dim result As Boolean
     Dim volgNR As Integer
 
-    Me.XmlOGM
-    Drukken_Click
-    MsgBox "STILL TESTING: Vlag en Guid toegevoegd voor latere opvolging.", vbExclamation
+    Dim ghost As Integer
     
-    For volgNR = 1 To grdDokumentDetail.Rows - 1
-        If Len(grdDokumentDetail.TextMatrix(volgNR, 2)) = 0 Then
-            Exit For
-        End If
-        result = ADO_GET(TABLE_INVOICES, 0, "=", grdDokumentDetail.TextMatrix(volgNR, 2))
-        rsMAR(TABLE_INVOICES)("v411") = GuidLabel.Caption
-        rsMAR(TABLE_INVOICES)("rvDM") = "0"
-        rsMAR(TABLE_INVOICES)("dnnsync") = False
-        rsMAR(TABLE_INVOICES).Update
+    For ghost = 1 To ComboGuidLabel.ListCount
+        GhostRefresh (ComboGuidLabel.List(ghost - 1))
+        XmlOGM (ComboGuidLabel.List(ghost - 1))
+        
+        'Drukken_Click
+    
+        For volgNR = 1 To Me.FlexGridGhost.Rows - 2
+            
+            result = ADO_GET(TABLE_INVOICES, 0, "=", FlexGridGhost.TextMatrix(volgNR, 2))
+            If result = True Then
+                rsMAR(TABLE_INVOICES)("v411") = guidId
+                rsMAR(TABLE_INVOICES)("rvDM") = "0"
+                rsMAR(TABLE_INVOICES)("dnnsync") = False
+                rsMAR(TABLE_INVOICES).Update
+            End If
+        Next
     Next
-    
+    Stop
+    Msg = "In map Manueel vindt U .xda bestand(en) klaar voor import in de toepassing van de aangeduide bank." & vbCrLf & vbCrLf
+    Msg = Msg & "VERGEET DEZE NIET te verwijderen na succesvol ondertekenen." & vbCrLf & vbCrLf
+    Msg = Msg & "Copijen blijven steeds behouden in uw bedrijfsinhoudsopgave onder submap coda\out"
+    MsgBox Msg, vbExclamation + vbInformation
     cmdSluiten_Click
         
 End Sub
@@ -960,21 +1076,21 @@ If chkAfdrukInVenster = 0 Then
     End If
 End If
 PrintTitel
-For Teller = 1 To grdDokumentDetail.Rows - 1
-    If Len(grdDokumentDetail.TextMatrix(Teller, 3)) <> 10 Then
+For Teller = 1 To FlexGridPayments.Rows - 1
+    If Len(FlexGridPayments.TextMatrix(Teller, 3)) <> 10 Then
         Exit For
     End If
     VeldTXT(0) = Format(Teller, "000")
-    VeldTXT(1) = grdDokumentDetail.TextMatrix(Teller, 3)
-    VeldTXT(3) = grdDokumentDetail.TextMatrix(Teller, 4)
+    VeldTXT(1) = FlexGridPayments.TextMatrix(Teller, 3)
+    VeldTXT(3) = FlexGridPayments.TextMatrix(Teller, 4)
     If VeldTXT(3) = "BEF" Then
-        VeldTXT(2) = Dec((grdDokumentDetail.TextMatrix(Teller, 5)), MASK_BEF)
+        VeldTXT(2) = Dec((FlexGridPayments.TextMatrix(Teller, 5)), MASK_BEF)
     Else
-        VeldTXT(2) = Dec((grdDokumentDetail.TextMatrix(Teller, 5)), MASK_EUR)
+        VeldTXT(2) = Dec((FlexGridPayments.TextMatrix(Teller, 5)), MASK_EUR)
     End If
-    VeldTXT(4) = Left(grdDokumentDetail.TextMatrix(Teller, 1), 30)
-    VeldTXT(5) = grdDokumentDetail.TextMatrix(Teller, 6)
-    VeldTXT(6) = grdDokumentDetail.TextMatrix(Teller, 7)
+    VeldTXT(4) = Left(FlexGridPayments.TextMatrix(Teller, 1), 30)
+    VeldTXT(5) = FlexGridPayments.TextMatrix(Teller, 6)
+    VeldTXT(6) = FlexGridPayments.TextMatrix(Teller, 7)
     PrintVelden
 Next
 PrintTotaal
@@ -985,18 +1101,29 @@ End Sub
 
 
 
+Private Sub DTPickerGlobalMemoDate_Change()
+
+    If Me.DTPickerGlobalMemoDate.Value < Me.DatumVerwerking.Value Then
+        Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
+    End If
+    MemoRefresh
+    
+End Sub
+
+
 Private Sub dtpMemoDatum_LostFocus()
 
-    If grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 3) = Format(dtpMemoDatum, "dd/mm/yyyy") Then
+    If FlexGridPayments.TextMatrix(FlexGridPayments.Row, 3) = Format(dtpMemoDatum, "dd/mm/yyyy") Then
     Else
         Msg = "Memodatum wijzigen" & vbCrLf & vbCrLf
-        Msg = Msg & "Van : " & grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 3) & vbCrLf
+        Msg = Msg & "Van : " & FlexGridPayments.TextMatrix(FlexGridPayments.Row, 3) & vbCrLf
         Msg = Msg & "Naar: " & Format(dtpMemoDatum, "dd/mm/yyyy") & vbCrLf & vbCrLf
         Msg = Msg & "Bent U zeker"
     
         KtrlBox = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2)
         If KtrlBox = vbYes Then
-            grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 3) = Format(dtpMemoDatum, "dd/mm/yyyy")
+            FlexGridPayments.TextMatrix(FlexGridPayments.Row, 3) = Format(dtpMemoDatum, "dd/mm/yyyy")
+            MemoRefresh
         End If
     End If
 
@@ -1012,57 +1139,56 @@ Private Sub Form_Load()
     ' String99(READING, 47)      'Adres opdrachtgever
     ' String99(READING, 48)       'Postnummer opdrachtgever
     ' Mid(String99(READING, 48), 6) 'Lokaliteit opdrachtgever
-    
-    Msg = "Deze module werkt voorlopig enkel met éénzelfde memodatum." & vbCrLf & vbCrLf
-    Msg = Msg & "Datum + 1 of hoger (max. een toekomstige datum binnen het jaar!)"
-    MsgBox Msg, vbExclamation, "XML betaalbestand aanmaken"
         
     dtpMemoDatum.MinDate = Now
     creationDateTime = GetCreationDateTime
     
     Me.DatumVerwerking.Value = MIM_GLOBAL_DATE
-    CheckBoxForceExecutionDate.Value = vbChecked
+    'CheckBoxForceExecutionDate.Value = vbChecked
     Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
     
     TekstLijn(2).text = "0"
     TekstLijn(3).text = String$(12, "z")
-    grdDokumentDetail.Rows = 2
-    grdDokumentDetail.Cols = 8
-    grdDokumentDetail.Row = 0
+    FlexGridPayments.Rows = 2
+    FlexGridPayments.Cols = 8
+    FlexGridPayments.Row = 0
     
-    grdDokumentDetail.Col = 0
-    grdDokumentDetail.text = "ID Kode"
-    grdDokumentDetail.ColWidth(0) = 1125
+    FlexGridGhost.Rows = 2
+    FlexGridGhost.Cols = 8
     
-    grdDokumentDetail.Col = 1
-    grdDokumentDetail.text = "Naam"
-    grdDokumentDetail.ColWidth(1) = 1695
+    FlexGridPayments.Col = 0
+    FlexGridPayments.text = "ID Code"
+    FlexGridPayments.ColWidth(0) = 1125
+    
+    FlexGridPayments.Col = 1
+    FlexGridPayments.text = "Naam"
+    FlexGridPayments.ColWidth(1) = 1695
         
-    grdDokumentDetail.Col = 2
-    grdDokumentDetail.text = "Document"
-    grdDokumentDetail.ColWidth(2) = 1155
+    FlexGridPayments.Col = 2
+    FlexGridPayments.text = "Document"
+    FlexGridPayments.ColWidth(2) = 1155
         
-    grdDokumentDetail.Col = 3
-    grdDokumentDetail.text = "Memodatum"
-    grdDokumentDetail.ColWidth(3) = 975
+    FlexGridPayments.Col = 3
+    FlexGridPayments.text = "Memodatum"
+    FlexGridPayments.ColWidth(3) = 975
             
-    grdDokumentDetail.Col = 4
-    grdDokumentDetail.text = "Munt"
-    grdDokumentDetail.ColWidth(4) = 450
+    FlexGridPayments.Col = 4
+    FlexGridPayments.text = "Munt"
+    FlexGridPayments.ColWidth(4) = 450
     
-    grdDokumentDetail.Col = 5
-    grdDokumentDetail.text = "Bedrag"
-    grdDokumentDetail.ColWidth(5) = 960
+    FlexGridPayments.Col = 5
+    FlexGridPayments.text = "Bedrag"
+    FlexGridPayments.ColWidth(5) = 960
     
-    grdDokumentDetail.Col = 6
-    grdDokumentDetail.text = "SEPA Rekening"
-    grdDokumentDetail.ColWidth(6) = 1875
-    grdDokumentDetail.ColAlignment(6) = flexAlignLeftCenter
+    FlexGridPayments.Col = 6
+    FlexGridPayments.text = "SEPA Rekening"
+    FlexGridPayments.ColWidth(6) = 1875
+    FlexGridPayments.ColAlignment(6) = flexAlignLeftCenter
         
-    grdDokumentDetail.Col = 7
-    grdDokumentDetail.text = "Referte/OGM"
-    grdDokumentDetail.ColWidth(7) = 2565
-    grdDokumentDetail.ColAlignment(7) = flexAlignLeftCenter
+    FlexGridPayments.Col = 7
+    FlexGridPayments.text = "Referte/OGM"
+    FlexGridPayments.ColWidth(7) = 2565
+    FlexGridPayments.ColAlignment(7) = flexAlignLeftCenter
                 
     bGetOrGreater TABLE_VARIOUS, 1, "28"
     If Ktrl Or Left(KEY_BUF(TABLE_VARIOUS), 2) <> "28" Then
@@ -1136,14 +1262,18 @@ Private Sub KTRLBalans(Fl As Integer)
         MsgBox "Geen documenten gevonden van/tot: " & TekstLijn(2) & " - " & TekstLijn(3)
         Exit Sub
     Else
-        If grdDokumentDetail.Rows = 2 Then
+        If FlexGridPayments.Rows = 2 Then
         Else
-            KtrlBox = MsgBox("Verrichtingen reeds aanwezig behouden." & vbCrLf & "Vermijdt dubbele bewerkingen!", vbQuestion + vbYesNo + vbDefaultButton2)
-            If KtrlBox = vbNo Then
-                GridSchoon grdDokumentDetail
-            End If
+            Msg = "Meerdere samenstellingen niet mogelijk met huidige versie."
+            MsgBox Msg, vbInformation, "Betalingen samenstellen"
+            Exit Sub
+            
+            'KtrlBox = MsgBox("Verrichtingen reeds aanwezig behouden." & vbCrLf & "Vermijdt dubbele bewerkingen!", vbQuestion + vbYesNo + vbDefaultButton2)
+            'If KtrlBox = vbNo Then
+            '    GridSchoon FlexGridPayments
+            'End If
         End If
-        grdDokumentDetail.Refresh
+        FlexGridPayments.Refresh
         rsAny.MoveFirst
         Do While Not rsAny.EOF
             GoSub ValidateRecord
@@ -1163,10 +1293,10 @@ Private Sub KTRLBalans(Fl As Integer)
         'If KtrlBox = vbYes Then
         '    COUNT_TO = 1
         '    CmdEmailNBB.Enabled = True
-        '    Do While COUNT_TO < grdDokumentDetail.Rows - 1
-        '        'Debug.Print grdDokumentDetail.TextMatrix(COUNT_TO, 6)
-        '        If Mid(grdDokumentDetail.TextMatrix(COUNT_TO, 6), 1, 2) = "!!" Then
-        '            grdDokumentDetail.RemoveItem COUNT_TO
+        '    Do While COUNT_TO < FlexGridPayments.Rows - 1
+        '        'Debug.Print FlexGridPayments.TextMatrix(COUNT_TO, 6)
+        '        If Mid(FlexGridPayments.TextMatrix(COUNT_TO, 6), 1, 2) = "!!" Then
+        '            FlexGridPayments.RemoveItem COUNT_TO
         '        Else
         '            COUNT_TO = COUNT_TO + 1
         '        End If
@@ -1279,25 +1409,25 @@ ValidateRecord:
     If Trim(objectValue(rsAny("v259"))) = "" Then
         invalidAA = invalidAA & aa & vbCrLf
     Else
-        grdDokumentDetail.AddItem aa, grdDokumentDetail.Rows - 1
+        FlexGridPayments.AddItem aa, FlexGridPayments.Rows - 1
     End If
 Return
 
 End Sub
 
-Private Sub GrddokumentDetail_Click()
+Private Sub FlexGridPayments_Click()
 
-If grdDokumentDetail.Row = grdDokumentDetail.Rows - 1 Then
+If FlexGridPayments.Row = FlexGridPayments.Rows - 1 Then
     'MebRekening.Enabled = False
     'dtpMemoDatum.Enabled = False
     'TbBedrag.Enabled = False
 Else
-    bGet TABLE_SUPPLIERS, 0, Mid(grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 0), 2)
+    bGet TABLE_SUPPLIERS, 0, Mid(FlexGridPayments.TextMatrix(FlexGridPayments.Row, 0), 2)
     If Ktrl Then
         MsgBox "Breng leverancier opnieuw in via fiches a.u.b.", vbCritical
     Else
-        If Len(grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 6)) <> 16 Then
-            MsgBox "Breng eerst 'juiste' rekeningnummer in a.u.b. voor " & vbCr & vbCr & grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 1), vbInformation
+        If Len(FlexGridPayments.TextMatrix(FlexGridPayments.Row, 6)) <> 16 Then
+            MsgBox "Breng eerst 'juiste' rekeningnummer in a.u.b. voor " & vbCr & vbCr & FlexGridPayments.TextMatrix(FlexGridPayments.Row, 1), vbInformation
         End If
         RecordToVeld TABLE_SUPPLIERS
     
@@ -1318,14 +1448,14 @@ Else
         'TbBedrag.Enabled = True
     End If
 End If
-MebRekening.text = grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 7)
-TbBedrag.text = grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 5)
+MebRekening.text = FlexGridPayments.TextMatrix(FlexGridPayments.Row, 7)
+TbBedrag.text = FlexGridPayments.TextMatrix(FlexGridPayments.Row, 5)
 On Error Resume Next
-dtpMemoDatum.Value = grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 3)
+dtpMemoDatum.Value = FlexGridPayments.TextMatrix(FlexGridPayments.Row, 3)
 
 End Sub
 
-Private Sub grddokumentDetail_GotFocus()
+Private Sub FlexGridPayments_GotFocus()
 
 MebRekening.Enabled = False
 dtpMemoDatum.Enabled = False
@@ -1334,28 +1464,28 @@ TbBedrag.Enabled = False
 End Sub
 
 
-Private Sub GrddokumentDetail_KeyDown(KeyCode As Integer, Shift As Integer)
+Private Sub FlexGridPayments_KeyDown(KeyCode As Integer, Shift As Integer)
 
 Select Case KeyCode
     Case 45 'Insert
         MsgBox KeyCode
         
     Case 46 'Delete
-    If grdDokumentDetail.Row > 0 And grdDokumentDetail.Row < grdDokumentDetail.Rows - 1 Then
-        grdDokumentDetail.RemoveItem grdDokumentDetail.Row
+    If FlexGridPayments.Row > 0 And FlexGridPayments.Row < FlexGridPayments.Rows - 1 Then
+        FlexGridPayments.RemoveItem FlexGridPayments.Row
     End If
-    grdDokumentDetail.SetFocus
-    Herreken
+    FlexGridPayments.SetFocus
+    MemoRefresh
     
 End Select
 
 End Sub
 
-Private Sub grdDokumentDetail_RowColChange()
+Private Sub FlexGridPayments_RowColChange()
 
-If grdDokumentDetail.Rows = 2 Then
+If FlexGridPayments.Rows = 2 Then
 Else
-    GrddokumentDetail_Click
+    FlexGridPayments_Click
 End If
 
 End Sub
@@ -1363,11 +1493,11 @@ End Sub
 Private Sub mebRekening_LostFocus()
 
 If MebRekening.Mask = "" Then
-    grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 7) = MebRekening
+    FlexGridPayments.TextMatrix(FlexGridPayments.Row, 7) = MebRekening
 ElseIf BankOk(MebRekening) Then
-    grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 7) = MebRekening
+    FlexGridPayments.TextMatrix(FlexGridPayments.Row, 7) = MebRekening
 Else
-    MebRekening = grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 7)
+    MebRekening = FlexGridPayments.TextMatrix(FlexGridPayments.Row, 7)
 End If
 
 End Sub
@@ -1382,20 +1512,23 @@ Private Sub Samenstellen_Click()
     End If
     KTRLBalans TABLE_SUPPLIERS
 
-    grdDokumentDetail.Row = 1
-    grdDokumentDetail.Col = 0
-    Herreken
-    grdDokumentDetail.SetFocus
+    FlexGridPayments.Row = 1
+    FlexGridPayments.Col = 0
+    If FlexGridPayments.Rows > 2 Then
+        MemoRefresh
+        FlexGridPayments.SetFocus
+        Samenstellen.Enabled = False
+    End If
 
 End Sub
 
 
 Private Sub tbBedrag_LostFocus()
 
-    If grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 5) = TbBedrag Then
+    If FlexGridPayments.TextMatrix(FlexGridPayments.Row, 5) = TbBedrag Then
     Else
-        grdDokumentDetail.TextMatrix(grdDokumentDetail.Row, 5) = TbBedrag
-        Herreken
+        FlexGridPayments.TextMatrix(FlexGridPayments.Row, 5) = TbBedrag
+        MemoRefresh
     End If
 
 End Sub
@@ -1451,5 +1584,6 @@ Select Case Index
 End Select
 
 End Sub
+
 
 

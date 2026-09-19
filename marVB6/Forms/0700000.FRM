@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74121219
+         Format          =   74514435
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1163,10 +1163,42 @@ AddingLines:
             Case "0501000" '(5-C) SEPA Direct Debit CORE Type Direct Debit (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
                 MsgBox "Stop"
-                aa = aa & "-" & vbTab
-                aa = aa & "??????" & vbTab
-                aa = aa & Val(amountToCheck) & vbTab
-                aa = aa & xdaLinesDATAArray(T, 5) & vbTab
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = xdaLinesDATAArray(T, 6)
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
+                
+                If Len(lineReference) = 12 Then
+                    ReDim resultArray(5)
+                    resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                    If resultReturn = "" Then
+                        MsgBox "Geen resultaat", vbExclamation
+                        aa = aa & "-" & vbTab
+                        aa = aa & "??????" & vbTab
+                        aa = aa & Val(amountToCheck) & vbTab
+                        aa = aa & xdaLinesDATAArray(T, 5) & vbTab
+                    Else
+                        resultArray() = Split(resultReturn, "|")
+                        aa = aa & "-" & resultArray(0) & vbTab
+                        aa = aa & String99(READING, 9) & vbTab
+                        aa = aa & Val(amountToCheck) & vbTab
+                        aa = aa & resultArray(1) & vbTab
+                    End If
+                
+                Else
+                    aa = aa & "-" & vbTab
+                    aa = aa & "??????" & vbTab
+                    aa = aa & Val(amountToCheck) & vbTab
+                    aa = aa & xdaLinesDATAArray(T, 5) & vbTab
+                End If
                                             
             Case "0503000"
                 '(5-C) Unknown BBA Type Direct Debit (Debtor) (Ustrd) annulation?

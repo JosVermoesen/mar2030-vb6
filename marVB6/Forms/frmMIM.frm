@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74252291
+         Format          =   73990147
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -643,6 +643,7 @@ Begin VB.MDIForm Mim
       Begin VB.Menu AV 
          Caption         =   "&Electronisch Betalingsverkeer"
          Index           =   7
+         Shortcut        =   +^{F8}
       End
       Begin VB.Menu AV 
          Caption         =   "-"
