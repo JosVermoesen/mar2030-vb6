@@ -104,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16580611
+         Format          =   73990147
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -352,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   73990147
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -376,7 +376,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16580611
+      Format          =   73990147
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -1035,7 +1035,7 @@ Private Sub CmdEmailNBB_Click()
             End If
         Next
     Next
-    Stop
+    
     Msg = "In map Manueel vindt U .xda bestand(en) klaar voor import in de toepassing van de aangeduide bank." & vbCrLf & vbCrLf
     Msg = Msg & "VERGEET DEZE NIET te verwijderen na succesvol ondertekenen." & vbCrLf & vbCrLf
     Msg = Msg & "Copijen blijven steeds behouden in uw bedrijfsinhoudsopgave onder submap coda\out"
