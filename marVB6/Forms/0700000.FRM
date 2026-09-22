@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "LabelCounter"
-      Tab(1).Control(1)=   "mfgLijst"
-      Tab(1).Control(2)=   "ButtonTransfer"
-      Tab(1).Control(3)=   "ButtonAssign"
+      Tab(1).Control(0)=   "ButtonAssign"
+      Tab(1).Control(1)=   "ButtonTransfer"
+      Tab(1).Control(2)=   "mfgLijst"
+      Tab(1).Control(3)=   "LabelCounter"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74514435
+         Format          =   73990147
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1137,11 +1137,34 @@ AddingLines:
                                                 
             Case "0201000" '(5-C) Unknow BBA Type Incoming Transfer (Creditor)
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
-                aa = aa & "-" & vbTab
-                aa = aa & "??????" & vbTab
-                aa = aa & Val(amountToCheck) & vbTab
-                aa = aa & "" & vbTab
+                If Len(xdaLinesDATAArray(T, 9)) = 12 Then
+                    isCor = True
+                    lineReference = xdaLinesDATAArray(T, 9)
+                Else
+                    isCor = False
+                    If Len(xdaLinesDATAArray(T, 10)) = 0 Then
+                        MsgBox "Empty Ustrd, Logic?"
+                        lineReference = "-"
+                    Else
+                        lineReference = xdaLinesDATAArray(T, 10)
+                    End If
+                End If
+                                    
+                ReDim resultArray(5)
+                resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
+                If resultReturn = "" Then
+                    MsgBox "Geen resultaat", vbExclamation
+                    aa = aa & "-" & vbTab
+                    aa = aa & "??????" & vbTab
+                    aa = aa & Val(amountToCheck) & vbTab
+                    aa = aa & xdaLinesDATAArray(5, 1) & vbTab
+                Else
+                    resultArray() = Split(resultReturn, "|")
+                    aa = aa & "-" & resultArray(0) & vbTab
+                    aa = aa & String99(READING, 10) & vbTab
+                    aa = aa & Val(amountToCheck) & vbTab
+                    aa = aa & resultArray(1) & vbTab
+                End If
                                 
             Case "0402000" '(5-C) ATM Cash Withdrawal Type Card payment
                 bedragTransactie = -bedragTransactie
