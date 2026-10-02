@@ -1,24 +1,24 @@
 VERSION 5.00
 Begin VB.Form frmDNNinstellingen 
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "DNN & Postvak Instellingen"
-   ClientHeight    =   4950
+   Caption         =   "Postvak Instellingen"
+   ClientHeight    =   4785
    ClientLeft      =   105
    ClientTop       =   405
-   ClientWidth     =   8790
+   ClientWidth     =   8775
    ControlBox      =   0   'False
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4950
-   ScaleWidth      =   8790
+   ScaleHeight     =   4785
+   ScaleWidth      =   8775
    StartUpPosition =   1  'CenterOwner
    Begin VB.Frame FrameCoda 
       Caption         =   "Coda XML en XDA In/Uit"
       Height          =   855
       Left            =   120
       TabIndex        =   19
-      Top             =   3960
+      Top             =   2040
       Width           =   8535
       Begin VB.TextBox TextBoxCodaIOMap 
          Enabled         =   0   'False
@@ -52,11 +52,11 @@ Begin VB.Form frmDNNinstellingen
       End
    End
    Begin VB.Frame FrameCompanyData 
-      Caption         =   "Locatie Bedrijfmappen"
+      Caption         =   "{LocalFirst} Bedrijfmap"
       Height          =   855
       Left            =   120
       TabIndex        =   15
-      Top             =   3000
+      Top             =   3840
       Width           =   8535
       Begin VB.TextBox TextBoxMarntDataMap 
          Enabled         =   0   'False
@@ -187,9 +187,9 @@ Begin VB.Form frmDNNinstellingen
    Begin VB.CommandButton ButtonToggle 
       Caption         =   "Toggle Bewerken"
       Height          =   375
-      Left            =   5880
+      Left            =   5940
       TabIndex        =   4
-      Top             =   2040
+      Top             =   3000
       Width           =   1515
    End
    Begin VB.CommandButton ButtonDefaultResetForMapMarnt 
@@ -205,10 +205,10 @@ Begin VB.Form frmDNNinstellingen
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   1560
+      Left            =   1620
       TabIndex        =   3
       TabStop         =   0   'False
-      Top             =   2040
+      Top             =   3000
       Width           =   1455
    End
    Begin VB.CommandButton ButtonDefaultResetForOneDrive 
@@ -224,27 +224,27 @@ Begin VB.Form frmDNNinstellingen
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   120
+      Left            =   180
       TabIndex        =   2
       TabStop         =   0   'False
-      Top             =   2040
+      Top             =   3000
       Width           =   1275
    End
    Begin VB.CommandButton ButtonClose 
       Cancel          =   -1  'True
       Caption         =   "Sluiten"
       Height          =   375
-      Left            =   7560
+      Left            =   7620
       TabIndex        =   1
-      Top             =   2040
+      Top             =   3000
       Width           =   975
    End
    Begin VB.CommandButton ButtonSave 
       Caption         =   "&Bewaren en sluiten"
       Height          =   735
-      Left            =   3120
+      Left            =   3180
       TabIndex        =   0
-      Top             =   2040
+      Top             =   3000
       Width           =   1275
    End
 End

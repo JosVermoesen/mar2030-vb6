@@ -104,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   73990147
+         Format          =   74055683
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -352,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   73990147
+      Format          =   74055683
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -376,7 +376,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   73990147
+      Format          =   74055683
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -454,7 +454,6 @@ Begin VB.Form frmOGM
    Begin VB.Label lbBank 
       Caption         =   "Ban&k"
       Height          =   240
-      Index           =   0
       Left            =   7020
       TabIndex        =   0
       Top             =   120
@@ -1288,7 +1287,7 @@ Private Sub KTRLBalans(Fl As Integer)
         Msg = "Er zijn " & Str$(GeenRekening) & " verrichtingen zonder rekeningnummer" & vbCrLf
         Msg = Msg & invalidAA & vbCrLf
         MsgBox Msg, vbInformation
-        Me.CmdEmailNBB.Enabled = True
+        Me.CmdEmailNBB.Enabled = False
         'KtrlBox = MsgBox(Msg, vbQuestion + vbDefaultButton2 + vbYesNo)
         'If KtrlBox = vbYes Then
         '    COUNT_TO = 1
@@ -1303,7 +1302,11 @@ Private Sub KTRLBalans(Fl As Integer)
         '    Loop
         'End If
     Else
-        Me.CmdEmailNBB.Enabled = True
+        If Me.FlexGridPayments.Rows = 2 Then
+            Me.CmdEmailNBB.Enabled = False
+        Else
+            Me.CmdEmailNBB.Enabled = True
+        End If
     End If
     If TeVerbeteren Then
         MsgBox "Er zijn " & Str$(TeVerbeteren) & " rekeningnummers onjuist", vbInformation
@@ -1427,7 +1430,7 @@ Else
         MsgBox "Breng leverancier opnieuw in via fiches a.u.b.", vbCritical
     Else
         If Len(FlexGridPayments.TextMatrix(FlexGridPayments.Row, 6)) <> 16 Then
-            MsgBox "Breng eerst 'juiste' rekeningnummer in a.u.b. voor " & vbCr & vbCr & FlexGridPayments.TextMatrix(FlexGridPayments.Row, 1), vbInformation
+            MsgBox "Buitenlandse leveranciers vallen buiten controle" & vbCr & vbCr & FlexGridPayments.TextMatrix(FlexGridPayments.Row, 1) & vbCr & FlexGridPayments.TextMatrix(FlexGridPayments.Row, 6), vbInformation
         End If
         RecordToVeld TABLE_SUPPLIERS
     
@@ -1473,6 +1476,10 @@ Select Case KeyCode
     Case 46 'Delete
     If FlexGridPayments.Row > 0 And FlexGridPayments.Row < FlexGridPayments.Rows - 1 Then
         FlexGridPayments.RemoveItem FlexGridPayments.Row
+        If Me.FlexGridPayments.Rows = 2 Then
+            Me.CmdEmailNBB.Enabled = False
+            Me.Samenstellen.Enabled = True
+        End If
     End If
     FlexGridPayments.SetFocus
     MemoRefresh

@@ -179,7 +179,7 @@ Begin VB.MDIForm Mim
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   73990147
+         Format          =   74186755
          CurrentDate     =   39083
          MaxDate         =   58862
          MinDate         =   31168
@@ -909,7 +909,7 @@ Begin VB.MDIForm Mim
          Caption         =   "Plesk Hosting"
          Index           =   0
          Begin VB.Menu Hosting 
-            Caption         =   "Obsidian v18.0.79"
+            Caption         =   "Obsidian v18.0.80"
             Index           =   0
          End
          Begin VB.Menu Hosting 
@@ -951,7 +951,7 @@ Begin VB.MDIForm Mim
             Shortcut        =   ^U
          End
          Begin VB.Menu Peppol 
-            Caption         =   "UBL.BE Docs Billing 3.0"
+            Caption         =   "Docs Billing 3.0"
             Index           =   1
          End
          Begin VB.Menu Peppol 
