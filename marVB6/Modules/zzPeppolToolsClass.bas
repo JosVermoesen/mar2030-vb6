@@ -687,11 +687,26 @@ TRYFORCREDITNOTE:
         
         valueToUse = GetNodeText(supplierNode, "cbc:EndpointID")
         If (Len(valueToUse) = 12 And InStr(valueToUse, "BE")) Then
+            'Get only the VAT part of number
             valueToUse = Mid(valueToUse, 3)
+        ElseIf Len(valueToUse) = 13 And PartLeft(valueToUse, 2) = "54" Then
+            'Global Location Number company in Belgium or Luxembourg
+            'MsgBox "Global Company Number " & vbCr & vbCr & valueToUse
+            valueToUse = GetNodeText(supplierNode, "cac:PartyIdentification/cbc:ID")
+            If Len(valueToUse) = 10 Then
+                'ok
+            Else
+                MsgBox "VAT number? " & valueToUse
+            End If
+        ElseIf Len(valueToUse) = 13 Then
+            'Global Location Number of company outside Belgium
+            MsgBox "Global Company Number Outside Belgium " & vbCr & vbCr & valueToUse
+            valueToUse = GetNodeText(supplierNode, "cac:PartyIdentification/cbc:ID")
         End If
         tmpSupplierId = valueToUse
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierCompanyIdToCheck"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
+        
         Msg = Msg & "endpointOndernemingsnummer " & valueToUse & vbCrLf
         
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierID"
