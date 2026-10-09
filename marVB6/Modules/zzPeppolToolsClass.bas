@@ -487,6 +487,15 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
     Dim xsl As Object  ' MSXML2.DOMDocument
     Dim result As String
     Dim utf8Text As String
+    
+    Dim checkFile As String
+    checkFile = Dir(filePath)
+    If checkFile = "" Then
+        NoPdfPeppolViewer = False
+        MsgBox "Bestand " & filePath & " bestaat niet meer." & vbCrLf & "Sluit het venster en vernieuw de inhoud van de map", vbExclamation
+        Exit Function
+    End If
+    
     utf8Text = MarReadUtf8File(filePath)
     
     NoPdfPeppolViewer = False
@@ -530,6 +539,15 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
 End Function
 
 Public Function PeppolHasPdfAttachment(xmlPath As String) As Boolean
+    
+    Dim checkFile As String
+    checkFile = Dir(xmlPath)
+    If checkFile = "" Then
+        PeppolHasPdfAttachment = False
+        MsgBox "Bestand " & xmlPath & " bestaat niet meer." & vbCrLf & "Sluit het venster en vernieuw de inhoud van de map", vbExclamation
+        Exit Function
+    End If
+    
     Dim xDoc As New MSXML2.DOMDocument60
     Dim nodeList As MSXML2.IXMLDOMNodeList
     Dim node As MSXML2.IXMLDOMNode
@@ -706,7 +724,6 @@ TRYFORCREDITNOTE:
         tmpSupplierId = valueToUse
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierCompanyIdToCheck"
         uitwisselingDATA = uitwisselingDATA & vbTab & valueToUse
-        
         Msg = Msg & "endpointOndernemingsnummer " & valueToUse & vbCrLf
         
         uitwisselingOMS = uitwisselingOMS & vbTab & "supplierID"

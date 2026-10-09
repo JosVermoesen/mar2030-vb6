@@ -104,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74055683
+         Format          =   73990147
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -352,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   74055683
+      Format          =   73990147
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -376,7 +376,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   74055683
+      Format          =   73990147
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -830,7 +830,9 @@ Sub RefreshGroupIds()
     Dim T As Integer
     If Me.LabelMemoGroups.Caption = "1" Then
         bancGuid = Mid(CreateGUID(), 2, 13)
-        Me.ComboGuidLabel.AddItem (DTPickerGlobalMemoDate.Value & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
+        Dim memoDateBuilder As String
+        memoDateBuilder = Dec(DTPickerGlobalMemoDate.Day, "00") + "/" + Dec(DTPickerGlobalMemoDate.Month, "00") + "/" + Dec(DTPickerGlobalMemoDate.Year, "0000")
+        Me.ComboGuidLabel.AddItem (memoDateBuilder & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
     Else
         For T = 1 To memoGroupCounter
             bancGuid = Mid(CreateGUID(), 2, 13)

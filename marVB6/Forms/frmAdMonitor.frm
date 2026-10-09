@@ -599,7 +599,7 @@ Private Sub ButtonShowToBookXML_Click()
                 MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
             End If
         Else
-            MsgBox "Iets ging verkeerd", vbInformation
+            'MsgBox "Iets ging verkeerd", vbInformation
         End If
     End If
 

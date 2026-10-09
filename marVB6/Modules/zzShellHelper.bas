@@ -68,6 +68,18 @@ Private Sub SHLog(ByVal s As String)
 End Sub
 
 Public Function ShellExecuteWithFallback(ByVal sTarget As String, Optional ByVal sParams As String = vbNullString, Optional ByVal sVerb As String = "open") As Boolean
+            
+    If UCase(PartLeft(sTarget, 5)) = "HTTPS" Or InStr(sTarget, ".") = 0 Then
+    Else
+        Dim checkFile As String
+        checkFile = Dir(sTarget)
+        If checkFile = "" Then
+            ShellExecuteWithFallback = False
+            MsgBox "Bestand " & sTarget & " werd verwijderd." & vbCrLf & "Sluit het venster en vernieuw de inhoud van de map", vbExclamation
+            Exit Function
+        End If
+    End If
+    
     ' Probeer ShellExecute, bij falen probeer ShellExecuteEx, daarna COMSPEC / start fallback
     Dim ret As Long
     Dim op As String, file As String, params As String
@@ -105,6 +117,7 @@ Public Function ShellExecuteWithFallback(ByVal sTarget As String, Optional ByVal
 End Function
 
 Private Function TryShellExecuteEx(ByVal sVerb As String, ByVal sFile As String, ByVal sParams As String) As Boolean
+    
     Dim sei As SHELLEXECUTEINFO
     Dim res As Long
 
