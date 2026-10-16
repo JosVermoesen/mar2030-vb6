@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "ButtonAssign"
-      Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(2)=   "mfgLijst"
-      Tab(1).Control(3)=   "LabelCounter"
+      Tab(1).Control(0)=   "LabelCounter"
+      Tab(1).Control(1)=   "mfgLijst"
+      Tab(1).Control(2)=   "ButtonTransfer"
+      Tab(1).Control(3)=   "ButtonAssign"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   73990147
+         Format          =   74055683
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1063,7 +1063,7 @@ AddingLines:
         Select Case xdaLinesDATAArray(T, 2)
             Case "0101000" '(5-C) SEPA Credit Transfer Type SEPA Transfer with Structured Communiaction (Creditor) (SCOR)
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
+                MsgBox "CheckStop on 0101000"
                 aa = aa & "-" & vbTab
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
@@ -1071,7 +1071,6 @@ AddingLines:
                 
             Case "0103000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1088,7 +1087,6 @@ AddingLines:
                 ReDim resultArray(5)
                 resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                 If resultReturn = "" Then
-                    'MsgBox "Geen resultaat", vbExclamation
                     aa = aa & "-" & vbTab
                     aa = aa & "??????" & vbTab
                     aa = aa & Val(amountToCheck) & vbTab
@@ -1105,7 +1103,6 @@ AddingLines:
             Case "0107000" '(5-C) SEPA Credit Transfer Type SEPA Transfer (Creditor) (Ustrd)
                                 
                 bedragTransactie = -bedragTransactie
-                
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1168,14 +1165,14 @@ AddingLines:
                                 
             Case "0402000" '(5-C) ATM Cash Withdrawal Type Card payment
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
+                MsgBox "CheckStop on 0402000 (ATM Cash)"
                 aa = aa & "-" & vbTab
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
                 aa = aa & xdaLinesDATAArray(T, 10) & vbTab
                 
             Case "0404000" 'CASH afname
-                MsgBox "Cash Afname"
+                MsgBox "CheckStop on 0404000 Cash Afname"
                 bedragTransactie = -bedragTransactie
                 aa = aa & "-" & vbTab
                 aa = aa & "??????" & vbTab
@@ -1185,7 +1182,6 @@ AddingLines:
                                 
             Case "0501000" '(5-C) SEPA Direct Debit CORE Type Direct Debit (Creditor) (Ustrd)
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1203,7 +1199,7 @@ AddingLines:
                     ReDim resultArray(5)
                     resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                     If resultReturn = "" Then
-                        MsgBox "Geen resultaat", vbExclamation
+                        MsgBox "Geen resultaat voor " & xdaLinesDATAArray(T, 7), vbExclamation
                         aa = aa & "-" & vbTab
                         aa = aa & "??????" & vbTab
                         aa = aa & Val(amountToCheck) & vbTab
@@ -1226,7 +1222,7 @@ AddingLines:
             Case "0503000"
                 '(5-C) Unknown BBA Type Direct Debit (Debtor) (Ustrd) annulation?
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
+                MsgBox "CheckStop on 0503000"
                 aa = aa & "-" & vbTab
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
@@ -1235,7 +1231,7 @@ AddingLines:
             Case "8022000"
                 '(5-C) Unknown BBA Type Direct Debit (Debtor) (Ustrd) annulation?
                 bedragTransactie = -bedragTransactie
-                MsgBox "Stop"
+                MsgBox "CheckStop on 8022000"
                 aa = aa & "-" & vbTab
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
@@ -1244,7 +1240,6 @@ AddingLines:
             Case "0150000", "0250000"
                 '0150000 (5-D) Unknown BBA Type SEPA Transfer (Debtor) (SCOR/Ustrd)
                 '0250000 (5-D) Unknown BBA Type Incoming Transfer (Debtor) (SCOR)
-                MsgBox "stop"
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1267,7 +1262,7 @@ AddingLines:
                     ReDim resultArray(5)
                     resultReturn = CtrlDocuments(False, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                     If resultReturn = "" Then
-                        MsgBox "Geen resultaat", vbExclamation
+                        MsgBox "Geen resultaat voor " & xdaLinesDATAArray(T, 7), vbExclamation
                         aa = aa & "+" & vbTab
                         aa = aa & "??????" & vbTab
                         aa = aa & Val(amountToCheck) & vbTab
@@ -1282,7 +1277,7 @@ AddingLines:
                 End If
             
             Case "0254000" '(5-D) Unknown BBA Code Incoming Transfer
-                MsgBox "Stop"
+                MsgBox "CheckStop on 0254000"
                 aa = aa & "+" & vbTab
                 aa = aa & "??????" & vbTab
                 aa = aa & Val(amountToCheck) & vbTab
@@ -1290,8 +1285,6 @@ AddingLines:
                             
             Case "0550000"
                 '(5-D) Unknown BBA Type Direct Debit (Debtor) (Ustrd) VSOFT CDD!
-                MsgBox "Stop VSOFT CDD"
-                
                 If Len(xdaLinesDATAArray(T, 9)) = 12 Then
                     isCor = True
                     lineReference = xdaLinesDATAArray(T, 9)
@@ -1306,6 +1299,7 @@ AddingLines:
                 End If
                     
                 If Len(lineReference) > 25 Then
+                    MsgBox "Onbekende Stop VSOFT CDD"
                     aa = aa & "+" & vbTab
                     aa = aa & "??????" & vbTab
                     aa = aa & Val(amountToCheck) & vbTab
@@ -1335,10 +1329,6 @@ AddingLines:
         aa = aa & cumulSaldo
         mfgLijst.AddItem aa, mfgLijst.Rows
     Next
-    
-    MsgBox "TODO: give chance to edit for lines not 100% sure"
-        
-    MsgBox "TODO: book or [Esc]!"
     ListIsReady
     
     GoTo OnCancel

@@ -115,13 +115,13 @@ Begin VB.Form FormB2BAMonitor
       Width           =   1215
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgToBook 
-      Height          =   2775
+      Height          =   1755
       Left            =   240
       TabIndex        =   0
       Top             =   600
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   4895
+      _ExtentY        =   3096
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -137,13 +137,13 @@ Begin VB.Form FormB2BAMonitor
       _Band(0).TextStyleHeader=   0
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid mfgBooked 
-      Height          =   2775
+      Height          =   3795
       Left            =   240
       TabIndex        =   1
-      Top             =   3840
+      Top             =   2820
       Width           =   9375
       _ExtentX        =   16536
-      _ExtentY        =   4895
+      _ExtentY        =   6694
       _Version        =   393216
       BackColor       =   -2147483624
       ForeColor       =   0
@@ -164,7 +164,7 @@ Begin VB.Form FormB2BAMonitor
       Height          =   255
       Left            =   8520
       TabIndex        =   7
-      Top             =   3480
+      Top             =   2460
       Width           =   1095
    End
    Begin VB.Label LabelToBook 
