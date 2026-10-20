@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "LabelCounter"
-      Tab(1).Control(1)=   "mfgLijst"
-      Tab(1).Control(2)=   "ButtonTransfer"
-      Tab(1).Control(3)=   "ButtonAssign"
+      Tab(1).Control(0)=   "ButtonAssign"
+      Tab(1).Control(1)=   "ButtonTransfer"
+      Tab(1).Control(2)=   "mfgLijst"
+      Tab(1).Control(3)=   "LabelCounter"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74055683
+         Format          =   16449539
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -676,8 +676,8 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
             Msg = Msg & "AND Klanten.rvID =" + Str(searchOnRvId) + " "
             Msg = Msg & "AND Dokumenten.v249 <> Dokumenten.v037 "
         ElseIf Not refIsCor And isCDD Then
-            'Search with contract number
-            MsgBox "Stop for not refIsCor and isCDD"
+            'Search with contract number using DOMIC
+            'MsgBox "Stop for not refIsCor and isCDD"
             Msg = Msg & "AND Dokumenten.A000 = '" + refString + "' "
             Msg = Msg & "AND Str(Val(Dokumenten.v249)) = '" + formattedAmount + "' "
         Else
@@ -693,7 +693,7 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
                 Case "5": groupCode = "F0"
                 Case "2": groupCode = "Q0"
                 Case Else
-                    MsgBox "onbekende OGM voor klanten?"
+                    MsgBox "onbekende referte voor klanten?"
             End Select
                             
             Dim ReferteTxtNoFormat As String
@@ -722,7 +722,9 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
     If Err Then
         MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
     ElseIf rsAny.RecordCount = 0 Then
-        MsgBox "Geen documenten gevonden"
+        If refIsCor Then
+            MsgBox "Iets ging verkeerd met OGM referte " & refString & vbCrLf & "Geen documenten gevonden voor klant " & clientNumber, vbQuestion
+        End If
         Exit Function
     ElseIf rsAny.RecordCount = 1 Then
         rsAny.MoveFirst
@@ -1140,8 +1142,9 @@ AddingLines:
                 Else
                     isCor = False
                     If Len(xdaLinesDATAArray(T, 10)) = 0 Then
-                        MsgBox "Empty Ustrd, Logic?"
-                        lineReference = "-"
+                        'For TTT = 0 To UBound(xdaLinesOMSArray): Print TTT; " "; xdaLinesOMSArray(TTT); " => "; xdaLinesDATAArray(T, TTT): Next
+                        'MsgBox "Empty Ustrd, Logic?"
+                        lineReference = xdaLinesDATAArray(T, 5)
                     Else
                         lineReference = xdaLinesDATAArray(T, 10)
                     End If
@@ -1150,11 +1153,11 @@ AddingLines:
                 ReDim resultArray(5)
                 resultReturn = CtrlDocuments(True, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                 If resultReturn = "" Then
-                    MsgBox "Geen resultaat", vbExclamation
+                    'MsgBox "Geen resultaat", vbExclamation
                     aa = aa & "-" & vbTab
                     aa = aa & "??????" & vbTab
                     aa = aa & Val(amountToCheck) & vbTab
-                    aa = aa & xdaLinesDATAArray(5, 1) & vbTab
+                    aa = aa & xdaLinesDATAArray(T, 5) & vbTab
                 Else
                     resultArray() = Split(resultReturn, "|")
                     aa = aa & "-" & resultArray(0) & vbTab
@@ -1262,7 +1265,7 @@ AddingLines:
                     ReDim resultArray(5)
                     resultReturn = CtrlDocuments(False, isCor, False, lineReference, xdaLinesDATAArray(T, 7), amountToCheck)
                     If resultReturn = "" Then
-                        MsgBox "Geen resultaat voor " & xdaLinesDATAArray(T, 7), vbExclamation
+                        MsgBox "Geen resultaat voor " & xdaLinesDATAArray(T, 6), vbExclamation
                         aa = aa & "+" & vbTab
                         aa = aa & "??????" & vbTab
                         aa = aa & Val(amountToCheck) & vbTab

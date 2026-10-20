@@ -189,6 +189,7 @@ Dim fileUrlAsPdf As String
 Dim selectedFile As String
 
 Dim rsBuyerUBL As New ADODB.Recordset
+Dim rsBuyerRECORD As New ADODB.Recordset
 Private Sub ButtonClose_Click()
 
     uitwisselingOMS = ""
@@ -507,7 +508,7 @@ Function GetSentReceipt(vDocument As String, asSeller As Integer) As String
     Dim sSQL As String
         
     sSQL = "SELECT "
-    sSQL = sSQL + "Dokumenten.v033, Dokumenten.v406, Dokumenten.v408 "
+    sSQL = sSQL + "Dokumenten.v033, Dokumenten.v034, Dokumenten.v406, Dokumenten.v408 "
     sSQL = sSQL + "FROM  Dokumenten "
     sSQL = sSQL + "WHERE Dokumenten.v033 = '" + vDocument + "' "
        
@@ -530,11 +531,39 @@ Function GetSentReceipt(vDocument As String, asSeller As Integer) As String
                 GetSentReceipt = sentID
             End If
         ElseIf asSeller = 2 Then
-            sentID = Trim(rsBuyerUBL("v408"))
-            If sentID = "" Then
-                GetSentReceipt = "Geen"
-            Else
-                GetSentReceipt = sentID
+            Set rsBuyerRECORD = New ADODB.Recordset
+            On Error Resume Next
+            Err = 0
+            rsBuyerRECORD.CursorLocation = adUseClient
+        
+            sSQL = "SELECT "
+            sSQL = sSQL + "Leveranciers.A110, Leveranciers.A100, Leveranciers.v410 "
+            sSQL = sSQL + "FROM  Leveranciers "
+            sSQL = sSQL + "WHERE Leveranciers.A110 = '" + Mid(rsBuyerUBL("v034"), 2) + "' "
+       
+            Screen.MousePointer = vbHourglass
+            rsBuyerRECORD.Open sSQL, adntDB, adOpenForwardOnly, adLockReadOnly
+            Screen.MousePointer = vbNormal
+            If Err Then
+                MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
+                GetSentReceipt = Err.Description
+            ElseIf rsBuyerRECORD.RecordCount = 0 Then
+                GetSentReceipt = "Logicafout: Code leverancier Niet gevonden"
+            ElseIf rsBuyerRECORD.RecordCount = 1 Then
+                'check first
+                Dim allowedCheckFound As Integer
+                allowedCheckFound = InStr(rsBuyerRECORD("v410"), "ApplicationResponse")
+                If allowedCheckFound = 0 Then
+                    GetSentReceipt = "Leverancier " & Trim(rsBuyerRECORD("A110")) & " " & Trim(rsBuyerRECORD("A100")) & vbCrLf & vbCrLf & "Aanvaardt geen reacties via Peppol. Gebruik de klassieke wegen (mail, telefoon, brief al dan niet aangetekend)."
+                Else
+                    
+                    sentID = Trim(rsBuyerUBL("v408"))
+                    If sentID = "" Then
+                        GetSentReceipt = "Geen"
+                    Else
+                        GetSentReceipt = sentID
+                    End If
+                End If
             End If
         End If
     End If
