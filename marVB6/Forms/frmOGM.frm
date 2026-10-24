@@ -43,7 +43,7 @@ Begin VB.Form frmOGM
       Style           =   2  'Dropdown List
       TabIndex        =   27
       Top             =   60
-      Width           =   3795
+      Width           =   4035
    End
    Begin VB.Frame FrameChangeMemoDate 
       Caption         =   "Controle op Memodatum"
@@ -104,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   73990147
+         Format          =   16449539
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -207,7 +207,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   7680
+      Left            =   7920
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   60
@@ -249,7 +249,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   9360
+      Left            =   9600
       Picture         =   "frmOGM.frx":0000
       Style           =   1  'Graphical
       TabIndex        =   9
@@ -352,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   73990147
+      Format          =   16449539
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -376,7 +376,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   73990147
+      Format          =   16449539
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -410,7 +410,7 @@ Begin VB.Form frmOGM
       BorderStyle     =   1  'Fixed Single
       Caption         =   "0"
       Height          =   240
-      Left            =   6360
+      Left            =   6660
       TabIndex        =   29
       Top             =   120
       Width           =   435
@@ -418,7 +418,7 @@ Begin VB.Form frmOGM
    Begin VB.Label Label2 
       Caption         =   "Memogroepen:"
       Height          =   240
-      Left            =   4920
+      Left            =   5220
       TabIndex        =   28
       Top             =   120
       Width           =   1335
@@ -454,7 +454,7 @@ Begin VB.Form frmOGM
    Begin VB.Label lbBank 
       Caption         =   "Ban&k"
       Height          =   240
-      Left            =   7020
+      Left            =   7200
       TabIndex        =   0
       Top             =   120
       Width           =   600
@@ -496,9 +496,10 @@ Dim TLijnen             As Integer
 Dim invalidAA   As Variant
 
 'MAIN
-Dim bancGuid As String 'ok
-
 Dim guidId As String 'ok
+Dim bancGuid As String 'ok
+Dim bancRef As String
+
 Dim creationDateTime As String 'ok
 
 Dim numberOfTransactions As Integer 'ok
@@ -822,6 +823,7 @@ Sub RefreshGroupIds()
         RecordToVeld TABLE_VARIOUS
         debtorIBAN = Trim(vBibTekst(TABLE_VARIOUS, "#v259 #"))
         debtorBIC = Trim(vBibTekst(TABLE_VARIOUS, "#v260 #"))
+        bancRef = Trim(vBibTekst(TABLE_VARIOUS, "#v237 #"))
     End If
     
     Dim memoArray() As String
@@ -832,11 +834,11 @@ Sub RefreshGroupIds()
         bancGuid = Mid(CreateGUID(), 2, 13)
         Dim memoDateBuilder As String
         memoDateBuilder = Dec(DTPickerGlobalMemoDate.Day, "00") + "/" + Dec(DTPickerGlobalMemoDate.Month, "00") + "/" + Dec(DTPickerGlobalMemoDate.Year, "0000")
-        Me.ComboGuidLabel.AddItem (memoDateBuilder & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
+        Me.ComboGuidLabel.AddItem (memoDateBuilder & " : " & bancRef & "-" & bancGuid)
     Else
         For T = 1 To memoGroupCounter
             bancGuid = Mid(CreateGUID(), 2, 13)
-            Me.ComboGuidLabel.AddItem (memoArray(T - 1) & " : " & Trim(vBibTekst(TABLE_VARIOUS, "#v237 #")) & "-" & bancGuid)
+            Me.ComboGuidLabel.AddItem (memoArray(T - 1) & " : " & bancRef & "-" & bancGuid)
         Next
     End If
     Me.ComboGuidLabel.ListIndex = 0
@@ -853,7 +855,7 @@ Function XmlOGM(comboValue As String)
     
     bankSettingsKey = Trim("31" + Mid(cbBank.text, 1, 3))
         
-    guidId = PartRight(comboValue, 21) 'Me.ComboGuidLabel.text
+    guidId = Mid(comboValue, InStr(comboValue, bancRef))
     ghostDate = PartLeft(comboValue, 10)
     
     controlSum = Dec(lblEUR, ".00")
