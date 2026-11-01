@@ -1928,7 +1928,10 @@ Else
     adminNoVat = False
 End If
 
-If (Right(LOCATION_COMPANYDATA, 5) = "\098\" Or Right(LOCATION_COMPANYDATA, 5) = "\099\") Then
+Dim mapNumber As Integer
+mapNumber = Val(Right(LOCATION_COMPANYDATA, 4))
+
+If mapNumber > 90 Then
     Me.TextBoxWarningTestCompany.Visible = True
 End If
 

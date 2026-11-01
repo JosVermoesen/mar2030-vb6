@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16449539
+         Format          =   74055683
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -1439,7 +1439,10 @@ Private Sub Form_Load()
         BeWaarTekst "dnnInstellingen", "CodaIOMap", LOCATION_DESKTOP
     End If
     
-    If (PartRight(LOCATION_COMPANYDATA, 5) = "\098\" Or PartRight(LOCATION_COMPANYDATA, 5) = "\099\") Then
+    Dim mapNumber As Integer
+    mapNumber = Val(Right(LOCATION_COMPANYDATA, 4))
+
+    If mapNumber > 90 Then
         Me.TextBoxWarningTestCompany.Visible = True
     End If
 

@@ -104,7 +104,7 @@ Begin VB.Form frmOGM
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   16449539
+         Format          =   78118915
          CurrentDate     =   46023
          MaxDate         =   58862
          MinDate         =   46023
@@ -352,7 +352,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16449539
+      Format          =   78118915
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -376,7 +376,7 @@ Begin VB.Form frmOGM
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   16449539
+      Format          =   78118915
       CurrentDate     =   46023
       MaxDate         =   58862
       MinDate         =   46023
@@ -998,7 +998,7 @@ Private Sub CheckBoxForceExecutionDate_Click()
 
     If CheckBoxForceExecutionDate.Value = vbChecked Then
         Me.DTPickerGlobalMemoDate.Visible = True
-        Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
+        Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value '+ 1
         Me.FrameChangeMemoDate.Visible = False
     Else
         Me.DTPickerGlobalMemoDate.Visible = False
@@ -1107,7 +1107,7 @@ End Sub
 Private Sub DTPickerGlobalMemoDate_Change()
 
     If Me.DTPickerGlobalMemoDate.Value < Me.DatumVerwerking.Value Then
-        Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
+        Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value ' + 1
     End If
     MemoRefresh
     
@@ -1148,7 +1148,7 @@ Private Sub Form_Load()
     
     Me.DatumVerwerking.Value = MIM_GLOBAL_DATE
     'CheckBoxForceExecutionDate.Value = vbChecked
-    Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value + 1
+    Me.DTPickerGlobalMemoDate.Value = Me.DatumVerwerking.Value ' + 1
     
     TekstLijn(2).text = "0"
     TekstLijn(3).text = String$(12, "z")

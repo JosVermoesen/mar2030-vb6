@@ -22,6 +22,18 @@ Begin VB.Form DiversePosten
    PaletteMode     =   1  'UseZOrder
    ScaleHeight     =   7770
    ScaleWidth      =   7830
+   Begin VB.TextBox TextBoxWarningTestCompany 
+      BackColor       =   &H000000FF&
+      Enabled         =   0   'False
+      Height          =   285
+      Left            =   2280
+      TabIndex        =   26
+      TabStop         =   0   'False
+      Text            =   "Opgelet: Dit is een testbedrijf!"
+      Top             =   5040
+      Visible         =   0   'False
+      Width           =   2895
+   End
    Begin MSComCtl2.DTPicker Datum 
       Height          =   315
       Left            =   6300
@@ -41,7 +53,7 @@ Begin VB.Form DiversePosten
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "dd/MM/yyyy"
-      Format          =   76546051
+      Format          =   74448899
       CurrentDate     =   36328
       MinDate         =   35796
    End
@@ -889,6 +901,13 @@ End Sub
 
 
 Private Sub Form_Load()
+
+Dim mapNumber As Integer
+mapNumber = Val(Right(LOCATION_COMPANYDATA, 4))
+
+If mapNumber > 90 Then
+    Me.TextBoxWarningTestCompany.Visible = True
+End If
 
 If Not Toegankelijk(Me) Then
     Unload Me
