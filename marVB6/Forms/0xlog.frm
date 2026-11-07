@@ -955,6 +955,21 @@ End Sub
 Private Sub WijzigenLijn_Click()
 
 On Local Error Resume Next
+If Mid(TELEBIB_CODE(X.Row - 1), 10, 1) = "x" Then
+    If Not IsNull(rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))) Then
+        Load FormReactionsDialog
+        FormReactionsDialog.TextBoxReactions.text = rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
+        If Val(Mid(X.text, 1, 2)) <= 2 Then
+            FormReactionsDialog.Caption = "Ondersteunde documenten"
+        Else
+            FormReactionsDialog.Caption = "Bevestigingen en reacties"
+        End If
+        FormReactionsDialog.Show 1
+    Else
+        MsgBox "Geen gegevens geregistreerd", vbInformation
+    End If
+    Exit Sub
+End If
 
 If Mid(TELEBIB_CODE(X.Row - 1), 2, 2) <> "  " And Mid(TELEBIB_CODE(X.Row - 1), 1, 1) <> "@" Then
     X_KeyDown 17, 0
@@ -983,29 +998,15 @@ Else
     End If
     X.Col = 2
     ATLijn = Val(Mid(TELEBIB_CODE(X.Row - 1), 10, 1))
-    If Mid(TELEBIB_CODE(X.Row - 1), 10, 1) = "x" Then
-        If Not IsNull(rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))) Then
-            Load FormReactionsDialog
-            FormReactionsDialog.TextBoxReactions.text = rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
-            If Val(Mid(X.text, 1, 2)) <= 2 Then
-                FormReactionsDialog.Caption = "Ondersteunde documenten"
-            Else
-                FormReactionsDialog.Caption = "Bevestigingen en reacties"
-            End If
-            FormReactionsDialog.Show 1
-        Else
-            MsgBox "Geen gegevens geregistreerd", vbInformation
+    
+    X.text = vsfInputBox$(Msg, RTrim$(TELEBIB_TEXT(X.Row - 1)), (X.text), "")
+    If X.Row < X.Rows - 1 Then
+        X.Row = X.Row + 1
+        If X.Row > 6 Then
+            X.TopRow = X.Row - 5
         End If
-    Else
-        X.text = vsfInputBox$(Msg, RTrim$(TELEBIB_TEXT(X.Row - 1)), (X.text), "")
-        If X.Row < X.Rows - 1 Then
-            X.Row = X.Row + 1
-            If X.Row > 6 Then
-                X.TopRow = X.Row - 5
-            End If
-        End If
-        X.SetFocus
     End If
+    X.SetFocus
 End If
 
 End Sub
@@ -1025,6 +1026,38 @@ End Sub
 
 Private Sub X_DblClick()
 
+If Mid(X.TextMatrix(X.Row, 0), 5, 4) = "v411" And X <> "" Then
+    'Peppol log fields table CUSTOMERS or SUPPLIERS
+    If Left(rsMAR(TABLE_INVOICES)("v034"), 1) = "L" Then
+        'SEPA Paymentslog suppliers TABLE_INVOICES
+        ShowSupplierPaymentsLog (LOCATION_COMPANYDATA & "coda\out\" & X & ".xml")
+    ElseIf Left(rsMAR(TABLE_INVOICES)("v034"), 1) = "K" Then
+        'Creditors Direct Debit log buyers TABLE_INVOICES
+        MsgBox "TODO"
+    Else
+        MsgBox "Onlogisch"
+    End If
+    Exit Sub
+ElseIf Mid(TELEBIB_CODE(X.Row - 1), 10, 1) = "x" Then
+    If Not IsNull(rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))) Then
+        Load FormReactionsDialog
+        FormReactionsDialog.TextBoxReactions.text = rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
+        If Val(Mid(X.text, 1, 2)) <= 2 Then
+            FormReactionsDialog.Caption = "Ondersteunde documenten"
+        Else
+            FormReactionsDialog.Caption = "Bevestigingen en reacties"
+        End If
+        FormReactionsDialog.Show 1
+    Else
+        MsgBox "Geen gegevens geregistreerd", vbInformation
+    End If
+    Exit Sub
+End If
+
+If WijzigenLijn.Enabled = False Then
+    Exit Sub
+End If
+
 If Afsluiten.TabStop Then
     WijzigenLijn_Click
 Else
@@ -1034,7 +1067,22 @@ End If
 End Sub
 
 
+Private Sub ShowSupplierPaymentsLog(selectedFile As String)
 
+    Screen.MousePointer = vbHourglass
+    Dim resultHere As Boolean
+    resultHere = XsltViewer(selectedFile)
+    If resultHere Then
+        'TODO show invoiceNoPdf.html
+        If ShellExecuteWithFallback(LOCATION_COMPANYDATA & "peppol\in\paymenttesting.html") = False Then
+            MsgBox "Kon bestand niet openen. Raadpleeg ShellHelper.log voor details.", vbExclamation
+        End If
+    Else
+        MsgBox "Iets ging verkeerd", vbInformation
+    End If
+    Screen.MousePointer = vbDefault
+
+End Sub
 
 Private Sub X_KeyDown(KeyCode As Integer, Shift As Integer)
 Dim DummyText As String
@@ -1044,8 +1092,35 @@ Dim MBNummer As String
 
 If KeyCode = 17 Then
 Else
-    Exit Sub
+    If Mid(X.TextMatrix(X.Row, 0), 5, 4) = "v411" And X <> "" Then
+        If Left(rsMAR(TABLE_INVOICES)("v034"), 1) = "L" Then
+            'SEPA Paymentslog suppliers TABLE_INVOICES
+            ShowSupplierPaymentsLog (LOCATION_COMPANYDATA & "coda\out\" & X & ".xml")
+        ElseIf Left(rsMAR(TABLE_INVOICES)("v034"), 1) = "K" Then
+            'Creditors Direct Debit log buyers TABLE_INVOICES
+            MsgBox "TODO"
+        Else
+            MsgBox "Onlogisch"
+        End If
+        Exit Sub
+    ElseIf Mid(TELEBIB_CODE(X.Row - 1), 10, 1) = "x" Then
+        'Peppol log fields table CUSTOMERS or SUPPLIERS
+        If Not IsNull(rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))) Then
+            Load FormReactionsDialog
+            FormReactionsDialog.TextBoxReactions.text = rsMAR(Val(Mid(X.text, 1, 2)))(Mid(TELEBIB_CODE(X.Row - 1), 5, 4))
+            If Val(Mid(X.text, 1, 2)) <= 2 Then
+                FormReactionsDialog.Caption = "Ondersteunde documenten"
+            Else
+                FormReactionsDialog.Caption = "Bevestigingen en reacties"
+            End If
+            FormReactionsDialog.Show 1
+        Else
+            MsgBox "Geen gegevens geregistreerd", vbInformation
+        End If
+        Exit Sub
+    End If
 End If
+
 X.Col = X.Cols - 1
 DummyText = RTrim$(X.text)
 If Left(Caption, 3) = "Log" Then

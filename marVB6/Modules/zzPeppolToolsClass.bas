@@ -176,7 +176,7 @@ Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boo
     On Local Error GoTo 0
 
     Dim result As String
-    Dim xml As New MSXML2.DOMDocument60
+    Dim Xml As New MSXML2.DOMDocument60
     Dim txt As String
 
     ' Load file as text so we can strip namespaces
@@ -185,12 +185,12 @@ Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boo
     ' Remove default namespace (VB6 cannot handle it)
     txt = Replace(txt, "xmlns=""urn:iso:std:iso:20022:tech:xsd:camt.053.001.02""", "")
 
-    xml.async = False
-    xml.validateOnParse = False
-    xml.loadXML txt
+    Xml.async = False
+    Xml.validateOnParse = False
+    Xml.loadXML txt
 
-    If xml.parseError.errorCode <> 0 Then
-        MsgBox "XML Parse Error: " & xml.parseError.reason
+    If Xml.parseError.errorCode <> 0 Then
+        MsgBox "XML Parse Error: " & Xml.parseError.reason
         Exit Function
     End If
 
@@ -207,15 +207,15 @@ Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boo
     Dim Owner As String
 
     'These ones are mandatory so get them directly
-    MsgId = xml.selectSingleNode("//MsgId").text
-    StmtId = xml.selectSingleNode("//Stmt/Id").text
+    MsgId = Xml.selectSingleNode("//MsgId").text
+    StmtId = Xml.selectSingleNode("//Stmt/Id").text
     
     'These are optional so get them if avaialbe with GetNodeText
-    ElctrncSeqNb = GetNodeText(xml, "//Stmt/ElctrncSeqNb")
-    LglSeqNb = GetNodeText(xml, "//Stmt/LglSeqNb")
+    ElctrncSeqNb = GetNodeText(Xml, "//Stmt/ElctrncSeqNb")
+    LglSeqNb = GetNodeText(Xml, "//Stmt/LglSeqNb")
     
-    IBAN = xml.selectSingleNode("//Acct/Id/IBAN").text
-    Owner = xml.selectSingleNode("//Acct/Ownr/Nm").text
+    IBAN = Xml.selectSingleNode("//Acct/Id/IBAN").text
+    Owner = Xml.selectSingleNode("//Acct/Ownr/Nm").text
 
     ' -----------------------------
     ' Extract balances
@@ -223,8 +223,8 @@ Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boo
     Dim OpeningBal As String
     Dim ClosingBal As String
 
-    OpeningBal = xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='OPBD']/Amt").text
-    ClosingBal = xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='CLBD']/Amt").text
+    OpeningBal = Xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='OPBD']/Amt").text
+    ClosingBal = Xml.selectSingleNode("//Bal[Tp/CdOrPrtry/Cd='CLBD']/Amt").text
 
     'Debug.Print "Message ID: " & MsgId
     xdaOMS = xdaOMS & "MessageID" & vbTab
@@ -289,7 +289,7 @@ Public Function ReadCamt053XDA(ByVal fileName As String, ByVal showResult As Boo
             "Tx Debtor" & vbTab & "Tx IBAN" & vbTab & "Tx BIC" & vbTab & "Tx SCOR" & vbTab & _
             "Tx Ustrd" & vbTab & "Tx BBA Code" & vbTab & "Tx Description" & vbTab & "Tx Type"
     
-    For Each nEntry In xml.selectNodes("//Ntry")
+    For Each nEntry In Xml.selectNodes("//Ntry")
     
         Dim EntryRef As String
         Dim EntryAmount As String
@@ -483,7 +483,7 @@ End Function
 
 Public Function NoPdfPeppolViewer(filePath As String) As Boolean
 
-    Dim xml As Object  ' MSXML2.DOMDocument
+    Dim Xml As Object  ' MSXML2.DOMDocument
     Dim xsl As Object  ' MSXML2.DOMDocument
     Dim result As String
     Dim utf8Text As String
@@ -500,14 +500,14 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
     
     NoPdfPeppolViewer = False
     
-    Set xml = CreateObject("MSXML2.DOMDocument.6.0")
-    xml.async = False
-    xml.validateOnParse = False
+    Set Xml = CreateObject("MSXML2.DOMDocument.6.0")
+    Xml.async = False
+    Xml.validateOnParse = False
     
     'xml.Load filePath
 
-    If Not xml.loadXML(utf8Text) Then
-        MsgBox "XML parse error: " & xml.parseError.reason
+    If Not Xml.loadXML(utf8Text) Then
+        MsgBox "XML parse error: " & Xml.parseError.reason
         Exit Function
     End If
 
@@ -518,14 +518,14 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
 
     Set xsl = CreateObject("MSXML2.DOMDocument.6.0")
     xsl.async = False
-    xsl.Load PROGRAM_LOCATION & "xml-templates\peppol\peppol-invoice.xslt"
+    xsl.Load PROGRAM_LOCATION & "xslt-templates\peppol-invoice.xslt"
 
     If xsl.parseError.errorCode <> 0 Then
         MsgBox "XSLT error: " & xsl.parseError.reason
         Exit Function
     End If
 
-    result = xml.transformNode(xsl)
+    result = Xml.transformNode(xsl)
     Call MarWriteUtf8File(LOCATION_COMPANYDATA & "peppol\in\invoiceNoPdf.html", result)
 
     ' Save result to HTML
@@ -537,6 +537,52 @@ Public Function NoPdfPeppolViewer(filePath As String) As Boolean
     NoPdfPeppolViewer = True
 
 End Function
+
+Public Function XsltViewer(filePath As String) As Boolean
+
+    Dim Xml As Object  ' MSXML2.DOMDocument
+    Dim Xslt As Object  ' MSXML2.DOMDocument
+    Dim result As String
+    Dim utf8Text As String
+    
+    Dim checkFile As String
+    checkFile = Dir(filePath)
+    If checkFile = "" Then
+        XsltViewer = False
+        MsgBox "Bestand " & filePath & " bestaat niet meer." & vbCrLf & "Sluit het venster en vernieuw de inhoud van de map", vbExclamation
+        Exit Function
+    End If
+    
+    utf8Text = MarReadUtf8File(filePath)
+    
+    XsltViewer = False
+    
+    Set Xml = CreateObject("MSXML2.DOMDocument.6.0")
+    Xml.async = False
+    Xml.validateOnParse = False
+    
+    'xml.Load filePath
+
+    If Not Xml.loadXML(utf8Text) Then
+        MsgBox "XML parse error: " & Xml.parseError.reason
+        Exit Function
+    End If
+
+    Set Xslt = CreateObject("MSXML2.DOMDocument.6.0")
+    Xslt.async = False
+    Xslt.Load PROGRAM_LOCATION & "xslt-templates\payment-viewer.xslt"
+
+    If Xslt.parseError.errorCode <> 0 Then
+        MsgBox "XSLT error: " & Xslt.parseError.reason
+        Exit Function
+    End If
+
+    result = Xml.transformNode(Xslt)
+    Call MarWriteUtf8File(LOCATION_COMPANYDATA & "peppol\in\paymenttesting.html", result)
+    XsltViewer = True
+
+End Function
+
 
 Public Function PeppolHasPdfAttachment(xmlPath As String) As Boolean
     
@@ -1222,23 +1268,23 @@ End Function
 
 Public Sub ExtractPdfAttachments(ByVal ublFilePath As String, ByVal xmlLocation As String)
 
-    Dim xml As New MSXML2.DOMDocument60
-    xml.async = False
-    xml.preserveWhiteSpace = True
+    Dim Xml As New MSXML2.DOMDocument60
+    Xml.async = False
+    Xml.preserveWhiteSpace = True
 
-    If Not xml.Load(ublFilePath) Then
-        MsgBox "XML kon niet geladen worden: " & xml.parseError.reason
+    If Not Xml.Load(ublFilePath) Then
+        MsgBox "XML kon niet geladen worden: " & Xml.parseError.reason
         Exit Sub
     End If
 
     ' Correct namespace registration for VB6
-    xml.SetProperty "SelectionNamespaces", _
+    Xml.SetProperty "SelectionNamespaces", _
         "xmlns:cac='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2' " & _
         "xmlns:cbc='urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'"
 
     ' Find ALL attachments
     Dim nodes As MSXML2.IXMLDOMNodeList
-    Set nodes = xml.selectNodes("//cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject")
+    Set nodes = Xml.selectNodes("//cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject")
 
     If nodes Is Nothing Or nodes.Length = 0 Then
         MsgBox "Geen bijlagen gevonden."
@@ -1301,11 +1347,11 @@ Public Function CleanBase64(ByVal s As String) As String
 End Function
 
 Public Function Base64Decode(ByVal base64String As String) As Byte()
-    Dim xml As Object
-    Set xml = CreateObject("MSXML2.DOMDocument.6.0")
+    Dim Xml As Object
+    Set Xml = CreateObject("MSXML2.DOMDocument.6.0")
 
     Dim node As Object
-    Set node = xml.createElement("b64")
+    Set node = Xml.createElement("b64")
 
     node.dataType = "bin.base64"
     node.text = base64String
