@@ -92,10 +92,10 @@ Begin VB.Form InbrengFinancieel
       TabCaption(1)   =   "Full CODA (versie 2.1)"
       TabPicture(1)   =   "0700000.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "ButtonAssign"
-      Tab(1).Control(1)=   "ButtonTransfer"
-      Tab(1).Control(2)=   "mfgLijst"
-      Tab(1).Control(3)=   "LabelCounter"
+      Tab(1).Control(0)=   "LabelCounter"
+      Tab(1).Control(1)=   "mfgLijst"
+      Tab(1).Control(2)=   "ButtonTransfer"
+      Tab(1).Control(3)=   "ButtonAssign"
       Tab(1).ControlCount=   4
       Begin VB.CommandButton ButtonAssign 
          Caption         =   "Toewijzen"
@@ -312,7 +312,7 @@ Begin VB.Form InbrengFinancieel
             Strikethrough   =   0   'False
          EndProperty
          CustomFormat    =   "dd/MM/yyyy"
-         Format          =   74055683
+         Format          =   16580611
          CurrentDate     =   36327
          MinDate         =   35796
       End
@@ -723,7 +723,11 @@ Private Function CtrlDocuments(isSeller As Boolean, refIsCor As Boolean, isCDD A
         MsgBox "Bron:" & vbCrLf & Err.Source & vbCrLf & vbCrLf & "Foutnummer: " & Err.Number & vbCrLf & vbCrLf & "Detail:" & vbCrLf & Err.Description
     ElseIf rsAny.RecordCount = 0 Then
         If refIsCor Then
-            MsgBox "Iets ging verkeerd met OGM referte " & refString & vbCrLf & "Geen documenten gevonden voor klant " & clientNumber, vbQuestion
+            If isSeller Then
+                MsgBox "Met OGM referte " & refString & vbCrLf & "Geen documenten gevonden voor leverancier met SEPA: " & IbanAccount, vbQuestion
+            Else
+                MsgBox "Iets ging verkeerd met OGM referte " & refString & vbCrLf & "Geen documenten gevonden voor klant " & clientNumber, vbQuestion
+            End If
         End If
         Exit Function
     ElseIf rsAny.RecordCount = 1 Then

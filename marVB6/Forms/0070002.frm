@@ -42,32 +42,48 @@ Begin VB.Form KwijtingDrukken
       _ExtentX        =   18706
       _ExtentY        =   7646
       _Version        =   393216
-      Tabs            =   2
-      TabsPerRow      =   2
+      Tab             =   1
       TabHeight       =   520
       TabCaption(0)   =   "Papier"
       TabPicture(0)   =   "0070002.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "PaperDetail"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "cbPrint"
-      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "cbPrint"
+      Tab(0).Control(1)=   "PaperDetail"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Mail"
       TabPicture(1)   =   "0070002.frx":001C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "MailDetail"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "cbMail"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
+      TabCaption(2)   =   "Peppol"
+      TabPicture(2)   =   "0070002.frx":0038
+      Tab(2).ControlEnabled=   0   'False
+      Tab(2).Control(0)=   "PeppolDetail"
+      Tab(2).Control(1)=   "cbPeppolGenereren"
+      Tab(2).ControlCount=   2
+      Begin VB.CommandButton cbPeppolGenereren 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00C0C0C0&
+         Caption         =   "&Genereren"
+         Enabled         =   0   'False
+         Height          =   375
+         Left            =   -65820
+         TabIndex        =   34
+         Top             =   540
+         Width           =   1230
+      End
       Begin VB.CommandButton cbMail 
          Appearance      =   0  'Flat
          BackColor       =   &H00C0C0C0&
          Caption         =   "&Mailen"
          Enabled         =   0   'False
          Height          =   375
-         Left            =   -65760
+         Left            =   9180
          TabIndex        =   32
-         Top             =   720
+         Top             =   660
          Width           =   1230
       End
       Begin VB.CommandButton cbPrint 
@@ -76,14 +92,14 @@ Begin VB.Form KwijtingDrukken
          Caption         =   "&Drukken"
          Enabled         =   0   'False
          Height          =   375
-         Left            =   9240
+         Left            =   -65760
          TabIndex        =   31
          Top             =   720
          Width           =   1230
       End
       Begin MSFlexGridLib.MSFlexGrid PaperDetail 
          Height          =   3465
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   1
          Top             =   600
          Width           =   9105
@@ -107,9 +123,33 @@ Begin VB.Form KwijtingDrukken
       End
       Begin MSFlexGridLib.MSFlexGrid MailDetail 
          Height          =   3465
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   30
          Top             =   600
+         Width           =   8985
+         _ExtentX        =   15849
+         _ExtentY        =   6112
+         _Version        =   393216
+         FixedCols       =   0
+         BackColor       =   -2147483624
+         FocusRect       =   2
+         SelectionMode   =   1
+         AllowUserResizing=   1
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+      Begin MSFlexGridLib.MSFlexGrid PeppolDetail 
+         Height          =   3465
+         Left            =   -74940
+         TabIndex        =   35
+         Top             =   480
          Width           =   8985
          _ExtentX        =   15849
          _ExtentY        =   6112
@@ -918,6 +958,18 @@ Next
 Return
 
 End Function
+
+Private Function CheckForB2B()
+
+    'After the PDF is created
+    'TODO FIRST: Check if is a B2B client with Peppol activation
+    '            Otherwise exit
+    'TODO NEXT:  1) Get the sum of the MOA's and check with total amount
+    '            2) Generate the Peppol xml file in the peppol/out directory
+    
+
+End Function
+
 Private Function pdfDrukAf()
 
 Dim tmppdfY As Double
@@ -2220,6 +2272,40 @@ With MailDetail
     .ColWidth(5) = 645
 End With
 
+PeppolDetail.Cols = 7
+With PeppolDetail
+    .Col = 0
+    .Row = 0
+    .text = "Polis"
+    .ColWidth(0) = 1215
+    
+    .Col = 1
+    .text = "Vervaldag"
+    .ColWidth(1) = 1005
+    
+    .Col = 2
+    .text = "Premie"
+    .ColWidth(2) = 1035
+'    .ColAlignment(2) = 1
+        
+    .Col = 3
+    .text = "Taksen"
+    .ColWidth(3) = 795
+'    .ColAlignment(3) = 1
+    
+    .Col = 4
+    .text = "Klant (Naam 1)"
+    .ColWidth(4) = 3945
+    
+    .Col = 5
+    .text = "Com.%"
+    .ColWidth(5) = 645
+    
+    .Col = 6
+    .text = "TB2"
+    .ColWidth(5) = 645
+End With
+
 KontaktPersoon = Val(String99(READING, 201))
 
 Schoon
@@ -2241,6 +2327,7 @@ Dim X As Integer
 Dim TaksEnKost As Currency
 Dim comPercentage As Single
 Dim mailFlag As Boolean
+Dim PeppolFlag As Boolean
 
 Select Case Post.Value
     Case 1
@@ -2262,6 +2349,9 @@ Else
         RecordToVeld TABLE_CONTRACTS
         Select Case Left(vBibTekst(TABLE_CONTRACTS, "#vs97 #"), 1)
             Case PostOfBezoek
+                PeppolFlag = False
+                mailFlag = False
+                
                 bGet TABLE_CUSTOMERS, 0, vBibTekst(TABLE_CONTRACTS, "#A110 #")
                 If Ktrl Then
                     Dummy = "KlantLink onmogelijk !!! Kontroleer !!!"
@@ -2273,6 +2363,12 @@ Else
                         mailFlag = True
                     Else
                         mailFlag = False
+                    End If
+                    If Len(rsMAR(TABLE_CUSTOMERS)("v407")) > 500 Then
+                        PeppolFlag = True
+                        mailFlag = False
+                    Else
+                        PeppolFlag = False
                     End If
                 End If
                 GoSub Checkdokument
@@ -2292,13 +2388,18 @@ Else
                         If mailFlag = True Then
                             MailDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00"), MailDetail.Rows - 1
                         End If
-                        
+                        If PeppolFlag = True Then
+                            PeppolDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00"), PeppolDetail.Rows - 1
+                        End If
                         SnelHelpPrint Dummy, BL_LOGGING
                     End If
                 Else
                     PaperDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")) + Val(vBibTekst(TABLE_CONTRACTS, "#v403 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00") & vbTab & tb2Dummy, PaperDetail.Rows - 1
                     If mailFlag = True Then
                         MailDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")) + Val(vBibTekst(TABLE_CONTRACTS, "#v403 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00") & vbTab & tb2Dummy, MailDetail.Rows - 1
+                    End If
+                    If PeppolFlag = True Then
+                        PeppolDetail.AddItem vBibTekst(TABLE_CONTRACTS, "#A000 #") & vbTab & Mid(vBibTekst(TABLE_CONTRACTS, "#v165 #"), 1, 2) & "/" & Mid(vBibTekst(TABLE_CONTRACTS, "#v164 #"), 1, 2) & "/" & Mid(PERIOD_FROMTO, 1, 4) & vbTab & Format(Val(vBibTekst(TABLE_CONTRACTS, "#B010 #")) + Val(vBibTekst(TABLE_CONTRACTS, "#v403 #")), "#,##0.00") & vbTab & Format(TaksEnKost, "#,##0.00") & vbTab & Dummy & vbTab & Format(comPercentage, "0.00") & vbTab & tb2Dummy, PeppolDetail.Rows - 1
                     End If
                     SnelHelpPrint Dummy, BL_LOGGING
                 End If
@@ -2360,7 +2461,6 @@ End If
 Return
 
 End Sub
-
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 
